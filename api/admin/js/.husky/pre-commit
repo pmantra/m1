@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+cd api/admin/js
+echo "Running husky"
+$(npm bin)/lint-staged
+echo "Running pre-commit"
+pre-commit run

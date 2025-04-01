@@ -1,0 +1,13 @@
+dag_id: sms_notify_upcoming_appointments_member_dag
+schedule: "*/5 * * * *"
+task_id: sms_notify_upcoming_appointments_member_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.virtual_care.sms_notify_upcoming_appointments_member import sms_notify_upcoming_appointments_member_job; sms_notify_upcoming_appointments_member_job()"
+team_namespace: virtual_care
+service_namespace: appointment_notifications
+catchup: "False"
+start_year: 2024
+start_month: 3
+start_day: 31

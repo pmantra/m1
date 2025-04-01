@@ -1,0 +1,5 @@
+reporting_category,balance_transaction_id,charge_id,payment_method_type,card_funding,payment_metadata[bill_uuid],payment_metadata[copay_passthrough],payment_metadata[recouped_fee],refund_metadata[recouped_fee],refund_metadata[bill_uuid]
+charge,file_txn_1,ch_1,card,prepaid,9267ccfc-b56a-41f2-a22a-9b24f7118098,200.00,6.00,
+charge,file_txn_2,ch_2,card,debit,5c8d83a2-e381-4147-bdd5-8b4cac89b40a,48.15,1.44,
+refund,file_txn_3,,card,debit,ff3e43f7-2272-41bb-8f63-3dafa0750c2d,-20,,-1,c78ca85c-525e-4042-a225-178e26368354
+charge,file_txn_4,,ach,,0594397c-7578-4b26-804a-89ef5fe5ac27,50,,

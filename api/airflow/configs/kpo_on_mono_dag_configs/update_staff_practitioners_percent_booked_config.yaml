@@ -1,0 +1,13 @@
+dag_id: update_staff_practitioners_percent_booked_dag
+schedule: "8 2 1 * *"
+task_id: update_staff_practitioners_percent_booked_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.payments_platform.update_staff_practitioners_percent_booked import update_staff_practitioners_percent_booked_job; update_staff_practitioners_percent_booked_job()"
+team_namespace: payments_platform
+service_namespace: provider_payments
+catchup: "False"
+start_year: 2024
+start_month: 3
+start_day: 31

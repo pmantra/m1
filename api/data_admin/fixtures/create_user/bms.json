@@ -1,0 +1,19 @@
+[
+  {
+    "type": "organization",
+    "name": "BMS Org",
+    "activated_at": "1 year ago",
+    "bms_enabled": true
+  },
+  {
+    "type": "user",
+    "organization_name": "BMS Org",
+    "track": "breast_milk_shipping",
+    "email_prefix": "mvnqa-bms",
+    "password": "simpleisawesome1*",
+    "had_child_days_ago": 100,
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

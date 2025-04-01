@@ -1,0 +1,253 @@
+.page-case-study {
+	.case-study-header {
+		background-color: $mint-50;
+	}
+
+	.snap-header {
+		background-color: $charcoal-20;
+		.company-logo {
+			margin: 25px 0;
+		}
+		h4 {
+			color: $charcoal-80;
+		}
+	}
+
+	.company-summary {
+		.company-logo {
+			max-width: 200px;
+
+			& ~ h3 {
+				margin-bottom: inherit;
+				margin-top: 0;
+			}
+		}
+
+		.grid-item {
+			text-align: center;
+
+			h3 {
+				margin-bottom: 0;
+			}
+		}
+
+		@include susy-breakpoint($tablet) {
+			.two-column {
+				.grid-item {
+					text-align: left;
+				}
+
+				.grid-item:first-child {
+					width: 70%;
+				}
+
+				.grid-item:last-child {
+					width: 25%;
+				}
+			}
+		}
+	}
+
+	section.two-tone {
+		.featured-image {
+			margin: 20px 0;
+			width: 100%;
+		}
+
+		hr {
+			margin: 40px auto;
+			width: 80px;
+		}
+	}
+
+	section.has-divider {
+		padding-top: 0;
+
+		.content-wrapper {
+			border-top: 1px solid $charcoal-80;
+			padding-top: 50px;
+		}
+	}
+
+	.challenge {
+		background: linear-gradient(
+			to bottom,
+			white 0%,
+			white 300px,
+			#000000 300px,
+			$mint-20 300px,
+			$mint-20 100%
+		); /* W3C */
+		background-color: $mint-20;
+		text-align: center;
+
+		.grid-item h1 {
+			color: $emerald-50;
+		}
+
+		@include susy-breakpoint($desktop) {
+			background: linear-gradient(to bottom, white 0%, white 30%, #000000 30%, $mint-20 30%, $mint-20 100%); /* W3C */
+		}
+	}
+
+	.challenge-warm {
+		background: linear-gradient(
+			to bottom,
+			white 0%,
+			white 30px,
+			#000000 300px,
+			$mktg-green-lt 300px,
+			$mktg-green-lt 100%
+		); /* W3C */
+		background-color: $mktg-green-lt;
+		text-align: center;
+
+		.grid-item h1 {
+			color: $emerald-50;
+		}
+
+		@include susy-breakpoint($desktop) {
+			background: linear-gradient(
+				to bottom,
+				white 0%,
+				white 270px,
+				#000000 30%,
+				$mktg-green-lt 30%,
+				$mktg-green-lt 100%
+			); /* W3C */
+		}
+	}
+
+	.self-centered {
+		align-self: center;
+	}
+
+	.callout {
+		background-color: $macaroon-40;
+		padding: 10%;
+		text-align: center;
+
+		&.bg-cool {
+			background-color: $mint-20;
+		}
+
+		@include susy-breakpoint($tablet) {
+			padding: 70px;
+		}
+
+		h4 {
+			color: $charcoal-50;
+		}
+	}
+
+	.results {
+		background: linear-gradient(
+			to bottom,
+			white 0%,
+			white 300px,
+			#000000 300px,
+			$charcoal-20 300px,
+			$charcoal-20 100%
+		); /* W3C */
+		text-align: center;
+
+		@include susy-breakpoint($desktop) {
+			background: linear-gradient(
+				to bottom,
+				white 0%,
+				white 30%,
+				#000000 30%,
+				$charcoal-20 30%,
+				$charcoal-20 100%
+			); /* W3C */
+		}
+	}
+
+	.outcomes-table {
+		@include flexbox;
+		margin: 30px 0;
+
+		.maternity-outcomes,
+		.fertility-outcomes {
+			background-color: white;
+			border: 1px solid $charcoal-50;
+			padding: 10px 30px;
+			width: 100%;
+		}
+
+		.grid-item {
+			@include flexbox(column, center, flex-start);
+			text-align: center;
+
+			h1 {
+				color: $blush-100;
+				margin-bottom: 0;
+			}
+		}
+
+		@include susy-breakpoint(0 $tablet-max) {
+			.fertility-outcomes {
+				border-top: 0;
+			}
+		}
+
+		@include susy-breakpoint($desktop) {
+			flex-direction: row;
+			align-items: stretch;
+
+			.maternity-outcomes {
+				width: 70%;
+
+				.grid-item {
+					margin: 0 !important; // boo hiss
+				}
+			}
+
+			.fertility-outcomes {
+				border-left: 0;
+				width: 30%;
+			}
+		}
+	} // end outcomes-table
+
+	.cleary-results {
+		.maternity-outcomes {
+			width: 100%;
+
+			h1 {
+				color: $secondary-1;
+			}
+		}
+	}
+
+	.bg-grey {
+		background-color: $charcoal-20;
+	}
+
+	.testimonials {
+		h3 {
+			margin-bottom: 0;
+		}
+
+		.testimonial {
+			min-height: 430px;
+		}
+
+		.prev,
+		.next {
+			@include susy-breakpoint($desktop) {
+				display: none !important;
+			}
+		}
+	}
+
+	section.demo-request {
+		background-color: $mint-40;
+		padding: 100px 8%;
+		text-align: center;
+	}
+
+	.center {
+		text-align: center;
+	}
+}

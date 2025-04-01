@@ -1,0 +1,1116 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-08-18 14:18-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+msgid "need_nutrition_name"
+msgstr "Nutrition"
+
+msgid "need_nutrition_description"
+msgstr "Fertility-friendly foods, supplements, managing your weight"
+
+msgid "need_emotional_support_name"
+msgstr "Emotional support"
+
+msgid "need_emotional_support_description"
+msgstr "Coping with the emotional ups & downs of a fertility journey"
+
+msgid "need_treatment_options_and_steps_name"
+msgstr "Treatment options and steps"
+
+msgid "need_treatment_options_and_steps_description"
+msgstr "Exploring IUI, IVF, egg freezing, using donors, or surrogacy"
+
+msgid "need_preparing_for_treatment_name"
+msgstr "Preparing for treatment"
+
+msgid "need_preparing_for_treatment_description"
+msgstr "What to expect, how to prepare, recovery, side effects"
+
+msgid "need_medication_education_name"
+msgstr "Medication education"
+
+msgid "need_medication_education_description"
+msgstr "How to administer injections, manage a schedule, side effects"
+
+msgid "need_treatment_and_test_review_name"
+msgstr "Treatment and test review"
+
+msgid "need_treatment_and_test_review_description"
+msgstr "How to read test results, expert guidance on treatment plans"
+
+msgid "need_testing_your_fertility_name"
+msgstr "Testing your fertility"
+
+msgid "need_testing_your_fertility_description"
+msgstr "Test options, what to expect, understanding your results"
+
+msgid "need_having_trouble_with_conceiving_name"
+msgstr "Having trouble with conceiving"
+
+msgid "need_having_trouble_with_conceiving_description"
+msgstr "Exploring fertility issues, testing and treatment options"
+
+msgid "need_genetic_testing_name"
+msgstr "Genetic testing"
+
+msgid "need_genetic_testing_description"
+msgstr "Your test options, what to expect, understanding results"
+
+msgid "need_sperm_egg_and_embryo_freezing_name"
+msgstr "Sperm, egg, and embryo freezing"
+
+msgid "need_sperm_egg_and_embryo_freezing_description"
+msgstr "Common steps and procedures, how to prepare, general advice"
+
+msgid "need_nutrition_during_pregnancy_name"
+msgstr "Nutrition during pregnancy"
+
+msgid "need_nutrition_during_pregnancy_description"
+msgstr "Managing cravings, nausea, and your nutritional needs"
+
+msgid "need_gestational_diabetes_name"
+msgstr "Gestational diabetes"
+
+msgid "need_gestational_diabetes_description"
+msgstr "Understanding test results, tips for managing a diagnosis"
+
+msgid "need_nutrition_while_breastfeeding_name"
+msgstr "Nutrition while breastfeeding"
+
+msgid "need_nutrition_while_breastfeeding_description"
+msgstr "Tips for a healthy milk supply, staying healthy while breastfeeding"
+
+msgid "need_pelvic_floor_support_name"
+msgstr "Pelvic floor support"
+
+msgid "need_pelvic_floor_support_description"
+msgstr "Urinary incontinence, pain relief, safe exercises to try"
+
+msgid "need_managing_body_changes_discomfort_or_pain_name"
+msgstr "Managing body changes, discomfort, or pain"
+
+msgid "need_managing_body_changes_discomfort_or_pain_description"
+msgstr "Expert tips, helpful exercises, injury recovery, pain relief"
+
+msgid "need_exercising_while_pregnant_name"
+msgstr "Exercising while pregnant"
+
+msgid "need_exercising_while_pregnant_description"
+msgstr "Recommended workouts, modifications, and safety tips"
+
+msgid "need_preparing_for_labor_and_delivery_name"
+msgstr "Preparing for labor and delivery"
+
+msgid "need_preparing_for_labor_and_delivery_description"
+msgstr "What to expect, how to prepare, general advice"
+
+msgid "need_choosing_an_inperson_care_team_name"
+msgstr "Choosing an in-person care team"
+
+msgid "need_choosing_an_inperson_care_team_description"
+msgstr "What to look for in OB-GYNs, midwives, doulas, etc."
+
+msgid "need_pain_management_during_labor_name"
+msgstr "Pain management during labor"
+
+msgid "need_pain_management_during_labor_description"
+msgstr "Pain relief options and techniques, or managing without medication"
+
+msgid "need_general_questions_about_pregnancy_name"
+msgstr "General questions about pregnancy"
+
+msgid "need_general_questions_about_pregnancy_description"
+msgstr "What to expect, how to prepare, general advice"
+
+msgid "need_explore_a_second_opinion_name"
+msgstr "Explore a second opinion"
+
+msgid "need_explore_a_second_opinion_description"
+msgstr "Explore symptoms or treatment plans"
+
+msgid "need_managing_illnesses_during_pregnancy_name"
+msgstr "Managing illnesses during pregnancy"
+
+msgid "need_managing_illnesses_during_pregnancy_description"
+msgstr "Common medication questions and managing your illness"
+
+msgid "need_taking_parental_leave_name"
+msgstr "Taking parental leave"
+
+msgid "need_taking_parental_leave_description"
+msgstr "Letting your boss know, taking leave, and returning to work"
+
+msgid "need_understanding_a_pregnancy_complication_name"
+msgstr "Understanding a pregnancy complication"
+
+msgid "need_understanding_a_pregnancy_complication_description"
+msgstr "Understanding a diagnosis, exploring second opinions"
+
+msgid "need_pregnancy_options_counseling_name"
+msgstr "Pregnancy options counseling"
+
+msgid "need_pregnancy_options_counseling_description"
+msgstr "Understanding your options, mental and emotional support"
+
+msgid "need_postpartum_recovery_name"
+msgstr "Postpartum recovery"
+
+msgid "need_postpartum_recovery_description"
+msgstr "What to expect, how to prepare, general advice"
+
+msgid "need_postpartum_mental_and_emotional_health_name"
+msgstr "Postpartum mental and emotional health"
+
+msgid "need_postpartum_mental_and_emotional_health_description"
+msgstr "Mental and emotional support, identifying a mood disorder"
+
+msgid "need_birth_control_name"
+msgstr "Birth control"
+
+msgid "need_birth_control_description"
+msgstr "Understanding your options, general advice"
+
+msgid "need_returning_to_work_name"
+msgstr "Returning to work"
+
+msgid "need_returning_to_work_description"
+msgstr "Preparing to return, finding childcare, emotional support"
+
+msgid "need_postpartum_body_changes_discomfort_or_pain_name"
+msgstr "Postpartum body changes, discomfort, or pain"
+
+msgid "need_postpartum_body_changes_discomfort_or_pain_description"
+msgstr "What to expect during recovery"
+
+msgid "need_breastfeeding_pumping_and_formula_feeding_name"
+msgstr "Breastfeeding, pumping, and formula feeding"
+
+msgid "need_breastfeeding_pumping_and_formula_feeding_description"
+msgstr "Feeding support, infant weight gain"
+
+msgid "need_newborn_care_name"
+msgstr "Newborn care"
+
+msgid "need_newborn_care_description"
+msgstr "Swaddling, diapering, bathing, feeding, general health support"
+
+msgid "need_choosing_a_pediatrician_name"
+msgstr "Choosing a pediatrician"
+
+msgid "need_choosing_a_pediatrician_description"
+msgstr "What to look for in a pediatrician"
+
+msgid "need_your_babys_sleep_name"
+msgstr "Your baby's sleep"
+
+msgid "need_your_babys_sleep_description"
+msgstr "Sleep expectations, sleep safety, solutions for better sleep"
+
+msgid "need_your_babys_development_name"
+msgstr "Your baby's development"
+
+msgid "need_your_babys_development_description"
+msgstr "Tracking milestones, delays, and activities that can help"
+
+msgid "need_relationship_and_family_challenges_name"
+msgstr "Relationship and family challenges"
+
+msgid "need_relationship_and_family_challenges_description"
+msgstr "Talking to loved ones, how to feel heard and supported"
+
+msgid "need_stress_anxiety_or_depression_name"
+msgstr "Stress, anxiety, or depression"
+
+msgid "need_stress_anxiety_or_depression_description"
+msgstr "Emotional support, coaching, advice for managing stress"
+
+msgid "need_understanding_a_diagnosis_name"
+msgstr "Understanding a diagnosis"
+
+msgid "need_understanding_a_diagnosis_description"
+msgstr "How to navigate a fertility condition diagnosis, care options"
+
+msgid "need_general_wellness_name"
+msgstr "General wellness"
+
+msgid "need_general_wellness_description"
+msgstr "Self-care tips, healthy habits for TTC and treatment success"
+
+msgid "need_physical_health_and_fitness_name"
+msgstr "Physical health and fitness"
+
+msgid "need_physical_health_and_fitness_description"
+msgstr "Fitness and exercise advice, tips for feeling your best"
+
+msgid "need_sex_and_intimacy_name"
+msgstr "Sex and intimacy"
+
+msgid "need_sex_and_intimacy_description"
+msgstr "Sex coaching, managing pain or discomfort"
+
+msgid "need_coping_with_loss_and_miscarriage_name"
+msgstr "Coping with loss and miscarriage"
+
+msgid "need_coping_with_loss_and_miscarriage_description"
+msgstr "Coping with depression, grief, sadness, or guilt"
+
+msgid "need_starting_your_conception_journey_name"
+msgstr "Starting your conception journey"
+
+msgid "need_starting_your_conception_journey_description"
+msgstr "What (actually) helps when TTC, wellness tips"
+
+msgid "need_tracking_ovulation_and_menstrual_cycles_name"
+msgstr "Tracking ovulation and menstrual cycles"
+
+msgid "need_tracking_ovulation_and_menstrual_cycles_description"
+msgstr "How to track cycles, spotting ovulation, timing intercourse"
+
+msgid "need_conceiving_with_a_reproductive_health_condition_name"
+msgstr "Conceiving with a reproductive health condition"
+
+msgid "need_conceiving_with_a_reproductive_health_condition_description"
+msgstr "Supporting fibroids, diabetes, and other conditions while TTC"
+
+msgid "need_conceiving_after_loss_name"
+msgstr "Conceiving after loss"
+
+msgid "need_conceiving_after_loss_description"
+msgstr "Recovering from a miscarriage, determining when it's safe to try again"
+
+msgid "need_testing_for_pregnancy_name"
+msgstr "Testing for pregnancy"
+
+msgid "need_testing_for_pregnancy_description"
+msgstr "When and how to test, next steps if you've tested positive"
+
+msgid "need_reproductive_health_support_name"
+msgstr "Reproductive health support"
+
+msgid "need_reproductive_health_support_description"
+msgstr "Birth control options, managing common infections or STIs"
+
+msgid "need_general_health_advice_name"
+msgstr "General health advice"
+
+msgid "need_general_health_advice_description"
+msgstr "General concerns, expert adult and pediatric health advice"
+
+msgid "need_adoption_name"
+msgstr "Adoption"
+
+msgid "need_adoption_description"
+msgstr "Understanding adoption options"
+
+msgid "need_preparing_for_pregnancy_name"
+msgstr "Preparing for pregnancy"
+
+msgid "need_preparing_for_pregnancy_description"
+msgstr "What to expect, how to prepare, mental health support"
+
+msgid "need_surrogacy_name"
+msgstr "Surrogacy"
+
+msgid "need_surrogacy_description"
+msgstr "Understanding surrogacy options"
+
+msgid "need_finding_a_sperm_egg_embryo_donor_name"
+msgstr "Finding a sperm/egg/embryo donor"
+
+msgid "need_finding_a_sperm_egg_embryo_donor_description"
+msgstr "Deciding on a donor type, the process"
+
+msgid "need_single_and_building_a_family_name"
+msgstr "Single and building a family"
+
+msgid "need_single_and_building_a_family_description"
+msgstr "Navigating adoption, surrogacy, or donors, emotional support"
+
+msgid "need_lgbtqia_family_building_name"
+msgstr "LGBTQIA+ family building"
+
+msgid "need_lgbtqia_family_building_description"
+msgstr "Navigating adoption, surrogacy, or donors, emotional support"
+
+msgid "need_medication_options_for_menopause_name"
+msgstr "Medication options for menopause"
+
+msgid "need_medication_options_for_menopause_description"
+msgstr "Learn about risk and benefits, see if you are a candidate"
+
+msgid "need_hormone_testing_name"
+msgstr "Hormone testing"
+
+msgid "need_hormone_testing_description"
+msgstr "Your hormone test options, what to expect, reviewing results"
+
+msgid "need_managing_symptoms_name"
+msgstr "Managing symptoms"
+
+msgid "need_managing_symptoms_description"
+msgstr "Recommended lifestyle changes, medication options"
+
+msgid "need_holistic_menopause_care_name"
+msgstr "Holistic menopause care"
+
+msgid "need_holistic_menopause_care_description"
+msgstr "Complementary health advice, eastern herbs and practices"
+
+msgid "need_brain_fog_or_fatigue_name"
+msgstr "Brain fog or fatigue"
+
+msgid "need_brain_fog_or_fatigue_description"
+msgstr "Expert ways to cope, lifestyle recommendations, treatments"
+
+msgid "need_sleep_issues_name"
+msgstr "Sleep issues"
+
+msgid "need_sleep_issues_description"
+msgstr "Managing night sweats, insomnia, and other sleep challenges"
+
+msgid "need_the_stages_of_menopause_name"
+msgstr "The stages of menopause"
+
+msgid "need_the_stages_of_menopause_description"
+msgstr "What to expect, how to prepare, general advice"
+
+msgid "need_mood_swings_name"
+msgstr "Mood swings"
+
+msgid "need_mood_swings_description"
+msgstr "Help managing anger, mental and emotional support"
+
+msgid "need_emotional_support_name"
+msgstr "Emotional support"
+
+msgid "need_emotional_support_description"
+msgstr "Coping with the emotional ups and downs of menopause"
+
+msgid "need_fitness_and_movement_name"
+msgstr "Fitness and movement"
+
+msgid "need_fitness_and_movement_description"
+msgstr "Improving movement and flexibility, physical health support"
+
+msgid "need_managing_joint_pain_name"
+msgstr "Managing joint pain"
+
+msgid "need_managing_joint_pain_description"
+msgstr "Coping with inflammation, nutrition and exercise advice"
+
+msgid "need_nutrition_and_weight_management_name"
+msgstr "Nutrition and weight management"
+
+msgid "need_nutrition_and_weight_management_description"
+msgstr "Menopause-friendly diet, supplements, managing your weight"
+
+msgid "need_career_support_name"
+msgstr "Career support"
+
+msgid "need_career_support_description"
+msgstr "Career coaching, taking leave, managing time and transitions"
+
+msgid "need_parenting_support_name"
+msgstr "Parenting support"
+
+msgid "need_parenting_support_description"
+msgstr "Coaching, expert parenting tips, emotional support"
+
+msgid "need_sex_and_intimacy_name"
+msgstr "Sex and intimacy"
+
+msgid "need_sex_and_intimacy_description"
+msgstr "Sex coaching, managing pain or discomfort"
+
+msgid "need_covid19_cold_and_flu_name"
+msgstr "COVID-19, cold, and flu"
+
+msgid "need_covid19_cold_and_flu_description"
+msgstr "Symptoms, tests, and treatment options"
+
+msgid "need_general_health_advice_name"
+msgstr "General health advice"
+
+msgid "need_general_health_advice_description"
+msgstr "Taking care of yourself during menopause, general concerns"
+
+msgid "need_early_pregnancy_signs_and_symptoms_name"
+msgstr "Early pregnancy signs and symptoms"
+
+msgid "need_early_pregnancy_signs_and_symptoms_description"
+msgstr "Symptoms your partner may experience, when to test"
+
+msgid "need_your_childs_sleep_name"
+msgstr "Your child's sleep"
+
+msgid "need_your_childs_sleep_description"
+msgstr "Sleep expectations, sleep safety, solutions for better sleep"
+
+msgid "need_your_childs_development_and_behavior_name"
+msgstr "Your child's development and behavior"
+
+msgid "need_your_childs_development_and_behavior_description"
+msgstr "Tracking milestones, delays, behavior concerns, expert advice"
+
+msgid "need_your_childs_cold_flu_and_other_illnesses_name"
+msgstr "Your child's cold, flu, and other illnesses"
+
+msgid "need_your_childs_cold_flu_and_other_illnesses_description"
+msgstr "Exploring symptoms, understanding treatment options"
+
+msgid "need_nutrition_name"
+msgstr "Nutrition"
+
+msgid "need_nutrition_description"
+msgstr "Postpartum-friendly foods, supplements, weight management"
+
+msgid "need_pelvic_floor_support_name"
+msgstr "Pelvic floor support"
+
+msgid "need_pelvic_floor_support_description"
+msgstr "Urinary incontinence, pain relief, safe exercises to try"
+
+msgid "need_postpartum_emotional_support_name"
+msgstr "Postpartum emotional support"
+
+msgid "need_postpartum_emotional_support_description"
+msgstr "Bonding with baby, managing responsibilities & expectations"
+
+msgid "need_body_aches_discomfort_or_pain_name"
+msgstr "Body aches, discomfort, or pain"
+
+msgid "need_body_aches_discomfort_or_pain_description"
+msgstr "General advice, pain relief, safe exercises and medications"
+
+msgid "need_newborn_and_infant_nutrition_name"
+msgstr "Newborn and infant nutrition"
+
+msgid "need_newborn_and_infant_nutrition_description"
+msgstr "Understanding your child's nutritional needs, feeding support"
+
+msgid "need_weaning_and_introducing_solids_name"
+msgstr "Weaning and introducing solids"
+
+msgid "need_weaning_and_introducing_solids_description"
+msgstr "How to wean from breast milk or formula, introducing solids"
+
+msgid "need_fussiness_name"
+msgstr "Fussiness"
+
+msgid "need_fussiness_description"
+msgstr "Identifying possible causes, comfort measures you can try"
+
+msgid "need_fertility_treatment_options_and_steps_name"
+msgstr "Fertility treatment options and steps"
+
+msgid "need_fertility_treatment_options_and_steps_description"
+msgstr "Exploring egg freezing and other family building options"
+
+msgid "need_egg_freezing_process_and_options_name"
+msgstr "Egg freezing process and options"
+
+msgid "need_egg_freezing_process_and_options_description"
+msgstr "What to expect, choosing a clinic, egg storage options"
+
+msgid "need_preparing_for_egg_freezing_name"
+msgstr "Preparing for egg freezing"
+
+msgid "need_preparing_for_egg_freezing_description"
+msgstr "The process, testing, medications, and shots"
+
+msgid "need_testing_your_fertility_name"
+msgstr "Testing your fertility"
+
+msgid "need_testing_your_fertility_description"
+msgstr "Test options, what to expect, understanding your results"
+
+msgid "need_genetic_testing_options_name"
+msgstr "Genetic testing options"
+
+msgid "need_genetic_testing_options_description"
+msgstr "Your test options, what to expect, understanding results"
+
+msgid "need_nutrition_support_name"
+msgstr "Nutrition support"
+
+msgid "need_nutrition_support_description"
+msgstr "Making healthy choices, supplements, weight management"
+
+msgid "need_general_wellness_name"
+msgstr "General wellness"
+
+msgid "need_general_wellness_description"
+msgstr "Self-care tips, building healthy habits and routines"
+
+msgid "need_fitness_and_movement_name"
+msgstr "Fitness and movement"
+
+msgid "need_fitness_and_movement_description"
+msgstr "Improving movement and flexibility, physical health support"
+
+msgid "need_adoption_process_and_options_name"
+msgstr "Adoption process and options"
+
+msgid "need_adoption_process_and_options_description"
+msgstr "Exploring adoption options, what to expect, general advice"
+
+msgid "need_preparing_for_adoption_name"
+msgstr "Preparing for adoption"
+
+msgid "need_preparing_for_adoption_description"
+msgstr "How to prepare, profile books, home visits, emotional support"
+
+msgid "need_lgbtqia_adoption_name"
+msgstr "LGBTQIA+ adoption"
+
+msgid "need_lgbtqia_adoption_description"
+msgstr "Finding an LGBTQIA+-friendly adoption agency, general advice"
+
+msgid "need_adopting_as_a_single_parent_name"
+msgstr "Adopting as a single parent"
+
+msgid "need_adopting_as_a_single_parent_description"
+msgstr "General advice, what to expect, finding a support system"
+
+msgid "need_infant_feeding_and_weight_gain_name"
+msgstr "Infant feeding and weight gain"
+
+msgid "need_infant_feeding_and_weight_gain_description"
+msgstr "Breastfeeding, formula feeding, pumping, infant weight gain"
+
+msgid "need_starting_your_conception_journey_name"
+msgstr "Starting your conception journey"
+
+msgid "need_starting_your_conception_journey_description"
+msgstr "What (actually) helps when TTC, wellness tips"
+
+msgid "need_working_with_a_sperm_egg_or_embryo_donor_name"
+msgstr "Working with a sperm, egg, or embryo donor"
+
+msgid "need_working_with_a_sperm_egg_or_embryo_donor_description"
+msgstr "Deciding on a donor type, what to expect during the process"
+
+msgid "need_fertility_treatment_options_steps_name"
+msgstr "Fertility treatment options & steps"
+
+msgid "need_fertility_treatment_options_steps_description"
+msgstr "Exploring IUI, IVF, egg freezing, using donors, or surrogacy"
+
+msgid "need_surrogacy_process_and_options_name"
+msgstr "Surrogacy process and options"
+
+msgid "need_surrogacy_process_and_options_description"
+msgstr "What to expect, understanding your options"
+
+msgid "need_emotional_support_name"
+msgstr "Emotional support"
+
+msgid "need_emotional_support_description"
+msgstr "Coping with the emotional ups & downs of a surrogacy journey"
+
+msgid "need_preparing_for_surrogacy_name"
+msgstr "Preparing for surrogacy"
+
+msgid "need_preparing_for_surrogacy_description"
+msgstr "How to choose an agency, gestational carrier, or donor"
+
+msgid "need_support_during_the_surrogacy_process_name"
+msgstr "Support during the surrogacy process"
+
+msgid "need_support_during_the_surrogacy_process_description"
+msgstr "Common questions that come up, expectations after birth"
+
+msgid "need_physical_health_and_fitness_name"
+msgstr "Physical health and fitness"
+
+msgid "need_physical_health_and_fitness_description"
+msgstr "Fitness and exercise advice, tips for feeling your best"
+
+msgid "need_having_trouble_with_staying_pregnant_name"
+msgstr "Having trouble with staying pregnant"
+
+msgid "need_having_trouble_with_staying_pregnant_description"
+msgstr "Exploring fertility issues, testing and treatment options"
+
+msgid "need_conception_after_loss_name"
+msgstr "Conception after loss"
+
+msgid "need_conception_after_loss_description"
+msgstr "Recovering from a miscarriage, when it's safe to try again"
+
+msgid "need_questions_about_miscarriage_name"
+msgstr "Questions about miscarriage"
+
+msgid "need_questions_about_miscarriage_description"
+msgstr "Clear signs & symptoms, what to expect, when to seek care"
+
+msgid "need_abortion_recovery_name"
+msgstr "Abortion recovery"
+
+msgid "need_abortion_recovery_description"
+msgstr "What to expect during and after recovery"
+
+msgid "need_miscarriage_treatment_and_recovery_name"
+msgstr "Miscarriage treatment and recovery"
+
+msgid "need_miscarriage_treatment_and_recovery_description"
+msgstr "Miscarriage care & recovery tips, medications that can help"
+
+msgid "need_nutrition_name"
+msgstr "Nutrition"
+
+msgid "need_nutrition_description"
+msgstr "Understanding your partner's nutrition needs, general advice"
+
+msgid "need_relationship_or_family_challenges_name"
+msgstr "Relationship or family challenges"
+
+msgid "need_relationship_or_family_challenges_description"
+msgstr "Expert advice, tips for navigating pregnancy with loved ones"
+
+msgid "need_supporting_your_partner_during_labor_name"
+msgstr "Supporting your partner during labor"
+
+msgid "need_supporting_your_partner_during_labor_description"
+msgstr "How to help your partner manage pain, pain relief options"
+
+msgid "need_helping_your_partner_through_discomfort_name"
+msgstr "Helping your partner through discomfort"
+
+msgid "need_helping_your_partner_through_discomfort_description"
+msgstr "How to help your partner manage their back and body pains"
+
+msgid "need_career_support_name"
+msgstr "Career support"
+
+msgid "need_career_support_description"
+msgstr "Career coaching, balancing parenthood, managing time"
+
+msgid "need_navigating_life_with_baby_name"
+msgstr "Navigating life with baby"
+
+msgid "need_navigating_life_with_baby_description"
+msgstr "Bonding with baby, managing responsibilities & expectations"
+
+msgid "need_emotional_support_name"
+msgstr "Emotional support"
+
+msgid "need_emotional_support_description"
+msgstr "Help navigating difficult moments, support during transitions"
+
+msgid "need_your_childs_nutrition_name"
+msgstr "Your child's nutrition"
+
+msgid "need_your_childs_nutrition_description"
+msgstr "Understanding your child's nutritional needs, feeding support"
+
+msgid "need_abortion_care_and_recovery_name"
+msgstr "Abortion care and recovery"
+
+msgid "need_abortion_care_and_recovery_description"
+msgstr "What to expect, how to prepare, tips for a smooth recovery"
+
+msgid "need_pregancy_options_counseling_name"
+msgstr "Pregancy options counseling"
+
+msgid "need_pregancy_options_counseling_description"
+msgstr "Procedures and medications, adoption, your health options"
+
+msgid "need_emotional_support_name"
+msgstr "Emotional support"
+
+msgid "need_emotional_support_description"
+msgstr "Navigating the ups and downs of parenting, self-care advice"
+
+msgid "need_navigating_behavior_challenges_name"
+msgstr "Navigating behavior challenges"
+
+msgid "need_navigating_behavior_challenges_description"
+msgstr "Responding to tantrums, biting, sibling rivalries, outbursts"
+
+msgid "need_coparenting_name"
+msgstr "Co-parenting"
+
+msgid "need_coparenting_description"
+msgstr "Building a healthy co-parenting relationship, general advice"
+
+msgid "need_navigating_special_needs_name"
+msgstr "Navigating special needs"
+
+msgid "need_navigating_special_needs_description"
+msgstr "Support for ADHD, speech issues, autism, down syndrome, & more"
+
+msgid "need_childcare_support_name"
+msgstr "Childcare support"
+
+msgid "need_childcare_support_description"
+msgstr "Help with finding childcare, exploring options, managing needs"
+
+msgid "need_parenting_older_children_name"
+msgstr "Parenting older children"
+
+msgid "need_parenting_older_children_description"
+msgstr "Understanding puberty, managing expectations and needs"
+
+msgid "need_your_childs_mental_and_emotional_health_name"
+msgstr "Your child's mental and emotional health"
+
+msgid "need_your_childs_mental_and_emotional_health_description"
+msgstr "How to help your child cope with stress, depression, anxiety"
+
+msgid "need_your_babys_cold_flu_and_other_illnesses_name"
+msgstr "Your baby's cold, flu, and other illnesses"
+
+msgid "need_your_babys_cold_flu_and_other_illnesses_description"
+msgstr "Exploring symptoms, understanding treatment options"
+
+msgid "need_male_fertility_testing_name"
+msgstr "Male fertility testing"
+
+msgid "need_male_fertility_testing_description"
+msgstr "Test options, what to expect, understanding your results"
+
+msgid "need_improving_male_fertility_name"
+msgstr "Improving male fertility"
+
+msgid "need_improving_male_fertility_description"
+msgstr "Lifestyle and nutrition changes to improve sperm count and quality"
+
+msgid "need_conceiving_with_a_fertility_condition_name"
+msgstr "Conceiving with a fertility condition"
+
+msgid "need_conceiving_with_a_fertility_condition_description"
+msgstr "Navigating erectile dysfunction and other health conditions that affect male fertility"
+
+msgid "need_general_wellness_name"
+msgstr "General wellness"
+
+msgid "need_general_wellness_description"
+msgstr "Self-care tips, building healthy habits and routines"
+
+msgid "need_creating_a_birth_plan_name"
+msgstr "Creating a birth plan"
+
+msgid "need_creating_a_birth_plan_description"
+msgstr "Explore your options for an ideal birth experience, make a plan"
+
+msgid "need_coping_with_pregnancy_symptoms_name"
+msgstr "Coping with pregnancy symptoms"
+
+msgid "need_coping_with_pregnancy_symptoms_description"
+msgstr "Coping with fatigue, morning sickness, heartburn, aches, etc."
+
+msgid "need_breastfeeding_aches_and_pains_name"
+msgstr "Breastfeeding aches and pains"
+
+msgid "need_breastfeeding_aches_and_pains_description"
+msgstr "Sore nipples, clogged ducts, and pain while breastfeeding"
+
+msgid "need_conceiving_with_pcos_name"
+msgstr "Conceiving with PCOS"
+
+msgid "need_conceiving_with_pcos_description"
+msgstr "Self-care and lifestyle tips, medications, treatment options"
+
+msgid "need_conceiving_with_endometriosis_name"
+msgstr "Conceiving with endometriosis"
+
+msgid "need_conceiving_with_endometriosis_description"
+msgstr "Medications, treatment options, pain relief, lifestyle tips"
+
+msgid "need_fert-nutrition_name"
+msgstr "Nutrition"
+
+msgid "need_fert-nutrition_description"
+msgstr "Fertility-friendly foods, supplements, managing your weight"
+
+msgid "need_emotional-support_name"
+msgstr "Emotional support"
+
+msgid "need_emotional-support_description"
+msgstr "Coping with the emotional ups & downs of a fertility journey"
+
+msgid "need_treatment-options-steps_name"
+msgstr "Treatment options and steps"
+
+msgid "need_treatment-options-steps_description"
+msgstr "Exploring IUI, IVF, egg freezing, using donors, or surrogacy"
+
+msgid "need_trouble-conceiving_name"
+msgstr "Having trouble with conceiving"
+
+msgid "need_trouble-conceiving_description"
+msgstr "Exploring fertility issues, testing and treatment options"
+
+msgid "need_prep-labor-delivery_name"
+msgstr "Preparing for labor and delivery"
+
+msgid "need_prep-labor-delivery_description"
+msgstr "What to expect, how to prepare, general advice"
+
+msgid "need_preg-general-questions_name"
+msgstr "General questions about pregnancy"
+
+msgid "need_preg-general-questions_description"
+msgstr "What to expect, how to prepare, general advice"
+
+msgid "need_preg-second-opinion_name"
+msgstr "Explore a second opinion "
+
+msgid "need_preg-second-opinion_description"
+msgstr "Explore symptoms or treatment plans"
+
+msgid "need_breastfeeding-pump-formula_name"
+msgstr "Breastfeeding, pumping, and formula feeding"
+
+msgid "need_breastfeeding-pump-formula_description"
+msgstr "Feeding support, infant weight gain"
+
+msgid "need_baby-sleep_name"
+msgstr "Your baby's sleep"
+
+msgid "need_baby-sleep_description"
+msgstr "Sleep expectations, sleep safety, solutions for better sleep"
+
+msgid "need_stress-anxiety-depression_name"
+msgstr "Stress, anxiety, or depression"
+
+msgid "need_stress-anxiety-depression_description"
+msgstr "Emotional support, coaching, advice for managing stress"
+
+msgid "need_coping-with-loss_name"
+msgstr "Coping with loss and miscarriage"
+
+msgid "need_coping-with-loss_description"
+msgstr "Coping with depression, grief, sadness, or guilt"
+
+msgid "need_tracking-cycle_name"
+msgstr "Tracking ovulation and menstrual cycles"
+
+msgid "need_tracking-cycle_description"
+msgstr "How to track cycles, spotting ovulation, timing intercourse"
+
+msgid "need_general-health-advice_name"
+msgstr "General health advice"
+
+msgid "need_general-health-advice_description"
+msgstr "General concerns, expert adult and pediatric health advice"
+
+msgid "need_men-med-options_name"
+msgstr "Medication options for menopause"
+
+msgid "need_men-med-options_description"
+msgstr "Learn about risk and benefits, see if you are a candidate"
+
+msgid "need_men-managing-symptoms_name"
+msgstr "Managing symptoms"
+
+msgid "need_men-managing-symptoms_description"
+msgstr "Recommended lifestyle changes, medication options"
+
+msgid "need_men-nutrition_name"
+msgstr "Nutrition and weight management"
+
+msgid "need_men-nutrition_description"
+msgstr "Menopause-friendly diet, supplements, managing your weight"
+
+msgid "need_sex_and_intimacy_86_name"
+msgstr "Sex and intimacy"
+
+msgid "need_sex_and_intimacy_86_description"
+msgstr "Sex coaching, managing pain or discomfort"
+
+msgid "need_child-sleep_name"
+msgstr "Your child's sleep"
+
+msgid "need_child-sleep_description"
+msgstr "Sleep expectations, sleep safety, solutions for better sleep"
+
+msgid "need_child-cold-flu-illness_name"
+msgstr "Your child's cold, flu, and other illnesses"
+
+msgid "need_child-cold-flu-illness_description"
+msgstr "Exploring symptoms, understanding treatment options"
+
+msgid "need_pelvic_floor_support_101_name"
+msgstr "Pelvic floor support"
+
+msgid "need_pelvic_floor_support_101_description"
+msgstr "Urinary incontinence, pain relief, safe exercises to try"
+
+msgid "need_ef-process-options_name"
+msgstr "Egg freezing process and options"
+
+msgid "need_ef-process-options_description"
+msgstr "What to expect, choosing a clinic, egg storage options"
+
+msgid "need_preparing-for-ef_name"
+msgstr "Preparing for egg freezing"
+
+msgid "need_preparing-for-ef_description"
+msgstr "The process, testing, medications, and shots"
+
+msgid "need_testing_your_fertility_110_name"
+msgstr "Testing your fertility"
+
+msgid "need_testing_your_fertility_110_description"
+msgstr "Test options, what to expect, understanding your results"
+
+msgid "need_general_wellness_113_name"
+msgstr "General wellness"
+
+msgid "need_general_wellness_113_description"
+msgstr "Self-care tips, building healthy habits and routines"
+
+msgid "need_fitness_and_movement_114_name"
+msgstr "Fitness and movement"
+
+msgid "need_fitness_and_movement_114_description"
+msgstr "Improving movement and flexibility, physical health support"
+
+msgid "need_adoption-process-options_name"
+msgstr "Adoption process and options"
+
+msgid "need_adoption-process-options_description"
+msgstr "Exploring adoption options, what to expect, general advice"
+
+msgid "need_preparing-for-adoption_name"
+msgstr "Preparing for adoption"
+
+msgid "need_preparing-for-adoption_description"
+msgstr "How to prepare, profile books, home visits, emotional support"
+
+msgid "need_starting-conception_name"
+msgstr "Starting your conception journey"
+
+msgid "need_starting-conception_description"
+msgstr "What (actually) helps when TTC, wellness tips"
+
+msgid "need_surrogacy-process-options_name"
+msgstr "Surrogacy process and options"
+
+msgid "need_surrogacy-process-options_description"
+msgstr "What to expect, understanding your options "
+
+msgid "need_emotional_support_126_name"
+msgstr "Emotional support"
+
+msgid "need_emotional_support_126_description"
+msgstr "Coping with the emotional ups & downs of a surrogacy journey"
+
+msgid "need_preparing-for-surrogacy_name"
+msgstr "Preparing for surrogacy"
+
+msgid "need_preparing-for-surrogacy_description"
+msgstr "How to choose an agency, gestational carrier, or donor"
+
+msgid "need_physical_health_and_fitness_130_name"
+msgstr "Physical health and fitness"
+
+msgid "need_physical_health_and_fitness_130_description"
+msgstr "Fitness and exercise advice, tips for feeling your best"
+
+msgid "need_conception-after-loss_name"
+msgstr "Conception after loss"
+
+msgid "need_conception-after-loss_description"
+msgstr "Recovering from a miscarriage, when it's safe to try again"
+
+msgid "need_miscarriage-treatment-recovery_name"
+msgstr "Miscarriage treatment and recovery"
+
+msgid "need_miscarriage-treatment-recovery_description"
+msgstr "Miscarriage care & recovery tips, medications that can help"
+
+msgid "need_nutrition_138_name"
+msgstr "Nutrition"
+
+msgid "need_nutrition_138_description"
+msgstr "Understanding your partner's nutrition needs, general advice"
+
+msgid "need_career_support_147_name"
+msgstr "Career support"
+
+msgid "need_career_support_147_description"
+msgstr "Career coaching, balancing parenthood,  managing time"
+
+msgid "need_emotional_support_149_name"
+msgstr "Emotional support"
+
+msgid "need_emotional_support_149_description"
+msgstr "Help navigating difficult moments, support during transitions"
+
+msgid "need_abortion-care-recovery_name"
+msgstr "Abortion care and recovery"
+
+msgid "need_abortion-care-recovery_description"
+msgstr "What to expect, how to prepare, tips for a smooth recovery"
+
+msgid "need_pregnancy-options-counseling_name"
+msgstr "Pregancy options counseling"
+
+msgid "need_pregnancy-options-counseling_description"
+msgstr "Procedures and medications, adoption, your health options"
+
+msgid "need_emotional_support_161_name"
+msgstr "Emotional support"
+
+msgid "need_emotional_support_161_description"
+msgstr "Navigating the ups and downs of parenting, self-care advice"
+
+msgid "need_baby-cold-flu_name"
+msgstr "Your baby's cold, flu, and other illnesses"
+
+msgid "need_baby-cold-flu_description"
+msgstr "Exploring symptoms, understanding treatment options"
+
+msgid "need_male-fertility-testing_name"
+msgstr "Male fertility testing"
+
+msgid "need_male-fertility-testing_description"
+msgstr "Test options, what to expect, understanding your results"
+
+msgid "need_improving-male-fertility_name"
+msgstr "Improving male fertility"
+
+msgid "need_improving-male-fertility_description"
+msgstr "Lifestyle and nutrition changes to improve sperm count and quality"
+
+msgid "need_conceiving-with-fert-condition_name"
+msgstr "Conceiving with a fertility condition"
+
+msgid "need_conceiving-with-fert-condition_description"
+msgstr "Navigating erectile dysfunction and other health conditions that affect male fertility"
+
+msgid "need_general_wellness_172_name"
+msgstr "General wellness"
+
+msgid "need_general_wellness_172_description"
+msgstr "Self-care tips, building healthy habits and routines"
+
+msgid "need_fertility_medication_name"
+msgstr "Fertility Medication"
+
+msgid "need_fertility_medication_description"
+msgstr "Talk to an OB-GYN about how fertility medication may help you get pregnant faster"
+
+msgid "need_mens_health_name"
+msgstr "Men’s Health"
+
+msgid "need_mens_health_description"
+msgstr "Fertility, semen analysis, and general health advice"

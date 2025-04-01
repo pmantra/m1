@@ -1,0 +1,136 @@
+{% extends 'admin/base.html' %}
+
+{% block body %}
+    <style>
+        table {
+            width: 100%;
+            border: 1px solid;
+        }
+         td {
+             border: 1px solid;
+             padding: 15px;
+             text-align: left;
+        }
+        th {
+            height: 50px;
+            border: 1px solid;
+            padding: 15px;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function confirmation_changed(confirmationCheckBox){
+            document.getElementById("submit_button").disabled = !confirmationCheckBox.checked;
+        }
+    </script>
+
+    <div class="inline-field well well-medium">
+        <legend> Confirm the information is accurate for the User ID and {{source}}:</legend>
+        <table>
+              <thead>
+                    <tr>
+                        <th>Member Association Records</th>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+              </thead>
+              <tbody>
+                    <tr>
+                      <td>User</td>
+                        <td>{{ initial_form.user_id }}</td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+
+                    </tr>
+                    <tr>
+                      <td>{{ source }}</td>
+                        <td>{{ initial_form.member_id }}</td>
+                        <td>{{ member.first_name }}</td>
+                        <td>{{ member.last_name }}</td>
+              </tbody>
+        </table>
+    </div>
+
+
+    <div class="inline-form-field">
+            <form method="post" action="/admin/enterprise_setup/">
+                        <input
+                                type="hidden"
+                                id="user_id"
+                                name="user_id"
+                                value={{ initial_form.user_id }}
+                        >
+                        <input
+                                type="hidden"
+                                id="association_source"
+                                name="association_source"
+                                value={{ association_source }}
+                        >
+                        <input
+                                type="hidden"
+                                id="member_id"
+                                name="member_id"
+                                value={{ initial_form.member_id }}
+                        >
+                        <input
+                                type="hidden"
+                                id="is_employee"
+                                name="is_employee"
+                                value={{ initial_form.is_employee }}
+                        >
+                        <input
+                                type="hidden"
+                                id="track_name"
+                                name="track_name"
+                                value={{ initial_form.track_name }}
+                        >
+                        <input
+                                type="hidden"
+                                id="life_event_type"
+                                name="life_event_type"
+                                value={{ initial_form.life_event_type }}
+                        >
+                        <input
+                                type="hidden"
+                                id="life_event_date"
+                                name="life_event_date"
+                                value={{ initial_form.life_event_date }}
+                        >
+                        <input
+                                type="hidden"
+                                id="zendesk_id"
+                                name="zendesk_id"
+                                value={{ initial_form.zendesk_id }}
+                        >
+                    <div class="control-group">
+                        <div class="controls">
+                            <label class="control-label checkbox" for="confirmation">
+                                <input
+                                    id="confirmation"
+                                    name="confirmation"
+                                    type="checkbox"
+                                    class="checkbox"
+                                    onclick="confirmation_changed(this)"
+                                >
+                                 I confirm that the names for both IDs match, or that they have the appropriate partner or dependent relationship.
+                            </label>
+                        </div>
+                    </div>
+                <br>
+                    <input type="submit" class="btn btn-primary btn-medium"
+                           id="cancel_button"
+                           name="cancel"
+                           value="Cancel"
+                           style="background-image: linear-gradient(to bottom,#6cceaa,#00856f)"
+                    >
+                    <input type="submit" class="btn btn-primary btn-medium"
+                           id="submit_button"
+                           name="submit"
+                           value="Submit"
+                           style="background-image: linear-gradient(to bottom,#6cceaa,#00856f)"
+                           disabled
+                    >
+            </form>
+        </div>
+{% endblock %}

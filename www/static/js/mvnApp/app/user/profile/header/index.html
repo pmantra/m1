@@ -1,0 +1,12 @@
+<div class="content-container">
+	<user-profile-header-image user="$ctrl.user"></user-profile-header-image>
+	<div class="user-manage-username center" ng-if="!$ctrl.user.profiles.practitioner">
+		<h1 class="user-username h3" ng-if="$ctrl.user.username">
+			{{ $ctrl.user.username }} <a class="edit-username" ng-click="$ctrl.addUsername()" href="">edit</a>
+		</h1>
+		<div ng-if="!$ctrl.user.username"><a ng-click="$ctrl.addUsername()" href="">Add your username</a></div>
+	</div>
+	<div class="user-manage-username center" ng-if="$ctrl.user.profiles.practitioner">
+		<h3 class="user-username">{{ ::$ctrl.user.name }}</h3>
+	</div>
+</div>

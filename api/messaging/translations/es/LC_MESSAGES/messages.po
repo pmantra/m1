@@ -1,0 +1,126 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: es\n"
+
+#: messaging/resources/messaging.py:75
+msgid "available_credits_error"
+msgstr "Error al recuperar los créditos de mensajes disponibles"
+
+#: messaging/resources/messaging.py:516
+msgid "cannot_attach_asset_belonging_to_another_user"
+msgstr "No se puede adjuntar un activo que pertenece a otro usuario"
+
+#: messaging/resources/messaging.py:535
+msgid "cannot_attach_asset_to_message_asset_state_is_not_complete"
+msgstr "No se puede adjuntar el activo al mensaje; el estado del activo no está COMPLETO"
+
+#: messaging/resources/messaging.py:556
+msgid "cannot_attach_asset_to_multiple_messages_at_once"
+msgstr "No se puede adjuntar un activo a varios mensajes a la vez"
+
+#: messaging/resources/messaging.py:71
+msgid "cannot_charge_customer_error"
+msgstr "No se puede cobrar al cliente."
+
+#: messaging/resources/messaging.py:72
+msgid "cannot_charge_customer_stripe_error"
+msgstr "No se puede cobrar al cliente: hubo un error en Stripe"
+
+#: messaging/resources/messaging.py:198
+msgid "cant_open_a_channel_with_only_yourself"
+msgstr "No puedes abrir un canal solo contigo."
+
+#: messaging/resources/messaging.py:221
+msgid "channel_can_only_be_opened_between_a_member_and_a_practitioner"
+msgstr "El canal solo puede abrirse entre un miembro y un profesional."
+
+#: messaging/resources/messaging.py:495
+msgid "could_not_find_asset_matching_requested_identifier"
+msgstr "No se pudo encontrar el activo que coincide con el identificador solicitado, {asset_id}."
+
+#: messaging/resources/messaging.py:597
+msgid "exception_allocating_message_credits_enterprise_user"
+msgstr "No tienes suficiente crédito para enviar mensajes como usuario empresarial."
+
+#: messaging/resources/messaging.py:605
+msgid "exception_allocating_message_credits_marketplace_user"
+msgstr "No tienes suficiente saldo para enviar mensajes."
+
+#: messaging/resources/messaging.py:643
+msgid "general_exception_allocating_message_credits"
+msgstr "Excepción al asignar créditos de mensajes"
+
+#: messaging/resources/sms.py:123
+msgid "generic_maven_message_body"
+msgstr "¡Tienes un nuevo mensaje de Maven!"
+
+#: messaging/resources/messaging.py:131
+msgid "input_error_getting_channels"
+msgstr "Error de entrada al obtener los datos de los canales"
+
+#: messaging/resources/messaging.py:464
+msgid "message_is_too_long"
+msgstr "¡Tu mensaje es demasiado largo! Redúcelo a un máximo de {max_n_chars} caracteres."
+
+#: messaging/schemas/messaging.py:34
+msgid "message_reply_sla_user_message_ca_default"
+msgstr "Recibirás una respuesta en un plazo de 24 horas."
+
+#: messaging/schemas/messaging.py:37
+msgid "message_reply_sla_user_message_provider_default"
+msgstr "La mayoría de los profesionales responden dentro de las 24 horas."
+
+#: messaging/schemas/messaging.py:40
+msgid "message_reply_sla_user_message_wallet"
+msgstr "Recibirás una respuesta dentro de 3 días hábiles."
+
+#: messaging/schemas/messaging.py:44
+msgid "message_reply_sla_user_message_wallet_with_inbound_phone_number"
+msgstr "Recibirás una respuesta dentro de 3 días hábiles. Si tu asunto es urgente, llámanos al {phone_number}."
+
+#: messaging/resources/messaging.py:70
+msgid "no_card_on_file_error"
+msgstr "El cliente no tiene una tarjeta registrada."
+
+#: messaging/resources/messaging.py:213
+msgid "one_or_more_users_not_found"
+msgstr "No se encontró ningún usuario."
+
+#: messaging/resources/messaging.py:578
+msgid "only_image_and_pdf_file_types_are_supported"
+msgstr "Solo se admiten archivos de imagen y PDF."
+
+#: messaging/resources/messaging.py:179
+msgid "serializing_error_getting_channels"
+msgstr "Error de serialización al obtener los datos de los canales"
+
+#: messaging/resources/messaging.py:431
+msgid "unable_to_post_message_in_channel_inactive_or_messaging_disabled_practitioner"
+msgstr "No se puede publicar el mensaje en el canal {channel_id}: practicante inactivo o con mensajería deshabilitada"
+
+#: messaging/resources/messaging.py:456
+msgid "unable_to_post_message_in_channel_member_cannot_message_practitioner"
+msgstr "No se puede enviar el mensaje; el miembro no puede enviar mensajes a este profesional."
+
+#: messaging/resources/messaging.py:374
+msgid "unable_to_post_message_in_channel_no_participants_found"
+msgstr "No se puede publicar el mensaje en el canal {channel_id}: no se encontraron participantes"
+
+#: messaging/resources/messaging.py:395
+msgid "unable_to_post_message_in_channel_user_is_not_a_participant"
+msgstr "No se puede publicar el mensaje en el canal {channel_id}: el usuario no es participante"
+
+#: messaging/resources/messaging.py:208
+msgid "we_dont_support_multi_party_messaging"
+msgstr "No admitimos la mensajería multiparte."
+
+#: messaging/resources/messaging.py:203
+msgid "you_are_already_included_in_the_channel"
+msgstr "Ya te incluyeron en el canal, así que no necesitas incluirte en los user_ids."

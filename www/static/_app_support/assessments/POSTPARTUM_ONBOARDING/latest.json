@@ -1,0 +1,135 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "body": "Let's get personal for a minute",
+      "next": 2,
+      "required": true,
+      "widget": {
+        "type": "freetextmulti",
+        "options": [
+          {
+            "value": "weight",
+            "label": "How much do you weigh? (lbs)",
+            "placeholder": "How much do you weigh?(lbs)",
+            "fieldtype": "number",
+            "required": true,
+            "healthbinder": {
+            	"name": "weight"
+            }
+          },
+          {
+            "value": "height",
+            "label": "How tall are you? (ft/in)",
+            "placeholder": "How tall are you? (ft/in)",
+            "fieldtype": "height",
+            "required": true,
+            "healthbinder": {
+            	"name": "height"
+            }
+          }
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "id": 2,
+      "body": "What keeps you up at night the most?",
+      "required": true,
+      "next": 3,
+      "widget": {
+        "type": "panel-single-choice",
+        "options": [
+          {
+            "value": "work-stress",
+            "label": "Work stress—how am I going to get everything done?",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum-onboarding/2-1.svg"
+          },
+          {
+            "value": "current-events",
+            "label": "Current events",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum-onboarding/2-2.svg"
+          },
+          {
+            "value": "friends-family",
+            "label": "Worrying about my friends and family (I can’t help it!)",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum-onboarding/2-3.svg"
+          },
+          {
+            "value": "relationship-stress",
+            "label": "Relationship stress—it’s not easy right now!",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum-onboarding/2-4.svg"
+          }
+        ]
+      },
+      "meta": {}
+    },
+
+    {
+      "id": 3,
+      "body": "When you hear the phrase \"work-life balance\", what's your first thought?",
+      "required": true,
+      "next": 4,
+      "widget": {
+        "type": "panel-single-choice",
+        "options": [
+          {
+            "value": "bring-it-on",
+            "label": "Bring it on! Life-hack queen",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum-onboarding/3-1.svg"
+          },
+          {
+            "value": "mostly-ok",
+            "label": "Mostly, ok ready to swap tips",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum-onboarding/3-2.svg"
+          },
+          {
+            "value": "learned-to-cope",
+            "label": "Yeah. Right. I've learned to cope",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum-onboarding/3-3.svg"
+          },
+          {
+            "value": "feels-impossible",
+            "label": "Feels impossible. Send help.",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum-onboarding/3-4.svg"
+          }
+        ]
+      },
+      "meta": {}
+    },
+
+    {
+      "id": 4,
+      "body": "What makes you feel like your best self, but is often hard to do?",
+      "required": true,
+      "next": "end",
+      "widget": {
+        "type": "panel-single-choice",
+        "options": [
+          {
+            "value": "eating-enough-veggies",
+            "label": "Eating enough veggies",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum-onboarding/4-1.svg"
+          },
+          {
+            "value": "working-on-posture",
+            "label": "Working on my posture. Feeling hunched",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum-onboarding/4-2.svg"
+          },
+          {
+            "value": "weekly-meal-prep",
+            "label": "Weekly meal prep, I'm always ordering out",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum-onboarding/4-3.svg"
+          },
+          {
+            "value": "good-workout",
+            "label": "Good workout",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum-onboarding/4-4.svg"
+          }
+        ]
+      },
+      "meta": {}
+    }
+
+  ]
+}

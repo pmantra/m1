@@ -1,0 +1,2 @@
+Check: Do not include any changes to application code in the migration MR.
+Fix: If you need to change application code, please create a new MR for that.

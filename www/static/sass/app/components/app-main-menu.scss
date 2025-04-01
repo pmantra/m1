@@ -1,0 +1,690 @@
+body {
+	position: relative;
+}
+
+/* use focus-visible module to hide outline if user not navigating using keyboard */
+.js-focus-visible :focus:not(.focus-visible) {
+	outline: none;
+}
+
+:focus {
+	outline: 0.125rem solid $ui-green;
+	transition: all 0.3s linear;
+}
+
+/* Skip main link to access main content without tabbing through menu */
+button.skip-main {
+	transition: none;
+	left: -999px;
+	position: absolute;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	z-index: -999;
+	&:focus,
+	&:active,
+	&.focus-visible {
+		color: $ui-green;
+		background-color: white;
+		left: auto;
+		top: auto;
+		width: 30%;
+		height: auto;
+		overflow: auto;
+		margin: 1rem 35%;
+		padding: 5px;
+		text-align: center;
+		font-size: 1.2rem;
+		z-index: 999;
+	}
+}
+
+/* Overrides for pages where we have custom navigation. Yea it's hacky .. */
+.page-onboarding,
+.custom-nav,
+.is-webview {
+	.app-main-menu {
+		display: none;
+	}
+}
+.page-onboarding {
+	button.skip-main {
+		top: 75px;
+	}
+}
+
+/* Main nav styles */
+.app-main-menu {
+	display: block;
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	background: white;
+	box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1);
+	height: $mobileHeaderHeight;
+	@include susy-breakpoint($tablet) {
+		height: $desktopHeaderHeight;
+	}
+
+	.menu-content {
+		@include flexbox(row, center, space-between);
+		height: 100%;
+		padding: 0 1rem;
+		width: 100%;
+		margin: 0 auto;
+
+		@include susy-breakpoint($tablet) {
+			padding: 0 2rem;
+		}
+
+		.find-main-nav {
+			display: block;
+			float: right;
+			padding-bottom: 6px;
+			margin: 0 0.75rem;
+			font-size: 0.875rem;
+
+			button {
+				padding: 0;
+				background-color: #fff;
+				min-width: 0;
+			}
+			@include susy-breakpoint($tablet) {
+				font-size: 1rem;
+				padding-bottom: 1rem;
+				padding-top: 20px;
+				margin: 0 1rem;
+			}
+		}
+	}
+	.menu-logo {
+		width: auto;
+		position: relative;
+		z-index: 15;
+		@include susy-breakpoint($tablet) {
+			width: 48px;
+		}
+		@include susy-breakpoint($desktop) {
+			width: 156px;
+		}
+	}
+
+	.menu-badge {
+		color: $primary;
+		font-size: 2rem;
+		line-height: 0;
+		position: absolute;
+		top: 0;
+		right: -9px;
+		@include susy-breakpoint($desktop) {
+			right: -11px;
+		}
+	}
+
+	.menu-btn,
+	md-menu {
+		border-bottom: 2px solid transparent;
+		padding-bottom: 6px;
+		margin: 0 12px;
+		@include susy-breakpoint($tablet) {
+			margin: 0 1rem;
+			padding-bottom: 1rem;
+			padding-top: 20px;
+		}
+		&.md-open {
+			border-color: $primary;
+		}
+		button {
+			padding: 0;
+			border: none;
+			color: $gray-xdk;
+			border-radius: 0;
+			background: none;
+			font-size: 1rem;
+			min-width: 0;
+			@include susy-breakpoint(0 $mobile-landscape-max) {
+				white-space: normal;
+				word-wrap: break-word;
+				font-size: 0.875rem;
+				text-align: left;
+			}
+		}
+
+		// "Me" icon/avatar
+		.user-menu {
+			padding-bottom: 12px;
+			padding-top: 10px;
+		}
+
+		.menu-me {
+			padding: 0;
+			display: block;
+			height: 2rem;
+			position: relative;
+			top: -3px;
+			@include susy-breakpoint($tablet) {
+				height: 3rem;
+				top: 0;
+			}
+
+			.avatar,
+			.avatar-wrap {
+				width: auto;
+				height: auto;
+			}
+			.avatar-icon,
+			.avatar-wrap img.avatar {
+				width: 2rem;
+				height: 2rem;
+				line-height: 34px;
+				font-family: $font1;
+				position: relative;
+
+				@include susy-breakpoint($tablet) {
+					line-height: 45px;
+					width: 3rem;
+					height: 3rem;
+				}
+			}
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.md-open-menu-container {
+	h3 {
+		margin: 2rem 1.5rem 1rem;
+	}
+
+	.btn {
+		// mvn button
+		width: auto;
+		margin: 0 1rem 1rem;
+	}
+
+	.mobile-close {
+		z-index: 99;
+		@include susy-breakpoint($tablet) {
+			display: none;
+		}
+	}
+	.close-nav {
+		display: block;
+		position: absolute;
+		right: 1.5rem;
+		top: 2.5rem;
+		background: url("/img/icons/close-x.svg") no-repeat;
+		width: 1.25rem;
+		height: 1.25rem;
+		background-size: cover;
+	}
+
+	.md-button {
+		&.menu-top-link {
+			border-bottom: none;
+			height: 1.5rem;
+			padding: 0;
+			color: $ui-green;
+			margin-bottom: 15px;
+			margin-top: -12px;
+			font-weight: 600;
+		}
+		&.my-program {
+			padding-top: 0.5rem;
+		}
+	}
+
+	.md-button.menu-care-team {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		.ct-images {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			align-items: center;
+			position: relative;
+			right: 1.25rem;
+			&.len-1 {
+				.img-1 {
+					right: 0;
+				}
+			}
+			&.len-2 {
+				.img-1 {
+					right: -12px;
+				}
+			}
+			&.len-3 {
+				.img-1 {
+					right: -24px;
+				}
+				.img-2 {
+					right: -12px;
+				}
+			}
+		}
+		.ct-img {
+			width: 38px;
+			height: 38px;
+			position: relative;
+			border: 2px solid white;
+			border-radius: 50%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			&.img-1 {
+				z-index: 2;
+			}
+			&.img-2 {
+				z-index: 1;
+			}
+			&.img-3 {
+				z-index: 0;
+			}
+		}
+	}
+
+	.new-messages-count {
+		position: absolute;
+		right: 0;
+		top: 0.75rem;
+		width: 32px;
+		height: 32px;
+		text-align: center;
+		border-radius: 1rem;
+		line-height: 2;
+		color: white;
+		background: $primary;
+	}
+
+	.pre-cta {
+		max-width: 165px;
+		display: inline-block;
+		color: $gray;
+		+ a {
+			display: inline-block;
+			margin: 0;
+			padding-left: 12px;
+			padding-right: 12px;
+		}
+	}
+}
+
+md-menu-bar {
+	@include flexbox(row, flex-end, center);
+	height: $mobileHeaderHeight;
+	@include susy-breakpoint($tablet) {
+		height: $desktopHeaderHeight;
+	}
+}
+
+.md-in-menu-bar {
+	background: url("/img/icons/caret-right-grn.svg") 92% center no-repeat;
+	transform: all 0.2s ease;
+	&.no-caret {
+		background: none;
+	}
+
+	&:last-child {
+		.md-button {
+			border-bottom: none;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+	&:hover {
+		background-position: 93% center;
+	}
+}
+
+/* Public, unauthed nav */
+.public-menu-container {
+	@include flexbox(row, center, center);
+	.menu-links {
+		margin-right: 0.5rem;
+	}
+	@include susy-breakpoint(0 446px) {
+		.menu-links {
+			display: none;
+		}
+	}
+}
+
+.app-public-ctas {
+	a {
+		margin-left: 5px;
+		min-width: 0;
+		padding: 12px 15px;
+		&:last-child {
+			margin-right: 0;
+		}
+		@include susy-breakpoint($tablet) {
+			margin-left: 1.125rem;
+			padding: 12px 24px;
+		}
+	}
+}
+
+/*!
+ * AngularJS Material Design
+ * https://github.com/angular/material
+ * @license MIT
+ * v1.1.10
+ */
+/*
+html,
+body {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+	min-height: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+*/
+md-backdrop {
+	-webkit-transition: opacity 450ms;
+	transition: opacity 450ms;
+	position: absolute;
+	top: 80px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 11;
+}
+
+md-backdrop.md-select-backdrop {
+	z-index: 81;
+	-webkit-transition-duration: 0;
+	transition-duration: 0;
+}
+md-backdrop.md-dialog-backdrop {
+	z-index: 79;
+}
+md-backdrop.md-bottom-sheet-backdrop {
+	z-index: 69;
+}
+md-backdrop.md-sidenav-backdrop {
+	z-index: 59;
+}
+md-backdrop.md-click-catcher {
+	position: absolute;
+	min-height: 100%;
+}
+md-backdrop.md-opaque {
+	opacity: 0.48;
+}
+md-backdrop.md-opaque.ng-enter {
+	opacity: 0;
+}
+md-backdrop.md-opaque.ng-enter.md-opaque.ng-enter-active {
+	opacity: 0.48;
+}
+md-backdrop.md-opaque.ng-leave {
+	opacity: 0.48;
+	-webkit-transition: opacity 400ms;
+	transition: opacity 400ms;
+}
+md-backdrop.md-opaque.ng-leave.md-opaque.ng-leave-active {
+	opacity: 0;
+}
+[tabindex="-1"] {
+	&:focus {
+		outline: none;
+	}
+}
+.inset {
+	padding: 10px;
+}
+.md-visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	text-transform: none;
+	width: 1px;
+}
+.md-open-menu-container {
+	@include susy-breakpoint(0 $mobile-landscape-max) {
+		left: 0 !important;
+		right: 0 !important;
+		top: $mobileHeaderHeight !important;
+		bottom: 0;
+	}
+	top: $desktopHeaderHeight !important;
+	background: white;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 12;
+	opacity: 0;
+	border-radius: 0 0 2px 2px;
+	max-height: calc(100vh - 10px);
+	overflow: auto;
+	@include susy-breakpoint($tablet) {
+		border: 1px solid $gray-xlt;
+		box-shadow: -3px 3px 14px rgba(0, 0, 0, 0.03), 3px 2px 16px rgba(0, 0, 0, 0.03);
+		border-top: 0;
+	}
+	md-menu-divider {
+		margin-top: 4px;
+		margin-bottom: 4px;
+		height: 1px;
+		min-height: 1px;
+		max-height: 1px;
+		width: 100%;
+	}
+	md-menu-content {
+		> * {
+			opacity: 0;
+		}
+	}
+	&:not(.md-clickable) {
+		pointer-events: none;
+	}
+}
+.md-open-menu-container.md-active {
+	opacity: 1;
+	-webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+	-webkit-transition-duration: 200ms;
+	transition-duration: 200ms;
+	> md-menu-content {
+		> * {
+			opacity: 1;
+			-webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+			transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+			-webkit-transition-duration: 200ms;
+			transition-duration: 200ms;
+			-webkit-transition-delay: 100ms;
+			transition-delay: 100ms;
+		}
+	}
+}
+.md-open-menu-container.md-leave {
+	opacity: 0;
+	-webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+	transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+	-webkit-transition-duration: 250ms;
+	transition-duration: 250ms;
+}
+md-menu-content {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	position: relative;
+	max-width: 540px;
+	padding-bottom: 1.5rem;
+
+	@include susy-breakpoint($mobile-landscape $mobile-landscape-max) {
+		margin: 2rem auto;
+	}
+}
+
+md-menu-item {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-align-content: center;
+	align-content: center;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+	transform: 0.2s ease;
+	cursor: pointer;
+
+	> * {
+		width: 100%;
+		margin: auto 0;
+	}
+
+	> a.md-button {
+		padding-top: 5px;
+	}
+	> .md-button:not(.btn-cta) {
+		text-align: left;
+		display: inline-block;
+		border-radius: 0;
+		margin: auto 0;
+		text-transform: none;
+		height: 100%;
+		width: 100%;
+		padding: 1rem 0;
+		margin: 0 1.5rem;
+		border-bottom: 1px solid $gray-xlt;
+		position: relative;
+
+		&.nopad {
+			padding: 0;
+		}
+
+		&::-moz-focus-inner {
+			padding: 0;
+			border: 0;
+		}
+		md-icon {
+			margin: auto 16px auto 0;
+		}
+		p,
+		.p {
+			display: inline-block;
+			margin: auto;
+		}
+		span {
+			margin-top: auto;
+			margin-bottom: auto;
+
+			&.user-program {
+				color: $gray;
+				display: block;
+				font-size: 14px;
+				text-transform: capitalize;
+				margin-top: -3px;
+			}
+		}
+		.md-ripple-container {
+			border-radius: inherit;
+		}
+	}
+	&#menu-ask-cc {
+		@include flexbox(row, flex-start, center);
+		.ask-cc-img {
+			width: 30px;
+			height: 24px;
+			border-radius: 50%;
+			position: relative;
+			left: 1.5rem;
+			background-size: cover;
+			background-position: center center;
+			margin-top: 5px;
+		}
+		span {
+			color: $gray;
+			margin-left: 0;
+			padding: 5px 0 0 36px;
+			font-size: 14px;
+			height: 36px;
+			border-bottom: none;
+			margin-bottom: 20px;
+			a {
+				text-decoration: none;
+				font-family: $font1-semibold;
+			}
+		}
+	}
+}
+
+[dir="rtl"] {
+	md-menu-item {
+		> .md-button {
+			text-align: right;
+			md-icon {
+				margin: auto 0 auto 16px;
+			}
+		}
+	}
+}
+
+@include susy-breakpoint(0 $mobile-landscape-max) {
+	md-menu-content {
+		min-width: 112px;
+	}
+	md-menu-content[width="3"] {
+		min-width: 168px;
+	}
+	md-menu-content[width="4"] {
+		min-width: 224px;
+	}
+	md-menu-content[width="5"] {
+		min-width: 280px;
+	}
+	md-menu-content[width="6"] {
+		min-width: 336px;
+	}
+	md-menu-content[width="7"] {
+		min-width: 392px;
+	}
+}
+@include susy-breakpoint($tablet) {
+	md-menu-content {
+		min-width: 96px;
+	}
+	md-menu-content[width="3"] {
+		min-width: 192px;
+	}
+	md-menu-content[width="4"] {
+		min-width: 256px;
+	}
+	md-menu-content[width="5"] {
+		min-width: 320px;
+		max-width: 392px;
+	}
+	md-menu-content[width="6"] {
+		min-width: 384px;
+	}
+	md-menu-content[width="7"] {
+		min-width: 448px;
+	}
+}

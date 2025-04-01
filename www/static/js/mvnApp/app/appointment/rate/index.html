@@ -1,0 +1,64 @@
+<main class="app-page">
+	<div class="single-panel rate-appointment">
+		<h3>Review your practitioner</h3>
+		<section class="star-ratings">
+			<div class="rating">
+				<div class="criteria">
+					<h5>Reliability</h5>
+					<star-rating ng-model="ratings.reliability"></star-rating>
+				</div>
+				<p>Was your practitioner timely and professional?</p>
+			</div>
+
+			<div class="rating">
+				<div class="criteria">
+					<h5>Credibility</h5>
+					<star-rating ng-model="ratings.credibility"></star-rating>
+				</div>
+				<p>Did you feel confident in your practitioner?</p>
+			</div>
+
+			<div class="rating">
+				<div class="criteria">
+					<h5>Empathy</h5>
+					<star-rating ng-model="ratings.empathy"></star-rating>
+				</div>
+				<p>Did you feel heard and understood?</p>
+			</div>
+
+			<div class="rating">
+				<div class="criteria">
+					<h5>Satisfaction</h5>
+					<star-rating ng-model="ratings.satisfaction"></star-rating>
+				</div>
+				<p>Did you get what you needed?</p>
+			</div>
+		</section>
+
+		<section>
+			<form name="feedbackForm" class="mvn-form">
+				<h5>Comments</h5>
+				<div class="text-area" ng-class="{ 'has-content': !!feedbackForm.rating_feedback.$viewValue }">
+					<textarea class="mvn-form-input" name="rating_feedback" ng-model="ratings.comment"></textarea>
+					<label class="mvn-form-label">Any additional feedback?</label>
+				</div>
+				<p class="legal">
+					Feedback provided here may be shared anonymously and used for product improvements or marketing.
+				</p>
+				<section class="form-actions">
+					<a
+						class="btn btn-cta"
+						ng-click="submitFeedback()"
+						ng-class="{'disabled' : feedbackForm.$invalid  }"
+						ng-disabled="feedbackForm.$invalid"
+						>Submit review</a
+					>
+				</section>
+			</form>
+		</section>
+
+		<section ng-if="!apptToRate">
+			<h3>No appointment selected to rate...</h3>
+		</section>
+	</div>
+</main>

@@ -1,0 +1,22 @@
+<div class="post-list-view">
+	<post-author class="post-author" author="post.author" datetime="post.created_at"></post-author>
+	<h2 class="h5"><a href="" ng-click="openPost()">{{ post.title | trimString:true:70:true }}</a></h2>
+	<p class="post-list-body">{{ post.body | trimString:true:200:true }}</p>
+	<div ng-if="user.role === 'practitioner'" class="post-reply-count">
+		<p ng-switch="post.reply_counts.practitioners">
+			<a href="" ng-click="openPost()"
+				>{{post.reply_counts.practitioners}} Practitioner <span ng-switch-when="1">reply</span
+				><span ng-switch-default>replies</span></a
+			>
+		</p>
+		<p ng-switch="post.reply_counts.members">
+			<a href="" ng-click="openPost()"
+				>{{post.reply_counts.members}} Member <span ng-switch-when="1">reply</span
+				><span ng-switch-default>replies</span></a
+			>
+		</p>
+	</div>
+	<p class="btn-container">
+		<a class="btn btn-tertiary btn-bold" href="" ng-click="openPost()">{{ btnText }}</a>
+	</p>
+</div>

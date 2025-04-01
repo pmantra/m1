@@ -1,0 +1,42 @@
+
+
+<div class="" ng-if="$ctrl.assessment">
+	<div class="quiz-container">
+	
+		<div class="quiz-body">
+			<div class="question">
+				<p class="legal">
+					Question {{ ::$ctrl.question.id }} of {{ ::$ctrl.assessment.question_json.questions.length }}
+				</p>
+				<h3 class="mobile-none">{{ $ctrl.question.body }}</h3>
+				<p class="mobile-only lg">{{ $ctrl.question.body }}</p>
+			</div>
+			<form name="$ctrl.assessmentParentAnswer" class="form secondary-app">
+				<div class="clearfix" ng-class="{'answered' : $ctrl.question.answered }">
+					<div class="options-container quiz-question-{{ $ctrl.question.widget.options.length }}-choices">
+						<div ng-repeat="opt in $ctrl.question.widget.options" class="option" ng-click="$ctrl.question.answer.body=opt.value; $ctrl.onChange()"
+						ng-model="$ctrl.question.answer.body" ng-class="{'selected' : $ctrl.question.answer.body === opt.value }">
+							<span class="opt-letter-index">
+								<span class="opt-label" ng-if="$index === 0">A</span>
+								<span class="opt-label" ng-if="$index === 1">B</span>
+								<span class="opt-label" ng-if="$index === 2">C</span>
+								<span class="opt-label" ng-if="$index === 3">D</span>
+								<span class="opt-label" ng-if="$index === 4">E</span>
+							</span>
+							{{ ::opt.label }}
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	
+		<div class="next-question clearfix">
+			<a class="btn btn-cta" href="" ng-click="$ctrl.saveAnswers()" ng-disabled="$ctrl.btnDisabled"
+			ng-class="{'disabled' : $ctrl.btnDisabled }">
+				<span ng-if="!$ctrl.lastQ">Next question</span>
+				<span ng-if="$ctrl.lastQ">Finish</span>
+			</a>
+		</div>
+	</div>
+</div>
+	

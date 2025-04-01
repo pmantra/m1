@@ -1,0 +1,29 @@
+[
+  {
+    "type": "role",
+    "role_name": "member",
+    "capabilities": []
+  },
+  {
+    "type": "role",
+    "role_name": "staff",
+    "capabilities": [
+      {
+        "type": "capability",
+        "method": "get",
+        "object_type": "admin"
+      },
+      {
+        "type": "capability",
+        "method": "get",
+        "object_type": "admin_all"
+      }
+    ]
+  },
+  {
+  	"type": "user",
+   	"role": "staff",
+   	"otp_secret": "admin",
+   	"email": "test+staff@mavenclinic.com"
+  }
+]

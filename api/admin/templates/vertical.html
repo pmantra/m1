@@ -1,0 +1,18 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    {{ super() }}
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        function renderBuilder() {
+            AdminTool("VerticalProductEditor", document.getElementById("override-with-react").parentElement, {
+                products: {{ products_json|safe }},
+                verticalId: {{ vertical_id|safe }}
+            });
+        }
+
+        renderBuilder()
+    })
+</script>
+{% endblock %}

@@ -1,0 +1,32 @@
+<div class="center need-medication-modal">
+	<h1 class="h3">Think you might need a prescription?</h1>
+
+	<div class="need-medication-icon">
+		<img src="/img/app/book/medication.png" width="120" height="120" alt="Medication icon" />
+	</div>
+
+	<div class="need-medication-opts">
+		<div class="p">
+			<button role="button" type="button" name="Yes" value="yes" class="btn btn-cta" ng-click="yesPrescription()">
+				Yes
+			</button>
+		</div>
+		<div class="p">
+			<button role="button" type="button" name="No" value="no" class="btn btn-cta" ng-click="noPrescription()">
+				No
+			</button>
+		</div>
+		<div class="p">
+			<button
+				role="button"
+				type="button"
+				name="I'm not sure"
+				value="I'm not sure"
+				class="btn btn-tertiary"
+				ng-click="dontKnowPrescription()"
+			>
+				I'm not sure
+			</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,264 @@
+#: wallet/models/constants.py:150
+msgid "payments_wallet_account_deactivated_deductible"
+msgstr ""
+
+#: wallet/models/constants.py:160
+msgid "payments_wallet_account_deactivated_employment_change"
+msgstr ""
+
+#: wallet/models/constants.py:147
+msgid "payments_wallet_account_deactivated_fraud"
+msgstr ""
+
+#: wallet/models/constants.py:144
+msgid "payments_wallet_account_deactivated_ineligible"
+msgstr ""
+
+#: wallet/models/constants.py:154
+msgid "payments_wallet_account_deactivated_lost"
+msgstr ""
+
+#: wallet/models/constants.py:141
+msgid "payments_wallet_account_deactivated_past_due"
+msgstr ""
+
+#: wallet/models/constants.py:157
+msgid "payments_wallet_account_deactivated_plan_change"
+msgstr ""
+
+#: wallet/models/constants.py:108
+msgid "payments_wallet_infertility_expense"
+msgstr ""
+
+#: wallet/models/constants.py:224
+msgid "payments_wallet_invite_accepted"
+msgstr ""
+
+#: wallet/models/constants.py:225
+msgid "payments_wallet_invite_accepted_failure"
+msgstr ""
+
+#: wallet/models/constants.py:232
+msgid "payments_wallet_invite_already_active"
+msgstr ""
+
+#: wallet/models/constants.py:230
+msgid "payments_wallet_invite_already_expired"
+msgstr ""
+
+#: wallet/models/constants.py:231
+msgid "payments_wallet_invite_already_used"
+msgstr ""
+
+#: wallet/models/constants.py:222
+msgid "payments_wallet_invite_canceled"
+msgstr ""
+
+#: wallet/models/constants.py:223
+msgid "payments_wallet_invite_canceled_failure"
+msgstr ""
+
+#: wallet/models/constants.py:233
+msgid "payments_wallet_invite_declined"
+msgstr ""
+
+#: wallet/models/constants.py:229
+msgid "payments_wallet_invite_expired"
+msgstr ""
+
+#: wallet/models/constants.py:220
+msgid "payments_wallet_invite_found"
+msgstr ""
+
+#: wallet/models/constants.py:235
+msgid "payments_wallet_invite_help_needed"
+msgstr ""
+
+#: wallet/models/constants.py:226
+msgid "payments_wallet_invite_info_does_not_match"
+msgstr ""
+
+#: wallet/models/constants.py:221
+msgid "payments_wallet_invite_not_found"
+msgstr ""
+
+#: wallet/models/constants.py:234
+msgid "payments_wallet_invite_unsharable"
+msgstr ""
+
+#: wallet/models/constants.py:176
+msgid "payments_wallet_request_state_approved"
+msgstr ""
+
+#: wallet/models/constants.py:168
+msgid "payments_wallet_request_state_approved_debit_card"
+msgstr ""
+
+#: wallet/models/constants.py:182
+msgid "payments_wallet_request_state_denied"
+msgstr ""
+
+#: wallet/models/constants.py:185
+msgid "payments_wallet_request_state_failed"
+msgstr ""
+
+#: wallet/models/constants.py:197
+msgid "payments_wallet_request_state_ineligible"
+msgstr ""
+
+#: wallet/models/constants.py:194
+msgid "payments_wallet_request_state_insufficient"
+msgstr ""
+
+#: wallet/models/constants.py:188
+msgid "payments_wallet_request_state_needs_receipt"
+msgstr ""
+
+#: wallet/models/constants.py:169
+msgid "payments_wallet_request_state_new"
+msgstr ""
+
+#: wallet/models/constants.py:173
+msgid "payments_wallet_request_state_pending_input"
+msgstr ""
+
+#: wallet/models/constants.py:170
+msgid "payments_wallet_request_state_pending_review"
+msgstr ""
+
+#: wallet/models/constants.py:203
+msgid "payments_wallet_request_state_refunded"
+msgstr ""
+
+#: wallet/models/constants.py:179
+msgid "payments_wallet_request_state_reimbursed"
+msgstr ""
+
+#: wallet/models/constants.py:200
+msgid "payments_wallet_request_state_resolved"
+msgstr ""
+
+#: wallet/models/constants.py:191
+msgid "payments_wallet_request_state_submitted"
+msgstr ""
+
+#: wallet/models/constants.py:214
+msgid "payments_wallet_share_already_a_member"
+msgstr ""
+
+#: wallet/models/constants.py:215
+msgid "payments_wallet_share_already_pending"
+msgstr ""
+
+#: wallet/models/constants.py:213
+msgid "payments_wallet_share_help_needed"
+msgstr ""
+
+#: wallet/models/constants.py:212
+msgid "payments_wallet_share_invalid_age"
+msgstr ""
+
+#: wallet/models/constants.py:211
+msgid "payments_wallet_share_invalid_email"
+msgstr ""
+
+#: wallet/models/constants.py:210
+msgid "payments_wallet_share_no_access"
+msgstr ""
+
+#: wallet/models/constants.py:216
+msgid "payments_wallet_share_sent"
+msgstr ""
+
+#: wallet/resources/reimbursement_wallet.py:705
+msgid "reimbursement_request_claims_processing"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:550
+msgid "reimbursement_request_cost_share_details_reimbursement_expected_message"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:783
+msgid "reimbursement_request_details_credits_details_singular_text"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:786
+msgid "reimbursement_request_details_member_credits_details_plural_text"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:750
+msgid "reimbursement_request_details_member_responsibility_breakdown_coinsurance"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:756
+msgid "reimbursement_request_details_member_responsibility_breakdown_copay"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:744
+msgid "reimbursement_request_details_member_responsibility_breakdown_deductible"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:762
+msgid "reimbursement_request_details_member_responsibility_breakdown_not_covered"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:835
+msgid "reimbursement_request_details_member_responsibility_breakdown_hra_applied"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:736
+msgid "reimbursement_request_details_member_responsibility_breakdown_your_responsibility"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:812
+msgid "reimbursement_request_details_refund_explanation_content_0"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:815
+msgid "reimbursement_request_details_refund_explanation_content_1"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:810
+msgid "reimbursement_request_details_refund_explanation_label"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:688
+msgid "reimbursement_request_details_reimbursement_breakdown_maven_benefit"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:785
+msgid "reimbursement_request_details_reimbursement_breakdown_hra_credit"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:682
+msgid "reimbursement_request_details_reimbursement_breakdown_reimbursement"
+msgstr ""
+
+#: wallet/services/reimbursement_request.py:685
+msgid "reimbursement_request_details_reimbursement_breakdown_reimbursement_expected"
+msgstr ""
+
+#: wallet/resources/reimbursement_wallet.py:651
+msgid "reimbursement_request_estimated_return"
+msgstr ""
+
+#: wallet/resources/reimbursement_wallet.py:666
+msgid "reimbursement_request_expected_total_reimbursement"
+msgstr ""
+
+#: wallet/resources/reimbursement_wallet.py:699
+msgid "reimbursement_request_member_responsibility_will_be_deducted_message"
+msgstr ""
+
+#: wallet/resources/reimbursement_wallet.py:631
+msgid "reimbursement_request_original_claim"
+msgstr ""
+
+#: wallet/resources/reimbursement_wallet.py:676
+msgid "reimbursement_request_original_claims_total"
+msgstr ""
+
+#: wallet/resources/reimbursement_wallet.py:716
+msgid "reimbursement_request_view_all_claims_details_message"
+msgstr ""
+

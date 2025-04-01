@@ -1,0 +1,85 @@
+/* ----- PRACTITIONERS PAGE ----- */
+
+.page-practitioners {
+	.hero {
+		background: #fddec1 url("/img/practitioners/hero.jpg") top center no-repeat;
+		background-size: cover;
+		background-color: $blush-20;
+
+		.text-container {
+			max-width: 650px;
+		}
+
+		.btn-cta {
+			margin-top: 15px;
+		}
+	}
+
+	.ways-to-join {
+		.grid-container {
+			@include flexbox(column, center, center);
+			@include susy-breakpoint($desktop) {
+				@include flexbox(row, center, center);
+			}
+		}
+		.product-shot {
+			width: 70%;
+
+			img {
+				width: 100%;
+			}
+
+			@include susy-breakpoint($desktop) {
+				width: 50%;
+			}
+
+			@include susy-breakpoint($desktop-md) {
+				width: 58%;
+			}
+		}
+
+		hr.mint {
+			background: $mint-50;
+		}
+	}
+
+	.how-maven-works {
+		background-color: $macaroon-40;
+
+		.feature-img {
+			background: url("/img/practitioners/practitioner.png") center center no-repeat;
+			height: 320px;
+			background-size: contain;
+			@include susy-breakpoint($tablet) {
+				height: auto;
+				width: 38% !important; // blech forcing this because this image is taller than the other ones we're using in this style
+				background-position: left center;
+			}
+		}
+	}
+
+	.practitioner-testimonials {
+		background: $mktg-green-lt;
+
+		.testimonial {
+			background-color: white;
+			height: 540px;
+
+			@include susy-breakpoint(0 $desktop-md) {
+				p,
+				.p {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+
+	.practitioner-sign-up {
+		background: $macaroon-20;
+		h2 {
+			max-width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}

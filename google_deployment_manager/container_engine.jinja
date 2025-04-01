@@ -1,0 +1,20 @@
+resources:
+- name: {{ properties['cluster_name'] }}
+  type: container.v1.cluster
+  properties:
+    zone: {{ properties['zone'] }}
+    cluster:
+      description: "A maven cluster"
+      initialNodeCount: {{ properties['node_count'] }}
+      loggingService: none
+      network: {{ properties['network'] }}
+      nodeConfig:
+        machineType: {{ properties['node_type'] }}
+        oauthScopes:
+          - https://www.googleapis.com/auth/sqlservice.admin
+          - https://www.googleapis.com/auth/compute
+          - https://www.googleapis.com/auth/devstorage.read_write
+          - https://www.googleapis.com/auth/bigquery
+      master_auth:
+        username: {{ properties['master_username'] }}
+        password: {{ properties['master_password'] }}

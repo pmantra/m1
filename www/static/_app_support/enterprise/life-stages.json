@@ -1,0 +1,71 @@
+[
+  {
+    "name": "first-pregnancy",
+    "title": "I'm pregnant",
+	"verification_reason": "pregnancy",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/first-pregnancy.svg"
+  },
+  {
+    "name": "mom",
+    "title": "I just gave birth",
+    "verification_reason": "postpartum",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/mom.svg"
+  },
+  {
+    "name": "partner-pregnant",
+    "title": "My partner is pregnant",
+    "verification_reason": "partner_pregnant",
+    "ispartner": true,
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/partner-pregnant.svg"
+  },
+  {
+    "name": "partner-new-mom",
+    "title": "My partner just gave birth",
+    "verification_reason": "partner_newparent",
+    "ispartner": true,
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/partner-new-mom.svg"
+  },
+  {
+    "name": "fertility",
+    "title": "I'm undergoing or considering IUI/IVF",
+    "verification_reason": "fertility",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/trying.svg"
+  },
+  {
+    "name": "partner_fertility",
+    "title": "My partner is undergoing or considering IUI/IVF",
+    "verification_reason": "partner_fertility",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/trying.svg"
+  },
+
+   {
+    "name": "egg_freezing",
+    "title": "I want to freeze my eggs",
+    "verification_reason": "egg_freezing",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/egg-freezing.svg"
+  },
+  {
+    "name": "surrogacy",
+    "title": "I'm using a surrogate",
+    "verification_reason": "surrogacy",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/surrogacy.svg"
+  },
+  {
+    "name": "adopting",
+    "title": "I'm adopting",
+    "verification_reason": "adoption",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/adopting.svg"
+  },
+  {
+    "name": "pregnancyloss",
+    "title": "I've experienced a loss",
+    "verification_reason": "pregnancyloss",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/experienced-loss.svg"
+  },
+  {
+    "name": "other",
+    "title": "None of these apply to me",
+    "verification_reason": "other",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/other.svg"
+  }
+]

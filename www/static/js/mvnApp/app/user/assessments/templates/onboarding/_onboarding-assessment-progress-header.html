@@ -1,0 +1,21 @@
+<div class="ob-nav-progress">
+	<ul>
+		<li
+			ng-repeat="item in $ctrl.items"
+			ng-class="{ 'is-completed' : item.isCompleted, 'is-active': item.isActive }"
+			class="nav-item"
+		>
+			<div class="item-status">
+				<span ng-if="!item.isCompleted">
+					{{ item.id }}
+				</span>
+				<span ng-if="item.isCompleted">
+					<svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1.408 4.25L0 5.556l3.626 3.91 7.382-7.96L9.6.2 3.626 6.64 1.408 4.25z" fill="#fff" />
+					</svg>
+				</span>
+			</div>
+			{{ item.title }}
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,28 @@
+<div class="center">
+
+	<div class="onboarding-download-the-app">
+		<img src="/img/app/user/onboarding/onboarding-download-the-app.jpg" alt="Download the Maven app" />
+	</div>
+
+	<div ng-if="$ctrl.isNativePlatform">
+		<h2 class="serif">You're booked!</h3>
+		<p>{{ $ctrl.user.profiles.member.care_coordinators[0] ? $ctrl.user.profiles.member.care_coordinators[0].first_name : "Kaitlyn" }} is looking forward to video chatting with you.</p>
+
+		<mvn-onboarding-bottom-nav>
+			<mvn-dynamic-cta opts="$ctrl.nativeCtaOpts" user="$ctrl.user" event-name="native-exit-onboarding-post-booking"></mvn-dynamic-cta>
+		</mvn-onboarding-bottom-nav>
+	</div>
+
+	<div ng-if="!$ctrl.isNativePlatform">
+		<h2 class="serif">Download the app</h2>
+		<p>Before your appointment, download the Maven app.<br/>
+		It’s the easiest way to connect with your Care Team and get healthcare on the go.</p>
+		<p ng-if="$ctrl.user.profiles.member.tel_number">We'll text a link to download the app to: {{ $ctrl.user.profiles.member.tel_number | telNumberFormat }}.</p>
+
+		<mvn-onboarding-bottom-nav>
+			<a class="btn btn-tertiary" href="" ng-click="$ctrl.noToDownload()">No thanks</a>
+			<mvn-sms-the-app user="$ctrl.user"  on-complete="$ctrl.smsSent()" sms-template="sms1" btn-cta="Text me the link"></mvn-sms-the-app>
+		</mvn-onboarding-bottom-nav>
+	</div>
+
+</div>

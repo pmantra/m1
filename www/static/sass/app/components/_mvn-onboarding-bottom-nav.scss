@@ -1,0 +1,28 @@
+/* Onboarding bottom nav component */
+
+mvn-onboarding-bottom-nav {
+	display: block;
+	width: 100%;
+	background: white;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1rem;
+	border-top: 1px solid $gray-xlt;
+	z-index: 1;
+	@include susy-breakpoint($mobile-landscape) {
+		padding: 1rem 2rem;
+	}
+	@include media-desktop-400-zoom {
+		border-top: none;
+		padding-top: 0;
+		position: relative;
+	}
+	.onboarding-bottom-nav ng-transclude {
+		@include flexbox(row, center, flex-end);
+		.btn-cta {
+			margin-left: 2rem;
+		}
+	}
+}

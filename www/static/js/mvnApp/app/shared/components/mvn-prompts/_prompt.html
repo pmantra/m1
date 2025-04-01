@@ -1,0 +1,14 @@
+<div class="prompt">
+    <div class="dismiss-wrap">
+        <div class="dismiss-prompt back-prompt mobile-only" ng-if="dismissAction && data.style === 'fullscreen'">
+            <a href="" title="Cancel" ng-click="dismissCard(dismissAction)"
+                ><svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.2 1.96L1 8.98l7.2 7.022" stroke="#263633" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+
+        <div class="dismiss-prompt close-prompt" ng-if="data.style === 'overlay'">
+            <a ng-click="hidePrompt()" href="" title="Close"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l9 9M10 1l-9 9" stroke="#263633" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+    </div>
+
+    <dashboard-card ng-if="data.type === 'transition' || data.type === 'direct-action' " template-name="transition" card-data="data" class="{{ data.type }} prompt-card" action-callback="actionCallback"/>
+</div>

@@ -1,0 +1,83 @@
+{% extends 'admin/base.html' %}
+
+{% block body %}
+    <h3>User Blocked Attributes</h3>
+    <p>If a user is associated with a value in this list, they will have their account disabled when they try to log in
+        or access our API.</p>
+    <p>This is to prevent malicious use of Maven when we know that a user is re-using some attributes (.e.g phone number
+        or credit card) across user accounts.</p>
+    <p>If we know of a specific user who needs to be blocked, it is simpler to just navigate to their User Profile in
+        Admin and deactivate the account that way.</p>
+    <hr>
+
+    <h3>Current values in Block List</h3>
+    {% if not attributes %}
+        <p>Nothing currently in the blocked attributes list<p>
+    {% endif %}
+    {% for attribute, members in attributes %}
+        <p>Blocked {{ attribute }}:</p>
+        <table class="table table-bordered">
+            {% for member in members %}
+                <tr>
+                    <td>{{ member }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+    <hr>
+
+    {% if not can_delete %}
+        <div class="alert-danger">You don't have permissions to remove values. Please contact the core-service or security team.</div>
+    {% endif %}
+
+    <h3>Remove values from the block list</h3>
+    <p>Remove values from the block list by selecting an attribute (phone number) and value ("12028675309")</p>
+    <p>NOTE: This will allow users previously blocked to regain account access</p>
+    <form method="post" action="/admin/block_list">
+        <div>
+            <label>Attribute to unblock:</label>
+            <select id="attribute" name="attribute" {% if not can_delete %}disabled{% endif %}>
+                <option value=""></option>
+                {% for attribute in blockable_attributes %}
+                    <option value="{{ attribute }}">{{ attribute }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label>Value to unblock for that attribute</label>
+            <input type="string" id="value" name="value" placeholder="Enter  avalue" required {% if not can_delete %}disabled{% endif %}>
+        </div>
+        <div>
+            <input type="hidden" id="unblock" name="unblock" value="unblock" {% if not can_delete %}disabled{% endif %}>
+            <input type="submit" class="btn btn-warning btn-medium" value="Remove from block list"
+                   {% if not can_delete %}disabled{% endif %}>
+        </div>
+    </form>
+    <hr>
+
+    {% if not can_create %}
+        <div class="alert-danger">You don't have permissions to create new values. Please contact the core-service or security team.</div>
+    {% endif %}
+    <h3>Add new values to Block List</h3>
+    <p>Add to the block list by selecting an attribute (phone number) and value ("12028675309")</p>
+    <form method="post" action="/admin/block_list">
+        <div>
+            <label>Attribute to block:</label>
+            <select id="attribute" name="attribute" {% if not can_create %}disabled{% endif %}>
+                <option value=""></option>
+                {% for attribute in blockable_attributes %}
+                    <option value="{{ attribute }}">{{ attribute }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label>Value to block for that attribute</label>
+            <input type="string" id="value" name="value" placeholder="Enter a value"
+                   {% if not can_create %}disabled{% endif %} required>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-danger btn-medium" value="Add to block list"
+                   {% if not can_create %}disabled{% endif %} required>
+        </div>
+    </form>
+{% endblock %}

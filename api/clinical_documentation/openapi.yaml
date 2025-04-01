@@ -1,0 +1,934 @@
+openapi: 3.0.3
+info:
+  title: Maven Clinic MPractice API
+  version: 1.0.0
+  description: API endpoints related to Clinical Documentation
+servers:
+  - url: https://www.mavenclinic.com
+  - url: https://www.qa1.mvnapp.net
+  - url: https://www.qa2.mvnapp.net
+  - url: https://www.staging.mvnapp.net
+paths:
+  /api/v2/clinical_documentation/post_appointment_notes:
+    get:
+      summary: Retrieve post appointment notes
+      description: >-
+        Used to get a list of post appointment notes. Hide the draft content of note for `member` role
+      tags:
+        - MPractice
+      parameters:
+      - name: appointment_ids
+        description: List of appointment IDs to retrieve notes for
+        in: query
+        required: true
+        schema:
+          type: array
+          items:
+            type: integer
+        example: [101,102,103]
+      - name: role
+        description: User role making the request
+        in: query
+        required: true
+        schema:
+          type: string
+        example: "practitioner"
+      responses:
+        '200':
+          description: Successfully retrieved post appointment notes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPostAppointmentNotesResponseSchemaV3'
+              example:
+                post_appointment_notes:
+                  - id: 1
+                    appointment_id: 101
+                    created_at: "2015-03-17T18:30:00"
+                    content: "Note content here"
+                    draft: false
+                    modified_at: "2015-03-17T18:30:00"
+                    message_id: 10
+                  - id: 2
+                    appointment_id: 102
+                    created_at: "2021-03-17T18:30:00"
+                    content: "Another note content here"
+                    draft: true
+                    modified_at: "2024-03-17T18:30:00"
+                    message_id: 7
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not found
+        '500':
+          description: Internal error
+  /api/v2/clinical_documentation/structured_internal_notes:
+    get:
+      summary: Retrieves structured internal notes
+      description: >-
+        Used to get strucutred internal notes.
+      tags:
+        - MPractice
+      parameters:
+        - name: appointment_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 100
+        - name: practitioner_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 200
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StructuredInternalNoteSchemaV3'
+              example:
+                questionnaire:
+                  id: "1"
+                  sort_order: 1
+                  oid: "addendum_notes"
+                  title_text: "title"
+                  description_text: "description"
+                  soft_deleted_at: None
+                  trigger_answer_ids: [ "1" ]
+                  question_sets:
+                    - id: "1"
+                      oid: "addendum_notes"
+                      sort_order: 1
+                      prerequisite_answer_id: None
+                      soft_deleted_at: None
+                      questions:
+                        - id: "1"
+                          sort_order: 1
+                          label: "label"
+                          type: "CONDITION"
+                          required: false
+                          oid: "addendum_notes"
+                          non_db_answer_options_json: None
+                          soft_deleted_at: None
+                          answers:
+                            - id: "1"
+                              sort_order: 1
+                              text: "test text"
+                              oid: "addendum_notes"
+                              soft_deleted_at: None
+                question_sets:
+                  - id: "1"
+                    oid: "addendum_notes"
+                    sort_order: 1
+                    prerequisite_answer_id: None
+                    soft_deleted_at: None
+                    questions:
+                      - id: "1"
+                        sort_order: 1
+                        label: "label"
+                        type: "CONDITION"
+                        required: false
+                        oid: "addendum_notes"
+                        non_db_answer_options_json: None
+                        soft_deleted_at: None
+                        answers:
+                          - id: "1"
+                            sort_order: 1
+                            text: "test text"
+                            oid: "addendum_notes"
+                            soft_deleted_at: None
+                recorded_answer_set:
+                  id: "1"
+                  questionnaire_id: "1"
+                  modified_at: "2024-02-01T00:00:00Z"
+                  submitted_at: "2024-01-01T00:00:00Z"
+                  source_user_id: 1
+                  draft: false
+                  appointment_id: 997948365
+                  recorded_answers:
+                    - appointment_id: 997948365
+                      user_id: 1
+                      question_id: "1"
+                      question_type: "CONDITION"
+                      answer_id: "1"
+                      text: "test_text"
+                      date: "2024-03-22"
+                      payload:
+                        text: "test_text"
+                recorded_answers:
+                  - appointment_id: 997948365
+                    user_id: 1
+                    question_id: "1"
+                    question_type: "CONDITION"
+                    answer_id: "1"
+                    text: "test_text"
+                    date: "2024-03-22"
+                    payload:
+                      text: "test_text"
+
+  /api/v2/clinical_documentation/provider_addenda:
+    get:
+      summary: Retrieves provider addenda and questionnaire data
+      description: >-
+        Used to get provider addenda and questionnaire data.
+      tags:
+        - MPractice
+      parameters:
+        - name: appointment_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 100
+        - name: practitioner_id
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 200
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProviderAddendaAndQuestionnaireSchemaV3'
+              example:
+                questionnaire:
+                  id: "123456"
+                  sort_order: 1
+                  oid: "65432"
+                  title_text: "Health Survey"
+                  description_text: "A detailed health survey for the patient."
+                  soft_deleted_at: "2022-05-01T00:00:00"
+                  trigger_answer_ids:
+                    - "345"
+                    - "556"
+                  question_sets:
+                    - id: "2341"
+                      oid: "22334"
+                      sort_order: 1
+                      prerequisite_answer_id: "112"
+                      soft_deleted_at: "2022-05-01T00:00:00"
+                      questions:
+                        - id: "4467"
+                          sort_order: 1
+                          label: "Do you smoke?"
+                          type: "boolean"
+                          required: false
+                          oid: "445"
+                          non_db_answer_options_json: {}
+                          soft_deleted_at: "2022-05-01T00:00:00"
+                          answers:
+                            - id: "345"
+                              sort_order: 1
+                              text: "Yes"
+                              oid: "65432"
+                              soft_deleted_at: "2022-05-01T00:00:00"
+                            - id: "556"
+                              sort_order: 2
+                              text: "No"
+                              oid: "65432"
+                              soft_deleted_at: "2022-05-01T00:00:00"
+                provider_addenda:
+                  - id: "add123"
+                    questionnaire_id: "123456"
+                    associated_answer_id: "345"
+                    associated_question_id: "367"
+                    submitted_at: "2022-01-01T00:00:00Z"
+                    user_id: 789
+                    appointment_id: 123
+                    provider_addendum_answers:
+                      - question_id: "367"
+                        answer_id: "345"
+                        text: "Yes"
+                        date: "2022-01-01"
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not found
+        '500':
+          description: Internal error
+  /api/v2/clinical_documentation/member_questionnaires:
+    get:
+      summary: Retrieve member questionnaires
+      description: Returns one or more post-appointment surveys based on an appointment's `survey_type` attribute
+      tags:
+        - Member
+      responses:
+        '200':
+          description: successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetMemberQuestionnairesResponseSchemaV3'
+  /api/v2/clinical_documentation/questionnaire_answers:
+    post:
+      summary: Submit answers to post-appointment questionnaire(s)
+      description: Sends a request with the user's answers to the post-appointment questionnaire(s)
+      tags:
+        - Member
+      responses:
+        '200':
+          description: successful submission
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/AnswersRequest'
+
+  /api/v1/clinical_documentation/templates:
+    get:
+      summary: Get a list of post-appointment note templates
+      description: >-
+        Returns a non-paginated list of templates, sorted by sort_order first and created_at second
+      tags:
+        - MPractice Core
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetTemplatesResponse"
+              examples:
+                example_1:
+                  $ref: "#/components/examples/GetTemplatesResponse"
+        403:
+          description: Unauthorized user
+        500:
+          description: Internal error
+    post:
+      summary: Create a new post-appointment note template
+      description:
+        Creates a template for an authorized user by owner_id, if the user has no other templates with the same title
+      tags:
+        - MPractice Core
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateTemplateRequest"
+            examples:
+              complete:
+                summary: Create template request object
+                value:
+                  title: "UCP Post-intro note"
+                  text: "Hi [member_first_name]! Thanks again for meeting with me today!(...)"
+                  is_global: false
+                  sort_order: 0
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WrappedTemplate"
+              examples:
+                example_1:
+                  $ref: "#/components/examples/CreateTemplateResponse"
+        400:
+          description: Error in input
+        403:
+          description: Unauthorized user
+        500:
+          description: Internal error
+  /api/v1/clinical_documentation/templates/{template_id}:
+    patch:
+      summary: Edit an existing post-appointment note template
+      description:
+        Updates one or more of the title, text, sort_order, or is_global values of an existing template by owner_id
+      tags:
+        - MPractice Core
+      parameters:
+        - $ref: "#/components/parameters/TemplateId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EditTemplateRequest"
+            examples:
+              title only:
+                value:
+                  title: "UCP Post-intro note"
+              text only:
+                value:
+                  text: "Hi [member_full_name]! Thanks again for meeting with me today!(...)"
+              sort_order only:
+                value:
+                  sort_order: 1
+              is_global only:
+                value:
+                  is_global: true
+              title and text:
+                value:
+                  title: "UCP Post-intro"
+                  text: "Hi [member_full_name]! Thanks again for meeting with me today!(...)"
+              complete:
+                value:
+                  title: "UCP Post-intro"
+                  text: "Hi [member_full_name]! Thanks again for meeting with me today!(...)"
+                  is_global: true
+                  sort_order: 1
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WrappedTemplate"
+              examples:
+                example_1:
+                  $ref: "#/components/examples/EditTemplateResponse"
+        400:
+          description: Error in input
+        403:
+          description: Unauthorized user
+        404:
+          description: Template does not exist
+        500:
+          description: Internal error
+    delete:
+      summary: Delete an existing post-appointment note template
+      description:
+        Deletes a template by id which belongs to the authorized user
+      tags:
+        - MPractice Core
+      parameters:
+        - $ref: "#/components/parameters/TemplateId"
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeleteTemplateResponse"
+              examples:
+                example_1:
+                  $ref: "#/components/examples/DeleteTemplateResponse"
+        403:
+          description: Unauthorized user
+        404:
+          description: Template does not exist
+        500:
+          description: Internal error
+
+components:
+  parameters:
+    OrderDirection:
+      name: order_direction
+      in: query
+      required: false
+      schema:
+        $ref: "#/components/schemas/OrderDirection"
+    TemplateId:
+      name: template_id
+      in: path
+      required: true
+      schema:
+        $ref: "#/components/schemas/PositiveInteger"
+
+  examples:
+    GetTemplatesResponse:
+      summary: Response for GetTemplate
+      value:
+        pagination:
+          total: 100
+          order_direction: "desc"
+        data:
+          - id: 123
+            owner_id: 33
+            is_global: false
+            title: "UCP Post-intro note"
+            text: "Hi [member_first_name]! Thanks again for meeting with me today!(...)"
+            sort_order: 0
+            created_at: "2023-12-02T17:45:00"
+            modified_at: "2023-12-02T17:45:00"
+    CreateTemplateResponse:
+      summary: Response for CreateTemplate
+      value:
+        data:
+          id: 123
+          owner_id: 33
+          is_global: false
+          title: "UCP Post-intro note"
+          text: "Hi [member_first_name]! Thanks again for meeting with me today!(...)"
+          sort_order: 0
+          created_at: "2023-12-02T17:45:00"
+          modified_at: "2023-12-02T17:45:00"
+    EditTemplateResponse:
+      summary: Response for EditTemplate
+      value:
+        data:
+          id: 123
+          owner_id: 33
+          is_global: true
+          title: "UCP Post-intro"
+          text: "Hi [member_full_name]! Thanks again for meeting with me today!(...)"
+          sort_order: 1
+          created_at: "2023-12-02T17:45:00"
+          modified_at: "2023-12-02T18:12:00"
+    DeleteTemplateResponse:
+      summary: Response for DeleteTemplate
+      value:
+        data:
+          success: true
+          message: null
+
+  schemas:
+    IntegerWithDefaultV3:
+      type: integer
+    MavenDateTimeV3:
+      type: string
+      format: date-time
+    StringWithDefaultV3:
+      type: string
+    BooleanWithDefault:
+      type: boolean
+    PostAppointmentNoteSchemaV3:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/IntegerWithDefaultV3'
+        appointment_id:
+          $ref: '#/components/schemas/IntegerWithDefaultV3'
+        created_at:
+          $ref: '#/components/schemas/MavenDateTimeV3'
+        content:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        draft:
+          $ref: '#/components/schemas/BooleanWithDefault'
+        modified_at:
+          $ref: '#/components/schemas/MavenDateTimeV3'
+        message_id:
+          $ref: '#/components/schemas/IntegerWithDefaultV3'
+    GetPostAppointmentNotesResponseSchemaV3:
+      type: object
+      properties:
+        post_appointment_notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/PostAppointmentNoteSchemaV3'
+    GetMemberQuestionnairesResponseSchemaV3:
+      type: object
+      properties:
+        questionnaires:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionnaireResponse'
+    QuestionnaireResponse:
+      type: object
+      properties:
+          id:
+            type: string
+            required: true
+          oid:
+            type: string
+            required: true
+          sort_order:
+            type: integer
+            required: true
+          title_text:
+            type: string
+            required: false
+          description_text:
+            type: string
+            required: false
+          intro_appointment_only:
+            type: boolean
+            required: false
+          track_name:
+            type: string
+            required: false
+          trigger_answer_ids:
+            type: array
+            required: true
+            items:
+              type: string
+          question_sets:
+            type: array
+            required: true
+            items:
+              $ref: '#/components/schemas/QuestionSetResponse'
+    QuestionSetResponse:
+      type: object
+      properties:
+          id:
+            type: string
+            required: true
+          sort_order:
+            type: integer
+            required: true
+          oid:
+            type:
+              string
+            required: true
+          questions:
+            type: array
+            required: true
+            items:
+              $ref: '#/components/schemas/QuestionResponse'
+    QuestionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          required: true
+        sort_order:
+          type: integer
+          required: true
+        label:
+          type: string
+          required: true
+        type:
+          type: string
+          required: true
+        required:
+          type: boolean
+          required: true
+        answers:
+          type: array
+          items:
+            $ref: "#/components/schemas/AnswerResponse"
+    AnswerResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          required: true
+        sort_order:
+          type: integer
+          required: true
+        text:
+          type: string
+          required: false
+    AnswersRequest:
+      type: object
+      properties:
+        question_id:
+          type: integer
+          required: true
+        answer_id:
+          type: integer
+          required: false
+        text:
+          type: string
+          required: false
+        appointment_id:
+          type: integer
+          required: true
+        user_id:
+          type: integer
+          required: true
+    MavenSchemaV3:
+      type: object
+    DataTimeWithDefaultV3:
+      type: string
+      format: date-time
+    ProviderAddendaAndQuestionnaireSchemaV3:
+      type: object
+      properties:
+        questionnaire:
+          $ref: '#/components/schemas/QuestionnaireSchemaV3'
+        provider_addenda:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProviderAddendumSchemaV3'
+    QuestionnaireSchemaV3:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        sort_order:
+          $ref: '#/components/schemas/IntegerWithDefaultV3'
+        oid:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        title_text:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        description_text:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        soft_deleted_at:
+          $ref: '#/components/schemas/DataTimeWithDefaultV3'
+        trigger_answer_ids:
+          type: array
+          items:
+            $ref: '#/components/schemas/StringWithDefaultV3'
+        question_sets:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionSetSchemaV3'
+    QuestionSetSchemaV3:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        oid:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        sort_order:
+          $ref: '#/components/schemas/IntegerWithDefaultV3'
+        prerequisite_answer_id:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        soft_deleted_at:
+          $ref: '#/components/schemas/DataTimeWithDefaultV3'
+        questions:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionSchemaV3'
+    QuestionSchemaV3:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        sort_order:
+          $ref: '#/components/schemas/IntegerWithDefaultV3'
+        label:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        type:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        required:
+          $ref: '#/components/schemas/BooleanWithDefault'
+        oid:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        non_db_answer_options_json:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        soft_deleted_at:
+          $ref: '#/components/schemas/DataTimeWithDefaultV3'
+        answers:
+          type: array
+          items:
+            $ref: '#/components/schemas/AnswerSchemaV3'
+    AnswerSchemaV3:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        sort_order:
+          $ref: '#/components/schemas/IntegerWithDefaultV3'
+        text:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        oid:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        soft_deleted_at:
+          $ref: '#/components/schemas/DataTimeWithDefaultV3'
+    ProviderAddendumSchemaV3:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        questionnaire_id:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+        associated_answer_id:
+          $ref: '#/components/schemas/StringWithDefaultV3'
+
+    StructuredInternalNoteSchemaV3:
+      type: object
+      properties:
+        questionnaire:
+          $ref: '#/components/schemas/QuestionnaireSchemaV3'
+        question_sets:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionSetSchemaV3'
+        recorded_answer_set:
+          $ref: '#/components/schemas/RecordedAnswerSetSchemaV3'
+        recorded_answers:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecordedAnswerSchemaV3'
+    RecordedAnswerSetSchemaV3:
+      type: object
+      properties:
+        id:
+          type: string
+        questionnaire_id:
+          type: string
+        modified_at:
+          type: string
+          format: date-time
+        submitted_at:
+          type: string
+          format: date-time
+        source_user_id:
+          type: integer
+        draft:
+          type: boolean
+        appointment_id:
+          type: integer
+        recorded_answers:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecordedAnswerSchemaV3'
+    RecordedAnswerSchemaV3:
+      type: object
+      properties:
+        appointment_id:
+          type: integer
+        user_id:
+          type: integer
+        question_id:
+          type: string
+        question_type:
+          type: string
+        answer_id:
+          type: string
+        text:
+          type: string
+        date:
+          type: string
+          format: date
+        payload:
+          type: object
+          additionalProperties: true
+
+    Template:
+      type: object
+      required: [ id, owner_id, is_global, title, text ]
+      properties:
+        id:
+          type: integer
+          nullable: false
+        owner_id:
+          type: integer
+          nullable: false
+        is_global:
+          type: boolean
+          nullable: false
+        title:
+          type: string
+          nullable: false
+        text:
+          type: string
+          nullable: false
+        sort_order:
+          type: integer
+          nullable: false
+        created_at:
+          type: string
+          format: date-time
+          nullable: false
+        modified_at:
+          type: string
+          format: date-time
+          nullable: false
+    GetTemplatesResponse:
+      type: object
+      nullable: false
+      required: [ data, pagination ]
+      properties:
+        data:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/Template"
+        pagination:
+          type: object
+          nullable: false
+          required: [ order_by, total ]
+          properties:
+            order_by:
+              $ref: "#/components/schemas/OrderDirection"
+            limit:
+              type: integer
+              nullable: true
+            offset:
+              type: integer
+              nullable: true
+            total:
+              type: integer
+              nullable: false
+    WrappedTemplate:
+      type: object
+      nullable: false
+      required: [ data ]
+      properties:
+        data:
+          $ref: "#/components/schemas/Template"
+    DeleteTemplateResponse:
+      type: object
+      nullable: false
+      required: [ data ]
+      properties:
+        data:
+          type: object
+          nullable: false
+          required: [ success ]
+          properties:
+            success:
+              type: boolean
+            message:
+              type: string
+              nullable: true
+    CreateTemplateRequest:
+      type: object
+      required: [ title, text, is_global, sort_order ]
+      properties:
+        title:
+          description: The template's title. Must be unique by owner_id or across all templates if is_global is true
+          type: string
+          nullable: false
+        text:
+          description: The template's contents
+          type: string
+          nullable: false
+        is_global:
+          description: When true, the template is visible to all users. When false, the template is visible only to its owner
+          type: boolean
+          nullable: false
+        sort_order:
+          description: A user-defined order the template should be sorted in. A smaller number is sorted before a larger number
+          type: integer
+          nullable: false
+    EditTemplateRequest:
+      type: object
+      properties:
+        title:
+          description: The template's title. Must be unique by owner_id or across all templates if is_global is true
+          type: string
+          nullable: false
+        text:
+          description: The template's contents
+          type: string
+          nullable: false
+        is_global:
+          description: When true, the template is visible to all users. When false, the template is visible only to its owner
+          type: boolean
+          nullable: false
+        sort_order:
+          description: A user-defined order the template should be sorted in. A smaller number is sorted before a larger number
+          type: integer
+          nullable: false
+
+    # region: field components
+    PositiveInteger:
+      type: integer
+      format: "int64"
+      minimum: 1
+    DateTime:
+      type: string
+      format: date-time
+      example: "1970-01-01T00:00:00"
+      description: |
+        The ISO 8601 timestamp when this object was created, as defined by RFC 3339.
+    OrderDirection:
+      type: string
+      enum:
+        - asc
+        - desc
+      description: "Direction of ordering templates by sort_order, then by created_at"
+    # endregion

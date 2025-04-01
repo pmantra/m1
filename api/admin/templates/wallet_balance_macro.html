@@ -1,0 +1,62 @@
+{% macro render_wallet_balance(wallets) -%}
+    {% if wallets %}
+    <h4>Wallet Balances:</h4>
+    {% for wallet in wallets %}
+        <div>
+            <h5>Overview</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Wallet ID</td>
+                        <td>
+                            <a href="/admin/reimbursementwallet/edit/?id={{ wallet.id }}"> {{ wallet.id }}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Wallet State</td>
+                        <td>
+                            {{ wallet.state.value }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Wallet User Status</td>
+                        <td>
+                            {{ wallet.user_status.value }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h5>Categories</h5>
+            <table class="table table-bordered">
+                <thead>
+                    <th>Name</th>
+                    <th>Direct Payment Category</th>
+                    <th>Benefit Type</th>
+                    <th>Benefit Currency</th>
+                    <th>Active Plan</th>
+                    <th>Limit</th>
+                    <th>Reimbursed</th>
+                    <th>Remaining</th>
+                    <th>Available</th>
+                </thead>
+                <tbody>
+                    {% for category in wallet.categories %}
+                    <tr>
+                        <td><a href="/admin/reimbursementrequestcategory/edit/?id={{ category.id }}">{{ category.name }}</a></td>
+                        <td>{{ category.direct_payment_category }}</td>
+                        <td>{{ category.benefit_type.value }}</td>
+                        <td>{{ category.currency_code if category.currency_code else "" }}</td>
+                        <td>{{ category.active }}</td>
+                        <td>{{ category.formatted_limit_amount }}</td>
+                        <td>{{ category.formatted_spent_amount }}</td>
+                        <td>{{ category.formatted_current_balance }}</td>
+                        <td>{{ category.formatted_available_balance }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endfor %}
+    <hr>
+    {% endif %}
+{%- endmacro %}

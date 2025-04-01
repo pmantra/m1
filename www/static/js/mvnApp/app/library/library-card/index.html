@@ -1,0 +1,24 @@
+<a ui-sref="{{$ctrl.resourceUrl}}" target="_blank" ng-click="$ctrl.sendEvt()">
+	<div ng-if="!$ctrl.cardData.image.thumbnail">
+		<div class="card-body">
+			<h5 class="card-title">{{ $ctrl.cardData.title | trimString:true:50:true }}</h5>
+			<p class="mobile-only">{{ $ctrl.cardData.description | trimString:true:80:true }}</p>
+			<p class="mobile-none">{{ $ctrl.cardData.description | trimString:true:100:true }}</p>
+		</div>
+		<div>
+			<p ng-if="$ctrl.cardData.prettyContentType" class="primary-metadata metadata">{{ $ctrl.cardData.prettyContentType }}</p>
+		</div>
+	</div>
+
+	<div ng-if="$ctrl.cardData.image.thumbnail" class="has-image">
+		<div class="flex-wrapper">
+			<h5 class="card-title">{{ $ctrl.cardData.title | trimString:true:50:true }}</h5>
+			<div>
+				<p ng-if="$ctrl.cardData.prettyContentType" class="metadata primary-metadata">{{ $ctrl.cardData.prettyContentType }}</p>
+			</div>
+		</div>
+		<div ng-if="$ctrl.cardData.image.thumbnail" class="image-container">
+			<img class="card-image" src="{{ $ctrl.cardData.image.thumbnail }}" alt="{{ $ctrl.cardData.title }}"/>
+		</div>
+	</div>
+</a>

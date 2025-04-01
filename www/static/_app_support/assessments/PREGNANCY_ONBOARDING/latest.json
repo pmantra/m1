@@ -1,0 +1,313 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "body": "Let's get personal for a minute",
+      "next": 2,
+      "required": true,
+      "widget": {
+        "type": "freetextmulti",
+        "options": [
+          {
+            "value": "weight",
+            "label": "Pre-pregnancy weight (lbs)",
+            "placeholder": "Pre-pregnancy weight (lbs)",
+            "fieldtype": "number",
+            "required": true,
+            "healthbinder": {
+              "name": "weight"
+            }
+          },
+          {
+            "value": "height",
+            "label": "Pre-pregnancy height (ft)",
+            "placeholder": "Pre-pregnancy height (ft)",
+            "fieldtype": "height",
+            "required": true,
+            "healthbinder": {
+              "name": "height"
+            }
+          }
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "id": 2,
+      "body": "What kind of birth are you hoping to have?",
+      "required": true,
+      "next": 3,
+      "widget": {
+        "type": "panel-single-choice",
+        "options": [
+          {
+            "value": "vaginal",
+            "label": "Planning a vaginal birth",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/2-1.svg"
+          },
+          {
+            "value": "first-c-section",
+            "label": "First timer planning a C-Section",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/2-2.svg"
+          },
+          {
+            "value": "vbac",
+            "label": "Veteran cesarean mama—going for a VBAC this time",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/2-3.svg"
+          },
+          {
+            "value": "subsequent-c-section",
+            "label": "Veteran cesarean mama—planning one this time too!",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/2-4.svg"
+          }
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "id": 3,
+      "body": "What keeps you up at night the most?",
+      "required": true,
+      "next": 4,
+      "widget": {
+        "type": "panel-single-choice",
+        "options": [
+          {
+            "value": "work-stress",
+            "label": "Work stress—how am I going to get everything done?",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/3-1.svg"
+          },
+          {
+            "value": "current-events",
+            "label": "Current events",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/3-2.svg"
+          },
+          {
+            "value": "friends-family",
+            "label": "Worrying about my friends and family (I can’t help it!)",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/3-3.svg"
+          },
+          {
+            "value": "relationship-stress",
+            "label": "Relationship stress—it’s not easy right now!",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/3-4.svg"
+          }
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "id": 4,
+      "body": "What happens when you feel a sore throat coming on?",
+      "required": true,
+      "next": 5,
+      "widget": {
+        "type": "panel-single-choice",
+        "options": [
+          {
+            "value": "not-much",
+            "label": "Not a lot to do! Hope it goes away on its own",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/4-1.svg"
+          },
+          {
+            "value": "rest-up",
+            "label": "Rest up and drink herbal tea",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/4-2.svg"
+          },
+          {
+            "value": "get-meds",
+            "label": "Call my doctor—I need meds ASAP!",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/4-3.svg"
+          },
+          {
+            "value": "call-doctor",
+            "label": "Call my doctor—I may have throat cancer!",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/4-4.svg"
+          }
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "id": 5,
+      "body": "What are you most likely to google during your pregnancy?",
+      "required": true,
+      "next": 6,
+      "widget": {
+        "type": "panel-single-choice",
+        "options": [
+          {
+            "value": "fit-in-clothes",
+            "label": "When will I fit in my clothes again?",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/5-1.svg"
+          },
+          {
+            "value": "back-pain",
+            "label": "What exercises will alleviate my back pain?",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/5-2.svg"
+          },
+          {
+            "value": "morning-sickness",
+            "label": "What’s a remedy for morning sickness?",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/5-3.svg"
+          },
+          {
+            "value": "sleeping-positions",
+            "label": "What are some comfortable sleeping positions?",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/5-4.svg"
+          }
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "id": 6,
+      "body": "Last question! Do any of these apply to you?",
+      "required": false,
+      "next": "end",
+      "widget": {
+        "type": "panel-multi-choice-sectioned",
+        "sections": [
+          {
+            "title": "Existing health conditions",
+            "items": [
+              "autoimmune-disease",
+              "diabetes",
+              "blood-disorders",
+              "high-blood-pressure",
+              "pcos",
+              "kidney-disease",
+              "thyroid-disease",
+              "hiv-aids",
+              "seizure-disorders"
+            ]
+          },
+          {
+            "title": "Lifestyle factors",
+            "items": [
+              "alcohol-use",
+              "tobacco-use"
+            ]
+          },
+          {
+            "title": "Conditions of pregnancy",
+            "items": [
+              "multiple-gestation",
+              "gestational-diabetes",
+              "preeclampsia-eclampsia",
+              "placenta-cervix-issue",
+              "history-preterm-labor-delivery",
+              "fertility-treatments"
+            ]
+          }
+        ],
+        "options": [
+          {
+            "id": 0,
+            "value": "autoimmune-disease",
+            "label": "Autoimmune disease",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-1.svg"
+          },
+          {
+            "id": 1,
+            "value": "diabetes",
+            "label": "Diabetes",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-2.svg"
+          },
+          {
+            "id": 2,
+            "value": "blood-disorders",
+            "label": "Blood disorders",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-3.svg"
+          },
+          {
+            "id": 3,
+            "value": "high-blood-pressure",
+            "label": "High blood pressure",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-4.svg"
+          },
+          {
+            "id": 4,
+            "value": "pcos",
+            "label": "PCOS",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-5.svg"
+          },
+          {
+            "id": 5,
+            "value": "kidney-disease",
+            "label": "Kidney disease",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-6.svg"
+          },
+          {
+            "id": 6,
+            "value": "thyroid-disease",
+            "label": "Thyroid disease",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-7.svg"
+          },
+          {
+            "id": 7,
+            "value": "hiv-aids",
+            "label": "HIV/AIDS",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-8.svg"
+          },
+          {
+            "id": 8,
+            "value": "seizure-disorders",
+            "label": "Seizure disorders",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-9.svg"
+          },
+          {
+            "id": 9,
+            "value": "alcohol-use",
+            "label": "Alcohol use",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-10.svg"
+          },
+          {
+            "id": 10,
+            "value": "tobacco-use",
+            "label": "Tobacco use",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-11.svg"
+          },
+          {
+            "id": 11,
+            "value": "multiple-gestation",
+            "label": "Multiple gestation",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-12.svg"
+          },
+          {
+            "id": 12,
+            "value": "gestational-diabetes",
+            "label": "Gestational diabetes",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-13.svg"
+          },
+          {
+            "id": 13,
+            "value": "preeclampsia-eclampsia",
+            "label": "Preeclampsia and eclampsia",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-14.svg"
+          },
+          {
+            "id": 14,
+            "value": "placenta-cervix-issue",
+            "label": "Issue with placenta or cervix",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-15.svg"
+          },
+          {
+            "id": 15,
+            "value": "history-preterm-labor-delivery",
+            "label": "History of preterm labor or delivery",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-16.svg"
+          },
+          {
+            "id": 16,
+            "value": "fertility-treatments",
+            "label": "Fertility treatments",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/preg-onboarding/6-17.svg"
+          }
+        ]
+      },
+      "other": true,
+      "meta": {}
+    }
+  ]
+}

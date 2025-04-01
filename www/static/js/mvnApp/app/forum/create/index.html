@@ -1,0 +1,119 @@
+<forum-header class="mobile-only" title="Write a post" cats="$ctrl.cats" show-search-menu="$ctrl.showSearchMenu"></forum-header>
+
+<section class="forum-create-post">
+	<div class="content-container">
+		<div class="create-post-wrap content">
+			<div class="notify warn" ng-show="errorMsg">
+				<p>{{ err }}</p>
+			</div>
+
+			<h1 class="serif mobile-none">{{ $ctrl.header ? $ctrl.header : 'Write a post '}}</h1>
+
+			<div class="post-author-container">
+				<div ng-if="$ctrl.postForm.anonymous">
+					<post-author class="post-author" author="anon"></post-author>
+				</div>
+				<div ng-if="!$ctrl.postForm.anonymous">
+					<post-author ng-if="$ctrl.user.username" class="post-author" author="$ctrl.user"></post-author>
+					<div ng-if="!$ctrl.user.username" class="no-username">
+						<a ng-click="$ctrl.addUsername()" href=""><strong>Add username</strong></a>
+					</div>
+				</div>
+
+				<div class="mvn-checkbox-group post-anon-checkbox">
+					<div class="checkbox-container swap-alignment">
+						<input
+							id="post-anon"
+							name="post-anon"
+							class="checkmark"
+							type="checkbox"
+							ng-model="$ctrl.postForm.anonymous"
+							ng-checked="$ctrl.postForm.anonymous"
+						/>
+						<label class="label-text" for="post-anon" id="post-anon-checkmark">Post anonymously</label>
+					</div>
+				</div>
+			</div>
+
+			<form novalidate="" role="form" class="create-post-form mvn-form">
+				<section class="form-section write-post-content">
+					<div class="w-100">
+
+						<div class="post-form-input">
+							<h2 class="h5">Title of your post*</h2>
+							<mvn-input aria-label="What's on your mind? Tip: try to be specific!" type="text" label="What's on your mind?"
+							 value="$ctrl.postForm.title" maxlen="75" required="required"></mvn-input>
+							 <span class="subhed">Tip: Try to be specific!</span>
+						</div>
+
+						<div class="post-form-input">
+							<h2 class="h5">What's going on?*</h2>
+							<mvn-text-area aria-label="Add detail here..." type="text" class="paper-input post-body-input mobile-none"
+							 label="Add detail here..." value="$ctrl.postForm.body" rows="13"></mvn-text-area>
+							<mvn-text-area aria-label="Add detail here..." type="text" class="paper-input post-body-input mobile-only" label="Add detail here..."
+							 value="$ctrl.postForm.body" rows="13"></mvn-text-area>
+						</div>
+					</div>
+				</section>
+
+				<div class="write-post-info">
+					<div class="post-form-input">
+						<h2 ng-if="!$ctrl.hideCommunity" class="h5">Add my post to*</h2>
+						<div class="choose-post-category app-grid-container two-column forum-radio-list" ng-if="!$ctrl.hideCommunity">
+							<label ng-repeat="cat in $ctrl.cats | filter: { special: '!' + true } " class="forum-radio app-grid-item">
+								<input
+									type="radio"
+									name="Post Category"
+									ng-value="['{{ cat.name }}']"
+									id="{{ cat.name }}"
+									ng-model="$ctrl.postForm.categories"
+									ng-change="$ctrl.selectCategory(cat.name)"
+									required="required"
+								/>
+								<label for="{{ cat.name }}"><span><span></span></span>{{ cat.display_name }}</label>
+							</label>
+						</div>
+					</div>
+
+					<div class="post-form-input">
+							<div ng-show="$ctrl.categorySelected" id="subcategory-container">
+								<h2 class="h5">Select which topic describes your post (select all that apply)</h2>
+								<span class="subhed">Optional</span>
+
+								<div class="choose-post-category app-grid-container two-column forum-checkbox-list mvn-checkbox-group" ng-if="!$ctrl.hideCommunity">
+									<label ng-repeat="cat in $ctrl.subCats track by $index" class="forum-checkbox app-grid-item checkbox-container">
+										<input
+											class="checkmark"
+											type="checkbox"
+											value="{{ cat.name }}"
+											id="{{ cat.name }}"
+											name="subCategories"
+											ng-model="$ctrl.selectedSubCats[cat.name]"
+											ng-checked="$ctrl.selectedSubCats[cat.name]"
+										/>
+										<label class="label-text" for="{{ cat.name }}"><span><span></span></span>{{ cat.display_name }}</label>
+									</label>
+								</div>
+							</div>
+						</div>
+
+					<div id="g-recaptcha" class="g-recaptcha-post"></div>
+					<div class="submit-post">
+						<button
+							type="submit"
+							ng-click="$ctrl.createPost($ctrl.postForm)"
+							class="btn btn-cta create-post-submit"
+							ng-class="{ 'disabled' : !(!!$ctrl.postForm.categories) || !(!!$ctrl.postForm.title) || !(!!$ctrl.postForm.body) || ($ctrl.posting) || (!recaptchaStatus.clicked)}"
+							ng-disabled="!(!!$ctrl.postForm.categories) || !(!!$ctrl.postForm.title) || !(!!$ctrl.postForm.body) || ($ctrl.posting) && recaptchaStatus.clicked === false">
+							{{$ctrl.btnTitle}}
+						</button>
+					</div>
+
+					<div class="terms">
+						<p>Posts to the Maven Community are subject to <a rel="noopener noreferrer nofollow" target="_blank" href="/app/terms-of-use">terms and conditions</a> and <a target="_blank" rel="noopener noreferrer nofollow" href="/app/privacy">privacy policy</a>.</p>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

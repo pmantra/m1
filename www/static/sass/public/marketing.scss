@@ -1,0 +1,766 @@
+/* Marketing site */
+.has-mobile-overlay {
+	position: relative;
+	z-index: 1;
+}
+
+.hero:not(.dark-overlay) {
+	@include susy-breakpoint(0 $mobile-max) {
+		.has-mobile-overlay {
+			a.btn.btn-secondary {
+				background-color: $emerald-50;
+				color: white;
+			}
+		}
+	}
+}
+.mobile-headline-overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(255, 255, 255, 0.6);
+	z-index: 0;
+	&.overlay-dark {
+		background: rgba(122, 71, 55, 0.7);
+	}
+	&.overlay-xlight {
+		background: rgba(255, 255, 255, 0.8);
+	}
+	@include susy-breakpoint($mobile-landscape) {
+		display: none;
+	}
+}
+.page-marketing {
+	.page-inner {
+		padding-top: $marketingMobileHeaderHeight;
+
+		@include susy-breakpoint($mobile-landscape) {
+			padding-top: $tabletHeaderHeight;
+		}
+
+		@include susy-breakpoint($desktop) {
+			padding-top: $desktopHeaderHeight;
+		}
+	}
+	section {
+		$base_padding: 2rem 4%;
+		@include flexbox;
+		padding: $base_padding;
+
+		@include susy-breakpoint($tablet) {
+			&.hero {
+				padding: 150px 8%;
+			}
+		}
+
+		h1.emerald {
+			color: $emerald-50;
+		}
+
+		&.hero,
+		&.image-bg {
+			min-height: 250px;
+			position: relative;
+
+			&.dark-overlay {
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					background-color: rgba(0, 0, 0, 0.4);
+				}
+			}
+
+			@include susy-breakpoint($desktop) {
+				min-height: 450px;
+			}
+		}
+
+		&.dark {
+			color: white;
+			h1,
+			h2,
+			h3,
+			h5,
+			p {
+				color: white;
+			}
+		}
+
+		.section-title {
+			width: 100%;
+
+			.left {
+				text-align: left;
+			}
+		}
+
+		a.mailto {
+			position: relative;
+			text-decoration: none;
+
+			&:after {
+				content: "";
+				width: 100%;
+				position: absolute;
+				left: 0;
+				bottom: 2px;
+				border-width: 0 0 1px;
+				border-style: solid;
+				border-color: $emerald-50;
+			}
+		}
+
+		hr {
+			background: $charcoal-50;
+			border: 0;
+			height: 4px;
+			margin: 0;
+			width: 40px;
+
+			&.center {
+				margin: 0 auto;
+			}
+
+			&.white {
+				background: white;
+			}
+
+			&.blush {
+				background: $blush-50;
+			}
+
+			&.mint {
+				background: $mint-100;
+			}
+
+			&.emerald {
+				background: $emerald-40;
+			}
+		}
+
+		.content-wrapper {
+			@include flexbox;
+			width: 100%;
+			max-width: 1170px;
+			position: relative;
+
+			& ~ .content-wrapper {
+				margin-top: 40px;
+			}
+		}
+
+		.text-container {
+			text-align: left;
+			width: 100%;
+
+			.btn-secondary-cta {
+				margin-top: 15px;
+			}
+
+			@include susy-breakpoint($desktop) {
+				max-width: 470px;
+
+				&.wide {
+					max-width: 670px;
+				}
+
+				&.center {
+					align-self: center;
+				}
+
+				&.left {
+					align-self: flex-start;
+				}
+
+				&.right {
+					align-self: flex-end;
+				}
+			}
+		}
+
+		ul.grid-container {
+			list-style: none;
+			padding: 0;
+		}
+		.grid-container {
+			@include flexbox;
+			width: 100%;
+
+			.grid-item {
+				margin: 20px auto;
+				width: 100%;
+
+				img {
+					// width: 100%;
+					max-width: 100%;
+				}
+			}
+
+			.grid-item.no-flex-sarah {
+				display: block;
+				float: left;
+				margin: 0 4% 0 0;
+			}
+
+			.no-flex-sarah-right {
+				display: inline-block;
+			}
+
+			@include susy-breakpoint($tablet) {
+				@include flexbox(row, stretch, space-between);
+				flex-wrap: wrap;
+
+				.grid-item {
+					margin: 20px 0;
+					width: 48%;
+				}
+
+				.grid-item.no-flex {
+					margin: 20px 0;
+					width: 46%;
+				}
+
+				&:after {
+					content: "";
+					width: 48%;
+				}
+			}
+
+			@include susy-breakpoint($desktop) {
+				&.two-column {
+					.grid-item {
+						margin: 20px 0;
+						width: 48%;
+					}
+
+					&:after {
+						width: 48%;
+					}
+				}
+
+				&.three-column {
+					.grid-item {
+						margin: 20px 0;
+						width: 31%;
+					}
+
+					&:after {
+						width: 31%;
+					}
+				}
+				&.three-column .no-flex:not(:last-child) {
+					margin-right: 3.4%;
+				}
+				&.four-column {
+					.grid-item {
+						margin: 20px 0;
+						width: 24%;
+					}
+
+					&:after {
+						width: 24%;
+					}
+				}
+				&.five-column {
+					.grid-item {
+						margin: 20px 0;
+						width: 19%;
+					}
+
+					&:after {
+						width: 19%;
+					}
+				}
+				&.six-column {
+					.grid-item {
+						margin: 20px 0;
+						width: 16%;
+					}
+
+					&:after {
+						width: 16%;
+					}
+				}
+			}
+		}
+
+		.grid-container.no-flex {
+			display: inline-block;
+			width: 100%;
+		}
+
+		.headline {
+			max-width: 960px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+			h1,
+			h2,
+			h3,
+			h4 {
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+
+			&.left {
+				text-align: left;
+			}
+
+			&.right {
+				text-align: right;
+			}
+		}
+	}
+}
+
+.page-marketing {
+	// Shared bg colors just to make things easier for the Sept 2018 redesign
+	.word-wrap-container {
+		width: 95%;
+		.word-wrap {
+			word-wrap: break-word;
+			width: 100%;
+			margin-top: -13px;
+		}
+	}
+
+	.bg-green-lt {
+		background-color: $mktg-green-lt;
+	}
+
+	.bg-pink-dk {
+		background-color: $mktg-pink-dk;
+	}
+
+	.bg-green-dk {
+		background-color: $mktg-green-dk;
+	}
+
+	// Shared layout cutoff
+	.has-max-width,
+	.content-wrapper.has-max-width {
+		margin: 0 auto;
+		max-width: 1160px; // smaller max width for smaller screens
+		width: 100%;
+
+		@include susy-breakpoint($desktop-md-max) {
+			max-width: $mktg-max-width;
+		}
+	}
+
+	.has-max-width.clear {
+		clear: both;
+	}
+
+	.content-wrapper.no-flex,
+	.no-flex {
+		display: block;
+	}
+	.no-flex.left {
+		float: left;
+	}
+	.clear {
+		clear: both;
+		display: block;
+	}
+}
+
+/* Shared components */
+.page-marketing section .carousel-wrapper-panels {
+	display: block; // flexbox override... bc it breaks the carouusel...
+}
+
+.marketing-faqs {
+	padding-top: 0;
+	h2 {
+		text-align: left;
+	}
+	.faqs {
+		margin-bottom: 40px;
+		@include susy-breakpoint($tablet) {
+			margin-bottom: 60px;
+		}
+	}
+	li {
+		list-style-type: none;
+		list-style-image: none;
+		cursor: pointer;
+		.faq-question {
+			border-bottom: 1px solid $charcoal-40;
+			font-family: $font3;
+			color: $charcoal-100;
+			padding-right: 30px;
+			position: relative;
+			line-height: 1.35;
+			padding: 15px 0;
+			margin: 0;
+			.q {
+				margin-right: 20px;
+			}
+			.expand {
+				position: absolute;
+				right: 0;
+				bottom: calc(50% - 9px);
+			}
+		}
+		.faq-answer {
+			display: none;
+
+			.footnotes,
+			.footnotes * {
+				color: $charcoal-50;
+			}
+		}
+		&.active {
+			.faq-question {
+				.expand {
+					bottom: calc(50% - 12px);
+					transform: rotate(180deg);
+				}
+			}
+			.faq-answer {
+				display: block;
+			}
+		}
+	} // end li
+}
+
+// Form overrides
+.page-marketing .ngdialog.mvndialog .ngdialog-content .enterprise-form .btn {
+	margin-top: 0;
+}
+
+.carousel-wrapper-panels {
+	// Panel-style carousel
+	.carousel {
+		margin-top: 50px;
+	}
+	.testimonial {
+		padding: 25px;
+		background: $macaroon-40;
+		box-shadow: 2px 2px 1px 1px rgba(231, 231, 231, 0.4);
+		margin: 10px;
+		position: relative;
+		h5 {
+			max-width: 90%;
+		}
+		&.practitioner {
+			.quot,
+			h5 {
+				color: $emerald-40;
+			}
+		}
+		&.client {
+			.quot,
+			h5 {
+				color: $terracotta-50;
+			}
+		}
+		&.member {
+			.quot,
+			h5 {
+				color: $blush-100;
+			}
+		}
+		&.employee {
+			.quot {
+				color: $blush-100;
+			}
+
+			h5 {
+				color: $terracotta-50;
+			}
+		}
+		height: 560px;
+		@include susy-breakpoint($mobile-landscape) {
+			height: 360px;
+		}
+		@include susy-breakpoint($tablet) {
+			height: 490px;
+		}
+		@include susy-breakpoint($desktop) {
+			height: 390px;
+		}
+		@include susy-breakpoint($desktop-md) {
+			height: 490px;
+		}
+		@include susy-breakpoint($desktop-hd) {
+			height: 450px;
+		}
+	} // end testimonial
+	.quot {
+		font-family: $font4;
+		color: $blush-100;
+		font-size: 100px;
+		line-height: 1;
+		height: 70px;
+		overflow: hidden;
+		display: block;
+	}
+	h5 {
+		color: $terracotta-50;
+		position: absolute;
+		bottom: 36px;
+		margin: 0;
+	}
+	.prev {
+		left: -8%;
+	}
+	.next {
+		right: -8%;
+	}
+	.prev,
+	.next {
+		@include susy-breakpoint($tablet) {
+			top: 40%;
+		}
+
+		@include susy-breakpoint($desktop) {
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	ul.slick-dots {
+		margin-top: 3%;
+		text-align: center;
+
+		li span:before {
+			color: $blush-100;
+		}
+
+		@include susy-breakpoint($mobile-landscape) {
+			margin-top: 3%;
+		}
+
+		@include susy-breakpoint($desktop) {
+			display: none !important; // important to override inline styles
+		}
+	}
+}
+
+/* Temporary Maternal Mental Health Campaign page */
+
+.page-mmh18 {
+	.page-inner {
+		h5 {
+			letter-spacing: 2px;
+			margin: 4rem auto 3rem auto;
+			@include susy-breakpoint($desktop) {
+				letter-spacing: 8px;
+			}
+		}
+	}
+
+	.mmh-stats,
+	.mmh-partners,
+	.mmh-hashtag {
+		background: $gray-xxlt;
+	}
+	.mmh-hero {
+		background: url("/img/campaign/mmh-header.jpg") no-repeat;
+		@include background-cover;
+		@include susy-breakpoint($desktop $desktop-max) {
+			background-position: -150px 0;
+		}
+		.mobile-headline-overlay {
+			display: block;
+			background: rgba(255, 255, 255, 0.8);
+			@include susy-breakpoint($desktop) {
+				display: none;
+			}
+		}
+		h1 {
+			font-size: 3.375rem;
+			line-height: 1;
+			font-family: $font3;
+			@include susy-breakpoint($desktop) {
+				font-size: 5.375rem;
+			}
+		}
+		p,
+		.p {
+			font-family: $font1;
+			&:first-child {
+				@include susy-breakpoint($desktop) {
+					font-size: 1.375rem;
+				}
+			}
+		}
+	}
+
+	.mmh-stats {
+		h1 {
+			font-family: $font2;
+			max-width: 840px;
+			margin: 2rem auto;
+			font-size: 2rem;
+			line-height: 1.25;
+			//text-decoration: underline; //yikesssss
+			@include susy-breakpoint($desktop) {
+				margin: 3rem auto;
+				font-size: 5rem;
+			}
+		}
+
+		.mmh-figures {
+			h2 {
+				font-size: 3.25rem;
+				line-height: 1;
+				font-family: $font2;
+				@include susy-breakpoint($desktop) {
+					font-size: 6.25rem;
+				}
+			}
+		}
+	}
+
+	.mmh-header {
+		.callout {
+			display: block;
+			margin: 0 auto;
+			width: 60px;
+			height: 60px;
+			color: white;
+			font-family: $font3;
+			background: $blush-100;
+			border-radius: 50%;
+			font-size: 1.5rem;
+			padding: 1rem 0 1.5rem 0.5rem;
+			margin-top: 3rem;
+			@include susy-breakpoint($desktop) {
+				width: 90px;
+				height: 90px;
+				font-size: 2.5rem;
+				padding: 1.75rem 0 1.5rem 0.675rem;
+			}
+		}
+	}
+
+	.mmh-figures {
+		justify-content: center;
+		.grid-item {
+			@include susy-breakpoint($desktop) {
+				@include flexbox(row, flex-start, flex-start);
+				&:first-child {
+					justify-content: flex-end;
+				}
+			}
+			.stat {
+				text-align: center;
+				p,
+				.p {
+					max-width: 170px;
+					margin: auto;
+				}
+				@include susy-breakpoint($desktop) {
+					padding: 0 5rem;
+				}
+			}
+		}
+	}
+
+	section .mmh-panels {
+		max-width: 100%;
+		margin: 2rem auto;
+		@include susy-breakpoint($desktop) {
+			width: 920px;
+		}
+		.mmh-panel {
+			background: $charcoal-40;
+			box-shadow: 10px 10px 0 0 white;
+			padding: 2rem;
+			@include susy-breakpoint($desktop) {
+				padding: 6.25rem 2rem;
+
+				p,
+				.p {
+					font-size: 1.625rem;
+					line-height: 2;
+				}
+			}
+		}
+		@include susy-breakpoint($desktop) {
+			&.two-column .mmh-panel {
+				//fu specificity
+				width: 420px;
+			}
+		}
+	}
+
+	.mmh-get-support {
+		h2 {
+			text-align: center;
+			font-family: $font2;
+			font-size: 2.25rem;
+			max-width: 430px;
+			line-height: 1.2;
+			margin: 3rem auto 0 auto;
+		}
+	}
+
+	.mmh-partners {
+		.mmh-partner-list {
+			.partner {
+				margin: 4rem auto;
+			}
+			@include susy-breakpoint($desktop) {
+				@include flexbox(row, center, center);
+				.partner {
+					margin: 1rem 2rem;
+				}
+			}
+		}
+		hr {
+			width: 100%;
+			height: 1px;
+			margin: 6rem auto 0 auto;
+		}
+	}
+
+	.mmh-hashtag {
+		h5 {
+			margin-top: 0;
+		}
+		h1 {
+			font-family: $font2;
+			font-size: 3.62rem;
+			color: $blush-100;
+			@include susy-breakpoint($desktop) {
+				font-size: 5.62rem;
+			}
+		}
+		ul {
+			@include flexbox(row, center, center);
+			margin: 4rem auto;
+			li {
+				margin: 0 1rem;
+			}
+		}
+	}
+}
+
+.announcement-banner {
+	background-color: $ui-green-lt;
+	color: white;
+	text-align: center;
+	padding: 0.75rem;
+
+	p,
+	.p {
+		margin: 0 auto;
+	}
+
+	a {
+		color: white;
+		font-family: $font1-semibold;
+	}
+}

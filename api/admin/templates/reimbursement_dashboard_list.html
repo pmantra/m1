@@ -1,0 +1,41 @@
+{% extends 'admin/model/list.html' %}
+
+{% block model_menu_bar %}
+    <H2> {{admin_view.name }} </H2>
+{{ super() }}
+{% endblock %}
+
+{% block list_row %}
+    {% if actions %}
+    <td>
+        <input type="checkbox" name="rowid" class="action-checkbox" value="{{ get_pk_value(row) }}"
+               title="{{ _gettext('Select record') }}"/>
+    </td>
+    {% endif %}
+    {% block list_row_actions_column scoped %}
+    {% if admin_view.column_display_actions %}
+    <td class="list-buttons-column">
+        {% block list_row_actions scoped %}
+        {% for action in list_row_actions %}
+        {{ action.render_ctx(get_pk_value(row), row) }}
+        {% endfor %}
+        {% endblock %}
+    </td>
+    {%- endif -%}
+    {% endblock %}
+
+    {% for c, name in list_columns %}
+    <td class="col-{{c}}" data-title="{{ name }}">
+        {% if admin_view.is_editable(c) %}
+            {% set form = list_forms[get_pk_value(row)] %}
+            {% if form.csrf_token %}
+                {{ form[c](pk=get_pk_value(row), display_value=get_value(row, c), csrf=form.csrf_token._value()) }}
+            {% else %}
+                {{ form[c](pk=get_pk_value(row), display_value=get_value(row, c)) }}
+            {% endif %}
+        {% else %}
+            {{ get_value(row, c) }}
+        {% endif %}
+    </td>
+    {% endfor %}
+{% endblock %}

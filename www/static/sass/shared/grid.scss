@@ -1,0 +1,106 @@
+.app-grid-container {
+	@include flexbox;
+	width: 100%;
+
+	.app-grid-item {
+		margin: 20px auto;
+		width: 100%;
+	}
+
+	.app-store-icon {
+		height: 34px;
+		margin: 16px 0px 16px 0px;
+	}
+
+	.play-store-icon {
+		height: 40px;
+	}
+
+	@include susy-breakpoint($tablet) {
+		@include flexbox(row, stretch, space-between);
+		flex-wrap: wrap;
+
+		.app-grid-item {
+			margin: 20px 0;
+			flex-basis: 48%;
+		}
+	}
+
+	@include susy-breakpoint($desktop) {
+		&.two-column {
+			.app-grid-item {
+				margin: 20px 0;
+				flex-basis: 48%;
+			}
+		}
+
+		&.three-column {
+			.app-grid-item {
+				margin: 20px 0;
+				flex-basis: 31%;
+			}
+		}
+
+		&.four-column {
+			.app-grid-item {
+				margin: 20px 0;
+				flex-basis: 24%;
+			}
+		}
+
+		&.five-column {
+			.app-grid-item {
+				margin: 20px 0;
+				flex-basis: 19%;
+			}
+		}
+
+		&.six-column {
+			.app-grid-item {
+				margin: 20px 0;
+				flex-basis: 16%;
+			}
+		}
+	}
+}
+
+@supports (display: grid) {
+	.app-grid-container {
+		display: grid;
+		grid-auto-rows: min-content;
+		grid-gap: 1rem 1rem;
+		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+
+		.app-grid-item {
+			justify-self: stretch;
+			align-self: stretch;
+			margin: 0 !important;
+			flex-basis: auto !important; // unnecessary for grid, but overrides non-grid styles
+		}
+
+		&:after {
+			display: none;
+		}
+
+		@include susy-breakpoint($desktop) {
+			&.one-column {
+				grid-template-columns: repeat(1, 1fr);
+			}
+			&.two-column {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			&.three-column {
+				grid-template-columns: repeat(3, 1fr);
+			}
+			&.four-column {
+				grid-template-columns: repeat(4, 1fr);
+			}
+			&.five-column {
+				grid-template-columns: repeat(5, 1fr);
+			}
+			&.six-column {
+				grid-template-columns: repeat(6, 1fr);
+			}
+		}
+	}
+}

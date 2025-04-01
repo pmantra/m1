@@ -1,0 +1,102 @@
+<div class="onboarding-verify-enterprise center">
+	<h3 class="serif">Let's get you set up</h3>
+	<p>Please use the full first and last name that your employer has on file.</p>
+
+	<form name="altVerifyEnterpriseForm" role="form" class="clearfix mvn-form single-column max-w">
+		<section class="form-section">
+			<div class="form-elements-container">
+				<div class="form-item">
+					<mvn-input
+						type="text"
+						form-ref="verifyEnterpriseForm"
+						value="$ctrl.verifyEnterpriseInfo.first_name"
+						label="First name"
+						required="required"
+					></mvn-input>
+				</div>
+
+				<div class="form-item">
+					<mvn-input
+						type="text"
+						form-ref="verifyEnterpriseForm"
+						value="$ctrl.verifyEnterpriseInfo.last_name"
+						label="Last name"
+						required="required"
+					></mvn-input>
+				</div>
+
+				<div class="mvn-select-search">
+					<ui-select
+						ng-model="$ctrl.verifyEnterpriseInfo.work_state"
+						theme="select2"
+						ng-disabled="ctrl.disabled"
+						title="Employee work state*"
+						required="true"
+					>
+						<ui-select-match placeholder="Employee work state*"
+							>{{ $ctrl.verifyEnterpriseInfo.work_state | stateCodeToName }}</ui-select-match
+						>
+						<ui-select-choices class="choices" repeat="state.code as state in $ctrl.states | filter: $select.search">
+							<span ng-bind-html="state.name | highlight: $select.search"></span>
+						</ui-select-choices>
+					</ui-select>
+					<span class="ghost-label">Employee work state*</span>
+				</div>
+
+				<div class="form-item">
+					<mvn-date-input
+						ng-if="$ctrl.noDatePicker"
+						form-ref="altVerifyEnterpriseForm"
+						model-ref="$ctrl.verifyEnterpriseInfo.date_of_birth"
+						label="{{ $ctrl.notEmployee ? 'Partner\'s date of birth*' : 'Date of birth*' }}"
+						required="required"
+					></mvn-date-input>
+					<mvn-input
+						ng-if="!$ctrl.noDatePicker"
+						type="date"
+						form-ref="altVerifyEnterpriseForm"
+						value="$ctrl.verifyEnterpriseInfo.date_of_birth"
+						label="{{ $ctrl.notEmployee ? 'Partner\'s date of birth' : 'Date of birth' }}"
+						required="required"
+					></mvn-input>
+				</div>
+
+				<div class="form-item">
+					<mvn-input
+						type="text"
+						form-ref="verifyEnterpriseForm"
+						value="$ctrl.verifyEnterpriseInfo.company_name"
+						label="Company name"
+						required="required"
+					></mvn-input>
+				</div>
+
+				<div ng-if="!$ctrl.user.profiles.member.tel_number" class="form-item">
+					<mvn-tel-input
+						label="Your cell phone number (optional)"
+						value="$ctrl.verifyEnterpriseInfo.tel_number"
+					></mvn-tel-input>
+					<div class="form-tel-info">
+						We’ll use this number for appointment reminders or if you have trouble connecting via video chat.
+					</div>
+				</div>
+
+				<mvn-tooltip
+					hed="Stay informed"
+					dek="We'll use your number for appointment reminders or to reach out if you have trouble connecting via video chat."
+				></mvn-tooltip>
+			</div>
+		</section>
+	</form>
+</div>
+
+<mvn-onboarding-bottom-nav>
+	<button
+		class="btn btn-cta"
+		ng-click="$ctrl.verifyEnterprise($ctrl.verifyEnterpriseInfo)"
+		ng-disabled="altVerifyEnterpriseForm.$invalid"
+		ng-class="{'disabled' : altVerifyEnterpriseForm.$invalid}"
+	>
+		Next
+	</button>
+</mvn-onboarding-bottom-nav>

@@ -1,0 +1,41 @@
+<section
+	class="resource enterprise-resource"
+	ng-class="{ 'in-app' : $ctrl.inApp, 'nav-open': $ctrl.navOpen, 'webflow' : $ctrl.isWebflow }"
+>
+	<div class="resource-content" ng-if="!$ctrl.noResource && !$ctrl.loading">
+		<mvn-resource-body
+			title="$ctrl.resource.title"
+			body="$ctrl.resource.body"
+			is-webflow="$ctrl.isWebflow"
+			id="$ctrl.resource.id"
+		></mvn-resource-body>
+		<p ng-if="!$ctrl.isCustom && !$ctrl.notAuthorized && !$ctrl.isWebflow " class="legal">
+			Please note that this article is intended to provide you with useful, publicly available information. It is not
+			for use in the diagnosis of any disease or condition, or in the cure, mitigation, treatment or prevention of a
+			disease. For additional information and recommendations, please contact a licensed Maven provider to discuss the
+			best approach for you and your family.
+		</p>
+	</div>
+
+	<div ng-if="$ctrl.loading" class="center resource-body"><h3>Loading...</h3></div>
+
+	<div ng-if="$ctrl.noResource" class="resource-body center empty-content">
+		<h2>Hmm...</h2>
+		<p>We don't seem to have that resource available.</p>
+		<p>
+			Think there should be something here? Get in touch at
+			<a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a> and we'll figure out what happened!
+		</p>
+	</div>
+
+	<div ng-if="$ctrl.notAuthorized" class="resource-body center empty-content">
+		<h2>Please sign in</h2>
+		<p>Sign in to your Maven account to view this content</p>
+		<p><a ui-sref="auth.login" class="btn btn-cta">Sign in</a></p>
+		<p>
+			Don't have an account? Ask your HR representative about Maven or <a ui-sref="public.enterprise">learn more</a>.
+		</p>
+	</div>
+</section>
+
+<div ng-if="!$ctrl.inApp" ng-include="'js/mvnApp/app/shared/_condensed-footer.html'"></div>

@@ -1,0 +1,63 @@
+.page-testimonials {
+	.intro {
+		background-color: $mint-50;
+
+		h1 {
+			margin: 0;
+		}
+	}
+
+	.grid-container .text-container {
+		align-self: center;
+
+		h5 {
+			color: $blush-100;
+		}
+	}
+
+	.callout {
+		background-color: $blush-50;
+		padding: 15% 10%;
+		text-align: center;
+
+		@include susy-breakpoint($tablet) {
+			padding: 70px;
+		}
+	}
+
+	.banner-image {
+		background-color: $charcoal-40;
+		min-height: 1px; // IE -_-
+		height: auto;
+		width: 100%;
+	}
+
+	.testimonials-container {
+		background-color: white;
+		margin: 0 auto;
+		margin-top: -40px;
+		text-align: center;
+		width: 90%;
+
+		h3 {
+			margin: 40px auto;
+		}
+	}
+
+	.testimonial {
+		margin-bottom: 20px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		p,
+		.p {
+			margin-bottom: 8px;
+		}
+		h5 {
+			color: $emerald-40;
+			margin-top: 0;
+		}
+	}
+}

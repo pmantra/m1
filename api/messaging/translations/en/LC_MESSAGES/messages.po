@@ -1,0 +1,142 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-09-12 13:27-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: messaging/resources/messaging.py:817
+msgid "available_credits_error"
+msgstr "Error retrieving available message credits"
+
+#: messaging/resources/messaging.py:539
+msgid "cannot_attach_asset_belonging_to_another_user"
+msgstr "Cannot attach asset belonging to another user"
+
+#: messaging/resources/messaging.py:558
+msgid "cannot_attach_asset_to_message_asset_state_is_not_complete"
+msgstr "Cannot attach asset to message, asset state is not COMPLETE"
+
+#: messaging/resources/messaging.py:579
+msgid "cannot_attach_asset_to_multiple_messages_at_once"
+msgstr "Cannot attach asset to multiple messages at once"
+
+#: messaging/resources/messaging.py:787
+msgid "cannot_charge_customer_error"
+msgstr "Cannot charge customer."
+
+#: messaging/resources/messaging.py:789
+msgid "cannot_charge_customer_stripe_error"
+msgstr "Cannot charge customer, Stripe error"
+
+#: messaging/resources/messaging.py:197
+msgid "cant_open_a_channel_with_only_yourself"
+msgstr "You can't open a channel with only yourself."
+
+#: messaging/resources/messaging.py:212
+msgid "channel_can_only_be_opened_between_a_member_and_a_practitioner"
+msgstr "Channel can only be opened between a member and a practitioner."
+
+#: messaging/resources/messaging.py:518
+msgid "could_not_find_asset_matching_requested_identifier"
+msgstr "Could not find asset matching requested identifier, {asset_id}."
+
+#: messaging/resources/messaging.py:620
+msgid "exception_allocating_message_credits_enterprise_user"
+msgstr "You do not have enough allowance to message as an enterprise user."
+
+#: messaging/resources/messaging.py:628
+msgid "exception_allocating_message_credits_marketplace_user"
+msgstr "You do not have enough allowance to message."
+
+#: messaging/resources/messaging.py:666
+msgid "general_exception_allocating_message_credits"
+msgstr "Exception allocating message credits"
+
+#: messaging/resources/messaging.py:128
+msgid "input_error_getting_channels"
+msgstr "Input error getting channels data"
+
+#: messaging/resources/messaging.py:487
+msgid "message_is_too_long"
+msgstr ""
+"Your message is too long! Please reduce to a maximum of {max_n_chars} "
+"characters."
+
+#: messaging/schemas/messaging.py:34
+msgid "message_reply_sla_user_message_ca_default"
+msgstr "You'll get a response within 24 hours."
+
+#: messaging/schemas/messaging.py:37
+msgid "message_reply_sla_user_message_provider_default"
+msgstr "Most providers respond within 24 hours."
+
+#: messaging/schemas/messaging.py:40
+msgid "message_reply_sla_user_message_wallet"
+msgstr "You'll get a response within 3 business days."
+
+#: messaging/schemas/messaging.py:44
+msgid "message_reply_sla_user_message_wallet_with_inbound_phone_number"
+msgstr ""
+"You'll get a response within 3 business days. If your matter is urgent, "
+"please call us instead at {phone_number}."
+
+#: messaging/resources/messaging.py:782
+msgid "no_card_on_file_error"
+msgstr "Customer does not have a card on file."
+
+#: messaging/resources/messaging.py:205
+msgid "one_or_more_users_not_found"
+msgstr "One or more users not found."
+
+#: messaging/resources/messaging.py:601
+msgid "only_image_and_pdf_file_types_are_supported"
+msgstr "Only image and PDF file types are supported."
+
+#: messaging/resources/messaging.py:177
+msgid "serializing_error_getting_channels"
+msgstr "Serializing error getting channels data"
+
+#: messaging/resources/messaging.py:422
+msgid "unable_to_post_message_in_channel_inactive_or_messaging_disabled_practitioner"
+msgstr ""
+"Unable to post message in channel {channel_id}: inactive or messaging "
+"disabled practitioner"
+
+#: messaging/resources/messaging.py:456
+msgid "unable_to_post_message_in_channel_member_cannot_message_practitioner"
+msgstr "Unable to post message, member cannot message this provider."
+
+#: messaging/resources/messaging.py:364
+msgid "unable_to_post_message_in_channel_no_participants_found"
+msgstr "Unable to post message in channel {channel_id}: no participants found"
+
+#: messaging/resources/messaging.py:385
+msgid "unable_to_post_message_in_channel_user_is_not_a_participant"
+msgstr "Unable to post message in channel {channel_id}: user is not a participant"
+
+#: messaging/resources/messaging.py:201
+msgid "we_dont_support_multi_party_messaging"
+msgstr "We don't support multi-party messaging."
+
+#: messaging/resources/messaging.py:199
+msgid "you_are_already_included_in_the_channel"
+msgstr ""
+"You are already included in the channel, so you don't need to include "
+"yourself in the user_ids."
+
+#: messaging/resources/sms.py:123
+msgid "generic_maven_message_body"
+msgstr "You have a new message from Maven!"

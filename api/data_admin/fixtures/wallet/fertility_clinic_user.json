@@ -1,0 +1,7 @@
+ [{
+ 	"type": "fertility_clinic_user_profile",
+ 	"email_prefix": "mvnqa-fc_standard_user",
+ 	"password": "simpleisawesome1*",
+ 	"role": "fertility_clinic_user",
+ 	"fertility_clinic_id": 1
+ }]

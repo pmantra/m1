@@ -1,0 +1,188 @@
+<div class="center">
+
+	<div class="assessment-body clearfix">
+		<div class="parent-question">
+			<div class="ob-maven-icon center">
+				<svg width="57" height="31" viewBox="0 0 57 31" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Maven</title><defs><path id="a" d="M0 15.45V0h56.43v30.897H0z"/></defs><g fill="none" fill-rule="evenodd"><path d="M17.87 11.73c.185-.536.41-1.055.67-1.552 1.852-3.517 5.494-5.916 9.676-5.916s7.824 2.4 9.674 5.916a17.69 17.69 0 0 1 2.092-4.448C37.202 2.237 32.962 0 28.216 0S19.23 2.236 16.45 5.73a16.49 16.49 0 0 0-.67.908 15.58 15.58 0 0 0-2.716 8.81 11.317 11.317 0 0 1-1.298 5.273c-1.85 3.518-5.494 5.917-9.676 5.917-1.154 0-2.09.953-2.09 2.13 0 1.178.936 2.13 2.09 2.13 4.747 0 8.987-2.235 11.768-5.727.233-.293.457-.598.668-.91a15.592 15.592 0 0 0 2.716-8.812c0-1.303.223-2.554.627-3.717M2.09 4.263c4.182 0 7.825 2.4 9.676 5.916a17.65 17.65 0 0 1 2.092-4.448C11.078 2.237 6.838 0 2.09 0 .936 0 0 .954 0 2.13c0 1.178.936 2.132 2.09 2.132m41.903 7.47c.186-.538.41-1.057.673-1.554 1.85-3.517 5.493-5.916 9.675-5.916 1.155 0 2.09-.954 2.09-2.132C56.43.955 55.495 0 54.34 0c-4.745 0-8.987 2.237-11.765 5.73a15.742 15.742 0 0 0-1.296 1.903 15.57 15.57 0 0 0-2.092 7.815 11.345 11.345 0 0 1-1.297 5.273c-1.85 3.518-5.492 5.917-9.674 5.917-4.182 0-7.824-2.4-9.676-5.916a17.656 17.656 0 0 1-2.09 4.45c2.78 3.492 7.02 5.727 11.766 5.727 4.745 0 8.986-2.235 11.766-5.727a15.762 15.762 0 0 0 1.297-1.904 15.59 15.59 0 0 0 2.088-7.818c0-1.303.223-2.554.626-3.717M54.34 26.638c-4.18 0-7.824-2.4-9.674-5.916a17.77 17.77 0 0 1-2.09 4.45c2.777 3.492 7.02 5.727 11.765 5.727 1.155 0 2.09-.952 2.09-2.13 0-1.177-.935-2.13-2.09-2.13" fill="#00413e" /></g></svg>
+			</div>
+			<div class="assessment-icon" ng-if="question.meta.icon">
+				<div class="icon-wrap">
+					<img ng-src="{{ question.meta.icon }}" alt="{{ question.body }}" />
+				</div>
+			</div>
+			
+			<h1>{{ question.body }}</h1>
+
+			<form name="assessmentParentAnswer" class="form secondary-app">
+
+				<div class="form-group assessment-date" ng-if="question.widget.type == 'date' " >
+					
+					<div class="form-fields-merge clearfix">
+						<div class="">
+							<input type="text" placeholder="MM" ng-model="question.answer.body.month"  value="{{ question.answer.body.month }}" name="month"  ng-minlength="2" ng-maxlength="2" max-valid  required ng-change="onChange()"> <span class="spacer"> / </span>
+							<input type="text" placeholder="DD" ng-model="question.answer.body.day"  name="day" value="{{ question.answer.body.day }}" ng-minlength="2" ng-maxlength="2" max-valid  required ng-change="onChange()"><span class="spacer"> / </span>
+							<input type="text" placeholder="YYYY" ng-model="question.answer.body.year"  value="{{ question.answer.body.year }}" name="year" ng-minlength="4" ng-maxlength="4" ng-trim="true" max-valid required ng-change="onChange()">
+						</div>
+
+					</div>
+					<div class="form-field-message error">
+						<div class="help-block" ng-messages="assessmentParentAnswer.year.$error" ng-if="assessmentParentAnswer.year.$touched">
+							<div ng-message="required"><p class="p-xs">Please enter a year (YYYY)</p></div>
+				  			<div ng-message="minlength | maxlength"><p class="p-xs">Year must be 4 numbers (YYYY)</p></div>
+						</div>
+						<div class="help-block" ng-messages="assessmentParentAnswer.month.$error" ng-if="assessmentParentAnswer.month.$touched">
+							<div ng-message="required"><p class="p-xs">Please enter a month (01 - 12)</p></div>
+				  			<div ng-message="minlength | maxlength"><p class="p-xs">Month must be 2 numbers (01 - 12)</p></div>
+						</div>
+						<div class="help-block" ng-messages="assessmentParentAnswer.day.$error" ng-if="assessmentParentAnswer.day.$touched">
+							<div ng-message="required"><p class="p-xs">Please enter a day (01 - 31)</p></div>
+				  			<div ng-message="minlength | maxlength"><p class="p-xs">Day must be 2 numbers (01 - 31)</p></div>
+						</div>
+					</div>
+				</div>
+
+				<textarea ng-if="question.widget.type == 'textarea' " ng-model="question.answer.body" placeholder="{{ question.widget.placeholder }}" ng-change="onChange()"></textarea>
+				
+				<input type="text" ng-if="question.widget.type == 'freetextfield' " ng-model="question.answer.body" ng-change="onChange()" />
+
+				<input type="textarea" ng-if="question.widget.type == 'longtext' " ng-model="question.answer.body"  ng-change="onChange()"/>
+
+				<div ng-if="question.widget.type == 'radio' "  class="assessment-radio-wrap clearfix radio-{{ question.widget.options.length }}">
+					<div ng-repeat="opt in question.widget.options" class="assessment-radio">
+					 	<input type="radio" value="{{ opt.value }}" id="{{ opt.value }}" ng-model="question.answer.body" ng-change="onChange()"/>
+					 	<label for="{{ opt.value }}"><span><span></span></span> {{ opt.label }}</label>
+					 </div>
+				</div>
+
+				<div ng-if="question.widget.type == 'panel-single-choice' " class="question-grid-container clearfix">
+					<p class="center question-subhed">Please select one</p>
+					<div class="assessment-panels-single-choice clearfix panels-single-{{ question.widget.options.length }}-choices">
+						<div ng-repeat="opt in question.widget.options" class="panel-grid panel-single-choice" ng-class="{'selected' : question.answer.body === opt.value }">
+							<div class="panel-content">
+								<a ng-click="question.answer.body=opt.value; onChange()" ng-model="question.answer.body">
+									<span class="selected-check" ng-if="question.answer.body === opt.value"><svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><title>Selected</title><g fill="none" fill-rule="evenodd"><circle fill="#0D6A68" cx="11" cy="11" r="11"/><path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" d="M6 11.4l3.58 3.4L16.736 8"/></g></svg></span>
+									<div class="panel-img" ng-style="{ 'background-image' : 'url({{ opt.icon }})' }"></div>
+							 		<p>{{ opt.label }}</p>
+							 	</a>
+							 </div>
+						 </div>
+					</div>
+				</div>
+
+				<div ng-if="question.widget.type == 'panel-multi-choice-sectioned' "  class="question-grid-container clearfix assessment-panels-multi-choice">
+					<p class="center question-subhed">Select all that apply</p>
+					<div ng-repeat="section in question.widget.sections" class="clearfix">
+						<h5>{{ ::section.title }}</h5>
+						<div ng-repeat="item in section.items" class="panel-grid-multi">
+							<div ng-repeat="opt in question.widget.options | filterBySection:item" class="panel-grid" ng-class="{'selected' : question.answer.body[opt.id] === opt.value}">
+								<div class="panel-content">
+									<a ng-click="updateMultiAnswer(question, opt.id, opt.value)" ng-model="question.answer.body[opt.id]">
+										<span class="selected-check" ng-if="question.answer.body[opt.id] === opt.value"><svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><title>Selected</title><g fill="none" fill-rule="evenodd"><circle fill="#0D6A68" cx="11" cy="11" r="11"/><path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" d="M6 11.4l3.58 3.4L16.736 8"/></g></svg></span>
+										<div class="panel-img" ng-style="{ 'background-image' : 'url({{ opt.icon }})' }"></div>
+										<p>{{ opt.label }}</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div ng-if="question.widget.other" class="assessment-checkbox-wrap">
+						<h5>Other</h5>
+						<textarea ng-model="question.answer.body[question.widget.options.length]" placeholder="Please describe your situation"></textarea>
+					</div>
+				</div>
+
+
+
+				<div ng-if="question.widget.type == 'freetextmulti' " class="form-group clearfix freetextmulti">
+					<div class=" ">
+						<div ng-repeat="opt in question.widget.options" class="fields-{{ question.widget.options.length }}">
+
+							<input ng-if="opt.fieldtype !== 'height' " class="input" name="{{ opt.value }}" label="{{ opt.label }}" placeholder="{{ opt.label }}" type="{{ opt.fieldtype }}" ng-model="question.answer.body[opt.value]" value="{{ question.answer.body[opt.value] }}"  required="" maxlen="75" ng-change="onChange()"></input>
+
+							<height-field-merge ng-if="opt.fieldtype === 'height' " input-val="question.answer.body[opt.value]" placeholder="{{ opt.label }}" ng-model="question.answer.body[opt.value]" maxlen="75" on-change="onChange()"></height-field-merge>
+
+						</div>
+					</div>
+					
+				</div>
+			</form>
+			
+		</div>
+
+		<div ng-show="childQuestions">
+			<div ng-repeat="cq in childQuestions  track by $index" class="child-questions">
+
+				<div ng-show="shouldShowChild(question)">
+					<h3>{{ cq.body }}</h3>
+				
+					<form name="aforms.assessmentChildAnswer" class="secondary-app">
+
+						<div class="form-group  assessment-date" ng-if="cq.widget.type == 'date' " >
+							
+							<div class="form-fields-merge clearfix">
+								<div class="">
+									<input type="text" placeholder="MM" ng-model="cq.answer.body.month"  value="{{ cq.answer.body.month }}" name="month"  ng-minlength="2" ng-maxlength="2" max-valid  ng-change="onChange()"> <span class="spacer"> / </span>
+									<input type="text" placeholder="DD" ng-model="cq.answer.body.day"  name="day" value="{{ cq.answer.body.day }}" ng-minlength="2" ng-maxlength="2" max-valid  ng-change="onChange()"><span class="spacer"> / </span>
+									<input type="text" placeholder="YYYY" ng-model="cq.answer.body.year"  value="{{ cq.answer.body.year }}" name="year" ng-minlength="4" ng-maxlength="4" ng-trim="true" max-valid  ng-change="onChange()">
+								</div>
+
+							</div>
+							<div class="form-field-message error">
+								<div class="help-block" ng-messages="assessmentChildAnswer.year.$error" ng-if="assessmentChildAnswer.year.$touched">
+									<div ng-message="required"><p class="p-xs">Please enter a year (YYYY)</p></div>
+				  					<div ng-message="minlength | maxlength"><p class="p-xs">Year must be 4 numbers (YYYY)</p></div>
+								</div>
+								<div class="help-block" ng-messages="assessmentChildAnswer.month.$error" ng-if="assessmentChildAnswer.month.$touched">
+									<div ng-message="required"><p class="p-xs">Please enter a month (01 - 12)</p></div>
+				  					<div ng-message="minlength | maxlength"><p class="p-xs">Month must be 2 numbers (01 - 12)</p></div>
+								</div>
+								<div class="help-block" ng-messages="assessmentChildAnswer.day.$error" ng-if="assessmentChildAnswer.day.$touched">
+									<div ng-message="required"><p class="p-xs">Please enter a day (01 - 31)</p></div>
+				  					<div ng-message="minlength | maxlength"><p class="p-xs">Day must be 2 numbers (01 - 31)</p></div>
+								</div>
+							</div>
+						</div>
+
+
+						<textarea ng-if="cq.widget.type == 'textarea' " ng-model="cq.answer.body"  ng-change="onChange()" placeholder="{{ cq.widget.placeholder }}" ></textarea>
+						
+						<input type="text" ng-if="cq.widget.type == 'freetextfield' " ng-model="cq.answer.body" ng-change="onChange()" />
+
+						<input type="textarea" ng-if="cq.widget.type == 'longtext' " ng-model="cq.answer.body"  ng-change="onChange()"/>
+
+						<div ng-if="cq.widget.type == 'radio' "  class="assessment-radio-wrap clearfix  radio-{{ cq.widget.options.length }}"">
+							<div ng-repeat="opt in cq.widget.options" class="assessment-radio">
+							 	<input type="radio" value="{{ opt.value }} " name="{{ opt.value }}" ng-model="cq.answer.body" ng-change="onChange()" id="{{ opt.value }}" />
+							 	<label for="{{ opt.value }}"><span><span></span></span> {{ opt.label }}</label>
+							 </div>
+						</div>
+
+
+						<div ng-if="cq.widget.type == 'freetextmulti' " class="form-group clearfix freetextmulti">
+							<div class="form-fields-merge ">
+								<div ng-repeat="opt in cq.widget.options" class="multi-field fields-{{ cq.widget.options.length }}">
+									<input class="input" name="{{ opt.value }}" label="{{ opt.label }}" placeholder="{{ opt.label }}" type="{{ fieldtype }}" model-ref="cq.answer.body[opt.value]" ng-model="cq.answer.body[opt.value]" value="{{ cq.answer.body[opt.value] }}"  required="" maxlen="75" ng-change="onChange()"></input>
+								</div>
+							</div>
+							
+						</div>
+
+
+					</form>
+
+				</div>
+				<p ng-if="cq.meta.subtext" class="p-xs question-subtext">{{ ::question.meta.subtext }}</p>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="next-question clearfix">
+		<p class="mobile-none"><a class="btn btn-next" href="" ng-click="saveAnswers()" ng-disabled="btnDisabled" ng-class="{'disabled' :btnDisabled }"><svg role="image" aria-label="Next" width="62" height="62" viewBox="0 0 62 62" xmlns="http://www.w3.org/2000/svg"><title>Next</title><g stroke-width="2" stroke="#111111" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M28 43l12-11.1L28 21"/><path d="M61 31c0 16.568-13.432 30-30 30C14.432 61 1 47.568 1 31 1 14.432 14.432 1 31 1c16.568 0 30 13.432 30 30z"/></g></svg></a></p>
+
+		<p class="mobile-only"><a class="btn btn-cta" href="" ng-click="saveAnswers()" ng-disabled="btnDisabled" ng-class="{'disabled' :btnDisabled }"><span ng-if="!lastQ">Next Question</span><span ng-if="lastQ">Finish</span></a></p>
+	</div>
+
+	<p class="p-xs question-subtext" ng-if="question.meta.subtext">{{ ::question.meta.subtext }}</p>
+
+</div>

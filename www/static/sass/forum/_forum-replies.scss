@@ -1,0 +1,223 @@
+/* Post replies list */
+.forum-post-body {
+	.post-title {
+		margin-bottom: 0.5rem;
+	}
+	.post-body {
+		padding-bottom: 10px;
+
+		@include susy-breakpoint($desktop) {
+			padding-bottom: 20px;
+		}
+	}
+}
+
+/* Post meta */
+
+.post-meta {
+	& > span {
+		float: left;
+		cursor: pointer;
+	}
+	.post-action {
+		margin-right: 30px;
+		@include susy-breakpoint($mobile-landscape) {
+			margin-right: 70px;
+		}
+		@include susy-breakpoint($desktop) {
+			margin-right: 40px;
+		}
+	}
+	.icon-bookmark {
+		&.bookmarked {
+			svg {
+				path {
+					fill: $charcoal-100;
+				}
+			}
+		}
+	}
+}
+
+.replies-count {
+	@include susy-breakpoint($desktop) {
+		margin-left: 15px;
+	}
+
+	h5,
+	.h5 {
+		font-size: 16px;
+		// margin: 0 0 30px 16px;
+
+		@include susy-breakpoint($desktop) {
+			font-size: 18px;
+		}
+	}
+}
+
+.reply-list {
+	margin-bottom: 20px;
+	&:first-child {
+		border-top: 1px solid $gray-xlt;
+	}
+	.name {
+		color: $gray-dk;
+	}
+	.avatar-wrap {
+		> img {
+			height: 45px;
+			width: 45px;
+		}
+	}
+	.post-action,
+	.post-body,
+	.private-message {
+		padding-left: 60px;
+	}
+
+	&.practitioner {
+		.user-name {
+			height: 54px;
+
+			@include susy-breakpoint($tablet) {
+				display: inline-block;
+			}
+		}
+		.post-action {
+			display: block;
+			a {
+				color: $primary;
+				font-weight: bold;
+				text-transform: none;
+
+				&:first-child {
+					margin-right: 30px;
+				}
+			}
+
+			@include susy-breakpoint($tablet) {
+				display: inline-block;
+			}
+
+			@include susy-breakpoint($desktop) {
+				margin: 0;
+			}
+		}
+	}
+	.post-body {
+		margin: 30px 0;
+		padding-right: 20px;
+	}
+
+	.practitioner-reply {
+		.post-action {
+			display: block;
+		}
+	}
+
+	.private-message {
+		.private-message-container {
+			margin: 0 auto;
+			text-align: center;
+			width: 225px;
+
+			@include susy-breakpoint($tablet) {
+				margin: 0;
+			}
+		}
+
+		p {
+			font-size: 14px;
+			font-weight: bold;
+			margin-top: 22px;
+		}
+
+		.btn-container {
+			margin: 0;
+		}
+
+		.btn {
+			border: 1px solid $primary;
+			border-radius: 35px;
+			color: $primary;
+			font-size: 16px;
+			height: auto;
+			margin-bottom: 4px;
+			padding: 18px;
+			white-space: normal;
+		}
+
+		span {
+			color: $gray;
+			font-size: 12px;
+		}
+	}
+}
+.votes-header {
+	font-size: 14px;
+	color: $charcoal-100;
+}
+.icon-was-helpful {
+	cursor: pointer;
+	height: 22px;
+	margin-bottom: 20px;
+	svg,
+	h5,
+	.h5,
+	.vote-count {
+		float: left;
+		display: block;
+		margin: 0 10px 0 0;
+	}
+	.vote-count {
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		text-align: center;
+		background: $macaroon-20;
+		font-size: 12px;
+		font-family: $font3;
+		display: block;
+		line-height: 20px;
+		&.voted {
+			background: $charcoal-40;
+		}
+	}
+}
+
+/* Write a reply */
+
+/* Re-captcha designs */
+.g-recaptcha-replies {
+	display: flex;
+	justify-content: end;
+	margin: 7px 0 20px 0;
+}
+
+.create-reply {
+	margin-bottom: 40px;
+	textarea {
+		border: 1px solid $gray-xlt;
+		height: 128px;
+		padding: 15px;
+	}
+	.submit-reply {
+		margin-top: 5px;
+		text-align: right;
+	}
+	.post-author-container {
+		.post-anon-checkbox {
+			border: none;
+		}
+	}
+	@include susy-breakpoint($tablet) {
+		.post-anon-checkbox {
+			margin-right: -22px;
+		}
+	}
+	@include susy-breakpoint($desktop) {
+		.form-group {
+			padding-left: 60px;
+		}
+	}
+}

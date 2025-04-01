@@ -1,0 +1,16 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    {{ super() }}
+
+    <h2>Uses Info</h2>
+
+    {% for use in model.uses %}
+    - (User ID: {{ use.user_id }}) on {{ use.created_at }} <br/>
+    {% endfor %}
+
+    <br/>
+    <br/>
+
+{% endblock %}
+

@@ -1,0 +1,990 @@
+openapi: 3.0.3
+info:
+  title: Maven Clinic Appointment API
+  version: 1.0.0
+  description: API endpoints related to appointments. 
+servers:
+  - url: https://www.mavenclinic.com
+  - url: https://www.qa1.mvnapp.net
+  - url: https://www.qa2.mvnapp.net
+  - url: https://www.staging.mvnapp.net
+paths:
+  /api/v1/appointments/{appointment_id}/reschedule:
+    patch:
+      summary: Reschedule an appointment.
+      description: >-
+        To reschedule an appointment to a different time.
+      operationId: RescheduleAppointment.patch
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RescheduleAppointmentRequest"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RescheduleAppointmentResponse"
+        "400":
+          description: >-
+            Invalid request body. 1) That product does not exist or
+            2) Can't reschedule after the appointment's start time or
+            3) The reschedule feature is disabled.
+        "500":
+          description: Internal error
+  /api/v1/practitioners/{practitioner_id}/schedules/recurring_blocks:
+    post:
+      summary: Create recurring availability blocks or scheduled recurring blocks
+      description: >-
+        To create recurring availability blocks for a practitioner.
+      operationId: ScheduleRecurringBlocks.post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ScheduleRecurringBlocksPostRequest"
+      responses:
+        "202":
+          description: OK
+        "400":
+          description: Invalid request body or Conflict with existing availability!
+        "401":
+          description: User is not authorized to perform this action
+        "403":
+          description: Not authorized to edit schedule that is not your own or Need a schedule to add an event!
+        "404":
+          description: Matching provider not found
+        "500":
+          description: Internal error
+    get:
+      summary: Retrieve all recurring availability blocks for provider
+      description: >-
+        To view recurring availability blocks for a practitioner.
+      operationId: ScheduleRecurringBlocks.get
+      parameters:
+        - in: query
+          name: starts_at
+          schema:
+            type: string
+            format: date
+            description: Start date for search of blocks for provider
+          required: true
+        - in: query
+          name: ends_at
+          schema:
+            type: string
+            format: date
+            description: End date for search of blocks for provider
+          required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScheduleRecurringBlocksGetResponse"
+        "400":
+          description: Invalid request body
+        "401":
+          description: User is not authorized to perform this action
+        "403":
+          description: Not authorized to view schedule that is not your own
+        "404":
+          description: Matching provider not found
+        "500":
+          description: Internal error
+  /api/v1/practitioners/{practitioner_id}/schedules/recurring_blocks/{schedule_recurring_block_id}:
+    put:
+      summary: Edit a single recurring availability block or scheduled recurring block
+      description: >-
+        To edit the details on a single recurring availability block
+      operationId: ScheduleRecurringBlock.put
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ScheduleRecurringBlockPutRequest"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScheduleRecurringBlockPutResponse"
+        "400":
+          description: Invalid request body or Conflict with existing availability! or Conflict with an appointment!
+        "401":
+          description: User is not authorized to perform this action
+        "403":
+          description: Not authorized to edit schedule that is not your own
+        "404":
+          description: Matching provider not found
+        "500":
+          description: Internal error
+    delete:
+      summary: Delete a single recurring availability block or scheduled recurring block
+      description: >-
+        To delete the details on a single recurring availability block
+      operationId: ScheduleRecurringBlock.delete
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ScheduleRecurringBlockDeleteRequest"
+      responses:
+        "204":
+          description: OK
+        "400":
+          description: Cannot delete when you are booked!
+        "401":
+          description: User is not authorized to perform this action
+        "403":
+          description: Not authorized to edit schedule that is not your own
+        "404":
+          description: Matching provider not found
+        "500":
+          description: Internal error
+
+  /api/v2/member/appointments/:
+    get:
+      summary: Get a member's appointments
+      description: Get a member's appointments
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          required: false
+        - in: query
+          name: offset
+          schema:
+            type: integer
+          required: false
+        - in: query
+          name: scheduled_start
+          schema:
+            type: string
+            format: datetime
+        - in: query
+          name: scheduled_end
+          schema:
+            type: string
+            format: datetime
+        - in: query
+          name: order_direction
+          schema:
+            type: string
+            enum:
+              - "asc"
+              - "desc"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MemberAppointmentsResponse"
+  /api/v2/member/appointments/{id}/:
+    get:
+      summary: Get a member's appointment by id
+      description: Get a member's appointment by id
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MemberAppointmentResponse"
+        "404":
+          description: Appointment Not Found, or Member Lacking View Permissions.
+        "500":
+          description: Member or Provider Not Found
+
+  /api/v2/appointments/{id}/cancel/:
+    post:
+      summary: Cancel an appointment by Id
+      description: Cancel an appointment by id by either a practitioner or a member
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+        - in: query
+          name: cancelled_note
+          schema:
+            type: string
+          required: false
+          description: Only needs to be sent as a part of iOS MPractice. Not sent in Android or Web.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cancelled_note:
+                  type: string
+                  required: false
+                  description: Only needs to be sent as a part of iOS MPractice. Not sent in Android or Web.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MemberAppointmentResponse"
+        "400":
+          description: >-
+            Invalid request to cancel an appointment.
+            Or the appointment is already cancelled.
+        "404":
+          description: Appointment not found.
+        "500":
+          description: >-
+            Cancelled_by_user_id not found, appointment is not cancelled.
+            Or Error fetching cancellation policy.
+            Or Error loading sql query.
+
+  /api/v2/appointments/reserve_payment_or_credits/:
+    post:
+      summary: Authorize payment for an appointment
+      description: This is an internal endpoint to process payment when an appointment is being created.
+      requestBody:
+        required: True
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AppointmentElementV3"
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Invalid request body
+        "404":
+          description: One or more record cannot be found
+        "500":
+          description: >-
+            Error Creating Payment Accounting Entry
+
+  /api/v2/appointments/complete_payment/:
+    post:
+      summary: Complete payment for an appointment
+      description: This is an internal endpoint to process payment when an appointment is completed.
+      requestBody:
+        required: True
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AppointmentElementV3"
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Invalid request body
+        "404":
+          description: One or more record cannot be found
+        "503":
+          description: Payment Capturing payment
+        "500":
+          description: >-
+            Error Completing Payment
+
+  /api/v2/appointments/process_payments_for_cancel/:
+    post:
+      summary: Cancel payment for an appointment
+      description: This is an internal endpoint to process payment when an appointment is cancelled.
+      requestBody:
+        required: True
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AppointmentElementV3"
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Invalid request body
+        "404":
+          description: One or more record cannot be found
+        "500":
+          description: >-
+            Error Cancelling Payment
+
+  /api/v2/appointments/{id}/video_timestamp/:
+    post:
+      summary: Update timestamps for an appointment
+      description: Update timestamps for an appointment
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                started_at:
+                  type: string
+                  format: date-time
+                ended_at:
+                  type: string
+                  format: date-time
+                disconnected_at:
+                  type: string
+                  format: date-time
+                phone_call_at:
+                  type: string
+                  format: date-time
+      responses:
+        "200":
+          description: OK
+
+
+  /api/v1/practitioners/{id}/schedules/events:
+    get:
+      description: Get scheduleevents and booking constraints for a provider
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+        - in: query
+          name: starts_at
+          schema:
+            type: string
+            format: date
+            description: Start date for search of blocks for provider
+          required: true
+        - in: query
+          name: ends_at
+          schema:
+            type: string
+            format: date
+            description: End date for search of blocks for provider
+          required: true
+        - in: query
+          name: recurring
+          schema:
+            type: boolean
+            description: Include ScheduleEvents tied to recurring blocks
+          required: false
+        - in: query
+          name: product_id
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ScheduleEventsGetResponse"
+
+components:
+  schemas:
+    RescheduleAppointmentRequest:
+      type: object
+      properties:
+        scheduled_start:
+          description: Appointment's new scheduled start time
+          type: string
+          format: date-time
+        product_id:
+          description: Appointment's product id
+          type: integer
+    RescheduleAppointmentResponse:
+      type: object
+      description: Will return an Appointment json object
+    ScheduleRecurringBlocksPostRequest:
+      type: object
+      properties:
+        starts_at:
+          description: ScheduleRecurringBlock block's start time
+          type: string
+          format: date-time
+          required: true
+        ends_at:
+          description: ScheduleRecurringBlock block's start time
+          type: string
+          format: date-time
+          required: true
+        until:
+          description: ScheduleRecurringBlock block's date that recurrence ends
+          type: string
+          format: date
+          required: true
+        frequency:
+          description: Frequency of the block to repeat
+          type: string
+          enum:
+            - "Monthly"
+            - "Weekly"
+            - "Daily"
+          required: false
+        week_days_index:
+          description: Block's chosen day of week list
+          type: array
+          required: false
+          items:
+            type: integer
+        member_timezone:
+          description: Member's local timezone
+          type: string
+          required: true
+    ScheduleRecurringBlocksGetRequest:
+      type: object
+      properties:
+        start_date:
+          description: Start date for search of blocks for provider
+          type: string
+          format: date
+          required: true
+        end_date:
+          description: End date for search of blocks for provider
+          type: string
+          format: date
+          required: true
+    ScheduleRecurringBlocksGetResponse:
+      type: object
+      properties:
+        data:
+          description: Data for all ScheduleRecurringBlocks for provider
+          type: array
+          items:
+            $ref: "#/components/schemas/ScheduleRecurringBlockGetResponse"
+    ScheduleRecurringBlockGetResponse:
+      type: object
+      properties:
+        id:
+          description: Id of created ScheduleRecurringBlock
+          type: integer
+        schedule_id:
+          description: Id of associated ScheduleId
+          type: integer
+        schedule_events:
+          description: List of schedule event object information associated
+          required: false
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                description: Id of the ScheduleEvent
+                type: integer
+              state:
+                description: The state of the availability. Deprecated, only AVAILABLE state is supported.
+                type: string
+                enum:
+                  - "AVAILABLE"
+                  - "UNAVAILABLE"
+                  - "CONTINGENT"
+              starts_at:
+                description: Starts at datetime for ScheduleEvent
+                type: string
+                format: date-time
+              ends_at:
+                description: Ends at datetime for ScheduleEvent
+                type: string
+                format: date-time
+              schedule_recurring_block_id:
+                description: Id of the the ScheduleRecurringBlock
+                type: integer
+        starts_at:
+          description: ScheduleRecurringBlock block's start time
+          type: string
+          format: date-time
+        ends_at:
+          description: ScheduleRecurringBlock block's start time
+          type: string
+          format: date-time
+        until:
+          description: ScheduleRecurringBlock block's date that recurrence ends
+          type: string
+          format: date
+        frequency:
+          description: Frequency of the block to repeat
+          type: string
+          enum:
+            - "Monthly"
+            - "Weekly"
+            - "Daily"
+        latest_date_events_created:
+          description: Datetime when job was last run to create nested ScheduleEvents
+          type: string
+          format: date-time
+        week_days_index:
+          description: Block's chosen day of week list
+          type: array
+          items:
+            type: integer
+    ScheduleRecurringBlockPutResponse:
+      type: object
+      properties:
+        id:
+          description: Id of created ScheduleRecurringBlock
+          type: integer
+        schedule_id:
+          description: Id of associated ScheduleId
+          type: integer
+        starts_at:
+          description: ScheduleRecurringBlock block's start time
+          type: string
+          format: date-time
+        ends_at:
+          description: ScheduleRecurringBlock block's start time
+          type: string
+          format: date-time
+        until:
+          description: ScheduleRecurringBlock block's date that recurrence ends
+          type: string
+          format: date
+        frequency:
+          description: Frequency of the block to repeat
+          type: string
+          enum:
+            - "Monthly"
+            - "Weekly"
+            - "Daily"
+        week_days_index:
+          description: Block's chosen day of week list
+          type: array
+          items:
+            type: integer
+    ScheduleRecurringBlockPutRequest:
+      type: object
+      properties:
+        starts_at:
+          description: ScheduleRecurringBlock block's start time
+          type: string
+          format: date-time
+          required: false
+        ends_at:
+          description: ScheduleRecurringBlock block's start time
+          type: string
+          format: date-time
+          required: false
+        until:
+          description: ScheduleRecurringBlock block's date that recurrence ends
+          type: string
+          format: date
+          required: false
+        frequency:
+          description: Frequency of the block to repeat
+          type: string
+          enum:
+            - "Monthly"
+            - "Weekly"
+            - "Daily"
+          required: false
+        week_days_index:
+          description: Block's chosen day of week list
+          type: array
+          required: false
+          items:
+            type: integer
+    ScheduleRecurringBlockDeleteRequest:
+      type: object
+      properties:
+        this_and_following_blocks:
+          description: True if intending to delete block and all following scheduled blocks
+          type: boolean
+          format: date-time
+          required: true
+    ScheduleEvent:
+      type: object
+      properties:
+        id:
+          description: Id of the ScheduleEvent
+          type: integer
+        starts_at:
+          description: Starts at datetime for ScheduleEvent
+          type: string
+          format: date-time
+        ends_at:
+          description: Ends at datetime for ScheduleEvent
+          type: string
+          format: date-time
+        schedule_recurring_block_id:
+          description: Id of the the ScheduleRecurringBlock
+          type: integer
+    ScheduleEventsGetResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/ScheduleEvent"
+        maintenance_windows:
+          type: array
+          description: scheduled maintenance windows, no appointments can happen. very rare.
+          items:
+            type: object
+            properties:
+              scheduled_start:
+                type: string
+                format: date-time
+              scheduled_end:
+                type: string
+                format: date-time
+        meta:
+          type: object
+          properties:
+            user_id:
+              type: integer
+            starts_at:
+              type: string
+              format: date-time
+            ends_at:
+              type: string
+              format: date-time
+        provider_scheduling_constraints:
+          type: object
+          properties:
+            prep_buffer:
+              type: integer
+              description: Min time required between the end of another appt and the beginning of a new one
+            booking_buffer:
+              type: integer
+              description: Min time required between now and the beginning of a new appointment
+            max_capacity:
+              type: integer
+              description: Max number of appointments with this provider per day (CAs only)
+            max_intro_capacity:
+              type: integer
+              description: Max number of intro appointments with this provider per day (CAs only)
+
+    AppointmentStateEnum:
+      type: string
+      nullable: false
+      enum:
+          - "SCHEDULED"
+          - "OVERDUE"
+          - "COMPLETED"
+          - "INCOMPLETE"
+          - "OVERFLOWING"
+          - "CANCELLED"
+          - "OCCURRING"
+          - "PAYMENT_PENDING"
+          - "PAYMENT_RESOLVED"
+          - "PAYMENT_PENDING_OR_RESOLVED"   # new combined state to enable removing payments logic from appointments
+          - "DISPUTED"
+    CertifiedState:
+      nullable: false
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: false
+        name:
+          type: string
+          nullable: false
+        abbreviation:
+          type: string
+          nullable: false
+    Vertical:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: false
+        name:
+          type: string
+          nullable: false
+        description:
+          type: string
+          nullable: false
+        can_prescribe:
+          type: boolean
+          nullable: false
+        filter_by_state:
+         
+          type: boolean
+          nullable: false
+    Provider:
+      type: object
+      nullable: false
+      properties:
+        id:
+          type: integer
+          nullable: false
+        name:
+          type: string
+          nullable: false
+        first_name:
+          type: string
+          nullable: false
+        messaging_enabled:
+          type: boolean
+          nullable: true
+        care_team_type:
+          type: string
+          nullable: false
+          enum:
+            - "APPOINTMENT"
+            - "MESSAGE"
+            - "QUIZ"
+            - "FREE_FOREVER_CODE"
+            - "CARE_COORDINATOR"
+        avatar_url:
+          type: string
+          nullable: true
+        certified_states:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/CertifiedState"
+        can_prescribe:
+          type: boolean
+          nullable: false
+        verticals:
+          type: array
+          nullable: false
+          description: >-
+            This field is considered deprecated, as practitioners now only have one
+            vertical each. The preferred field is "vertical".
+          items:
+            $ref: "#/components/schemas/Vertical"
+        vertical:
+          nullable: false
+          description: >-
+            This field is preferred over "verticals"
+          $ref: "#/components/schemas/Vertical"
+        is_care_advocate:
+          type: boolean
+          nullable: false
+    Need:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: false
+        name:
+          type: string
+          nullable: false
+    MemberAppointmentsResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/MemberAppointmentListElement"
+        offset:
+          type: integer
+        limit:
+          type: integer
+    MemberAppointmentListElement:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: false
+        state:
+          $ref: "#/components/schemas/AppointmentStateEnum"
+        product_id:
+          type: integer
+          nullable: false
+        need:
+          $ref: "#/components/schemas/Need"
+          nullable: true
+        provider:
+          $ref: "#/components/schemas/Provider"
+        pre_session_notes:
+          type: string
+          nullable: true
+        cancelled_at:
+          type: string
+          format: date-time
+          nullable: true
+        scheduled_start:
+          type: string
+          format: date-time
+          nullable: false
+        scheduled_end:
+          type: string
+          format: date-time
+          nullable: false
+        privacy:
+          type: string
+          nullable: false
+          enum:
+            - "ANONYMOUS"
+            - "BASIC"
+            - "FULL_ACCESS"
+        appointment_type:
+          type: string
+          nullable: false
+          enum:
+            - "ANONYMOUS"
+            - "EDUCATION_ONLY"
+            - "STANDARD"
+        member_started_at:
+          type: string
+          format: date-time
+          nullable: true
+        member_ended_at:
+          type: string
+          format: date-time
+          nullable: true
+        practitioner_started_at:
+          type: string
+          format: date-time
+          nullable: true
+        practitioner_ended_at:
+          type: string
+          format: date-time
+          nullable: true
+        member_disconnected_at:
+          type: string
+          format: date-time
+          nullable: true
+        practitioner_disconnected_at:
+          type: string
+          format: date-time
+          nullable: true
+        phone_call_at:
+          type: string
+          format: date-time
+          nullable: true
+        survey_types:
+          type: array
+          nullable: false
+          items:
+            type: string
+    MemberAppointmentResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: false
+        state:
+          $ref: "#/components/schemas/AppointmentStateEnum"
+        product_id:
+          type: integer
+        need:
+          $ref: "#/components/schemas/Need"
+          nullable: true
+        provider:
+          $ref: "#/components/schemas/Provider"
+        pre_session_notes:
+          type: string
+          nullable: true
+        cancelled_at:
+          type: string
+          nullable: true
+          format: date-time
+        scheduled_start:
+          type: string
+          format: date-time
+          nullable: false
+        scheduled_end:
+          type: string
+          format: date-time
+          nullable: false
+        member_started_at:
+          type: string
+          format: date-time
+          nullable: true
+        member_ended_at:
+          type: string
+          format: date-time
+          nullable: true
+        practitioner_started_at:
+          type: string
+          format: date-time
+          nullable: true
+        practitioner_ended_at:
+          type: string
+          format: date-time
+          nullable: true
+        member_disconnected_at:
+          type: string
+          format: date-time
+          nullable: true
+        practitioner_disconnected_at:
+          type: string
+          format: date-time
+          nullable: true
+        phone_call_at:
+          type: string
+          format: date-time
+          nullable: true
+        survey_types:
+          type: array
+          nullable: false
+          items:
+            type: string
+        privacy:
+          type: string
+          nullable: true
+          enum:
+            - "ANONYMOUS"
+            - "BASIC"
+            - "FULL_ACCESS"
+        appointment_type:
+          type: string
+          nullable: true
+          enum:
+            - "ANONYMOUS"
+            - "EDUCATION_ONLY"
+            - "STANDARD"
+        rx_enabled:
+          type: boolean
+          nullable: false
+        video_practitioner_token:
+          type: string
+          nullable: true
+        video_member_token:
+          type: string
+          nullable: true
+        video_session_id:
+          type: string
+          nullable: true
+        member_tel_number:
+          type: string
+          nullable: true
+        member_state:
+          type: string
+          nullable: true
+    AppointmentElementV3:
+      type: object
+      description: This is the payload passed from appt-api service
+      properties:
+        appointment_id:
+          type: integer
+          description: appointment id
+          nullable: false
+        product_id:
+          type: integer
+          nullable: false
+        member_id:
+          type: integer
+          nullable: false
+        provider_id:
+          type: integer
+          nullable: false
+        scheduled_start:
+          type: string
+          format: date-time
+          nullable: false
+        scheduled_end:
+          type: string
+          format: date-time
+          nullable: false

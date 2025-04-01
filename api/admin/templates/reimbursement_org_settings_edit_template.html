@@ -1,0 +1,65 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+{{ super() }}
+
+{% if form_data %}
+<br/>
+<div class="row">
+    <div class="span"><h3 style="margin-top: -30px">Category Expense Types Config</h3></div>
+</div>
+
+{% if errors %}
+<div class="row">
+    <ul style="padding-left: 20px">
+        {% for err in errors %}
+        <li>{{err}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<div class="row">
+    <div class="span6">
+        <h4>Associated RR Category and Org Settings Expense Types</h4>
+        <table class="table table-bordered">
+            <thead><tr>
+                <td>Reimbursement Request Category Id</td>
+                <td>Label</td>
+                <td>Expense Type</td>
+
+                <td>Reimbursement Org Settings Expense Type ID</td>
+                <td>Taxation Status</td>
+                <td>Reimbursement Method</td>
+            </tr></thead>
+            {% for expense_type, data in form_data.items() %}
+                {% if data.get("categories") %}
+                    {% for category in data["categories"] %}
+                        <tr>
+                            <td><a href="{{ url_for('reimbursementrequestcategory.edit_view', id=category['reimbursement_category_id']) }}">{{ category["reimbursement_category_id"] }}</a></td>
+                            <td>{{ category.get("label") }}</td>
+                            <td>{{ expense_type }}</td>
+
+                            <td><a href="{{ url_for('reimbursementorgsettingsexpensetype.edit_view', id=data.get('ros_expense_type_id')) }}">{{ data.get("ros_expense_type_id") }}</a></td>
+                            <td>{{ data.get("taxation_status") }}</td>
+                            <td>{{ data.get("reimbursement_method") }}</td>
+                        </tr>
+                    {% endfor %}
+                {% elif data.get("ros_expense_type_id") %}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>{{ expense_type }}</td>
+
+                        <td><a href="{{ url_for('reimbursementorgsettingsexpensetype.edit_view', id=data['ros_expense_type_id']) }}">{{ data["ros_expense_type_id"] }}</a></td>
+                        <td>{{ data["taxation_status"] }}</td>
+                        <td>{{ data["reimbursement_method"] }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

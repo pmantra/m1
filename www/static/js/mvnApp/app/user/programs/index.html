@@ -1,0 +1,42 @@
+<main class="full-width">
+	<div ng-if="!$ctrl.loading">
+		<div class="programs-header">
+			<span>
+				<p>You are currently enrolled in:</p>
+				<h1>
+					Maven {{ $ctrl.programs && $ctrl.programs.my_program_display_name ? $ctrl.programs.my_program_display_name :
+					"" }}
+				</h1>
+				<p>Maven offers specific programs to help you through every step of your parenting journey.</p>
+			</span>
+		</div>
+
+		<div class="available-programs single-panel" ng-if="$ctrl.programs">
+			<div class="container" ng-if="$ctrl.programs.transitions.length">
+				<h2 class="serif">Need to change programs?</h2>
+				<ul class="clear">
+					<li ng-repeat="transition in $ctrl.programs.transitions">
+						<a href="" ng-click="$ctrl.initiateTransition(transition)">{{ transition.description }}</a>
+					</li>
+				</ul>
+			</div>
+
+			<div ng-if="!$ctrl.programs.transitions.length">
+				<p>Ask your Care Advocate about other Maven programs available to you.</p>
+			</div>
+		</div>
+
+		<div class="single-panel" ng-if="!$ctrl.programs">
+			<div class="container">
+				<h2 class="serif">Interested in our other programs?</h2>
+				<p>Ask your Care Advocate about other Maven programs available to you.</p>
+			</div>
+		</div>
+	</div>
+
+	<div ng-if="$ctrl.loading">
+		<div class="dash-loader center">
+			<img src="/img/app/shared/loader-green.gif" alt="Loading...." width="80" />
+		</div>
+	</div>
+</main>

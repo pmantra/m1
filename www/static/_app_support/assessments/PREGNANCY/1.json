@@ -1,0 +1,403 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "body": "How many times have you been pregnant?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "0",
+                        "label": "0"
+                    },
+                    {
+                        "value": "1",
+                        "label": "1"
+                    },
+                    {
+                        "value": "2",
+                        "label": "2"
+                    },
+                    {
+                        "value": "3+",
+                        "label": "3+"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "body": "How many full term babies have you had?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "0",
+                        "label": "0"
+                    },
+                    {
+                        "value": "1",
+                        "label": "1"
+                    },
+                    {
+                        "value": "2",
+                        "label": "2"
+                    },
+                    {
+                        "value": "3+",
+                        "label": "3+"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "body": "How many premature babies have you had?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "0",
+                        "label": "0"
+                    },
+                    {
+                        "value": "1",
+                        "label": "1"
+                    },
+                    {
+                        "value": "2",
+                        "label": "2"
+                    },
+                    {
+                        "value": "3+",
+                        "label": "3+"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "body": "How many abortions have you had?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "0",
+                        "label": "0"
+                    },
+                    {
+                        "value": "1",
+                        "label": "1"
+                    },
+                    {
+                        "value": "2",
+                        "label": "2"
+                    },
+                    {
+                        "value": "3+",
+                        "label": "3+"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "body": "How many miscarriages have you had?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "0",
+                        "label": "0"
+                    },
+                    {
+                        "value": "1",
+                        "label": "1"
+                    },
+                    {
+                        "value": "2",
+                        "label": "2"
+                    },
+                    {
+                        "value": "3+",
+                        "label": "3+"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "body": "Do you currently have children?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "no"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 7,
+            "body": "What kinds of delivery did you have?",
+            "widget": {
+                "type": "multiselect",
+                "options": [
+                    "vaginal",
+                    "C-section",
+                    "VBAC"
+                ]
+            },
+            "parent": {
+                "id": 6,
+                "requiredValue": "yes"
+            }
+        },
+        {
+            "id": 8,
+            "body": "How many babies are you carrying?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "1"
+                    },
+                    {
+                        "value": "2",
+                        "label": "2"
+                    },
+                    {
+                        "value": "3",
+                        "label": "3+"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "body": "Height pre-pregnancy",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 10,
+            "body": "Weight pre-pregnancy",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 11,
+            "body": "Going into the pregnancy, did you have any pre-existing medical conditions (diabetes, hypertension, etc.)?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "no"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 12,
+            "body": "What were they?",
+            "widget": {
+                "type": "multiselect",
+                "options": [
+                    "diabetes",
+                    "hypertension",
+                    "asthma"
+                ],
+                "other": true
+            },
+            "parent": {
+                "id": 11,
+                "requiredValue": "yes"
+            }
+        },
+        {
+            "id": 13,
+            "body": "Are you taking any medications?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "no"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 14,
+            "body": "What are they?",
+            "widget": {
+                "type": "freetextfield"
+            },
+            "parent": {
+                "id": 13,
+                "requiredValue": "yes"
+            }
+        },
+        {
+            "id": 15,
+            "body": "Do you have a family history of mental health issues?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "no"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 16,
+            "body": "What type of mental health issues?",
+            "widget": {
+                "type": "multiselect",
+                "options": [
+                    "depression",
+                    "bipolar",
+                    "PPD",
+                    "anxiety"
+                ],
+                "other": true
+            },
+            "parent": {
+                "id": 15,
+                "requiredValue": "yes"
+            }
+        },
+        {
+            "id": 17,
+            "body": "Have you sought mental health treatment in last 6 months?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "no"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 18,
+            "body": "What type of mental health treatment did you receive?",
+            "widget": {
+                "type": "freetextfield"
+            },
+            "parent": {
+                "id": 17,
+                "requiredValue": "yes"
+            }
+        },
+        {
+            "id": 19,
+            "body": "Did you use fertility treatments to get pregnant?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "no"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 20,
+            "body": "What kind of treatments?",
+            "widget": {
+                "type": "multiselect",
+                "options": [
+                    "IUI",
+                    "IVF"
+                ],
+                "other": true
+            },
+            "parent": {
+                "id": 19,
+                "requiredValue": "yes"
+            }
+        },
+        {
+            "id": 21,
+            "body": "What kind of birth do you want?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "vaginal",
+                        "label": "vaginal"
+                    },
+                    {
+                        "value": "C-section",
+                        "label": "C-section"
+                    },
+                    {
+                        "value": "VBAC",
+                        "label": "VBAC"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 22,
+            "body": "What type of care is most exciting to you about what Maven offers?",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 23,
+            "body": "Would you your spouse be interested to receive information from Maven? ",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "no"
+                    }
+                ]
+            }
+        }
+    ],
+    "meta": {
+        "version": "1"
+    }
+}

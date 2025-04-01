@@ -1,0 +1,33 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    {{ super() }}
+
+    <hr>
+
+    Vertical Groups:
+    <ul>
+    {% for vg in model.verticals %}
+        <li><a href="/admin/verticalgroup/edit/?id={{ vg.id }}">{{ vg.name }}</a></li>
+        <ul>
+            Verticals:
+            {% for v in vg.verticals %}
+                <li><a href="/admin/vertical/edit/?id={{ v.id }}">{{ v.name }}</a></li>
+            {% else %}
+                None
+            {% endfor %}
+        </ul>
+        <ul>
+            Specialties:
+            {% for s in vg.specialties %}
+                <li><a href="/admin/specialty/edit/?id={{ s.id }}">{{ s.name }}</a></li>
+            {% else %}
+                None
+            {% endfor %}
+
+        </ul>
+    {% else %}
+        None
+    {% endfor %}
+    </ul>
+{% endblock %}

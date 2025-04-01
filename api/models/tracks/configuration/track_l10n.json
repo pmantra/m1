@@ -1,0 +1,544 @@
+{
+  "pregnancy": {
+    "name": "pregnancy",
+    "priority": 100,
+    "display_name": "track_config_display_name_pregnancy",
+    "onboarding": {
+      "label": "track_config_label_im_pregnant",
+      "order": 1,
+      "as_partner": false
+    },
+    "is_maternity": true,
+    "can_be_renewed": false,
+    "length": 42,
+    "length_in_days_options": {"Default": 294},
+    "display_length": "track_config_display_length_up_to_9_months",
+    "partner_track": "partner_pregnant",
+    "required_information": [
+      "due_date"
+    ],
+    "restrict_booking_verticals": false,
+    "intro_message": "track_config_intro_message",
+    "transitions": [
+      {
+        "name": "postpartum",
+        "display_description": "track_config_display_description_i_have_given_birth"
+      },
+      {
+        "name": "pregnancyloss",
+        "display_description": "track_config_display_description_i_have_experienced_a_loss"
+      }
+    ],
+    "auto_transition_to": "postpartum",
+    "grace_period_days": 0,
+    "phase_type": "weekly",
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_Pregnancy.png",
+    "description": "track_config_description_pregnancy",
+    "enrollment_requirement_description": null,
+    "life_stage": "starting",
+    "track_selection_category": "pregnancy_postpartum",
+    "track_unavailable_for_transition_message": "track_config_track_unavailable_for_transition_message_pregnancy"
+  },
+  "menopause": {
+    "name": "menopause",
+    "priority": 100,
+    "display_name": "track_config_display_name_menopause",
+    "onboarding": {
+      "label": "track_config_label_i_want_support_on_my_menopause_journey",
+      "order": 15,
+      "as_partner": false
+    },
+    "is_maternity": false,
+    "can_be_renewed": true,
+    "length": 52,
+    "length_in_days_options": {"Default": 364},
+    "display_length": null,
+    "partner_track": null,
+    "restrict_booking_verticals": false,
+    "intro_message": "track_config_intro_message",
+    "transitions": [],
+    "grace_period_days": 0,
+    "phase_type": "weekly",
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_Menopause.png",
+    "description": "track_config_description_menopause",
+    "enrollment_requirement_description": null,
+    "life_stage": "planning",
+    "track_selection_category": "parenting_wellness"
+  },
+  "partner_pregnant": {
+    "name": "partner_pregnant",
+    "priority": 75,
+    "display_name": "track_config_display_name_partner_pregnancy",
+    "onboarding": {
+      "label": "track_config_label_my_partner_is_pregnant",
+      "order": 8,
+      "as_partner": true
+    },
+    "is_maternity": false,
+    "can_be_renewed": false,
+    "length": 42,
+    "length_in_days_options": {"Default": 294},
+    "display_length": "track_config_display_length_up_to_9_months",
+    "partner_track": "pregnancy",
+    "required_information": [
+      "due_date"
+    ],
+    "restrict_booking_verticals": false,
+    "intro_message": null,
+    "transitions": [
+      {
+        "name": "partner_newparent",
+        "display_description": "track_config_display_description_my_partner_has_given_birth"
+      },
+      {
+        "name": "pregnancyloss",
+        "display_description": "track_config_display_description_we_have_experienced_a_loss"
+      }
+    ],
+    "auto_transition_to": "partner_newparent",
+    "grace_period_days": 0,
+    "phase_type": "weekly",
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_Pregnancy.png",
+    "description": "track_config_description_partner_pregnant",
+    "enrollment_requirement_description": null,
+    "life_stage": "starting",
+    "track_selection_category": "pregnancy_postpartum"
+  },
+  "postpartum": {
+    "name": "postpartum",
+    "priority": 100,
+    "display_name": "track_config_display_name_postpartum",
+    "onboarding": {
+      "label": "track_config_label_i_just_gave_birth",
+      "order": 2,
+      "as_partner": false
+    },
+    "is_maternity": true,
+    "can_be_renewed": false,
+    "length": 24,
+    "length_in_days_options": {"12-Month Maternity": 90, "15-Month Maternity": 168, "21-Month Maternity": 348},
+    "display_length": "track_config_display_length_up_to_12_months",
+    "partner_track": "partner_newparent",
+    "required_information": [
+      "child_birth"
+    ],
+    "restrict_booking_verticals": false,
+    "intro_message": "track_config_intro_message",
+    "transitions": [
+      {
+        "name": "pregnancyloss",
+        "display_description": "track_config_display_description_i_have_experienced_a_loss"
+      }
+    ],
+    "grace_period_days": 14,
+    "phase_type": "weekly",
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_Postpartum.png",
+    "description": "track_config_description_postpartum",
+    "descriptions_by_length_in_days": {
+      "90": "track_config_description_postpartum_90_days",
+      "168": "track_config_description_postpartum_168_days"
+    },
+    "enrollment_requirement_description": null,
+    "life_stage": "raising",
+    "track_selection_category": "pregnancy_postpartum"
+  },
+  "partner_newparent": {
+    "name": "partner_newparent",
+    "priority": 75,
+    "display_name": "track_config_display_name_partner_postpartum",
+    "onboarding": {
+      "label": "track_config_label_my_partner_just_gave_birth",
+      "order": 9,
+      "as_partner": true
+    },
+    "is_maternity": false,
+    "can_be_renewed": false,
+    "length": 24,
+    "length_in_days_options": {"12-Month Maternity": 90, "15-Month Maternity": 168, "21-Month Maternity": 348},
+    "display_length": "track_config_display_length_up_to_12_months",
+    "partner_track": "postpartum",
+    "required_information": [
+      "child_birth"
+    ],
+    "restrict_booking_verticals": false,
+    "intro_message": null,
+    "grace_period_days": 14,
+    "phase_type": "weekly",
+    "transitions": [],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_Postpartum.png",
+    "description": "track_config_description_partner_newparent",
+    "descriptions_by_length_in_days": {
+      "90": "track_config_description_partner_newparent_90_days",
+      "168": "track_config_description_partner_newparent_168_days"
+    },
+    "enrollment_requirement_description": null,
+    "life_stage": "raising",
+    "track_selection_category": "pregnancy_postpartum"
+  },
+  "adoption": {
+    "name": "adoption",
+    "priority": 100,
+    "display_name": "track_config_display_name_adoption",
+    "onboarding": {
+      "label": "track_config_label_im_adopting",
+      "order": 6,
+      "as_partner": false
+    },
+    "is_maternity": false,
+    "can_be_renewed": true,
+    "length": 104,
+    "length_in_days_options": {"Default": 728},
+    "display_length": "track_config_display_length_12_months",
+    "partner_track": null,
+    "restrict_booking_verticals": false,
+    "intro_message": "track_config_intro_message",
+    "grace_period_days": 14,
+    "phase_type": "weekly",
+    "transitions": [],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_Adoption.png",
+    "description": "track_config_description_adoption",
+    "enrollment_requirement_description": null,
+    "life_stage": "starting",
+    "track_selection_category": "family_planning"
+  },
+  "breast_milk_shipping": {
+    "name": "breast_milk_shipping",
+    "priority": 0,
+    "display_name": "track_config_display_name_breast_milk_shipping",
+    "onboarding": {
+      "label": "track_config_label_im_breastfeeding",
+      "order": 11,
+      "as_partner": false
+    },
+    "is_maternity": true,
+    "can_be_renewed": false,
+    "length": 104,
+    "length_in_days_options": {"Default": 728},
+    "display_length": "track_config_display_length_up_to_12_months",
+    "partner_track": null,
+    "required_information": [
+      "child_birth"
+    ],
+    "restrict_booking_verticals": true,
+    "intro_message": "track_config_intro_message",
+    "grace_period_days": 30,
+    "phase_type": "static",
+    "transitions": [],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_BreastMilkShipping.png",
+    "description": "track_config_description_breast_milk_shipping",
+    "enrollment_requirement_description": null,
+    "life_stage": "raising",
+    "track_selection_category": "pregnancy_postpartum"
+  },
+  "egg_freezing": {
+    "name": "egg_freezing",
+    "priority": 100,
+    "display_name": "track_config_display_name_egg_freezing",
+    "onboarding": {
+      "label": "track_config_label_i_want_to_freeze_my_eggs",
+      "order": 4,
+      "as_partner": false
+    },
+    "is_maternity": true,
+    "can_be_renewed": true,
+    "length": 52,
+    "length_in_days_options": {"Default": 364},
+    "display_length": "track_config_display_length_12_months",
+    "partner_track": null,
+    "restrict_booking_verticals": false,
+    "intro_message": "track_config_intro_message",
+    "grace_period_days": 14,
+    "phase_type": "weekly",
+    "transitions": [],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_EggFreezing.png",
+    "description": "track_config_description_egg_freezing",
+    "enrollment_requirement_description": null,
+    "life_stage": "planning",
+    "track_selection_category": "family_planning"
+  },
+  "fertility": {
+    "name": "fertility",
+    "priority": 100,
+    "display_name": "track_config_display_name_fertility",
+    "onboarding": {
+      "label": "track_config_label_im_undergoing_or_considering_iui_ivf",
+      "order": 3,
+      "as_partner": false
+    },
+    "is_maternity": false,
+    "can_be_renewed": true,
+    "length": 52,
+    "length_in_days_options": {"Default": 364},
+    "display_length": "track_config_display_length_12_months",
+    "partner_track": null,
+    "restrict_booking_verticals": false,
+    "intro_message": "track_config_intro_message",
+    "transitions": [
+      {
+        "name": "pregnancy",
+        "display_description": "track_config_display_description_im_pregnant"
+      },
+      {
+        "name": "pregnancyloss",
+        "display_description": "track_config_display_description_i_have_experienced_a_loss"
+      }
+    ],
+    "grace_period_days": 14,
+    "phase_type": "weekly",
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_Fertility.png",
+    "description": "track_config_description_fertility",
+    "enrollment_requirement_description": null,
+    "life_stage": "planning",
+    "track_selection_category": "family_planning"
+  },
+  "general_wellness": {
+    "name": "general_wellness",
+    "priority": 0,
+    "display_name": "track_config_display_name_general_wellness",
+    "onboarding": {
+      "label": "track_config_label_i_want_to_manage_my_reproductive_health_and_overall_wellness",
+      "order": 14,
+      "as_partner": false
+    },
+    "is_maternity": false,
+    "can_be_renewed": false,
+    "length": 52,
+    "length_in_days_options": {"Default": 364},
+    "display_length": "track_config_display_length_12_months",
+    "partner_track": null,
+    "restrict_booking_verticals": false,
+    "intro_message": null,
+    "grace_period_days": 14,
+    "phase_type": "weekly",
+    "transitions": [
+      {
+        "name": "trying_to_conceive",
+        "display_description": "track_config_display_description_im_trying_to_conceive"
+      }
+    ],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_GeneralWellness.png",
+    "description": "track_config_description_general_wellness_generic",
+    "enrollment_requirement_description": null,
+    "life_stage": "planning",
+    "track_selection_category": "parenting_wellness"
+  },
+  "generic": {
+    "name": "generic",
+    "priority": 0,
+    "display_name": "track_config_display_name_generic",
+    "onboarding": {
+      "label": null,
+      "order": null,
+      "as_partner": false
+    },
+    "is_maternity": true,
+    "can_be_renewed": false,
+    "length": 52,
+    "length_in_days_options": {"Default": 364},
+    "display_length": null,
+    "partner_track": null,
+    "restrict_booking_verticals": false,
+    "intro_message": null,
+    "grace_period_days": 14,
+    "phase_type": "static",
+    "transitions": [],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_GeneralWellness.png",
+    "description": "track_config_description_general_wellness_generic",
+    "enrollment_requirement_description": null,
+    "life_stage": null,
+    "track_selection_category": null
+  },
+  "parenting_and_pediatrics": {
+    "name": "parenting_and_pediatrics",
+    "priority": 25,
+    "display_name": "track_config_display_name_parenting_pediatrics",
+    "onboarding": {
+      "label": "track_config_label_i_have_a_child_between_the_ages_of_1_and_10",
+      "order": 12,
+      "as_partner": false
+    },
+    "is_maternity": false,
+    "can_be_renewed": true,
+    "length": 52,
+    "length_in_days_options": {"Default": 364},
+    "display_length": "track_config_display_length_annual_renewal_up_to_age_10",
+    "partner_track": "parenting_and_pediatrics",
+    "restrict_booking_verticals": false,
+    "intro_message": null,
+    "grace_period_days": 14,
+    "phase_type": "weekly",
+    "transitions": [],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_Pediatrics.png",
+    "description": "track_config_description_parenting_and_pediatrics",
+    "enrollment_requirement_description": null,
+    "life_stage": "raising",
+    "track_selection_category": "parenting_wellness"
+  },
+  "partner_fertility": {
+    "name": "partner_fertility",
+    "priority": 75,
+    "display_name": "track_config_display_name_partner_fertility",
+    "onboarding": {
+      "label": "track_config_label_my_partner_is_undergoing_or_considering_iui_ivf",
+      "order": 10,
+      "as_partner": true
+    },
+    "is_maternity": false,
+    "can_be_renewed": true,
+    "length": 52,
+    "length_in_days_options": {"Default": 364},
+    "display_length": "track_config_display_length_12_months",
+    "partner_track": "fertility",
+    "restrict_booking_verticals": false,
+    "intro_message": null,
+    "grace_period_days": 14,
+    "phase_type": "weekly",
+    "transitions": [],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_Fertility.png",
+    "description": "track_config_description_partner_fertility",
+    "enrollment_requirement_description": null,
+    "life_stage": "planning",
+    "track_selection_category": "family_planning",
+    "deprecated": true
+  },
+  "pregnancyloss": {
+    "name": "pregnancyloss",
+    "priority": 100,
+    "display_name": "track_config_display_name_loss_support",
+    "onboarding": {
+      "label": "track_config_label_ive_experienced_a_loss",
+      "order": 7,
+      "as_partner": false
+    },
+    "is_maternity": false,
+    "can_be_renewed": false,
+    "length": 52,
+    "length_in_days_options": {"Default": 364},
+    "display_length": "track_config_display_length_3_months",
+    "partner_track": null,
+    "restrict_booking_verticals": false,
+    "intro_message": null,
+    "grace_period_days": 14,
+    "phase_type": "weekly",
+    "transitions": [],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_Loss.png",
+    "description": "track_config_description_pregnancyloss",
+    "enrollment_requirement_description": null,
+    "life_stage": "starting",
+    "track_selection_category": "pregnancy_postpartum"
+  },
+  "pregnancy_options": {
+    "name": "pregnancy_options",
+    "priority": 0,
+    "display_name": "track_config_display_name_pregnancy_options",
+    "onboarding": {
+      "label": null,
+      "order": null,
+      "as_partner": false
+    },
+    "is_maternity": true,
+    "can_be_renewed": false,
+    "length": 52,
+    "length_in_days_options": {"Default": 364},
+    "display_length": null,
+    "partner_track": null,
+    "restrict_booking_verticals": false,
+    "intro_message": null,
+    "grace_period_days": 14,
+    "phase_type": "static",
+    "transitions": [],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_GeneralWellness.png",
+    "description": "track_config_description_pregnancy_options",
+    "enrollment_requirement_description": null,
+    "life_stage": "planning",
+    "track_selection_category": "family_planning"
+  },
+  "sponsored": {
+    "name": "sponsored",
+    "priority": 0,
+    "display_name": "track_config_display_name_health_plan",
+    "onboarding": {
+      "label": "track_config_label_health_plan",
+      "order": null,
+      "as_partner": false
+    },
+    "is_maternity": false,
+    "can_be_renewed": false,
+    "length": 52,
+    "length_in_days_options": {"Default": 364},
+    "display_length": null,
+    "partner_track": null,
+    "restrict_booking_verticals": true,
+    "intro_message": null,
+    "grace_period_days": 14,
+    "phase_type": "static",
+    "transitions": [],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_Pregnancy.png",
+    "description": "track_config_description_sponsored",
+    "enrollment_requirement_description": null,
+    "life_stage": null,
+    "track_selection_category": null
+  },
+  "surrogacy": {
+    "name": "surrogacy",
+    "priority": 100,
+    "display_name": "track_config_display_name_surrogacy",
+    "onboarding": {
+      "label": "track_config_label_im_using_a_surrogate",
+      "order": 5,
+      "as_partner": false
+    },
+    "is_maternity": false,
+    "can_be_renewed": true,
+    "length": 104,
+    "length_in_days_options": {"Default": 728},
+    "display_length": "track_config_display_length_12_months",
+    "partner_track": null,
+    "restrict_booking_verticals": false,
+    "intro_message": "track_config_intro_message",
+    "grace_period_days": 14,
+    "phase_type": "weekly",
+    "transitions": [],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_Surrogacy.png",
+    "description": "track_config_description_surrogacy",
+    "enrollment_requirement_description": null,
+    "life_stage": "starting",
+    "track_selection_category": "family_planning"
+  },
+  "trying_to_conceive": {
+    "name": "trying_to_conceive",
+    "priority": 100,
+    "display_name": "track_config_display_name_trying_to_conceive",
+    "onboarding": {
+      "label": "track_config_label_i_want_to_get_pregnant_within_the_next_year",
+      "order": 13,
+      "as_partner": false
+    },
+    "is_maternity": false,
+    "can_be_renewed": true,
+    "length": 52,
+    "length_in_days_options": {"Default": 364},
+    "display_length": "track_config_display_length_12_months",
+    "partner_track": null,
+    "restrict_booking_verticals": false,
+    "intro_message": null,
+    "grace_period_days": 14,
+    "phase_type": "weekly",
+    "deprecated": true,
+    "transitions": [
+      {
+        "name": "pregnancy",
+        "display_description": "track_config_display_description_im_pregnant"
+      },
+      {
+        "name": "general_wellness",
+        "display_description": "track_config_display_description_im_no_longer_trying_to_conceive"
+      }
+    ],
+    "image": "https://storage.googleapis.com/maven-qa-images/Programs/Maven_TryingtoConceive.png",
+    "description": "track_config_description_trying_to_conceive",
+    "enrollment_requirement_description": null,
+    "life_stage": "planning",
+    "track_selection_category": "family_planning"
+  }
+}

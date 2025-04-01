@@ -1,0 +1,31 @@
+{% extends 'admin/base.html' %}
+
+{% block body %}
+
+<form method="POST" action="/admin/login/">
+    <h3>Login to Maven's Admin</h3>
+
+    <p>Sessions will time out after 10 minutes of inactivity.</p>
+
+    {% if form.errors %}
+    <p><b>Errors: {{ form.errors }}</b></p>
+    {% endif %}
+    <input id="email" name="email" type="text" placeholder="email">
+    <input id="password" name="password" type="password" placeholder="password">
+    <input id="totp" name="totp" type="text" placeholder="Code from Phone" autocomplete="off" />
+    <input type="submit" class="btn btn-primary btn-large" value="Login">
+</form>
+
+<form method="POST" action="/admin/qr/">
+    <h3>Set up 2 Factor Auth</h3>
+
+    <p>You'll enter your password here, and the be redirected to a QR code that you can scan into Google Authenticator App. Once you do that, come back to this page and login using the form above. You can only get this QR code once, but if you lose your phone or something, reach out to IT (ask@mavenclinic.com) to get your 2 Factor reset so that you can get a new code here and wil be able to sign in again :)</p>
+
+    {% if form.errors %}
+    <p><b>Errors: {{ form.errors }}</b></p>
+    {% endif %}
+    <input id="email" name="email" type="text" placeholder="email">
+    <input id="password" name="password" type="password" placeholder="password">
+    <input type="submit" class="btn btn-primary btn-large" value="Gimmie the QR">
+</form>
+{% endblock %}

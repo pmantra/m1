@@ -1,0 +1,129 @@
+<div ng-if="!$ctrl.loading">
+	<div class="meet-care-coordinator">
+		<div ng-if="!$ctrl.unconvinced">
+			<div class="cc-intro grid-item">
+				<div class="cc-image-container" ng-if="$ctrl.getsGift">
+					<img
+						ng-if="$ctrl.user.test_group === 'a'"
+						class="cc-img"
+						width="420"
+						height="auto"
+						ng-src="/img/app/user/onboarding/welcome-gift-card.png"
+						alt="Your Welcome Gift"
+					/>
+					<img
+						ng-if="$ctrl.user.test_group === 'b'"
+						class="cc-img"
+						width="420"
+						height="auto"
+						ng-src="/img/app/user/onboarding/{{ $ctrl.welcomeGift ? $ctrl.welcomeGift : 'welcome-gift-2.png' }}"
+						alt="Your Welcome Gift"
+					/>
+				</div>
+
+				<div class="cc-image-container" ng-if="!$ctrl.getsGift">
+					<img
+						class="cc-img"
+						width="420"
+						height="auto"
+						ng-src="/img/app/user/onboarding/{{
+							$ctrl.careCoordinator.profile_image ? $ctrl.careCoordinator.profile_image : 'meet-kaitlyn.jpg'
+						}}"
+						alt="Your Care Advocate"
+					/>
+				</div>
+			</div>
+
+			<div class="grid-item cc-info">
+				<h1 class="serif h2">
+					<span ng-if="!$ctrl.getsGift">Let's find a time to talk</span>
+					<span ng-if="$ctrl.getsGift">Let's talk about you</span>
+				</h1>
+
+				<div ng-if="$ctrl.getsGift">
+					<p>
+						<span ng-if="$ctrl.welcomeGift && $ctrl.user.test_group === 'a'">
+							Here’s a $50 Amazon gift card just for you! Let's talk about what else I can do to help you have the best
+							healthcare experience.
+						</span>
+						<span
+							ng-if="$ctrl.welcomeGift && ($ctrl.welcomeGift === 'welcome-gift-1.png') && $ctrl.user.test_group === 'b'"
+							>Here’s a box of self-care goodies just for you (including a candle, bath salts, and a tote)! Let's talk
+							about what else I can do to help you have the best healthcare experience.</span
+						>
+						<span
+							ng-if="$ctrl.welcomeGift && ($ctrl.welcomeGift === 'welcome-gift-2.png') && $ctrl.user.test_group === 'b'"
+							>Here’s a box of goodies just for you (including a stylish water bottle and tote)! Let's talk about what
+							else I can do to help you have the best healthcare experience.</span
+						>
+					</p>
+					<div class="gift-book-cta">
+						<div class="cc-cta-img">
+							<span
+								ng-style="{ 'background-image': 'url(/img/app/user/onboarding/{{
+									$ctrl.careCoordinator.profile_image ? $ctrl.careCoordinator.profile_image : 'meet-kaitlyn.jpg'
+								}})'}"
+							>
+							</span>
+						</div>
+						<div class="p">
+							Book a 10-min chat with me to get your free gift!
+						</div>
+					</div>
+				</div>
+
+				<p ng-if="!$ctrl.getsGift">
+					<span ng-if="$ctrl.activeModule === 'pregnancyloss'">We know this can be a very difficult time. </span>I’d
+					love to set up a 10-min chat to talk about how I can best support you.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div ng-if="$ctrl.unconvinced" class="center onboarding-download-the-app">
+		<div><img src="/img/app/user/onboarding/onboarding-download-the-app.jpg" alt="Download the Maven app" /></div>
+		<div ng-if="$ctrl.isNative">
+			<h2 class="serif">Okay, {{ $ctrl.careCoordinator.first_name }} will send a message instead</h2>
+		</div>
+
+		<div ng-if="!$ctrl.isNative">
+			<h2 class="serif">Download the Maven app</h2>
+			<p>It’s the easiest way to connect with your Care Team and get healthcare on the go.</p>
+		</div>
+	</div>
+</div>
+
+<div ng-if="$ctrl.loading">
+	<inline-loader ng-show="$ctrl.loading" loading="$ctrl.loading" label="Just a minute..."></inline-loader>
+</div>
+
+<mvn-onboarding-bottom-nav ng-if="!$ctrl.unconvinced">
+	<a class="btn btn-tertiary" href="" ng-click="$ctrl.isUnconvinced()">No thanks</a>
+	<a class="btn btn-cta" ui-sref="app.onboarding.book-with-care-coordinator">Book a chat</a>
+</mvn-onboarding-bottom-nav>
+
+<mvn-onboarding-bottom-nav ng-if="$ctrl.unconvinced">
+	<mvn-dynamic-cta
+		ng-if="$ctrl.isNative"
+		opts="$ctrl.nativeCtaOpts"
+		user="$ctrl.user"
+		event-name="native-exit-onboarding-without-booking"
+	></mvn-dynamic-cta>
+
+	<a
+		ng-if="!$ctrl.isNative"
+		class="btn btn-tertiary"
+		href=""
+		ng-click="$ctrl.noAppToast()"
+		title="I'll get the app later"
+		>No thanks</a
+	>
+	<mvn-sms-the-app
+		style="display: inline-block"
+		ng-if="!$ctrl.isNative"
+		user="$ctrl.user"
+		on-complete="$ctrl.smsSent()"
+		sms-template="sms1"
+		btn-cta="Text me a link"
+	></mvn-sms-the-app>
+</mvn-onboarding-bottom-nav>

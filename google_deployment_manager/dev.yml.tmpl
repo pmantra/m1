@@ -1,0 +1,41 @@
+imports:
+  - path: disks.jinja
+  - path: container_engine.jinja
+  - path: cloudsql.jinja
+  - path: cloudstorage.jinja
+
+resources:
+  - name: maven-disks
+    type: disks.jinja
+    properties:
+      zone: us-central1-a
+      events_etl_disk_gb: 0
+      syslog_storage_disk_gb: 0
+      syslog_es_disk_gb: 0
+      redis_disk_gb: 0
+      redis_sessions_disk_gb: 0
+      metabase_disk_gb: 0
+  - name: maven-cluster
+    type: container_engine.jinja
+    properties:
+      zone: us-central1-a
+      cluster_name: maven
+      node_count: 2
+      node_type: n1-standard-1
+      network: default
+      master_username: admin
+      # change before running!!!
+      master_password:
+  - name: maven-db
+    type: cloudsql.jinja
+    properties:
+      zone: us-central1-a
+      tier: db-f1-micro
+      disk_size: 10
+  - name: cloudstorage.jinja
+    type: cloudstorage.jinja
+    properties:
+      analytics_pixel_bucket: ''
+      analytics_log_bucket: ''
+      analytics_archive_bucket: ''
+      daily_syslog_bucket: ''

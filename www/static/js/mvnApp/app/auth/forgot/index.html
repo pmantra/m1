@@ -1,0 +1,33 @@
+<div ng-show="success">
+		<h3 class="serif">Complete!</h3>
+		<br />
+		<p>If the email address you entered exists in our system, you will soon receive an email with a link to reset your
+			password.</p>
+		<p>Please be sure to check your "spam" or "promotions" folder if you haven't received the email within 1 hour, and
+			contact us at <a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a> if you are still having trouble.</p>
+		<br />
+		<p><a class="btn btn-cta btn-lg" ui-sref="auth.login">Sign in</a></p>
+	</div>
+	
+	<div ng-hide="success" class="center">
+		<h3 class="serif">Forgot your password?</h3>
+		<br />
+		<p>Enter the email address you registered with to be sent a password reset:</p>
+	
+		<form ng-submit="resetpw(forgotForm)" role="form" ng-hide="success" class="mvn-form single-column" name="forgotPwForm">
+			<section class="form-section">
+				<div class="form-elements-container">
+					<div class="mvn-input" ng-class="{ 'has-content': forgotPwForm.email.$viewValue, 'has-error': (forgotPwForm.email.$touched && forgotPwForm.email.$invalid) }">
+						<input id="registered-email-input" class="mvn-form-input" name="email" type="email" ng-model="forgotForm.email" required="" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/"></input>
+						<label class="mvn-form-label" for="registered-email-input">Registered email address</label>
+					</div>
+					<div class="help-block" ng-messages="forgotPwForm.email.$error" ng-if="forgotPwForm.email.$touched">
+						<div ng-messages-include="/js/mvnApp/shared/messages.html"></div>
+					</div>
+				</div>
+			</section>
+	
+			<button type="submit" class="btn btn-cta btn-lg" ng-class="{ 'disabled' :  forgotPwForm.$invalid }" ng-disabled="forgotPwForm.$invalid">Send password reset</button>
+		</form>
+		<p><a ui-sref="auth.login">Cancel</a></p>
+	</div>

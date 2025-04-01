@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  dev:
+    env_file:
+    - .env
+    build:
+      context: api
+      dockerfile: Dockerfile
+      target: api
+      secrets:
+        - GAR_TOKEN
+    secrets:
+      - GAR_TOKEN
+    environment:
+      GAR_TOKEN: /run/secrets/GAR_TOKEN
+    volumes:
+      - ./api:/api
+      - /api/.venv/
+      - /api/admin/static/js
+    stdin_open: true
+    tty: true

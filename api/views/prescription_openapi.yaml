@@ -1,0 +1,160 @@
+openapi: 3.0.3
+info:
+  title: Maven Clinic Prescription APIs
+  version: 1.0.0
+servers:
+  - url: https://www.mavenclinic.com
+  - url: https://www.qa1.mvnapp.net
+  - url: https://www.qa2.mvnapp.net
+  - url: https://www.staging.mvnapp.net
+paths:
+  /api/v2/pharmacies/search:
+    get:
+      summary: Search for pharmacies
+      parameters:
+        - $ref: "#/components/parameters/PharmacyName"
+        - $ref: "#/components/parameters/ZipCode"
+        - $ref: "#/components/parameters/PageNumber"
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data, pagination]
+                properties:
+                  data:
+                    type: array
+                    nullable: false
+                    items:
+                      $ref: "#/components/schemas/Pharmacy"
+                  pagination:
+                    nullable: false
+                    allOf:
+                      - $ref: "#/components/schemas/Pagination"
+              examples:
+                example_1:
+                  value:
+                    data:
+                      - PharmacyId: "123"
+                        StoreName: "Test Pharmacy 1"
+                        Address1: "989 E Hillsdale Blvd"
+                        Address2: ""
+                        City: "Foster City"
+                        State: "CA"
+                        ZipCode: "94404-2113"
+                        PrimaryPhone: "6505455637x669"
+                        PrimaryPhoneType: "5"
+                        PrimaryFax: "6503433333"
+                      - PharmacyId: "456"
+                        StoreName: "Test Pharmacy 2"
+                        Address1: "4071 El Camino Real"
+                        Address2: ""
+                        City: "Foster City"
+                        State: "CA"
+                        ZipCode: "94404"
+                        PrimaryPhone: "6506667777x989"
+                        PrimaryPhoneType: "5"
+                        PrimaryFax: "6503454444"
+                    pagination:
+                      current_page: 1
+                      total_pages: 1
+                      page_size: 20
+                      has_previous: false
+                      has_next: false
+
+        400:
+          description: Error in input
+        403:
+          description: Unauthorized user
+        500:
+          description: Internal error
+components:
+  parameters:
+    PharmacyName:
+      name: pharmacy_name
+      in: query
+      required: false
+      schema:
+        type: string
+        example: "cvs"
+    ZipCode:
+      name: zip_code
+      in: query
+      required: false
+      schema:
+        type: integer
+        example: 94404
+    PageNumber:
+      name: page_number
+      in: query
+      required: false
+      description: Page number for pagination
+      schema:
+        type: integer
+        default: 1
+  schemas:
+    Pharmacy:
+      type: object
+      required: [PharmacyId, StoreName, Address1, City, State, ZipCode, PrimaryPhone, PrimaryPhoneType, PrimaryFax]
+      properties:
+        PharmacyId:
+          type: string
+          description: DoseSpot’s unique pharmacy identifier
+          nullable: false
+        StoreName:
+          type: string
+          description: Pharmacy’s store name
+          nullable: false
+        Address1:
+          type: string
+          description: Pharmacy’s street address—line one
+          nullable: false
+        Address2:
+          type: string
+          description: Pharmacy’s street address—line two
+          nullable: true
+        City:
+          type: string
+          description: Pharmacy's city
+          nullable: false
+        State:
+          type: string
+          description: Pharmacy's state
+          nullable: false
+        ZipCode:
+          type: string
+          description: Pharmacy's zip code
+          nullable: false
+        PrimaryPhone:
+          type: string
+          description: Pharmacy’s default phone number
+          nullable: false
+        PrimaryPhoneType:
+          type: string
+          description: Pharmacy’s default phone type
+          nullable: false
+        PrimaryFax:
+          type: string
+          description: Pharmacy’s default fax number
+          nullable: false
+    Pagination:
+      type: object
+      required: [current_page, total_pages, page_size, has_previous, has_next]
+      properties:
+        current_page:
+          type: integer
+          nullable: false
+        total_pages:
+          type: integer
+          nullable: false
+        page_size:
+          type: integer
+          nullable: false
+        has_previous:
+          type: boolean
+          nullable: false
+        has_next:
+          type: boolean
+          nullable: false

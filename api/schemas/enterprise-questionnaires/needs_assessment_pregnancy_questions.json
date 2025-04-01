@@ -1,0 +1,50 @@
+{
+  "version": "1",
+  "questions": [
+    "How old are you?",
+    "How many times have you been pregnant?",
+    "How many full term babies have you had?",
+    "How many premature babies have you had?",
+    "How many abortions have you had?",
+    "How many miscarriages have you had?",
+    {
+      "parent": "Do you currently have children?",
+      "yes": "If yes, what kind of delivery did you have?"
+    },
+    "How many babies are you carrying?",
+    "Height pre-pregnancy",
+    "Weight pre-pregnancy",
+    {
+      "parent": "Going into the pregnancy, did you have any pre-existing medical conditions?",
+      "yes": "If yes, what were they?"
+    },
+    {
+      "parent": "Have you experienced any medical issues, complications or new health issues during this pregnancy?",
+      "yes": "If yes, what were the medical issues or complications?"
+    },
+    {
+      "parent": "Are you taking any medications?",
+      "yes": "If yes, what are the medications?"
+    },
+    {
+      "parent": "Do you have a family history of mental health issues?",
+      "yes": "If yes,  What type of mental health issues?"
+    },
+    {
+      "parent": "Do you have a personal history of any mental health issues?",
+      "yes": "If yes, what type of mental health issues?"
+    },
+    {
+      "parent": "Have you sought mental health treatment in last 6 months?",
+      "yes": "If yes,  What type of mental health treatment did you receive?"
+    },
+    {
+      "parent": "Did you use fertility treatments to get pregnant?",
+      "yes": "If yes, what kind of treatments?"
+    },
+    "What kind of birth do you want?",
+    "What type of care is most exciting to you about what Maven offers?",
+    "Would you your spouse be interested to receive information from Maven?"
+  ],
+  "answers": []
+}

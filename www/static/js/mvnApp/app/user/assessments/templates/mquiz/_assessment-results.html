@@ -1,0 +1,76 @@
+<div class="assessment-{{ ::$ctrl.assessment.type }} quiz-results">
+
+	<div ng-if="!$ctrl.loading">
+
+		<div ng-if="!$ctrl.isComplete">
+			<div class="results-headline">
+				<h5>Uh oh... you haven't completed this yet!</h5>
+			</div>
+		</div>
+
+		<div ng-if="$ctrl.isComplete">
+			
+			<div ng-if="$ctrl.results">
+				<div class="results-headline">
+					<h5>Your results</h5>
+					<p>
+						<img ng-src="{{ $ctrl.results.icon }}" alt="Results">
+					</p>
+					
+					<h3>{{ $ctrl.results.header }} </h3>
+					
+					<p ng-repeat="para in $ctrl.results.desc">
+						{{ para }}
+					</p>
+					
+					<p>
+						<mvn-dynamic-cta opts="$ctrl.results.cta" user="$ctrl.user" event-name="mquiz-post-complete-cta"></mvn-dynamic-cta>
+					</p>
+				</div>
+
+				<hr class="mobile-none" />
+
+				<ul class="clear quiz-results-list">
+					<li ng-repeat="question in $ctrl.userAssessment">
+				
+						<div class="quiz-body answered">
+							<div class="quiz-status question">
+								<p class="legal">
+									Question {{ ::question.id }} of {{ ::$ctrl.userAssessment.length }}
+								</p>
+								<h3>{{ question.body }}</h3>
+							</div>
+				
+							<div class="clearfix">
+								<div class="options-container quiz-question-{{ question.widget.options.length }}-choices answered">
+									<div ng-repeat="opt in question.widget.options" class="option" ng-model="question.answer.body" ng-class="{'selected' : question.answer.body === opt.value }">
+										<span class="opt-letter-index">
+											<span class="opt-label">
+												<span ng-if="$index === 0">A</span>
+												<span ng-if="$index === 1">B</span>
+												<span ng-if="$index === 2">C</span>
+												<span ng-if="$index === 3">D</span>
+												<span ng-if="$index === 4">E</span>
+											</span>
+										</span>
+										{{ ::opt.label }}
+									</div>
+								</div>
+							</div>
+				
+						</div>
+				
+				
+					</li>
+				</ul>
+			</div>
+			<div ng-if="!$ctrl.results">
+				<div class="results-headline">
+					<h3>Oh no...</h3>
+					<p>We seem to be havin trouble calculating your results.</p>
+					<p>Get in touch at <a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a> and we'll get this fixed!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

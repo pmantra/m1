@@ -1,0 +1,67 @@
+{
+    "contentful_entry_id": "5kKH0fZtPImewjhHIrQN4g",
+    "description": null,
+    "entry_status": "Published",
+    "id": "1093228887894469560",
+    "questions": [
+        {
+            "body": "What is your date of birth?",
+            "contentful_entry_id": "2ANLYxUFKFIGagkej0c2DG",
+            "display_condition": null,
+            "entry_status": "Published",
+            "id": "1093228887634762835",
+            "microcopy": null,
+            "options": [],
+            "required": true,
+            "slug": "member_dob",
+            "user_answers": [],
+            "version": 6,
+            "widget_type": "date"
+        },
+        {
+            "body": "Is this your first pregnancy?",
+            "contentful_entry_id": "0inhJMJm9LgShWouOJltu",
+            "display_condition": null,
+            "entry_status": "Published",
+            "id": "1093228887668941720",
+            "microcopy": null,
+            "options": [
+                {
+                    "contentful_answer_id": "1093228886536822389",
+                    "contentful_entry_id": "10M2ToMwjRptvkqvDFE8Rc",
+                    "entry_status": "Published",
+                    "export_flags": null,
+                    "label": "Yes",
+                    "score_value": null,
+                    "value": "yes",
+                    "version": 4
+                },
+                {
+                    "contentful_answer_id": "1093228886579918815",
+                    "contentful_entry_id": "40FnlRyky8TR7ykI223XoD",
+                    "entry_status": "Published",
+                    "export_flags": null,
+                    "label": "No",
+                    "score_value": null,
+                    "value": "no",
+                    "version": 9
+                }
+            ],
+            "required": true,
+            "slug": "first_pregnancy",
+            "user_answers": [],
+            "version": 3,
+            "widget_type": "radio-buttons"
+        }
+    ],
+    "score_band": null,
+    "score_logic": null,
+    "slug": "pregnancy-welcome",
+    "title": "Pregnancy Onboarding",
+    "user_assessment": null,
+    "user_id": 14,
+    "version": 11,
+    "visual_config": [
+        "onboarding_header"
+    ]
+}

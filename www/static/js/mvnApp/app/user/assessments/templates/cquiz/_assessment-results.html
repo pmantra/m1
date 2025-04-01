@@ -1,0 +1,37 @@
+<div class="assessment-{{ ::$ctrl.assessment.type }} quiz-results">
+
+	<div ng-if="!$ctrl.loading">
+
+		<div ng-if="!$ctrl.isComplete">
+			<div class="results-headline">
+				 <h5>Uh oh... you haven't completed this yet!</h5>
+			</div>
+		</div>
+
+		<div ng-if="$ctrl.isComplete" >
+			<div ng-if="$ctrl.results">
+				<div class="results-headline">
+					<h5>Your results</h5>
+					<p ng-if="$ctrl.results.icon"><img ng-src="{{ $ctrl.results.icon }}" alt="Results"></p>
+					<h3>{{ $ctrl.results.header }}</h3>
+
+					<p ng-repeat="para in $ctrl.results.desc">
+						{{ para }}
+					</p>
+				
+					<p>
+						<mvn-dynamic-cta opts="$ctrl.results.cta" user="$ctrl.user" event-name="mquiz-post-complete-cta"></mvn-dynamic-cta>
+					</p>
+				</div>
+			</div>
+			<div ng-if="!$ctrl.results">
+				<div class="results-headline">
+					<h3>Oh no...</h3>
+					<p>We seem to be havin trouble calculating your results.</p>
+					<p>Get in touch at
+						<a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a> and we'll get this fixed!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

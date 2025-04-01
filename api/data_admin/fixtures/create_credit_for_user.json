@@ -1,0 +1,11 @@
+[
+ {
+   "type": "user",
+   "email": "test+mvnqa-test007credit@mavenclinic.com",
+   "credit": {
+   "amount": 100,
+   "activated_at": "now",
+   "expires_at": "in 1 month"
+  }
+ }
+]

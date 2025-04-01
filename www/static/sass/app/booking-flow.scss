@@ -1,0 +1,449 @@
+/* BOOKING PRACTITIONER */
+
+.clndr {
+	display: block;
+	margin: 0 auto;
+	border-right: 1px solid $charcoal-40;
+	border-top: 1px solid $charcoal-40;
+	.clndr-controls {
+		border-bottom: 1px solid $charcoal-40;
+		position: relative;
+
+		.clndr-previous-button,
+		.clndr-next-button {
+			cursor: pointer;
+			top: 0px;
+			left: 0px;
+			padding: 12px;
+			position: absolute;
+		}
+		.clndr-next-button {
+			left: auto;
+			right: 0px;
+		}
+	}
+	.clndr-grid {
+		.month {
+			padding: 5px 0;
+			text-align: center;
+			border-left: 1px solid $charcoal-40;
+			border-bottom: 1px solid $charcoal-40;
+			@include susy-breakpoint($desktop) {
+				padding: 20px 0;
+			}
+			p,
+			.p {
+				margin: 0;
+				color: $charcoal-100;
+			}
+		}
+		.days-of-the-week {
+			width: 100%;
+			border-bottom: 1px solid $charcoal-40;
+			.header-day {
+				float: left;
+				width: 14.28571%;
+				padding: 12px 0;
+				text-align: center;
+				border-left: 1px solid $charcoal-40;
+				color: $charcoal-100;
+				text-transform: uppercase;
+				h5 {
+					padding: 0;
+					margin: 0;
+				}
+				&.selected-day {
+					color: $charcoal-100;
+				}
+			}
+		}
+	}
+	.days {
+		border-bottom: 1px solid $charcoal-40;
+		.day,
+		.empty {
+			float: left;
+			width: 14.28571%;
+			position: relative;
+			text-align: center;
+			color: $charcoal-100;
+			border-left: 1px solid $charcoal-40;
+			//border-bottom: 1px solid $charcoal-40;
+			h3 {
+				color: $charcoal-40;
+			}
+			span {
+				border-bottom: 3px solid transparent;
+				display: block;
+				padding: 8px 0;
+				font-size: 21px;
+				@include susy-breakpoint($desktop) {
+					padding: 15px 0;
+					font-size: 30px;
+				}
+			}
+			em {
+				display: block;
+				width: 100%;
+				height: 5px;
+			}
+			&.today {
+				font-weight: 900;
+			}
+			/* hack bc clndr doesn't play nice with lengthOfTime so we just hide inactive to achieve the desired resullt */
+			&.inactive {
+				display: none;
+			}
+			/*
+			.event-indicator {
+				background-color: #3BB7E8;
+				border-radius: 100%;
+				color: #fff;
+				cursor: pointer;
+				font-size: 9px;
+				height: 15px;
+				line-height: 16px;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				width: 15px;
+			}
+			*/
+		}
+		.day {
+			/* Has events */
+			&.event {
+				h3 {
+					color: $charcoal-100;
+				}
+				cursor: pointer;
+			}
+			/* chosen day */
+			&.selected-day {
+				h3 {
+					color: $charcoal-100;
+				}
+				span {
+					border-bottom: 3px solid $charcoal-100;
+				}
+				em {
+					background: $charcoal-100;
+				}
+			}
+		}
+	}
+}
+
+.book-practitioner-dialog {
+	.ngdialog-content {
+		background: $macaroon-20;
+	}
+	.book-practitioner-dialog--content {
+		@include container;
+	}
+	.book-practitioner-dialog--header {
+		background: $charcoal-20;
+		padding: $basepadding;
+		@include span(12);
+		border-bottom: 1px solid $charcoal-40;
+		.book-practitioner-dialog--pracname {
+			margin: 0 auto;
+			@include susy-breakpoint($desktop) {
+				width: 40%;
+				h3,
+				h5 {
+					white-space: nowrap;
+				}
+			}
+			@include susy-breakpoint($desktop-md) {
+				width: 30%;
+			}
+			@include susy-breakpoint($desktop-hd) {
+				width: 23%;
+			}
+		}
+		.practitioner-photo {
+			float: left;
+			width: 60px;
+			img,
+			.practitioner-noimg {
+				width: 60px;
+				height: 60px;
+			}
+			.practitioner-noimg {
+				padding-top: 13px;
+				padding-left: 3px;
+				svg {
+					width: 34px;
+					height: 30px;
+				}
+			}
+		}
+		.book-practitioner-name {
+			float: left;
+			text-align: left;
+			margin-top: 7px;
+			padding-left: 5px;
+			h3,
+			h5 {
+				margin: 0;
+				color: $charcoal-100;
+			}
+			h5 {
+				margin-top: 5px;
+			}
+		}
+
+		@include susy-breakpoint($desktop) {
+			padding: 40px 15px;
+			.practitioner-photo {
+				text-align: right;
+				margin-right: 20px;
+			}
+		}
+	}
+
+	.book-back-practitioner,
+	.practitioner-photo,
+	.book-practitioner-name,
+	.book-back-time {
+		float: left;
+	}
+	.book-back-practitioner,
+	.book-back-time {
+		@include span(1 of 12);
+		margin-top: 18px;
+		a {
+			cursor: pointer;
+		}
+		@include susy-breakpoint($desktop) {
+			margin-top: 33px;
+		}
+	}
+
+	.book-practitioner-dialog--options {
+		@include span(12);
+		background: $macaroon-20;
+		.book-step-select-time {
+			@include span(12);
+			padding: $basepadding;
+			.book-select-time-header {
+				padding-top: 20px;
+				@include susy-breakpoint($desktop) {
+					padding-top: 30px;
+				}
+			}
+			h2 {
+				color: $charcoal-100;
+				margin: 0;
+			}
+		}
+	}
+	.clndr {
+		margin-top: 20px;
+		@include susy-breakpoint($desktop) {
+			margin-top: 20px;
+		}
+	}
+	.clndr,
+	.booking-select-time {
+		.month {
+			h3 {
+				margin: 0;
+				color: $charcoal-100;
+			}
+		}
+		h5 {
+			color: $charcoal-100;
+			margin: 0;
+		}
+		.days {
+			color: $charcoal-100;
+		}
+		@include susy-breakpoint($desktop) {
+			width: 80%;
+			max-width: 860px;
+			margin: 0 auto;
+		}
+	}
+	.book-time-slots {
+		border: 1px solid $charcoal-40;
+		border-top: 0;
+		.time-slots {
+			display: block;
+			cursor: pointer;
+			//float: left;
+			ul {
+				display: block;
+				border-top: 1px solid $charcoal-40;
+				h5 {
+					margin: 0;
+					border-bottom: 1px solid $charcoal-40;
+					padding: 12px 0;
+					background: $macaroon-20;
+					@include susy-breakpoint($desktop) {
+						padding: 20px 0;
+					}
+				}
+				li {
+					display: block;
+					float: left;
+					margin: 10px;
+					span {
+						display: block;
+						cursor: pointer;
+						padding: 8px 10px;
+					}
+				}
+			}
+		}
+	}
+	.book-time-review-header {
+		@include span(12);
+		padding: 0 15px;
+		border-bottom: 1px solid $charcoal-40;
+		.book-back-time {
+			padding-top: 26px;
+		}
+		.book-time-review {
+			@include span(11 of 12 last);
+			padding: 12px 10px;
+			h3,
+			h5,
+			.h5 {
+				margin: 0;
+			}
+			@include susy-breakpoint(0 $mobile-landscape-max) {
+				h3 {
+					font-size: 18px;
+				}
+			}
+
+			h5,
+			.h5 {
+				margin-bottom: 5px;
+			}
+		}
+		@include susy-breakpoint($desktop) {
+			.book-time-review {
+				text-align: center;
+				padding: 40px 0;
+				@include span(10 of 12);
+				margin-right: span(1 wide of 12);
+			}
+			.book-back-time {
+				padding-top: 40px;
+			}
+		}
+	}
+	.add-card,
+	.booking-confirm {
+		@include span(12);
+		padding: $basepadding;
+	}
+	.add-card {
+		form {
+			max-width: 460px;
+			margin: 0 auto;
+		}
+	}
+	.book-enter-referral-code {
+		margin-top: 20px;
+		.paper-input {
+			border-bottom: 1px solid $charcoal-40;
+			input {
+				text-align: center;
+			}
+		}
+	}
+	.book-confirm {
+		margin-top: 0;
+	}
+	.booking-confirm {
+		padding-top: 60px;
+		h5,
+		.h5 {
+			margin-top: 0;
+			@include susy-breakpoint($desktop) {
+				margin-bottom: 0;
+			}
+		}
+		.booking-mobile-alert {
+			font-weight: 700;
+		}
+		.book-confirm-button {
+			display: block;
+			margin: 0 auto 1rem auto;
+			max-width: 300px;
+		}
+	}
+}
+
+/* Post-booking dialogs */
+.post-booking {
+	.ngdialog-content {
+		.post-booked {
+			background: $macaroon-20;
+			padding: 60px 15px;
+			@include susy-breakpoint($desktop) {
+				padding: 60px 0;
+			}
+		}
+	}
+}
+.post-booked {
+	margin-top: 30px;
+	max-width: 460px;
+	margin: 0 auto;
+	form {
+		margin-top: 40px;
+		&.form-white {
+			.btn {
+				width: 100%;
+				margin-top: 10px;
+				max-width: none;
+			}
+		}
+	}
+	@include susy-breakpoint($desktop) {
+		width: 450px;
+		form {
+			input {
+				text-align: center;
+			}
+		}
+	}
+}
+.post-booked--header {
+	.booked-icon {
+		width: auto;
+		height: auto;
+	}
+}
+
+.post-booking-how-to.mvndialog.ngdialog .ngdialog-content {
+	max-width: 600px;
+}
+
+.post-booking-how-to {
+	ol {
+		margin: 0 auto;
+		text-align: left;
+		li {
+			margin: 10px 0;
+		}
+	}
+	h3 {
+		border: 0;
+		margin-top: 10px;
+	}
+	.how-to-icon {
+		margin: 0 2px 0 5px;
+	}
+	.practitioner-photo {
+		img,
+		> div {
+			margin: 0 auto 10px auto;
+		}
+	}
+}

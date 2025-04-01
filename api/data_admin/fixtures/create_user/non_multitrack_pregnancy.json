@@ -1,0 +1,12 @@
+[
+  {
+    "type": "user",
+    "organization_name": "Non-Multitrack Org",
+    "tracks": ["pregnancy:week-5"],
+    "email_prefix": "mvnqa-non",
+    "password": "simpleisawesome1*",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

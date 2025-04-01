@@ -1,0 +1,21 @@
+<section class="page-info">
+	<div class="page-info-content">
+		<div ng-if="!err">
+		
+			<div ng-if="reportYes">
+				<h1>Thanks!</h1>
+				<p>We appreciate you letting us know your appointment completed successfully.</p>
+			</div>
+
+			<div ng-if="reportNo">
+				<p>Thanks for letting us know that your appointment did not complete successfully. Please contact us at <a href="mailto:practitionersupport@mavenclinic.com?subject=Appointment did not complete successfully">practitionersupport@mavenclinic.com</a> to explain what problems you experienced.</p>
+			</div>
+
+		</div>
+
+		<div ng-if="err">
+			<h1>Hmm...</h1>
+			<p>There seems to have been a problem. <span ng-if="errMsg">({{ errMsg }})</span> Please contact <a href="mailto:practitionersupport@mavenclinic.com">practitionersupport@mavenclinic.com</a> if this persists.</p>
+		</div>
+	</div>
+</section>

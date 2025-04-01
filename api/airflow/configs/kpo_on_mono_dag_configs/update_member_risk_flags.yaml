@@ -1,0 +1,13 @@
+dag_id: update_member_risk_flags_dag
+schedule: 0 6 * * *
+task_id: update_member_risk_flags_task
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.mpractice_core.update_member_risk_flags import update_member_risk_flags_job; update_member_risk_flags_job()"
+team_namespace: mpractice_core
+service_namespace: health
+start_year: 2025
+start_month: 3
+start_day: 30
+catchup: "False"

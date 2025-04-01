@@ -1,0 +1,450 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "body": "Hey Mama! When is your baby's birthday?",
+      "next": 2,
+      "required": true,
+      "widget": {
+        "type": "date"
+      },
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/1.svg"
+      }
+    },
+    {
+      "id": 2,
+      "body": "There's more than one way to be a mom—how did you do it?",
+      "required": true,
+      "widget": {
+        "type": "radio",
+        "options": [
+          {
+            "value": "birth",
+            "label": "I gave birth",
+            "next": 3
+          },
+          {
+            "value": "adopted",
+            "label": "I adopted",
+            "next": 13
+          },
+          {
+            "value": "surrogate",
+            "label": "I used a surrogate",
+            "next": 13
+          }
+        ]
+      },
+      "children": [
+        {
+          "id": 3,
+          "requiredValues": [
+            "birth"
+          ],
+          "next": 4
+        }
+      ],
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/2.svg"
+      }
+    },
+    {
+      "id": 3,
+      "body": "When was your due date?",
+      "next": 4,
+      "required": true,
+      "widget": {
+        "type": "date"
+      },
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/3.svg"
+      }
+    },
+    {
+      "id": 4,
+      "body": "How did you give birth? (Don't worry, no details needed!)",
+      "required": true,
+      "widget": {
+        "type": "radio",
+        "options": [
+          {
+            "value": "vaginal",
+            "label": "Vaginal",
+            "next": 8
+          },
+          {
+            "value": "c-section",
+            "label": "C-section",
+            "next": 5
+          },
+          {
+            "value": "VBAC",
+            "label": "VBAC",
+            "next": 8
+          }
+        ]
+      },
+      "children": [
+        {
+          "id": 5,
+          "requiredValues": [
+            "c-section"
+          ]
+        }
+      ],
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/4.svg"
+      }
+    },
+    {
+      "id": 5,
+      "body": "Did you plan for a c-section?",
+      "required": true,
+      "widget": {
+        "type": "radio",
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes, this was planned",
+            "next": 6
+          },
+          {
+            "value": "no",
+            "label": "No, this was unplanned",
+            "next": 7
+          }
+        ]
+      },
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/5.svg"
+      }
+    },
+    {
+      "id": 6,
+      "body": "Why did you decide to schedule a c-section? (There’s no wrong answer!)",
+      "next": 8,
+      "required": true,
+      "widget": {
+        "type": "textarea",
+        "placeholder": "Type your reason here"
+      },
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/6.svg"
+      }
+    },
+    {
+      "id": 7,
+      "body": "If you planned for a vaginal delivery but had a c-section, what happened?",
+      "next": 8,
+      "required": true,
+      "widget": {
+        "type": "textarea",
+        "placeholder": "Type your reason here"
+      },
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/7.svg"
+      }
+    },
+    {
+      "id": 8,
+      "body": "So, be real with us: how are you feeling?",
+      "next": 9,
+      "required": true,
+      "widget": {
+        "type": "radio",
+        "options": [
+          {
+            "value": "1",
+            "label": "Not well"
+          },
+          {
+            "value": "2",
+            "label": "Okay"
+          },
+          {
+            "value": "3",
+            "label": "Good"
+          },
+          {
+            "value": "4",
+            "label": " Great"
+          },
+          {
+            "value": "5",
+            "label": "Excellent"
+          }
+        ]
+      },
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/8.svg"
+      }
+    },
+    {
+      "id": 9,
+      "body": "Have you had any medical problems during or after your pregnancy?",
+      "required": true,
+      "widget": {
+        "type": "radio",
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes",
+            "next": 10
+          },
+          {
+            "value": "no",
+            "label": "No",
+            "next": 11
+          }
+        ]
+      },
+      "children": [
+        {
+          "id": 10,
+          "requiredValues": [
+            "yes"
+          ]
+        }
+      ],
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/9.svg"
+      }
+    },
+    {
+      "id": 10,
+      "body": "Sorry to hear that. What happened?",
+      "next": 11,
+      "required": true,
+      "widget": {
+        "type": "textarea",
+        "placeholder": "Tell us here (ex: bleeding, hypertension, gestational diabetes, placenta previa, group B strep, preterm labor, cervical shortening, issues with fetal growth, incontinence)."
+      },
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/10.svg"
+      }
+    },
+    {
+      "id": 11,
+      "body": "What are you feeding your baby?",
+      "required": true,
+      "widget": {
+        "type": "radio",
+        "options": [
+          {
+            "value": "breastfeeding",
+            "label": "Breast milk",
+            "next": 12
+          },
+          {
+            "value": "formula",
+            "label": "Formula",
+            "next": 13
+          },
+          {
+            "value": "both",
+            "label": "Both",
+            "next": 12
+          }
+        ]
+      },
+      "children": [
+        {
+          "id": 12,
+          "requiredValues": [
+            "breastfeeding",
+            "both"
+          ]
+        }
+      ],
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/11.svg"
+      }
+    },
+    {
+      "id": 12,
+      "body": "Do you need any support with feeding?",
+      "next": 13,
+      "required": true,
+      "widget": {
+        "type": "radio",
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes"
+          },
+          {
+            "value": "no",
+            "label": "No"
+          }
+        ]
+      },
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/12.svg"
+      }
+    },
+    {
+      "id": 13,
+      "body": "Has your baby had any health issues?",
+      "required": true,
+      "widget": {
+        "type": "radio",
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes",
+            "next": 14
+          },
+          {
+            "value": "no",
+            "label": "No",
+            "next": 15
+          }
+        ]
+      },
+      "children": [
+        {
+          "id": 14,
+          "requiredValues": [
+            "yes"
+          ]
+        }
+      ],
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/13.svg"
+      }
+    },
+    {
+      "id": 14,
+      "body": "We're really sorry to hear that. What happened?",
+      "next": 15,
+      "required": true,
+      "widget": {
+        "type": "textarea",
+        "placeholder": "Tell us a little about what happened"
+      },
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/14.svg"
+      }
+    },
+    {
+      "id": 15,
+      "body": "Who is your pediatrician?",
+      "next": 16,
+      "required": false,
+      "widget": {
+        "type": "freetextmulti",
+        "options": [
+          {
+            "value": "first_name",
+            "label": "First name",
+            "placeholder": "First",
+            "fieldtype": "text",
+            "required": true
+          },
+          {
+            "value": "last_name",
+            "label": "Last name",
+            "placeholder": "Last",
+            "fieldtype": "text",
+            "required": true
+          },
+          {
+            "value": "email",
+            "label": "Email address* (optional)",
+            "placeholder": "name@email.com",
+            "fieldtype": "email",
+            "required": false
+          }
+        ]
+      },
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/15.svg",
+        "subtext": "*Want to see your pediatrician on Maven? Provide us their email and we’ll reach out to them."
+      }
+    },
+    {
+      "id": 16,
+      "body": "Are you planning on going back to work? This is for Maven research purposes–we would never tell your employer.",
+      "required": true,
+      "widget": {
+        "type": "radio",
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes",
+            "next": 17
+          },
+          {
+            "value": "no",
+            "label": "I'm not sure",
+            "next": "end"
+          },
+          {
+            "value": "noreturn",
+            "label": "I'm not returning to work",
+            "next": "end"
+          }
+        ]
+      },
+      "children": [
+        {
+          "id": 17,
+          "requiredValues": [
+            "yes"
+          ]
+        }
+      ],
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/16.svg"
+      }
+    },
+    {
+      "id": 17,
+      "body": "What day are you going back? (Estimates are fine!)",
+      "next": 18,
+      "required": true,
+      "widget": {
+        "type": "date"
+      },
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/17.svg"
+      }
+    },
+    {
+      "id": 18,
+      "body": "Be honest with us: are you anxious about going back to work?",
+      "next": "end",
+      "required": true,
+      "widget": {
+        "type": "radio",
+        "options": [
+          {
+            "value": "1",
+            "label": "Not at all"
+          },
+          {
+            "value": "2",
+            "label": "A little"
+          },
+          {
+            "value": "3",
+            "label": "Somewhat"
+          },
+          {
+            "value": "4",
+            "label": "Very"
+          },
+          {
+            "value": "5",
+            "label": "Extremely"
+          }
+        ]
+      },
+      "meta": {
+        "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/18.svg",
+        "subtext": "We would never share your specific answer; this helps us present statistics to doctors and companies on postpartum anxiety, which is a very real and understudied area!"
+      }
+    }
+  ]
+}

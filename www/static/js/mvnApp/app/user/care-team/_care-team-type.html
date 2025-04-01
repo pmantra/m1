@@ -1,0 +1,72 @@
+<div class="care-team-list" aria-live="polite">
+	<inline-loader ng-show="loading" loading="loading" label="Loading practitioners..." role="status"></inline-loader>
+	<div class="" ng-hide="loading">
+		<div ng-if="$ctrl.practitioners.length > 0">
+			<h1 ng-if="$ctrl.heading" class="serif">{{$ctrl.heading}}</h1>
+			<ul class="grid-practitioners clearfix clear" is-loading="$ctrl.loadingMore">
+				<li ng-repeat="practitioner in $ctrl.practitioners">
+					<practitioner-grid-item
+						practitioner="practitioner"
+						user="$ctrl.user"
+						class="practitioner-grid-item"
+					></practitioner-grid-item>
+				</li>
+			</ul>
+
+			<ul class="clear">
+				<li ng-show="$ctrl.loadingMore" class="list-loader">
+					<inline-loader
+						ng-show="$ctrl.loadingMore"
+						loading="$ctrl.loadingMore"
+						label="Getting more practitioners..."
+					></inline-loader>
+				</li>
+			</ul>
+			<div ng-if="$ctrl.practitioners.length < $ctrl.totalPractitioners" class="center loadmore">
+				<a class="btn btn-action" ng-class="{ 'disabled': $ctrl.loadingMore}" ng-click="$ctrl.loadMore()">Load more</a>
+			</div>
+		</div>
+
+		<div ng-if="$ctrl.user.organization" class="request-practitioner-cta">
+			<div ng-if="$ctrl.teamType !== 'QUIZ,CARE_COORDINATOR' && $ctrl.practitioners.length === 0">
+				<p>
+					You'll find practitioners you've booked with here in order to schedule easy follow-ups. If you need help
+					finding a new practitioner, shoot a message to your Care Advocate and she'll recommend the right person for
+					you!
+				</p>
+				<div class="p">
+					<dash-message-cx
+						elmclass="btn btn-action"
+						cta="Message {{
+								 $ctrl.user.care_coordinators[0] ? $ctrl.user.care_coordinators[0].first_name : 'Kaitlyn'
+								 }}"
+						></dash-message-cx>
+				</div>
+			</div>
+
+			<div ng-if="$ctrl.teamType === 'QUIZ,CARE_COORDINATOR' && $ctrl.practitioners.length <= 1">
+				<p>
+					Now you can get matched with your own personalized Care Team on Maven. All you need to do is answer a few
+					quick questions and we'll create your practitioner team—they're here for you every step of the way!
+				</p>
+				<div class="p">
+					<a role="button" class="btn btn-cta" href="" ng-click="$ctrl.startCareTeamEval()">Let's go</a>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="!$ctrl.user.organization && $ctrl.practitioners.length === 0" class="care-team-empty">
+			<div class="care-team-empty-cta">
+				<h2 class="h1 serif care-team-empty-title">Your care team is empty</h2>
+				<p class="care-team-empty-description">Providers you interact with will be added to your Care Team and appear here.</p>
+				<a class="btn btn-cta care-team-empty-btn" role="button" ui-sref="app.appointment.book">Find a provider</a>
+				<div class="care-team-empty-need-help">
+					Need help? <a class="btn btn-tertiary" href="https://support.mavenclinic.com/hc/en-us">Visit the FAQ</a>
+				</div>
+			</div>
+			<div class="care-team-empty-image">
+				<img src="/img/app/user/care-team/care-team.png" alt="Three practitioners standing with their arms linked" />
+			</div>
+		</div>
+	</div>
+</div>

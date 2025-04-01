@@ -1,0 +1,56 @@
+[
+  {
+    "type": "user",
+    "password": "SimpleYetAwesome1*",
+    "email": "test+mvnqa-msgone@mavenclinic.com"
+  },
+  {
+    "type": "forum_post",
+    "title": "Hello",
+    "body": "Hi",
+    "author": "test+mvnqa-msgone@mavenclinic.com",
+    "category": "health-wellness"
+  },
+  {
+    "type": "forum_post",
+    "title": "Two",
+    "body": "Huh",
+    "author": "test+mvnqa-msgone@mavenclinic.com",
+    "category": "sex-relationships"
+  },
+  {
+    "type": "forum_post",
+    "title": "Three",
+    "body": "Hello",
+    "author": "test+mvnqa-msgone@mavenclinic.com",
+    "category": "fertility"
+  },
+  {
+    "type": "forum_post",
+    "title": "test post",
+    "body": "qa",
+    "author": "test+mvnqa-msgone@mavenclinic.com",
+    "category": "moms-parenting"
+  },
+  {
+    "type": "forum_post",
+    "title": "quality",
+    "body": "assurance",
+    "author": "test+mvnqa-msgone@mavenclinic.com",
+    "category": "postpartum"
+  },
+  {
+    "type": "forum_post",
+    "title": "hello",
+    "body": "qa",
+    "author": "test+mvnqa-msgone@mavenclinic.com",
+    "category": "pediatrics-parenting"
+  },
+  {
+    "type": "forum_post",
+    "title": "qa is",
+    "body": "awesome",
+    "author": "test+mvnqa-msgone@mavenclinic.com",
+    "category": "mental-health"
+  }
+]

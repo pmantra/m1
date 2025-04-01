@@ -1,0 +1,19 @@
+# Task execution
+invoke
+
+# Soft dependencies
+python-dateutil
+pytz
+
+# Distribution
+wheel
+
+# Testing
+pytest>=2.6.3
+tox>=1.5.0
+
+
+# Syntax checking
+pep8>=1.5.7,<1.6
+flake8>=2.4.0
+mypy>=1.6.1

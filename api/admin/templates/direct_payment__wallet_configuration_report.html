@@ -1,0 +1,52 @@
+{% extends 'admin/base.html' %}
+{% import 'admin/lib.html' as lib with context %}
+{% block head %}
+{{ super() }}
+{{ lib.form_css() }}
+{% endblock %}
+
+{% block body %}
+    <h1>Direct Payment Wallet Configuration Report</h1>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Organization</th>
+            <th>Reimbursement Org. Settings</th>
+            <th>Wallet</th>
+            <th>Payments Customer ID</th>
+            <th>Stripe Payment Method</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in report_data %}
+        <tr>
+            <td>{{ row.query_objs.Organization }}</td>
+            <td>{{ row.query_objs.ReimbursementOrganizationSettings }}</td>
+            <td>{{ row.query_objs.ReimbursementWallet }}</td>
+            <td>{{ row.query_objs.ReimbursementWallet.payments_customer_id if row.query_objs.ReimbursementWallet.payments_customer_id else "None" }}</td>
+            <td>
+                {% if row.payments_customer == None %}
+                <em>No Payments Customer</em>
+                {% elif row.payments_customer == False %}
+                <strong>Payments Error</strong>
+                {% elif row.payments_customer.payment_methods|length == 0 %}
+                <strong>No Payment Method</strong>
+                {% else %}
+                {{ row.payments_customer.payment_methods[0] }}
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+    <p><em>End of report.</em></p>
+{% endblock %}
+
+{% block tail %}
+{{ super() }}
+{% endblock %}
+
+

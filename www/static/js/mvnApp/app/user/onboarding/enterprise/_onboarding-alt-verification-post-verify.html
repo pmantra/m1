@@ -1,0 +1,17 @@
+<div class="onboarding-ent-complete center">
+	<h3 class="serif">Hmm... something went wrong</h3>
+	<p class="lg">We’re having trouble verifying your company-sponsored account.</p>
+
+	<p ng-if="!isOther">
+		A Maven Care Advocate will be in touch with you shortly. For immediate help, please contact
+		<a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a>.
+	</p>
+
+	<p ng-if="isOther">
+		If you think this is an error, please contact <a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a>.
+	</p>
+	<br />
+	<p><a class="btn btn-action" href="mailto:support@mavenclinic.com">Contact support</a></p>
+	<br />
+	<mvn-dynamic-cta opts="nativeCtaOpts" event-name="complete-onboarding-alternative-verification"></mvn-dynamic-cta>
+</div>

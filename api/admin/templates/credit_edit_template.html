@@ -1,0 +1,22 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    {{ super() }}
+
+    <h2>Referral Code Used</h2>
+    {% if model.referral_code_use %}
+        <p>Referral Code <a href="/admin/referralcode/edit/?id={{ model.referral_code_use.code.id }}">{{ model.referral_code_use.code.code }}</a> used to create this credit.</p>
+    {% else %}
+        <p>No referral code used - probably created directly by an admin</p>
+    {% endif %}
+
+    <br/>
+
+    <h2>Message Billing</h2>
+    {% if model.message_billing %}
+        <p>Message Billing <a href="/admin/messagebilling/edit/?id={{ model.message_billing_id }}">{{ model.message_billing }}</a> </p>
+    {% else %}
+        <p>No message purchase(s) from this credit.</p>
+    {% endif %}
+
+{% endblock %}

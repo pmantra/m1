@@ -1,0 +1,160 @@
+<!-- // Patient appointments  -->
+
+<div class="appointments-list mvn-list-container">
+	<h1 class="sr-only">Appointments</h1>
+
+	<div role="tablist" class="appointments-list-sort tabs" aria-label="Appointments">
+		<div class="tab-btn-container h5">
+			<button role="tab" aria-title="Upcoming appointments" ng-click="setAppointmentView('upcoming')" ng-class="{'active':apptsType === 'upcoming'}">Upcoming</button>
+			<button role="tab" aria-title="Past appointments" ng-click="setAppointmentView('past')" ng-class="{'active':apptsType === 'past'}">Past</button>
+		</div>
+	</div>
+
+	<section class="appointments-list">
+		<div class="appointments" aria-live="polite" aria-busy="loading">
+			<inline-loader ng-show="loading" loading="loading" label="Loading appointments..."></inline-loader>
+			<div class="" ng-hide="loading" >
+				<ul class="appointments appt-list clear clearfix" mvn-inf-scroll scroll-container="left-panel" is-loading="loadingMore" scroll-action="loadMore(apptsType)">
+					<li class="appointment-list" ng-repeat="appointment in appointments" ng-click="setActiveAppointment(appointment.id)" ng-class="{'active' : appointment.id === activeAppointment, 'cancelled' : appointment.cancelled_at }">
+
+					<div>
+
+						<div class="appointment-container" ng-click="setActiveAppointment" ng-class="{'active' : appointment.id === activeAppointment}" class="clearfix">
+
+							<div >
+							<article ng-if="appointment">
+								<div class="appointment-list-name">
+									<div class="job-title h5">{{ appointment.product.practitioner.profiles.practitioner.verticals[0] }}</div>
+									<h2 class="h3">{{ appointment.product.practitioner.name }}</h1>
+									<div class="practitioner-photo photo-90">
+										<img ng-if="appointment.product.practitioner.image_url" class="profile-photo" ng-src="{{ appointment.product.practitioner.image_url }}" alt="{{ appointment.practitioner.first_name }} {{ appointment.practitioner.last_name }}"/>
+										<div ng-if="!appointment.product.practitioner.image_url" class="practitioner-noimg" aria-hidden="true">
+											<svg
+												viewBox="0 0 80 80"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+												role="img"
+											>
+												<path d="M40 80c22.091 0 40-17.909 40-40S62.091 0 40 0 0 17.909 0 40s17.909 40 40 40z" fill="#DCE9E1" />
+												<path
+													d="M53.664 17.265a5.634 5.634 0 00-1.976.352 8.31 8.31 0 00-15.116-1.78 5.89 5.89 0 00-8.686 5.16c.002.53.077 1.056.222 1.566a6.463 6.463 0 00-2.313 11.392 5.43 5.43 0 002.337 9.884A2.894 2.894 0 1033.25 45.7a2.886 2.886 0 00-1.64-2.583 5.43 5.43 0 001.033-8.53 6.472 6.472 0 003.535-5.741c0-.792-.147-1.576-.435-2.313a5.74 5.74 0 001.715-.993 8.3 8.3 0 0011.482.952 5.781 5.781 0 104.659-9.203l.065-.024z"
+													fill="#0E8671"
+												/>
+												<path
+													d="M46.996 55.346c-4.757-.55-4.01-7.3-1.69-8.62 1.206-.69 4.102 1.468 6.907-.214 1.64-.984-.05-3.674.508-4.732a24.03 24.03 0 002.74-15.698c-2.15-14.116-20.817-13.345-25.049-3.716-3.715 8.432 2.608 18.495-2.255 32.176a11.244 11.244 0 01-1.64 3.059l12.606 6.504s8.931-8.637 7.873-8.76z"
+													fill="#70B2A6"
+												/>
+												<path d="M55.46 29.469a42.422 42.422 0 001.436 6.947c-.608.307-1.302.4-1.969.262" fill="#70B2A6" />
+												<path
+													d="M55.46 29.469a42.422 42.422 0 001.436 6.947c-.608.307-1.302.4-1.969.262"
+													stroke="#0E8671"
+													strokeWidth="1.18"
+													strokeLinecap="round"
+													strokeLinejoin="round"
+												/>
+												<path d="M54.394 39.656a30.338 30.338 0 01-3.674-1.386h-.5a5.87 5.87 0 003.444 2.92l.73-1.534z" fill="#DCE9E1" />
+												<path
+													d="M50.088 38.105a.23.23 0 01.27-.098c1.056.297 2.145.455 3.24.467.878 0 1.206 0 1.42.304a.64.64 0 01-.558.951 8.045 8.045 0 01-4.323-1.32.238.238 0 01-.049-.304z"
+													fill="#70B2A6"
+												/>
+												<path
+													d="M50.088 38.278a8.875 8.875 0 001.764 3.026c1 1.124 1.87 1.165 2.214.615.344-.55-.156-.82-1.198-1.37a11.426 11.426 0 01-2.78-2.271z"
+													fill="#70B2A6"
+												/>
+												<path
+													d="M45.15 22.793a8.448 8.448 0 01-4.847 6.98c-.96.41-1.935.287-2.854.77-.918.484.115.96.05 1.928-.099 1.402-4.922 16.15-7.825 16.059 0 0-4.995-16.502-1.73-25.425.877-2.404 3.543-3.93 5.544-5.643 1.73-1.477 5.577-1.83 8.054-1.96 2.747-.124 3.699 5.06 3.609 7.29z"
+													fill="#0E8671"
+												/>
+												<path
+													d="M40.722 19.16c.566.483-.107 4.83.205 5.51.311.681-2.338 5.496-1.64 5.315 5.946-1.46 7.594-8.045 8.94-8.447 1.574-.468 2.337 1.246 2.41 1.861.075.616 0 1.23.075 1.846a4.24 4.24 0 002.698 3.338 3.78 3.78 0 003.92-1.074c-1.722-4.208-3.28-8.128-7.029-10.81-1.46-1.042-1.845-1.747-3.633-1.747-1.19 0-6.791-.763-7.53.155-1.254 1.6.747 3.347 1.584 4.052z"
+													fill="#0E8671"
+												/>
+												<path d="M39.368 29.526a2.296 2.296 0 10-1 4.101" fill="#70B2A6" />
+												<path
+													d="M39.368 29.526a2.296 2.296 0 10-1 4.101"
+													stroke="#0E8671"
+													strokeWidth="1.18"
+													strokeLinecap="round"
+													strokeLinejoin="round"
+												/>
+												<path
+													d="M56.297 57.257a56.468 56.468 0 00-9.219-1.583l-7.956 8.431-12.59-6.504a39 39 0 00-8.554 2.395"
+													stroke="#70B2A6"
+													strokeWidth="1.16"
+													strokeLinecap="round"
+													strokeLinejoin="round"
+												/>
+												<path
+													d="M26.533 57.6l1.829 7.276a3.421 3.421 0 004.872 2.214l5.888-2.985 4.79 1.386a3.28 3.28 0 004.216-3.428l-.558-6.234M39.122 64.105l.402 3.592"
+													stroke="#70B2A6"
+													strokeWidth="1.16"
+													strokeLinecap="round"
+													strokeLinejoin="round"
+												/>
+											</svg>
+										</div>
+									</div>
+								</div>
+								</div>
+								<div class="side-container mvn-list-info">
+
+									<div class="side-container  appointment-list-actions mvn-list-actions">
+
+										<div>
+											<div ng-if="appointment.cancelled_at">
+												<h5 class="appt-cancelled">Cancelled on {{ appointment.cancelled_at | amUtc | amLocal | amDateFormat:'MMM D, h:mm a' }}.</h5>
+											</div>
+
+											<div class="h3 lg appt-time">
+												{{ appointment.scheduled_start | amUtc | amLocal  | amDateFormat:'dddd, MMM D' }}<br />{{ appointment.scheduled_start | amUtc | amLocal | amDateFormat:'h:mm' }}
+												- {{  appointment.scheduled_end | amUtc | amLocal | amDateFormat:' h:mma' }}</div>
+											<h4>
+												<span ng-if="appointment.purpose !== 'birth_planning' ">{{ appointment.product.minutes }} minute</span><span ng-if="appointment.purpose == 'birth_planning' ">Birth planning</span> appointment
+											</h4>
+										</div>
+
+										<div class="list-cta"><a ng-click="setActiveAppointment(appointment.id)" class="btn btn-cta"
+												ui-sref="app.appointment.my.list.appointment-detail({ appointment_id : appointment.id })">View appointment</a>
+										</div>
+
+									</div>
+								</div>
+							</article>
+
+						</div>
+					</div>
+
+					</li>
+					<li ng-show="loadingMore" class="list-loader"><inline-loader ng-show="loadingMore" loading="loadingMore" label="Getting more appointments..."></inline-loader></li>
+				</ul>
+
+				<div ng-if="appointments.length < 1" class="empty-state">
+					<div class="empty-cta empty-content">
+						<div class="empty-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 227 230"><path fill="#111111" d="M165.2 101.6c0-6.3-4.6-9.2-9.1-9.2-3.8 0-6.9 3.4-8.6 5.6-1.6-2.2-4.7-5.6-8.6-5.6-4.5 0-9.1 2.8-9.1 9.2 0 10.1 12.8 16.3 16.3 17.9v37.4c0 3-1.5 4.5-4.5 4.5H95.5c-2.5 0-4.8-2.3-4.8-4.8v-22.2c2-.5 3.5-2.2 3.8-4.2.8 0 1.8 0 2.8-.1 7.4-.1 11.7-9.7 11.9-10.1.6-1.4 9.4-33 9.6-38.3.2-5.5-5-9.6-9.6-11.5-.1-2.2-1.9-4-4.2-4-2.3 0-4.2 1.9-4.2 4.2 0 2.3 1.9 4.2 4.2 4.2 1.4 0 2.6-.7 3.4-1.7 3.1 1.3 7.8 4.5 7.7 8.7-.1 4.4-8.4 35.1-9.3 37.3 0 .1-3.7 8.3-9.4 8.4-1.2 0-2.2 0-3.1.1-.8-1.9-2.6-3.2-4.8-3.2-2.2 0-4 1.3-4.8 3.2-.9 0-1.9 0-3.2-.1-5.7-.1-9.4-8.3-9.4-8.4-.9-2.2-9.2-32.9-9.3-37.3-.1-4.3 4.6-7.4 7.7-8.7.8 1 2 1.7 3.4 1.7 2.3 0 4.2-1.9 4.2-4.2 0-2.3-1.9-4.2-4.2-4.2-2.3 0-4.1 1.8-4.2 4-4.6 1.9-9.8 6-9.6 11.5.2 5.2 9 36.9 9.6 38.3.2.4 4.4 9.9 11.9 10.1 1.1 0 2.1 0 2.9.1.3 2 1.7 3.6 3.6 4.1v22.3c0 3.9 3.6 7.5 7.5 7.5h46.2c4.5 0 7.3-2.7 7.3-7.3v-37.4c3.3-1.4 16.1-7.7 16.1-17.8zm-17.6 15.5c-2.6-1.1-15-6.9-15-15.5 0-4.7 3.3-6.4 6.4-6.4 3.2 0 6.4 4.4 7.4 6l1.2 2.1 1.2-2.1c.9-1.7 4.1-6 7.4-6 3.1 0 6.4 1.7 6.4 6.4-.1 8.6-12.4 14.3-15 15.5z"/><path fill="#111111" d="M112.6 223.9c-59.9 0-108.7-48.8-108.7-108.7C3.9 55.3 52.7 6.5 112.6 6.5c59.9 0 108.7 48.8 108.7 108.7 0 60-48.7 108.7-108.7 108.7zm0-214.6c-58.4 0-106 47.5-106 106 0 58.4 47.5 106 106 106 58.4 0 106-47.5 106-106s-47.6-106-106-106z"/></svg>
+						</div>
+
+						<div ng-if="apptsType ==='upcoming' ">
+							<h1 class="h3">You don't have any <br/>upcoming appointments</h1>
+							<div class="p">Appointments will appear here once you've booked.</div>
+						</div>
+
+						<div ng-if="apptsType ==='past' ">
+							<h1 class="h3">You don't have any <br/>previous appointments</h1>
+							<div class="p">Once your appointments are completed you can see them here and access notes from your practitioner.</div>
+						</div>
+
+						<div class="empty-appointment-cta">
+							<div class="p"><a class="btn btn-cta position-fix" ui-sref="app.appointment.book">Book an appointment</a></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+			</div>
+
+		</div>
+	</section>
+</div>

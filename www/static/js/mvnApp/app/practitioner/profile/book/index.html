@@ -1,0 +1,337 @@
+<section class="book-practitioner" ng-if="!$ctrl.appointmentBooked">
+
+	<div ng-if="$ctrl.loading">
+		<inline-loader loading="$ctrl.loading" label="Finding available times..."></inline-loader>
+	</div>
+
+	<div ng-if="!$ctrl.loading && $ctrl.doAddState" class="prompt-for-state">
+		<div class="member-state-selection center">
+
+			<p class="h3 serif">What state are you in?</p>
+			<p>This helps us personalize your experience</p>
+
+
+			<form name="userStateForm" class="mvn-form">
+					<div class="mvn-select-search">
+						<ui-select
+							ng-model="$ctrl.userStateForm.state"
+							theme="select2"
+							ng-disabled="$ctrl.disabled"
+							required
+							ng-required="true"
+							title="state"
+						>
+							<ui-select-match placeholder="Select your current state...">{{
+									$ctrl.userStateForm.state | stateCodeToName
+							}}</ui-select-match>
+							<ui-select-choices class="choices" repeat="state.code as state in $ctrl.states | filter: $select.search">
+								<span role="option" ng-bind-html="state.name | highlight: $select.search"></span>
+							</ui-select-choices>
+						</ui-select>
+						<span class="ghost-label">Select your current state...</span>
+					</div>
+					<p>
+						<a
+							href=""
+							class="btn btn-tertiary"
+							ng-click="$ctrl.saveState($ctrl.userStateForm)"
+							ng-class="{'disabled' : userStateForm.$invalid  }"
+							ng-disabled="userStateForm.$invalid"
+							>Save &amp; Continue
+						</a>
+					</p>
+				</form>
+
+
+
+
+		</div>
+	</div>
+
+	<div class="book-practitioner--options center" ng-if="!$ctrl.loading && !$ctrl.doAddState">
+		<div class="book-error" ng-if="!$ctrl.events && !$ctrl.practitionerBookStateWarn && !$ctrl.practitionerCantPrescribe">
+			<h3 class="serif">Oh no...</h3>
+			<p>Doesn't look like {{ $ctrl.practitioner.first_name }} has any upcoming availability.</p>
+			<p>Reach out to <a href="mailto:bookings@mavenclinic.com">bookings@mavenclinic.com</a> and we'll be happy to help
+				you get something scheduled!</p>
+
+			<p>
+				<a ng-if="!$ctrl.isNative" class="btn btn-cta" ui-sref="app.dashboard">Go back to Maven</a></p>
+			</p>
+		</div>
+
+
+		<div ng-if="$ctrl.practitionerBookStateWarn">
+			<div class="center info-warn book-error">
+				<h3 class="serif center">Heads up</h3>
+				<p>
+					This practitioner is available for <strong>education-only</strong> appointments. They will not know your name
+					or be able to write you a prescription, but can give general advice.
+				</p>
+				<div class="two-button-wrap">
+					<a class="btn btn-cta action-confirm" href="#" ng-click="$ctrl.switchToAnonAndBook()">Ok got it!</a>
+					<a class="btn btn-action action-cancel" href="#" ng-click="$ctrl.goBackToPrac()">No thanks</a>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="$ctrl.practitionerCantPrescribe">
+			<div class="center info-warn">
+				<h3 class="serif center">Just so you know...</h3>
+				<p>
+					You can't get a prescription from this practitioner. If you think you might need one, select a practitioner
+					with the
+					<svg width="31" height="32" viewBox="0 0 31 32" xmlns="http://www.w3.org/2000/svg">
+						<title>RXicon</title>
+						<g fill="none" fill-rule="evenodd">
+							<circle fill="#FFF" cx="15.5" cy="15.7" r="15" />
+							<path
+								d="M15.5 31.2C7 31.2 0 24.3 0 15.8S7 .2 15.5.2 31 7.2 31 15.8s-7 15.4-15.5 15.4zm0-30C7.5 1.2 1 7.8 1 15.8s6.5 14.5 14.5 14.5S30 23.7 30 15.8 23.5 1.2 15.5 1.2z"
+								fill="#00856f"
+							/>
+							<path
+								d="M18.8 19.1l3.5-4.8h-2.1l-2.5 3.6-2.7-3.8c1.1-.2 2.2-1.2 2.2-2.9 0-1.8-1.3-3.1-3.2-3.1H9.7V18h1.7v-3.7h1.7l3.5 4.8-3.7 5H15l2.8-3.9 2.8 3.9h2.1l-3.9-5zm-7.4-9.5h2.4c1 0 1.7.6 1.7 1.6 0 .9-.7 1.6-1.7 1.6h-2.4V9.6z"
+								fill="#00856f"
+							/>
+						</g>
+					</svg>
+					badge next to their photo, or contact <a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a> if
+					you have any questions.
+				</p>
+				<div class="two-button-wrap">
+					<a class="btn btn-cta action-confirm" href="#" ng-click="$ctrl.getProductAvailability(true)">Ok got it!</a>
+					<a class="btn btn-action action-cancel" href="#" ng-click="$ctrl.goBackToPrac()">No thanks</a>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="!$ctrl.practitionerCantPrescribe && !$ctrl.practitionerBookStateWarn">
+			<div ng-if="$ctrl.activeStep == 'selectTime' " class="book-step-select-time">
+
+				<div ng-if="$ctrl.events && !$ctrl.instaBook" class="clearfix book-events">
+					<h5 class="choose-day-header">Choose a day and time</h5>
+					<tien-clndr class="clndr" tien-clndr-object="clndr" tien-clndr-events="$ctrl.events" tien-clndr-options="$ctrl.options">
+
+						<div class="clndr-grid">
+							<div class="month">
+								<h3>{{month}}</h3>
+							</div>
+							<div class="days-of-the-week clearfix">
+								<div class="header-day" ng-repeat="day in daysOfTheWeek track by $index" ng-class="{ 'selected-day' : $ctrl.selectedDay === day}">
+									<h5>{{day}}</h5>
+								</div>
+							</div>
+							<div class="days clearfix">
+								<div class="{{day.classes}}" ng-repeat="day in days" ng-click="$ctrl.selectDay(day)" ng-class="{ 'selected-day' : $ctrl.selectedDay === day}">
+									<h3>{{day.day}}</h3>
+									<em class="selected-day-flag"></em>
+								</div>
+							</div>
+						</div>
+					</tien-clndr>
+				</div>
+
+				<div ng-if="$ctrl.timeSlots" class="booking-select-time">
+					<ul class="clear book-time-slots">
+						<li ng-repeat="(key, slots) in $ctrl.timeSlots" class="time-slots">
+
+							<ul class="clear center clearfix">
+								<h5>{{ key }}</h5>
+								<li ng-repeat="t in slots track by $index">
+									<span ng-click="$ctrl.selectTime(t)">{{ t.start | amDateFormat:'h:mm' }} - {{ t.end | amDateFormat:'h:mm a' }}</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div ng-if="$ctrl.activeStep == 'addCard' || $ctrl.activeStep == 'bookingConfirm' ">
+
+				<div class="book-time-review-header">
+					<div class="book-back-time">
+						<a href="" ng-click="$ctrl.refreshTimes()">
+							<svg width="12" height="20" viewBox="0 0 12 20" xmlns="http://www.w3.org/2000/svg">
+								<title>Back</title>
+								<path d="M2.058 9.93l9.674-8.575c.343-.343.343-.755 0-1.098-.343-.343-.892-.343-1.097 0L.412 9.245c-.206 0-.206.206-.206.206C0 9.658 0 9.795 0 10c0 .206 0 .343.206.55l.206.205 10.085 8.988c.343.343.892.343 1.098 0 .206-.343.343-.755 0-1.098L2.058 9.93z"
+								fill="#00856f" fill-rule="evenodd" />
+							</svg>
+						</a>
+					</div>
+
+					<div class="book-time-review">
+						<h5>{{ $ctrl.product.minutes }} minute video appointment</h5>
+						<div class="h3">{{ $ctrl.selected_time | amDateFormat:'dddd, MMMM D' }}<br />{{ $ctrl.selected_time | amDateFormat:'h:mm' }} -
+							{{ $ctrl.selected_end | amDateFormat:' h:mma' }}</div>
+					</div>
+				</div>
+
+				<div ng-if="$ctrl.activeStep == 'addCard' " class="add-card">
+					<div class="h5" ng-if="!$ctrl.user.organization">Total cost: <span ng-if="$ctrl.availCredits < 1">{{ $ctrl.product.price |
+							currency:"$":0 }}</span><span ng-if="$ctrl.availCredits  >=1"><span class="discounted-price">{{ $ctrl.product.price |
+								currency:"$":0 }}</span> {{ $ctrl.product.price - $ctrl.availCredits | minzero | currency:"$":0 }} using credits</span></div>
+
+					<div class="h4">Add a card for payment</div>
+					<div>You won't be charged until your appointment is completed</div>
+
+					<form ng-if="!$ctrl.hasPaymentMethod" name="paymentForm" role="form" class="card-form mvn-form">
+						<section ng-if="$ctrl.errorMsg" class="form-section book-card-error">
+							<div class="form-errors">
+								<div>
+									<span class="error-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+										<path fill="#b44031" d="M100.9 13c-47.5 0-86.3 38.8-86.3 86.3s38.9 86.3 86.3 86.3 86.3-38.9 86.3-86.3c.1-47.5-38.8-86.3-86.3-86.3zm2.2 139.4c-5.8 0-10.7-4.9-10.7-10.7 0-5.9 4.9-10.9 10.7-10.9 5.9 0 10.9 5 10.9 10.9-.1 5.8-5 10.7-10.9 10.7zm12.4-77.9l-6.8 39c-.1 1.1-1.4 2.2-2.6 2.2h-5.8c-1.2 0-2.5-1.1-2.6-2.2l-6.8-38.7V58.9v-.1c0-.1-.1-.2-.1-.3 0-6.8 5.5-12.3 12.3-12.3 6.8 0 12.3 5.5 12.3 12.3v.2c0 .1.1.1.1.2v15.6z" /></svg></span>
+									{{ $ctrl.err }}
+								</div>
+							</div>
+						</section>
+
+						<section class="mvn-form form-section add-card-form">
+							<div class="form-elements-container">
+								<div class="mvn-input card-num" ng-class="{ 'has-content': paymentForm.number.$viewValue || paymentForm.number.isFocussed }">
+									<input ng-focus="paymentForm.number.isFocussed = true" class="mvn-form-input payments-card-number" aria-label="Card number" name="number" type="text" ng-model="number" payments-format="card"
+									payments-type-model="type" minlength="16" required ng-focus="console.log('focus')" />
+									<label class="mvn-form-label" for="number">Card number</label>
+								</div>
+								<div class="mvn-input" ng-class="{ 'has-content': paymentForm.expiry.$viewValue || paymentForm.expiry.isFocussed}">
+									<input ng-focus="paymentForm.expiry.isFocussed = true"class="mvn-form-input payments-card-expiry" aria-label="Expiry" name="expiry" type="text" ng-model="expiry" minlength="6"
+									payments-type-model="type" payments-format="expiry" required />
+									<label class="mvn-form-label" for="expiry">Expiry (MM/YYYY)</label>
+
+								</div>
+								<div class="mvn-input" ng-class="{ 'has-content': paymentForm.cvc.$viewValue || paymentForm.cvc.isFocussed}">
+									<input ng-focus="paymentForm.cvc.isFocussed = true" class="mvn-form-input payments-card-cvc" aria-label="CVC" name="cvc" type="text" ng-model="cvc" minlength="3"
+									payments-type-model="type" payments-format="cvc" required />
+									<label class="mvn-form-label" for="cvc">CVC</label>
+
+								</div>
+							</div>
+							<div class="card-actions">
+								<button type="submit" ng-click="$ctrl.stripeProcess(paymentForm)" class="btn btn-cta" ng-class="{ 'disabled' :  paymentForm.$invalid }">Add card</button>
+							</div>
+						</section>
+					</form>
+
+					<div class="book-enter-referral-code">
+						<div ng-if="!$ctrl.showCodeField" >
+							<button class="btn btn-tertiary" ng-click="$ctrl.toggleAddReferralCode()">I have a referral code</button>
+						</div>
+						<div ng-if="$ctrl.showCodeField">
+							<form name="refCodeForm" class="mvn-form">
+								<div class="form-group">
+									<mvn-input class="add-referral-code" type="text" value="$ctrl.refCode.referral_code" required=""
+									label="Enter your code" />
+								</div>
+								<p class="add-code center"><button class="btn btn-tertiary" ng-click="$ctrl.addReferralCode($ctrl.refCode.referral_code)"
+									ng-class="{disabled: refCodeForm.$invalid }">Apply code</button></p>
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div ng-if="$ctrl.activeStep == 'bookingConfirm' " class="booking-confirm">
+				<div class="h4" ng-if="!$ctrl.user.organization && !$ctrl.user.subscription_plans">Total cost: <span ng-if="$ctrl.availCredits < 1">{{
+						$ctrl.product.price | currency:"$":0 }}</span><span ng-if="$ctrl.availCredits >=1"><span class="discounted-price">{{
+							$ctrl.product.price | currency:"$":0 }}</span> {{ $ctrl.product.price - $ctrl.availCredits| minzero | currency:"$":0
+						}} using credits</span></div>
+				<p class="book-confirm"><button class="btn btn-cta book-confirm-button"  ng-click="$ctrl.bookAppointment()"
+					ng-class="{ disabled: $ctrl.bookInProgress }"><span ng-hide="$ctrl.bookInProgress">Confirm &amp; book</span><span
+						ng-show="$ctrl.bookInProgress">Please wait...</span></button></p>
+				<p class="legal">By booking this appointment you are agreeing to <span ng-if="!$ctrl.user.organization">abide by
+						the Maven Practitioner's cancellation
+							policy ({{ $ctrl.cancellationPolicy }}), </span>Maven's <a ng-click="$ctrl.openDialog('/js/mvnApp/public/ios-app/terms-of-service/index.html')"
+					href="#">Terms of Service</a>, and <a ng-click="$ctrl.openDialog('/js/mvnApp/public/ios-app/consent-to-care-via-telehealth/index.html')"
+					href="#">Consent to Care via Telehealth</a>.</p>
+			</div>
+
+		</div>
+	</div>
+
+</section>
+
+
+
+<div class="post-booked center" ng-if="$ctrl.appointmentBooked && $ctrl.postApptStep">
+	<div class="post-booked--header">
+		<div class="booked-icon">
+			<svg ng-if="$ctrl.postApptStep === 'addPhone' " width="108" height="108" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+				<title>Booked</title>
+				<g fill="none" fill-rule="evenodd">
+					<path d="M53.85 1.684C24.92 1.684 1.34 25.217 1.34 54.198c0 28.932 23.532 52.514 52.513 52.514 28.933 0 52.515-23.532 52.515-52.514 0-28.98-23.582-52.514-52.514-52.514m0 106.316C24.177 108 0 83.824 0 54.15 0 24.472 24.176.296 53.85.296c29.677 0 53.853 24.176 53.853 53.852 0 29.723-24.127 53.85-53.852 53.85"
+					 fill="#00856f" />
+					<path d="M52.547 29l7.585 15.37 16.962 2.464L64.82 58.798 67.72 75.69l-15.17-7.975-15.172 7.976L40.273 58.8 28 46.834l16.962-2.464L52.547 29z"
+					 stroke="#00856f" stroke-linecap="round" stroke-linejoin="round" />
+				</g>
+			</svg>
+
+			<svg ng-if="$ctrl.postApptStep === 'addNote' " width="108" height="108" viewBox="0 0 153 153" xmlns="http://www.w3.org/2000/svg">
+				<title>Edit note</title>
+				<g transform="translate(1.944 1.833)" stroke="#00856f" stroke-width="2" fill="none" fill-rule="evenodd">
+					<circle cx="75" cy="75" r="75" />
+					<path d="M116.444 59.472c2.084 2.084.834 3.195-.972 4.86-.833.835-29.583 29.585-29.583 29.585L65.193 98.64l4.723-20.696L99.5 48.36c1.528-1.527 2.64-3.193 4.86-.97l12.084 12.082z"
+					 stroke-linejoin="round" />
+					<path d="M69.917 77.944L85.89 93.917M67.556 89.194l7.222 7.223" />
+					<path d="M32 97h27.778" stroke-linecap="round" />
+				</g>
+			</svg>
+
+		</div>
+		<h2 class="serif">You're all booked!</h2>
+	</div>
+
+	<div class="post-booked--actions">
+		<div ng-if="$ctrl.postApptStep === 'addPhone' ">
+			<h3>Add your back up phone number</h3>
+			<p>Your practitioner will use your back-up phone number
+				<strong>only</strong> if you get disconnected during your appointment.</p>
+			<div>
+				<strong>Your practitioner will not call you at the time of your appointment</strong>.</div>
+			<div ng-show="$ctrl.err" class="notify error">
+				<p>
+					<span class="error-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+							<path fill="#00856f" d="M100.9 13c-47.5 0-86.3 38.8-86.3 86.3s38.9 86.3 86.3 86.3 86.3-38.9 86.3-86.3c.1-47.5-38.8-86.3-86.3-86.3zm2.2 139.4c-5.8 0-10.7-4.9-10.7-10.7 0-5.9 4.9-10.9 10.7-10.9 5.9 0 10.9 5 10.9 10.9-.1 5.8-5 10.7-10.9 10.7zm12.4-77.9l-6.8 39c-.1 1.1-1.4 2.2-2.6 2.2h-5.8c-1.2 0-2.5-1.1-2.6-2.2l-6.8-38.7V58.9v-.1c0-.1-.1-.2-.1-.3 0-6.8 5.5-12.3 12.3-12.3 6.8 0 12.3 5.5 12.3 12.3v.2c0 .1.1.1.1.2v15.6z" />
+						</svg>
+					</span> Oops! Please check the following issues:</p>
+				<ul>
+					<li ng-repeat="e in $ctrl.errorMsg">
+						{{ e }}
+					</li>
+				</ul>
+			</div>
+			<form name="userPhoneForm" class="mvn-form">
+				<div class="form-group phone">
+					<mvn-tel-input label="Your cell phone number" value="$ctrl.userPhone.tel_number" required="required" />
+				</div>
+
+				<div class="form-group">
+					<p>
+						<button class="btn btn-cta" ng-click="$ctrl.updatePhone($ctrl.userPhone)" ng-class="{'disabled' : $ctrl.userPhoneForm.$invalid  }"
+						 ng-disabled="$ctrl.userPhoneForm.$invalid">Save</button>
+					</p>
+				</div>
+			</form>
+		</div>
+
+		<div ng-if="$ctrl.postApptStep === 'addNote' ">
+			<h3>Add a note to your practitioner</h3>
+			<p>Knowing what you’d like to talk about helps {{ $ctrl.practitioner.first_name }} {{ $ctrl.practitioner.last_name
+				}} prepare for your
+				appointment. Add a pre-appointment note here (you can edit this later if you want to).</p>
+			<form name="noteForm" class="mvn-form">
+				<div class="form-group phone">
+					<label for="presession_note">
+						Note to your practitioner:
+					<textarea rows="5" name="presession_note" ng-model="$ctrl.noteForm.pre_session.notes" required="required" class="form-control"
+					 placeholder="I want to talk about..."></textarea>
+					</label>
+					<button class="btn btn-cta" ng-click="$ctrl.updateNote($ctrl.noteForm)" ng-class="{'disabled' : noteForm.$invalid  }"
+					 ng-disabled="noteForm.$invalid">Save note</button>
+				</div>
+
+			</form>
+		</div>
+
+	</div>
+</div>

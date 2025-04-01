@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: es\n"
+
+#: views/referrals.py:67
+msgid "views_referrals_already_applied"
+msgstr "¡Buenas noticias! ¡Este código ya se aplicó!"
+
+#: views/referrals.py:66
+msgid "views_referrals_does_not_exist"
+msgstr "¡El código de referido no existe!"
+
+#: views/referrals.py:68
+msgid "views_referrals_expired"
+msgstr "Lo siento, este código ha caducado."
+
+#: views/referrals.py:73
+msgid "views_referrals_invalid"
+msgstr "El código no es válido o ha caducado..."
+
+#: views/referrals.py:76
+msgid "views_referrals_main_message"
+msgstr "El código de referido no es válido: contacta a support@mavenclinic.com para obtener ayuda y proporciona la referencia: {reason}"
+
+#: views/referrals.py:65
+msgid "views_referrals_missing_data"
+msgstr "Faltan datos para el campo requerido."
+
+#: views/referrals.py:71
+msgid "views_referrals_no_code"
+msgstr "No se proporcionó un código en los argumentos"
+
+#: views/referrals.py:72
+msgid "views_referrals_not_found"
+msgstr "No se puede encontrar ese código..."
+
+#: views/referrals.py:70
+msgid "views_referrals_not_you"
+msgstr "¡Solo obtén recomendaciones para ti!"
+
+#: views/referrals.py:69
+msgid "views_referrals_too_late"
+msgstr "Lo siento, este código solo se puede usar antes de tu primera reserva."
+
+#: views/referrals.py:64
+msgid "views_referrals_unknown"
+msgstr "Desconocido"
+
+#: views/tracks.py:155
+msgid "views_tracks_access_will_end_on"
+msgstr "Tu acceso terminará el {date}."
+
+#: views/tracks.py:163
+msgid "views_tracks_cancel"
+msgstr "Cancelar"
+
+#: views/tracks.py:173
+msgid "views_tracks_renew_program"
+msgstr "Renovar programa"
+
+#: views/tracks.py:152
+msgid "views_tracks_scheduled_to_renew_on"
+msgstr "Programado para renovarse el {date}."

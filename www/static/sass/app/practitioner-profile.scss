@@ -1,0 +1,314 @@
+/* SHARED HEADER STYLE - APPOINTMENT DETAIL AND PRACTITIONER PROFILE */
+.practitioner-header {
+	@include span(12);
+	padding: $basepadding;
+	text-align: center;
+
+	h3,
+	.h3 {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	h5,
+	.h5 {
+		margin: 0.5rem 0;
+	}
+	p,
+	.p {
+		margin: 0px;
+	}
+	.practitioner-noimg {
+		margin: 1rem auto;
+	}
+	.practitioner-actions {
+		padding-top: 0 span(1 wide of 12);
+	}
+	@include susy-breakpoint($desktop) {
+		padding-top: 25px;
+		.practitioner-actions {
+			padding-bottom: 20px;
+		}
+	}
+}
+
+/* PRACTITIONER PROFILE */
+
+.practitioner-profile {
+	@include container;
+	background: $charcoal-20;
+	.practitioner-resume {
+		@include span(12);
+		padding: $basepadding;
+		padding-bottom: 4rem;
+		@include susy-breakpoint(0 $mobile-landscape-max) {
+			min-height: 600px;
+		}
+	}
+	.practitioner-header {
+		.divide {
+			border-bottom: 1px solid $charcoal-40;
+			margin: 20px auto;
+			max-width: 220px;
+		}
+	}
+
+	.practitioner-profile-consult-actions {
+		width: 100%;
+		float: left;
+		margin-left: 0;
+		margin-right: 0;
+		text-align: center;
+		padding-bottom: 30px;
+		@include susy-breakpoint($desktop) {
+			padding-bottom: 50px;
+		}
+	}
+
+	.practitioner-resume {
+		background: $macaroon-20;
+		border-top: 1px solid $charcoal-40;
+		h5 {
+			padding: 0;
+			margin-bottom: 0;
+		}
+	}
+	.prac-profile-send-message {
+		@include span(12);
+		border-top: 1px solid $charcoal-40;
+	}
+
+	@include susy-breakpoint($desktop-hd) {
+		@include span(12);
+		.practitioner-resume-col {
+			clear: none;
+			@include span(6 of 12);
+			padding: 0 $basepadding;
+			&:last-child {
+				@include span(6 of 12 last);
+			}
+		}
+	}
+}
+.practitioner-profile,
+.book-practitioner-dialog--content {
+	/* discounted product price */
+	.discounted-price {
+		text-decoration: line-through;
+	}
+}
+
+/* full-page profile - from forum etc */
+.practitioner-profile-standalone {
+	max-width: 1024px;
+	margin: 0 auto;
+	float: none;
+	.practitioner-profile {
+		padding-top: 90px;
+	}
+	@include susy-breakpoint($desktop) {
+		padding-top: 0;
+		border: 1px solid $charcoal-40;
+		height: 100%;
+		.practitioner-profile {
+			padding-top: 0;
+		}
+	}
+}
+
+/* Standalone book screen */
+.book-practitioner-standalone-screen {
+	background: white;
+}
+
+.book-practitioner-standalone {
+	padding: 10px;
+	.loader-inline {
+		position: relative;
+		z-index: 10;
+
+		.h5 {
+			text-align: center;
+		}
+	}
+
+	section > div {
+		width: 100%;
+	}
+
+	.prompt-for-state {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: white;
+		padding: 1rem;
+	}
+
+	.book-error {
+		h3 {
+			text-align: center;
+		}
+	}
+
+	.prac-standalone-header {
+		@include flexbox(column, center, center);
+		border-bottom: 1px solid $gray-xlt;
+		padding-bottom: 1.5rem;
+		position: relative;
+	}
+
+	.back-to-profile {
+		position: absolute;
+		left: 0;
+	}
+
+	.practitioner-photo {
+		margin-right: 1.5rem;
+	}
+
+	.prac-standalone-prac {
+		@include flexbox(column, center, center);
+		@include susy-breakpoint($desktop) {
+			@include flexbox(row, center, center);
+		}
+		.h3 {
+			margin-bottom: 5px;
+			text-align: center;
+			& + div {
+				color: $gray;
+			}
+		}
+	}
+
+	.info-warn {
+		max-width: 480px;
+		margin: 0 auto;
+		h3 {
+			text-align: center;
+		}
+	}
+	/* Booking flow style overrides */
+
+	.member-state-selection {
+		.h3 {
+			text-align: center;
+		}
+	}
+	.choose-day-header {
+		font-size: 2rem;
+		text-align: center;
+		font-family: $font3;
+		margin-bottom: 2rem;
+	}
+
+	.book-practitioner-dialog .booking-select-time,
+	.book-practitioner-dialog .clndr {
+		width: 100%;
+	}
+	.clndr,
+	.booking-select-time {
+		h3,
+		h5 {
+			text-align: center;
+		}
+	}
+
+	.book-time-review-header {
+		position: relative;
+	}
+
+	.book-back-time {
+		position: absolute;
+		left: -2px;
+		@include susy-breakpoint($desktop) {
+			left: -1rem;
+		}
+	}
+
+	.book-time-review-header .book-time-review {
+		width: 100%;
+		margin: 0;
+		h5,
+		.h3 {
+			text-align: center;
+		}
+	}
+
+	.add-card {
+		.h5 {
+			text-align: center;
+		}
+		.card-form {
+			max-width: none;
+		}
+	}
+
+	.book-card-error {
+		padding-bottom: 0;
+	}
+
+	.form-elements-container {
+		@include susy-breakpoint(0 $tablet-max) {
+			margin-bottom: 2rem;
+			.mvn-input {
+				width: 100%;
+				max-width: 460px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+
+	.add-card-form {
+		@include susy-breakpoint($desktop) {
+			.mvn-input {
+				width: 23%;
+				margin: 0 4px 2rem 0;
+			}
+			.card-num {
+				width: 50%;
+			}
+		}
+	}
+
+	.booking-confirm {
+		padding-top: 0;
+	}
+
+	.post-booked {
+		// yea this is hella hacky to overlay the header in the background. But replatforming this soon sooo....
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		background: white;
+		width: 100%;
+		max-width: none;
+		padding-top: 3rem;
+		> div {
+			max-width: 460px;
+			margin: 0 auto;
+			h2 {
+				text-align: center;
+			}
+			p {
+				color: $gray;
+			}
+		}
+	}
+	.post-booked--header {
+		border-bottom: 1px solid $gray-lt;
+	}
+	.post-booked--actions {
+		h3 {
+			text-align: center;
+		}
+		textarea {
+			padding: 0.5rem;
+		}
+		button {
+			text-align: center;
+		}
+	}
+}

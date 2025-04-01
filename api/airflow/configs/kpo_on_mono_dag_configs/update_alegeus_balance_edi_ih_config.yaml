@@ -1,0 +1,12 @@
+dag_id: update_alegeus_balance_edi_ih_dag
+task_id: update_alegeus_balance_edi_ih_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.benefits_experience.update_alegeus_balance_edi_ih import process_balance_update_job; process_balance_update_job()"
+team_namespace: benefits_experience
+service_namespace: wallet
+catchup: "False"
+start_year: 2024
+start_month: 11
+start_day: 01

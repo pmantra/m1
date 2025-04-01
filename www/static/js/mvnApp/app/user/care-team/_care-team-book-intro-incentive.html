@@ -1,0 +1,43 @@
+<div class="care-team-book-incentive">
+	<div class="care-team-info-carec">
+		<img
+			ng-src="{{ (user.care_coordinators[0] && user.care_coordinators[0].image_url) ? user.care_coordinators[0].image_url : 'img/people/team-photo.png' }}"
+			width="70"
+			height="70"
+		/>
+		<br />
+	</div>
+
+	<p><strong>Hello, {{ user.first_name }}</strong></p>
+	<p>
+		I’m {{ user.care_coordinators[0] ? user.care_coordinators[0].first_name : 'Kaitlyn' }}, and I’m your Care Advocate
+		here at Maven.
+	</p>
+
+	<div class="center gc-incentive">
+		<img src="/img/app/user/onboarding/welcome-gift.jpg" alt="Maven welcome gift" />
+	</div>
+
+	<p>
+		Let’s find a time for a <strong>quick, 10-min introductory chat</strong>. I’ll tell you all about your personal care
+		team and how to make the most of Maven. As a welcome gift, you’ll also receive a
+		<strong>$50 Amazon gift card</strong> after our appointment!
+	</p>
+
+	<p ng-if="pracInfo.length && doShowCTInfo">
+		To start you off, we’ve added <span ng-repeat="prac in pracInfo">{{ prac }}</span> to your team. As a first step,
+		book with me now or shoot me a message and I'll help get you started.
+	</p>
+
+	<p>
+		<a
+			class="btn btn-cta"
+			ui-sref="app.practitioner-profile({ practitioner_id: (user.care_coordinators[0] ? user.care_coordinators[0].id : '25159'), openbook: true })"
+			ng-click="contactCXPrac()"
+			>Schedule time with me</a
+		>
+	</p>
+	<p class="legal">
+		<a href="" ng-click="dismissIncentive()">No thanks</a>
+	</p>
+</div>

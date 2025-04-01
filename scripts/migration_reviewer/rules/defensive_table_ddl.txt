@@ -1,0 +1,2 @@
+Check: Follow defensive SQL and migration script writing style. For example, if you want to remove a table, be sure to add an “if exists” condition in your SQL statement. Similarly, when adding a table, do so as well.
+Fix: Please add "if exists" check to your SQL scripts so that it defaults to "no-op" if the check fails.

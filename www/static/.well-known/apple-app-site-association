@@ -1,0 +1,401 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "262RYK8486.com.mavenclinic.Practitioner",
+          "262RYK8486.com.mavenclinic.PractitionerQA"
+        ],
+        "paths": [
+          "/mp_/*"
+        ]
+      },
+      {
+        "appID": "262RYK8486.com.mavenclinic.Maven",
+        "components": [
+          {
+            "#": "verify-employer",
+            "exclude": true,
+            "comment": "Matches any URL with a fragment that equals verify-employer. This is for an onboarding related path param"
+          },
+          {
+            "#": "maternal-mental-health-2018",
+            "exclude": true,
+            "comment": "Matches any URL with a fragment that equals maternal-mental-health-2018."
+          },
+          {
+            "/": "*/mp_/*",
+            "exclude": true,
+            "comment": "exclude mpract links"
+          },
+          {
+            "/": "*/interactive-experience/*",
+            "exclude": true,
+            "comment": "exclude interactive pages"
+          },
+          {
+            "/": "*/interactive-quiz/*",
+            "exclude": true,
+            "comment": "exclude interactive pages"
+          },
+          {
+            "/": "*/contact-us-for/*",
+            "exclude": true,
+            "comment": "exclude contact page"
+          },
+          {
+            "/": "*/saml/*",
+            "exclude": true,
+            "comment": "exclude SAML."
+          },
+          {
+            "/": "*/onboarding/life-stage*",
+            "exclude": true,
+            "comment": "exclude life-stage onboarding path."
+          },
+          {
+            "/": "*/dashboard/*",
+            "comment": "dashboard"
+          },
+          {
+            "/": "*/book-practitioner*",
+            "comment": "Book a practitioner"
+          },
+          {
+            "/": "*/healthbinder*",
+            "comment": "link to health binder. Same as /healthprofile"
+          },
+          {
+            "/": "*/login/*",
+            "comment": "login flow"
+          },
+          {
+            "/": "*/products/*",
+            "comment": "mostly breast milk shipping logic"
+          },
+          {
+            "/": "*/assessments/*",
+            "comment": "Assessments"
+          },
+          {
+            "/": "*/resources/*",
+            "comment": "Content for classes + related"
+          },
+          {
+            "/": "*/signin/*",
+            "comment": "sign in + sign up"
+          },
+          {
+            "/": "*/register/*",
+            "comment": "register"
+          },
+          {
+            "/": "*/onboarding/*",
+            "comment": "onboarding flow work"
+          },
+          {
+            "/": "*/care-team/*",
+            "comment": "care team content"
+          },
+          {
+            "/": "*/forum/*",
+            "comment": "all angular forum links open in-app"
+          },
+          {
+            "/": "*/forums/*",
+            "comment": "all react forum links open in-app"
+          },
+          {
+            "/": "*/messages/*",
+            "comment": "messaging links"
+          },
+          {
+            "/": "*/practitioner/*",
+            "comment": "linking to a pract page and availability"
+          },
+          {
+            "/": "*/my-appointments/*",
+            "comment": "appointment screen"
+          },
+          {
+            "/": "*/my-schedule/*",
+            "comment": "Appointment tab logic for scheduling"
+          },
+          {
+            "/": "*/session/*",
+            "comment": "video appointment launch"
+          },
+          {
+            "/": "*/library/*",
+            "comment": "internal content"
+          },
+          {
+            "/": "*/my-programs/*",
+            "comment": "internal content"
+          },
+          {
+            "/": "*/care-plans",
+            "comment": "care plans link. Currently opend in MWeb"
+          },
+          {
+            "/": "*/healthprofile/*",
+            "comment": "internal content"
+          },
+          {
+            "/": "*/click/*",
+            "comment": "Braze click tracking"
+          },
+          {
+            "/": "*/book/*",
+            "comment": "book appt"
+          },
+          {
+            "/": "*/select-practitioner/*",
+            "comment": "select practitioner"
+          },
+          {
+            "/": "*/profile/*",
+            "comment": "profile to view posts and replies"
+          },
+          {
+            "/": "*/event-registration/*",
+            "comment": "event registration. part of the resources/learn work"
+          },
+          {
+            "/": "*/account*",
+            "comment": "account path"
+          },
+          {
+            "/": "*/annual-questionnaire",
+            "comment": "wallet HDHP annual questionnaire survey. Opens in a web view"
+          },
+          {
+            "/": "*/benefit-id",
+            "comment": "benefit id"
+          },
+          {
+            "/": "*/share-wallet",
+            "comment": "share wallet"
+          },
+          {
+            "/": "*/payment-methods",
+            "comment": "payment method"
+          },
+          {
+            "/": "*/clinic-directory",
+            "comment": "wallet clinic directory landing page"
+          },
+          {
+            "/": "*/ask-maven",
+            "comment": "ask maven chat bot"
+          },
+          {
+            "/": "*/cycle-tracking",
+            "comment": "cycle tracking"
+          },
+          {
+            "/": "*/wallet",
+            "comment": "wallet flow"
+          }
+        ]
+      },
+      {
+        "appID": "262RYK8486.com.mavenclinic.MavenQA",
+        "components": [
+          {
+            "#": "verify-employer",
+            "exclude": true,
+            "comment": "Matches any URL with a fragment that equals verify-employer. This is for an onboarding related path param"
+          },
+          {
+            "#": "maternal-mental-health-2018",
+            "exclude": true,
+            "comment": "Matches any URL with a fragment that equals maternal-mental-health-2018."
+          },
+          {
+            "/": "*/mp_/*",
+            "exclude": true,
+            "comment": "exclude mpract links"
+          },
+          {
+            "/": "*/interactive-experience/*",
+            "exclude": true,
+            "comment": "exclude interactive pages"
+          },
+          {
+            "/": "*/interactive-quiz/*",
+            "exclude": true,
+            "comment": "exclude interactive pages"
+          },
+          {
+            "/": "*/contact-us-for/*",
+            "exclude": true,
+            "comment": "exclude contact page"
+          },
+          {
+            "/": "*/saml/*",
+            "exclude": true,
+            "comment": "exclude SAML."
+          },
+          {
+            "/": "*/onboarding/life-stage*",
+            "exclude": true,
+            "comment": "exclude life-stage onboarding path."
+          },
+          {
+            "/": "*/book-practitioner*",
+            "comment": "Book a practitioner"
+          },
+          {
+            "/": "*/healthbinder*",
+            "comment": "link to health binder. Same as /healthprofile"
+          },
+          {
+            "/": "*/dashboard/*",
+            "comment": "dashboard"
+          },
+          {
+            "/": "*/login/*",
+            "comment": "login flow"
+          },
+          {
+            "/": "*/products/*",
+            "comment": "mostly breast milk shipping logic"
+          },
+          {
+            "/": "*/assessments/*",
+            "comment": "Assessments"
+          },
+          {
+            "/": "*/resources/*",
+            "comment": "Content for classes + related"
+          },
+          {
+            "/": "*/signin/*",
+            "comment": "sign in + sign up"
+          },
+          {
+            "/": "*/register/*",
+            "comment": "register"
+          },
+          {
+            "/": "*/onboarding/*",
+            "comment": "onboarding flow work"
+          },
+          {
+            "/": "*/care-team/*",
+            "comment": "care team content"
+          },
+          {
+            "/": "*/forum/*",
+            "comment": "all angular forum links open in-app"
+          },
+          {
+            "/": "*/forums/*",
+            "comment": "all react forum links open in-app"
+          },
+          {
+            "/": "*/messages/*",
+            "comment": "messaging links"
+          },
+          {
+            "/": "*/practitioner/*",
+            "comment": "linking to a pract page and availability"
+          },
+          {
+            "/": "*/my-appointments/*",
+            "comment": "appointment screen"
+          },
+          {
+            "/": "*/my-schedule/*",
+            "comment": "Appointment tab logic for scheduling"
+          },
+          {
+            "/": "*/session/*",
+            "comment": "video appointment launch"
+          },
+          {
+            "/": "*/library/*",
+            "comment": "internal content"
+          },
+          {
+            "/": "*/my-programs/*",
+            "comment": "internal content"
+          },
+          {
+            "/": "*/care-plans",
+            "comment": "care plans link. Currently opend in MWeb"
+          },
+          {
+            "/": "*/healthprofile/*",
+            "comment": "internal content"
+          },
+          {
+            "/": "*/click/*",
+            "comment": "Braze click tracking"
+          },
+          {
+            "/": "*/book/*",
+            "comment": "book appt"
+          },
+          {
+            "/": "*/select-practitioner/*",
+            "comment": "select practitioner"
+          },
+          {
+            "/": "*/profile/*",
+            "comment": "profile to view posts and replies"
+          },
+          {
+            "/": "*/event-registration/*",
+            "comment": "event registration. part of the resources/learn work"
+          },
+          {
+            "/": "*/account*",
+            "comment": "account path"
+          },
+          {
+            "/": "*/annual-questionnaire",
+            "comment": "wallet HDHP annual questionnaire survey. Opens in a web view"
+          },
+          {
+            "/": "*/benefit-id",
+            "comment": "benefit id"
+          },
+          {
+            "/": "*/share-wallet",
+            "comment": "share wallet"
+          },
+          {
+            "/": "*/payment-methods",
+            "comment": "payment method"
+          },
+          {
+            "/": "*/clinic-directory",
+            "comment": "wallet clinic directory landing page"
+          },
+          {
+            "/": "*/ask-maven",
+            "comment": "ask maven chatbot"
+          },
+          {
+            "/": "*/cycle-tracking",
+            "comment": "cycle tracking"
+          },
+          {
+            "/": "*/wallet",
+            "comment": "wallet flow"
+          }
+        ]
+      }
+    ],
+    "webcredentials": {
+      "apps": [
+        "262RYK8486.com.mavenclinic.Practitioner",
+        "262RYK8486.com.mavenclinic.PractitionerQA",
+        "262RYK8486.com.mavenclinic.MavenQA",
+        "262RYK8486.com.mavenclinic.Maven"]
+    }
+  }
+}

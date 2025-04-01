@@ -1,0 +1,32 @@
+#: models/profiles.py:1114 models/profiles.py:1117
+msgid "profiles_employee_incentive_consent_form"
+msgstr ""
+
+#: models/profiles.py:1127
+msgid "profiles_employee_incentive_consent_form_cheesecake_factory"
+msgstr ""
+
+#: models/profiles.py:1130
+msgid "profiles_employee_incentive_consent_form_marathon_petroleum"
+msgstr ""
+
+#: models/profiles.py:1112
+msgid "profiles_gina_authorization"
+msgstr ""
+
+#: models/profiles.py:1113
+msgid "profiles_microsoft_employee_consent_form"
+msgstr ""
+
+#: models/profiles.py:1109
+msgid "profiles_practitioner_service_agreement"
+msgstr ""
+
+#: models/profiles.py:1111
+msgid "profiles_privacy_policy"
+msgstr ""
+
+#: models/profiles.py:1110
+msgid "profiles_terms_of_use"
+msgstr ""
+

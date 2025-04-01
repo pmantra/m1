@@ -1,0 +1,12 @@
+[
+  {
+    "type": "user",
+    "organization_name": "Test Organization X",
+    "track": "menopause",
+    "email_prefix": "mvnqa-meno",
+    "password": "simpleisawesome1*",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

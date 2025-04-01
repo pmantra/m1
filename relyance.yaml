@@ -1,0 +1,43 @@
+repository: maven
+
+services:
+  - service: api
+    product: Maven Monolith
+    source:
+      - api
+  - service: admin
+    product: Maven Monolith
+    source:
+      - api/admin
+  - service: data-admin
+    product: Maven Monolith
+    source:
+      - api/data_admin
+  - service: events_etl
+    product: Maven Monolith
+    source:
+      - events_etl
+  - service: www
+    product: Maven Monolith
+    source:
+      - www
+
+
+exclude:
+  - .gitlab
+  - .run
+  - api/admin/tests
+  - api/tests
+  - authenticator
+  - chart
+  - cron_base
+  - docs
+  - events_etl/tests.py
+  - falco
+  - google_deployment_manager
+  - image_builder
+  - kubernetes
+  - looker
+  - nginx
+  - sessionizer
+  - www_tests

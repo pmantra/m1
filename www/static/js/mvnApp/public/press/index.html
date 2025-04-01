@@ -1,0 +1,42 @@
+<section class="hero">
+	<div class="content-wrapper">
+		<h1 class="headline left emerald">Press</h1>
+	</div>
+</section>
+
+<section>
+	<div class="content-wrapper">
+		<h3 class="section-title left">Press</h3>
+		<div class="grid-container three-column">
+			<div ng-repeat="press in pressPieces" class="grid-item press-item">
+				<img ng-if="press.logo" class="press-logo" src="{{ ::press.logo }}" alt="" />
+				<h3 ng-if="!press.logo">{{ ::press.company }}</h3>
+				<p class="lg">{{ ::press.title }}</p>
+				<p>{{ ::press.snippet }}</p>
+				<a class="btn btn-tertiary" href="{{ ::press.url }}" target="_blank">Read more</a>
+			</div>
+		</div>
+		<a href="#" ng-show="parsedPressPieces.length > 0" ng-click="readMorePress()" class="btn btn-action">Read more</a>
+	</div>
+</section>
+
+<section class="announcements">
+	<div class="content-wrapper">
+		<h3 class="section-title left">Announcements</h3>
+		<div class="grid-container three-column">
+			<div ng-repeat="announcement in announcements" class="grid-item announcement-item">
+				<p class="lg">{{ ::announcement.title }}</p>
+				<p ng-if="announcement.snippet">{{ ::announcement.snippet }}</p>
+
+				<a
+					ng-if="announcement.url"
+					class="btn btn-tertiary"
+					href="{{ ::announcement.url }}"
+					rel="noopener noreferrer"
+					target="_blank"
+					>{{ ::announcement.cta || "Read more"}}</a
+				>
+			</div>
+		</div>
+	</div>
+</section>

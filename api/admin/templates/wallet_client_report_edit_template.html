@@ -1,0 +1,62 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    {{ super() }}
+    {% if model %}
+        <form action="/admin/wallet_client_report" method="post">
+            <input type="hidden" value={{ model.id }} name="wallet_client_report_id">
+            <input type="hidden" value='{{ model.organization.name }}' name="org_name">
+            <button type="submit">Download Report</button>
+        </form>
+        <form action="/admin/wallet_client_report_audit" method="post">
+            <input type="hidden" value={{ model.id }} name="wallet_client_report_id">
+            <input type="hidden" value='{{ model.organization.name }}' name="org_name">
+            <button type="submit">Download Audit</button>
+        </form>
+        <form action="/admin/wallet_client_report_transactional" method="post">
+            <input type="hidden" value={{ model.id }} name="wallet_client_report_id">
+            <input type="hidden" value='{{ model.organization.name }}' name="org_name">
+            <button type="submit">Download Transactional Report</button>
+        </form>
+
+        <h3>Wallet Report Reimbursement Requests</h3>
+        <h4> Report Configuration:
+            <a href="/admin/walletclientreportconfiguration/edit/?id={{ model.configuration_id }}"> link </a>
+        </h4>
+        <table class="table table-bordered">
+            <thead>
+            <th>ID</th>
+            <th>Amount</th>
+            <th>Label</th>
+            <th>Service Provider</th>
+            <th>Description</th>
+            <th>State</th>
+            <th>Category</th>
+            <th>Taxation</th>
+            <th>Person Receiving Service</th>
+            <th style="width:32px"></th> <!-- empty for cta button(s)-->
+            </thead>
+            <tbody>
+            {% if model.reimbursement_requests %}
+                {% for reimbursement in model.reimbursement_requests %}
+                    <tr>
+                        <td>{{ reimbursement.id }}</td>
+                        <td>{{ "${:,.2f}".format(reimbursement.amount/ 100.0) }}</td>
+                        <td>{{ reimbursement.label }}</td>
+                        <td>{{ reimbursement.service_provider }}</td>
+                        <td>{{ reimbursement.description }}</td>
+                        <td>{{ reimbursement.state.name }}</td>
+                        <td>{{ reimbursement.category }}</td>
+                        <td>{{ reimbursement.taxation_status.name }}</td>
+                        <td>{{ reimbursement.person_receiving_service }}</td>
+                        <td><a href="/admin/reimbursementrequest/edit/?id={{ reimbursement.id }}"><i
+                                class="icon-edit"></i></a></td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    {% endif %}
+
+{% endblock %}
+

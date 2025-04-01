@@ -1,0 +1,12 @@
+generalwhitelist:
+  # python:3.7
+  CVE-2019-15505: USB
+  CVE-2019-10220: kernel-cifs
+  CVE-2019-19813: kernel-btrfs
+  CVE-2019-19814: kernel-f2fs
+  CVE-2019-14901: kernel-marvellwifi
+  CVE-2019-14896: kernel-marvellwifi
+  CVE-2019-19816: kernel-btrfs
+  CVE-2019-1352: git-visualstudio
+  CVE-2019-1349: git-visualstudio
+  CVE-2019-20636: kernel-input.c

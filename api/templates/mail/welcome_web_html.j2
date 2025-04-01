@@ -1,0 +1,1115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- NAME: 1 COLUMN -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maven</title>
+
+    <style type="text/css">
+        body,
+        #bodyTable,
+        #bodyCell {
+            height: 100% !important;
+            padding: 0;
+            padding: 0;
+            width: 100% !important;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        img,
+        a img {
+            border: 0;
+            outline: none;
+            text-decoration: none;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            margin: 1em 0;
+            padding: 0;
+        }
+        a {
+            word-wrap: break-word;
+        }
+        .ReadMsgBody {
+            width: 100%;
+        }
+        .ExternalClass {
+            width: 100%;
+        }
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
+        }
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        #outlook a {
+            padding: 0;
+        }
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+        body,
+        table,
+        td,
+        p,
+        a,
+        li,
+        blockquote {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        #bodyCell {
+            padding: 20px;
+        }
+        .mcnImage {
+            vertical-align: bottom;
+        }
+        .mcnTextContent img {
+            height: auto !important;
+        }
+        /*
+  @tab Page
+  @section background style
+  @tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
+  */
+
+        body,
+        #bodyTable {
+            /*@editable*/
+
+            background-color: #ddf7ea;
+        }
+        /*
+  @tab Page
+  @section background style
+  @tip Set the background color and top border for your email. You may want to choose colors that match your company's branding.
+  */
+
+        #bodyCell {
+            /*@editable*/
+
+            border-top: 0;
+        }
+        /*
+  @tab Page
+  @section email border
+  @tip Set the border for your email.
+  */
+
+        #templateContainer {
+            /*@editable*/
+
+            border: 0;
+        }
+        /*
+  @tab Page
+  @section heading 1
+  @tip Set the styling for all first-level headings in your emails. These should be the largest of your headings.
+  @style heading 1
+  */
+
+        h1 {
+            /*@editable*/
+
+            color: #174c6b !important;
+            display: block;
+            /*@editable*/
+
+            font-family: Arial;
+            /*@editable*/
+
+            font-size: 40px;
+            /*@editable*/
+
+            font-style: normal;
+            /*@editable*/
+
+            font-weight: bold;
+            /*@editable*/
+
+            line-height: 125%;
+            /*@editable*/
+
+            letter-spacing: -1px;
+            margin: 0;
+            /*@editable*/
+
+            text-align: left;
+        }
+        /*
+  @tab Page
+  @section heading 2
+  @tip Set the styling for all second-level headings in your emails.
+  @style heading 2
+  */
+
+        h2 {
+            /*@editable*/
+
+            color: #174c6b !important;
+            display: block;
+            /*@editable*/
+
+            font-family: Georgia, 'Times New Roman', serif;
+            /*@editable*/
+
+            font-size: 18px;
+            /*@editable*/
+
+            font-style: normal;
+            /*@editable*/
+
+            font-weight: 600;
+            /*@editable*/
+
+            line-height: 125%;
+            /*@editable*/
+
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 0;
+            /*@editable*/
+
+            text-align: left;
+        }
+        /*
+  @tab Page
+  @section heading 3
+  @tip Set the styling for all third-level headings in your emails.
+  @style heading 3
+  */
+
+        h3 {
+            /*@editable*/
+
+            color: #174c6b !important;
+            display: block;
+            /*@editable*/
+
+            font-family: Arial;
+            /*@editable*/
+
+            font-size: 18px;
+            /*@editable*/
+
+            font-style: normal;
+            /*@editable*/
+
+            font-weight: bold;
+            /*@editable*/
+
+            line-height: 125%;
+            /*@editable*/
+
+            letter-spacing: -.5px;
+            margin: 0;
+            /*@editable*/
+
+            text-align: left;
+        }
+        /*
+  @tab Page
+  @section heading 4
+  @tip Set the styling for all fourth-level headings in your emails. These should be the smallest of your headings.
+  @style heading 4
+  */
+
+        h4 {
+            /*@editable*/
+
+            color: #808080 !important;
+            display: block;
+            /*@editable*/
+
+            font-family: Arial;
+            /*@editable*/
+
+            font-size: 16px;
+            /*@editable*/
+
+            font-style: normal;
+            /*@editable*/
+
+            font-weight: bold;
+            /*@editable*/
+
+            line-height: 125%;
+            /*@editable*/
+
+            letter-spacing: normal;
+            margin: 0;
+            /*@editable*/
+
+            text-align: left;
+        }
+        /*
+  @tab Preheader
+  @section preheader style
+  @tip Set the background color and borders for your email's preheader area.
+  */
+
+        #templatePreheader {
+            /*@editable*/
+
+            background-color: #ffffff;
+            /*@editable*/
+
+            border-top: 0;
+            /*@editable*/
+
+            border-bottom: 0;
+        }
+        /*
+  @tab Preheader
+  @section preheader text
+  @tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
+  */
+
+        .preheaderContainer .mcnTextContent,
+        .preheaderContainer .mcnTextContent p {
+            /*@editable*/
+
+            color: #174c6b;
+            /*@editable*/
+
+            font-family: Arial;
+            /*@editable*/
+
+            font-size: 11px;
+            /*@editable*/
+
+            line-height: 125%;
+            /*@editable*/
+
+            text-align: left;
+        }
+        /*
+  @tab Preheader
+  @section preheader link
+  @tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
+  */
+
+        .preheaderContainer .mcnTextContent a {
+            /*@editable*/
+
+            color: #174c6b;
+            /*@editable*/
+
+            font-weight: normal;
+            /*@editable*/
+
+            text-decoration: underline;
+        }
+        /*
+  @tab Header
+  @section header style
+  @tip Set the background color and borders for your email's header area.
+  */
+
+        #templateHeader {
+            /*@editable*/
+
+            background-color: #ffffff;
+            /*@editable*/
+
+            border-top: 0;
+            /*@editable*/
+
+            border-bottom: 0;
+        }
+        /*
+  @tab Header
+  @section header text
+  @tip Set the styling for your email's header text. Choose a size and color that is easy to read.
+  */
+
+        .headerContainer .mcnTextContent,
+        .headerContainer .mcnTextContent p {
+            /*@editable*/
+
+            color: #174c6b;
+            /*@editable*/
+
+            font-family: Arial;
+            /*@editable*/
+
+            font-size: 15px;
+            /*@editable*/
+
+            line-height: 150%;
+            /*@editable*/
+
+            text-align: left;
+        }
+        /*
+  @tab Header
+  @section header link
+  @tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
+  */
+
+        .headerContainer .mcnTextContent a {
+            /*@editable*/
+
+            color: #174c6b;
+            /*@editable*/
+
+            font-weight: normal;
+            /*@editable*/
+
+            text-decoration: underline;
+        }
+        /*
+  @tab Body
+  @section body style
+  @tip Set the background color and borders for your email's body area.
+  */
+
+        #panel1,
+        #panel2,
+        #panel3,
+        #panel4 {
+            /*@editable*/
+
+            border-top: 0;
+            /*@editable*/
+
+            border-bottom: 0;
+        }
+        /*
+  @tab Body
+  @section body text
+  @tip Set the styling for your email's body text. Choose a size and color that is easy to read.
+  */
+
+        .bodyContainer .mcnTextContent,
+        .bodyContainer .mcnTextContent p {
+            /*@editable*/
+
+            color: #174c6b;
+            /*@editable*/
+
+            font-family: Arial;
+            /*@editable*/
+
+            font-size: 15px;
+            /*@editable*/
+
+            line-height: 150%;
+            /*@editable*/
+
+            text-align: left;
+        }
+        /*
+  @tab Body
+  @section body link
+  @tip Set the styling for your email's body links. Choose a color that helps them stand out from your text.
+  */
+
+        .bodyContainer .mcnTextContent a {
+            /*@editable*/
+
+            color: #174c6b;
+            /*@editable*/
+
+            font-weight: normal;
+            /*@editable*/
+
+            text-decoration: underline;
+        }
+        /*
+  @tab Footer
+  @section footer style
+  @tip Set the background color and borders for your email's footer area.
+  */
+
+        #templateFooter {
+            /*@editable*/
+
+            background-color: #174c6b;
+            /*@editable*/
+
+            border-top: 0;
+            /*@editable*/
+
+            border-bottom: 0;
+        }
+        /*
+  @tab Footer
+  @section footer text
+  @tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
+  */
+
+        .footerContainer .mcnTextContent,
+        .footerContainer .mcnTextContent p {
+            /*@editable*/
+
+            color: #174c6b;
+            /*@editable*/
+
+            font-family: Arial;
+            /*@editable*/
+
+            font-size: 11px;
+            /*@editable*/
+
+            line-height: 125%;
+            /*@editable*/
+
+            text-align: left;
+        }
+        /*
+  @tab Footer
+  @section footer link
+  @tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
+  */
+
+        .footerContainer .mcnTextContent a {
+            /*@editable*/
+
+            color: #174c6b;
+            /*@editable*/
+
+            font-weight: normal;
+            /*@editable*/
+
+            text-decoration: underline;
+        }
+        @media only screen and (max-width: 480px) {
+            body,
+            table,
+            td,
+            p,
+            a,
+            li,
+            blockquote {
+                -webkit-text-size-adjust: none !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            body {
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[id=bodyCell] {
+                padding: 10px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            table[class=mcnTextContentContainer] {
+                width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            table[class=mcnBoxedTextContentContainer] {
+                width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            table[class=mcpreview-image-uploader] {
+                width: 100% !important;
+                display: none !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            img[class=mcnImage] {
+                width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            table[class=mcnImageGroupContentContainer] {
+                width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[class=mcnImageGroupContent] {
+                padding: 9px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[class=mcnImageGroupBlockInner] {
+                padding-bottom: 0 !important;
+                padding-top: 0 !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            tbody[class=mcnImageGroupBlockOuter] {
+                padding-bottom: 9px !important;
+                padding-top: 9px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            table[class=mcnCaptionTopContent],
+            table[class=mcnCaptionBottomContent] {
+                width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            table[class=mcnCaptionLeftTextContentContainer],
+            table[class=mcnCaptionRightTextContentContainer],
+            table[class=mcnCaptionLeftImageContentContainer],
+            table[class=mcnCaptionRightImageContentContainer],
+            table[class=mcnImageCardLeftTextContentContainer],
+            table[class=mcnImageCardRightTextContentContainer] {
+                width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[class=mcnImageCardLeftImageContent],
+            td[class=mcnImageCardRightImageContent] {
+                padding-right: 18px !important;
+                padding-left: 18px !important;
+                padding-bottom: 0 !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[class=mcnImageCardBottomImageContent] {
+                padding-bottom: 9px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[class=mcnImageCardTopImageContent] {
+                padding-top: 18px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[class=mcnImageCardLeftImageContent],
+            td[class=mcnImageCardRightImageContent] {
+                padding-right: 18px !important;
+                padding-left: 18px !important;
+                padding-bottom: 0 !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[class=mcnImageCardBottomImageContent] {
+                padding-bottom: 9px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[class=mcnImageCardTopImageContent] {
+                padding-top: 18px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            table[class=mcnCaptionLeftContentOuter] td[class=mcnTextContent],
+            table[class=mcnCaptionRightContentOuter] td[class=mcnTextContent] {
+                padding-top: 9px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[class=mcnCaptionBlockInner] table[class=mcnCaptionTopContent]:last-child td[class=mcnTextContent] {
+                padding-top: 18px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[class=mcnBoxedTextContentColumn] {
+                padding-left: 18px !important;
+                padding-right: 18px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[class=mcnTextContent] {
+                padding-right: 18px !important;
+                padding-left: 18px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            /*
+  @tab Mobile Styles
+  @section template width
+  @tip Make the template fluid for portrait or landscape view adaptability. If a fluid layout doesn't work for you, set the width to 300px instead.
+  */
+
+            table[id=templateContainer],
+            table[id=templatePreheader],
+            table[id=templateHeader],
+            table[id=panel1],
+            table[id=panel2],
+            table[id=panel3],
+            table[id=panel4],
+            table[id=templateFooter] {
+                /*@tab Mobile Styles
+@section template width
+@tip Make the template fluid for portrait or landscape view adaptability. If a fluid layout doesn't work for you, set the width to 300px instead.*/
+
+                max-width: 600px !important;
+                /*@editable*/
+
+                width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            /*
+  @tab Mobile Styles
+  @section heading 1
+  @tip Make the first-level headings larger in size for better readability on small screens.
+  */
+
+            h1 {
+                /*@editable*/
+
+                font-size: 24px !important;
+                /*@editable*/
+
+                line-height: 125% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            /*
+  @tab Mobile Styles
+  @section heading 2
+  @tip Make the second-level headings larger in size for better readability on small screens.
+  */
+
+            h2 {
+                /*@editable*/
+
+                font-size: 20px !important;
+                /*@editable*/
+
+                line-height: 125% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            /*
+  @tab Mobile Styles
+  @section heading 3
+  @tip Make the third-level headings larger in size for better readability on small screens.
+  */
+
+            h3 {
+                /*@editable*/
+
+                font-size: 18px !important;
+                /*@editable*/
+
+                line-height: 125% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            /*
+  @tab Mobile Styles
+  @section heading 4
+  @tip Make the fourth-level headings larger in size for better readability on small screens.
+  */
+
+            h4 {
+                /*@editable*/
+
+                font-size: 16px !important;
+                /*@editable*/
+
+                line-height: 125% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            /*
+  @tab Mobile Styles
+  @section Boxed Text
+  @tip Make the boxed text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+  */
+
+            table[class=mcnBoxedTextContentContainer] td[class=mcnTextContent],
+            td[class=mcnBoxedTextContentContainer] td[class=mcnTextContent] p {
+                /*@editable*/
+
+                font-size: 18px !important;
+                /*@editable*/
+
+                line-height: 125% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            /*
+  @tab Mobile Styles
+  @section Preheader Visibility
+  @tip Set the visibility of the email's preheader on small screens. You can hide it to save space.
+  */
+
+            table[id=templatePreheader] {
+                /*@editable*/
+                /*display:block !important; */
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            /*
+  @tab Mobile Styles
+  @section Preheader Text
+  @tip Make the preheader text larger in size for better readability on small screens.
+  */
+
+            td[class=preheaderContainer] td[class=mcnTextContent],
+            td[class=preheaderContainer] td[class=mcnTextContent] p {
+                /*@editable*/
+
+                font-size: 14px !important;
+                /*@editable*/
+
+                line-height: 115% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            /*
+  @tab Mobile Styles
+  @section Header Text
+  @tip Make the header text larger in size for better readability on small screens.
+  */
+
+            td[class=headerContainer] td[class=mcnTextContent],
+            td[class=headerContainer] td[class=mcnTextContent] p {
+                /*@editable*/
+
+                font-size: 18px !important;
+                /*@editable*/
+
+                line-height: 125% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            /*
+  @tab Mobile Styles
+  @section Body Text
+  @tip Make the body text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+  */
+
+            td[class=bodyContainer] td[class=mcnTextContent],
+            td[class=bodyContainer] td[class=mcnTextContent] p {
+                /*@editable*/
+
+                font-size: 18px !important;
+                /*@editable*/
+
+                line-height: 125% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            /*
+  @tab Mobile Styles
+  @section footer text
+  @tip Make the body content text larger in size for better readability on small screens.
+  */
+
+            td[class=footerContainer] td[class=mcnTextContent],
+            td[class=footerContainer] td[class=mcnTextContent] p {
+                /*@editable*/
+
+                font-size: 14px !important;
+                /*@editable*/
+
+                line-height: 115% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            td[class=footerContainer] a[class=utilityLink] {
+                display: block !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .footerContainer .mcnTextContent,
+            .footerContainer .mcnTextContent p,
+            div,
+            span,
+            a,
+            p,
+            h3 {
+                font-size: 15px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .content-area {
+                padding: 30px 20px !important;
+                margin: 0 !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            #templateFooter p,
+            #templateFooter a {
+                font-size: 12px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .personimg,
+            .quote {
+                float: none !important;
+                text-align: center !important;
+                width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .quote-wrap,
+            .imgwrap {
+                padding: 0 !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .quote p {
+                text-align: center !important;
+            }
+        }
+    </style>
+</head>
+
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="background:#ddf7ea; padding: 0; margin: 0;">
+    <center>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" bgcolor="#ddf7ea">
+            <tr>
+                <td align="center" valign="top" id="bodyCell">
+                    <!-- BEGIN TEMPLATE // -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer">
+                        <tr>
+                            <td align="center" valign="top">
+                                <!-- BEGIN PREHEADER // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="600" id="templatePreheader">
+                                    <tbody style="width: 100%">
+                                        <tr>
+                                            <td valign="top" class="preheaderContainer">
+                                                <img align="center" alt="" src="https://storage.googleapis.com/maven-resource-assets/transactional/1dc4cc4b-c3de-4b26-9902-5e0e4b029ccd.jpg" style="" class="mcnImage" />
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- // END PREHEADER -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top">
+                                <!-- BEGIN HEADER // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader" bgcolor="#ffffff">
+                                    <!--- top panel -->
+                                    <tr>
+                                        <td valign="top" class="headerContainer">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock">
+                                                <tbody class="mcnImageBlockOuter">
+                                                    <tr>
+                                                        <td valign="top" style="padding:9px" class="mcnImageBlockInner">
+                                                            <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="first-panel" valign="top" style="margin-right: 5%; margin-left: 5%; padding-top: 0; padding-bottom: 0; text-align:center;">
+                                                                            <div class="content-area" style="-webkit-font-smoothing: antialiased; color: #174c6b; font-size: 16px; font-weight: 400; text-align: center; padding-right: 0px; padding: 50px 30px 50px 30px; line-height: 1.8; font-family: Arial, sans-serif;">
+                                                                              <p mc:edit="hello" style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; text-align: center; margin-top: 0; margin-bottom: 25px;">Hi {{ first_name }},</p>
+                                                                                Welcome to Maven! We’re a health and wellness platform for the modern woman, delivering you instant access to top quality practitioners by video on your schedule.
+                                                                                <br/>
+                                                                                <br/>Over the coming days, we’ll be sending a few emails to help get you started. You’ll meet some Maven Practitioners, learn about the different ways Maven can work for you, and see how other women are using Maven. We’ll show you how good healthcare happens &mdash; without Dr. Google freaking you out or long waits in the waiting room.
+
+
+
+
+                                                                            </div>
+
+
+
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END HEADER -->
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td align="center" valign="top">
+                                <!-- PANEL 1 // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="600" id="panel3" bgcolor="#fcf1eb">
+                                    <tr>
+                                        <td valign="top" class="bodyContainer">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+                                                <tbody class="mcnTextBlockOuter">
+                                                    <tr>
+                                                        <td valign="top" class="mcnTextBlockInner">
+
+                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" class="mcnTextContentContainer">
+                                                                <tbody>
+                                                                    <tr>
+
+                                                                        <td valign="top" class="mcnTextContent" style="">
+
+                                                                            <div>
+
+
+                                                                                <div class="content-area" style="min-height: 300px; -webkit-font-smoothing: antialiased; color: #828282; font-size: 16px; font-weight: 500; text-align: left; padding-right: 0px; padding: 50px 30px 50px 30px; line-height: 1.8; font-family: Arial, sans-serif;">
+
+                                                                                    <h2 style="text-align: center; text-transform: none; font-size: 20px;font-family: Arial, sans-serif; font-weight: 400; color: #174c6b; line-height: 1.8">Ready to get going?<br/>
+							                              		Here are 3 things you can do right now:</h2>
+                                                                                    <br/>
+                                                                                    <hr style="border: 0; border-top: 1px solid #dddddd" />
+                                                                                    <ul style="padding-bottom:0px; padding-left: 24px; padding-top: 30px; list-style-type: none; list-style-image: none; margin: 0">
+                                                                                        <li style="padding-bottom: 20px; background: url('https://storage.googleapis.com/maven-resource-assets/transactional/7fa713a0-529f-4bea-a5da-e8b1877cb0fe.png') no-repeat 0 0; padding-left: 35px;"><a  style="color: #174c6b; font-weight: normal; text-decoration: underline;" href="{{ base_url }}/confirm_email?token={{ token }}&email={{ email }}">Confirm your email address</a>
+                                                                                        </li>
+                                                                                        <li style="padding-bottom: 20px; background: url('https://storage.googleapis.com/maven-resource-assets/transactional/1b3ee8fa-898a-4087-bf76-6660ac220395.png') no-repeat 0 0; padding-left: 35px;"><a  style="color: #174c6b; font-weight: normal; text-decoration: underline;" href="{{ base_url }}/forum">Ask a question on our forum</a>. Have a health question? Our community of highly-vetted health and wellness providers &mdash; doctors, nurse practitioners, mental health specialists, nutritionists, doulas, midwives, and more &mdash; will answer you for free.</li>
+                                                                                        <li style=" background: url('https://storage.googleapis.com/maven-resource-assets/transactional/def38481-0f9d-4fa5-92da-075aac600437.png') no-repeat 0 0; padding-left: 35px;"><a  style="color: #174c6b; font-weight: normal; text-decoration: underline;" href="{{ base_url }}/book">Connect 1 on 1 with a practitioner instantly.</a> If you want a trusted partner in health, Maven Practitioners are here for you. See one right now, or in a few days. The great thing is that you can see them via video, whenever you need!</li>
+                                                                                    </ul>
+
+
+
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END PANEL1 -->
+                            </td>
+                        </tr>
+
+
+
+
+
+                        <tr>
+                            <td align="center" valign="top">
+                                <!-- PANEL 3 // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="600" id="panel3" bgcolor="#ffffff">
+                                    <tr>
+                                        <td valign="top" class="bodyContainer">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock">
+                                                <tbody class="mcnTextBlockOuter">
+                                                    <tr>
+                                                        <td valign="top" class="mcnTextBlockInner">
+
+                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="600" class="mcnTextContentContainer">
+                                                                <tbody>
+                                                                    <tr>
+
+                                                                        <td valign="top" class="mcnTextContent" style="">
+
+                                                                            <div>
+
+
+                                                                                <div class="content-area" style="-webkit-font-smoothing: antialiased; text-align: center;color: #174c6b; font-size: 16px; font-weight: 500; text-align: center; padding-right: 0px; padding: 50px 30px 50px 30px; line-height: 1.8; font-family: Arial, sans-serif;" mc:edit="panel-3">
+
+                                                                                     Ready to start your journey to better health?
+
+                                                                                    <p style="text-align: center">
+                                                                                        <a mc:edit="book-cta-bottom" href="{{ base_url }}/book" class="button" style="letter-spacing: 1px;-webkit-font-smoothing: antialiased; padding: 15px 40px 15px 40px; display: inline-block; color: #ffffff; text-transform: uppercase; font-weight: 600; background: #ff7774; border-bottom: 5px solid #fa5661; text-decoration: none; text-align: center;">Let's go</a>
+                                                                                    </p>
+
+
+                                                                                    <br/> Yours,
+                                                                                    <br/> The Maven Team
+
+
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END PANEL 3 -->
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td align="center" valign="top">
+                                <!-- BEGIN FOOTER // -->
+                                <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateFooter" bgcolor="#174c6b">
+                                    <tr>
+                                        <td valign="top" class="footerContainer" style="padding-bottom:9px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock">
+                                                <tbody class="mcnImageBlockOuter">
+                                                    <tr>
+                                                        <td valign="top" style="padding:9px" class="mcnImageBlockInner">
+                                                            <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="mcnImageContent" valign="top" style="padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;">
+
+
+                                                                            <div class="socials" style="  height:71px; text-align: center; font-family: Arial, sans-serif; " mc:edit="socials">
+                                                                                <br>
+                                                                                <a href="https://www.facebook.com/mavenclinic" target="_blank" class="fb"><img width="30" height="30" src="https://storage.googleapis.com/maven-resource-assets/transactional/de9c7472-7420-45ee-bb6b-b6d847853d21.png" alt="Follow us on Facebook" />
+                                                                                </a>&nbsp;&nbsp;
+                                                                                <a href="https://twitter.com/mavenclinic" target="_blank" class="fb"><img width="30" height="30" src="https://storage.googleapis.com/maven-resource-assets/transactional/b8f34971-55ed-4340-bbf2-9f61bf58d4be.png" alt="Follow us on Twitter" />
+                                                                                </a>&nbsp;&nbsp;
+                                                                                <a href="https://pinterest.com/mavenclinic" target="_blank" class="pinterest"><img width="30" height="30" src="https://storage.googleapis.com/maven-resource-assets/transactional/dae99e39-47ca-4100-acf5-000709d87ef6.png" alt="Maven on Pinterest" />
+                                                                                </a>&nbsp;&nbsp;
+                                                                                <a href="https://instagram.com/mavenclinic" target="_blank" class="ig"><img width="30" height="30" src="https://storage.googleapis.com/maven-resource-assets/transactional/85c7ea13-92f7-4aa3-9027-99aff0ad7148.png" alt="Maven on Instagram" />
+                                                                                </a>
+                                                                            </div>
+
+
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div style="text-align: center; color: #ffffff">
+                                                                                <p style="-webkit-font-smoothing: antialiased; font-weight: 400; font-family: Arial, sans-serif; text-align: center; color: #fcfcfc; font-size: 12px;">
+                                                                                    Copyright &copy; 2017 Maven Clinic Co.
+                                                                                    <br/>
+                                                                                    <br/> Maven
+                                                                                    <br/> 394 Broadway, 3rd Floor
+                                                                                    <br/> New York, NY 10013
+                                                                                </p>
+
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- // END FOOTER -->
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- // END TEMPLATE -->
+                </td>
+            </tr>
+        </table>
+
+    </center>
+</body>
+
+</html>

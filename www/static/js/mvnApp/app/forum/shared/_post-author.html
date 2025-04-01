@@ -1,0 +1,23 @@
+<div class="clearfix" ng-class="{ prac: authorProfession }">
+	<user-avatar show="username" user="author"></user-avatar>
+
+	<div ng-if="!authorProfession">
+		<p class="user-name">
+			<span class="name" ng-if="name">{{ ::name }}</span>
+			<span class="name" ng-if="!name">Anonymous</span>
+			<br />
+			<span class="post-date">{{ datetime | date: " MMM d yyyy" }}</span>
+		</p>
+	</div>
+
+	<div ng-if="authorProfession" class="profession">
+		<p class="user-name">
+			<span class="name" ng-if="name">{{ ::name }}</span>
+			<span class="name" ng-if="!name">Anonymous</span><br />
+			<span class="practitioner-profession">{{ authorProfession }}</span>
+		</p>
+		<div class="post-action">
+			<a ng-click="goBookPrac(author.profiles.practitioner.user_id)"> Book appointment</a>
+		</div>
+	</div>
+</div>

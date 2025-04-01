@@ -1,0 +1,13 @@
+dag_id: update_organization_approved_modules_dag
+schedule: "0 0 * * *"
+task_id: update_organization_approved_modules_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.enrollments.update_organization_approved_modules import update_organization_approved_modules_job; update_organization_approved_modules_job()"
+team_namespace: enrollments
+service_namespace: tracks
+catchup: "False"
+start_year: 2024
+start_month: 3
+start_day: 31

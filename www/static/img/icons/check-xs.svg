@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="9px" viewBox="0 0 10 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Check Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="V2-Wireframes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Order-confirmation" transform="translate(-558.000000, -801.000000)" fill="#F69386" fill-rule="nonzero">
+            <g id="Group" transform="translate(555.000000, 746.000000)">
+                <g id="checkbox" transform="translate(0.000000, 51.000000)">
+                    <polygon id="Check-Copy" points="4.58653746 7.83096525 3.41346254 8.91903475 6.43478261 12.1763954 12.5865375 5.54403475 11.4134625 4.45596525 6.43478261 9.82360455"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

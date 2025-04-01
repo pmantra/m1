@@ -1,0 +1,28 @@
+{
+  "version": "1",
+  "answers": [
+    "2016-10-20",
+    "2016-11-20",
+    "I did give birth",
+    "Vaginal",
+    "Vaginal",
+    "Natural delivery is the choice.",
+    5,
+    "Aetna",
+    "Hospital",
+    {"answer": "yes", "yes": "some complications"},
+    {"answer": "no"},
+    "Breastfeed",
+    {"answer": "formula", "formula": "supplemental"},
+    1,
+    3,
+    7,
+    3,
+    "no",
+    "no",
+    ["colic", "allergies", "not gaining weight"],
+    "not sure",
+    "great care and service",
+    "yes"
+  ]
+}

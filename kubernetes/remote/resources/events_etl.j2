@@ -1,0 +1,96 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: events-cron
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: events-etl
+spec:
+  selector:
+    matchLabels:
+      name: events-etl
+  revisionHistoryLimit: 0
+  replicas: 1
+  template:
+    metadata:
+      name: events-etl
+      labels:
+        name: events-etl
+    spec:
+      nodeSelector:
+        maven-node-type: main
+      serviceAccountName: events-cron
+      containers:
+        - name: events-etl
+          image: gcr.io/maven-clinic-image-builder/events_etl:{{ tag }}
+          resources:
+            requests:
+              cpu: 1000m
+              memory: 200Mi
+            limits:
+              memory: 300Mi
+          env:
+            - name: BIGQUERY_DATASET_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: data-export
+                  key: bigquery-dataset-name
+            - name: BIGQUERY_EXPORT_PROJECT
+              valueFrom:
+                configMapKeyRef:
+                  name: data-export
+                  key: bigquery-export-project
+            - name: BIGQUERY_CREDENTIALS_PATH
+              valueFrom:
+                configMapKeyRef:
+                  name: data-export
+                  key: bigquery-export-project-credentials-path
+            - name: TARGET_DATASET
+              valueFrom:
+                configMapKeyRef:
+                  name: events-etl
+                  key:  dataset
+            - name: TARGET_TABLE
+              valueFrom:
+                configMapKeyRef:
+                  name: events-etl
+                  key:  table
+            - name: PIXEL_BUCKET_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: events-etl
+                  key:  pixel_bucket
+                  optional: true
+            - name: LOGS_BUCKET_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: events-etl
+                  key:  pixel_log_bucket
+                  optional: true
+            - name: ARCHIVE_BUCKET_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: events-etl
+                  key:  pixel_archive_bucket
+                  optional: true
+          volumeMounts:
+            - mountPath: /google-svc-accounts
+              name: google-svc-accounts
+        - name: events-etl-cron
+          image: gcr.io/maven-clinic-image-builder/events_etl_cron:{{ tag }}
+          resources:
+            requests:
+              memory: 10Mi
+            limits:
+              memory: 60Mi
+          env:
+            - name: MY_POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+      volumes:
+        - name: google-svc-accounts
+          secret:
+            secretName: google-svc-accounts

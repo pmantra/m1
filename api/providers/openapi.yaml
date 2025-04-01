@@ -1,0 +1,404 @@
+openapi: 3.0.3
+info:
+  title: Maven Clinic Providers API
+  version: 1.0.0
+  description: API endpoints related to providers
+servers:
+  - url: https://www.mavenclinic.com
+  - url: https://www.qa1.mvnapp.net
+  - url: https://www.qa2.mvnapp.net
+  - url: https://www.staging.mvnapp.net
+paths:
+  /api/v1/providers/:
+    get: 
+      summary: Get a list of available providers
+      description: Get a list of all providers 
+      parameters:
+        - in: query
+          name: vertical_ids
+          schema:
+            type: array
+            items:
+              type: string
+          style: form
+          explode: false
+          required: false
+        - in: query
+          name: specialty_ids
+          schema:
+            type: array
+            items:
+              type: string
+          style: form
+          explode: false
+          required: false
+        - in: query
+          name: need_ids
+          schema:
+            type: array
+            items:
+              type: integer
+          required: false
+        - in: query
+          name: availability_scope_in_days
+          schema:
+            type: integer
+          required: true
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          required: true 
+        - in: query
+          name: language_ids
+          schema:
+            type: array
+            items:
+              type: string
+          style: form
+          explode: false
+          required: false
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProviderList"
+  /api/v1/providers/languages/:
+    get:
+      summary: Get a list of available languages spoken by the providers
+      description: Test 
+      parameters:
+        - in: query
+          name: vertical_ids
+          schema:
+            type: array
+            items:
+              type: string
+          required: false
+        - in: query
+          name: specialty_ids
+          schema:
+            type: array
+            items:
+              type: string
+          required: false
+        - in: query
+          name: need_ids
+          schema:
+            type: array
+            items:
+              type: string
+          required: false
+        - in: query
+          name: availability_scope_in_days
+          schema:
+            type: integer
+          required: true
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          required: true 
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Language"
+  /api/v1/providers/{id}/profile:
+    get: 
+      summary: Get a single provider's profile 
+      description: Get a single provider's profile 
+      parameters:
+      - in: path
+        name: id 
+        schema:
+          type: integer
+        required: true 
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProviderProfile"  
+  /api/v1/providers/messageable_providers: 
+    get: 
+      summary: Get a list of all messageable providers 
+      security:
+        - bearerAuth: []
+      description: These are providers that users can message with instead of booking a video appointment. 
+      parameters:
+        - in: query
+          name: vertical_ids
+          schema:
+            type: array
+            items:
+              type: string
+          required: false
+        - in: query
+          name: specialty_ids
+          schema:
+            type: array
+            items:
+              type: string
+          required: false
+        - in: query
+          name: need_ids
+          schema:
+            type: array
+            items:
+              type: string
+          required: false
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          required: true 
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProviderList"
+  /api/v1/cypress_utils/providers:
+    post:
+      summary: Creates a provider account to be used for cypress tests
+      description: >-
+        Used to create a test provider account. This endpoint cannot be accessed from production
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CypressUtilsProvidersPostRequest"
+
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CypressUtilsProvidersPostResponse"
+        400:
+          description: Error in input
+        403:
+          description: Unauthorized user
+        500:
+          description: Internal error
+
+components:
+  schemas:
+    CypressUtilsProvidersPostRequest:
+      type: object
+      properties:
+        vertical_name:
+          description: Name of the vertical for the provider being created
+          type: string
+        state_name:
+          description: Name of the state for the provider being created
+          type: string
+        timezone:
+          description: The timezone of the provider being created
+          type: string
+    CypressUtilsProvidersPostResponse:
+      type: object
+      properties:
+        id:
+          description: Id of created provider
+          type: integer
+        email:
+          description: Email of the created provider
+          type: string
+        password:
+          description: Password of the created provider
+          type: string
+    Provider:
+      type: object
+      nullable: false
+      properties:
+        id:
+          type: integer
+          nullable: false 
+        name: 
+          type: string
+          nullable: false
+        full_name:
+          type: string
+          nullable: false 
+        image_url:
+          type: string 
+          nullable: true 
+        vertical:
+          type: string 
+          nullable: true 
+        can_prescribe: 
+          type: boolean
+          nullable: false 
+        next_availability:
+          type: string # date time?
+          nullable: false 
+        dynamic_subtext: 
+          type: string
+          nullable: true 
+        is_care_advocate:
+          type: boolean
+          nullable: false 
+        certified_states:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/CertifiedState"
+        country_flag: 
+          type: string
+          nullable: true 
+        is_vertical_state_filtered: 
+          type: boolean
+          nullable: false 
+    ProviderProfile:
+      type: object
+      nullable: false
+      properties:
+        id:
+          type: integer
+          nullable: false
+        name:
+          type: string
+          nullable: false
+        full_name:
+          type: string
+          nullable: false
+        image_url:
+          type: string
+          nullable: true 
+        dynamic_subtext:
+          type: string
+          nullable: false 
+        messaging_enabled:
+          type: boolean
+          nullable: true
+        certified_states:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/CertifiedState"
+        country_flag:
+          type: string
+          nullable: true 
+        country: 
+          type: string
+          nullable: true 
+        can_prescribe:
+          type: boolean
+          nullable: false
+        vertical:
+          nullable: false
+          description: >-
+            This field is preferred over "verticals"
+          $ref: "#/components/schemas/Vertical"
+        vertical_long_description:
+          type: string
+          nullable: true 
+        specialties: 
+          type: array
+          nullable: true
+          items:
+            type: string
+        is_vertical_state_filtered:
+          type: boolean
+          nullable: false 
+        certifications: # see the spec for this 
+          type: array
+          nullable: true 
+          items:
+            type: string 
+        years_experience:
+          type: integer
+          nullable: false 
+        work_experience:
+          type: array
+          nullable: true 
+          items:
+            type: string 
+        education: 
+          type: array
+          nullable: true 
+          items:
+            type: string 
+        is_care_advocate:
+          type: boolean
+          nullable: false
+        cancellation_policy: 
+          type: string
+          nullable: true
+        languages: 
+          type: array
+          nullable: true 
+          items:
+            type: string
+        active: 
+          type: boolean
+          nullable: true 
+        can_request_availability:
+          type: boolean
+          nullable: false 
+        can_member_interact:
+          type: boolean
+          nullable: false 
+    Language:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: false
+        display_name:
+          type: string
+          nullable: false 
+    ProviderList:
+      type: object
+      properties: 
+        data:
+          type: array
+          items: 
+            $ref: "#/components/schemas/Provider"
+        offset:
+          type: integer
+        limit:
+          type: integer
+    CertifiedState:
+      nullable: false
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: false
+        name:
+          type: string
+          nullable: false
+        abbreviation:
+          type: string
+          nullable: false
+    Vertical:
+      type: object
+      properties:
+        id:
+          type: integer
+          nullable: false
+        name:
+          type: string
+          nullable: false
+        description:
+          type: string
+          nullable: false
+        can_prescribe:
+          type: boolean
+          nullable: false
+        filter_by_state:
+          description: If this is true, this means that means that providers must be licensed within that state in order to practice.
+                        We also allow providers from outside that state to match as "anonymous appointments".
+          type: boolean
+          nullable: false

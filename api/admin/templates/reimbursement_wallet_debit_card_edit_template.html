@@ -1,0 +1,13 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    <h4>Reimbursement Wallet Debit Card</h4>
+    <h5>All Active Wallet Users</h5>
+    {% for user in model.reimbursement_wallet.all_active_users %}
+        <p style="display: inline;">
+        <a href="{{ url_for('memberprofile.edit_view', id=user.id) }}">Member profile {{ user.id }}</a>
+        <br/>
+    {% endfor %}
+    {{ super() }}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+Hello {{ practitioner.first_name }},
+
+Thanks for being a valued Maven Practitioner! We're writing to let you know that we just completed a transfer of {{ "$%.2f"|format(amount) }} to your bank.
+
+{% if show_entries %}
+    This payment was for the following appointments/messages (all appointment times are in UTC):
+
+    {% for entry in entries %}
+        {% if entry.appointment %}
+            - {{ "$%.2f"|format(entry.amount) }} for Appointment [{{ entry.appointment.id }}] with
+                {% if entry.appointment.privacy != 'anonymous' %}
+                    Member [{{ entry.appointment.member.id }}]
+                {% else %}
+                    Anonymous member
+                {% endif %}.
+                Appointment was at {{ entry.appointment.scheduled_start.strftime('%c') }} UTC.
+        {% elif entry.message and entry.message.channel %}
+            - ${{ entry.amount }} for Message [{{ entry.message.id }}] with Member [{{ entry.message.user.id }}]
+        {% endif %}
+    {% endfor %}
+{% else %}
+    This payment is for appointments and messages completed during the month of {{ invoice_month }}.
+{%endif %}
+
+Please get in touch with us at providers@mavenclinic.com if you have any questions.
+
+Take care,
+
+Team Maven

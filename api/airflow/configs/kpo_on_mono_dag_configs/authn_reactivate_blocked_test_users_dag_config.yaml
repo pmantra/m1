@@ -1,0 +1,13 @@
+dag_id: authn_reactivate_blocked_test_users_dag
+schedule: "0 20 */3 * *" # at 20:00 UTC every 3 days
+task_id: authn_reactivate_blocked_test_users_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.core_service_team.reactivate_blocked_test_users import activate_blocked_test_user_job; activate_blocked_test_user_job()"
+team_namespace: core_services
+service_namespace: authentication
+catchup: "False"
+start_year: 2024
+start_month: 9
+start_day: 11

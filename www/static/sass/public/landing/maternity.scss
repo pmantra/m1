@@ -1,0 +1,235 @@
+.landing-maternity-signup {
+	.primary-nav,
+	.nav-actions,
+	.nav-toggle,
+	.nav-cta,
+	footer {
+		display: none;
+	}
+
+	section.hero .text-container h1 {
+		font-family: $font2;
+		@include susy-breakpoint($desktop) {
+			font-size: 2.5rem;
+		}
+		&.hero-h1-lg {
+			font-size: 3rem;
+			line-height: 1.15;
+			@include susy-breakpoint($desktop) {
+				font-size: 3.5rem;
+			}
+		}
+	}
+
+	.client-logo {
+		margin: 0 0 1rem 0;
+	}
+
+	#page-content .btn {
+		@include susy-breakpoint($desktop) {
+			min-width: 220px;
+		}
+	}
+
+	.program-benefits,
+	.practitioner-network {
+		.grid-container .grid-item {
+			@include susy-breakpoint(0 $mobile-landscape) {
+				margin: 15px auto; // tighten up space between list items on mobile
+			}
+		}
+	}
+
+	.available-programs {
+		.grid-item {
+			span.img {
+				min-height: 50px;
+				@include flexbox(row, flex-end, flex-start);
+			}
+		}
+	}
+	.avail-services {
+		padding: 0;
+		.headline {
+			padding: 3rem 8% 0 8%;
+		}
+		.service-img {
+			padding: 0rem 8%;
+			z-index: 1;
+		}
+	}
+
+	.product-shot {
+		min-height: 1px; // IE -_-
+		height: auto;
+		width: 100%;
+		max-width: 620px;
+	}
+
+	.program-benefits {
+		background-color: $mktg-pink-dk;
+		padding: 125px 8% 3rem 8%;
+		margin-top: -110px;
+
+		@include susy-breakpoint($mobile-landscape) {
+			margin-top: -184px;
+			padding-top: 220px;
+		}
+
+		@include susy-breakpoint($tablet) {
+			margin-top: -240px;
+			padding-top: 300px;
+		}
+
+		.grid-item {
+			@include flexbox(row, center, flex-start);
+			background: url("/img/icons/check-circle-pink.svg") center left no-repeat;
+
+			p,
+			.p {
+				margin-left: 60px;
+				width: calc(100% - 40px);
+			}
+		}
+	} // end program-benefits
+
+	.program-testimonials {
+		background: $mktg-gray;
+		.testimonial {
+			background: white;
+			min-height: 540px;
+			h5 {
+				text-transform: none;
+				color: $gray;
+			}
+		}
+
+		.prev,
+		.next {
+			@include susy-breakpoint($desktop) {
+				display: none !important;
+			}
+		}
+
+		ul.slick-dots {
+			margin-top: 3%;
+			text-align: center;
+
+			li span:before {
+				color: $blush-100;
+			}
+
+			@include susy-breakpoint($mobile-landscape) {
+				margin-top: 3%;
+			}
+
+			@include susy-breakpoint($desktop) {
+				display: none !important; // important to override inline styles
+			}
+		}
+	}
+
+	#faq {
+		h3 {
+			font-family: $font2;
+			@include susy-breakpoint($desktop) {
+				font-size: 2.5rem;
+			}
+		}
+		.faq-wrap {
+			@include susy-breakpoint($desktop) {
+				margin-top: 82px;
+			}
+		}
+		li .faq-question {
+			font-family: $font1-semibold;
+		}
+	}
+	section.contact-us {
+		background-color: $mint-20;
+		padding: 100px 8% 120px 8%;
+		margin-bottom: 0;
+	}
+
+	/* Family planning support */
+	/* Yes.... media queries for dayz. Don't hate me.. */
+	section.fps-hero {
+		background-color: #e4e4e2;
+		padding-bottom: 0;
+	}
+
+	.fps-video-container {
+		position: relative;
+	}
+	.fps-video-overlay {
+		position: absolute;
+		padding: 8% 25% 0 8%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		color: #fff;
+		background: rgba(0, 0, 0, .25);
+
+		@include susy-breakpoint($mobile) {
+			padding: 3% 25% 0 3%;
+		}
+	}
+	.fps-video-lightbox-close {
+		background-color: transparent;
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00IDAgMTggMTciIHdpZHRoPSIxOCIgaGVpZ2h0PSIxNyI+PGcgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cGF0aCBkPSJtMCAwaDd2LTdoNXY3aDd2NWgtN3Y3aC01di03aC03eiIgb3BhY2l0eT0iLjQiLz48cGF0aCBkPSJtMSAxaDd2LTdoM3Y3aDd2M2gtN3Y3aC0zdi03aC03eiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=);
+		background-position: right center;
+		background-repeat: no-repeat;
+		background-size: 18px;
+		height: 2.6em;
+		position: absolute;
+		right: 1rem;
+		top: 0;
+		width: 4em;
+		z-index: 101;
+	}
+	.fps-video-overlay h5,
+	.fps-video-overlay h3,
+	.fps-video-overlay p {
+		color: #fff !important;  // h3 is set more specifically elsewhere
+	}
+
+	.fps-video-overlay h5 {
+		@include susy-breakpoint($mobile) {
+			font-size: 12px;
+		}
+	}
+	.fps-video-overlay p {
+		margin: .1rem 0;
+
+		@include susy-breakpoint($mobile) {
+			font-size: 14px;
+		}
+	}
+	.fps-video-overlay h3 {
+		font-size: 20px;
+
+		@include susy-breakpoint($mobile) {
+			font-size: 16px;
+			line-height: 22px;
+			margin: .75rem 0;
+		}
+	}
+	.fps-video-overlay button {
+		background: transparent;
+		border: 1px solid #fff;
+	}
+	.fps-video-lightbox {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 100000;
+		background: pink;
+		display: grid;
+		align-items: center;
+		display: none;
+		background: rgba(0, 0, 0, .9);
+	}
+}

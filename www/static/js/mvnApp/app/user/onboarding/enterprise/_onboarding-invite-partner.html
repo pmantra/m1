@@ -1,0 +1,108 @@
+<div class="onboarding-verify-enterprise">
+	<div class="center">
+		<h3 class="serif">Invite your better half</h3>
+		<p>Your partner also gets full access to Maven. Send them an invite!</p>
+	</div>
+
+	<form name="$ctrl.invitePartnerForm" role="form" class="clearfix mvn-form single-column max-w">
+		<section class="form-section">
+			<div class="form-elements-container">
+				<div class="form-item">
+					<mvn-input
+						type="text"
+						form-ref="$ctrl.invitePartnerForm"
+						value="$ctrl.invitee_name"
+						label="Partner's first name"
+						required="required"
+					></mvn-input>
+				</div>
+
+				<div class="form-item">
+					<mvn-tel-input
+						form-ref="$ctrl.invitePartnerForm"
+						label="Partner's cell phone number"
+						value="$ctrl.invitee_phone"
+						required="required"
+					></mvn-tel-input>
+				</div>
+
+				<div class="form-item">
+					<mvn-input
+						type="email"
+						form-ref="$ctrl.invitePartnerForm"
+						value="$ctrl.invitee_email"
+						label="Partner's email address"
+						required="required"
+					></mvn-input>
+				</div>
+
+				<div class="form-item">
+					<mvn-date-input
+						ng-if="$ctrl.noDatePicker"
+						form-ref="$ctrl.invitePartnerForm"
+						model-ref="$ctrl.dobFields"
+						label="Partner's date of birth"
+						required="required"
+					></mvn-date-input>
+					<mvn-input
+						ng-if="!$ctrl.noDatePicker"
+						type="date"
+						form-ref="$ctrl.invitePartnerForm"
+						value="$ctrl.dobFields"
+						label="Partner's date of birth"
+						required="required"
+					></mvn-input>
+				</div>
+
+				<div class="form-item" ng-if="$ctrl.partnerIsPregnant">
+					<mvn-date-input
+						ng-if="$ctrl.noDatePicker"
+						form-ref="$ctrl.invitePartnerForm"
+						model-ref="$ctrl.dueDateFields"
+						label="Partner's due date"
+						required="required"
+					></mvn-date-input>
+					<mvn-input
+						ng-if="!$ctrl.noDatePicker"
+						type="date"
+						form-ref="$ctrl.invitePartnerForm"
+						value="$ctrl.dueDateFields"
+						label="Partner's due date"
+						required="required"
+					></mvn-input>
+				</div>
+
+				<div class="form-item" ng-if="$ctrl.partnerIsNewParent">
+					<mvn-date-input
+						ng-if="$ctrl.noDatePicker"
+						form-ref="$ctrl.invitePartnerForm"
+						model-ref="$ctrl.lcbFields"
+						label="Baby's date of birth"
+						required="required"
+					></mvn-date-input>
+					<mvn-input
+						ng-if="!$ctrl.noDatePicker"
+						type="date"
+						form-ref="$ctrl.invitePartnerForm"
+						value="$ctrl.lcbFields"
+						label="Baby's date of birth"
+						required="required"
+					></mvn-input>
+				</div>
+			</div>
+		</section>
+	</form>
+</div>
+
+<mvn-onboarding-bottom-nav>
+	<a class="btn btn-tertiary" href="" ng-click="$ctrl.skipInvite()">No thanks</a>
+	<a
+		href=""
+		title="Send invite"
+		class="btn btn-cta"
+		ng-click="$ctrl.invitePartner()"
+		ng-disabled="$ctrl.invitePartnerForm.$invalid"
+		ng-class="{'disabled' : $ctrl.invitePartnerForm.$invalid}"
+		>Send invite</a
+	>
+</mvn-onboarding-bottom-nav>

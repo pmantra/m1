@@ -1,0 +1,10 @@
+<div class="content-container profile-edit-image">
+	<div ng-if="!$ctrl.user.profiles.practitioner" class="profile-image center" ng-class="{ 'has-image' : $ctrl.user.image_url, 'has-color': $ctrl.user.profiles.member.color_hex }" ng-style="{ 'background-color' : '#' +$ctrl.user.profiles.member.color_hex, 'background-image' : ($ctrl.user.image_url ? 'url('+$ctrl.user.image_url+')' : 'none' ) }">
+		<a class="edit-cta" href="" ng-click="$ctrl.editProfileImage()">
+			<svg width="58" height="40" viewBox="0 0 58 40" xmlns="http://www.w3.org/2000/svg"><title>add photo</title><g stroke="#FFF" stroke-width="2.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M26.214 7.634l-3.92-6.14H10.862l-3.92 6.14M52.244 19.464v19.25H1.754V7.776h38.923M47.96 7h8.788"/><path d="M37.518 23.245c0 5.197-4.26 9.412-9.514 9.412-5.256 0-9.515-4.215-9.515-9.412 0-5.197 4.258-9.41 9.514-9.41 5.254 0 9.514 4.213 9.514 9.41zM52.25 3.43v8.693"/></g></svg>
+		</a>
+	</div>
+
+	<div ng-if="$ctrl.user.profiles.practitioner" class="profile-image center" ng-class="{ 'has-image' : $ctrl.user.image_url, 'has-color': $ctrl.user.profiles.member.color_hex }" ng-style="{ 'background-color' : '#' +$ctrl.user.profiles.member.color_hex, 'background-image' : ($ctrl.user.image_url ? 'url('+$ctrl.user.image_url+')' : 'url(/img/app/forum/no-avatar.svg)' ) }">
+	</div>
+</div>

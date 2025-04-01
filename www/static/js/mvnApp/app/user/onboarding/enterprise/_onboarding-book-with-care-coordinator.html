@@ -1,0 +1,16 @@
+<div ng-if="!vm.loading">
+	<div ng-if="$ctrl.user.care_coordinators[0]">
+		<a ui-sref="app.onboarding.meet-care-coordinator-find-time" class="btn btn-tertiary"><svg aria-hidden="true" width="9" height="14" viewBox="0 0 9 14" xmlns="http://www.w3.org/2000/svg"><title>Left caret</title><path d="M7.4 1.6L2 7l5.4 5.4" stroke="#00856F" stroke-width="2" fill="none" fill-rule="evenodd"/></svg> Back</a>
+		<h3 class="serif center">Book your introductory chat with {{ $ctrl.user.care_coordinators[0] ? $ctrl.user.care_coordinators[0].first_name : 'Kaitlyn' }}</h3>
+		<appointment-book class="book-practitioner-dialog" ng-if="$ctrl.user" user="$ctrl.user" pracid="$ctrl.user.care_coordinators[0] ? $ctrl.user.care_coordinators[0].id : 25159" booking-context="onboarding"></appointment-book>
+	</div>
+
+	<div ng-if="!$ctrl.user.care_coordinators[0]">
+		<h2 class="serif">Oh no...</h2>
+		<p>We seem to be having trouble finding availability in your Care Advocate's schedule. But don't worry – they'll send you a message instead to arrange a time.</p>
+		<p>
+			<mvn-dynamic-cta ng-if="$ctrl.isNative" opts="$ctrl.nativeCtaOpts" user="$ctrl.user" event-name="native-exit-onboarding-no-cc-availability"></mvn-dynamic-cta>
+			<a ng-if="!$ctrl.isNative" class="btn btn-cta" ui-sref="app.dashboard">Go to Maven</a></p>
+		</p>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+[
+  {
+    "type": "user",
+    "organization_name": "Test Organization X",
+    "track": "trying_to_conceive",
+    "email_prefix": "mvnqa-ttc",
+    "password": "simpleisawesome1*",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

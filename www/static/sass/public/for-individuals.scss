@@ -1,0 +1,75 @@
+.page-for-individuals {
+	.how-it-works .grid-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		.grid-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+
+			img {
+				width: 70%;
+				max-width: 350px;
+			}
+		}
+		.text-container {
+			width: 100%;
+
+			h4 {
+				margin-bottom: 0;
+				& + p {
+					margin-top: 10px;
+				}
+			}
+		}
+
+		@include susy-breakpoint($tablet) {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			.text-container {
+				width: 50%;
+			}
+		}
+
+		@include susy-breakpoint($desktop) {
+			.grid-item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+
+				img {
+					width: 70%;
+					max-width: 300px;
+					margin-right: 70px;
+				}
+			}
+
+			.text-container {
+				width: 50%;
+			}
+
+			@include susy-breakpoint($desktop-md) {
+				.grid-item {
+					img {
+						width: 90%;
+						max-width: 350px;
+					}
+				}
+
+				.text-container {
+					width: 50%;
+				}
+			}
+		}
+	}
+}

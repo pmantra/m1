@@ -1,0 +1,89 @@
+{% block body %}
+
+    <style>
+        .controls input[type="email"], .controls input[type="text"] {
+            height: 34px;
+            padding: 6px 12px;
+            min-width: calc(300px - 14px);
+        }
+    </style>
+
+    <div class="inline-field well well-medium">
+        <legend>Manually Register User</legend>
+        <p class="lead">
+            Use this form to manually register a user.
+        </p>
+        <div>
+            <form method="POST" action="/admin/actions/register_user">
+                <div class="control-group">
+                    <label class="control-label" for="first_name">First Name</label>
+                    <div class="controls">
+                        <input
+                            type="text"
+                            id="first_name"
+                            name="first_name"
+                            placeholder="Enter member's first name"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="last_name">Last Name</label>
+                    <div class="controls">
+                        <input
+                            type="text"
+                            id="last_name"
+                            name="last_name"
+                            placeholder="Enter member's last name"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="email">Email</label>
+                    <div class="controls">
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter member's email"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="language">Language</label>
+                    <div class="controls">
+                        <select
+                            id="language"
+                            name="language"
+                            aria-describedby="language_help"
+                        >
+                            {% for id, name in languages %}
+                                {% if name == "English" %}
+                                    <option value="{{ id }}" selected>{{ name }}</option>
+                                {% else %}
+                                    <option value="{{ id }}">{{ name }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <small id="language_help" class="help-block text-muted">
+                            Select the language of the Privacy Policy and Terms of use the member agreed to.
+                        </small>
+                    </div>
+                </div>
+
+                <input
+                    type="submit"
+                    class="btn btn-primary"
+                    value="Register"
+                    style="background-image: linear-gradient(to bottom,#6cceaa,#00856f)"
+                >
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

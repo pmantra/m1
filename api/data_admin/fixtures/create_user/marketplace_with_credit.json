@@ -1,0 +1,12 @@
+[
+   {
+      "type": "user",
+      "email_prefix": "mvnqa-mkt",
+      "password": "simpleisawesome1*",
+      "credit": {
+        "amount": 1000,
+        "activated_at": "now",
+        "expires_at": "in 1 month"
+      }
+   }  
+]

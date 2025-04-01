@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="51px" viewBox="0 0 50 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 51 49.387 51 49.387 0.361 0 0.361"></polygon>
+    </defs>
+    <g id="Final-design-v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Page---Employers" transform="translate(-934.000000, -998.000000)">
+            <g id="Page-1" transform="translate(934.000000, 997.000000)">
+                <polygon id="Fill-1" fill="#EAB8AC" points="0 23.6236 49.387 23.6236 49.387 19.9856 0 19.9856"></polygon>
+                <g id="Group-26" transform="translate(0.000000, 0.638600)">
+                    <path d="M18.9613,4.6165 L14.8983,8.6795 L12.8663,6.6475 C11.7443,5.5255 11.7443,3.7065 12.8663,2.5845 C13.9883,1.4625 15.8073,1.4625 16.9293,2.5845 L18.9613,4.6165 Z" id="Fill-2" fill="#A0A0A0"></path>
+                    <path d="M14.3495,1.8743 L12.2095,4.0153 L11.1395,2.9443 C10.5485,2.3533 10.5485,1.3953 11.1395,0.8053 C11.7305,0.2133 12.6885,0.2133 13.2795,0.8053 L14.3495,1.8743 Z" id="Fill-4" fill="#A0A0A0"></path>
+                    <path d="M7.6361,9.0765 C7.6361,10.1455 6.7691,11.0135 5.6991,11.0135 C4.6301,11.0135 3.7621,10.1455 3.7621,9.0765 C3.7621,8.0075 4.6301,7.1395 5.6991,7.1395 C6.7691,7.1395 7.6361,8.0075 7.6361,9.0765" id="Fill-6" fill="#A0A0A0"></path>
+                    <path d="M12.4769,19.3988 L6.1659,19.3988 L6.1659,17.4968 C6.1659,16.9238 6.6309,16.4598 7.2039,16.4598 L11.4399,16.4598 C12.0129,16.4598 12.4769,16.9238 12.4769,17.4968 L12.4769,19.3988 Z" id="Fill-8" fill="#A0A0A0"></path>
+                    <path d="M6.6151,7.9564 L11.5261,3.2324" id="Stroke-10" stroke="#A0A0A0"></path>
+                    <path d="M6.1664,10.3958 L9.5074,17.0908" id="Stroke-12" stroke="#A0A0A0"></path>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-15"></g>
+                    <polygon id="Fill-14" fill="#FFCAC1" mask="url(#mask-2)" points="24.234 11.558 38.238 11.558 38.238 7.667 24.234 7.667"></polygon>
+                    <polygon id="Fill-16" fill="#668D8B" mask="url(#mask-2)" points="26.049 15.453 40.053 15.453 40.053 11.562 26.049 11.562"></polygon>
+                    <polygon id="Fill-17" fill="#E7F2ED" mask="url(#mask-2)" points="24.493 19.347 38.497 19.347 38.497 15.456 24.493 15.456"></polygon>
+                    <polygon id="Fill-18" fill="#D38E7F" mask="url(#mask-2)" points="2.5868 51.0003 6.1148 51.0003 7.1728 36.6543 1.6468 36.6543"></polygon>
+                    <polygon id="Fill-19" fill="#E0AA9B" mask="url(#mask-2)" points="1.646 36.958 15.286 36.958 15.286 22.955 1.646 22.955"></polygon>
+                    <path d="M5.8207,29.7757 L11.1127,29.7757" id="Stroke-20" stroke="#D38E7F" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+                    <polygon id="Fill-21" fill="#D38E7F" mask="url(#mask-2)" points="47.035 51.0003 43.507 51.0003 42.449 36.6543 47.975 36.6543"></polygon>
+                    <polygon id="Fill-22" fill="#E0AA9B" mask="url(#mask-2)" points="34.335 36.958 47.975 36.958 47.975 22.955 34.335 22.955"></polygon>
+                    <path d="M38.5096,29.7757 L43.8016,29.7757" id="Stroke-23" stroke="#D38E7F" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+                    <polygon id="Fill-24" fill="#E0AA9B" mask="url(#mask-2)" points="14.566 30.128 35.905 30.128 35.905 22.955 14.566 22.955"></polygon>
+                    <path d="M22.2435,26.5413 L27.5355,26.5413" id="Stroke-25" stroke="#D38E7F" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

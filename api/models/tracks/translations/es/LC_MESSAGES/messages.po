@@ -1,0 +1,233 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: es\n"
+
+msgid "track_config_description_adoption"
+msgstr "Para las familias que consideran la adopción y necesitan apoyo desde la gestión de los pasos del proceso hasta llevar a su hijo a casa."
+
+msgid "track_config_description_breast_milk_shipping"
+msgstr "Si viajas por trabajo mientras realizas la extracción de leche, asegúrate de que esta llegue de manera segura a tu bebé."
+
+msgid "track_config_description_egg_freezing"
+msgstr "Infórmate sobre la congelación de óvulos y habla con expertos para planificar tu futuro reproductivo, con sugerencias personalizadas en cada paso del proceso."
+
+msgid "track_config_description_fertility"
+msgstr "Soporte completo para planificar o intentar tener un bebé, con acceso 24/7 a especialistas en intentos de concepción, fertilidad e IUI/FIV, además de clases y artículos especializados."
+
+msgid "track_config_description_general_wellness_generic"
+msgstr "Salud mental, salud física, orientación profesional y anticonceptivos a demanda, ya sea que estés planeando formar una familia o no."
+
+msgid "track_config_description_menopause"
+msgstr "Nuestros especialistas están aquí para apoyar tu bienestar físico y emocional en cada etapa (y síntoma) de la menopausia y salud en la mediana edad."
+
+msgid "track_config_description_parenting_and_pediatrics"
+msgstr "Aumenta tu confianza como padre y aprende sobre el desarrollo de tus hijos con la ayuda de nuestros expertos en crianza, para padres de niños de 1 año en adelante."
+
+msgid "track_config_description_partner_fertility"
+msgstr "Acceso a expertos en fertilidad, recursos y apoyo para la salud mental si tu pareja considera o sigue tratamientos de IUI o FIV."
+
+#, fuzzy
+msgid "track_config_description_partner_newparent"
+msgstr "Acceso a expertos en cuidado infantil, recursos, salud mental y apoyo profesional para las parejas de personas que dieron a luz en el último año."
+
+msgid "track_config_description_partner_newparent_168_days"
+msgstr "Acceso a expertos en cuidado infantil, recursos, salud mental y apoyo profesional para las parejas de personas que dieron a luz en los últimos seis meses."
+
+msgid "track_config_description_partner_newparent_90_days"
+msgstr "Acceso a expertos en cuidado infantil, recursos, salud mental y apoyo profesional para las parejas de personas que dieron a luz en los últimos tres meses."
+
+msgid "track_config_description_partner_pregnant"
+msgstr "Soporte a demanda, plan de estudios semanal y personalizado, y clases virtuales para apoyar a personas con parejas embarazadas."
+
+#, fuzzy
+msgid "track_config_description_postpartum"
+msgstr "Apoyo durante el primer año de tu bebé, incluidos consultores de lactancia, especialistas en sueño infantil y guías profesionales para ayudarte a volver al trabajo."
+
+msgid "track_config_description_postpartum_168_days"
+msgstr "Apoyo durante los primeros seis meses de tu bebé, incluidos consultores de lactancia, especialistas en sueño infantil y guías profesionales para ayudarte a volver al trabajo."
+
+msgid "track_config_description_postpartum_90_days"
+msgstr "Apoyo durante los primeros tres meses de tu bebé, incluidos consultores de lactancia, especialistas en sueño infantil y guías profesionales para ayudarte a volver al trabajo."
+
+#: models/tracks/track.py:223
+msgid "track_config_description_pregnancy"
+msgstr "Soporte a demanda, plan de estudios semanal y personalizado, y clases virtuales para apoyar tu recorrido de embarazo."
+
+msgid "track_config_description_pregnancy_options"
+msgstr "Salud mental, salud física, orientación profesional y asesoramiento sobre opciones de embarazo, ya sea que planees o no formar una familia."
+
+#, fuzzy
+msgid "track_config_description_pregnancyloss"
+msgstr "Apoyo y comunidad de salud mental para ayudar a sobrellevar la pérdida y el duelo, desde el aborto espontáneo hasta la pérdida de un bebé."
+
+msgid "track_config_description_sponsored"
+msgstr "Soporte a demanda, plan de estudios semanal y personalizado, y clases virtuales para apoyar tu recorrido de embarazo."
+
+msgid "track_config_description_surrogacy"
+msgstr "Para las familias que consideran la subrogación y necesitan apoyo desde la elección de una gestante subrogada hasta la gestión de esta relación, apoyo emocional y más."
+
+msgid "track_config_description_trying_to_conceive"
+msgstr "Apoyo para todas tus necesidades de salud reproductiva con orientación y recursos especializados para mejorar tus posibilidades de embarazarte."
+
+msgid "track_config_display_description_i_have_experienced_a_loss"
+msgstr "Tuve una pérdida"
+
+msgid "track_config_display_description_i_have_given_birth"
+msgstr "Di a luz"
+
+#: models/tracks/track.py:256
+msgid "track_config_display_description_im_no_longer_trying_to_conceive"
+msgstr "Ya no estoy intentando concebir"
+
+msgid "track_config_display_description_im_pregnant"
+msgstr "Tengo un embarazo"
+
+msgid "track_config_display_description_im_trying_to_conceive"
+msgstr "Estoy tratando de concebir"
+
+msgid "track_config_display_description_my_partner_has_given_birth"
+msgstr "Mi pareja dio a luz"
+
+msgid "track_config_display_description_we_have_experienced_a_loss"
+msgstr "Tuvimos una pérdida"
+
+msgid "track_config_display_length_12_months"
+msgstr "12 meses"
+
+msgid "track_config_display_length_3_months"
+msgstr "3 meses"
+
+msgid "track_config_display_length_annual_renewal_up_to_age_10"
+msgstr "Renovación anual hasta los 10 años"
+
+msgid "track_config_display_length_up_to_12_months"
+msgstr "Hasta 12 meses"
+
+#: models/tracks/track.py:220
+msgid "track_config_display_length_up_to_9_months"
+msgstr "Hasta 9 meses"
+
+msgid "track_config_display_name_adoption"
+msgstr "Adopción"
+
+msgid "track_config_display_name_breast_milk_shipping"
+msgstr "Transporte de leche materna"
+
+msgid "track_config_display_name_egg_freezing"
+msgstr "Congelación de óvulos"
+
+msgid "track_config_display_name_fertility"
+msgstr "Fertilidad"
+
+msgid "track_config_display_name_general_wellness"
+msgstr "Bienestar general"
+
+msgid "track_config_display_name_generic"
+msgstr "Maven Access"
+
+msgid "track_config_display_name_health_plan"
+msgstr "Plan de salud"
+
+msgid "track_config_display_name_loss_support"
+msgstr "Apoyo en la pérdida"
+
+msgid "track_config_display_name_menopause"
+msgstr "Menopausia y salud en la mediana edad"
+
+msgid "track_config_display_name_parenting_pediatrics"
+msgstr "Crianza y pediatría"
+
+msgid "track_config_display_name_partner_fertility"
+msgstr "Fertilidad de la pareja"
+
+msgid "track_config_display_name_partner_postpartum"
+msgstr "Posparto para la pareja"
+
+msgid "track_config_display_name_partner_pregnancy"
+msgstr "Embarazo de la pareja"
+
+msgid "track_config_display_name_postpartum"
+msgstr "Posparto"
+
+#: models/tracks/track.py:217
+msgid "track_config_display_name_pregnancy"
+msgstr "Embarazo"
+
+msgid "track_config_display_name_pregnancy_options"
+msgstr "Opciones de embarazo"
+
+msgid "track_config_display_name_surrogacy"
+msgstr "Maternidad subrogada"
+
+msgid "track_config_display_name_trying_to_conceive"
+msgstr "Intentar concebir"
+
+#: models/tracks/track.py:222
+msgid "track_config_intro_message"
+msgstr "¡Hola! Te damos la bienvenida a Maven.\n\nSoy tu Maven Care Advocate. Considerame tu guía personal. Puedo responder cualquier pregunta, en cualquier momento, y recomendarte a los mejores profesionales dentro y fuera de Maven.\n\nMe encantaría que hagamos una rápida videollamada de 15 minutos para mostrarte Maven. Solo responde a este mensaje con el día y la hora que mejor te convengan.\n\n¡Espero conocerte pronto!"
+
+msgid "track_config_intro_message_adoption_breast_milk_shipping_egg_freezing_fertility_surrogacy"
+msgstr "¡Hola! Te damos la bienvenida.\n\nSoy tu Care Advocate y estoy aquí para hacer tu vida más fácil en todo lo que pueda.\n\nMe encantaría guiarte sobre cómo aprovechar al máximo tus beneficios gratuitos de Maven y darte recomendaciones personales según tus necesidades. Reserva una cita por videollamada conmigo y, si no ves un horario que te convenga, simplemente avísame. Si no puedes programar una cita en este momento, solo recuerda que puedes contactarme por mensaje aquí en cualquier momento.\n\n¡Espero que charlemos pronto!"
+
+#: models/tracks/track.py:222
+msgid "track_config_intro_message_pregnancy_menopause_postpartum"
+msgstr "¡Hola! Te damos la bienvenida a Maven.\n\nSoy tu Care Advocate de Maven. Piensa en mí como tu guía personal y defensor; estoy aquí para responder cualquier pregunta, en cualquier momento. Puedo recomendarte los mejores profesionales dentro de Maven y fuera que acepten tu seguro, así como responder cualquier pregunta sobre los beneficios de tu empresa.\n\nMe encantaría tener una rápida videollamada de 10 minutos para mostrarte lo que es Maven. Solo responde a este mensaje con un día y una hora que te convengan.\n\n¡Espero que charlemos pronto!"
+
+msgid "track_config_label_health_plan"
+msgstr "Plan de salud"
+
+msgid "track_config_label_i_have_a_child_between_the_ages_of_1_and_10"
+msgstr "Tengo un hijo de entre 1 y 10 años"
+
+msgid "track_config_label_i_just_gave_birth"
+msgstr "Acabo de dar a luz"
+
+msgid "track_config_label_i_want_support_on_my_menopause_journey"
+msgstr "Quiero apoyo en mi recorrido por la menopausia"
+
+msgid "track_config_label_i_want_to_freeze_my_eggs"
+msgstr "Quiero congelar mis óvulos"
+
+msgid "track_config_label_i_want_to_get_pregnant_within_the_next_year"
+msgstr "Quiero embarazarme dentro del próximo año"
+
+msgid "track_config_label_i_want_to_manage_my_reproductive_health_and_overall_wellness"
+msgstr "Quiero manejar mi salud reproductiva y bienestar general"
+
+msgid "track_config_label_im_adopting"
+msgstr "Adoptaré"
+
+msgid "track_config_label_im_breastfeeding"
+msgstr "Estoy en lactancia"
+
+#: models/tracks/track.py:268
+msgid "track_config_label_im_pregnant"
+msgstr "Tengo un embarazo"
+
+msgid "track_config_label_im_undergoing_or_considering_iui_ivf"
+msgstr "Estoy sometiéndome a la IUI/FIV o la estoy considerando"
+
+msgid "track_config_label_im_using_a_surrogate"
+msgstr "Cuento con una gestante subrogada"
+
+msgid "track_config_label_ive_experienced_a_loss"
+msgstr "Tuve una pérdida"
+
+msgid "track_config_label_my_partner_is_pregnant"
+msgstr "Mi pareja está embarazada"
+
+msgid "track_config_label_my_partner_is_undergoing_or_considering_iui_ivf"
+msgstr "Mi pareja está sometiéndose a la IUI/FIV o la está considerando"
+
+msgid "track_config_label_my_partner_just_gave_birth"
+msgstr "Mi pareja acaba de dar a luz"
+
+msgid "track_config_track_unavailable_for_transition_message_pregnancy"
+msgstr "¡Felicidades por tu embarazo! Envía un mensaje a tu Care Advocate para saber más sobre el apoyo para la maternidad de Maven."

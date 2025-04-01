@@ -1,0 +1,2 @@
+Check: If a new table is created, it should have a primary key column called `id`.
+Fix: Please add "id" column as your primary key if the check fails.

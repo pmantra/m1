@@ -1,0 +1,111 @@
+<section class="intro-2-panel landing-contact clearfix">
+	<div class="panel-l span-full">
+	</div>
+
+	<div class="panel-r span-full">
+		<div class="panel-content">
+			<div class="enterprise-form">
+				<h5>{Whitepaper}</h5>
+				<h2>The Shifting Paradigm for Maternity Benefits</h2>
+				<p>Many employers have recognized maternity benefits as an area where more attention is needed, but the baseline level of support from benefits program typically remains low. Download our whitepaper to learn exactly where current maternity offerings fall short and what top companies are doing to address this key area.</p>
+
+				<h3>In this report, we’ll outline:</h3>
+				<ul>
+					<li>Where current gaps in maternity care exist </li>
+					<li>What cutting edge benefits programs are offering</li>
+					<li>Where we see maternity benefits going in the future</li>
+				</ul>
+				<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" name="enterpriseForm" class="mvn-form" style="max-width: 100%;">
+					<input type=hidden name="oid" value="00D36000000ZtJy">
+					<input type=hidden name="retURL" value="http://mavenclinic.com/thank-you/shifting-paradigm">
+					<section class="form-section">
+						<div class="form-elements-container">
+							<div class="mvn-input" ng-class="{ 'has-content': entForm.first_name }">
+								<input id="first_name" type="text" class="mvn-form-input" name="first_name" ng-model="entForm.first_name" required="required" />
+								<label class="mvn-form-label" style="width: 60%;">First name</label>
+							</div>
+							<div id="last_name" class="mvn-input" ng-class="{ 'has-content': entForm.last_name  }">
+								<input type="text" class="mvn-form-input" name="last_name" ng-model="entForm.last_name" required="required" />
+								<label class="mvn-form-label" style="width: 60%;">Last name</label>
+							</div>
+						</div>
+						<div class="form-elements-container">
+							<div class="mvn-input full-width" ng-class="{ 'has-content': entForm.email  }">
+								<input id="email" type="text" class="mvn-form-input" name="email" ng-model="entForm.email" required="required" />
+								<label class="mvn-form-label">Your email address</label>
+							</div>
+						</div>
+
+						<div class="form-elements-container">
+							<div class="mvn-input full-width" ng-class="{ 'has-content': entForm.company_name  }">
+								<input id="company" type="text" class="mvn-form-input" name="company" ng-model="entForm.company_name" required="required" />
+								<label class="mvn-form-label">Organization name</label>
+							</div>
+						</div>
+						
+						<div class="form-elements-container">
+							<div class="mvn-input" ng-class="{ 'has-content': entForm.position  }">
+								<input id="title" type="text" class="mvn-form-input" name="title" ng-model="entForm.position" required="required" />
+								<label class="mvn-form-label" style="width: 60%;">Position</label>
+							</div>
+							
+							<div class="mvn-select" ng-class="">
+								<label for="00N3600000SLzzp">Company size</label>
+								<select id="00N3600000SLzzp" name="00N3600000SLzzp" title="Employee Range" required="required">
+								<option value="" selected="selected" disabled="disabled">–select one–</option>
+								<option value="1-100">1-100</option>
+								<option value="101-1,000">101-1,000</option>
+								<option value="1,001-20,000">1,001-20,000</option>
+								<option value="20,000+">20,000+</option>
+								</select><br>
+							</div>
+							
+						</div>
+						
+						<div class="form-elements-container hidden">
+							<input type="" id="00N3600000SNXrh" name="00N3600000SNXrh" ng-init="entForm.lead_source='shifting_paradigm_whitepaper_download' "
+							ng-value="entForm.lead_source" />
+							 
+							 <input type="" id="00N3600000SNXrm" name="00N3600000SNXrm"
+								 ng-model="trackedParams.install_source" />
+							 
+							 <input type="" id="00N3600000SLsnp" name="00N3600000SLsnp"
+								 ng-model="trackedParams.install_content" />
+							 
+							 <input type="" id="00N3600000SLsoJ" name="00N3600000SLsoJ"
+								 ng-model="trackedParams.install_ad_unit" />
+							 
+							 <input type="" id="00N3600000SNXrc" name="00N3600000SNXrc"
+								 ng-model="trackedParams.http_page_referrer" />
+							
+							<input type="" id="00N3600000Sip2Z" name="00N3600000Sip2Z"
+							 ng-model="trackedParams.install_campaign" />
+							
+							<select id="00N3600000Rx1k2" name="00N3600000Rx1k2" title="Inbound/Outbound"><option value="">--None--</option><option value="Inbound" selected>Inbound</option><option value="Outbound">Outbound</option></select>
+							
+							<select id="00N3600000SipDw" name="00N3600000SipDw" title="From Web?"><option value="">--None--</option><option value="No">No</option><option value="Yes" selected>Yes</option>
+							</select>
+						</div>
+						<div class="form-actions centered">
+							<button type="submit" class="btn btn-cta" ng-class="{'disabled' : enterpriseForm.$invalid || entFormLoading }">
+								<span ng-if="!entFormLoading">Request whitepaper</span>
+								<span ng-if="entFormLoading">Please wait...</span>
+							</button>
+						</div>
+					</section>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+<section class="center">
+	<div>
+		<div class="content-wrap">
+			<h2>Want to learn more about Maven's maternity benefits offering?</h2>
+			<p><a class="btn btn-cta" href="" ng-click="openEntContact()">Schedule a demo</a></p>
+		</div>
+	</div>
+</section>

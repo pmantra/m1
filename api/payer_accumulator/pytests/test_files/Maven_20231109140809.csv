@@ -1,0 +1,3 @@
+MemberID,MemberFirstName,MemberLastName,MemberDateofBirth,CalendarYearOfAccum,DateOfService,"InNetworkIndividualDeductibleAppliedby""Vendor""","InNetworkFamilyDeductibleAppliedby""Vendor""","InNetworkIndividualOOPAppliedby""Vendor""","InNetworkFamilyOOPAppliedby""Vendor""","OutOfNetworkIndividualDeductibleAppliedby""Vendor""","OutOfNetworkFamilyDeductibleAppliedby""Vendor""","OutOfNetworkIndividualOOPAppliedby""Vendor""","OutOfNetworkFamilyOOPAppliedby""Vendor""",Notes,TypeOfClaim
+U12345678,ALICE,PAUL,01/01/2000,2023,01/15/2023,123.00,,123.90,,,,,,,New
+U12345678,ALICE,PAUL,01/01/2000,2023,03/15/2023,-100.00,,-100.00,,,,,,,Reversal 

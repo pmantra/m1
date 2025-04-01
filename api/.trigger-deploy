@@ -1,0 +1,6 @@
+# Usage: edit this file to trigger application deploy on merge
+# (BUMP) ..........
+
+#deploy me
+#deploy me with an edi file
+#deploy me with admin changes

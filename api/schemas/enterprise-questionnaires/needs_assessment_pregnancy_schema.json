@@ -1,0 +1,249 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://www.mavenclinic.com/_app_support/needs_assessment_preganancy_schema.json",
+  "title": "Schema for Pregnancy Needs Assessment Enterprise Questionnaire",
+  "definitions": {
+    "answer_yes_no": {
+      "oneOf": [
+        {"type": "string", "enum": ["yes", "no"]},
+        {"type": "null"}
+      ]
+    },
+    "answer_how_many": {
+      "oneOf": [
+        {"type": "number", "minimum": 0, "maximum": 20},
+        {"type": "null"}
+      ]
+    },
+    "answer_how_old": {
+      "oneOf": [
+        {"type": "number", "minimum": 18, "maximum": 100},
+        {"type": "null"}
+      ]
+    },
+    "answer_height_weight": {
+      "oneOf": [
+        {"type": "number", "minimum": 0, "maximum": 400},
+        {"type": "string"},
+        {"type": "null"}
+      ]
+    },
+    "answer_free_text": {
+      "oneOf": [
+        {"type": "string"},
+        {"type": "null"}
+      ]
+    }
+  },
+
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 20,
+      "uniqueItems": true,
+      "items": [
+        {"type": "string", "title": "How old are you?"},
+        {"type": "string", "title": "How many times have you been pregnant?"},
+        {"type": "string", "title": "How many full term babies have you had?"},
+        {"type": "string", "title": "How many premature babies have you had?"},
+        {"type": "string", "title": "How many abortions have you had?"},
+        {"type": "string", "title": "How many miscarriages have you had?"},
+        {
+          "type": "object",
+          "properties": {
+            "parent": {"type": "string", "title": "Do you currently have children?"},
+            "yes": {"type": "string", "title": "If yes, what kind of delivery did you have?"}
+          }
+        },
+        {"type": "string", "title": "How many babies are you carrying?"},
+        {"type": "string", "title": "Height pre-pregnancy"},
+        {"type": "string", "title": "Weight pre-pregnancy"},
+        {
+          "type": "object",
+          "properties": {
+            "parent": {"type": "string", "title": "Going into the pregnancy, did you have any pre-existing medical conditions?"},
+            "yes": {"type": "string", "title": "If yes, what were they?"}
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parent": {"type": "string", "title": "Have you experienced any medical issues, complications or new health issues during this pregnancy?"},
+            "yes": {"type": "string", "title": "If yes, what were the medical issues or complications?"}
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parent": {"type": "string", "title": "Are you taking any medications?"},
+            "yes": {"type": "string", "title": "If yes, what are the medications?"}
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parent": {"type": "string", "title": "Do you have a family history of mental health issues?"},
+            "yes": {"type": "string", "title": "If yes, what type of mental health issues?"}
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parent": {"type": "string", "title": "Do you have a personal history of any mental health issues?"},
+            "yes": {"type": "string", "title": "If yes, what type of mental health issues?"}
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parent": {"type": "string", "title": "Have you sought mental health treatment in last 6 months?"},
+            "yes": {"type": "string", "title": "If yes, what type of mental health treatment did you receive?"}
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parent": {"type": "string", "title": "Did you use fertility treatments to get pregnant?"},
+            "yes": {"type": "string", "title": "If yes, what kind of treatments?"}
+          }
+        },
+        {"type": "string", "title": "What kind of birth do you want?"},
+        {"type": "string", "title": "What type of care is most exciting to you about what Maven offers?"},
+        {"type": "string", "title": "Would you your spouse be interested to receive information from Maven?"}
+      ]
+    },
+
+    "answers" :{
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 20,
+      "uniqueItems": false,
+      "items": [
+        {"title": "How old are you?", "$ref": "#/definitions/answer_how_old"},
+        {"title": "How many times have you been pregnant?", "$ref": "#/definitions/answer_how_many"},
+        {"title": "How many full term babies have you had?", "$ref": "#/definitions/answer_how_many"},
+        {"title": "How many premature babies have you had? ", "$ref": "#/definitions/answer_how_many"},
+        {"title": "How many abortions have you had?", "$ref": "#/definitions/answer_how_many"},
+        {"title": "How many miscarriages have you had?", "$ref": "#/definitions/answer_how_many"},
+        {
+          "type": "object",
+          "title": "Do you currently have children?",
+          "properties": {
+            "answer": {"$ref": "#/definitions/answer_yes_no"},
+            "yes": {"type": "string", "enum": ["Vaginal", "C-Section", "VBAC"]}
+          },
+          "required": ["answer"]
+        },
+        {"title": "How many babies are you carrying?", "$ref": "#/definitions/answer_how_many"},
+        {"title": "Height pre-pregnancy", "$ref": "#/definitions/answer_height_weight"},
+        {"title": "Weight pre-pregnancy", "$ref": "#/definitions/answer_height_weight"},
+        {
+          "type": "object",
+          "title": "Going into the pregnancy, did you have any pre-existing medical conditions?",
+          "properties": {
+            "answer": {"$ref": "#/definitions/answer_yes_no"}
+          },
+          "required": ["answer"]
+        },
+        {
+          "type": "object",
+          "title": "Have you experienced any medical issues, complications or new health issues during this pregnancy?",
+          "properties": {
+            "answer": {"$ref": "#/definitions/answer_yes_no"},
+            "yes": {
+              "title": "If yes, what were the medical issues or complications",
+              "anyOf": [
+                {"type": "string", "enum": ["bleeding", "hypertension", "gestational diabetes", "placenta previa"]},
+                {"type": "string", "title": "enum['other']"},
+                {"type": "null"}
+              ]
+            }
+          },
+          "required": ["answer"]
+        },
+        {
+          "type": "object",
+          "title": "Are you taking any medications?",
+          "properties": {
+            "answer": {"$ref": "#/definitions/answer_yes_no"},
+            "yes": {
+              "title": "If yes, what are the medications?",
+              "$ref": "#/definitions/answer_free_text"
+            }
+          },
+          "required": ["answer"]
+        },
+        {
+          "type": "object",
+          "title": "Do you have a family history of mental health issues?",
+          "properties": {
+            "answer": {"$ref": "#/definitions/answer_yes_no"},
+            "yes": {
+              "title": "What type of mental health issues?",
+              "anyOf": [
+                {"type": "string", "enum": ["Depression", "Bipolar", "PPD", "Anxiety"]},
+                {"type": "string", "title": "enum['other]"},
+                {"type": "null"}
+              ]}
+          },
+          "required": ["answer"]
+        },
+        {
+          "type": "object",
+          "title": "Have you sought mental health treatment in last 6 months?",
+          "properties": {
+            "answer": {"$ref": "#/definitions/answer_yes_no"},
+            "yes": {
+              "title": "What type of mental health treatment did you receive?",
+              "$ref": "#/definitions/answer_free_text"
+            }
+          },
+          "required": ["answer"]
+        },
+        {
+          "type": "object",
+          "title": "Did you use fertility treatments to get pregnant?",
+          "properties": {
+            "answer": {"$ref": "#/definitions/answer_yes_no"},
+            "yes": {
+              "title": "What kind of treatments?",
+              "anyOf": [
+                {"type": "string", "enum": ["IUI", "IVF"]},
+                {"type": "string", "title": "enum['other]"},
+                {"type": "null"}
+              ]
+            }
+          },
+          "required": ["answer"]
+        },
+        {
+          "type": "object",
+          "title": "What kind of birth do you want?",
+          "properties": {
+            "answer": {"$ref": "#/definitions/answer_yes_no"},
+            "yes": {
+              "anyOf": [
+                {"type": "string", "enum": ["Vaginal", "C-section", "VBCAC"]},
+                {"type": "null"}
+              ]
+            }
+          },
+          "required": ["answer"]
+        },
+        {
+          "title": "What type of care is most exciting to you about what Maven offers?",
+          "$ref": "#/definitions/answer_free_text"
+        },
+        {
+          "title": "Would you your spouse be interested to receive information from Maven?",
+          "$ref": "#/definitions/answer_yes_no"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<ul class="clear forum-landing-communities-header content">
+	<li ng-repeat="cat in $ctrl.cats | filter: { special: '!' + true }">
+		<a ui-sref="app.forum.community({ community : cat.name })">
+			<div class="forum-landing-community-title {{ cat.name }}">
+				<div class="forum-landing-community-image">
+					<img ng-src="{{ cat.image_url }}" alt="{{ cat.display_name }}" width="50px" height="50px" />
+				</div>
+				<div class="p">{{ cat.display_name }}</div>
+			</div>
+		</a>
+	</li>
+</ul>

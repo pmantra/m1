@@ -1,0 +1,13 @@
+dag_id: send_appointment_completion_event
+schedule: "0 */4 * * *"
+task_id: send_appointment_completion_event_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.care_management.send_appointment_completion_event import send_appointment_completion_event_job; send_appointment_completion_event_job()"
+team_namespace: care_management
+service_namespace: assessments
+catchup: "False"
+start_year: 2024
+start_month: 10
+start_day: 11

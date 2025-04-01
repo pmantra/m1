@@ -1,0 +1,172 @@
+[
+  {
+    "type": "payer",
+    "name": "premera"
+  },
+  {
+    "type": "organization",
+    "name": "Payer Accumulation Test Org",
+    "activated_at": "2021-01-01 00:00:00",
+    "alegeus_employer_id": "MVN12e456f8"
+  },
+  {
+    "type": "reimbursement_organization_settings",
+    "direct_payment_enabled": true,
+    "deductible_accumulation_enabled": true,
+    "started_at": "2 months ago",
+    "organization": "Payer Accumulation Test Org"
+  },
+  {
+    "type": "reimbursement_category",
+    "organization": "Payer Accumulation Test Org",
+    "label": "Payer Accumulation Fertility",
+    "reimbursement_request_category_maximum": 100000,
+    "reimbursement_plan": {
+      "alegeus_plan_id": "PAYERFERTLPBP"
+    }
+  },
+  {
+    "type": "employer_health_plan",
+    "organization": "Payer Accumulation Test Org",
+    "name": "Payer Accumulation Test Premera",
+    "start_date":"2024-01-01",
+    "end_date": "2030-12-30",
+    "payer": "premera",
+    "ind_deductible_limit": 10000,
+    "ind_oop_max_limit": 20000,
+    "fam_deductible_limit":  20000,
+    "fam_oop_max_limit": 50000,
+    "carrier_number": "11111",
+    "is_deductible_embedded": false,
+    "is_oop_embedded": false
+  },
+  {
+    "type": "user",
+    "organization_name": "Payer Accumulation Test Org",
+    "first_name": "Test User",
+    "last_name": "McTest",
+    "email": "test+mvnqa-payer_premera_test@mavenclinic.com",
+    "password": "simpleisawesome1*",
+    "date_of_birth": "1992-05-04",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  },
+  {
+    "type": "reimbursement_wallet",
+    "member": "test+mvnqa-payer_premera_test@mavenclinic.com",
+    "organization": "Payer Accumulation Test Org",
+    "state": "QUALIFIED",
+    "reimbursement_requests": [
+      {
+        "type": "reimbursement_request",
+        "organization": "Payer Accumulation Test Org",
+        "member": "test+mvnqa-payer_premera_test@mavenclinic.com",
+        "label": "Premera Accumulation Test Request",
+        "service_provider": "Dr. Test",
+        "amount": 10000,
+        "category": "Payer Accumulation Fertility",
+        "state": "NEW",
+        "service_start_date": "2 days ago",
+        "cost_sharing_category": "MEDICAL_CARE",
+        "procedure_type": "MEDICAL"
+      }
+    ]
+  },
+  {
+    "type": "member_health_plan",
+    "employer_health_plan_name": "Payer Accumulation Test Premera",
+    "user_email": "test+mvnqa-payer_premera_test@mavenclinic.com",
+    "subscriber_insurance_id": "123456789",
+    "subscriber_first_name": "Test User",
+    "subscriber_last_name": "McTest",
+    "subscriber_date_of_birth": "1980-12-01",
+    "patient_first_name": "Test",
+    "patient_last_name": "McTest",
+    "patient_date_of_birth": "1980-12-01",
+    "patient_sex": "female",
+    "patient_relationship": "cardholder"
+  },
+  {
+    "type": "cost_breakdown",
+    "user_email": "test+mvnqa-payer_premera_test@mavenclinic.com",
+    "total_member_responsibility": 10100,
+    "deductible": 10100,
+    "oop_applied": 10100,
+    "reimbursement_requests": [
+      {
+        "type": "reimbursement_request",
+        "organization": "Payer Accumulation Test Org",
+        "member": "test+mvnqa-payer_premera_test@mavenclinic.com",
+        "label": "Accumulation Test Reimbursement",
+        "service_provider": "Dr. Test",
+        "description": "Payer Accumulation Test Data",
+        "amount": 9900,
+        "category": "Payer Accumulation Fertility",
+        "state": "APPROVED",
+        "procedure_type": "MEDICAL",
+        "service_start_date": "42 hours ago",
+        "accumulation_mapping": {
+          "deductible": 10100,
+          "oop_applied": 10100
+        }
+      }
+    ]
+  },
+  {
+    "type": "cost_breakdown",
+    "user_email": "test+mvnqa-payer_premera_test@mavenclinic.com",
+    "total_member_responsibility": 25000,
+    "deductible": 20000,
+    "copay": 5000,
+    "oop_applied": 25000,
+    "treatment_procedures": [
+      {
+        "type": "treatment_procedure",
+        "user": "test+mvnqa-payer_premera_test@mavenclinic.com",
+        "procedure_name": "Accumulation Test Procedure",
+        "procedure_type": "MEDICAL",
+        "cost": 25000,
+        "status": "COMPLETED",
+        "fee_schedule": {
+          "name": "Accumulation Test Procedure Fee Schedule",
+          "type": "fee_schedule",
+          "fee_schedule_global_procedures": [
+            {
+              "name": "Accumulation Test Procedure",
+              "cost": 25000
+            }
+          ]
+        },
+        "fertility_clinic": {
+          "name": "Accumulation Test Fertility Clinic",
+          "affiliated_network": "Test Network",
+          "locations": [
+            {
+              "name": "Main",
+              "address_1": "123 Main St",
+              "city": "New York City",
+              "subdivision_code": "US-NY",
+              "postal_code": 10001,
+              "country_code": "US",
+              "phone_number": "5555555555",
+              "email": "test-clinic@maven.com"
+            }
+          ]
+        },
+        "start_date": "2024-01-01",
+        "completed_date": "02/02/2024 1:01:01",
+        "end_date": "2024-02-02",
+        "accumulation_mapping": {
+          "deductible": 25000,
+          "oop_applied": 25000
+        }
+      }
+    ]
+  },
+  {
+    "type": "accumulation_report",
+    "payer": "premera",
+    "add_all_unassigned_mappings": "true"
+  }
+]

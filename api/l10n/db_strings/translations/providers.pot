@@ -1,0 +1,37 @@
+# cancellation policy
+msgid "cancellation_policy_strict_name"
+msgstr ""
+
+msgid "cancellation_policy_moderate_name"
+msgstr ""
+
+msgid "cancellation_policy_flexible_name"
+msgstr ""
+
+msgid "cancellation_policy_conservative_name"
+msgstr ""
+
+# ca member transition
+msgid "ca_member_transition_template_farewell_message_body"
+msgstr ""
+
+msgid "ca_member_transition_template_followup_intro_message_body"
+msgstr ""
+
+msgid "ca_member_transition_template_hard_intro_message_body"
+msgstr ""
+
+msgid "ca_member_transition_template_soft_intro_message_body"
+msgstr ""
+
+msgid "ca_member_transition_template_ecpfarewell_message_body"
+msgstr ""
+
+msgid "ca_member_transition_template_followup_ecpintro_message_body"
+msgstr ""
+
+msgid "ca_member_transition_template_ucpfarewell_message_body"
+msgstr ""
+
+msgid "ca_member_transition_template_followup_ucpintro_message_body"
+msgstr ""

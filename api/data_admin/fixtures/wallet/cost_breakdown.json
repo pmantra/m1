@@ -1,0 +1,36 @@
+[
+  {
+    "type": "cost_breakdown",
+    "user_email": "test+staff@mavenclinic.com",
+    "treatment_procedures": [
+      {
+        "procedure_name": "misc-procedure-name",
+        "user": "test+staff@mavenclinic.com",
+        "cost": 100,
+        "start_date": "2023-01-01",
+        "end_date": "2023-12-30",
+        "fertility_clinic": {
+          "name": "Maven Test Clinic",
+          "locations": [
+            {
+              "name": "maven-location-1",
+              "address_1": "123 main st",
+              "city": "new york",
+              "subdivision_code": "1234",
+              "postal_code": "11213"
+            }
+          ]
+        },
+        "fee_schedule": {
+          "name": "maven-test-fee-schedule",
+          "fee_schedule_global_procedures": [
+            {
+              "name": "maven-test-global_procedure",
+              "cost": 303
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

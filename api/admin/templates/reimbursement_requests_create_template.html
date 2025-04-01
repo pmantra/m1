@@ -1,0 +1,49 @@
+{% extends 'admin/model/create.html' %}
+
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .select2-container, .select2-drop, .select2-search, .select2-search input {
+            width: auto !important;
+        }
+        textarea#description {
+            width: 80%;
+            height: 8em;
+        }
+        #extra_data h3 {
+            margin-top: 0px;
+        }
+        #custom_rate_form, #transaction_amount_form, #converted_amounts_form label {
+            text-align: left;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    {% block navlinks %}{{ super() }}{% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="span">
+                <h3>Wallet Data</h3>
+            </div>
+        </div>
+        {% if form.wallet.data %}
+            {% with wallet=form.wallet.data %}{% include '_reimbursment_request_wallet_data.html' %}{% endwith %}
+        {% else %}
+            (No Wallet Pre-provided.)
+        {% endif %}
+    <hr>
+        <div class="row">
+        <div class="span">
+            <h3>Reimbursement Request</h3>
+            <! -- main form -->
+            {% call lib.form_tag(form) %}
+                {{ lib.render_form_fields(form, form_opts=form_opts) }}
+                {{ lib.render_form_buttons(return_url, extra()) }}
+            {% endcall %}
+
+        </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,49 @@
+track_name,topic,sort_order
+pregnancy,Morning sickness,1
+pregnancy,Postpartum depression,2
+pregnancy,Breastfeeding,3
+pregnancy,Relationships,4
+pregnancy,Pregnancy sleep,5
+pregnancy,Infant health,6
+pregnancy,Stress and anxiety,7
+pregnancy,Infant sleep,8
+pregnancy,Prenatal health,9
+pregnancy,Returning to work,10
+pregnancy,Postpartum health,11
+fertility,Understanding infertility,1
+fertility,Timed intercourse,2
+fertility,Fertility clinics,3
+fertility,IUI,4
+fertility,IVF,5
+fertility,Costs and coverage,6
+fertility,Secondary infertility,7
+fertility,Mental and emotional health,8
+fertility,Health conditions and fertility,9
+fertility,Lifestyle and fertility,10
+adoption,Adoption process,1
+adoption,Domestic infant adoption,2
+adoption,International adoption,3
+adoption,Foster to adopt,4
+adoption,Older child adoption,5
+adoption,Mental health,6
+adoption,Children’s health,7
+adoption,Preparing for your child,8
+adoption,Adoption stories,9
+trying_to_conceive,Fertility,1
+trying_to_conceive,Timed intercourse,2
+trying_to_conceive,Tracking your cycle,3
+trying_to_conceive,Becoming pregnant,4
+trying_to_conceive,Reproductive health,5
+trying_to_conceive,General health,6
+trying_to_conceive,Lifestyle,7
+trying_to_conceive,Mental health,8
+trying_to_conceive,Relationships,9
+trying_to_conceive,Finances,10
+general_wellness,Reproductive health,1
+general_wellness,Birth control,2
+general_wellness,Health conditions,3
+general_wellness,General health,4
+general_wellness,Mental health,5
+general_wellness,Relationships,6
+general_wellness,Lifestyle,7
+general_wellness,Finances,8

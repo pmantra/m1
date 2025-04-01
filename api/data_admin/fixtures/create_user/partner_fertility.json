@@ -1,0 +1,13 @@
+[
+  {
+    "type": "user",
+    "organization_name": "Test Organization X",
+    "track": "partner_fertility",
+    "email_prefix": "mvnqa-partner.fert",
+    "password": "simpleisawesome1*",
+    "phase": "week-5",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

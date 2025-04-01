@@ -1,0 +1,12 @@
+[
+  {
+    "type": "organization",
+    "name": "Test Organization X"
+  },
+    {
+    "type": "organization_employee",
+    "organization_name": "Test Organization X",
+    "company_email": "test+orgemployeex@mavenclinic.com",
+    "date_of_birth": "2018-01-01"
+  }
+]

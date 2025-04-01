@@ -1,0 +1,302 @@
+.app-page-library {
+	.tab-nav,
+	.action-container {
+		width: 100%;
+	}
+
+	&.library-landing {
+		.app-page {
+			top: 0;
+		}
+	}
+
+	@include susy-breakpoint(0 $mobile-landscape-max) {
+		.card-container {
+			border-top: none;
+		}
+
+		.card-container,
+		.action-container {
+			padding: 0 1rem;
+		}
+		.page-header {
+			padding: 0 1rem;
+		}
+	}
+
+	@include susy-breakpoint($tablet) {
+		.card-container,
+		.action-container {
+			border-bottom: 1px solid $gray-xlt;
+			border-top: 1px solid $gray-xlt;
+		}
+	}
+
+	section {
+		@include susy-breakpoint($desktop-md) {
+			padding: 0;
+		}
+
+		&.featured {
+			padding: 0;
+
+			@include susy-breakpoint($tablet) {
+				padding-top: 1rem;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	section:last-child {
+		.card-container,
+		.action-container {
+			border-bottom: 1px solid $gray-xlt;
+		}
+	}
+
+	.card-container {
+		@include flexbox;
+
+		@include susy-breakpoint($tablet) {
+			@include flexbox(row, flex-start, space-between);
+			flex-wrap: wrap;
+
+			.featured {
+				width: 100%;
+			}
+		}
+	}
+
+	.ui-action {
+		@include ui-action;
+	}
+
+	.list-item-container {
+		* {
+			text-decoration: none;
+		}
+	}
+
+	.title-card {
+		padding: 2.5rem 0 1.5rem;
+		@include susy-breakpoint(0 $mobile-landscape-max) {
+			padding-left: 1rem;
+			padding-right: 1rem;
+
+			&.popular-now {
+				background-color: $secondary-2-lt;
+			}
+
+			&.explore-topics {
+				background-color: $secondary-3-lt;
+			}
+
+			&.explore-content {
+				background-color: $secondary-1-lt;
+			}
+		}
+	} // end title card
+
+	.featured-card {
+		position: relative;
+
+		@include susy-breakpoint($desktop-md) {
+			transition: 0.2s ease-in;
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+
+		.metadata {
+			@include flexbox(row, center, flex-start);
+			@include font-size(12);
+			color: $gray;
+			font-family: $font1-semibold;
+			line-height: auto;
+			text-transform: uppercase;
+
+			p,
+			.p {
+				margin: 0 0.5rem 0 0;
+			}
+		}
+
+		.secondary-metadata {
+			position: relative;
+
+			&:before {
+				content: ".";
+				position: absolute;
+				top: -3px;
+				left: -6px;
+			}
+		}
+
+		.card-title {
+			color: black;
+			margin-top: 0;
+
+			@include susy-breakpoint($tablet) {
+				@include font-size(32);
+			}
+		}
+
+		.image-container {
+			width: 100%;
+			height: auto;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		@include susy-breakpoint(0 $mobile-landscape-max) {
+			.image-container {
+				&:before,
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					top: 0;
+				}
+
+				&:before {
+					background-color: rgba(0, 0, 0, 0.1);
+				}
+
+				&:after {
+					background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 66%);
+				}
+			}
+
+			.card-body {
+				padding: 1rem;
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+
+				@include susy-breakpoint($tablet) {
+					padding: 2rem;
+				}
+			}
+
+			.metadata,
+			.card-title {
+				color: white;
+			}
+
+			.card-title {
+				margin: 0;
+			}
+		}
+
+		@include susy-breakpoint($tablet) {
+			.image-container {
+				//@include get-shadow(medium);
+				box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1); //dumb sass issue wont let use @extend within media query. so bandaid for now... sigh.
+
+				.card-image {
+					border-radius: 4px;
+				}
+			}
+			.card-body {
+				margin-top: 1rem;
+			}
+		}
+	} // end featured-card
+
+	&.filtered-page {
+		main {
+			position: relative;
+		}
+		main,
+		.filtered-page-header {
+			top: $mobileHeaderHeight;
+			@include susy-breakpoint($tablet) {
+				top: auto;
+			}
+		}
+		.filtered-page-header {
+			background-color: white;
+			height: $mobileHeaderHeight;
+			padding: 1rem;
+			pointer-events: all;
+			position: fixed;
+			text-align: center;
+			width: 100%;
+			background: white;
+			z-index: 1;
+			div {
+				position: relative;
+				margin: 0 auto;
+				max-width: $containerWidth;
+				@include flexbox(row, center, flex-start);
+			}
+			@include susy-breakpoint($tablet) {
+				margin-top: 2rem;
+				position: relative;
+			}
+
+			@include susy-breakpoint($desktop) {
+				padding: 1rem 0;
+				margin-top: 3rem;
+			}
+
+			.mobile-back {
+				@include flexbox(row, center, flex-start);
+				color: $primary;
+				position: absolute;
+				left: 1rem;
+				height: 100%;
+				padding: 0;
+				text-decoration: none;
+				top: 0;
+				width: 44px;
+				@include susy-breakpoint($tablet) {
+					left: 0;
+				}
+
+				&:before {
+					content: "";
+					background-image: url("/img/app/shared/back-arrow.png");
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					height: 21px;
+					width: 12px;
+					position: absolute;
+					left: 0;
+					top: 6px;
+				}
+
+				@include susy-breakpoint($desktop) {
+					padding-left: 1.25rem;
+
+					&:before {
+						height: 16px;
+						left: 0;
+					}
+				}
+			}
+
+			.page-title {
+				margin: 0 auto;
+			}
+
+			@include susy-breakpoint($desktop-md) {
+				border-bottom: 0;
+				position: relative;
+			}
+		}
+
+		@include susy-breakpoint(0 $mobile-landscape-max) {
+			.card-container {
+				border-top: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,86 @@
+<form name="$ctrl.enterpriseLeadForm" class="mvn-form">
+	<section class="form-section">
+		<div class="form-field-message error" ng-if="$ctrl.error.message">
+			<p class="center">
+				Sorry, there seems to be a problem. Check the information you've entered is correct and if you continue to have
+				problems, you can reach out to <a href="mailto:sales@mavenclinic.com">sales@mavenclinic.com</a> and we'll be
+				happy to help.
+			</p>
+		</div>
+		<div class="form-elements-container">
+			<div class="mvn-input" ng-class="{ 'has-content': $ctrl.enterpriseLeadForm.firstname }">
+				<input
+					type="text"
+					id="firstname"
+					class="mvn-form-input"
+					name="firstname"
+					ng-model="$ctrl.firstname"
+					required="required"
+				/>
+				<label class="mvn-form-label">First name</label>
+			</div>
+
+			<div id="lastname" class="mvn-input" ng-class="{ 'has-content': $ctrl.enterpriseLeadForm.lastname  }">
+				<input type="text" class="mvn-form-input" name="lastname" ng-model="$ctrl.lastname" required="required" />
+				<label class="mvn-form-label">Last name</label>
+			</div>
+		</div>
+		<div class="form-elements-container">
+			<div class="mvn-input full-width" ng-class="{ 'has-content': $ctrl.enterpriseLeadForm.email  }">
+				<input type="text" id="email" class="mvn-form-input" name="email" ng-model="$ctrl.email" required="required" />
+				<label class="mvn-form-label">Your email address</label>
+			</div>
+		</div>
+
+		<div class="form-elements-container">
+			<div class="mvn-input full-width" ng-class="{ 'has-content': $ctrl.enterpriseLeadForm.company  }">
+				<input
+					type="text"
+					id="company"
+					class="mvn-form-input"
+					name="company"
+					ng-model="$ctrl.company"
+					required="required"
+				/>
+				<label class="mvn-form-label">Organization name</label>
+			</div>
+		</div>
+
+		<div class="form-elements-container">
+			<div class="mvn-input" ng-class="{ 'has-content': $ctrl.enterpriseLeadForm.jobtitle  }">
+				<input
+					type="text"
+					id="jobtitle"
+					class="mvn-form-input"
+					name="jobtitle"
+					ng-model="$ctrl.jobtitle"
+					required="required"
+				/>
+				<label class="mvn-form-label">Position</label>
+			</div>
+
+			<div class="mvn-select select-container" ng-class="">
+				<label for="numemployees">Company size</label>
+				<select name="numemployees" ng-model="$ctrl.numemployees" title="Number of Employees" required="required">
+					<option value="" selected="selected" disabled="disabled">–select one–</option>
+					<option value="1-100">1-100</option>
+					<option value="101-1,000">101-1,000</option>
+					<option value="1,001-20,000">1,001-20,000</option>
+					<option value="20,000+">20,000+</option> </select
+				><br />
+			</div>
+		</div>
+
+		<div class="form-actions centered">
+			<button
+				type="submit"
+				ng-click="$ctrl.send()"
+				class="btn btn-cta"
+				ng-class="{'disabled' : $ctrl.enterpriseLeadForm.$invalid || $ctrl.loading }"
+			>
+				<span ng-if="!$ctrl.loading">Send</span>
+				<span ng-if="$ctrl.loading">Please wait...</span>
+			</button>
+		</div>
+	</section>
+</form>

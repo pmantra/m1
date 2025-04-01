@@ -1,0 +1,12 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="span8" style="margin-top:15px">
+        <h1>Email Domain Denylist</h1>
+        <p>Users won't be able to register with an email address that contains the domain specified here.</p>
+
+        {{ super() }}
+    </div>
+</div>
+{% endblock %}

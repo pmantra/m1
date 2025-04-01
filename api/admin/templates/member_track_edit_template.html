@@ -1,0 +1,69 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="span8">
+        {{ super() }}
+    </div>
+
+    <div class="span4" style="margin-top:15px">
+
+        <h3>Transitions</h3>
+        <h4>Read carefully before making changes!</h4>
+
+        <p>This form is used for standard transitions, such as fertility to pregnancy or loss,
+            or pregnancy to postpartum or loss.</p>
+
+        <p>If the target track isn't listed, it's not a configured transition from the current track.
+            You'll need to terminate this track, then use Enterprise Setup to start the new track.
+            Example: adoption to fertility, egg_freezing to surrogacy
+        </p>
+
+        <p>If transitioning to a maternity track, set the due date (for pregnancy)
+            or birth date (for postpartum) on the member's
+            <a href="{{member_profile_url}}">health profile</a> first.</p>
+
+        <p>To initiate a transition, check if the <code>Transitioning to</code> field is already set.
+            If so, you don't need to do anything. <br />
+            <b>Do not</b> check the "Force transition" box.
+            The user will be prompted to complete the assessments before starting their new track.</p>
+
+        <p>To "force" transition a user, check the Force checkbox.
+            This will immediately terminate their current track and put them in the new track.
+            The user will not be asked to take transitional or onboarding assessments.
+            This should be done rarely.</p>
+
+        {% if transitions %}
+            <form method="POST" action="/admin/actions/tracks/transition">
+                <input id="member_track_id" name="member_track_id" type="hidden" value={{model.id}}>
+
+                <label for="target">Select transition target</label>
+                <select id="target" name="target" label="Target" required>
+                    <option disabled selected value> -- select an option -- </option>
+                    {% for transition in transitions|sort(attribute='name') %}
+                    <option value={{transition.name}}>{{transition.name.capitalize()}}</option>>
+                    {% endfor %}
+                </select>
+                <label for="target">Select closure reason</label>
+                <select id="closure_reason_id" name="closure_reason_id" label="Closure Reason" required>
+                    <option disabled selected value> -- select an option -- </option>
+                    {% for closure_reason in track_change_reasons|sort(attribute='name') %}
+                        <option value={{closure_reason.id}}>
+                            {{ closure_reason.display_name_and_description }}
+                        </option>>
+                    {% endfor %}
+                </select>
+                <p>
+                    <label class="checkbox">
+                        <input name="force_transition" type="checkbox" />Force transition
+                    </label>
+                </p>
+
+                <p><input type="submit" class="btn btn-primary" value="Transition"></p>
+            </form>
+        {% else %}
+            <p><em>Cannot transition &mdash; no transitions found for current track!</em></p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

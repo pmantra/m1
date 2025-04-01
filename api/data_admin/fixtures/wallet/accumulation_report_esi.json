@@ -1,0 +1,136 @@
+[
+  {
+    "type": "payer",
+    "name": "cigna"
+  },
+  {
+    "type": "payer",
+    "name": "esi"
+  },
+  {
+    "type": "organization",
+    "name": "Payer Accumulation Test Org",
+    "activated_at": "2021-01-01 00:00:00",
+    "alegeus_employer_id": "MVN12e456f8"
+  },
+  {
+    "type": "reimbursement_organization_settings",
+    "direct_payment_enabled": true,
+    "deductible_accumulation_enabled": true,
+    "started_at": "2 months ago",
+    "organization": "Payer Accumulation Test Org"
+  },
+  {
+    "type": "reimbursement_category",
+    "organization": "Payer Accumulation Test Org",
+    "label": "Payer Accumulation Fertility",
+    "reimbursement_request_category_maximum": 100000,
+    "reimbursement_plan": {
+      "alegeus_plan_id": "PAYERFERTLPBP"
+    }
+  },
+  {
+    "type": "employer_health_plan",
+    "organization": "Payer Accumulation Test Org",
+    "name": "Payer Accumulation Test Cigna+ESI",
+    "start_date":"2024-01-01",
+    "end_date": "2030-12-30",
+    "payer": "cigna",
+    "ind_deductible_limit": 10000,
+    "ind_oop_max_limit": 20000,
+    "fam_deductible_limit":  20000,
+    "fam_oop_max_limit": 50000,
+    "carrier_number": "11111",
+    "is_deductible_embedded": false,
+    "is_oop_embedded": false,
+    "rx_integrated": false,
+    "group_id": "123456"
+  },
+  {
+    "type": "user",
+    "organization_name": "Payer Accumulation Test Org",
+    "first_name": "Test User",
+    "last_name": "McTest",
+    "email": "test+mvnqa-payer_esi_test@mavenclinic.com",
+    "password": "simpleisawesome1*",
+    "date_of_birth": "1992-05-04",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  },
+  {
+    "type": "reimbursement_wallet",
+    "member": "test+mvnqa-payer_esi_test@mavenclinic.com",
+    "organization": "Payer Accumulation Test Org",
+    "state": "QUALIFIED"
+  },
+  {
+    "type": "member_health_plan",
+    "employer_health_plan_name": "Payer Accumulation Test Cigna+ESI",
+    "user_email": "test+mvnqa-payer_esi_test@mavenclinic.com",
+    "subscriber_insurance_id": "12345678901",
+    "subscriber_first_name": "Test User",
+    "subscriber_last_name": "McTest",
+    "subscriber_date_of_birth": "1980-12-01",
+    "patient_first_name": "Test",
+    "patient_last_name": "McTest",
+    "patient_date_of_birth": "1980-12-01",
+    "patient_sex": "female",
+    "patient_relationship": "cardholder"
+  },
+  {
+    "type": "cost_breakdown",
+    "user_email": "test+mvnqa-payer_esi_test@mavenclinic.com",
+    "deductible": 5000,
+    "oop_applied": 5500,
+    "reimbursement_requests": [
+      {
+        "type": "reimbursement_request",
+        "organization": "Payer Accumulation Test Org",
+        "member": "test+mvnqa-payer_esi_test@mavenclinic.com",
+        "label": "Accumulation Test Reimbursement",
+        "service_provider": "RX Test",
+        "description": "Payer Accumulation Test RX 1",
+        "amount": 11100,
+        "category": "Payer Accumulation Fertility",
+        "state": "APPROVED",
+        "procedure_type": "PHARMACY",
+        "service_start_date": "42 hours ago",
+        "accumulation_mapping": {
+          "deductible": 5000,
+          "oop": 5500
+        }
+      }
+    ]
+  },
+  {
+    "type": "cost_breakdown",
+    "user_email": "test+mvnqa-payer_esi_test@mavenclinic.com",
+    "deductible": 0,
+    "oop_applied": 500,
+    "reimbursement_requests": [
+      {
+        "type": "reimbursement_request",
+        "organization": "Payer Accumulation Test Org",
+        "member": "test+mvnqa-payer_esi_test@mavenclinic.com",
+        "label": "Accumulation Test Reimbursement",
+        "service_provider": "RX Test",
+        "description": "Payer Accumulation Test RX 2",
+        "amount": 11100,
+        "category": "Payer Accumulation Fertility",
+        "state": "APPROVED",
+        "procedure_type": "PHARMACY",
+        "service_start_date": "42 hours ago",
+        "accumulation_mapping": {
+          "deductible": 0,
+          "oop": 500
+        }
+      }
+    ]
+  },
+  {
+    "type": "accumulation_report",
+    "payer": "esi",
+    "add_all_unassigned_mappings": "true"
+  }
+]

@@ -1,0 +1,494 @@
+.page-sept18-landing {
+	section {
+		padding: 3rem 8%;
+
+		.grid-container.two-column {
+			.grid-item {
+				align-self: center;
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 3rem;
+		}
+	}
+
+	section.hero {
+		color: black;
+		padding: 3rem 4%;
+
+		h1 {
+			@include font-size(32);
+			font-family: $font2;
+			margin-top: 0;
+		}
+
+		h5 {
+			@include font-size(14);
+			letter-spacing: 0.5px;
+			margin: 0 auto;
+			text-transform: uppercase;
+		}
+
+		h5,
+		p,
+		.p {
+			color: $gray-dk;
+		}
+
+		.text-container {
+			text-align: center;
+		}
+
+		img {
+			max-height: 500px; // fixes stupid ie11
+		}
+
+		.btn {
+			margin-top: 1rem;
+		}
+
+		@include susy-breakpoint($desktop) {
+			.text-container {
+				text-align: left;
+			}
+
+			h1 {
+				@include font-size(60);
+				line-height: 1.2;
+			}
+		}
+	}
+
+	.carousel-wrapper-panels .testimonial {
+		box-shadow: none;
+	}
+
+	.grid-item.text-container.right {
+		h4 {
+			margin: 0 auto;
+		}
+
+		p,
+		.p {
+			margin-top: 0.5rem;
+		}
+	}
+
+	.headline {
+		margin-bottom: 2rem;
+
+		h3 {
+			@include font-size(40);
+			font-family: $font2;
+			margin-bottom: 0.8rem;
+		}
+
+		p,
+		.p {
+			margin: 0 auto;
+			max-width: 600px;
+		}
+	}
+
+	.has-bottom-border {
+		border-bottom: 1px solid $gray-lt;
+	}
+
+	.checklists-container {
+		// doing some funky things to center the lists:
+		.grid-item {
+			text-align: center;
+
+			.centered {
+				@include susy-breakpoint(0 $mobile-landscape-max) {
+					display: block;
+					max-width: 182px;
+					margin: 1rem auto;
+				}
+				display: inline-block;
+				text-align: left;
+			}
+		}
+
+		ul {
+			padding: 0;
+		}
+
+		li {
+			list-style: none;
+			margin: 0.5rem 0;
+			padding-left: 30px;
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				background-image: url("/img/icons/check-single.svg");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+				top: 4px;
+				height: 15px;
+				width: 15px;
+			}
+		}
+	}
+
+	#demo-promo {
+		h3 {
+			color: $primary;
+			font-family: $font1-semibold;
+			margin-bottom: 0px;
+		}
+
+		p,
+		.p {
+			margin-top: 0.5rem;
+		}
+
+		@include susy-breakpoint($tablet) {
+			@include flexbox(row, center, space-between);
+
+			.text-container {
+				max-width: 75%;
+			}
+		}
+	}
+
+	.img-with-label {
+		position: relative;
+
+		img {
+			max-width: 100%;
+		}
+
+		.img-label {
+			position: absolute;
+			bottom: 1rem;
+			text-align: center;
+			width: 100%;
+
+			h4,
+			h5 {
+				margin: 0.5rem auto;
+			}
+
+			h5 {
+				@include font-size(12);
+			}
+		}
+	}
+
+	.feature-img {
+		height: 500px;
+		width: 500px;
+		background-color: aqua;
+	}
+
+	// Individual page styles
+
+	// for-health-plans and for-employers
+	#case-study-container {
+		@include susy-breakpoint($desktop) {
+			margin-top: 0rem;
+			.grid-item {
+				width: 49%;
+			}
+		}
+
+		.cs-img {
+			max-height: 700px; // bc fu, ie11
+			img {
+				max-width: 100%;
+			}
+		}
+
+		#case-studies {
+			@include flexbox(column, flex-start, center);
+			align-self: stretch;
+
+			.case-study {
+				@include flexbox(column, flex-start, center);
+				height: 48%;
+				padding: 0 1rem 1.5rem 1rem;
+				margin-top: 0;
+				margin-bottom: 0;
+				width: 100%;
+
+				a {
+					@include font-size(14);
+					font-family: $font1-semibold;
+					color: inherit;
+					text-decoration: none;
+					text-transform: uppercase;
+					margin-bottom: 0;
+					position: relative;
+
+					&:after {
+						content: "\FFEB";
+						font-size: 22px;
+						position: absolute;
+						right: -20px;
+					}
+				}
+			}
+
+			.full-width {
+				width: 100%;
+			}
+		}
+	} // end case-study-container
+
+	// for-individuals
+	#practitioner-carousel {
+		ul.slick-dots {
+			li span:before {
+				color: white;
+			}
+		}
+
+		.carousel-item {
+			height: auto;
+			padding: 0;
+			position: relative;
+
+			img {
+				max-width: 100%;
+			}
+
+			h5 {
+				color: $gray-dk;
+				text-align: center;
+				padding: 0 20%;
+				width: 100%;
+				max-width: 100%; // override testimonial carousel styles
+			}
+		}
+	}
+
+	#pricing-table {
+		width: 100%;
+
+		.pricing-row {
+			border-bottom: 1px solid $gray-xlt;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			ul {
+				padding: 0;
+				margin: 0;
+
+				li {
+					list-style: none;
+				}
+			}
+
+			th,
+			td {
+				padding: 1rem;
+				text-align: left;
+
+				&:last-of-type {
+					text-align: right;
+				}
+			}
+
+			th {
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+
+			td:last-of-type {
+				color: $gray;
+				vertical-align: bottom;
+			}
+
+			.price {
+				@include font-size(22);
+				color: $ui-green-lt;
+				font-family: $font1-semibold;
+			}
+		}
+	}
+
+	#user-testimonials {
+		.carousel {
+			margin-top: 0;
+		}
+
+		.testimonial {
+			background-color: white;
+
+			h5 {
+				color: $gray;
+			}
+
+			.quot {
+				color: $mktg-green-lt;
+			}
+
+			&:nth-of-type(2) .quot {
+				color: $mktg-green-lt;
+			}
+
+			&:last-child .quot {
+				color: $mktg-green-lt;
+			}
+		}
+	}
+
+	&.page-about {
+		section.hero .text-container,
+		section.hero .text-container p {
+			color: white;
+		}
+
+		#our-team {
+			padding: 3rem 0;
+
+			.headline {
+				padding: 0 8%;
+			}
+		}
+
+		#our-mission {
+			padding: 6rem 8%;
+
+			@include susy-breakpoint($tablet) {
+				.headline {
+					margin: 0 auto;
+					max-width: 60%;
+				}
+			}
+		}
+
+		#our-board {
+			h4 {
+				margin-bottom: 0.25rem;
+			}
+
+			.subhead {
+				@include font-size(14);
+				color: $gray;
+				text-transform: uppercase;
+				margin-top: 0;
+			}
+			.board-member-img {
+				@include susy-breakpoint($mobile) {
+					margin-right: 0px;
+				}
+				@include susy-breakpoint($desktop) {
+					margin-right: 34%;
+				}
+			}
+			.img-no-flex {
+				@include susy-breakpoint($mobile) {
+					width: 100%;
+					margin: 20px 0px 40px 0px;
+					img {
+						width: 100%;
+					}
+				}
+				@include susy-breakpoint($tablet) {
+					width: 48%;
+					float: left;
+					margin: 20px 2% 40px 0px;
+				}
+				@include susy-breakpoint($desktop) {
+					width: 32%;
+					float: left;
+					margin: 20px 2% 40px 0px;
+				}
+			}
+			.no-margin-right {
+				@include susy-breakpoint($tablet) {
+					margin: 20px 2% 40px 0px;
+				}
+				@include susy-breakpoint($desktop) {
+					width: 32%;
+					float: left;
+					margin: 20px 0px 40px 0px;
+				}
+			}
+		}
+
+		#our-investors {
+			.grid-item {
+				text-align: center;
+				margin: 40px auto;
+			}
+		}
+	}
+
+	&.page-bms {
+		.hero {
+			background: url("/img/maven-milk/hero.jpg") no-repeat;
+			@include background-cover;
+			@include susy-breakpoint($desktop) {
+				height: 680px;
+				.text-container {
+					padding-left: 5rem;
+				}
+			}
+		}
+		.bms-panel2,
+		.bms-panel3 {
+			@include susy-breakpoint($tablet) {
+				h3 {
+					max-width: 540px;
+					margin: 0 auto;
+				}
+			}
+		}
+		.bms-panel2 {
+			.grid-container {
+				max-width: 980px;
+				.grid-item {
+					&.right {
+						@include susy-breakpoint($tablet) {
+							padding-left: 2rem;
+							p:last-child {
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.bms-panel3 {
+			background: $gray-xlt;
+			h4 {
+				margin-top: 0;
+			}
+			h5 {
+				font-size: 0.875rem;
+				text-transform: uppercase;
+			}
+			p,
+			li {
+				color: $gray;
+			}
+		}
+
+		.public-faqs {
+			h3 {
+				font-size: 2.5rem;
+			}
+		}
+	}
+}
+
+.page-for-health-plans {
+	section.hero {
+		h1 {
+			@include susy-breakpoint($desktop) {
+				font-size: 50px;
+			}
+		}
+	}
+}

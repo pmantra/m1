@@ -1,0 +1,43 @@
+<mvn-merged-input form-ref="$ctrl.formRef" label="{{ $ctrl.label }}" update-fn="$ctrl.updateInput()">
+	<mvn-merge-field
+		name="ft"
+		type="number"
+		min="0"
+		minlength="1"
+		maxlength="2"
+		placeholder="5"
+		value="$ctrl.parsedHeight.ft"
+		on-change="$ctrl.onChange()"
+		arialabel="Feet"
+	></mvn-merge-field>
+	<span class="divider">&#700;</span>
+	<mvn-merge-field
+		name="in"
+		type="number"
+		min="0"
+		max="11"
+		minlength="1"
+		maxlength="2"
+		placeholder="05"
+		value="$ctrl.parsedHeight.in"
+		on-change="$ctrl.onChange()"
+		arialabel="Inches"
+	></mvn-merge-field>
+	<span class="divider">&#750;</span>
+
+	<div class="mvn-form-error">
+		<div ng-messages="$ctrl.formRef.ft.$error">
+			<div ng-message="missing">Please enter a value for feet.</div>
+			<div ng-if="$ctrl.formRef.ft.$touched">
+				<div ng-message="min">Please enter a value greater than 0.</div>
+			</div>
+		</div>
+		<div ng-messages="$ctrl.formRef.in.$error">
+			<div ng-message="missing">Please enter a value for inches.</div>
+			<div ng-if="$ctrl.formRef.in.$touched">
+				<div ng-message="min">Please enter a value greater than 0.</div>
+				<div ng-message="max">Please enter a value less than 12.</div>
+			</div>
+		</div>
+	</div>
+</mvn-merged-input>

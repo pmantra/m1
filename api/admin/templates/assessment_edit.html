@@ -1,0 +1,30 @@
+{% extends 'admin/model/edit.html' if model else 'admin/model/create.html' %}
+
+{% block head %}
+{{ super() }}
+
+<style>
+  #quiz_body {
+    height: 200px;
+    width: 600px;
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+
+<div id="content"></div>
+{% endblock %}
+
+{% block tail_js %}
+{{ super() }}
+
+<script type="text/javascript">
+  function renderBuilder() {
+    AdminTool("AssessmentBuilder", document.getElementById("content"));
+  }
+  renderBuilder();
+</script>
+
+{% endblock %}

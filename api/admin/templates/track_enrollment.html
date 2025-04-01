@@ -1,0 +1,138 @@
+{% block body %}
+    <div class="inline-field well well-medium">
+        <legend>Assign Track to User</legend>
+        <p class="lead">
+            Use this form to manually assign a track to a user.
+        </p>
+        <div>
+            <form method="POST" action="/admin/enterprise_setup/enroll_track">
+                <div class="form-inline">
+                    <div class="control-group">
+                        <label class="control-label" for="first_name">User ID</label>
+                        <div class="controls">
+                            <input
+                                type="text"
+                                id="user_id"
+                                name="user_id"
+                                placeholder="Enter member's User ID"
+                                required
+                            >
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input
+                                    id="is_employee"
+                                    name="is_employee"
+                                    type="checkbox"
+                                    class="checkbox"
+                                    aria-describedby="is_employee_help"
+                            >
+                            <label class="control-label checkbox" for="is_employee">Is
+                                Employee.</label>
+                            <small id="is_employee_help" class="help-block text-muted">
+                                Is this user an employee of this organization? If this user
+                                is a dependent, leave this box unchecked.
+                            </small>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="track_name">Track</label>
+                        <div class="controls">
+                            <select
+                                    id="track_name"
+                                    name="track_name"
+                                    aria-describedby="track_name_help"
+                            >
+                                <option value=""></option>
+                                {% for name, display in tracks %}
+                                    <option value="{{ name }}">{{ display }}</option>
+                                {% endfor %}
+                            </select>
+                            <small id="track_name_help" class="help-block text-muted">
+                                <div class="alert alert-info">
+                                    ☝️ The user must already be verified with an organization ☝️
+                                </div>
+                            </small>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="organization_id">(Optional) Organization ID</label>
+                        <div class="controls">
+                            <input
+                                type="text"
+                                id="organization_id"
+                                name="organization_id"
+                                placeholder="Enter Organization ID if known"
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div id="life_event" class="inline-field well well-small"
+                     aria-describedby="life_event_help">
+                    <button type="button" data-toggle="collapse" class="btn btn-block"
+                            data-target="#life_event_collapse_track" aria-expanded="false"
+                            aria-controls="life_event_collapse_track"
+                    >
+                        <i class="icon-plus"></i>
+                        Add a Life Event
+                    </button>
+                    <div id="life_event_help" class="help-block alert alert-info">
+                        ☝️This is only needed if the user does not already have a
+                        qualifying life event date set for their targeted track.
+                    </div>
+                    <div class="collapse" id="life_event_collapse_track">
+                        <div class="form-inline">
+                            <div class="control-group">
+                                <label class="control-label" for="life_event_type">Life
+                                    Event</label>
+                                <div class="controls">
+                                    <select
+                                            id="life_event_type"
+                                            name="life_event_type"
+                                            aria-describedby="life_event_help"
+                                            required
+                                    >
+                                        <option value="due_date" selected>Child Due Date
+                                        </option>
+                                        <option value="child_birthday">Child Birthday
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="life_event_date">Life
+                                    Date</label>
+                                <div class="controls">
+                                    <input
+                                            type="date"
+                                            id="life_event_date"
+                                            name="life_event_date"
+                                            aria-describedby="life_event_date_help"
+                                            placeholder="Enter the event date."
+                                            style="height:auto"
+                                            {# for unsupported browsers we'll use a regex sanity check with #}
+                                            pattern="\d{4}-\d{2}-\d{2}"
+                                    >
+                                    <small id="life_event_date_help"
+                                           class="help-block text-muted">
+                                        Provide the date of the life event, if any. This
+                                        should be in the future for a Child Due Date and
+                                        in the past for a Child Birthday.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input
+                    type="submit"
+                    class="btn btn-primary"
+                    value="Assign Track"
+                    style="background-image: linear-gradient(to bottom,#6cceaa,#00856f)"
+                >
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

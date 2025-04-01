@@ -1,0 +1,22 @@
+<section>
+	<div class="user-profile-header">
+		<user-profile-header user="$ctrl.user" class="content-container"></user-profile-header>
+
+		<div class="user-profile-tabs  content-container">
+			<ul class="clear clearfix">
+				<li>
+					<p class="lg"><a ui-sref="app.profile.my_posts" ui-sref-active="active">My <br/>posts</a></p>
+				</li>
+				<li>
+					<p class="lg"><a ui-sref="app.profile.my_replies" ui-sref-active="active">My <br/>replies</a></p>
+				</li>
+				<li>
+					<p class="lg"><a ui-sref="app.profile.bookmarks" ui-sref-active="active">My <br/>bookmarks</a></p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</section>
+
+<div ui-view></div>

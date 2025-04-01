@@ -1,0 +1,52 @@
+.admin-form .control-label {
+    width: 225px;
+}
+.admin-form .controls {
+    margin-left: 225px;
+}
+.admin-form .control-group:not(:last-child) {
+    border-bottom: 1px solid #dee;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.select2-container {
+    width: 300px !important;
+}
+input[type=text], input[type=password], textarea  {
+    min-width: calc(300px - 14px);
+}
+input[type=text].filter-val {
+    min-width: 300px;
+}
+input[type=date] {
+    position: relative;
+}
+input[type=date]::-webkit-calendar-picker-indicator {
+    background-position: right;
+    margin-left: 0;
+    position: absolute;
+    width: auto;
+    top: 3px;
+    right: 3px;
+    bottom: 0;
+    left: 0;
+}
+input.input-mini[name=daterangepicker_start], input.input-mini[name=daterangepicker_end] {
+    min-width: 150px;
+}
+.daterangepicker .ranges .range_inputs>div:nth-child(2).daterangepicker_end_input{
+    padding-left: 0px;
+}
+
+/*This css override is to overcome flask-admin issue reported here https://github.com/flask-admin/flask-admin/issues/1672
+We will use it for:
+- incentive_org_countries_list select, declared in IncentiveOrganizationView::scaffold_form
+- incentive select, which is defined under the hood in the IncentiveOrganizationView
+*/
+select#incentive_org_countries_list, select#incentive{
+    display: block !important;
+    height: 0;
+    border: 1px solid transparent;
+    margin-bottom: -2px;
+    opacity: 0;
+}

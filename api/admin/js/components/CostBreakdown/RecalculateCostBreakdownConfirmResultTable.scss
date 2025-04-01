@@ -1,0 +1,35 @@
+.confirm-result-table {
+  margin-top: 50px;
+  margin-left: 0;
+  margin-bottom: 300px;
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  font-size: 17px;
+
+  tr {
+    height: 60px;
+  }
+
+  th {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+
+  td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+  tbody {
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+  }
+}

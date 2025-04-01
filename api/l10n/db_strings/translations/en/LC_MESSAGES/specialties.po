@@ -1,0 +1,519 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-08-18 14:18-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+msgid "specialty_allergies_name"
+msgstr "Allergies"
+
+msgid "specialty_pediatric_nutrition_name"
+msgstr "Pediatric nutrition"
+
+msgid "specialty_diabetes_name"
+msgstr "Diabetes"
+
+msgid "specialty_digestive_health_name"
+msgstr "Digestive health"
+
+msgid "specialty_eating_disorder_support_name"
+msgstr "Eating disorder support"
+
+msgid "specialty_gestational_diabetes_name"
+msgstr "Gestational diabetes"
+
+msgid "specialty_holistic_health_name"
+msgstr "Holistic health"
+
+msgid "specialty_infant_feeding_name"
+msgstr "Infant feeding"
+
+msgid "specialty_menopause_name"
+msgstr "Menopause"
+
+msgid "specialty_obesity_name"
+msgstr "Obesity"
+
+msgid "specialty_pain_management_name"
+msgstr "Pain management"
+
+msgid "specialty_pelvic_health_name"
+msgstr "Pelvic health"
+
+msgid "specialty_postpartum_exercise_name"
+msgstr "Postpartum exercise"
+
+msgid "specialty_hiv_name"
+msgstr "HIV"
+
+msgid "specialty_transgender_health_name"
+msgstr "Transgender health"
+
+msgid "specialty_trauma_name"
+msgstr "Trauma"
+
+msgid "specialty_weight_management_name"
+msgstr "Weight management"
+
+msgid "specialty_mood_disorders_name"
+msgstr "Mood disorders"
+
+msgid "specialty_postpartum_support_name"
+msgstr "Postpartum support"
+
+msgid "specialty_substance_abuse_name"
+msgstr "Substance abuse"
+
+msgid "specialty_parenting_name"
+msgstr "Parenting"
+
+msgid "specialty_fertility_name"
+msgstr "Fertility"
+
+msgid "specialty_stress_reduction_and_mindfulness_name"
+msgstr "Stress reduction and mindfulness"
+
+msgid "specialty_sleep_training_name"
+msgstr "Sleep training"
+
+msgid "specialty_endometriosis_name"
+msgstr "Endometriosis"
+
+msgid "specialty_miscarriage_name"
+msgstr "Miscarriage"
+
+msgid "specialty_sexual_health_name"
+msgstr "Sexual health"
+
+msgid "specialty_skin_issues_name"
+msgstr "Skin issues"
+
+msgid "specialty_birth_education_name"
+msgstr "Birth education"
+
+msgid "specialty_relationships_name"
+msgstr "Relationships"
+
+msgid "specialty_infant_and_child_sleep_patterns_name"
+msgstr "Infant and child sleep patterns"
+
+msgid "specialty_toilet_training_name"
+msgstr "Toilet training"
+
+msgid "specialty_pcos_name"
+msgstr "PCOS"
+
+msgid "specialty_breastfeeding_name"
+msgstr "Breastfeeding"
+
+msgid "specialty_pms_and_pmdd_management_name"
+msgstr "PMS and PMDD management"
+
+msgid "specialty_sex_therapy_name"
+msgstr "Sex therapy"
+
+msgid "specialty_cognitive_behavioral_therapy_name"
+msgstr "Cognitive behavioral therapy"
+
+msgid "specialty_dialectical_behavioral_therapy_name"
+msgstr "Dialectical behavioral therapy"
+
+msgid "specialty_obsessive_compulsive_disorder_ocd_name"
+msgstr "Obsessive compulsive disorder (OCD)"
+
+msgid "specialty_ptsd_name"
+msgstr "PTSD"
+
+msgid "specialty_cold_and_flu_name"
+msgstr "Cold and flu"
+
+msgid "specialty_birth_control_name"
+msgstr "Birth control"
+
+msgid "specialty_depression_name"
+msgstr "Depression"
+
+msgid "specialty_perinatal_fitness_name"
+msgstr "Perinatal fitness"
+
+msgid "specialty_perinatal_nutrition_name"
+msgstr "Perinatal nutrition"
+
+msgid "specialty_perinatal_anxiety_name"
+msgstr "Perinatal anxiety"
+
+msgid "specialty_perinatal_depression_name"
+msgstr "Perinatal depression"
+
+msgid "specialty_urinary_tract_or_yeast_infection_name"
+msgstr "Urinary tract or yeast infection"
+
+msgid "specialty_behavioral_concerns_name"
+msgstr "Behavioral concerns"
+
+msgid "specialty_intuitive_eating_name"
+msgstr "Intuitive eating"
+
+msgid "specialty_spirituality_name"
+msgstr "Spirituality"
+
+msgid "specialty_add_adhd_name"
+msgstr "ADD/ADHD"
+
+msgid "specialty_weaning_name"
+msgstr "Weaning"
+
+msgid "specialty_functional_medicine_name"
+msgstr "Functional medicine"
+
+msgid "specialty_autoimmune_or_antiinflammatory_diet_name"
+msgstr "Autoimmune or anti-inflammatory diet"
+
+msgid "specialty_sleep_support_name"
+msgstr "Sleep support"
+
+msgid "specialty_birth_recovery_name"
+msgstr "Birth recovery"
+
+msgid "specialty_back_to_work_coaching_name"
+msgstr "Back to work coaching"
+
+msgid "specialty_highrisk_pregnancy_support_name"
+msgstr "High-risk pregnancy support"
+
+msgid "specialty_work_life_balance_name"
+msgstr "Work/life balance"
+
+msgid "specialty_goalsetting_name"
+msgstr "Goal-setting"
+
+msgid "specialty_career_coaching_name"
+msgstr "Career coaching"
+
+msgid "specialty_sex_coaching_name"
+msgstr "Sex coaching"
+
+msgid "specialty_health_coaching_name"
+msgstr "Health coaching"
+
+msgid "specialty_pediatric_cold_flu_name"
+msgstr "Pediatric Cold & Flu"
+
+msgid "specialty_pediatric_skin_and_allergies_name"
+msgstr "Pediatric skin and allergies"
+
+msgid "specialty_pediatric_behavioral_concerns_name"
+msgstr "Pediatric behavioral concerns"
+
+msgid "specialty_postpartum_depression_name"
+msgstr "Postpartum depression"
+
+msgid "specialty_egg_freezing_name"
+msgstr "Egg freezing"
+
+msgid "specialty_preeclampsia_name"
+msgstr "Preeclampsia"
+
+msgid "specialty_bottle_feeding_name"
+msgstr "Bottle feeding"
+
+msgid "specialty_grief_and_loss_name"
+msgstr "Grief and loss"
+
+msgid "specialty_thyroid_disorders_name"
+msgstr "Thyroid disorders"
+
+msgid "specialty_pumping_name"
+msgstr "Pumping"
+
+msgid "specialty_special_needs_name"
+msgstr "Special needs"
+
+msgid "specialty_postadoption_support_name"
+msgstr "Post-adoption support"
+
+msgid "specialty_domestic_adoption_us_name"
+msgstr "Domestic adoption (U.S.)"
+
+msgid "specialty_genetic_screening_name"
+msgstr "Genetic screening"
+
+msgid "specialty_genetic_test_results_name"
+msgstr "Genetic test results"
+
+msgid "specialty_egg_donation_name"
+msgstr "Egg donation"
+
+msgid "specialty_health_at_every_size_haes_name"
+msgstr "Health At Every Size (HAES)"
+
+msgid "specialty_pediatric_development_milestones_name"
+msgstr "Pediatric development milestones"
+
+msgid "specialty_hypnobirthing_name"
+msgstr "Hypnobirthing"
+
+msgid "specialty_vbac_vaginal_birth_after_cesarean_name"
+msgstr "VBAC (Vaginal Birth After Cesarean)"
+
+msgid "specialty_labor_pain_management_name"
+msgstr "Labor pain management"
+
+msgid "specialty_lgbtqia_affirming_name"
+msgstr "LGBTQIA affirming"
+
+msgid "specialty_pediatric_mental_health_05_name"
+msgstr "Pediatric mental health (0-5)"
+
+msgid "specialty_pediatric_mental_health_610_name"
+msgstr "Pediatric mental health (6-10)"
+
+msgid "specialty_adolescent_mental_health_1117_name"
+msgstr "Adolescent mental health (11-17)"
+
+msgid "specialty_coparenting_name"
+msgstr "Co-parenting"
+
+msgid "specialty_developmental_disabilities_name"
+msgstr "Developmental disabilities"
+
+msgid "specialty_faith_based_support_christian_affiliation_name"
+msgstr "Faith based support (Christian affiliation)"
+
+msgid "specialty_family_therapy_name"
+msgstr "Family therapy"
+
+msgid "specialty_postpartum_anxiety_name"
+msgstr "Postpartum anxiety"
+
+msgid "specialty_addictions_name"
+msgstr "Addictions"
+
+msgid "specialty_couples_counseling_name"
+msgstr "Couples counseling"
+
+msgid "specialty_pediatric_physical_therapy_name"
+msgstr "Pediatric physical therapy"
+
+msgid "specialty_premature_nicu_infant_support_name"
+msgstr "Premature/NICU Infant Support"
+
+msgid "specialty_pediatric_anxiety_disorder_name"
+msgstr "Pediatric anxiety disorder"
+
+msgid "specialty_autism_spectrum_disorder_name"
+msgstr "Autism spectrum disorder"
+
+msgid "specialty_bipolar_disorder_name"
+msgstr "Bipolar disorder"
+
+msgid "specialty_developmentalbehavioral_pediatrics_name"
+msgstr "Developmental-behavioral pediatrics"
+
+msgid "specialty_emotional_regulation_name"
+msgstr "Emotional regulation"
+
+msgid "specialty_fine_motor_skills_name"
+msgstr "Fine motor skills"
+
+msgid "specialty_gross_motor_skills_name"
+msgstr "Gross motor skills"
+
+msgid "specialty_learning_disorder_name"
+msgstr "Learning disorder"
+
+msgid "specialty_speech_disorders_name"
+msgstr "Speech disorders"
+
+msgid "specialty_anxiety_name"
+msgstr "Anxiety"
+
+msgid "specialty_applied_behavioral_analysis_name"
+msgstr "Applied Behavioral Analysis"
+
+msgid "specialty_early_intervention_name"
+msgstr "Early intervention"
+
+msgid "specialty_special_education_name"
+msgstr "Special Education"
+
+msgid "specialty_functional_nutrition_name"
+msgstr "Functional nutrition"
+
+msgid "specialty_pediatric_developmental_delays_name"
+msgstr "Pediatric developmental delays"
+
+msgid "specialty_child_development_name"
+msgstr "Child development"
+
+msgid "specialty_male_fertility_name"
+msgstr "Male fertility"
+
+msgid "specialty_emdr_therapy_name"
+msgstr "EMDR Therapy"
+
+msgid "specialty_cycle_charting_name"
+msgstr "Cycle charting"
+
+msgid "specialty_adoption_support_name"
+msgstr "Adoption support"
+
+msgid "specialty_racial_trauma_name"
+msgstr "Racial trauma"
+
+msgid "specialty_surrogacy_name"
+msgstr "Surrogacy"
+
+msgid "specialty_transaffirming_care_name"
+msgstr "Trans-Affirming Care"
+
+msgid "specialty_faith_based_support_buddhist_affiliation_name"
+msgstr "Faith based support (Buddhist affiliation)"
+
+msgid "specialty_faith_based_support_hindu_affiliation_name"
+msgstr "Faith based support (Hindu affiliation)"
+
+msgid "specialty_faith_based_support_jewish_affiliation_name"
+msgstr "Faith based support (Jewish affiliation)"
+
+msgid "specialty_faith_based_support_mormon_affiliation_name"
+msgstr "Faith based support (Mormon affiliation)"
+
+msgid "specialty_faith_based_support_muslim_affiliation_name"
+msgstr "Faith based support (Muslim affiliation)"
+
+msgid "specialty_international_adoption_us_based_name"
+msgstr "International adoption (U.S based)"
+
+msgid "specialty_pregnancy_options_counseling_including_abortion_name"
+msgstr "Pregnancy options counseling (including abortion)"
+
+msgid "specialty_chair_method_name"
+msgstr "Chair method"
+
+msgid "specialty_ferber_method_name"
+msgstr "Ferber method"
+
+msgid "specialty_extinction_method_cry_it_out_name"
+msgstr "Extinction method (cry it out)"
+
+msgid "specialty_fading_method_name"
+msgstr "Fading method"
+
+msgid "specialty_potty_training_name"
+msgstr "Potty training"
+
+msgid "specialty_induced_lactation_name"
+msgstr "Induced lactation"
+
+msgid "specialty_relactation_name"
+msgstr "Relactation"
+
+msgid "specialty_midlife_gynecology_name"
+msgstr "Mid-life Gynecology"
+
+msgid "specialty_perimenopause_name"
+msgstr "Perimenopause"
+
+msgid "specialty_menopausal_disorders_name"
+msgstr "Menopausal disorders"
+
+msgid "specialty_physical_therapy_name"
+msgstr "Physical therapy"
+
+msgid "specialty_hrt_hormone_replacement_therapy_name"
+msgstr "HRT (hormone replacement therapy)"
+
+msgid "specialty_breastfeeding_nutrition_name"
+msgstr "Breastfeeding nutrition"
+
+msgid "specialty_cancer_support_fertility_name"
+msgstr "Cancer support (fertility)"
+
+msgid "specialty_carpal_tunnel_name"
+msgstr "Carpal tunnel"
+
+msgid "specialty_body_changes_name"
+msgstr "Body changes"
+
+msgid "specialty_pregnancy_pain_discomfort_name"
+msgstr "Pregnancy pain & discomfort"
+
+msgid "specialty_prenatal_exercise_name"
+msgstr "Prenatal exercise"
+
+msgid "specialty_formula_feeding_name"
+msgstr "Formula feeding"
+
+msgid "specialty_newborn_care_name"
+msgstr "Newborn care"
+
+msgid "specialty_torticollis_name"
+msgstr "Torticollis"
+
+msgid "specialty_advanced_maternal_age_name"
+msgstr "Advanced maternal age"
+
+msgid "specialty_twin_support_name"
+msgstr "Twin support"
+
+msgid "specialty_nutrition_support_name"
+msgstr "Nutrition support"
+
+msgid "specialty_assistive_reproductive_technology_name"
+msgstr "Assistive reproductive technology"
+
+msgid "specialty_vaginal_infection_name"
+msgstr "Vaginal infection"
+
+msgid "specialty_sperm_donation_name"
+msgstr "Sperm Donation"
+
+msgid "specialty_fertility_medication_name"
+msgstr "Fertility Medication"
+
+msgid "specialty_birth_trauma_name"
+msgstr "Birth trauma"
+
+msgid "specialty_birth_planning_name"
+msgstr "Birth planning"
+
+msgid "specialty_childcare_name"
+msgstr "Childcare"
+
+msgid "specialty_disease_prevention_name"
+msgstr "Disease prevention"
+
+msgid "specialty_male_factor_infertility_name"
+msgstr "Male factor infertility"
+
+msgid "specialty_preventative_health_name"
+msgstr "Preventative health"
+
+msgid "specialty_fertility_care_coaching_name"
+msgstr "Fertility care coaching"
+
+msgid "specialty_pregnancy_care_coaching_name"
+msgstr "Pregnancy care coaching"
+
+msgid "specialty_fertility_medication_name"
+msgstr "Fertility medication"
+
+msgid "specialty_semen_analysis_results_name"
+msgstr "Semen Analysis Results"
+
+msgid "specialty_mens_health_name"
+msgstr "Men's Health"

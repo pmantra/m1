@@ -1,0 +1,43 @@
+<div ng-if="!$ctrl.loading">
+	<div class="meet-care-coordinator">
+		<div>
+			<div class="cc-intro grid-item">
+				<div class="cc-image-container">
+					<img
+						class="cc-img"
+						width="420"
+						height="auto"
+						ng-src="/img/app/user/onboarding/{{
+							$ctrl.careCoordinator.profile_image ? $ctrl.careCoordinator.profile_image : 'meet-kaitlyn.jpg'
+						}}"
+						alt="Your Care Advocate"
+					/>
+				</div>
+			</div>
+
+			<div class="grid-item cc-info">
+				<h1 class="serif h2">Hi, I’m {{ $ctrl.careCoordinator.first_name }}, your personal Care Advocate</h1>
+
+				<h3 class="h5 cc-list-intro">
+					<span ng-if="$ctrl.activeModule === 'pregnancyloss' ">I’m so sorry for your loss. </span>I’m here to help
+					anytime, here’s how:
+				</h3>
+				<ul class="clear">
+					<li>{{ $ctrl.customBullet }}</li>
+					<li>
+						Need to see someone in-person? I can recommend in-network practitioners who take your insurance.
+					</li>
+					<li>Plus, I can answer any question about all of your company benefits.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div ng-if="$ctrl.loading">
+	<inline-loader ng-show="$ctrl.loading" loading="$ctrl.loading" label="Finding your Care Advocate..."></inline-loader>
+</div>
+
+<mvn-onboarding-bottom-nav>
+	<a class="btn btn-cta" ui-sref="app.onboarding.meet-care-coordinator-find-time">Next</a>
+</mvn-onboarding-bottom-nav>

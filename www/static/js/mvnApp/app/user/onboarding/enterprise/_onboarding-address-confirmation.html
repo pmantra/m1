@@ -1,0 +1,87 @@
+<div class="center">
+	<form name="confirmAddressForm" role="form" class="clearfix mvn-form single-column max-w verify-enterprise-form">
+		<h3 class="serif">
+			<span ng-if="$ctrl.hasAddress">Did we get your address right?</span
+			><span ng-if="!$ctrl.hasAddress">What is your address?</span>
+		</h3>
+		<p>(We'll send you a free welcome gift!)</p>
+		<div class="form-section">
+			<div class="form-elements-container clearfix">
+				<div class="form-item">
+					<mvn-input
+						type="text"
+						label="Address line 1"
+						value="$ctrl.userAddress.address_1"
+						required="required"
+						minlength="2"
+					></mvn-input>
+				</div>
+
+				<div class="form-item">
+					<mvn-input type="text" label="Address line 2" value="$ctrl.userAddress.address_2"></mvn-input>
+				</div>
+
+				<div class="form-item">
+					<mvn-input type="text" label="Town/city" value="$ctrl.userAddress.city" required="required"></mvn-input>
+				</div>
+
+				<div class="mvn-select-search" ng-if="$ctrl.countries">
+					<ui-select ng-model="$ctrl.userAddress.country" theme="select2" ng-disabled="ctrl.disabled" title="Country">
+						<ui-select-match placeholder="Country"
+							>{{$ctrl.userAddress.country | countryCodeToName:$ctrl.countries}}</ui-select-match
+						>
+						<ui-select-choices
+							class="choices"
+							repeat="country.alpha_2 as country in $ctrl.countries | filter: $select.search"
+						>
+							<span ng-bind-html="country.name | highlight: $select.search"></span>
+						</ui-select-choices>
+					</ui-select>
+					<span class="ghost-label">Country</span>
+				</div>
+
+				<div class="mvn-select-search" ng-if="$ctrl.userAddress.country === 'US' && $ctrl.states">
+					<ui-select ng-model="$ctrl.userAddress.state" theme="select2" ng-disabled="ctrl.disabled" title="State">
+						<ui-select-match placeholder="State">{{$ctrl.userAddress.state | stateCodeToName }}</ui-select-match>
+						<ui-select-choices repeat="state.code as state in $ctrl.states | filter: $select.search">
+							<span ng-bind-html="state.name | highlight: $select.search"></span>
+						</ui-select-choices>
+					</ui-select>
+					<span class="ghost-label">State</span>
+				</div>
+
+				<div class="form-item" ng-if="$ctrl.userAddress.country !== 'US' ">
+					<mvn-input
+						type="text"
+						label="State/province/county"
+						value="$ctrl.userAddress.state"
+						required="required"
+					></mvn-input>
+				</div>
+
+				<div class="form-item">
+					<mvn-input
+						type="text"
+						label="Zip/postal code"
+						value="$ctrl.userAddress.zip_code"
+						required="required"
+						minlength="3"
+					></mvn-input>
+				</div>
+			</div>
+		</div>
+		<p class="sm it">We respect your privacy and will never share your information with any third party. Period.</p>
+	</form>
+</div>
+
+<mvn-onboarding-bottom-nav>
+	<a class="btn btn-tertiary" href="" ng-click="$ctrl.skipAddress()">I'll do this later</a>
+	<a
+		class="btn btn-cta"
+		href=""
+		ng-click="$ctrl.saveAddress($ctrl.userAddress)"
+		ng-disabled="confirmAddressForm.$invalid ||  $ctrl.loading"
+		ng-class="{'disabled' : confirmAddressForm.$invalid || $ctrl.loading || !$ctrl.userAddress.state || !$ctrl.userAddress.country }"
+		><span ng-if="!$ctrl.loading">Next</span><span ng-if="$ctrl.loading">Loading...</span></a
+	>
+</mvn-onboarding-bottom-nav>

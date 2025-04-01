@@ -1,0 +1,212 @@
+#: models/tracks/track.py:217
+msgid "track_config_display_name_pregnancy"
+msgstr ""
+
+msgid "track_config_display_name_menopause"
+msgstr ""
+
+msgid "track_config_display_name_partner_pregnancy"
+msgstr ""
+
+msgid "track_config_display_name_postpartum"
+msgstr ""
+
+msgid "track_config_display_name_partner_postpartum"
+msgstr ""
+
+msgid "track_config_display_name_adoption"
+msgstr ""
+
+msgid "track_config_display_name_breast_milk_shipping"
+msgstr ""
+
+msgid "track_config_display_name_egg_freezing"
+msgstr ""
+
+msgid "track_config_display_name_fertility"
+msgstr ""
+
+msgid "track_config_display_name_general_wellness"
+msgstr ""
+
+msgid "track_config_display_name_generic"
+msgstr ""
+
+msgid "track_config_display_name_parenting_pediatrics"
+msgstr ""
+
+msgid "track_config_display_name_partner_fertility"
+msgstr ""
+
+msgid "track_config_display_name_loss_support"
+msgstr ""
+
+msgid "track_config_display_name_pregnancy_options"
+msgstr ""
+
+msgid "track_config_display_name_health_plan"
+msgstr ""
+
+msgid "track_config_display_name_surrogacy"
+msgstr ""
+
+msgid "track_config_display_name_trying_to_conceive"
+msgstr ""
+
+#: models/tracks/track.py:220
+msgid "track_config_display_length_up_to_9_months"
+msgstr ""
+
+msgid "track_config_display_length_up_to_12_months"
+msgstr ""
+
+msgid "track_config_display_length_3_months"
+msgstr ""
+
+msgid "track_config_display_length_12_months"
+msgstr ""
+
+msgid "track_config_display_length_annual_renewal_up_to_age_10"
+msgstr ""
+
+#: models/tracks/track.py:222
+msgid "track_config_intro_message"
+msgstr ""
+
+#: models/tracks/track.py:223
+msgid "track_config_description_pregnancy"
+msgstr ""
+
+msgid "track_config_description_menopause"
+msgstr ""
+
+msgid "track_config_description_partner_pregnant"
+msgstr ""
+
+msgid "track_config_description_postpartum"
+msgstr ""
+
+msgid "track_config_description_postpartum_90_days"
+msgstr ""
+
+msgid "track_config_description_postpartum_168_days"
+msgstr ""
+
+msgid "track_config_description_partner_newparent"
+msgstr ""
+
+msgid "track_config_description_partner_newparent_90_days"
+msgstr ""
+
+msgid "track_config_description_partner_newparent_168_days"
+msgstr ""
+
+msgid "track_config_description_adoption"
+msgstr ""
+
+msgid "track_config_description_breast_milk_shipping"
+msgstr ""
+
+msgid "track_config_description_egg_freezing"
+msgstr ""
+
+msgid "track_config_description_fertility"
+msgstr ""
+
+msgid "track_config_description_general_wellness_generic"
+msgstr ""
+
+msgid "track_config_description_parenting_and_pediatrics"
+msgstr ""
+
+msgid "track_config_description_partner_fertility"
+msgstr ""
+
+msgid "track_config_description_pregnancyloss"
+msgstr ""
+
+msgid "track_config_description_pregnancy_options"
+msgstr ""
+
+msgid "track_config_description_sponsored"
+msgstr ""
+
+msgid "track_config_description_surrogacy"
+msgstr ""
+
+msgid "track_config_description_trying_to_conceive"
+msgstr ""
+
+#: models/tracks/track.py:256
+msgid "track_config_display_description_im_no_longer_trying_to_conceive"
+msgstr ""
+
+msgid "track_config_display_description_im_trying_to_conceive"
+msgstr ""
+
+msgid "track_config_display_description_im_pregnant"
+msgstr ""
+
+msgid "track_config_display_description_i_have_experienced_a_loss"
+msgstr ""
+
+msgid "track_config_display_description_i_have_given_birth"
+msgstr ""
+
+msgid "track_config_display_description_my_partner_has_given_birth"
+msgstr ""
+
+msgid "track_config_display_description_we_have_experienced_a_loss"
+msgstr ""
+
+#: models/tracks/track.py:268
+msgid "track_config_label_im_pregnant"
+msgstr ""
+
+msgid "track_config_label_i_want_support_on_my_menopause_journey"
+msgstr ""
+
+msgid "track_config_label_my_partner_is_pregnant"
+msgstr ""
+
+msgid "track_config_label_i_just_gave_birth"
+msgstr ""
+
+msgid "track_config_label_my_partner_just_gave_birth"
+msgstr ""
+
+msgid "track_config_label_im_adopting"
+msgstr ""
+
+msgid "track_config_label_im_breastfeeding"
+msgstr ""
+
+msgid "track_config_label_i_want_to_freeze_my_eggs"
+msgstr ""
+
+msgid "track_config_label_im_undergoing_or_considering_iui_ivf"
+msgstr ""
+
+msgid "track_config_label_i_want_to_manage_my_reproductive_health_and_overall_wellness"
+msgstr ""
+
+msgid "track_config_label_i_have_a_child_between_the_ages_of_1_and_10"
+msgstr ""
+
+msgid "track_config_label_my_partner_is_undergoing_or_considering_iui_ivf"
+msgstr ""
+
+msgid "track_config_label_ive_experienced_a_loss"
+msgstr ""
+
+msgid "track_config_label_health_plan"
+msgstr ""
+
+msgid "track_config_label_im_using_a_surrogate"
+msgstr ""
+
+msgid "track_config_label_i_want_to_get_pregnant_within_the_next_year"
+msgstr ""
+
+msgid "track_config_track_unavailable_for_transition_message_pregnancy"
+msgstr ""

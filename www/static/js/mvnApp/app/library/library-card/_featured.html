@@ -1,0 +1,14 @@
+<a ui-sref="{{$ctrl.resourceUrl}}" ng-click="$ctrl.sendEvt()">
+	<div class="featured-card">
+		<div ng-if="$ctrl.cardData.image.hero" class="image-container">
+			<img class="card-image" src="{{ $ctrl.cardData.image.hero }}" alt="{{ $ctrl.cardData.title }}" />
+		</div>
+		<div class="card-body">
+			<div class="metadata">
+				<p>New</p>
+				<p ng-if="$ctrl.cardData.prettyContentType" class="metadata secondary-metadata">{{ $ctrl.cardData.prettyContentType }}</p>
+			</div>
+			<h4 class="card-title serif">{{ $ctrl.cardData.title | trimString:true:80:true }}</h4>
+		</div>
+	</div>
+</a>

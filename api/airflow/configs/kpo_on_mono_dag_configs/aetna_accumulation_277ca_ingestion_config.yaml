@@ -1,0 +1,13 @@
+dag_id: aetna_accumulation_277ca_ingestion_dag
+schedule: "0 18 * * *" # TBD
+task_id: aetna_accumulation_277ca_ingestion_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.payments_platform.aetna_accumulation_ingestion import aetna_accumulation_277ca_ingestion_job; aetna_accumulation_277ca_ingestion_job()"
+team_namespace: payments_platform
+service_namespace: payer_accumulation
+catchup: "False"
+start_year: 2024
+start_month: 10
+start_day: 30

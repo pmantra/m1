@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: es\n"
+
+msgid "need_category_adoption_name"
+msgstr "Adopción"
+
+msgid "need_category_early_pregnancy_name"
+msgstr "Embarazo temprano"
+
+msgid "need_category_egg_freezing_name"
+msgstr "Congelación de óvulos"
+
+msgid "need_category_emotional_health_name"
+msgstr "Salud emocional"
+
+msgid "need_category_fertility_tests_treatment_name"
+msgstr "Pruebas y tratamientos de fertilidad"
+
+msgid "need_category_general_health_name"
+msgstr "Salud general"
+
+msgid "need_category_infant_feeding_name"
+msgstr "Alimentación de lactantes"
+
+msgid "need_category_labor_delivery_name"
+msgstr "Trabajo de parto y parto"
+
+msgid "need_category_lifestyle_nutrition_name"
+msgstr "Estilo de vida y nutrición"
+
+msgid "need_category_loss_support_name"
+msgstr "Apoyo en la pérdida"
+
+msgid "need_category_male_fertility_name"
+msgstr "Fertilidad masculina"
+
+msgid "need_category_menopause_medications_name"
+msgstr "Medicamentos para la menopausia"
+
+msgid "need_category_menopause_name"
+msgstr "Menopausia"
+
+msgid "need_category_more_paths_to_parenthood_name"
+msgstr "Más caminos hacia la crianza"
+
+msgid "need_category_nutrition_name"
+msgstr "Nutrición"
+
+msgid "need_category_parenting_name"
+msgstr "Crianza"
+
+msgid "need_category_pediatrics_name"
+msgstr "Pediatría"
+
+msgid "need_category_physical_health_name"
+msgstr "Salud física"
+
+msgid "need_category_postpartum_name"
+msgstr "Posparto"
+
+msgid "need_category_pregnancy_name"
+msgstr "Embarazo"
+
+msgid "need_category_surrogacy_name"
+msgstr "Maternidad subrogada"
+
+msgid "need_category_trying_to_conceive_name"
+msgstr "Intentar concebir"
+
+msgid "need_category_your_pregnancy_options_name"
+msgstr "Tus opciones de embarazo"

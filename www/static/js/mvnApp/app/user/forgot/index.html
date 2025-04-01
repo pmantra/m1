@@ -1,0 +1,36 @@
+<section class="forgot-password">
+  <div class="container">
+    <h1>Forgot your password?</h1>
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+
+        <div ng-show="success">
+          <h3>Complete!</h3>
+          <p>If the email address you entered exists in our system, you will soon receive an email with a link to reset
+            your password.</p>
+          <p>Please be sure to check your "spam" or "promotions" folder if you haven't received the email within 1
+            hour, and contact us at <a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a> if you are
+            still having trouble.</p>
+        </div>
+
+        <div ng-hide="success">
+          <p>
+            Enter the email address you are registered with to be sent a password reset:
+          </p>
+
+          <form ng-submit="resetpw(forgotForm)" role="form" ng-hide="success">
+            <div class="form-group">
+              <label>email</label>
+              <input type="email" name="email" ng-model="forgotForm.email" required="required" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send password reset</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div ng-include="'js/mvnApp/public/shared/_footer.html'"></div>

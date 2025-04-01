@@ -1,0 +1,128 @@
+.assessment-builder {
+  margin-bottom: 50px;
+
+  .fields {
+    margin-top: -50px;
+
+    .array-item {
+      .col-xs-9,
+      .col-xs-3 {
+        margin-top: 30px;
+      }
+
+      .col-xs-9 {
+        border-bottom: 1px solid #80808070;
+
+        .collapse-btn-bottom {
+          margin: -10px 0 20px;
+        }
+      }
+
+      .form-group {
+        .form-control {
+          min-height: 30px;
+        }
+
+        .field-boolean {
+          span {
+            font-weight: bold;
+          }
+        }
+
+        .question {
+          margin: 0 15px 20px;
+        }
+
+        span {
+          display: block;
+          font-style: italic;
+          margin-bottom: 15px;
+        }
+      }
+
+      .collapse-btn {
+        float: left;
+        margin-right: 10px;
+      }
+
+      .collapse-btn-bottom {
+        float: right;
+        margin-top: -40px;
+      }
+    }
+
+    .array-item-add {
+      margin-top: 30px;
+    }
+
+    .array-item-toolbox {
+      margin-left: -10px;
+    }
+
+    button[type='submit'],
+    .open-false {
+      display: none;
+    }
+  }
+
+  .editor {
+    position: sticky !important;
+    top: 0 !important;
+
+    .valid {
+      color: green;
+    }
+
+    .invalid {
+      color: red;
+    }
+
+    .CodeMirror {
+      height: 100vh !important;
+    }
+  }
+
+  .btn-copy {
+    background: #1ab78f;
+    border: none;
+    border-radius: 28px;
+    color: white;
+    float: right;
+    padding: 10px 20px;
+
+    &:hover {
+      background: #189e7c;
+    }
+
+    &.top {
+      margin-right: 30px;
+    }
+  }
+
+  .btn-danger {
+    background: #c12e2a;
+    border: none;
+
+    &:hover {
+      background: #96211e;
+    }
+  }
+
+  .collapse-btn,
+  .collapse-btn-bottom {
+    background: #3474ad;
+    border: none;
+    &:hover {
+      background: #245580;
+    }
+  }
+
+  .btn-add {
+    background: #5bc0de;
+    border: none;
+  }
+
+  button[type='submit'] {
+    display: none;
+  }
+}

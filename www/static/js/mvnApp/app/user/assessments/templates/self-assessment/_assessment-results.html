@@ -1,0 +1,31 @@
+<div class="assessment-{{ ::$ctrl.assessment.type }}">
+
+	<div ng-if="!$ctrl.loading">
+
+		<div ng-if="!$ctrl.isComplete">
+			<h5>Uh oh... you haven't completed this assessment yet!</h5>
+		</div>
+
+		<div ng-if="$ctrl.isComplete">
+			<div class="results-headline">
+				<h5>Your results</h5>
+			</div>
+
+			<hr/>
+			
+			<div class="parent-question" ng-repeat="question in $ctrl.userAssessment">
+				<div ng-if="question.answer.body">
+					<h5>{{ question.body }}</h5>
+
+						<p ng-if="question.widget.type == 'date' ">{{ question.answer.body.month }} / {{ question.answer.body.day }} / {{ question.answer.body.year }}</p>
+						<p ng-if="question.widget.type == 'freetextmulti' "><span  ng-repeat="(key, value) in question.answer.body">{{ value }}<br/></p>
+						<p ng-if="question.widget.type !== 'freetextmulti' && question.widget.type !== 'date' "> {{ ::question.answer.body }}</p>
+
+				</div>
+				
+
+			</div>			
+
+		</div>
+	</div>
+</div>

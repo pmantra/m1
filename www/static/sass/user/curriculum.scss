@@ -1,0 +1,212 @@
+.page-app-curriculum {
+	.curriculum {
+		background: linear-gradient(white, $secondary-3-lt);
+		padding-bottom: 2rem;
+
+		@include susy-breakpoint($tablet) {
+			padding-top: 1rem;
+		}
+
+		@include susy-breakpoint($desktop) {
+			padding-top: 2rem;
+		}
+
+		.curriculum-carousel {
+			margin: 0 auto;
+			max-width: 48rem;
+			position: relative;
+
+			.prev,
+			.next {
+				padding: 0.8rem 0.5rem;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+
+			.prev {
+				left: 28px;
+			}
+
+			.next {
+				right: 28px;
+			}
+
+			.slick-list {
+				@include susy-breakpoint($desktop-md) {
+					box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
+					border-radius: 0.5rem;
+				}
+			}
+
+			.slick-track {
+				margin-bottom: -10px; // wooow hacky
+			}
+
+			@include susy-breakpoint($desktop-md) {
+				.prev {
+					left: 0;
+				}
+				.next {
+					right: 0;
+				}
+			}
+
+			.slick-arrow {
+				background-color: rgba(255, 255, 255, 0.4);
+
+				&:focus {
+					outline: none;
+				}
+
+				@include susy-breakpoint($tablet) {
+					top: 50%;
+				}
+			}
+
+			.slick-disabled {
+				opacity: 0.4;
+			}
+		}
+
+		.subhead {
+			font-family: $font1-semibold;
+			text-transform: uppercase;
+			min-height: 1.5rem;
+		}
+
+		.title-section {
+			color: $gray-dk;
+			@include susy-breakpoint(0 $mobile-landscape-max) {
+				padding: 0 1rem;
+			}
+
+			.title {
+				margin-bottom: 0.5rem;
+			}
+
+			.subhead {
+				@include font-size(12);
+				margin-top: 0;
+			}
+		}
+
+		.curriculum-step {
+			&:focus {
+				outline: none;
+			}
+
+			.curriculum-card {
+				border-radius: 8px;
+				border: 0;
+				margin: 0 0.5rem;
+				display: block;
+				margin: 0 8px;
+				min-height: 430px;
+				position: relative;
+
+				@include susy-breakpoint($mobile-landscape $mobile-landscape-max) {
+					min-height: 470px;
+				}
+
+				.card-image {
+					border-radius: 8px 8px 0 0;
+					background-size: cover;
+					background-position: top;
+					background-repeat: no-repeat;
+					width: 100%;
+				}
+
+				.card-content {
+					padding: 2rem;
+
+					.card-title {
+						margin: 0.5rem 0;
+					}
+
+					.subhead {
+						margin: 0 0 1rem 0;
+					}
+				}
+
+				.card-actions {
+					@include flexbox(row, center, space-between);
+					.step-status {
+						@include flexbox;
+						height: 2rem;
+						width: 2rem;
+						background-color: rgba(255, 255, 255, 0.5);
+						border-radius: 50%;
+
+						.checkmark {
+							opacity: 0.1;
+						}
+
+						&.completed {
+							background-color: white;
+
+							.checkmark {
+								opacity: 1;
+							}
+						}
+					}
+
+					@include susy-breakpoint($tablet) {
+						@include flexbox(row, center, flex-start);
+
+						.step-status {
+							margin-left: 1.5rem;
+						}
+					}
+				} // end card-actions
+
+				.btn.btn-secondary-cta {
+					min-width: 0;
+					text-transform: capitalize;
+					color: $gray-dk;
+				}
+
+				@include susy-breakpoint(0 $mobile-max) {
+					.card-image {
+						height: 15rem;
+					}
+
+					.card-content {
+						padding-top: 0.5rem;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+					}
+				}
+
+				@include susy-breakpoint($mobile-landscape $mobile-landscape-max) {
+					.card-image {
+						height: 17rem;
+					}
+				}
+
+				@include susy-breakpoint($tablet) {
+					@include flexbox(row, center, space-between);
+
+					.card-image {
+						align-self: stretch;
+						border-radius: 8px 0 0 8px;
+						min-height: 23rem;
+						flex: 2;
+					}
+
+					.card-content {
+						flex: 1.5;
+						padding: 2rem 3.5rem 2rem 2rem;
+					}
+				}
+
+				@include susy-breakpoint($desktop-md) {
+					margin: 0;
+				}
+			} // end curriculum-card
+		}
+	}
+}

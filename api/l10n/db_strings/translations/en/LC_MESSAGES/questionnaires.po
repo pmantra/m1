@@ -1,0 +1,42 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-10-30 14:21-0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+msgid "questionnaire_cancellation_survey_description_text"
+msgstr "Mind sharing why you can't make your appointment?"
+
+msgid "questionnaire_cancellation_survey_title_text"
+msgstr "You're all set!"
+
+msgid "questionnaire_member_ca_rating_description_text"
+msgstr "Help us keep improving by rating your experience. Feedback provided here may be shared anonymously."
+
+msgid "questionnaire_member_ca_rating_title_text"
+msgstr "How did it go?"
+
+msgid "questionnaire_member_rating_v2_description_text"
+msgstr "Help us keep improving by rating your experience. Feedback provided here may be shared anonymously."
+
+msgid "questionnaire_member_rating_v2_title_text"
+msgstr "How did it go?"
+
+msgid "questionnaire_member_rating_followup_v2_description_text"
+msgstr "Please select all that apply."
+
+msgid "questionnaire_member_rating_followup_v2_title_text"
+msgstr "What could have been better?"

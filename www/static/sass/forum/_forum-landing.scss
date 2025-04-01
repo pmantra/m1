@@ -1,0 +1,201 @@
+/* FORUM LANDING */
+
+.page-app-forum-landing {
+	.forum-header {
+		border: none;
+		background: none;
+
+		.forum-header-content.content {
+			padding-bottom: 0;
+		}
+
+		input[type="search"] {
+			background-color: $gray-xxlt;
+			@include susy-breakpoint($desktop) {
+				margin-top: -10px;
+				transition: none;
+			}
+		}
+
+		.forum-header-communities {
+			@include susy-breakpoint($desktop) {
+				display: none;
+			}
+		}
+
+		.forum-return-community {
+			display: none;
+		}
+	}
+
+	.forum-landing-communities-header {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 102%;
+		@include susy-breakpoint($desktop) {
+			margin-bottom: 20px;
+		}
+
+		li {
+			background: white;
+			border: 1px solid $gray-xlt;
+			border-radius: 4px;
+			height: 128px;
+			margin-bottom: 16px;
+			flex: 1 0 40%;
+			margin-right: 16px;
+			@include susy-breakpoint($desktop) {
+				flex: 1 0 20%;
+			}
+
+			a {
+				color: $gray-xdk;
+				display: block;
+				font-size: 16px;
+				height: 100%;
+				text-align: center;
+				text-decoration: none;
+
+				.p {
+					margin: 10px;
+				}
+
+				.forum-landing-community-image {
+					height: 60px;
+					margin: 0 auto;
+					padding: 20px;
+					text-align: center;
+					img {
+						height: 40px;
+						width: 40px;
+					}
+
+					@include susy-breakpoint($desktop) {
+						height: 72px;
+						img {
+							height: 50px;
+							width: 50px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include susy-breakpoint($desktop) {
+		.popular-posts-list {
+			border-bottom: 1px solid $charcoal-40;
+			li {
+				width: 45%;
+				float: left;
+				&:nth-child(2n) {
+					float: right;
+				}
+				&:nth-last-child(-n + 2) {
+					.post-list-view {
+						border: none;
+					}
+				}
+			}
+		}
+	}
+
+	.forum-post-cta {
+		@include susy-breakpoint(0 $tablet-max) {
+			padding-top: 0;
+			background-color: white;
+		}
+	}
+}
+
+.forum-landing-community-popular {
+	h2 {
+		text-align: left;
+	}
+
+	h5,
+	.h5 {
+		&.practitioner-profession {
+			display: none;
+		}
+	}
+	.forum-landing-view-all {
+		margin: 5px 16px 40px;
+
+		@include susy-breakpoint($desktop) {
+			margin: 20px 0 0;
+		}
+
+		a {
+			background: url(/img/icons/caret-right-grn.svg) 98% center no-repeat;
+			color: $gray-dk;
+			width: 100%;
+		}
+	}
+	.popular-header {
+		display: flex;
+		justify-content: space-between;
+		padding: 40px 16px 24px;
+		@include susy-breakpoint(0 $tablet-max) {
+			background-color: $gray-xxlt;
+			h2 {
+				margin: 0;
+			}
+		}
+		@include susy-breakpoint($desktop) {
+			border-bottom: 1px solid $charcoal-40;
+			padding: 0;
+			margin-top: 60px;
+		}
+		h2 {
+			font-size: 22px;
+		}
+	}
+
+	.popular-posts-list.content {
+		@include susy-breakpoint(0 $tablet-max) {
+			padding-bottom: 10px;
+		}
+		li {
+			&:last-child {
+				.post-list-view {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	@include susy-breakpoint($desktop) {
+		.post-list-body {
+			height: 100px;
+		}
+		.post-list-view {
+			margin-bottom: 0;
+			min-height: 345px;
+			position: relative;
+
+			&.content {
+				padding-bottom: 20px;
+			}
+
+			.btn-container {
+				position: absolute;
+				bottom: 24px;
+			}
+		}
+	}
+}
+
+.post-loader {
+	background: white;
+	height: 220px;
+	margin-bottom: 20px;
+	svg {
+		margin-top: 75px;
+		@include susy-breakpoint($mobile-landscape $tablet-max) {
+			margin-top: 10%;
+		}
+	}
+}

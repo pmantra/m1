@@ -1,0 +1,72 @@
+{% extends 'admin/model/edit.html' if model else 'admin/model/create.html' %}
+
+{% block body %}
+    {{ super() }}
+    <h4>Select host practitioner if applicable:</h4>
+    <select id="practitioner" name="practitioner" onchange="fillHostFields()">
+        <option selected="selected"></option>
+        {% for id in practitioner_ids %}
+            <option specialty='{{practitioner_dict[id]["specialty"]}}' data-id={{practitioner_dict[id]["id"]}} value={{practitioner_dict[id]["image_url"]}}>{{ practitioner_dict[id]["name"] }}</option>
+        {% endfor %}
+    </select>
+    <script type="text/javascript">
+        const ZOOM_WEBINAR_ID_MIN_LENGTH = 10;
+        const ZOOM_WEBINAR_ID_MAX_LENGTH = 11;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            input = document.getElementById("webinar_id");
+            input.addEventListener("input", getZoomInfo);
+            if(input.value.length > 0) {
+                getZoomInfo();
+            }
+        });
+
+        function fillHostFields() {
+            const dropdown = document.getElementById("practitioner");
+            const image_str = dropdown.value;
+            const selected_option = dropdown.options[dropdown.selectedIndex]
+            const name = selected_option.text;
+            const practitioner_id = selected_option.getAttribute(["data-id"])
+            const url_slug = `/practitioner/${practitioner_id}`
+            document.getElementById("host_image_url").value = image_str;
+            document.getElementById("host_name").value = name;
+            document.getElementById("host_specialty").value = selected_option.getAttribute("specialty");
+            document.getElementById("provider_profile_url").value = url_slug;
+        }
+
+        function getZoomInfo() {
+            const inputField = document.getElementById("webinar_id");
+            const zoomIdStr = inputField.value;
+            if(zoomIdStr.length === 0) {
+                document.getElementById("webinar_info").innerHTML = "";
+            } else if(zoomIdStr.length < ZOOM_WEBINAR_ID_MIN_LENGTH) {
+                document.getElementById("webinar_info").innerHTML = "ID too short";
+            } else if(zoomIdStr.length > ZOOM_WEBINAR_ID_MAX_LENGTH) {
+                document.getElementById("webinar_info").innerHTML = "ID too long";
+            } else {
+                fetch(`/admin/virtualevent/zoom_info?id=${zoomIdStr}`)
+                .then(response => {
+                    if(response.ok) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
+                })
+                .then(data => {
+                    if(data.message) {
+                        // Error response from zoom is formatted {code: 123, message: abc}
+                        document.getElementById("webinar_info").innerHTML = data.message;
+                    } else {
+                        document.getElementById("webinar_info").innerHTML = `<h5>Webinar info for ${zoomIdStr}</h5><ul><li>Topic: ${data.topic}</li><li>Start time: ${data.start_time}</li></ul>`;
+                    }
+                })
+                .catch(error => {
+                    error.json().then( errorMessage => {
+                        console.error("Error trying to fetch webinar info:", errorMessage);
+                        document.getElementById("webinar_info").innerHTML = `Error trying to fetch webinar info. Maybe try again?`;
+                    })
+                })
+            }
+        }
+    </script>
+{% endblock %}

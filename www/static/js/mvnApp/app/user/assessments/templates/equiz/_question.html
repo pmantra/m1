@@ -1,0 +1,176 @@
+<div class="" ng-if="$ctrl.assessment" ng-init="$ctrl.focusMainHeading()">
+
+	<div class="quiz-container" ng-class="{ 'is-correct': $ctrl.question.answered && $ctrl.isCorrect, 'is-incorrect': $ctrl.question.answered && !$ctrl.isCorrect }">
+		
+		<div class="quiz-body">
+			<div class="question">
+				<div>
+					<p class="question-count">
+						<span ng-if="!$ctrl.question.answered" class="fade-in">Question {{ ::$ctrl.question.id }} of {{ ::$ctrl.assessment.question_json.questions.length }}</span>
+						<span ng-if="$ctrl.question.answered" class="fade-in">{{ $ctrl.question.body }}</span>
+					</p>
+					<h3 tabindex="-1" class="assessments-main-heading">
+						<span ng-if="!$ctrl.question.answered" class="fade-in">
+							{{ $ctrl.question.body }}
+						</span>
+						<span ng-if="$ctrl.question.answered" class="fade-in">
+							<span ng-if="$ctrl.isCorrect" class="fade-in">
+								{{ :: $ctrl.question.widget.solution.correct.title }}
+							</span>
+							<span ng-if="!$ctrl.isCorrect">
+								{{ :: $ctrl.question.widget.solution.incorrect.title }}
+							</span>
+						</span>
+					</h3>
+					<p ng-if="$ctrl.question.answered" class="fade-in">
+						<span ng-if="!$ctrl.isCorrect">{{ :: $ctrl.question.widget.solution.incorrect.subtitle }}</span>
+						<span ng-if="$ctrl.isCorrect">{{ :: $ctrl.question.widget.solution.correct.subtitle }}</span>
+					</p>
+				</div>
+
+			</div>
+
+			<form name="$ctrl.assessmentParentAnswer" class="form secondary-app">
+				<div ng-if="$ctrl.question.widget.type == 'e-quiz-question' " class="clearfix" ng-class="{'answered' : $ctrl.question.answered }">
+					<div class="options-container quiz-question-{{ $ctrl.question.widget.options.length }}-choices">
+						<div
+							ng-repeat="opt in $ctrl.question.widget.options"
+							class="option"
+							ng-click="$ctrl.onAnswerClick(opt)"
+							ng-model="$ctrl.question.answer.body"
+							tabindex="{{ $ctrl.question.answered ? -1 : 0 }}"
+							aria-disabled="{{ $ctrl.question.answered ? 'true' : 'false' }}"
+							ng-class="{'selected' : $ctrl.question.answer.body === opt.value, 'correct-answer': ($ctrl.question.answered && $ctrl.optionIsCorrect($ctrl.question, opt.value) ) }">
+							<span class="opt-letter-index">
+								<span class="opt-label" ng-class="{'incorrect' : ($ctrl.question.answered && !$ctrl.optionIsCorrect($ctrl.question, opt.value))}">
+									<span ng-if="$index === 0">
+										<span class="icon-answered">
+											<span ng-class="{ 'is-correct' : $ctrl.optionIsCorrect($ctrl.question, opt.value) }">
+												<span class="icon-correct">
+													<svg width="17" height="16" viewBox="0 0 19 13" xmlns="http://www.w3.org/2000/svg">
+														<title>Correct</title>
+														<path d="M1 6.525L6.63 12 17.89 1.05" stroke-width="1" stroke="#FFF" fill="none" fill-rule="evenodd" stroke-linecap="round"
+														stroke-linejoin="round" />
+													</svg>
+												</span>
+												<span class="icon-incorrect">
+													<svg width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+														<title>Incorrect</title>
+														<g stroke-width="2" stroke="#ffffff" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+															<path d="M1 1l21.684 21.685M1 22.685L22.684 1" />
+														</g>
+													</svg>
+												</span>
+											</span>
+
+										</span>
+										<span class="icon-not-answered">A</span>
+									</span>
+									<span ng-if="$index === 1">
+										<span class="icon-answered">
+											<span ng-class="{ 'is-correct' : $ctrl.optionIsCorrect($ctrl.question, opt.value) }">
+												<span class="icon-correct">
+													<svg width="17" height="16" viewBox="0 0 19 13" xmlns="http://www.w3.org/2000/svg">
+														<title>Correct</title>
+														<path d="M1 6.525L6.63 12 17.89 1.05" stroke-width="1" stroke="#FFF" fill="none" fill-rule="evenodd" stroke-linecap="round"
+														stroke-linejoin="round" />
+													</svg>
+												</span>
+												<span class="icon-incorrect">
+													<svg width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+														<title>Incorrect</title>
+														<g stroke-width="2" stroke="#ffffff" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+															<path d="M1 1l21.684 21.685M1 22.685L22.684 1" />
+														</g>
+													</svg>
+												</span>
+											</span>
+
+										</span>
+										<span class="icon-not-answered">B</span>
+									</span>
+									<span ng-if="$index === 2">
+										<span class="icon-answered">
+											<span ng-class="{ 'is-correct' : $ctrl.optionIsCorrect($ctrl.question, opt.value) }">
+												<span class="icon-correct">
+													<svg width="17" height="16" viewBox="0 0 19 13" xmlns="http://www.w3.org/2000/svg">
+														<title>Correct</title>
+														<path d="M1 6.525L6.63 12 17.89 1.05" stroke-width="1" stroke="#FFF" fill="none" fill-rule="evenodd" stroke-linecap="round"
+														stroke-linejoin="round" />
+													</svg>
+												</span>
+												<span class="icon-incorrect">
+													<svg width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+														<title>Incorrect</title>
+														<g stroke-width="2" stroke="#ffffff" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+															<path d="M1 1l21.684 21.685M1 22.685L22.684 1" />
+														</g>
+													</svg>
+												</span>
+											</span>
+
+										</span>
+										<span class="icon-not-answered">C</span>
+									</span>
+									<span ng-if="$index === 3">
+										<span class="icon-answered">
+											<span ng-class="{ 'is-correct' : $ctrl.optionIsCorrect($ctrl.question, opt.value) }">
+												<span class="icon-correct">
+												<svg width="17" height="16" viewBox="0 0 19 13" xmlns="http://www.w3.org/2000/svg">
+													<title>Correct</title>
+													<path d="M1 6.525L6.63 12 17.89 1.05" stroke-width="1" stroke="#FFF" fill="none" fill-rule="evenodd" stroke-linecap="round"
+													stroke-linejoin="round" />
+												</svg>
+												</span>
+												<span class="icon-incorrect">
+													<svg width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+														<title>Incorrect</title>
+														<g stroke-width="2" stroke="#ffffff" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+															<path d="M1 1l21.684 21.685M1 22.685L22.684 1" />
+														</g>
+													</svg>
+												</span>
+											</span>
+
+										</span>
+										<span class="icon-not-answered">D</span>
+									</span>
+									<span ng-if="$index === 4">
+										<span class="icon-answered">
+											<span ng-class="{ 'is-correct' : $ctrl.optionIsCorrect($ctrl.question, opt.value) }">
+												<span class="icon-correct">
+													<svg width="17" height="16" viewBox="0 0 19 13" xmlns="http://www.w3.org/2000/svg">
+														<title>Correct</title>
+														<path d="M1 6.525L6.63 12 17.89 1.05" stroke-width="1" stroke="#FFF" fill="none" fill-rule="evenodd" stroke-linecap="round"
+														stroke-linejoin="round" />
+													</svg>
+												</span>
+												<span class="icon-incorrect">
+													<svg width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+														<title>Incorrect</title>
+														<g stroke-width="2" stroke="#ffffff" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+															<path d="M1 1l21.684 21.685M1 22.685L22.684 1" />
+														</g>
+													</svg>
+												</span>
+											</span>
+
+										</span>
+										<span class="icon-not-answered">E</span>
+									</span>
+
+
+							</span>
+							{{ ::opt.label }}
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="next-question clearfix">
+			<a ng-if="$ctrl.question.answered" class="btn btn-cta" href="" ng-click="$ctrl.saveAnswers()" ng-disabled="$ctrl.btnDisabled" ng-class="{'disabled' : $ctrl.btnDisabled }"><span ng-if="!$ctrl.lastQ">Next question</span><span ng-if="$ctrl.lastQ">Finish</span></a>
+			<a ng-if="!$ctrl.question.answered" class="btn btn-cta submit-answer" href="" ng-click="$ctrl.showAnswer()" ng-disabled="$ctrl.btnDisabled" ng-class="{'disabled' : $ctrl.btnDisabled }"><span>Submit</span></a>
+		</div>
+	</div>
+</div>

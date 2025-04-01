@@ -1,0 +1,13 @@
+dag_id: data_checker_half_hourly_dag
+schedule: "*/30 * * * *" # every 30 minutes
+task_id: data_checker_half_hourly_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.care_discovery.data_checker_half_hourly import data_checker_half_hourly_job; data_checker_half_hourly_job()"
+team_namespace: care_discovery
+service_namespace: care_team
+catchup: False
+start_year: 2025
+start_month: 03
+start_day: 11

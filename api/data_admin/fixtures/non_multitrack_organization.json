@@ -1,0 +1,22 @@
+[
+  {
+    "type": "organization",
+    "name": "Non-Multitrack Org",
+    "activated_at": "1 year ago",
+    "allowed_track_names": [
+        "adoption",
+        "breast_milk_shipping",
+        "egg_freezing",
+        "fertility",
+        "general_wellness",
+        "partner_fertility",
+        "partner_newparent",
+        "partner_pregnant",
+        "postpartum",
+        "pregnancy",
+        "pregnancyloss",
+        "surrogacy",
+        "trying_to_conceive"
+    ]
+  }
+]

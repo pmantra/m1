@@ -1,0 +1,22 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: fr\n"
+
+#: tasks/notifications.py:406
+msgid "cta_message_link"
+msgstr "Pour voir ce message, consultez {link}/app/messages"
+
+#: tasks/notifications.py:401
+msgid "generic_message_body"
+msgstr "Vous avez un nouveau message d'un praticien sur Maven."
+
+#: tasks/notifications.py:397
+msgid "wallet_message_body"
+msgstr "Vous avez un message concernant le Maven Wallet !"

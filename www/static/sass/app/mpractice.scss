@@ -1,0 +1,175 @@
+/* Appointment detail page */
+.na-completed {
+	ul {
+		padding-left: 20px;
+		li,
+		p,
+		.p {
+			text-transform: capitalize;
+		}
+	}
+	.child-answer {
+		margin-left: 20px;
+	}
+}
+
+.upload-birth-plan {
+	margin-top: 30px;
+	background: $charcoal-20;
+	text-align: left;
+	padding: 20px 15px;
+	max-width: 360px;
+	margin: 0 auto;
+	.download-bp-template {
+		color: $charcoal-100;
+		margin: 10px 15px;
+		display: block;
+	}
+	h5 {
+		margin-bottom: 0;
+	}
+	fieldset {
+		text-align: center;
+		input[type="file"] {
+			padding: 10px 5px;
+			background: $macaroon-20;
+		}
+	}
+}
+
+// Patient history dialog
+.patient-history-dialog--content {
+	.modal-header {
+		text-align: center;
+
+		h3 {
+			margin-top: 0.5rem;
+		}
+	}
+
+	.modal-title {
+		@include font-size(14);
+		color: $gray;
+		margin-bottom: 0;
+		text-transform: uppercase;
+	}
+
+	.tab-nav {
+		text-align: center;
+
+		a:hover {
+			cursor: pointer;
+		}
+	}
+
+	.appointment-list {
+		height: 300px;
+		margin: 0;
+		overflow-y: scroll;
+		padding: 0;
+
+		.appointment-card {
+			@include mvn-container;
+			list-style: none;
+			margin: 1rem auto;
+			padding: 1.5rem;
+			text-decoration: none;
+			width: 95%;
+
+			&.cancelled {
+				background-color: $secondary-2-lt;
+			}
+		}
+
+		.appointment-notes {
+			h5 {
+				margin-bottom: 0;
+			}
+
+			h5 + p,
+			h5 + .p {
+				margin-top: 0.25rem;
+			}
+		}
+
+		.appointment-date {
+			margin-top: 0;
+		}
+
+		.practitioner-name {
+			margin-bottom: 0.2rem;
+		}
+
+		.practitioner-title {
+			@include font-size(14);
+			color: $gray;
+			text-transform: uppercase;
+			margin-top: 0;
+		}
+	}
+
+	.no-content {
+		margin-top: 2rem;
+		text-align: center;
+	}
+}
+
+/* Member care history dialog */
+.care-history-dialog--content {
+	h2 {
+		text-align: center;
+	}
+	ul {
+		border: 1px solid $charcoal-40;
+		padding: 30px;
+		overflow-y: scroll;
+		height: 300px;
+		li {
+			list-style-type: none;
+			border-bottom: 1px solid $charcoal-40;
+			position: relative;
+			padding: 10px 0;
+			.practitioner-info {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: space-between;
+				.left-side {
+					h3 {
+						padding: 0;
+						margin: 0;
+					}
+					h5 {
+						margin: 0;
+					}
+				}
+				.right-side {
+					span {
+						color: $emerald-50;
+					}
+				}
+			}
+			.toggle-container {
+				text-align: right;
+				position: absolute;
+				right: 0;
+				bottom: 5px;
+				margin-bottom: 10px;
+			}
+			.practitioner-note {
+				display: none;
+				margin-bottom: 30px;
+				&.active {
+					display: block;
+				}
+			}
+		}
+		a {
+			&.btn-action {
+				text-align: center;
+				display: block;
+				margin: 10px auto;
+			}
+		}
+	}
+}

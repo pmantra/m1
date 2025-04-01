@@ -1,0 +1,16 @@
+{% extends 'admin/base.html' %}
+
+{% block body %}
+
+<h1>Marketing Tools</h1>
+
+<h3>Repopulate Braze</h3>
+<form method="POST" action="/admin/actions/repopulate_braze" enctype="multipart/form-data">
+    <p>Upload a CSV file with the braze external user ids (user_id as column header) that you wish to repopulate.</p>
+    <p><input type="file" required="required" name="user_ids_file"></p>
+    <p><input type="submit" value="submit file"></p>
+</form>
+
+{% endblock %}
+
+

@@ -1,0 +1,26 @@
+<section class="forum-list-posts my-bookmarks">		
+	<div class="my-posts content-container">
+
+		<inline-loader ng-show="$ctrl.loading" loading="$ctrl.loading" label="Loading posts you've bookmarked..."></inline-loader>
+
+		<div class="forum-posts-list" ng-hide="loading" ng-if="$ctrl.bookmarks.length >= 1">
+			<ul class="posts clear" mvn-inf-scroll scroll-container="scroll-container" is-loading="$ctrl.loadingMore" scroll-action="$ctrl.loadMore()">
+				<li class="post-list" ng-repeat="post in $ctrl.bookmarks">
+					<post-list-view post="post" cats="$ctrl.cats" user="$ctrl.user"></post-list-view>
+				</li>
+				<li ng-show="$ctrl.loadingMore" class="list-loader"><inline-loader ng-show="$ctrl.loadingMore" loading="$ctrl.loadingMore" label="Getting more posts..."></inline-loader></li>
+			</ul>
+		</div>
+		<div ng-if="$ctrl.bookmarks.length < 1">
+			<div class="empty-cta empty-content center">
+				<div class="empty-icon">
+					<svg width="74" height="96" viewBox="0 0 74 96" xmlns="http://www.w3.org/2000/svg"><title>Unhappy clipboard</title><g fill="none" fill-rule="evenodd"><path stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M59.485 14.226h12.64v79.5h-70v-79.5h12.61"/><path stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M14.875 21.22h44.5v-13h-44.5zM31.063 8.188a6.063 6.063 0 0 1 12.124 0M58.34 53.976c0 11.716-9.5 21.214-21.216 21.214-11.715 0-21.213-9.498-21.213-21.214.002-11.718 9.5-21.215 21.214-21.215 11.717 0 21.215 9.498 21.215 21.216z"/><path d="M27.987 62.505a10.82 10.82 0 0 1 9.033-4.855c3.913 0 7.34 2.074 9.244 5.185" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M33.28 47.177a2.063 2.063 0 1 1-4.125 0 2.063 2.063 0 0 1 4.126 0M45.094 47.177a2.063 2.063 0 1 1-4.127 0 2.063 2.063 0 0 1 4.127 0" fill="#111111"/></g></svg>
+				</div>
+				<h2 class="h3">You haven't bookmarked any posts yet!</h2>
+				<p><a class="btn btn-cta" ui-sref="app.forum.landing">Explore the forum</a></p>
+			</div>
+
+		</div>
+
+	</section>
+</div>

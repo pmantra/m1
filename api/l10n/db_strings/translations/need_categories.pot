@@ -1,0 +1,68 @@
+msgid "need_category_lifestyle_nutrition_name"
+msgstr ""
+
+msgid "need_category_emotional_health_name"
+msgstr ""
+
+msgid "need_category_fertility_tests_treatment_name"
+msgstr ""
+
+msgid "need_category_trying_to_conceive_name"
+msgstr ""
+
+msgid "need_category_general_health_name"
+msgstr ""
+
+msgid "need_category_more_paths_to_parenthood_name"
+msgstr ""
+
+msgid "need_category_nutrition_name"
+msgstr ""
+
+msgid "need_category_physical_health_name"
+msgstr ""
+
+msgid "need_category_labor_delivery_name"
+msgstr ""
+
+msgid "need_category_pregnancy_name"
+msgstr ""
+
+msgid "need_category_postpartum_name"
+msgstr ""
+
+msgid "need_category_infant_feeding_name"
+msgstr ""
+
+msgid "need_category_pediatrics_name"
+msgstr ""
+
+msgid "need_category_early_pregnancy_name"
+msgstr ""
+
+msgid "need_category_menopause_medications_name"
+msgstr ""
+
+msgid "need_category_menopause_name"
+msgstr ""
+
+msgid "need_category_egg_freezing_name"
+msgstr ""
+
+msgid "need_category_adoption_name"
+msgstr ""
+
+msgid "need_category_surrogacy_name"
+msgstr ""
+
+msgid "need_category_loss_support_name"
+msgstr ""
+
+msgid "need_category_your_pregnancy_options_name"
+msgstr ""
+
+msgid "need_category_parenting_name"
+msgstr ""
+
+msgid "need_category_male_fertility_name"
+msgstr ""

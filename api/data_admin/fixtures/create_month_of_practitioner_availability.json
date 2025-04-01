@@ -1,0 +1,8 @@
+[
+    {
+        "type": "schedule_event",
+        "practitioner": "test+np_avail@mavenclinic.com",
+        "starts_in": "in 1 hour",
+        "minutes": 43800
+    }
+]

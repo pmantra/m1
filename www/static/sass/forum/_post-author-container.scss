@@ -1,0 +1,109 @@
+.post-author-container {
+	// margin: 1rem 0;
+	display: flex;
+	justify-content: flex-start;
+
+	@include susy-breakpoint($desktop) {
+		padding-top: 25px;
+	}
+
+	> div {
+		width: 100%;
+
+		@include susy-breakpoint($tablet) {
+			width: 70%;
+		}
+	}
+
+	post-author {
+		.user-name {
+			margin-top: 25px;
+			.name {
+				word-break: break-word;
+			}
+		}
+	}
+
+	.name {
+		color: $gray-dk;
+		font-weight: bold;
+		display: block;
+		font-size: 16px;
+		margin-top: -14px;
+
+		@include susy-breakpoint($tablet) {
+			font-size: 18px;
+		}
+	}
+
+	.no-username {
+		display: flex;
+		align-items: center;
+
+		&:before {
+			border-radius: 50%;
+			width: 45px;
+			height: 45px;
+			content: "#";
+			display: inline-block;
+			vertical-align: bottom;
+			background-color: #00413e;
+			color: #fff;
+			font-weight: 300;
+			line-height: 44px;
+			font-size: 20px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		a {
+			font-size: 16x;
+			margin-left: 10px;
+			text-decoration: none;
+			@include susy-breakpoint($tablet) {
+				font-size: 18px;
+				margin-left: 15px;
+			}
+		}
+	}
+
+	.post-anon-checkbox {
+		float: right;
+		margin-left: auto;
+		height: 45px;
+		text-align: right;
+
+		@include susy-breakpoint($tablet) {
+			background: white;
+			border: 1px solid $gray-xlt;
+			height: 60px;
+			padding: 20px 16px;
+			text-align: left;
+			width: 200px;
+		}
+
+		.checkbox-container {
+			padding: 0;
+			margin: 0;
+			width: 100%;
+		}
+
+		.label-text {
+			color: $primary;
+			font-weight: bold;
+			line-height: 16px;
+		}
+	}
+
+	.post-action {
+		display: none;
+	}
+
+	.profession {
+		margin-top: 11px;
+
+		br {
+			display: none;
+		}
+	}
+}

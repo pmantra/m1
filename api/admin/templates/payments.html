@@ -1,0 +1,115 @@
+{% extends 'admin/base.html' %}
+{% import 'admin/lib.html' as lib with context %}
+{% block head %}
+{{ super() }}
+{{ lib.form_css() }}
+{% endblock %}
+
+{% block body %}
+
+<h1>Practitioner Payment Tools</h1>
+
+<h3>Change Practitioner Bank Account</h3>
+
+<h4>Don't use this without talking to Kaitlyn first!</h4>
+
+<form method="POST" action="/admin/actions/update_practitioner_bank_account">
+    <p>Account #: <input id="account_id" name="account_id" type="text" value=""></p>
+    <p>Routing #: <input id="routing_id" name="routing_id" type="text" value=""></p>
+    <p>Prac ID: <input id="practitioner_id" name="practitioner_id" type="text" value=""></p>
+    <input type="submit" class="btn btn-primary btn-large" value="Change It!">
+</form>
+
+
+<h3>Bulk Fee Deletion</h3>
+
+Don't use this without talking to Tom or Katie first!
+
+Can be an ID type of either "message" or "appointment". The CSV should have only 1 column in the first column of the sheet, NO header row, and no blank cells in the column.
+
+<form method="POST" action="/admin/practitioner_management/delete_fees" enctype="multipart/form-data">
+    <input type="file" id="csv" name="csv">
+    <input id="fee_id_type" name="fee_id_type" type="text" value="id type">
+    <input type="submit" class="btn btn-primary btn-large" value="Delete Fees">
+</form>
+
+<h1>Reporting Tools</h1>
+
+<form method="POST" action="/admin/reporting/fees">
+    <h3>Practitioner Fees</h3>
+    <input id="start_date" name="start_date" type="text" value="DD-MM-YYYY">
+    <input id="end_date" name="end_date" type="text" value="DD-MM-YYYY">
+    <input type="submit" class="btn btn-primary btn-large" value="Get CSV">
+</form>
+
+<form method="POST" action="/admin/reporting/appointments">
+    <h3>Appointments</h3>
+    <input id="start_date" name="start_date" type="text" value="DD-MM-YYYY">
+    <input id="end_date" name="end_date" type="text" value="DD-MM-YYYY">
+    <input type="submit" class="btn btn-primary btn-large" value="Get CSV">
+</form>
+
+<form method="POST" action="/admin/reporting/messaging">
+    <h3>Messages</h3>
+    <input id="start_date" name="start_date" type="text" value="DD-MM-YYYY">
+    <input id="end_date" name="end_date" type="text" value="DD-MM-YYYY">
+    <input type="submit" class="btn btn-primary btn-large" value="Get CSV">
+</form>
+
+<form method="POST" action="/admin/reporting/invoices">
+    <h3>Invoices</h3>
+     <input data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimepicker"
+            id="invoice_start_date"  name="start_date" type="text" placeholder="Start Date" required="required">
+     <input data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimepicker"
+            id="invoice_end_date"  name="start_date" type="text" placeholder="End Date" required="required">
+    <label for="distributed_practitioner">
+        Only include distributed practitioner's invoices?
+        <input id="distributed_practitioner" name="distributed_practitioner" type="checkbox">
+    </label>
+    <input type="submit" class="btn btn-primary btn-large" value="Get CSV">
+</form>
+<a href="/admin/reporting/invoices/all" title="Get a CSV of all Invoices all time">All Invoices Ever</a><br/><br/>
+
+
+<h1>Convert Stripe Balance CSV</h1>
+
+<p>Download a CSV from stripe balance transactions, use this to convert to quickbooks import format.</p>
+
+<p>
+<form method="POST" action="/admin/actions/translate_stripe_csv" enctype="multipart/form-data">
+    <input type="file" id="content" name="content">
+    <input type="submit" class="btn btn-primary btn-large" value="Convert CSV">
+</form>
+</p>
+
+
+<h1>Start Invoice Transfers</h1>
+
+<p>Enter the code from the fee cleanup email to start transfers on the generated invoices.
+If any fees have changed, this will not work and you have have to start the transfers manually.</p>
+
+<p>
+<form method="POST" action="/admin/actions/start_invoice_transfers" enctype="multipart/form-data">
+    <input type="text" name="fee_hash" required="required" placeholder="enter code...">
+    <input type="submit" class="btn btn-primary btn-large" value="Start transfers">
+</form>
+</p>
+
+
+
+<h1>Restart Invoice Transfers</h1>
+
+<p>Click to restart invoice transfers for non completed invoices that have occurred</p>
+
+<p>
+<form method="POST" action="/admin/actions/restart_invoice_transfers" enctype="multipart/form-data">
+    <input type="submit" class="btn btn-primary btn-large" value="Start transfers">
+</form>
+</p>
+
+{% endblock %}
+
+{% block tail %}
+{{ super() }}
+{{ lib.form_js() }}
+{% endblock %}

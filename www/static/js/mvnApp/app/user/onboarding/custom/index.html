@@ -1,0 +1,426 @@
+<div class="onboarding-container center floating-panel">
+
+		<div ng-if="obVersion === 'nutrition-swag-25' ">
+
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>You have $25 in credit to book your free video appointment</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Get a personalized healthy eating plan, diet tips or nutrition advice&mdash;all via video.</h3>
+					<p class="center clearfix"><a class="btn btn-action" href="" ng-click="goToStep('2')">Next</a></p>
+				</div>
+
+				<div ng-if="obStep.step == '2' ">
+					<h5>Bonus offer</h5>
+					<h2>Book and complete an appointment within 24 hours to receive a Maven Swag Bag</h2>
+					
+					<div class="ob-swag-img">
+						<img class="onboarding-icon" src="/img/app/user/onboarding/swagbag.png" width="200" height="200"/>
+					</div>
+
+					<h3>Once you've completed your appointment, the swag is all yours!</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Find your nutritionist</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="obVersion === 'nutrition-ib' ">
+
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>You have $25 in credit to book your free video appointment</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Get a personalized healthy eating plan, diet tips or nutrition advice&mdash;all via video.</h3>
+					<p class="center clearfix"><a class="btn btn-action" href="" ng-click="goToStep('2')">Next</a></p>
+				</div>
+
+				<div ng-if="obStep.step == '2' ">
+					<h5>Bonus offer</h5>
+					<h2>Book and complete an appointment to receive a Maven Swag Bag</h2>
+					
+					<div class="ob-swag-img">
+						<img class="onboarding-icon" src="/img/app/user/onboarding/swagbag.png" width="200" height="200"/>
+					</div>
+
+					<h3>Once you've completed your appointment, the swag is all yours!</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Meet your nutritionist</a></p>
+				</div>
+			</div>
+		</div>
+
+
+		<div ng-if="obVersion === 'college-guide-1' ">
+
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>We're sending you your guide</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/mail-sent.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Get more: Talk to one of Maven's nutritionists for a customized program, for free!.</h3>
+					<p class="center clearfix"><a class="btn btn-action" href="" ng-click="goToStep('2')">Next</a></p>
+				</div>
+
+				<div ng-if="obStep.step == '2' ">
+					<h5>Bonus offer</h5>
+					<h2>We put $25 of credit in your account!</h2>
+					
+					<div class="ob-swag-img">
+						<img class="onboarding-icon" src="/img/app/user/onboarding/icon-star.png" width="200" height="200"/>
+					</div>
+
+					<h3>Use your credit to book an appointment with a nutritionist now!</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Meet a nutritionist</a></p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div ng-if="obVersion === 'mental-health-ib' ">
+
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>You have $25 in credit to book your free video appointment</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Get advice and support from Maven's therapists&mdash;all via video.</h3>
+					<p class="center clearfix"><a class="btn btn-action" href="" ng-click="goToStep('2')">Next</a></p>
+					
+				</div>
+
+				<div ng-if="obStep.step == '2' ">
+					<h5>Bonus offer</h5>
+					<h2>Book and complete an appointment to receive a Maven Swag Bag</h2>
+					
+					<div class="ob-swag-img">
+						<img class="onboarding-icon" src="/img/app/user/onboarding/swagbag.png" width="200" height="200"/>
+					</div>
+
+					<h3>Once you've completed your appointment, the swag is all yours!</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Meet your therapist</a></p>
+				</div>
+			</div>
+			
+		</div>
+
+
+		<div ng-if="obVersion === 'mental-health-1' ">
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>You have $25 in credit to book your free video appointment</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Get advice and support from Maven's therapists&mdash;all via video.</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Find your therapist</a></p>
+					
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="obVersion === 'mental-health-2' ">
+
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>Try a 10 minute video appointment with a Maven therapist for just $1!</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Get advice and support from Maven's therapists&mdash;all via video.</h3>
+					<p class="center clearfix"><a class="btn btn-action" href="" ng-click="goToStep('2')">Next</a></p>
+					
+				</div>
+
+				<div ng-if="obStep.step == '2' ">
+					<h5>Bonus offer</h5>
+					<h2>Book and complete an appointment within 24 hours to receive a Maven Swag Bag</h2>
+					
+					<div class="ob-swag-img">
+						<img class="onboarding-icon" src="/img/app/user/onboarding/swagbag.png" width="200" height="200"/>
+					</div>
+
+					<h3>Once you've completed your appointment, the swag is all yours!</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Find your therapist</a></p>
+				</div>
+			</div>
+			
+		</div>
+
+		<div ng-if="obVersion === 'giveaway-steps' ">
+
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>Step 1. Book Your Free 10 Minute trial Appointment</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>We've put $25 of credit in your account to book your free appointment!</h3>
+					<p class="center clearfix"><a class="btn btn-action" href="" ng-click="goToStep('2')">Next</a></p>
+				</div>
+				
+				<div ng-if="obStep.step == '2' ">
+					<h5>Check In</h5>
+					<h2>Step 2. Complete Your Appointment</h2>
+					
+					<div class="">
+						<div class="reb-laptop-gif">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/reblaptop.gif"/>
+						</div>
+					</div>
+
+					<h3>Sign in to Maven on your computer or the iPhone App at the time of your appointment, and complete your free consultation.</h3>
+					<p class="center clearfix"><a class="btn btn-action" href="" ng-click="goToStep('3')">Next</a></p>
+				</div>
+
+				<div ng-if="obStep.step == '3' ">
+					<h5>Treat Yo'Self</h5>
+					<h2>Step 3. Get Your Free Swag!</h2>
+					
+					<div class="ob-swag-img">
+						<img class="onboarding-icon" src="/img/app/user/onboarding/swagbag.png" width="200" height="200"/>
+					</div>
+
+					<h3>When you complete your free appointment we'll send you swag!</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Get Started</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="obVersion === 'sephora-giveaway' ">
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>You have $25 in credit to book your free video appointment</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Get personalized health &amp; wellness advice&mdash;all via video.</h3>
+					<p class="center clearfix"><a class="btn btn-action" href="" ng-click="goToStep('2')">Next</a></p>
+					
+				</div>
+
+				<div ng-if="obStep.step == '2' ">
+					<h5>Bonus offer</h5>
+					<h2>Complete an appointment for your chance to win $500 to Sephora</h2>
+					
+					<div class="ob-swag-img">
+						<img class="onboarding-icon" src="/img/app/user/onboarding/sephora.png" width="200" height="200"/>
+					</div>
+
+					<h3>Complete your appointment within 24 hours to be entered to win!</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Book your appointment</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="obVersion === 'lululemon-giveaway' ">
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>You have $25 in credit to book your free video appointment</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Get personalized health &amp; wellness advice&mdash;all via video.</h3>
+					<p class="center clearfix"><a class="btn btn-action" href="" ng-click="goToStep('2')">Next</a></p>
+					
+				</div>
+
+				<div ng-if="obStep.step == '2' ">
+					<h5>Bonus offer</h5>
+					<h2>Complete an appointment for your chance to win $500 to Lululemon</h2>
+					
+					<div class="ob-swag-img">
+						<img class="onboarding-icon" src="/img/app/user/onboarding/lululemon.jpg" width="200" height="200"/>
+					</div>
+
+					<h3>Complete your appointment within 24 hours to be entered to win!</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Book your appointment</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="obVersion === 'insta-bc' ">
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>You have a $35 credit toward your free video appointment</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Book now to discuss your birth control needs with a practitioner</h3>
+					<p class="center clearfix"><a class="btn btn-action" href="" ng-click="goToStep('2')">Next</a></p>
+					
+				</div>
+
+				<div ng-if="obStep.step == '2' ">
+					<h5>Instant Access</h5>
+					<h2>Get a Prescription or Information</h2>
+					
+					<div class="ob-swag-img">
+						<img class="onboarding-icon" src="/img/app/user/onboarding/icon-hand.png" width="200" height="200"/>
+					</div>
+
+					<h3>Talk to a practitioner about your options and even get a prescription</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Book your appointment</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="obVersion === 'forums_seo' ">
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>You have a $25 credit toward your free video appointment</h2>
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+					<h3>Book now to discuss your health questions with a practitioner</h3>
+					<p class="center clearfix"><a class="btn btn-cta" ng-click="confirm()">Book your appointment</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="obVersion === 'celiac' ">
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>Book your nutritionist appointment in the next 24 hours for just $1!</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Get personalized health &amp; wellness advice&mdash;all via video.</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Book Your Appointment</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="obVersion === 'amazon-giveaway' ">
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>You have $25 in credit to book your free video appointment</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Bonus: once you complete your appointment, you'll be entered to win $500 to Amazon!</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Book Your Appointment</a></p>
+				</div>
+			</div>
+		</div>
+		
+		<div ng-if="obVersion === 'spa-giveaway' ">
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>You have $25 in credit to book your free video appointment</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Bonus: once you complete your appointment, you'll be entered to win $500 towards a spa of your choice!</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Book Your Appointment</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="!obVersion || obVersion == 'generic' ">
+			<div>
+				<div ng-if="obStep.step == '1' ">
+					<h5>Welcome to Maven</h5>
+					<h2>You have $25 in credit to book your free video appointment</h2>
+					
+					<div class="">
+						<div class="ad-ob-icon">
+							<img class="onboarding-icon" src="/img/app/user/onboarding/icon-video.png" width="120" height="120"/>
+						</div>
+					</div>
+
+					<h3>Get personalized health &amp; wellness advice&mdash;all via video.</h3>
+					<p class="center clearfix"><a class="btn btn-action" href="" ng-click="goToStep('2')">Next</a></p>
+					
+				</div>
+
+				<div ng-if="obStep.step == '2' ">
+					<h5>Bonus offer</h5>
+					<h2>Book and complete an appointment within 24 hours to receive a Maven Swag Bag</h2>
+					
+					<div class="ob-swag-img">
+						<img class="onboarding-icon" src="/img/app/user/onboarding/swagbag.png" width="200" height="200"/>
+					</div>
+
+					<h3>Once you've completed your appointment, the swag is all yours!</h3>
+					<p><a class="btn btn-cta" ng-click="confirm()">Find your practitioner</a></p>
+				</div>
+			</div>
+
+		</div>
+
+
+</div>

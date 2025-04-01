@@ -1,0 +1,37 @@
+{
+  "version": "1",
+  "questions": [
+    "When is your baby’s birthday?",
+    "What is the date that you are returning back to work?",
+    "Did you give birth, adopt or use a surrogate your child?",
+    "What was your planned mode of delivery?",
+    "What kind of birth did you have?",
+    "If you planned for a Vaginal birth and had a C-Section, what was the reason?",
+    "How are you healing?",
+    "What is your providers name?",
+    "Where did you give birth?",
+    {
+      "parent": "Have you been diagnosed with any medical issues during delivery or post pregnancy?",
+      "yes": "If yes, What were the medical issues or complications?"
+    },
+    {
+      "parent": "Are you taking any medications?",
+      "yes": "If yes, What are the medications?"
+    },
+    "What was your initial plan for feeding your child post delivery?",
+    {
+      "parent": "How are you currently feeding your child?",
+      "formula": "If breastfeeding was the initial plan and currently not Breastfeeding, can you share why it may not have gone as planned?"
+    },
+    "During the past month, have you often been bothered by feeling down, depressed, or hopeless?",
+    "During the past month, have you often been bothered by having little interest or pleasure in doing things?",
+    "How many hours of sleep do you need to function?",
+    "How many hours of sleep are you getting?",
+    "Is your baby on a sleep schedule?",
+    "Is your baby on a feeding schedule?",
+    "Does your infant have any health issues",
+    "What is your biggest anxiety with your child?",
+    "What is most exciting to you about what Maven offers during the postpartum period?",
+    "Would you your spouse be interested to receive information from Maven?"
+  ]
+}

@@ -1,0 +1,40 @@
+<div class="card-icon">
+	<div class="date-icon">
+		<span class="day">{{ $ctrl.nextAppt.scheduled_start | amUtc | amLocal | amDateFormat: "DD" }}</span>
+		<span class="month">{{ $ctrl.nextAppt.scheduled_start | amUtc | amLocal | amDateFormat: "MMM" }}</span>
+	</div>
+</div>
+<div class="card-content">
+	<div ng-if="!$ctrl.startsIn10 && !$ctrl.hasStarted && !$ctrl.hasFinished">
+		<h2 class="h5">Your next appointment is:</h2>
+		<p>
+			{{ $ctrl.nextAppt.product.practitioner.name }},
+			{{ $ctrl.nextAppt.product.practitioner.profiles.practitioner.verticals[0] }}
+		</p>
+		<p>
+			<span class="mobile-only">{{
+				$ctrl.nextAppt.scheduled_start | amUtc | amLocal | amDateFormat: "ddd. MMM. D,"
+			}}</span>
+			{{ $ctrl.nextAppt.scheduled_start | amUtc | amLocal | amDateFormat: "h:mma" }} -
+			{{ $ctrl.nextAppt.scheduled_end | amUtc | amLocal | amDateFormat: "h:mma" }}
+		</p>
+	</div>
+
+	<div ng-if="$ctrl.startsIn10 && !$ctrl.hasStarted && !$ctrl.hasFinished">
+		<h2 class="h5">Your appointment starts in</h2>
+		<p><countdown-timer date="{{ $ctrl.nextAppt.scheduled_start }}"></countdown-timer></p>
+	</div>
+
+	<div ng-if="$ctrl.hasStarted && !$ctrl.hasFinished">
+		<h2 class="h5">Your appointment has started</h2>
+	</div>
+</div>
+<div class="card-actions">
+	<a
+		class="btn btn-tertiary"
+		ui-sref="app.appointment.my.list.appointment-detail({ appointment_id : $ctrl.apptAction.appointment_id })"
+		ng-click="$ctrl.sendEvent($ctrl.apptAction.type)"
+	>
+		{{ $ctrl.apptAction.cta.text }}
+	</a>
+</div>

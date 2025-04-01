@@ -1,0 +1,1368 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-08-18 14:16-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+msgid "vertical_womens_health_nurse_practitioner_name"
+msgstr "Women's Health Nurse Practitioner"
+
+msgid "vertical_womens_health_nurse_practitioner_display_name"
+msgstr "Women's Health Nurse Practitioner"
+
+msgid "vertical_womens_health_nurse_practitioner_pluralized_display_name"
+msgstr "Women's Health Nurse Practitioners"
+
+msgid "vertical_womens_health_nurse_practitioner_description"
+msgstr "Reproductive health, general health support"
+
+msgid "vertical_womens_health_nurse_practitioner_long_description"
+msgstr "Women's Health Nurse Practitioners can help you understand, manage, and treat chronic illnesses, menopause symptoms, vaginal discomfort, and any conditions that could be affecting your reproductive health and well-being."
+
+msgid "vertical_lactation_consultant_name"
+msgstr "Lactation Consultant"
+
+msgid "vertical_lactation_consultant_display_name"
+msgstr "Lactation Consultant"
+
+msgid "vertical_lactation_consultant_pluralized_display_name"
+msgstr "Lactation Consultants"
+
+msgid "vertical_lactation_consultant_description"
+msgstr "Breastfeeding and pumping support, supply issues, mastitis, weaning"
+
+msgid "vertical_lactation_consultant_long_description"
+msgstr "Lactation Consultants can help you feed your baby with solutions for breastfeeding and pumping challenges, share what to do if you're experiencing pain or discomfort during feedings, offer tips for increasing your milk supply, weaning, and more."
+
+msgid "vertical_nurse_practitioner_name"
+msgstr "Nurse Practitioner"
+
+msgid "vertical_nurse_practitioner_display_name"
+msgstr "Nurse Practitioner"
+
+msgid "vertical_nurse_practitioner_pluralized_display_name"
+msgstr "Nurse Practitioners"
+
+msgid "vertical_nurse_practitioner_description"
+msgstr "General health, illnesses, period health, birth control"
+
+msgid "vertical_nurse_practitioner_long_description"
+msgstr "Nurse Practitioners can support your general health with treatment plans for acute and chronic illnesses, guidance on menstruation, birth control and other medications, and answer any questions you have about your physical well-being."
+
+msgid "vertical_nutrition_coach_name"
+msgstr "Nutrition Coach"
+
+msgid "vertical_nutrition_coach_display_name"
+msgstr "Nutrition Coach"
+
+msgid "vertical_nutrition_coach_pluralized_display_name"
+msgstr "Nutrition Coaches"
+
+msgid "vertical_nutrition_coach_description"
+msgstr "Healthy eating, weight management"
+
+msgid "vertical_nutrition_coach_long_description"
+msgstr "Nutrition Coaches are here to help you understand how diet plays a role in your overall health and well-being, and offer recommendations for foods and small lifestyle changes that can help you feel your best."
+
+msgid "vertical_doula_and_childbirth_educator_name"
+msgstr "Doula and Childbirth Educator"
+
+msgid "vertical_doula_and_childbirth_educator_display_name"
+msgstr "Doula and Childbirth Educator"
+
+msgid "vertical_doula_and_childbirth_educator_pluralized_display_name"
+msgstr "Doula and Childbirth Educators"
+
+msgid "vertical_doula_and_childbirth_educator_description"
+msgstr "Pain management, labor and delivery support, postpartum support"
+
+msgid "vertical_doula_and_childbirth_educator_long_description"
+msgstr "Doulas and Childbirth Educators can tell you what to expect during labor and delivery, share ways to advocate for yourself, offer positions, breathing techniques, and medications that ease labor pain, and tips for a happy, healthy life postpartum."
+
+msgid "vertical_physical_support_coach_name"
+msgstr "Physical Support Coach"
+
+msgid "vertical_physical_support_coach_display_name"
+msgstr "Physical Support Coach"
+
+msgid "vertical_physical_support_coach_pluralized_display_name"
+msgstr "Physical Support Coaches"
+
+msgid "vertical_physical_support_coach_description"
+msgstr "Pelvic floor strengthening, pain management"
+
+msgid "vertical_physical_support_coach_long_description"
+msgstr "Physical Support Coaches can support your physical health with movements and exercises that relieve pain, improve flexibility, restore physical abilities, and strengthen key muscle groups, like the pelvic floor."
+
+msgid "vertical_obgyn_name"
+msgstr "OB-GYN"
+
+msgid "vertical_obgyn_display_name"
+msgstr "OB-GYN"
+
+msgid "vertical_obgyn_pluralized_display_name"
+msgstr "OB-GYNs"
+
+msgid "vertical_obgyn_description"
+msgstr "Reproductive health, prenatal, pregnancy, menopause"
+
+msgid "vertical_obgyn_long_description"
+msgstr "OB-GYNs can support all aspects of reproductive health—from trying to conceive and pregnancy, to prenatal and postpartum health, all the way through menopause—with guidance that helps you make healthy choices, manage symptoms, and know your options."
+
+msgid "vertical_pediatrician_name"
+msgstr "Pediatrician"
+
+msgid "vertical_pediatrician_display_name"
+msgstr "Pediatrician"
+
+msgid "vertical_pediatrician_pluralized_display_name"
+msgstr "Pediatricians"
+
+msgid "vertical_pediatrician_description"
+msgstr "General health for infants and children, newborn care, cold and flu, nutrition"
+
+msgid "vertical_pediatrician_long_description"
+msgstr "Pediatricians are here to help you keep your child healthy, with guidance on managing and treating illnesses or injuries, their physical development and nutritional needs, vaccinations, tests, and procedures, and when to seek emergency care."
+
+msgid "vertical_midwife_name"
+msgstr "Midwife"
+
+msgid "vertical_midwife_display_name"
+msgstr "Midwife"
+
+msgid "vertical_midwife_pluralized_display_name"
+msgstr "Midwives"
+
+msgid "vertical_midwife_description"
+msgstr "Pregnancy, birth, postpartum, menopause"
+
+msgid "vertical_midwife_long_description"
+msgstr "Midwives can offer clarity on anything related to women's health, from birth control and menopause, to pregnancy and postpartum, and offer support throughout labor with tips for easing pain and having a healthy delivery."
+
+msgid "vertical_mental_health_provider_name"
+msgstr "Mental Health Provider"
+
+msgid "vertical_mental_health_provider_display_name"
+msgstr "Mental Health Provider"
+
+msgid "vertical_mental_health_provider_pluralized_display_name"
+msgstr "Mental Health Providers"
+
+msgid "vertical_mental_health_provider_description"
+msgstr "Stress, depression, anxiety, life transitions, emotional support"
+
+msgid "vertical_mental_health_provider_long_description"
+msgstr "Mental Health Providers can support you throughout your journey with a safe space to share, be heard, and get advice without judgment, along with specialized care for any stress, anxiety, depression, or mood disorders you may be experiencing."
+
+msgid "vertical_pediatric_nurse_practitioner_name"
+msgstr "Pediatric Nurse Practitioner"
+
+msgid "vertical_pediatric_nurse_practitioner_display_name"
+msgstr "Pediatric Nurse Practitioner"
+
+msgid "vertical_pediatric_nurse_practitioner_pluralized_display_name"
+msgstr "Pediatric Nurse Practitioners"
+
+msgid "vertical_pediatric_nurse_practitioner_description"
+msgstr "Infant health, pediatric health, cold and flu, medication support"
+
+msgid "vertical_pediatric_nurse_practitioner_long_description"
+msgstr "Pediatric Nurse Practitioners can support the health of children of all ages with treatment plans for acute and chronic illnesses, guidance on medications and procedures, and answer any questions you have about their physical well-being."
+
+msgid "vertical_family_physician_name"
+msgstr "Family Physician"
+
+msgid "vertical_family_physician_display_name"
+msgstr "Family Physician"
+
+msgid "vertical_family_physician_pluralized_display_name"
+msgstr "Family Physicians"
+
+msgid "vertical_family_physician_description"
+msgstr "Adult and pediatric general health"
+
+msgid "vertical_family_physician_long_description"
+msgstr "Family Physicians can help people of all ages understand, manage, and treat their illnesses or injuries, and share their advice for preventative care and maintaining a healthy lifestyle."
+
+msgid "vertical_physician_name"
+msgstr "Physician"
+
+msgid "vertical_physician_display_name"
+msgstr "Physician"
+
+msgid "vertical_physician_pluralized_display_name"
+msgstr "Physicians"
+
+msgid "vertical_physician_description"
+msgstr "Adult general health, cold and flu"
+
+msgid "vertical_physician_long_description"
+msgstr "Physicians can help you understand, manage, and treat illnesses or injuries, give you helpful recommendations for preventing chronic conditions and maintaining a healthy lifestyle, and recommend specialists based on your health concerns."
+
+msgid "vertical_care_advocate_name"
+msgstr "Care Advocate"
+
+msgid "vertical_care_advocate_display_name"
+msgstr "Care Advocate"
+
+msgid "vertical_care_advocate_pluralized_display_name"
+msgstr "Care Advocates"
+
+msgid "vertical_care_advocate_description"
+msgstr "Questions about Maven, provider referrals, benefits navigation"
+
+msgid "vertical_care_advocate_long_description"
+msgstr "Care Advocates are here to support you 24/7 with personal recommendations to the best Maven providers, articles, and classes for your journey, as well as referrals to in-person providers and help navigating your benefits, billing, and health insurance."
+
+msgid "vertical_highrisk_pregnancy_coach_name"
+msgstr "High-risk Pregnancy Coach"
+
+msgid "vertical_highrisk_pregnancy_coach_display_name"
+msgstr "High-Risk Pregnancy Coach"
+
+msgid "vertical_highrisk_pregnancy_coach_pluralized_display_name"
+msgstr "High-Risk Pregnancy Coaches"
+
+msgid "vertical_highrisk_pregnancy_coach_description"
+msgstr "Lifestyle advice, prenatal development, high-risk pregnancy resources"
+
+msgid "vertical_highrisk_pregnancy_coach_long_description"
+msgstr "High-Risk Pregnancy Coaches can help you with choosing a high-risk care provider that's right for you, share prenatal nutrition, exercise, and lifestyle advice for a healthy pregnancy, offer high-risk pregnancy resources, and more."
+
+msgid "vertical_career_coach_name"
+msgstr "Career Coach"
+
+msgid "vertical_career_coach_display_name"
+msgstr "Career Coach"
+
+msgid "vertical_career_coach_pluralized_display_name"
+msgstr "Career Coaches"
+
+msgid "vertical_career_coach_description"
+msgstr "Career coaching, parental leave, life transition"
+
+msgid "vertical_career_coach_long_description"
+msgstr "Career Coaches can help you with navigating your workplace at every phase of your career, and share advice for how to advocate for yourself and get the support you need during major life transitions."
+
+msgid "vertical_sex_coach_name"
+msgstr "Sex Coach"
+
+msgid "vertical_sex_coach_display_name"
+msgstr "Sex Coach"
+
+msgid "vertical_sex_coach_pluralized_display_name"
+msgstr "Sex Coaches"
+
+msgid "vertical_sex_coach_description"
+msgstr "Relationship coaching, sexuality, intimacy, sexual health support"
+
+msgid "vertical_sex_coach_long_description"
+msgstr "Sex Coaches are here to help you have a healthy, fulfilling sex life by exploring how you can improve communication with your partner, offering ways to approach a lack of desire, and sharing how to keep sex from feeling like a chore."
+
+msgid "vertical_wellness_coach_name"
+msgstr "Wellness Coach"
+
+msgid "vertical_wellness_coach_display_name"
+msgstr "Wellness Coach"
+
+msgid "vertical_wellness_coach_pluralized_display_name"
+msgstr "Wellness Coaches"
+
+msgid "vertical_wellness_coach_description"
+msgstr "Healthy living, emotional support, wellness, nutrition"
+
+msgid "vertical_wellness_coach_long_description"
+msgstr "Wellness Coaches are personal guides to living your healthiest life, both physically and emotionally, and can offer you methods for getting better sleep, improving how you feel throughout your day, having a healthy relationship with food, and more."
+
+msgid "vertical_pediatric_sleep_coach_name"
+msgstr "Pediatric Sleep Coach"
+
+msgid "vertical_pediatric_sleep_coach_display_name"
+msgstr "Pediatric Sleep Coach"
+
+msgid "vertical_pediatric_sleep_coach_pluralized_display_name"
+msgstr "Pediatric Sleep Coaches"
+
+msgid "vertical_pediatric_sleep_coach_description"
+msgstr "Sleep solutions for children, nap and bedtime routines, sleep health"
+
+msgid "vertical_pediatric_sleep_coach_long_description"
+msgstr "Pediatric Sleep Coaches can give you solutions if your child is having trouble falling or staying asleep, and provide you with age-appropriate nap and bedtime schedules, guidance for preventing SIDS, and tips for encouraging healthy sleep habits."
+
+msgid "vertical_diabetes_coach_name"
+msgstr "Diabetes Coach"
+
+msgid "vertical_diabetes_coach_display_name"
+msgstr "Diabetes Coach"
+
+msgid "vertical_diabetes_coach_pluralized_display_name"
+msgstr "Diabetes Coaches"
+
+msgid "vertical_diabetes_coach_description"
+msgstr "Gestational diabetes, diabetes management"
+
+msgid "vertical_diabetes_coach_long_description"
+msgstr "Diabetes Coaches are here to share the best ways to manage your symptoms, when and how to test your blood sugar, what your blood sugar targets should be, and answer any questions you have about living with Type I, Type II, or gestational diabetes."
+
+msgid "vertical_pediatric_occupational_therapist_name"
+msgstr "Pediatric Occupational Therapist"
+
+msgid "vertical_pediatric_occupational_therapist_display_name"
+msgstr "Pediatric Occupational Therapist"
+
+msgid "vertical_pediatric_occupational_therapist_pluralized_display_name"
+msgstr "Pediatric Occupational Therapists"
+
+msgid "vertical_pediatric_occupational_therapist_description"
+msgstr "Motor development, feeding, social-emotional skills"
+
+msgid "vertical_pediatric_occupational_therapist_long_description"
+msgstr "Pediatric Occupational Therapists can support your child's development, identify potential delays, and offer age-appropriate activities to improve speech, vision, cognition, feeding, fine motor, gross motor, sensory, and social-emotional skill sets."
+
+msgid "vertical_highrisk_ob_mfm_name"
+msgstr "High-risk OB (MFM)"
+
+msgid "vertical_highrisk_ob_mfm_display_name"
+msgstr "High Risk OB (MFM)"
+
+msgid "vertical_highrisk_ob_mfm_pluralized_display_name"
+msgstr "High Risk OBs (MFM)"
+
+msgid "vertical_highrisk_ob_mfm_description"
+msgstr "High-risk pregnancy, prenatal development"
+
+msgid "vertical_highrisk_ob_mfm_long_description"
+msgstr "High-Risk Gynecologists can support you throughout your pregnancy by walking you through tests and procedures, sharing any additional precautions you should take, and helping you prepare for labor and delivery."
+
+msgid "vertical_certified_nutritional_therapy_practitioner_name"
+msgstr "Certified Nutritional Therapy Practitioner"
+
+msgid "vertical_certified_nutritional_therapy_practitioner_display_name"
+msgstr "Certified Nutritional Therapy Practitioner"
+
+msgid "vertical_certified_nutritional_therapy_practitioner_pluralized_display_name"
+msgstr "Certified Nutritional Therapy Practitioners"
+
+msgid "vertical_certified_nutritional_therapy_practitioner_description"
+msgstr "Holistic nutrition, healthy eating"
+
+msgid "vertical_certified_nutritional_therapy_practitioner_long_description"
+msgstr "Certified Nutritional Therapy Practitioners can share holistic approaches to eating healthier, balancing your body chemistry, and achieving whole-body wellness to promote healing, endurance, and longevity."
+
+msgid "vertical_chinese_medicine_specialist_name"
+msgstr "Chinese Medicine Specialist"
+
+msgid "vertical_chinese_medicine_specialist_display_name"
+msgstr "Chinese Medicine Specialist"
+
+msgid "vertical_chinese_medicine_specialist_pluralized_display_name"
+msgstr "Chinese Medicine Specialists"
+
+msgid "vertical_chinese_medicine_specialist_description"
+msgstr "Chinese herbal medicine from fertility to menopause"
+
+msgid "vertical_chinese_medicine_specialist_long_description"
+msgstr "Chinese Medicine Specialists can help you feel more balanced and in control with herbs, foods, physical practices, breathing techniques, and exercises that can aid infertility goals, support a healthy pregnancy, alleviate menopause symptoms, and more."
+
+msgid "vertical_reproductive_endocrinologist_name"
+msgstr "Reproductive Endocrinologist"
+
+msgid "vertical_reproductive_endocrinologist_display_name"
+msgstr "Reproductive Endocrinologist"
+
+msgid "vertical_reproductive_endocrinologist_pluralized_display_name"
+msgstr "Reproductive Endocrinologists"
+
+msgid "vertical_reproductive_endocrinologist_description"
+msgstr "Fertility, IVF/IUI, egg freezing, medication specialist"
+
+msgid "vertical_reproductive_endocrinologist_long_description"
+msgstr "Reproductive Endocrinologists can help you understand conception, fertility, and egg freezing, share what your treatment options are, give you methods to try to improve your odds of conceiving, and share if you'd benefit from a fertility evaluation."
+
+msgid "vertical_adoption_coach_name"
+msgstr "Adoption Coach"
+
+msgid "vertical_adoption_coach_display_name"
+msgstr "Adoption Coach"
+
+msgid "vertical_adoption_coach_pluralized_display_name"
+msgstr "Adoption Coaches"
+
+msgid "vertical_adoption_coach_description"
+msgstr "Adoption overview, preparation, finalization, life after adoption"
+
+msgid "vertical_adoption_coach_long_description"
+msgstr "Adoption Coaches are here to help you understand all the different types of adoption, how to create your profile book and prepare for home visits, and answer any questions you have about the adoption process—all the way to finalization."
+
+msgid "vertical_surrogacy_coach_name"
+msgstr "Surrogacy Coach"
+
+msgid "vertical_surrogacy_coach_display_name"
+msgstr "Surrogacy Coach"
+
+msgid "vertical_surrogacy_coach_pluralized_display_name"
+msgstr "Surrogacy Coaches"
+
+msgid "vertical_surrogacy_coach_description"
+msgstr "Surrogacy process, preparation, support, life after surrogacy"
+
+msgid "vertical_surrogacy_coach_long_description"
+msgstr "Surrogacy Coaches are here to help you understand surrogacy arrangements, offer advice on selecting an agency, attorney, or clinic, and offer support with reviewing matches or defining your relationship with your chosen gestational carrier."
+
+msgid "vertical_naturopathic_family_physician_name"
+msgstr "Naturopathic Family Physician"
+
+msgid "vertical_naturopathic_family_physician_display_name"
+msgstr "Naturopathic Family Physician"
+
+msgid "vertical_naturopathic_family_physician_pluralized_display_name"
+msgstr "Naturopathic Family Physicians"
+
+msgid "vertical_naturopathic_family_physician_description"
+msgstr "Holistic primary care services for all ages"
+
+msgid "vertical_naturopathic_family_physician_long_description"
+msgstr "Naturopathic Family Physicians can help people of all ages understand, manage, and treat their illnesses with holistic remedies and practices, which can include using herbs, massage, exercise, acupuncture, and nutritional counseling."
+
+msgid "vertical_genetic_counselor_name"
+msgstr "Genetic Counselor"
+
+msgid "vertical_genetic_counselor_display_name"
+msgstr "Genetic Counselor"
+
+msgid "vertical_genetic_counselor_pluralized_display_name"
+msgstr "Genetic Counselors"
+
+msgid "vertical_genetic_counselor_description"
+msgstr "Genetic and chromosomal testing, fertility, pregnancy"
+
+msgid "vertical_genetic_counselor_long_description"
+msgstr "Genetic Counselors are here to help you understand genetics and how they work, walk you through the types of tests you can take, support you through testing, and offer advice if you or a loved one have tested positive as a carrier for a condition."
+
+msgid "vertical_egg_donor_consultant_name"
+msgstr "Egg Donor Consultant"
+
+msgid "vertical_egg_donor_consultant_display_name"
+msgstr "Egg Donor Consultant"
+
+msgid "vertical_egg_donor_consultant_pluralized_display_name"
+msgstr "Egg Donor Consultants"
+
+msgid "vertical_egg_donor_consultant_description"
+msgstr "Egg freezing, egg donation, choosing eggs, selecting a donor"
+
+msgid "vertical_egg_donor_consultant_long_description"
+msgstr "Egg donor consultants are here to help you understand the egg donation and egg freezing process, advise you on how to find an egg donation attorney, and help you weigh the pros and cons of egg donation for you and your family."
+
+msgid "vertical_fertility_awareness_educator_name"
+msgstr "Fertility Awareness Educator"
+
+msgid "vertical_fertility_awareness_educator_display_name"
+msgstr "Fertility Awareness Educator"
+
+msgid "vertical_fertility_awareness_educator_pluralized_display_name"
+msgstr "Fertility Awareness Educators"
+
+msgid "vertical_fertility_awareness_educator_description"
+msgstr "Period and ovulation tracking, timing intercourse"
+
+msgid "vertical_fertility_awareness_educator_long_description"
+msgstr "Fertility Awareness Educators are here to help you understand how fertility works, give you expert ways to track your menstrual cycle and ovulation, time intercourse, and explore ways to help your chances of conceiving without intervention."
+
+msgid "vertical_behavioral_analyst_name"
+msgstr "Behavioral Analyst"
+
+msgid "vertical_behavioral_analyst_display_name"
+msgstr "Behavioral Analyst"
+
+msgid "vertical_behavioral_analyst_pluralized_display_name"
+msgstr "Behavioral Analysts"
+
+msgid "vertical_behavioral_analyst_description"
+msgstr "Toddler and child behavior assessment and intervention"
+
+msgid "vertical_behavioral_analyst_long_description"
+msgstr "Behavioral Analysts can help you understand your child's behaviors, and offer advice for navigating everyday challenges (like potty training and tantrums) or more complex concerns (like autism spectrum disorder, ADHD, sensory issues, and more)."
+
+msgid "vertical_special_education_advocate_name"
+msgstr "Special Education Advocate"
+
+msgid "vertical_special_education_advocate_display_name"
+msgstr "Special Education Advocate"
+
+msgid "vertical_special_education_advocate_pluralized_display_name"
+msgstr "Special Education Advocates"
+
+msgid "vertical_special_education_advocate_description"
+msgstr "Social and academic support, guidance and resources"
+
+msgid "vertical_special_education_advocate_long_description"
+msgstr "Special Education Advocates are here to help you make sure your child's needs are met by helping you understand the services and resources that are available to you, and helping you work with teachers to address any challenges they may be experiencing."
+
+msgid "vertical_parent_coach_name"
+msgstr "Parent Coach"
+
+msgid "vertical_parent_coach_display_name"
+msgstr "Parent Coach"
+
+msgid "vertical_parent_coach_pluralized_display_name"
+msgstr "Parent Coaches"
+
+msgid "vertical_parent_coach_description"
+msgstr "Advice for common parenting challenges, co-parenting support"
+
+msgid "vertical_parent_coach_long_description"
+msgstr "Parent Coaches are here to support you with judgment-free guidance and coaching for parenting children across every age and phase, and provide helpful recommendations for fostering healthy communication, routines, and co-parenting in your family."
+
+msgid "vertical_developmental_psychologist_name"
+msgstr "Developmental Psychologist"
+
+msgid "vertical_developmental_psychologist_display_name"
+msgstr "Developmental Psychologist"
+
+msgid "vertical_developmental_psychologist_pluralized_display_name"
+msgstr "Developmental Psychologists"
+
+msgid "vertical_developmental_psychologist_description"
+msgstr "Child development, pediatric mental health, pediatric emotional health"
+
+msgid "vertical_developmental_psychologist_long_description"
+msgstr "Developmental Psychologists can help you understand every stage of your child's social, emotional, and cognitive development, share what you can do to support them, and offer guidance around fostering healthy attitudes, behaviors, and routines."
+
+msgid "vertical_speech_therapist_name"
+msgstr "Speech Therapist"
+
+msgid "vertical_speech_therapist_display_name"
+msgstr "Speech Therapist"
+
+msgid "vertical_speech_therapist_pluralized_display_name"
+msgstr "Speech Therapists"
+
+msgid "vertical_speech_therapist_description"
+msgstr "Communication, speech delays, feeding, and hearing guidance"
+
+msgid "vertical_speech_therapist_long_description"
+msgstr "Speech Therapists can answer any questions you have about your child's ability to communicate, and offer guidance on any issues involving hearing, speaking clearly, stuttering, autism spectrum disorder (ASD), voice, and more."
+
+msgid "vertical_childcare_consultant_name"
+msgstr "Childcare Consultant"
+
+msgid "vertical_childcare_consultant_display_name"
+msgstr "Childcare Consultant"
+
+msgid "vertical_childcare_consultant_pluralized_display_name"
+msgstr "Childcare Consultants"
+
+msgid "vertical_childcare_consultant_description"
+msgstr "Childcare solutions"
+
+msgid "vertical_childcare_consultant_long_description"
+msgstr "Childcare Consultants are here to help you decide on the right care provider for your child, assist you with nanny contracts or daycare forms, and offer helpful questions to ask when touring a daycare or interviewing nanny candidates."
+
+msgid "vertical_reproductive_nurse_name"
+msgstr "Reproductive Nurse"
+
+msgid "vertical_reproductive_nurse_display_name"
+msgstr "Reproductive Nurse"
+
+msgid "vertical_reproductive_nurse_pluralized_display_name"
+msgstr "Reproductive Nurses"
+
+msgid "vertical_reproductive_nurse_description"
+msgstr "Fertility, IVF/IUI/egg freezing, medication support"
+
+msgid "vertical_reproductive_nurse_long_description"
+msgstr "Reproductive Nurses can walk you through every step of the fertility treatment process (all the way from preparation to recovery), share how to manage and self-inject medications, and answer any questions you have along the way."
+
+msgid "vertical_birth_planning_specialist_name"
+msgstr "Birth Planning Specialist"
+
+msgid "vertical_birth_planning_specialist_display_name"
+msgstr "Birth Planning Specialist"
+
+msgid "vertical_birth_planning_specialist_pluralized_display_name"
+msgstr "Birth Planning Specialists"
+
+msgid "vertical_birth_planning_specialist_description"
+msgstr "Help planning for labor and delivery"
+
+msgid "vertical_birth_planning_specialist_long_description"
+msgstr "Birth Planning Specialists are here to walk you through all the important decisions you can make about your labor, delivery, and postpartum experience, and help you decide and document preferences to share with your support partner and care team."
+
+msgid "vertical_mental_health_provider_europe_name"
+msgstr "Mental Health Provider - Europe"
+
+msgid "vertical_mental_health_provider_europe_display_name"
+msgstr "Mental Health Provider - Europe"
+
+msgid "vertical_mental_health_provider_europe_pluralized_display_name"
+msgstr "Mental Health Providers - Europe"
+
+msgid "vertical_mental_health_provider_europe_description"
+msgstr "Stress, depression, anxiety, life transitions, emotional support"
+
+msgid "vertical_mental_health_provider_europe_long_description"
+msgstr "Mental Health Providers can support you throughout your journey with a safe space to share, be heard, and get advice without judgment, along with specialized care for any stress, anxiety, depression, or mood disorders you may be experiencing."
+
+msgid "vertical_midwife_europe_name"
+msgstr "Midwife - Europe"
+
+msgid "vertical_midwife_europe_display_name"
+msgstr "Midwife - Europe"
+
+msgid "vertical_midwife_europe_pluralized_display_name"
+msgstr "Midwives - Europe"
+
+msgid "vertical_midwife_europe_description"
+msgstr "Pregnancy, birth, postpartum, menopause"
+
+msgid "vertical_midwife_europe_long_description"
+msgstr "Midwives can offer clarity on anything related to women's health, from birth control and menopause, to pregnancy and postpartum, and offer support throughout labor with tips for easing pain and having a healthy delivery."
+
+msgid "vertical_pediatrician_europe_name"
+msgstr "Pediatrician - Europe"
+
+msgid "vertical_pediatrician_europe_display_name"
+msgstr "Pediatrician - Europe"
+
+msgid "vertical_pediatrician_europe_pluralized_display_name"
+msgstr "Pediatricians - Europe"
+
+msgid "vertical_pediatrician_europe_description"
+msgstr "General health for infants and children, newborn care, cold and flu, nutrition"
+
+msgid "vertical_pediatrician_europe_long_description"
+msgstr "Pediatricians are here to help you keep your child healthy, with guidance on managing and treating illnesses or injuries, their physical development and nutritional needs, vaccinations, tests, and procedures, and when to seek emergency care."
+
+msgid "vertical_reproductive_endocrinologist_india_europe_name"
+msgstr "Reproductive Endocrinologist - India & Europe"
+
+msgid "vertical_reproductive_endocrinologist_india_europe_display_name"
+msgstr "Reproductive Endocrinologist - India & Europe"
+
+msgid "vertical_reproductive_endocrinologist_india_europe_pluralized_display_name"
+msgstr "Reproductive Endocrinologists - India & Europe"
+
+msgid "vertical_reproductive_endocrinologist_india_europe_description"
+msgstr "Fertility, IVF/IUI, egg freezing, medication specialist"
+
+msgid "vertical_reproductive_endocrinologist_india_europe_long_description"
+msgstr "Reproductive Endocrinologists can help you understand conception, fertility, and egg freezing, share what your treatment options are, give you methods to try to improve your odds of conceiving, and share if you'd benefit from a fertility evaluation."
+
+msgid "vertical_nutrition_coach_india_name"
+msgstr "Nutrition Coach - India"
+
+msgid "vertical_nutrition_coach_india_display_name"
+msgstr "Nutrition Coach - India"
+
+msgid "vertical_nutrition_coach_india_pluralized_display_name"
+msgstr "Nutrition Coaches - India"
+
+msgid "vertical_nutrition_coach_india_description"
+msgstr "Healthy eating, weight management"
+
+msgid "vertical_nutrition_coach_india_long_description"
+msgstr "Nutrition Coaches are here to help you understand how diet plays a role in your overall health and well-being, and offer recommendations for foods and small lifestyle changes that can help you feel your best."
+
+msgid "vertical_mental_health_provider_asia_pacific_name"
+msgstr "Mental Health Provider - Asia Pacific"
+
+msgid "vertical_mental_health_provider_asia_pacific_display_name"
+msgstr "Mental Health Provider - Asia Pacific"
+
+msgid "vertical_mental_health_provider_asia_pacific_pluralized_display_name"
+msgstr "Mental Health Providers - Asia Pacific"
+
+msgid "vertical_mental_health_provider_asia_pacific_description"
+msgstr "Stress, depression, anxiety, life transitions, emotional support"
+
+msgid "vertical_mental_health_provider_asia_pacific_long_description"
+msgstr "Mental Health Providers can support you throughout your journey with a safe space to share, be heard, and get advice without judgment, along with specialized care for any stress, anxiety, depression, or mood disorders you may be experiencing."
+
+msgid "vertical_obgyn_asia_pacific_name"
+msgstr "OB-GYN - Asia Pacific"
+
+msgid "vertical_obgyn_asia_pacific_display_name"
+msgstr "OB-GYN - Asia Pacific"
+
+msgid "vertical_obgyn_asia_pacific_pluralized_display_name"
+msgstr "OB-GYNs - Asia Pacific"
+
+msgid "vertical_obgyn_asia_pacific_description"
+msgstr "Reproductive health, prenatal, pregnancy, menopause"
+
+msgid "vertical_obgyn_asia_pacific_long_description"
+msgstr "OB-GYNs can support all aspects of reproductive health—from trying to conceive and pregnancy, to prenatal and postpartum health, all the way through menopause—with guidance that helps you make healthy choices, manage symptoms, and know your options."
+
+msgid "vertical_mental_health_provider_india_name"
+msgstr "Mental Health Provider - India"
+
+msgid "vertical_mental_health_provider_india_display_name"
+msgstr "Mental Health Provider - India"
+
+msgid "vertical_mental_health_provider_india_pluralized_display_name"
+msgstr "Mental Health Providers - India"
+
+msgid "vertical_mental_health_provider_india_description"
+msgstr "Stress, depression, anxiety, life transitions, emotional support"
+
+msgid "vertical_mental_health_provider_india_long_description"
+msgstr "Mental Health Providers can support you throughout your journey with a safe space to share, be heard, and get advice without judgment, along with specialized care for any stress, anxiety, depression, or mood disorders you may be experiencing."
+
+msgid "vertical_physical_support_coach_asia_pacific_name"
+msgstr "Physical Support Coach - Asia Pacific"
+
+msgid "vertical_physical_support_coach_asia_pacific_display_name"
+msgstr "Physical Support Coach - Asia Pacific"
+
+msgid "vertical_physical_support_coach_asia_pacific_pluralized_display_name"
+msgstr "Physical Support Coaches - Asia Pacific"
+
+msgid "vertical_physical_support_coach_asia_pacific_description"
+msgstr "Pelvic floor strengthening, pain management"
+
+msgid "vertical_physical_support_coach_asia_pacific_long_description"
+msgstr "Physical Support Coaches can support your physical health with movements and exercises that relieve pain, improve flexibility, restore physical abilities, and strengthen key muscle groups, like the pelvic floor."
+
+msgid "vertical_nutrition_coach_europe_name"
+msgstr "Nutrition Coach - Europe"
+
+msgid "vertical_nutrition_coach_europe_display_name"
+msgstr "Nutrition Coach - Europe"
+
+msgid "vertical_nutrition_coach_europe_pluralized_display_name"
+msgstr "Nutrition Coaches - Europe"
+
+msgid "vertical_nutrition_coach_europe_description"
+msgstr "Healthy eating, weight management"
+
+msgid "vertical_nutrition_coach_europe_long_description"
+msgstr "Nutrition Coaches are here to help you understand how diet plays a role in your overall health and well-being, and offer recommendations for foods and small lifestyle changes that can help you feel your best."
+
+msgid "vertical_surrogacy_coach_europe_name"
+msgstr "Surrogacy Coach - Europe"
+
+msgid "vertical_surrogacy_coach_europe_display_name"
+msgstr "Surrogacy Coach - Europe"
+
+msgid "vertical_surrogacy_coach_europe_pluralized_display_name"
+msgstr "Surrogacy Coaches - Europe"
+
+msgid "vertical_surrogacy_coach_europe_description"
+msgstr "Surrogacy process, preparation, support, life after surrogacy"
+
+msgid "vertical_surrogacy_coach_europe_long_description"
+msgstr "Surrogacy Coaches are here to help you understand surrogacy arrangements, offer advice on selecting an agency, attorney, or clinic, and offer support with reviewing matches or defining your relationship with your chosen gestational carrier."
+
+msgid "vertical_maternity_care_provider_india_name"
+msgstr "Maternity Care Provider - India"
+
+msgid "vertical_maternity_care_provider_india_display_name"
+msgstr "Maternity Care Provider - India"
+
+msgid "vertical_maternity_care_provider_india_pluralized_display_name"
+msgstr "Maternity Care Provider - India"
+
+msgid "vertical_maternity_care_provider_india_description"
+msgstr "Reproductive health, prenatal, pregnancy, menopause"
+
+msgid "vertical_maternity_care_provider_india_long_description"
+msgstr "Maternity Care Providers can offer clarity and guidance on anything related to women's health—from menstruation and fertility, to pregnancy and postpartum—and offer support in managing birth control, STDs, STIs, UTIs, and more."
+
+msgid "vertical_nutrition_coach_asia_pacific_name"
+msgstr "Nutrition Coach - Asia Pacific"
+
+msgid "vertical_nutrition_coach_asia_pacific_display_name"
+msgstr "Nutrition Coach - Asia Pacific"
+
+msgid "vertical_nutrition_coach_asia_pacific_pluralized_display_name"
+msgstr "Nutrition Coaches - Asia Pacific"
+
+msgid "vertical_nutrition_coach_asia_pacific_description"
+msgstr "Healthy eating, weight management"
+
+msgid "vertical_nutrition_coach_asia_pacific_long_description"
+msgstr "Nutrition Coaches are here to help you understand how diet plays a role in your overall health and well-being, and offer recommendations for foods and small lifestyle changes that can help you feel your best."
+
+msgid "vertical_reproductive_nurse_asia_pacific_name"
+msgstr "Reproductive Nurse - Asia Pacific"
+
+msgid "vertical_reproductive_nurse_asia_pacific_display_name"
+msgstr "Reproductive Nurse - Asia Pacific"
+
+msgid "vertical_reproductive_nurse_asia_pacific_pluralized_display_name"
+msgstr "Reproductive Nurses - Asia Pacific"
+
+msgid "vertical_reproductive_nurse_asia_pacific_description"
+msgstr "Fertility, IVF/IUI/egg freezing, medication support"
+
+msgid "vertical_reproductive_nurse_asia_pacific_long_description"
+msgstr "Reproductive Nurses can walk you through every step of the fertility treatment process (all the way from preparation to recovery), share how to manage and self-inject medications, and answer any questions you have along the way."
+
+msgid "vertical_lactation_consultant_europe_name"
+msgstr "Lactation Consultant - Europe"
+
+msgid "vertical_lactation_consultant_europe_display_name"
+msgstr "Lactation Consultant - Europe"
+
+msgid "vertical_lactation_consultant_europe_pluralized_display_name"
+msgstr "Lactation Consultants - Europe"
+
+msgid "vertical_lactation_consultant_europe_description"
+msgstr "Breastfeeding and pumping support, supply issues, mastitis, weaning"
+
+msgid "vertical_lactation_consultant_europe_long_description"
+msgstr "Lactation Consultants can help you feed your baby with solutions for breastfeeding and pumping challenges, share what to do if you're experiencing pain or discomfort during feedings, offer tips for increasing your milk supply, weaning, and more."
+
+msgid "vertical_reproductive_nurse_canada_name"
+msgstr "Reproductive Nurse - Canada"
+
+msgid "vertical_reproductive_nurse_canada_display_name"
+msgstr "Reproductive Nurse - Canada"
+
+msgid "vertical_reproductive_nurse_canada_pluralized_display_name"
+msgstr "Reproductive Nurses - Canada"
+
+msgid "vertical_reproductive_nurse_canada_description"
+msgstr "Fertility, IVF/IUI/egg freezing, medication support"
+
+msgid "vertical_reproductive_nurse_canada_long_description"
+msgstr "Reproductive Nurses can walk you through every step of the fertility treatment process (all the way from preparation to recovery), share how to manage and self-inject medications, and answer any questions you have along the way."
+
+msgid "vertical_obgyn_europe_name"
+msgstr "OB-GYN - Europe"
+
+msgid "vertical_obgyn_europe_display_name"
+msgstr "OB-GYN - Europe"
+
+msgid "vertical_obgyn_europe_pluralized_display_name"
+msgstr "OB-GYNs - Europe"
+
+msgid "vertical_obgyn_europe_description"
+msgstr "Reproductive health, prenatal, pregnancy, menopause"
+
+msgid "vertical_obgyn_europe_long_description"
+msgstr "OB-GYNs can support all aspects of reproductive health—from trying to conceive and pregnancy, to prenatal and postpartum health, all the way through menopause—with guidance that helps you make healthy choices, manage symptoms, and know your options."
+
+msgid "vertical_midwife_asia_pacific_name"
+msgstr "Midwife - Asia Pacific"
+
+msgid "vertical_midwife_asia_pacific_display_name"
+msgstr "Midwife - Asia Pacific"
+
+msgid "vertical_midwife_asia_pacific_pluralized_display_name"
+msgstr "Midwives - Asia Pacific"
+
+msgid "vertical_midwife_asia_pacific_description"
+msgstr "Pregnancy, birth, postpartum, menopause"
+
+msgid "vertical_midwife_asia_pacific_long_description"
+msgstr "Midwives can offer clarity on anything related to women's health, from birth control and menopause, to pregnancy and postpartum, and offer support throughout labor with tips for easing pain and having a healthy delivery."
+
+msgid "vertical_midwife_canada_name"
+msgstr "Midwife - Canada"
+
+msgid "vertical_midwife_canada_display_name"
+msgstr "Midwife - Canada"
+
+msgid "vertical_midwife_canada_pluralized_display_name"
+msgstr "Midwives - Canada"
+
+msgid "vertical_midwife_canada_description"
+msgstr "Pregnancy, birth, postpartum, menopause"
+
+msgid "vertical_midwife_canada_long_description"
+msgstr "Midwives can offer clarity on anything related to women's health, from birth control and menopause, to pregnancy and postpartum, and offer support throughout labor with tips for easing pain and having a healthy delivery."
+
+msgid "vertical_parent_coach_europe_name"
+msgstr "Parent Coach - Europe"
+
+msgid "vertical_parent_coach_europe_display_name"
+msgstr "Parent Coach - Europe"
+
+msgid "vertical_parent_coach_europe_pluralized_display_name"
+msgstr "Parent Coaches - Europe"
+
+msgid "vertical_parent_coach_europe_description"
+msgstr "Advice for common parenting challenges, co-parenting support"
+
+msgid "vertical_parent_coach_europe_long_description"
+msgstr "Parent Coaches are here to support you with judgment-free guidance and coaching for parenting children across every age and phase, and provide helpful recommendations for fostering healthy communication, routines, and co-parenting in your family."
+
+msgid "vertical_career_coach_europe_name"
+msgstr "Career Coach - Europe"
+
+msgid "vertical_career_coach_europe_display_name"
+msgstr "Career Coach - Europe"
+
+msgid "vertical_career_coach_europe_pluralized_display_name"
+msgstr "Career Coaches - Europe"
+
+msgid "vertical_career_coach_europe_description"
+msgstr "Career coaching, parental leave, life transition"
+
+msgid "vertical_career_coach_europe_long_description"
+msgstr "Career Coaches can help you with navigating your workplace at every phase of your career, and share advice for how to advocate for yourself and get the support you need during major life transitions."
+
+msgid "vertical_career_coach_india_name"
+msgstr "Career Coach - India"
+
+msgid "vertical_career_coach_india_display_name"
+msgstr "Career Coach - India"
+
+msgid "vertical_career_coach_india_pluralized_display_name"
+msgstr "Career Coaches - India"
+
+msgid "vertical_career_coach_india_description"
+msgstr "Career coaching, parental leave, life transition"
+
+msgid "vertical_career_coach_india_long_description"
+msgstr "Career Coaches can help you with navigating your workplace at every phase of your career, and share advice for how to advocate for yourself and get the support you need during major life transitions."
+
+msgid "vertical_midwife_africa_middle_east_name"
+msgstr "Midwife - Africa & Middle East"
+
+msgid "vertical_midwife_africa_middle_east_display_name"
+msgstr "Midwife -  Africa & Middle East"
+
+msgid "vertical_midwife_africa_middle_east_pluralized_display_name"
+msgstr "Midwives - Africa & Middle East"
+
+msgid "vertical_midwife_africa_middle_east_description"
+msgstr "Pregnancy, birth, postpartum, menopause"
+
+msgid "vertical_midwife_africa_middle_east_long_description"
+msgstr "Midwives can offer clarity on anything related to women's health, from birth control and menopause, to pregnancy and postpartum, and offer support throughout labor with tips for easing pain and having a healthy delivery."
+
+msgid "vertical_nutrition_coach_africa_middle_east_name"
+msgstr "Nutrition Coach - Africa & Middle East"
+
+msgid "vertical_nutrition_coach_africa_middle_east_display_name"
+msgstr "Nutrition Coach - Africa & Middle East"
+
+msgid "vertical_nutrition_coach_africa_middle_east_pluralized_display_name"
+msgstr "Nutrition Coaches - Africa & Middle East"
+
+msgid "vertical_nutrition_coach_africa_middle_east_description"
+msgstr "Healthy eating, weight management"
+
+msgid "vertical_nutrition_coach_africa_middle_east_long_description"
+msgstr "Nutrition Coaches are here to help you understand how diet plays a role in your overall health and well-being, and offer recommendations for foods and small lifestyle changes that can help you feel your best."
+
+msgid "vertical_reproductive_nurse_africa_middle_east_name"
+msgstr "Reproductive Nurse - Africa & Middle East"
+
+msgid "vertical_reproductive_nurse_africa_middle_east_display_name"
+msgstr "Reproductive Nurse - Africa & Middle East"
+
+msgid "vertical_reproductive_nurse_africa_middle_east_pluralized_display_name"
+msgstr "Reproductive Nurses - Africa & Middle East"
+
+msgid "vertical_reproductive_nurse_africa_middle_east_description"
+msgstr "Fertility, IVF/IUI/egg freezing, medication support"
+
+msgid "vertical_reproductive_nurse_africa_middle_east_long_description"
+msgstr "Reproductive Nurses can walk you through every step of the fertility treatment process (all the way from preparation to recovery), share how to manage and self-inject medications, and answer any questions you have along the way."
+
+msgid "vertical_pediatrician_mexico_name"
+msgstr "Pediatrician - Mexico"
+
+msgid "vertical_pediatrician_mexico_display_name"
+msgstr "Pediatrician - Mexico"
+
+msgid "vertical_pediatrician_mexico_pluralized_display_name"
+msgstr "Pediatricians - Mexico"
+
+msgid "vertical_pediatrician_mexico_description"
+msgstr "General health for infants and children, newborn care, cold and flu, nutrition"
+
+msgid "vertical_pediatrician_mexico_long_description"
+msgstr "Pediatricians are here to help you keep your child healthy, with guidance on managing and treating illnesses or injuries, their physical development and nutritional needs, vaccinations, tests, and procedures, and when to seek emergency care."
+
+msgid "vertical_reproductive_nurse_europe_name"
+msgstr "Reproductive Nurse - Europe"
+
+msgid "vertical_reproductive_nurse_europe_display_name"
+msgstr "Reproductive Nurse - Europe"
+
+msgid "vertical_reproductive_nurse_europe_pluralized_display_name"
+msgstr "Reproductive Nurses - Europe"
+
+msgid "vertical_reproductive_nurse_europe_description"
+msgstr "Fertility, IVF/IUI/egg freezing, medication support"
+
+msgid "vertical_reproductive_nurse_europe_long_description"
+msgstr "Reproductive Nurses can walk you through every step of the fertility treatment process (all the way from preparation to recovery), share how to manage and self-inject medications, and answer any questions you have along the way."
+
+msgid "vertical_mental_health_provider_africa_middle_east_name"
+msgstr "Mental Health Provider - Africa & Middle East"
+
+msgid "vertical_mental_health_provider_africa_middle_east_display_name"
+msgstr "Mental Health Provider - Africa & Middle East"
+
+msgid "vertical_mental_health_provider_africa_middle_east_pluralized_display_name"
+msgstr "Mental Health Providers - Africa & Middle East"
+
+msgid "vertical_mental_health_provider_africa_middle_east_description"
+msgstr "Stress, depression, anxiety, life transitions, emotional support"
+
+msgid "vertical_mental_health_provider_africa_middle_east_long_description"
+msgstr "Mental Health Providers can support you throughout your journey with a safe space to share, be heard, and get advice without judgment, along with specialized care for any stress, anxiety, depression, or mood disorders you may be experiencing."
+
+msgid "vertical_pediatric_sleep_coach_europe_name"
+msgstr "Pediatric Sleep Coach - Europe"
+
+msgid "vertical_pediatric_sleep_coach_europe_display_name"
+msgstr "Pediatric Sleep Coach - Europe"
+
+msgid "vertical_pediatric_sleep_coach_europe_pluralized_display_name"
+msgstr "Pediatric Sleep Coaches - Europe"
+
+msgid "vertical_pediatric_sleep_coach_europe_description"
+msgstr "Sleep solutions for children, nap and bedtime routines, sleep health"
+
+msgid "vertical_pediatric_sleep_coach_europe_long_description"
+msgstr "Pediatric Sleep Coaches can give you solutions if your child is having trouble falling or staying asleep, and provide you with age-appropriate nap and bedtime schedules, guidance for preventing SIDS, and tips for encouraging healthy sleep habits."
+
+msgid "vertical_general_practitioner_india_name"
+msgstr "General Practitioner - India"
+
+msgid "vertical_general_practitioner_india_display_name"
+msgstr "General Practitioner - India"
+
+msgid "vertical_general_practitioner_india_pluralized_display_name"
+msgstr "General Practitioners - India"
+
+msgid "vertical_general_practitioner_india_description"
+msgstr "Adult general health, cold and flu"
+
+msgid "vertical_general_practitioner_india_long_description"
+msgstr "General Practitioners can help you understand, manage, and treat illnesses or injuries, give you helpful recommendations for preventing chronic conditions and maintaining a healthy lifestyle, and recommend specialists based on your health concerns."
+
+msgid "vertical_career_coach_asia_pacific_name"
+msgstr "Career Coach - Asia Pacific"
+
+msgid "vertical_career_coach_asia_pacific_display_name"
+msgstr "Career Coach - Asia Pacific"
+
+msgid "vertical_career_coach_asia_pacific_pluralized_display_name"
+msgstr "Career Coaches - Asia Pacific"
+
+msgid "vertical_career_coach_asia_pacific_description"
+msgstr "Career coaching, parental leave, life transition"
+
+msgid "vertical_career_coach_asia_pacific_long_description"
+msgstr "Career Coaches can help you with navigating your workplace at every phase of your career, and share advice for how to advocate for yourself and get the support you need during major life transitions."
+
+msgid "vertical_fertility_specialist_india_name"
+msgstr "Fertility Specialist - India"
+
+msgid "vertical_fertility_specialist_india_display_name"
+msgstr "Fertility Specialist - India"
+
+msgid "vertical_fertility_specialist_india_pluralized_display_name"
+msgstr "Fertility Specialists - India"
+
+msgid "vertical_fertility_specialist_india_description"
+msgstr "Fertility, IVF/IUI/egg freezing, medication support"
+
+msgid "vertical_fertility_specialist_india_long_description"
+msgstr "Fertility Specialists can help you understand conception and fertility, provide answers about how fertility treatments work, give you methods to try to improve your odds of conceiving, and share if you'd benefit from a fertility evaluation."
+
+msgid "vertical_obgyn_india_name"
+msgstr "OB-GYN - India"
+
+msgid "vertical_obgyn_india_display_name"
+msgstr "OB-GYN - India"
+
+msgid "vertical_obgyn_india_pluralized_display_name"
+msgstr "OB-GYNs - India"
+
+msgid "vertical_obgyn_india_description"
+msgstr "Reproductive health, prenatal, pregnancy, menopause"
+
+msgid "vertical_obgyn_india_long_description"
+msgstr "OB-GYNs can support all aspects of reproductive health—from trying to conceive and pregnancy, to prenatal and postpartum health, all the way through menopause—with guidance that helps you make healthy choices, manage symptoms, and know your options."
+
+msgid "vertical_fertility_specialist_europe_name"
+msgstr "Fertility Specialist - Europe"
+
+msgid "vertical_fertility_specialist_europe_display_name"
+msgstr "Fertility Specialist - Europe"
+
+msgid "vertical_fertility_specialist_europe_pluralized_display_name"
+msgstr "Fertility Specialists - Europe"
+
+msgid "vertical_fertility_specialist_europe_description"
+msgstr "Fertility, IVF/IUI/egg freezing, medication support"
+
+msgid "vertical_fertility_specialist_europe_long_description"
+msgstr "Fertility Specialists can help you understand conception and fertility, provide answers about how fertility treatments work, give you methods to try to improve your odds of conceiving, and share if you'd benefit from a fertility evaluation."
+
+msgid "vertical_mental_health_provider_canada_name"
+msgstr "Mental Health Provider - Canada"
+
+msgid "vertical_mental_health_provider_canada_display_name"
+msgstr "Mental Health Provider - Canada"
+
+msgid "vertical_mental_health_provider_canada_pluralized_display_name"
+msgstr "Mental Health Providers - Canada"
+
+msgid "vertical_mental_health_provider_canada_description"
+msgstr "Stress, depression, anxiety, life transitions, emotional support"
+
+msgid "vertical_mental_health_provider_canada_long_description"
+msgstr "Mental Health Providers can support you throughout your journey with a safe space to share, be heard, and get advice without judgment, along with specialized care for any stress, anxiety, depression, or mood disorders you may be experiencing."
+
+msgid "vertical_career_coach_canada_name"
+msgstr "Career Coach - Canada"
+
+msgid "vertical_career_coach_canada_display_name"
+msgstr "Career Coach - Canada"
+
+msgid "vertical_career_coach_canada_pluralized_display_name"
+msgstr "Career Coaches - Canada"
+
+msgid "vertical_career_coach_canada_description"
+msgstr "Career coaching, parental leave, life transition"
+
+msgid "vertical_career_coach_canada_long_description"
+msgstr "Career Coaches can help you with navigating your workplace at every phase of your career, and share advice for how to advocate for yourself and get the support you need during major life transitions."
+
+msgid "vertical_nutrition_coach_canada_name"
+msgstr "Nutrition Coach - Canada"
+
+msgid "vertical_nutrition_coach_canada_display_name"
+msgstr "Nutrition Coach - Canada"
+
+msgid "vertical_nutrition_coach_canada_pluralized_display_name"
+msgstr "Nutrition Coaches - Canada"
+
+msgid "vertical_nutrition_coach_canada_description"
+msgstr "Healthy eating, weight management"
+
+msgid "vertical_nutrition_coach_canada_long_description"
+msgstr "Nutrition Coaches are here to help you understand how diet plays a role in your overall health and well-being, and offer recommendations for foods and small lifestyle changes that can help you feel your best."
+
+msgid "vertical_general_practitioner_africa_middle_east_name"
+msgstr "General Practitioner - Africa & Middle East"
+
+msgid "vertical_general_practitioner_africa_middle_east_display_name"
+msgstr "General Practitioner - Africa & Middle East"
+
+msgid "vertical_general_practitioner_africa_middle_east_pluralized_display_name"
+msgstr "General Practitioners - Africa & Middle East"
+
+msgid "vertical_general_practitioner_africa_middle_east_description"
+msgstr "Adult general health, cold and flu"
+
+msgid "vertical_general_practitioner_africa_middle_east_long_description"
+msgstr "General Practitioners can help you understand, manage, and treat illnesses or injuries, give you helpful recommendations for preventing chronic conditions and maintaining a healthy lifestyle, and recommend specialists based on your health concerns."
+
+msgid "vertical_pediatric_sleep_coach_canada_name"
+msgstr "Pediatric Sleep Coach - Canada"
+
+msgid "vertical_pediatric_sleep_coach_canada_display_name"
+msgstr "Pediatric Sleep Coach - Canada"
+
+msgid "vertical_pediatric_sleep_coach_canada_pluralized_display_name"
+msgstr "Pediatric Sleep Coaches - Canada"
+
+msgid "vertical_pediatric_sleep_coach_canada_description"
+msgstr "Sleep solutions for children, nap and bedtime routines, sleep health"
+
+msgid "vertical_pediatric_sleep_coach_canada_long_description"
+msgstr "Pediatric Sleep Coaches can give you solutions if your child is having trouble falling or staying asleep, and provide you with age-appropriate nap and bedtime schedules, guidance for preventing SIDS, and tips for encouraging healthy sleep habits."
+
+msgid "vertical_general_practitioner_europe_name"
+msgstr "General Practitioner - Europe"
+
+msgid "vertical_general_practitioner_europe_display_name"
+msgstr "General Practitioner - Europe"
+
+msgid "vertical_general_practitioner_europe_pluralized_display_name"
+msgstr "General Practitioners - Europe"
+
+msgid "vertical_general_practitioner_europe_description"
+msgstr "Adult general health, cold and flu"
+
+msgid "vertical_general_practitioner_europe_long_description"
+msgstr "General Practitioners can help you understand, manage, and treat illnesses or injuries, give you helpful recommendations for preventing chronic conditions and maintaining a healthy lifestyle, and recommend specialists based on your health concerns."
+
+msgid "vertical_lactation_consultant_asia_pacific_name"
+msgstr "Lactation Consultant - Asia Pacific"
+
+msgid "vertical_lactation_consultant_asia_pacific_display_name"
+msgstr "Lactation Consultant - Asia Pacific"
+
+msgid "vertical_lactation_consultant_asia_pacific_pluralized_display_name"
+msgstr "Lactation Consultants - Asia Pacific"
+
+msgid "vertical_lactation_consultant_asia_pacific_description"
+msgstr "Breastfeeding and pumping support, supply issues, mastitis, weaning"
+
+msgid "vertical_lactation_consultant_asia_pacific_long_description"
+msgstr "Lactation Consultants can help you feed your baby with solutions for breastfeeding and pumping challenges, share what to do if you're experiencing pain or discomfort during feedings, offer tips for increasing your milk supply, weaning, and more."
+
+msgid "vertical_pediatrician_india_name"
+msgstr "Pediatrician - India"
+
+msgid "vertical_pediatrician_india_display_name"
+msgstr "Pediatrician - India"
+
+msgid "vertical_pediatrician_india_pluralized_display_name"
+msgstr "Pediatricians - India"
+
+msgid "vertical_pediatrician_india_description"
+msgstr "General health for infants and children, newborn care, cold and flu, nutrition"
+
+msgid "vertical_pediatrician_india_long_description"
+msgstr "Pediatricians are here to help you keep your child healthy, with guidance on managing and treating illnesses or injuries, their physical development and nutritional needs, vaccinations, tests, and procedures, and when to seek emergency care."
+
+msgid "vertical_lactation_consultant_canada_name"
+msgstr "Lactation Consultant - Canada"
+
+msgid "vertical_lactation_consultant_canada_display_name"
+msgstr "Lactation Consultant - Canada"
+
+msgid "vertical_lactation_consultant_canada_pluralized_display_name"
+msgstr "Lactation Consultants - Canada"
+
+msgid "vertical_lactation_consultant_canada_description"
+msgstr "Breastfeeding and pumping support, supply issues, mastitis, weaning"
+
+msgid "vertical_lactation_consultant_canada_long_description"
+msgstr "Lactation Consultants can help you feed your baby with solutions for breastfeeding and pumping challenges, share what to do if you're experiencing pain or discomfort during feedings, offer tips for increasing your milk supply, weaning, and more."
+
+msgid "vertical_lactation_consultant_india_name"
+msgstr "Lactation Consultant - India"
+
+msgid "vertical_lactation_consultant_india_display_name"
+msgstr "Lactation Consultant - India"
+
+msgid "vertical_lactation_consultant_india_pluralized_display_name"
+msgstr "Lactation Consultants - India"
+
+msgid "vertical_lactation_consultant_india_description"
+msgstr "Breastfeeding and pumping support, supply issues, mastitis, weaning"
+
+msgid "vertical_lactation_consultant_india_long_description"
+msgstr "Lactation Consultants can help you feed your baby with solutions for breastfeeding and pumping challenges, share what to do if you're experiencing pain or discomfort during feedings, offer tips for increasing your milk supply, weaning, and more."
+
+msgid "vertical_obgyn_brazil_name"
+msgstr "OB-GYN - Brazil"
+
+msgid "vertical_obgyn_brazil_display_name"
+msgstr "OB-GYN - Brazil"
+
+msgid "vertical_obgyn_brazil_pluralized_display_name"
+msgstr "OB-GYNs - Brazil"
+
+msgid "vertical_obgyn_brazil_description"
+msgstr "Reproductive health, prenatal, pregnancy, menopause"
+
+msgid "vertical_obgyn_brazil_long_description"
+msgstr "OB-GYNs can support all aspects of reproductive health—from trying to conceive and pregnancy, to prenatal and postpartum health, all the way through menopause—with guidance that helps you make healthy choices, manage symptoms, and know your options."
+
+msgid "vertical_mental_health_provider_brazil_name"
+msgstr "Mental Health Provider - Brazil"
+
+msgid "vertical_mental_health_provider_brazil_display_name"
+msgstr "Mental Health Provider - Brazil"
+
+msgid "vertical_mental_health_provider_brazil_pluralized_display_name"
+msgstr "Mental Health Providers - Brazil"
+
+msgid "vertical_mental_health_provider_brazil_description"
+msgstr "Stress, depression, anxiety, life transitions, emotional support"
+
+msgid "vertical_mental_health_provider_brazil_long_description"
+msgstr "Mental Health Providers can support you throughout your journey with a safe space to share, be heard, and get advice without judgment, along with specialized care for any stress, anxiety, depression, or mood disorders you may be experiencing."
+
+msgid "vertical_pediatric_nurse_practitioner_canada_name"
+msgstr "Pediatric Nurse Practitioner - Canada"
+
+msgid "vertical_pediatric_nurse_practitioner_canada_display_name"
+msgstr "Pediatric Nurse Practitioner - Canada"
+
+msgid "vertical_pediatric_nurse_practitioner_canada_long_description"
+msgstr "Pediatric Nurse Practitioners can support the health of children of all ages with treatment plans for acute and chronic illnesses, guidance on medications and procedures, and answer any questions you have about their physical well-being."
+
+msgid "vertical_pediatric_nurse_practitioner_canada_description"
+msgstr "Infant health, pediatric health, cold and flu, medication support"
+
+msgid "vertical_pediatric_nurse_practitioner_canada_pluralized_display_name"
+msgstr "Pediatric Nurse Practitioners - Canada"
+
+msgid "vertical_mens_health_nurse_practitioner_name"
+msgstr "Men's Health Nurse Practitioner"
+
+msgid "vertical_mens_health_nurse_practitioner_display_name"
+msgstr "Men's Health Nurse Practitioner"
+
+msgid "vertical_mens_health_nurse_practitioner_long_description"
+msgstr "Men’s Health Nurse Practitioners can help you understand your fertility, discuss semen analysis and fertility treatment options to improve your odds of conceiving, plus answer any general men's health questions along the way, including those about low testosterone and general mid-life issues."
+
+msgid "vertical_mens_health_nurse_practitioner_description"
+msgstr "Support for men's physical, sexual, and reproductive health"
+
+msgid "vertical_mens_health_nurse_practitioner_pluralized_display_name"
+msgstr "Men's Health Nurse Practitioners"
+
+msgid "vertical_general_practitioner_canada_name"
+msgstr "General Practitioner - Canada"
+
+msgid "vertical_general_practitioner_canada_display_name"
+msgstr "General Practitioner - Canada"
+
+msgid "vertical_general_practitioner_canada_long_description"
+msgstr "General Practitioners can help you understand, manage, and treat illnesses or injuries, give you helpful recommendations for preventing chronic conditions and maintaining a healthy lifesyle, and recommend specialists based on your health concerns."
+
+msgid "vertical_general_practitioner_canada_description"
+msgstr "Adult general health, cold and flu"
+
+msgid "vertical_general_practitioner_canada_pluralized_display_name"
+msgstr "General Practitioners - Canada"
+
+msgid "vertical_doula_brazil_name"
+msgstr "Doula - Brazil"
+
+msgid "vertical_doula_brazil_display_name"
+msgstr "Doula - Brazil"
+
+msgid "vertical_doula_brazil_long_description"
+msgstr "Doulas can tell you what to expect during labor and delivery, share ways to advocate for yourself, offer positions, breathing techniques, and medications that ease labor pain, and tips for a happy, healthy life postpartum."
+
+msgid "vertical_doula_brazil_description"
+msgstr "Pain management, labor and delivery support, postpartum support"
+
+msgid "vertical_doula_brazil_pluralized_display_name"
+msgstr "Doulas - Brazil"
+
+msgid "vertical_nutrition_coach_brazil_name"
+msgstr "Nutrition Coach - Brazil"
+
+msgid "vertical_nutrition_coach_brazil_display_name"
+msgstr "Nutrition Coach - Brazil"
+
+msgid "vertical_nutrition_coach_brazil_long_description"
+msgstr "Nutrition Coaches are here to help you understand how diet plays a role in your overall health and well-being, and offer recommendations for foods and small lifestyle changes that can help you feel your best."
+
+msgid "vertical_nutrition_coach_brazil_description"
+msgstr "Healthy eating, weight management"
+
+msgid "vertical_nutrition_coach_brazil_pluralized_display_name"
+msgstr "Nutrition Coaches - Brazil"

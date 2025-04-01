@@ -1,0 +1,13 @@
+dag_id: find_treatment_procedures_without_cost_breakdown_ids_dag
+schedule: "0 14 * * 1"
+task_id: find_treatment_procedures_without_cost_breakdown_ids_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.payments_platform.find_treatment_procedures_without_cost_breakdown_ids import find_treatment_procedures_without_cost_breakdown_ids_job; find_treatment_procedures_without_cost_breakdown_ids_job()"
+team_namespace: payments_platform
+service_namespace: cost_breakdown
+catchup: "False"
+start_year: 2024
+start_month: 3
+start_day: 31

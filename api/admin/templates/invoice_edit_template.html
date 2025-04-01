@@ -1,0 +1,73 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    <h2>Practitioner Bank Info w/ Stripe</h2>
+    {% if account %}
+    <p>Bank Name: {{ account['bank_name'] }} ({{ account['country'] }})</p>
+    <p>Bank ID: {{ account['id'] }}</p>
+    <p>Bank Verified: {{ account['verified'] }}</p>
+    {% else %}
+        <p>Practitioner not found.</p>
+    {% endif %}
+    <h2>Invoice</h2>
+    {{ super() }}
+
+    <div id="invoice-pay-now"></div>
+    <div id="invoice-close-now"></div>
+
+    <h2>Fees on Invoice</h2>
+    <div>
+      <table cellPadding="8" border="1" width="100%" style="table-layout: fixed; margin-top: 10px;">
+        <thead>
+          <tr>
+            <td style="width: 115px">Created At</td>
+            <td style="width: 115px">Fee ID</td>
+            <td style="width: 115px">Practitioner ID</td>
+            <td style="width: 115px">Amount</td>
+            <td style="width: 115px">Appointment ID</td>
+            <td style="width: 115px">Message ID</td>
+            <td style="width: 115px">Type</td>
+
+          </tr>
+        </thead>
+        <tbody>
+            {% for entry in model.entries %}
+                <tr key={{ entry.id }}>
+                    <td>{{ entry.created_at }}</td>
+                    <td><a href="/admin/feeaccountingentry/edit/?id={{ entry.id }}">{{ entry.id }}</a></td>
+                    <td><a href="/admin/practitionerprofile/edit/?id={{ entry.practitioner_id }}">{{ entry.practitioner_id }}</a></td>
+                    <td>{{ entry.amount }}</td>
+                    {% if entry.appointment_id %}
+                        <td><a href="/admin/appointment/edit/?id={{ entry.appointment_id }}">{{ entry.appointment_id }}</a></td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                    {% if entry.message_id %}
+                        <td><a href="/admin/message/edit/?id={{ entry.message_id }}">{{ entry.message_id }}</a></td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                    <td>{{ entry.type.value.title() }}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            AdminTool("PayInvoice", document.getElementById("invoice-pay-now"), {
+              canBePay: {{ "true" if can_be_pay else "false" }},
+              invoiceId: {{ model.id }},
+            })
+            AdminTool("CloseInvoice", document.getElementById("invoice-close-now"), {
+              canBeClosed: {{ "true" if can_be_closed else "false" }},
+              invoiceId: {{ model.id }},
+            })
+        });
+    </script>
+{% endblock %}
+

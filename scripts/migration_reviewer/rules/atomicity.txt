@@ -1,0 +1,2 @@
+Check: Use transactions to do all relative migration together to avoid partial failures, which will cause stuck migration after retry.
+Fix: If you need to run multiple data migration updates in one MR, be sure to separate them into multiple migration MRs. After we upgrade to MySQL 8.0 then you can wrap them around with raw SQL transaction block to make sure the changes are transactional and we won’t end in an indeterministic state if things go wrong (our Alembic setting is non-transactional for multiple statements in one migration MR)

@@ -1,0 +1,65 @@
+.page-marketing,
+.public {
+	color: $charcoal-100;
+
+	h1,
+	h2,
+	h3,
+	h5,
+	h5 {
+		font-weight: normal;
+		letter-spacing: 0.3px;
+	}
+	h2,
+	h5,
+	h5 {
+		font-family: $font3;
+	}
+	h1,
+	h2 {
+		font-family: $font4;
+	}
+	h1 {
+		font-size: 24px;
+		line-height: 36px;
+		@include susy-breakpoint($tablet) {
+			font-size: 36px;
+			line-height: 48px;
+		}
+	}
+	h2 {
+		font-size: 18px;
+		line-height: 30px;
+		@include susy-breakpoint($tablet) {
+			font-size: 36px;
+			line-height: 48px;
+		}
+	}
+	h3 {
+		font-size: 24px;
+		line-height: 36px;
+		font-family: $font2;
+	}
+	h5,
+	h5 {
+		text-transform: uppercase;
+		font-family: $font1-bold;
+	}
+	p,
+	.p {
+		line-height: 24px;
+		letter-spacing: 0.5px;
+	}
+
+	p.heavy,
+	strong,
+	b {
+		font-family: $font1-bold;
+	}
+
+	p.lg {
+		font-family: $font2;
+		font-size: 18px;
+		line-height: 30px;
+	}
+}

@@ -1,0 +1,72 @@
+<div class="forum-community {{ $ctrl.community.name }} content-container" ng-class="{ 'subcategory' : !$ctrl.subCats }">
+	<forum-header
+		title="{{ $ctrl.community.display_name }}"
+		cats="$ctrl.cats"
+		show-search-menu="$ctrl.showSearchMenu"
+	></forum-header>
+
+	<ul ng-if="$ctrl.subCats" class="clear forum-communities-subcategories content">
+		<li ng-repeat="subcat in $ctrl.subCats">
+			<a ui-sref="app.forum.community({ community : subcat.name })">
+				<div class="forum-subcategories-title {{ subcat.name }}">
+					<div class="p">{{ subcat.display_name }}</div>
+				</div>
+			</a>
+		</li>
+	</ul>
+
+	<section class="forum-list-posts" ng-if="$ctrl.posts">
+		<div class="forumposts">
+			<inline-loader ng-show="$ctrl.loading" loading="$ctrl.loading" label="Loading community..."></inline-loader>
+			<div class="forum-posts-list" ng-hide="$ctrl.loading">
+				<div ng-if="!$ctrl.community.special && !$ctrl.community.archived ">
+					<write-post></write-post>
+				</div>
+				<div ng-if="$ctrl.community.archived ">
+					<p class="center lg">
+						This ask-me-anything has now finished. We'll be running another soon so keep an eye out!<br /><br />
+					</p>
+				</div>
+
+				<h2 class="serif content recent-posts">Recent posts</h2>
+
+				<div ng-if="$ctrl.community.special && !$ctrl.community.archived  ">
+					<p class="center">
+						<a class="btn btn-cta" ui-sref="app.forum.create-post({community: $ctrl.community.name, ama: true })"
+							>Join in</a
+						><br /><br />
+					</p>
+				</div>
+				<ul
+					class="posts clear clearfix content"
+					mvn-inf-scroll
+					scroll-container="scroll-container"
+					is-loading="$ctrl.loadingMore"
+					scroll-action="$ctrl.loadMore()"
+				>
+					<li class="post-list" ng-repeat="post in $ctrl.posts track by $index">
+						<post-list-view
+							post="post"
+							user="$ctrl.user"
+							post_position="$index"
+							cats="$ctrl.cats"
+							incommunity="true"
+						></post-list-view>
+						<div ng-if="$index === 2" class="mobile-only inline-post-cta">
+							<write-post></write-post>
+						</div>
+					</li>
+					<li ng-show="$ctrl.loadingMore" class="list-loader">
+						<inline-loader
+							ng-show="$ctrl.loadingMore"
+							loading="$ctrl.loadingMore"
+							label="Getting more posts..."
+						></inline-loader>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</div>
+
+<ui-view class="post-community-standalone"></ui-view>

@@ -1,0 +1,21 @@
+[
+    {
+        "type": "pooled_calendar_max",
+        "restrict_to_new_organization": true,
+        "role": "practitioner",
+        "is_cx": true,
+        "vertical": "Care Advocate",
+        "email_prefix": "mvnqa-ca_pooled_calendar_max",
+        "password": "simpleisawesome1*",
+        "anonymous_allowed": true,
+        "featured_practitioner": true,
+        "messaging_enabled": true,
+        "members": [
+            {
+                "type": "user",
+                "role": "member",
+                "email_prefix": "member_pooled_calendar_max",
+                "password": "simpleisawesome1*"
+            }]
+    }
+]

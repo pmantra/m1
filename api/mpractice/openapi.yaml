@@ -1,0 +1,1225 @@
+openapi: 3.0.3
+info:
+  title: Maven Clinic MPractice API
+  version: 1.0.0
+  description: API endpoints related to MPractice
+servers:
+  - url: https://www.mavenclinic.com
+  - url: https://www.qa1.mvnapp.net
+  - url: https://www.qa2.mvnapp.net
+  - url: https://www.staging.mvnapp.net
+paths:
+  /api/v2/mpractice/appointments:
+    get:
+      summary: Get a list of appointments
+      description: >-
+        Used to get a list of appointment for the provider to view
+      tags:
+        - MPractice Platform
+      parameters:
+        - $ref: "#/components/parameters/ScheduledStart"
+        - $ref: "#/components/parameters/ScheduledEnd"
+        - $ref: "#/components/parameters/PractitionerId"
+        - $ref: "#/components/parameters/MemberId"
+        - $ref: "#/components/parameters/ScheduleEventIds"
+        - $ref: "#/components/parameters/ExcludeStatuses"
+        - $ref: "#/components/parameters/Limit"
+        - $ref: "#/components/parameters/Offset"
+        - $ref: "#/components/parameters/OrderDirection"
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetAppointmentsResponse"
+              examples:
+                example_1:
+                  summary: Response for GetAppointments
+                  value:
+                    pagination:
+                      limit: 10
+                      offset: 0
+                      total: 100
+                      order_direction: "desc"
+                    data:
+                      - id: 123
+                        appointment_id: 456
+                        scheduled_start: "2023-12-01T17:30:00"
+                        scheduled_end: "2023-12-01T17:45:00"
+                        cancelled_at: null
+                        rescheduled_from_previous_appointment_time: "2023-11-01T17:00:00"
+                        member:
+                          id: 159
+                          name: "Alice Johnson"
+                          first_name: "Alice"
+                          email: ""
+                          country: null
+                          organization: null
+                          profiles: null
+                          created_at: null
+                        repeat_patient: true
+                        privacy: "full_access"
+                        privilege_type: "standard"
+                        state: "PAYMENT_RESOLVED"
+                        post_session:
+                          created_at: "2023-12-02T13:02:41"
+                          draft: false
+                          notes: "bla bla bla"
+
+        400:
+          description: Error in input
+        403:
+          description: Unauthorized user
+        500:
+          description: Internal error
+  /api/v2/mpractice/appointment/{appointment_id}:
+    get:
+      summary: Get appointment by ID
+      description: >-
+        Used to get an appointment by ID
+      tags:
+        - MPractice Platform
+      parameters:
+        - $ref: "#/components/parameters/AppointmentId"
+        - $ref: "#/components/parameters/IncludeSoftDeletedQuestionSets"
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Appointment"
+              examples:
+                example_1:
+                  summary: Response for GetAppointment
+                  value:
+                    id: 123
+                    appointment_id: 456
+                    scheduled_start: "2023-04-01T17:30:00"
+                    scheduled_end: "2023-04-01T17:45:00"
+                    cancelled_at: null
+                    cancellation_policy: "conservative"
+                    member_started_at: "2023-04-01T17:31:05"
+                    member_ended_at: "2023-04-01T17:45:00"
+                    member_disconnected_at: "2023-04-01T17:35:00"
+                    practitioner_started_at: "2023-04-01T17:30:09"
+                    practitioner_ended_at: "2023-04-01T17:45:00"
+                    practitioner_disconnected_at: "2023-04-01T17:35:01"
+                    phone_call_at: "2023-04-01T17:31:00"
+                    privacy: "full_access"
+                    privilege_type: "standard"
+                    purpose: "birth_planning"
+                    state: "PAYMENT_RESOLVED"
+                    pre_session:
+                      created_at: null
+                      draft: null
+                      notes: ""
+                    post_session:
+                      created_at: "2023-12-02T17:45:00"
+                      draft: False
+                      notes: "post session note"
+                    need:
+                      id: 789
+                      name: "medical needs"
+                      description: "need details"
+                    video:
+                      session_id: "RnMmRkd1daVTl"
+                      member_token: "T1==cGFydG5lcl9pZD00NjY3OTM5MiZzaWc9"
+                      practitioner_token: "T1==mVmZjVkNzk5OTgxZGU3ZGYxY2Q1ND"
+                    product:
+                      practitioner:
+                        id: 33
+                        name: "Test Practitioner"
+                        profiles:
+                          member: null
+                          practitioner:
+                            can_prescribe: True
+                            messaging_enabled: True
+                            certified_subdivision_codes:
+                              - "US-CA"
+                              - "US-NY"
+                            vertical_objects:
+                              - filter_by_state: false
+                                id: 16
+                              - filter_by_state: true
+                                id: 18
+                      vertical_id: 16
+                    member:
+                      id: 101
+                      name: "Alice Johnson"
+                      first_name: "Alice"
+                      email: "alice.johnson@x.com"
+                      country:
+                        name: "United Kingdom"
+                        abbr: "UK"
+                        ext_info_link: null
+                        summary: null
+                      organization:
+                        id: 201
+                        name: "test org"
+                        rx_enabled: true
+                        education_only: false
+                      profiles:
+                        member:
+                          care_plan_id: 1
+                          subdivision_code: "US-NY"
+                          state: "NY"
+                          tel_number: "tel:+1-201-555-0123"
+                        practitioner: null
+                      created_at: "2023-01-01T00:00:00"
+                    prescription_info:
+                      pharmacy_id: "123456"
+                      pharmacy_info:
+                        PharmacyId: "1"
+                        Pharmacy: "test pharma"
+                        State: "NY"
+                        ZipCode: "10027"
+                        PrimaryFax: "555-555-5555"
+                        StoreName: "999 Pharmacy"
+                        Address1: "999 999th St"
+                        Address2: ""
+                        PrimaryPhone: "555-555-5556"
+                        PrimaryPhoneType: "Work"
+                        City: "NEW YORK"
+                        IsPreferred: True
+                        IsDefault: False
+                        ServiceLevel: 9
+                      enabled: True
+                    rx_enabled: True
+                    rx_reason: "is_allowed"
+                    rx_written_via: "dosespot"
+                    structured_internal_note:
+                      question_sets:
+                        - id: "1070803495006141273"
+                          oid: "various_questions"
+                          prerequisite_answer_id: null
+                          questions:
+                            - id: "1070803933415433827"
+                              label: "Was the member considering going to urgent care/ER?"
+                              type: "RADIO"
+                              required: true
+                              answers:
+                                - id: "1070804143367288197"
+                                  text: "I don't know"
+                                  sort_order: 0
+                                  oid: "dont_know"
+                                  soft_deleted_at: null
+                          soft_deleted_at: null
+                          sort_order: 0
+                      questionnaire:
+                        id: "1070802927850217425"
+                        oid: "soap_notes_medical_providers_deprecated"
+                        title_text: null
+                        description_text: "SOAP notes for medical providers"
+                        sort_order: 0
+                        soft_deleted_at: null
+                        question_sets:
+                          - id: "1070803495006141273"
+                            oid: "various_questions"
+                            prerequisite_answer_id: null
+                            questions:
+                              - id: "1070803933415433827"
+                                label: "Was the member considering going to urgent care/ER?"
+                                type: "RADIO"
+                                required: true
+                                answers:
+                                  - id: "1070804143367288197"
+                                    text: "I don't know"
+                                    sort_order: 0
+                                    oid: "dont_know"
+                                    soft_deleted_at: null
+                            soft_deleted_at: null
+                            sort_order: 0
+                        trigger_answer_ids: [ ]
+                      recorded_answer_set:
+                        id: "1229838921073018665"
+                        appointment_id: 784428734
+                        questionnaire_id: "1070802927850217425"
+                        draft: false
+                        modified_at: "2023-04-17T17:00:48+00:00"
+                        submitted_at: "2023-04-17T17:00:47+00:00"
+                        source_user_id: 33
+                        recorded_answers:
+                          - appointment_id: 784428734
+                            question_id: "1070806688292167295"
+                            question_type: "TEXT"
+                            text: "H"
+                            user_id: 33
+                            date: null
+                            payload:
+                              text: "H"
+                      provider_addenda:
+                        provider_addenda:
+                          - id: "1362127545354489674"
+                            appointment_id: 784464737
+                            questionnaire_id: "1246107515894375741"
+                            submitted_at: "2024-04-16T18:08:34+00:00"
+                            user_id: 33
+                            provider_addendum_answers:
+                              - question_id: "1294332641904233042"
+                                text: "test"
+                                answer_id: null
+                                date: null
+                        questionnaire:
+                          id: "1246107515894375741"
+                          oid: "addendum_notes"
+                          title_text: "Addendum to notes"
+                          description_text: null
+                          sort_order: 0
+                          soft_deleted_at: null
+                          question_sets:
+                            - id: "1246108023385874371"
+                              oid: "addendum_notes"
+                              sort_order: 0
+                              soft_deleted_at: null
+                              prerequisite_answer_id: null
+                              questions:
+                                - id: "1294332366917633609"
+                                  label: "Reason"
+                                  type: "SINGLE_SELECT"
+                                  required: true
+                                  sort_order: 1
+                                  soft_deleted_at: null
+                                  answers:
+                                    - id: "1294333058311094294"
+                                      text: "I forgot something or need to provide clarification"
+                                      sort_order: 1
+                                      oid: "sample oid name"
+                                      soft_deleted_at: null
+                          trigger_answer_ids: [ ]
+
+        400:
+          description: Error in input
+        403:
+          description: Unauthorized user
+        500:
+          description: Internal error
+
+
+components:
+  parameters:
+    ScheduledStart:
+      name: scheduled_start
+      in: query
+      required: false
+      schema:
+        $ref: "#/components/schemas/DateTime"
+    ScheduledEnd:
+      name: scheduled_end
+      in: query
+      required: false
+      schema:
+        $ref: "#/components/schemas/DateTime"
+    PractitionerId:
+      name: practitioner_id
+      in: query
+      required: false
+      schema:
+        $ref: "#/components/schemas/PositiveInteger"
+    MemberId:
+      name: member_id
+      in: query
+      required: false
+      schema:
+        $ref: "#/components/schemas/PositiveInteger"
+    ScheduleEventIds:
+      name: schedule_event_ids
+      in: query
+      required: false
+      schema:
+        type: string
+        description: "comma separate string representing schedule_event_ids"
+        example: "123,456"
+    ExcludeStatuses:
+      name: exclude_statuses
+      in: query
+      required: false
+      schema:
+        type: string
+        description: "comma separate string representing statuses to exclude; only support filtering out cancelled appointments now"
+        example: "CANCELLED"
+    Limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        $ref: "#/components/schemas/PositiveInteger"
+    Offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        $ref: "#/components/schemas/PositiveInteger"
+    OrderDirection:
+      name: order_direction
+      in: query
+      required: false
+      schema:
+        $ref: "#/components/schemas/OrderDirection"
+    AppointmentId:
+      name: appointment_id
+      in: path
+      required: true
+      schema:
+        $ref: "#/components/schemas/PositiveInteger"
+    IncludeSoftDeletedQuestionSets:
+      name: include_soft_deleted_question_sets
+      in: query
+      required: false
+      schema:
+        type: boolean
+
+
+  schemas:
+    GetAppointmentsResponse:
+      type: object
+      required: [data, pagination]
+      properties:
+        data:
+            type: array
+            nullable: false
+            items:
+              $ref: "#/components/schemas/AppointmentForList"
+        pagination:
+            type: object
+            nullable: false
+            required: [order_by, limit, offset, total]
+            properties:
+              order_by:
+                nullable: false
+                allOf:
+                  - $ref: "#/components/schemas/OrderDirection"
+              limit:
+                type: integer
+                nullable: false
+              offset:
+                type: integer
+                nullable: false
+              total:
+                type: integer
+                nullable: false
+    AppointmentForList:
+      type: object
+      required: [id, appointment_id, scheduled_start, scheduled_end, cancelled_at, member, rescheduled_from_previous_appointment_time, repeat_patient, privacy, privilege_type, state, post_session]
+      properties:
+        id:
+          type: integer
+          description: obfuscated appointment ID
+          nullable: false
+        appointment_id:
+          type: integer
+          description: non-obfuscated appointment ID stored in DB
+          nullable: false
+        scheduled_start:
+          type: string
+          format: date-time
+          nullable: false
+        scheduled_end:
+          type: string
+          format: date-time
+          nullable: false
+        cancelled_at:
+          type: string
+          format: date-time
+          nullable: true
+        rescheduled_from_previous_appointment_time:
+          type: string
+          format: date-time
+          nullable: true
+        member:
+          nullable: false
+          allOf:
+            - $ref: "#/components/schemas/Member"
+        repeat_patient:
+          type: boolean
+          nullable: false
+        privacy:
+          nullable: true
+          allOf:
+            - $ref: '#/components/schemas/Privacy'
+        privilege_type:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/PrivilegeType"
+        state:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/AppointmentState"
+        post_session:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/PostSessionNotes"
+    Appointment:
+      type: object
+      required: [ id, appointment_id, scheduled_start, scheduled_end, cancelled_at, cancellation_policy, cancelled_note, member_started_at, member_ended_at, member_disconnected_at, practitioner_started_at, practitioner_ended_at, practitioner_disconnected_at, phone_call_at, privacy, privilege_type, purpose, state, pre_session, post_session, need, video, product, member, prescription_info, rx_enabled, rx_reason, rx_written_via, structured_internal_note, provider_addenda ]
+      properties:
+        id:
+          type: integer
+          description: obfuscated appointment ID
+          nullable: false
+        appointment_id:
+          type: integer
+          description: non-obfuscated appointment ID stored in DB
+          nullable: false
+        scheduled_start:
+          type: string
+          format: date-time
+          nullable: false
+        scheduled_end:
+          type: string
+          format: date-time
+          nullable: false
+        cancelled_at:
+          type: string
+          format: date-time
+          nullable: true
+        cancellation_policy:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/CancellationPolicy"
+        cancelled_note:
+          type: string
+          nullable: true
+        member_started_at:
+          type: string
+          format: date-time
+          nullable: true
+        member_ended_at:
+          type: string
+          format: date-time
+          nullable: true
+        member_disconnected_at:
+          type: string
+          format: date-time
+          nullable: true
+        practitioner_started_at:
+          type: string
+          format: date-time
+          nullable: true
+        practitioner_ended_at:
+          type: string
+          format: date-time
+          nullable: true
+        practitioner_disconnected_at:
+          type: string
+          format: date-time
+          nullable: true
+        phone_call_at:
+          type: string
+          format: date-time
+          nullable: true
+        privacy:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/Privacy"
+        privilege_type:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/PrivilegeType"
+        purpose:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/Purpose"
+        state:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/AppointmentState"
+        pre_session:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/PreSessionNotes"
+        post_session:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/PostSessionNotes"
+        need:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/Need"
+        video:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/Video"
+        product:
+          nullable: false
+          allOf:
+            - $ref: "#/components/schemas/Product"
+        member:
+          nullable: false
+          allOf:
+            - $ref: "#/components/schemas/Member"
+        prescription_info:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/PrescriptionInfo"
+        rx_enabled:
+          type: boolean
+          description: whether prescription functionality is enabled for the appointment
+          nullable: false
+        rx_reason:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/RxReason"
+        rx_written_via:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/RxWrittenVia"
+        structured_internal_note:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/StructuredInternalNote"
+        provider_addenda:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/ProviderAddendaAndQuestionnaire"
+    Member:
+      type: object
+      required: [id, name, first_name, email, country, organization, profiles, created_at]
+      properties:
+        id:
+          type: integer
+          nullable: false
+        name:
+          type: string
+          nullable: true
+          description: member full name, hidden for anonymous appointments
+        first_name:
+          type: string
+          nullable: true
+          description: member first name, hidden for anonymous appointments
+        email:
+          type: string
+          nullable: true
+        country:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/Country"
+        organization:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/Organization"
+        profiles:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/Profiles"
+        created_at:
+          type: string
+          format: date-time
+          nullable: true
+    Country:
+      type: object
+      required: [name, abbr, ext_info_link, summary]
+      properties:
+        name:
+          type: string
+          nullable: true
+        abbr:
+          type: string
+          nullable: true
+        ext_info_link:
+          type: string
+          nullable: true
+        summary:
+          type: string
+          nullable: true
+    Organization:
+      type: object
+      required: [id, name, rx_enabled, education_only]
+      properties:
+        id:
+          type: integer
+          nullable: false
+        name:
+          type: string
+          nullable: false
+        rx_enabled:
+          type: boolean
+          nullable: false
+        education_only:
+          type: boolean
+          nullable: false
+        bms_enabled:
+          type: boolean
+          nullable: true
+        vertical_group_version:
+          type: string
+          nullable: true
+        display_name:
+          type: string
+          nullable: true
+    Profiles:
+      type: object
+      required: [member, practitioner]
+      properties:
+        member:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/MemberProfile"
+        practitioner:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/PractitionerProfile"
+    MemberProfile:
+      type: object
+      required: [care_plan_id, subdivision_code, state, tel_number]
+      properties:
+        care_plan_id:
+          type: integer
+          nullable: true
+        subdivision_code:
+          type: string
+          nullable: true
+        state:
+          type: string
+          nullable: true
+        tel_number:
+          type: string
+          nullable: true
+    PractitionerProfile:
+      type: object
+      required: [can_prescribe, messaging_enabled, certified_subdivision_codes, vertical_objects]
+      properties:
+        can_prescribe:
+          type: boolean
+          nullable: false
+        messaging_enabled:
+          type: boolean
+          nullable: false
+        certified_subdivision_codes:
+          type: array
+          nullable: false
+          items:
+            type: string
+        vertical_objects:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/Vertical"
+    Need:
+      type: object
+      description: need of the member, such as fertility support
+      required: [id, name, description]
+      properties:
+        id:
+          type: integer
+          nullable: false
+        name:
+          type: string
+          nullable: false
+        description:
+          type: string
+          nullable: true
+    PharmacyInfo:
+      type: object
+      required: [PharmacyId, Pharmacy, State, ZipCode, PrimaryFax, StoreName, Address1, Address2, PrimaryPhone, PrimaryPhoneType, City, IsPreferred, IsDefault, ServiceLevel]
+      properties:
+        PharmacyId:
+          type: string
+          nullable: true
+        Pharmacy:
+          type: string
+          nullable: true
+        State:
+          type: string
+          nullable: true
+        ZipCode:
+          type: string
+          nullable: true
+        PrimaryFax:
+          type: string
+          nullable: true
+        StoreName:
+          type: string
+          nullable: true
+        Address1:
+          type: string
+          nullable: true
+        Address2:
+          type: string
+          nullable: true
+        PrimaryPhone:
+          type: string
+          nullable: true
+        PrimaryPhoneType:
+          type: string
+          nullable: true
+        City:
+          type: string
+          nullable: true
+        IsPreferred:
+          type: boolean
+          nullable: true
+        IsDefault:
+          type: boolean
+          nullable: true
+        ServiceLevel:
+          type: integer
+          nullable: true
+    PrescriptionInfo:
+      type: object
+      required: [enabled, pharmacy_id, pharmacy_info]
+      properties:
+        enabled:
+          type: boolean
+          nullable: false
+        pharmacy_id:
+          type: string
+          nullable: true
+        pharmacy_info:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/PharmacyInfo"
+    Product:
+      type: object
+      description: info related to the practitioner and verticals
+      required: [practitioner, vertical_id]
+      properties:
+        practitioner:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/User"
+        vertical_id:
+          type: integer
+          nullable: false
+    PreSessionNotes:
+      type: object
+      required: [notes]
+      properties:
+        created_at:
+          type: string
+          format: date-time
+          nullable: true
+        draft:
+          type: boolean
+          nullable: true
+        notes:
+          type: string
+          nullable: false
+    PostSessionNotes:
+      type: object
+      required: [created_at, draft, notes]
+      properties:
+        created_at:
+          type: string
+          format: date-time
+          nullable: true
+        draft:
+          type: boolean
+          nullable: true
+        notes:
+          type: string
+          nullable: false
+    Vertical:
+      type: object
+      required: [id, filter_by_state]
+      properties:
+        id:
+          type: integer
+          nullable: false
+        filter_by_state:
+          type: boolean
+          nullable: false
+    Video:
+      type: object
+      required: [session_id, member_token, practitioner_token]
+      properties:
+        session_id:
+          type: string
+          nullable: true
+        member_token:
+          type: string
+          nullable: true
+        practitioner_token:
+          type: string
+          nullable: true
+    User:
+      type: object
+      required: [id, name, profiles]
+      properties:
+        id:
+          type: integer
+          nullable: false
+        name:
+          type: string
+          nullable: true
+        profiles:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/Profiles"
+
+    StructuredInternalNote:
+      type: object
+      description: internal notes for the appointment
+      required: [questionnaire, question_sets, recorded_answer_set ,recorded_answers]
+      properties:
+        questionnaire:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/Questionnaire"
+        question_sets:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/QuestionSet"
+        recorded_answer_set:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/RecordedAnswerSet"
+        recorded_answers:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/RecordedAnswer"
+    Questionnaire:
+      type: object
+      required: [id, sort_order, oid, title_text, description_text, soft_deleted_at, trigger_answer_ids, question_sets]
+      properties:
+        id:
+          type: string
+          nullable: false
+        sort_order:
+          type: integer
+          nullable: false
+        oid:
+          type: string
+          nullable: true
+        title_text:
+          type: string
+          nullable: true
+        description_text:
+          type: string
+          nullable: true
+        soft_deleted_at:
+          type: string
+          format: date-time
+          nullable: true
+        trigger_answer_ids:
+          type: array
+          nullable: false
+          items:
+            type: string
+        question_sets:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/QuestionSet"
+    QuestionSet:
+      type: object
+      required: [id, oid, sort_order, prerequisite_answer_id, soft_deleted_at, questions]
+      properties:
+        id:
+          type: string
+          nullable: false
+        oid:
+          type: string
+          nullable: true
+        sort_order:
+          type: integer
+          nullable: false
+        prerequisite_answer_id:
+          type: string
+          nullable: true
+        soft_deleted_at:
+          type: string
+          format: date-time
+          nullable: true
+        questions:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/Question"
+    Question:
+      type: object
+      required: [id, sort_order, label, type, required, oid, non_db_answer_options_json, soft_deleted_at, answers]
+      properties:
+        id:
+          type: string
+          nullable: false
+        sort_order:
+          type: integer
+          nullable: false
+        label:
+          type: string
+          nullable: false
+        type:
+          nullable: false
+          allOf:
+            - $ref: "#/components/schemas/QuestionType"
+        required:
+          type: boolean
+          nullable: false
+        oid:
+          type: string
+          nullable: true
+        non_db_answer_options_json:
+          type: string
+          nullable: true
+        soft_deleted_at:
+          type: string
+          format: date-time
+          nullable: true
+        answers:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/Answer"
+    Answer:
+      type: object
+      required: [id, sort_order, text, oid, soft_deleted_at]
+      properties:
+        id:
+          type: string
+          nullable: false
+        sort_order:
+          type: integer
+          nullable: false
+        text:
+          type: string
+          nullable: true
+        oid:
+          type: string
+          nullable: true
+        soft_deleted_at:
+          type: string
+          format: date-time
+          nullable: true
+    RecordedAnswerSet:
+      type: object
+      required: [id, questionnaire_id, modified_at, submitted_at, source_user_id, draft, appointment_id, recorded_answers]
+      properties:
+        id:
+          type: string
+          nullable: false
+        questionnaire_id:
+          type: string
+          nullable: true
+        modified_at:
+          type: string
+          format: date-time
+          nullable: true
+        submitted_at:
+          type: string
+          format: date-time
+          nullable: true
+        source_user_id:
+          type: integer
+          nullable: false
+        draft:
+          type: boolean
+          nullable: false
+        appointment_id:
+          type: integer
+          nullable: true
+        recorded_answers:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/RecordedAnswer"
+    RecordedAnswer:
+      type: object
+      required: [appointment_id, user_id, question_id, question_type, answer_id, text, date, payload]
+      properties:
+        appointment_id:
+          type: integer
+          nullable: true
+        user_id:
+          type: integer
+          nullable: false
+        question_id:
+          type: string
+          nullable: false
+        question_type:
+          nullable: false
+          allOf:
+            - $ref: "#/components/schemas/QuestionType"
+        answer_id:
+          type: string
+          nullable: true
+        text:
+          type: string
+          nullable: true
+        date:
+          type: string
+          format: date
+          nullable: true
+        payload:
+          type: object
+          nullable: true
+          additionalProperties: true
+          description: a dictionary representing the payload of the recorded answer
+    ProviderAddendaAndQuestionnaire:
+      type: object
+      required: [questionnaire, provider_addenda]
+      properties:
+        questionnaire:
+          nullable: true
+          allOf:
+            - $ref: "#/components/schemas/Questionnaire"
+        provider_addenda:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/ProviderAddendum"
+    ProviderAddendum:
+      type: object
+      required: [id, questionnaire_id, associated_answer_id, associated_question_id, submitted_at, user_id, appointment_id, provider_addendum_answers]
+      properties:
+        id:
+          type: string
+          nullable: false
+        questionnaire_id:
+          type: string
+          nullable: false
+        associated_answer_id:
+          type: string
+          nullable: true
+        associated_question_id:
+          type: string
+          nullable: true
+        submitted_at:
+          type: string
+          format: date-time
+          nullable: false
+        user_id:
+          type: integer
+          nullable: false
+        appointment_id:
+          type: integer
+          nullable: false
+        provider_addendum_answers:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/ProviderAddendumAnswer"
+    ProviderAddendumAnswer:
+      type: object
+      required: [question_id, answer_id, text, date]
+      properties:
+        question_id:
+          type: string
+          nullable: false
+        answer_id:
+          type: string
+          nullable: true
+        text:
+          type: string
+          nullable: true
+        date:
+          type: string
+          format: date
+          nullable: true
+
+
+    # region: field components
+    PositiveInteger:
+      type: integer
+      format: "int64"
+      minimum: 1
+    Date:
+      type: string
+      format: date
+      example: "1970-01-01"
+      description: |
+        The ISO 8601 date when this object was created, as defined by RFC 3339.
+    DateTime:
+      type: string
+      format: date-time
+      example: "1970-01-01T00:00:00"
+      description: |
+        The ISO 8601 timestamp when this object was created, as defined by RFC 3339.
+    OrderDirection:
+      type: string
+      enum:
+        - asc
+        - desc
+      description: "Direction of ordering appointment by start time"
+    AppointmentState:
+      type: string
+      enum:
+        - SCHEDULED
+        - OVERDUE
+        - COMPLETED
+        - INCOMPLETE
+        - OVERFLOWING
+        - CANCELLED
+        - OCCURRING
+        - PAYMENT_PENDING
+        - PAYMENT_RESOLVED
+        - DISPUTED
+    CancellationPolicy:
+      type: string
+      enum:
+        - conservative
+        - flexible
+        - moderate
+        - strict
+    Privacy:
+      type: string
+      enum:
+        - anonymous
+        - basic
+        - full_access
+    PrivilegeType:
+      type: string
+      enum:
+        - anonymous
+        - education_only
+        - international
+        - standard
+    Purpose:
+      type: string
+      enum:
+        - birth_needs_assessment
+        - birth_planning
+        - childbirth_ed
+        - introduction
+        - introduction_adoption
+        - introduction_breast_milk_shipping
+        - introduction_egg_freezing
+        - introduction_fertility
+        - introduction_general_wellness
+        - introduction_generic
+        - introduction_menopause
+        - introduction_parenting_and_pediatrics
+        - introduction_partner_fertility
+        - introduction_partner_newparent
+        - introduction_partner_pregnant
+        - introduction_pregnancyloss
+        - introduction_sponsored
+        - introduction_surrogacy
+        - introduction_trying_to_conceive
+        - pediatric_prenatal_consult
+        - postpartum_needs_assessment
+        - postpartum_planning
+    RxReason:
+      type: string
+      description: the reason why prescription functionality is enabled or disabled for the appointment
+      enum:
+        - is_allowed
+        - not_allowed_by_org
+        - pharmacy_info_not_added
+        - not_set_up
+        - cannot_prescribe
+        - not_licensed_in_state
+        - member_outside_us
+    RxWrittenVia:
+      type: string
+      description: source of the written prescription
+      enum:
+        - call
+        - dosespot
+    QuestionType:
+      type: string
+      enum:
+        - ALLERGY_INTOLERANCE
+        - CONDITION
+        - DATE
+        - CHECKBOX
+        - MEDICATION
+        - MULTISELECT
+        - RADIO
+        - SINGLE_SELECT
+        - STAR
+        - TEXT
+        # endregion

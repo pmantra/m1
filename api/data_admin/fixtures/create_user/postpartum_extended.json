@@ -1,0 +1,19 @@
+[
+  {
+    "type": "organization",
+    "name": "Org With Extensions",
+    "activated_at": "1 year ago",
+    "client_tracks": [{ "track": "postpartum", "length_in_days": 348 }]
+  },
+  {
+    "type": "user",
+    "organization_name": "Org With Extensions",
+    "track": "postpartum",
+    "email_prefix": "mvnqa-ppext",
+    "password": "simpleisawesome1*",
+    "phase": "week-64",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

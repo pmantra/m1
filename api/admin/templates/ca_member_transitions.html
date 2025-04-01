@@ -1,0 +1,39 @@
+{% extends 'admin/base.html' %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block body %}
+        <div id="ca-member-transitions"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function() {
+                AdminTool(
+                    "CAMemberTransitions",
+                    document.getElementById("ca-member-transitions"),{
+                        transitionLogDataUrl: "/admin/ca_member_transitions/transition_logs",
+                        transitionTemplateDataUrl: "/admin/ca_member_transitions/transition_templates",
+                        transitionLogsColumnsConf: {{ view_args.transition_logs_columns_conf|tojson if (view_args and view_args.transition_logs_columns_conf) else "false"  }},
+                        transitionTemplatesColumnsConf: {{ view_args.transition_templates_columns_conf|tojson if (view_args and view_args.transition_templates_columns_conf) else "false"  }},
+                        pageSize: {{ view_args.page_size if (view_args and view_args.page_size) else "false"}},
+                        filters: {{ view_args.filters if (view_args and view_args.filters) else "false" }},
+                        deleteConf: {{ view_args.delete_conf|tojson if (view_args and view_args.delete_conf) else "false" }},
+                        transitionLogsCanDelete: {{ view_args.transition_logs_can_delete if (view_args and view_args.transition_logs_can_delete) else "false" }},
+                        transitionLogsCanEdit: {{ view_args.transition_logs_can_edit if (view_args and view_args.transition_logs_can_edit) else "false" }},
+                        transitionTemplatesCanDelete: {{ view_args.transition_templates_can_delete if (view_args and view_args.transition_templates_can_delete) else "false" }},
+                        transitionTemplatesCanEdit: {{ view_args.transition_templates_can_edit if (view_args and view_args.transition_templates_can_edit) else "false" }},
+                        hasActions: {{ "true" if (view_args and view_args.has_actions) else "false" }},
+                        showTz: {{ view_args.show_tz if (view_args and view_args.show_tz) else "false" }},
+                        showPagination: {{ view_args.show_pagination if (view_args and view_args.show_pagination) else "true" }},
+                        sort: "{{ view_args.sort if (view_args and view_args.sort) else "" }}",
+                        desc: "{{ view_args.desc if (view_args and view_args.desc) else "false"}}",
+                        transitionsLogSortColumn: "{{ view_args.tl_sort_c if (view_args and view_args.tl_sort_c) else "" }}",
+
+                  }
+                );
+            })
+          </script>
+{% endblock %}
+
+{% block tail %}
+{{ super() }}
+{% endblock %}

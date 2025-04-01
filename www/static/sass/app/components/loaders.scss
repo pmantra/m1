@@ -1,0 +1,67 @@
+
+/* Full page loader */
+.page-loading {
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	background: rgba(255, 255, 255, 0.8);
+	transition: all 0.2s ease;
+	&.show-loader {
+		opacity: 1;
+		z-index: 50;
+		pointer-events: auto;
+	}
+	.loader {
+		position: absolute;
+		text-align: center;
+		top: 40%;
+		left: 35%;
+		padding: .5rem 1rem;
+		letter-spacing: 1px;
+		width: 100px;
+		height: 100px;
+		@include susy-breakpoint($desktop) {
+			top: 30%;
+			left: 45%;
+			width: 220px;
+			height: 220px;
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+/* Inline loaders */
+.loader-inline {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 60px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: white;
+	z-index: 100;
+	.loader-inline-content {
+		padding: $basepadding * 2;
+		text-align: center;
+	}
+}
+
+/* Loader animations */
+.loader-spin {
+	svg {
+		color: $charcoal-100;
+		width: 30px;
+		height: 30px;
+		position: relative;
+		top: -2px;
+	}
+}

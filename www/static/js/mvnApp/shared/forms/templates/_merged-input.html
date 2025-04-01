@@ -1,0 +1,12 @@
+<div  
+	class="mvn-form-input merged-text-input" 
+	ng-class="{ 
+		'selected': mergedInputCtrl.isActive, 
+		'has-content': $parent.$ctrl.hasContent, 
+		'has-error': $parent.$ctrl.hasErrors, 
+		'is-required': $parent.$ctrl.required
+	}"
+	>
+	<span ng-transclude></span>
+	<label class="mvn-form-label">{{ label }}</label>
+</div>

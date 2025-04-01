@@ -1,0 +1,67 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    <h2>User Info</h2>
+    <p>User ID is: {{ model.id }}</p>
+    {% if model.member_profile %}
+        <a href="{{ url_for('memberprofile.edit_view', id=model.id) }}">Member profile</a>
+    {% endif %}
+    <br>
+    <a href="/eligibility-admin/user-verification/{{ model.id }}">Eligibility Verifications for User</a>
+    <h2>User</h2>
+    {{ super() }}
+    {% if model.image %}
+        <h3>Image URL</h3>
+        {{ model.image.asset_url() }}
+    {% endif %}
+
+    <h3>Device Info</h3>
+    <ul>
+    {% for device in devices %}
+        <li>
+            {{ device.device_id }} for {{ device.application_name }} (created @ {{ device.created_at }}): Active?: {{ device.is_active }}
+            <form class="icon" method="POST" action="/admin/device/delete/">
+                <input id="id" name="id" type="hidden" value="{{ device.id }}">
+                <input id="url" name="url" type="hidden" value="{{ url_for('.edit_view', id=model.id) }}">
+
+                <button type="submit" onclick="return confirm('Are you sure you want to delete this record?');" title="Delete record">
+                    <i class="icon-trash"></i>
+                </button>
+            </form>
+        </li>
+    {% else %}
+        <li><em>no devices were found</em></li>
+    {% endfor %}
+    </ul>
+
+    {% with user=model %}{% include 'user_pending_agreements.html' %}{% endwith %}
+
+    <script>
+        'use strict';
+        window.onStartDeleteUserRequest = function (e) {
+            try {
+                var formId = +document.getElementById('start_delete_user_id').value;
+                if (formId !== {{ model.id | tojson }}) {
+                    alert('Please make sure you are deleting the current user! The given id does not match.');
+                    return false;
+                }
+                var n1 = {{ model.first_name | tojson }};
+                var n2 = {{ model.last_name | tojson }};
+                return confirm(`Are you sure you want to send a slack message to start the process to delete this user (${n1} ${n2})?`);
+            } catch (e) {
+                alert(e);
+                return false;
+            }
+        };
+    </script>
+
+    <h2>Start Delete User Request</h2>
+    <form class="icon" method="POST" action="/admin/actions/start_delete_user_request" onsubmit="return window.onStartDeleteUserRequest(event)">
+        {# include the current url to allow the action to send user back here #}
+        <input name="url" type="hidden" value="{{ request.url }}">
+        <input id="start_delete_user_id" name="user_id" placeholder="confirm user id">
+        <button type="submit" title="Start Delete User Request">
+            <i class="icon-trash"></i>
+        </button>
+    </form>
+{% endblock %}

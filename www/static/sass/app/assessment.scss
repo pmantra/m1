@@ -1,0 +1,473 @@
+.assessment {
+	.form-group {
+		text-align: left;
+		margin: 40px auto;
+	}
+	.assessment-radio-wrap,
+	.assessment-checkbox-wrap {
+		margin: 20px auto;
+		position: relative;
+		overflow: auto;
+		label {
+			position: relative;
+			left: 10px;
+			text-transform: capitalize;
+		}
+		input[type="checkbox"],
+		input[type="radio"] {
+			width: 20px;
+			height: 20px;
+			float: left;
+		}
+	}
+
+	.assessment-radio-wrap {
+		.assessment-radio {
+			width: 25%;
+			float: left;
+			position: relative;
+		}
+	}
+}
+
+.assessment-container {
+	width: 100%;
+}
+
+/* Self-assessment */
+.take-assessment {
+	@include container;
+
+	.app-body {
+		background: white;
+	}
+	ui-view {
+		height: 100%;
+	}
+	h4,
+	.h4 {
+		margin: 0 0 10px 0;
+		@include susy-breakpoint($desktop) {
+			margin: 0 0 35px 0;
+		}
+	}
+	.question-subtext {
+		max-width: 700px;
+		margin: 20px auto;
+	}
+	.question-subhed {
+		margin-top: 10px;
+		margin-bottom: 30px;
+	}
+	.assessment-body {
+		margin: 0 auto;
+		max-width: $containerWidth;
+		padding-left: 5%;
+		padding-right: 5%;
+		@include fade-in(1.2s);
+		margin-bottom: 100px;
+		@include susy-breakpoint(0 $mobile-landscape-max) {
+			padding-bottom: 60px;
+		}
+		@include susy-breakpoint($tablet) {
+			margin-bottom: 0;
+			padding: 0;
+		}
+
+		form {
+			label {
+				font-size: 18px;
+			}
+			textarea {
+				height: 125px;
+				margin: 0;
+				background-color: #fff;
+				height: 4rem;
+				border: 1px solid $gray-xlt;
+				border-radius: 2px;
+				box-sizing: border-box;
+				padding: 1rem 1rem;
+				margin: 0;
+				text-align: left;
+				padding: 15px 18px;
+				min-height: 150px;
+				margin: 0;
+				&:focus {
+					border-color: $gray-lt;
+					outline: 0;
+				}
+			}
+			.form-fields-merge {
+				border: 1px solid $gray-xlt;
+				max-width: 320px;
+				margin: 0 auto;
+			}
+			.assessment-radio-wrap {
+				text-align: left;
+				margin-left: 5%;
+				div {
+					padding: 15px 15px 15px 0;
+				}
+				@include susy-breakpoint($desktop) {
+					text-align: center;
+					margin-left: 0;
+					div {
+						float: left;
+						padding: 0;
+					}
+					&.radio-2 {
+						width: 60%;
+						margin: 0 auto;
+						div {
+							width: 50%;
+						}
+					}
+					&.radio-3 {
+						div {
+							width: 33%;
+						}
+					}
+					&.radio-4 {
+						div {
+							width: 25%;
+						}
+					}
+					&.radio-5 {
+						div {
+							width: 20%;
+						}
+					}
+				}
+			}
+
+			input[type="radio"] {
+				& + label {
+					font-family: $font1;
+					color: $charcoal-100;
+				}
+			}
+
+			/* panel questions - shared */
+			.panel-grid {
+				margin-bottom: 20px;
+				border: 3px solid transparent;
+				border-radius: 10px;
+				transition: all 0.3s ease;
+				max-width: 270px;
+				margin-left: auto;
+				margin-right: auto;
+				p,
+				.p {
+					margin: 0;
+					@include susy-breakpoint($desktop) {
+						margin-top: 20px;
+					}
+				}
+				a {
+					display: block;
+					width: 100%;
+					height: 100%;
+					cursor: pointer;
+					position: relative;
+					color: $charcoal-100;
+				}
+				&.selected {
+					border: 3px solid $charcoal-100;
+					.panel-content {
+						border-color: transparent;
+					}
+				}
+				.selected-check {
+					position: absolute;
+					top: -15px;
+					right: -5px;
+					@include susy-breakpoint($desktop) {
+						top: -20px;
+						right: -20px;
+					}
+				}
+			}
+			.panel-content {
+				height: 205px;
+				text-align: center;
+				border: 1px solid $charcoal-100;
+				border-radius: 5px;
+				padding: 25px 15px;
+				transition: all 0.3s ease;
+				@include susy-breakpoint($desktop) {
+					padding: 25px;
+					height: 250px;
+				}
+				.panel-img {
+					width: 100%;
+					height: 100px;
+					background-repeat: no-repeat;
+					background-position: center center;
+					@include susy-breakpoint($desktop) {
+						height: 120px;
+					}
+				}
+			}
+
+			.panel-img {
+				width: 100%;
+				height: 100px;
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
+
+			/* panel-single-choice question type */
+
+			.assessment-panels-single-choice {
+				//@include span(12)
+			}
+
+			.panel-single-choice {
+				@include susy-breakpoint($desktop) {
+					.panel-content {
+						height: 300px;
+					}
+				}
+			}
+			.panels-single-2-choices {
+				@include susy-breakpoint($tablet) {
+					width: 440px;
+					margin: 0 auto;
+				}
+
+				.panel-single-choice {
+					@include susy-breakpoint($tablet) {
+						@include gallery(6 of 12);
+					}
+				}
+			}
+			.panels-single-4-choices {
+				@include susy-breakpoint($tablet) {
+					width: 440px;
+					margin: 0 auto;
+				}
+				@include susy-breakpoint($desktop) {
+					width: auto;
+				}
+
+				.panel-single-choice {
+					@include susy-breakpoint($tablet) {
+						@include gallery(6 of 12);
+					}
+					@include susy-breakpoint($desktop) {
+						@include gallery(3 of 12);
+					}
+				}
+			}
+
+			/* panel-multi-choice-sectioned question type */
+			/*.assessment-panels-multi-choice {
+				@include susy-breakpoint($mobile-landscape) {
+					width: 460px;
+					margin: 0 auto;
+				}
+				@include susy-breakpoint($tablet) {
+					width: 690px;
+					h5 {
+						margin: 30px auto 40px auto;
+					}
+				}
+				@include susy-breakpoint($desktop-md) {
+					width: 920px;
+				}
+			}
+			.panel-grid-multi {
+
+				@include susy-breakpoint($mobile-landscape ) {
+					width: 220px;
+					margin-right: 13px;
+					float: left;
+				}
+				@include susy-breakpoint($mobile-landscape $mobile-landscape-max) {
+					&:nth-child(odd) {
+						margin-right: 0;
+					}
+				}
+				@include susy-breakpoint($tablet $desktop-max) {
+					&:nth-child(4), &:nth-child(7), &:nth-child(10), &:nth-child(13), &:nth-child(16)    {
+						margin-right: 0;
+					}
+				}
+				@include susy-breakpoint($desktop-md) {
+					&:nth-child(5n), &:nth-child(9n) {
+						margin-right: 0;
+					}
+				}
+				.panel-grid {
+					margin-bottom: 15px;
+				}
+			}*/
+		}
+	}
+	.parent-question,
+	.child-questions {
+		margin-bottom: 10px;
+		@include susy-breakpoint($desktop) {
+			margin-bottom: 40px;
+		}
+	}
+	.parent-question {
+		margin-top: 100px;
+		.parent-question {
+			@include susy-breakpoint(0 $tablet-max) {
+				margin-top: 60px;
+			}
+			@include susy-breakpoint($desktop) {
+				margin-top: 85px;
+			}
+		}
+		.assessment-icon {
+			width: 60px;
+			height: 60px;
+			margin: 0 auto 35px auto;
+			.icon-wrap {
+				background: $charcoal-100;
+				border-radius: 50%;
+				text-align: center;
+				width: 100%;
+				height: 100%;
+				position: relative;
+				img {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					@include fade-in(2s);
+				}
+			}
+		}
+		@include susy-breakpoint($desktop) {
+			margin-top: 140px;
+			.assessment-icon {
+				width: 80px;
+				height: 80px;
+			}
+		}
+		& + .child-questions {
+			margin-top: 35px;
+			margin-bottom: 40px;
+			@include susy-breakpoint($desktop) {
+				margin-top: 72px;
+				margin-bottom: 72px;
+			}
+		}
+	}
+	.child-questions {
+		@include susy-breakpoint(0 $mobile-landscape-max) {
+			margin-bottom: 100px;
+		}
+	}
+	.next-question {
+		p,
+		.p {
+			margin: 0;
+			.btn-next {
+				margin-bottom: 10px;
+			}
+		}
+		@include fade-in(1.5s); @include susy-breakpoint(0 $mobile-landscape-max) {
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			a.btn.btn-cta {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.ob-maven-icon {
+	margin-bottom: 30px;
+	@include susy-breakpoint($desktop) {
+		margin-bottom: 50px;
+	}
+}
+
+.assessment-tools {
+	@include span(12);
+	margin-bottom: 40px;
+	position: fixed;
+	top: 0;
+	background: white;
+	z-index: 1;
+	.prev-question,
+	.exit-assessment {
+		position: absolute;
+		top: 25px;
+	}
+	@include susy-breakpoint($tablet) {
+		position: relative;
+		.prev-question,
+		.exit-assessment {
+			top: 85px;
+		}
+	}
+	.prev-question {
+		left: 5%;
+		p,
+		.p {
+			margin: 0;
+		}
+		a {
+			text-decoration: none;
+			line-height: 30px;
+			color: $emerald-80;
+			svg {
+				margin-right: 20px;
+				position: relative;
+				top: -2px;
+				height: 32px;
+			}
+		}
+	}
+	.exit-assessment {
+		right: 5%;
+	}
+}
+
+.assessment-complete {
+	margin: 15% auto 0 auto;
+	.complete-loader {
+		margin-top: 40px;
+	}
+}
+
+/* POSTPARTUM ASSESSMENT */
+.assessment-POSTPARTUM {
+	form.secondary-app {
+		padding: 20px 0;
+	}
+	.assessment-body {
+		max-width: 700px;
+	}
+	.assessment-tools {
+		.exit-assessment {
+			display: none;
+		}
+		.prev-question {
+			top: 17px;
+		}
+	}
+	.progress-bar {
+		margin-top: 60px;
+		@include susy-breakpoint($desktop) {
+			margin-top: 95px;
+		}
+		.bar-full,
+		.bar-progress {
+			height: 10px;
+			border-radius: 8px;
+		}
+		.bar-full {
+			width: 700px;
+			max-width: 90%;
+			margin: 10px auto;
+		}
+	}
+}

@@ -1,0 +1,138 @@
+[
+  {
+    "type": "user",
+    "role": "practitioner",
+    "is_cx": true,
+    "vertical": "Care Advocate",
+    "email": "test+qacarecoordinator@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "vertical": "Nutritionist",
+    "email": "test+qanutritionist@mavenclinic.com"
+  }, 
+  {
+    "type": "user",
+    "role": "practitioner",
+    "vertical": "Nurse Practitioner",
+    "email": "test+qanursepractitioner@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "vertical": "Mental Health Provider",
+    "email": "test+qamentalhealthprovider@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "is_cx": true,
+    "vertical": "Care Advocate",
+    "email": "test+qacarecoordinatortwo@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "email": "test+mvnqamsgone@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "email": "test+mvnqamsgtwo@mavenclinic.com"
+  }, 
+  {
+    "type": "user",
+    "email": "test+mvnqamsgthree@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "email": "test+mvnqamsgfour@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "email": "test+mvnqamsgfive@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "First test message",
+    "author": "test+mvnqamsgone@mavenclinic.com",
+    "recipient": "test+qacarecoordinator@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "Second test message",
+    "author": "test+mvnqamsgone@mavenclinic.com",
+    "recipient": "test+qanutritionist@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "Third test message",
+    "author": "test+mvnqamsgone@mavenclinic.com",
+    "recipient": "test+qanursepractitioner@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "Fourth test message",
+    "author": "test+mvnqamsgone@mavenclinic.com",
+    "recipient": "test+qamentalhealthprovider@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "Fifth test message",
+    "author": "test+mvnqamsgone@mavenclinic.com",
+    "recipient": "test+qacarecoordinatortwo@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "Replying to my message",
+    "author": "test+qacarecoordinator@mavenclinic.com",
+    "recipient": "test+mvnqamsgone@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "First test message",
+    "author": "test+mvnqamsgtwo@mavenclinic.com",
+    "recipient": "test+qanutritionist@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": " reply test message",
+    "author": "test+qanutritionist@mavenclinic.com",
+    "recipient": "test+mvnqamsgtwo@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "First test message",
+    "author": "test+mvnqamsgthree@mavenclinic.com",
+    "recipient": "test+qanursepractitioner@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "reply test message",
+    "author": "test+qanursepractitioner@mavenclinic.com",
+    "recipient": "test+mvnqamsgthree@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "first test message",
+    "author": "test+mvnqamsgfour@mavenclinic.com",
+    "recipient": "test+qamentalhealthprovider@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "reply test message",
+    "author": "test+qamentalhealthprovider@mavenclinic.com",
+    "recipient": "test+mvnqamsgfour@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "first test message",
+    "author": "test+mvnqamsgfive@mavenclinic.com",
+    "recipient": "test+qacarecoordinatortwo@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "reply test message",
+    "author": "test+qacarecoordinatortwo@mavenclinic.com",
+    "recipient": "test+mvnqamsgfive@mavenclinic.com"
+  }
+]

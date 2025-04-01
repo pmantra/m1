@@ -1,0 +1,12 @@
+[
+  {
+    "type": "user",
+    "organization_name": "Test Organization X",
+    "track": "general_wellness",
+    "email_prefix": "mvnqa-gen",
+    "password": "simpleisawesome1*",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

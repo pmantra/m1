@@ -1,0 +1,14 @@
+{% extends 'admin/model/edit.html' %}
+{% block body %}
+<div>
+    <h2 style="display:inline-block; margin-right: 30px;">Question Set</h2>
+    <form style="display:inline" method="POST" action="{{ get_url('.duplicate_view') }}">
+        <input type="hidden" name="return_url" value="{{ request.full_path }}"/>
+        <input type="hidden" name="record_id" value="{{ model.id }}"/>
+        <button type="submit" class="btn" style="margin-bottom:12px;" onclick="return confirm('Are you sure you want to duplicate this question set?');" title="Duplicate This Question Set">
+          Duplicate This Question Set
+        </button>
+      </form>
+</div>
+{{ super() }}
+{% endblock %}

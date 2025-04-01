@@ -1,0 +1,287 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-08-20 14:13-0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: models/tracks/track.py:217
+msgid "track_config_display_name_pregnancy"
+msgstr "Pregnancy"
+
+msgid "track_config_display_name_menopause"
+msgstr "Menopause & Midlife Health"
+
+msgid "track_config_display_name_partner_pregnancy"
+msgstr "Partner Pregnancy"
+
+msgid "track_config_display_name_postpartum"
+msgstr "Postpartum"
+
+msgid "track_config_display_name_partner_postpartum"
+msgstr "Partner Postpartum"
+
+msgid "track_config_display_name_adoption"
+msgstr "Adoption"
+
+msgid "track_config_display_name_breast_milk_shipping"
+msgstr "Breast Milk Shipping"
+
+msgid "track_config_display_name_egg_freezing"
+msgstr "Egg Freezing"
+
+msgid "track_config_display_name_fertility"
+msgstr "Fertility"
+
+msgid "track_config_display_name_general_wellness"
+msgstr "General Wellness"
+
+msgid "track_config_display_name_generic"
+msgstr "Maven Access"
+
+msgid "track_config_display_name_parenting_pediatrics"
+msgstr "Parenting & Pediatrics"
+
+msgid "track_config_display_name_partner_fertility"
+msgstr "Partner Fertility"
+
+msgid "track_config_display_name_loss_support"
+msgstr "Loss Support"
+
+msgid "track_config_display_name_pregnancy_options"
+msgstr "Pregnancy Options"
+
+msgid "track_config_display_name_health_plan"
+msgstr "Health Plan"
+
+msgid "track_config_display_name_surrogacy"
+msgstr "Surrogacy"
+
+msgid "track_config_display_name_trying_to_conceive"
+msgstr "Trying to Conceive"
+
+#: models/tracks/track.py:220
+msgid "track_config_display_length_up_to_9_months"
+msgstr "Up to 9 months"
+
+msgid "track_config_display_length_up_to_12_months"
+msgstr "Up to 12 months"
+
+msgid "track_config_display_length_3_months"
+msgstr "3 months"
+
+msgid "track_config_display_length_12_months"
+msgstr "12 months"
+
+msgid "track_config_display_length_annual_renewal_up_to_age_10"
+msgstr "Annual renewal up to age 10"
+
+#: models/tracks/track.py:222
+msgid "track_config_intro_message"
+msgstr ""
+"Hi and welcome to Maven!\n"
+"\n"
+"I’m your Maven Care Advocate. Think of me as your personal guide. "
+"I can answer any question, anytime, and recommend the best providers on and off Maven.\n"
+"\n"
+"I’d love to hop on a quick 15-minute video chat so I can show you around "
+"Maven. Just reply to this message with a day and time that works best for you.\n"
+"\n"
+"Look forward to meeting you!"
+
+#: models/tracks/track.py:223
+msgid "track_config_description_pregnancy"
+msgstr ""
+"On-demand support, personalized weekly curriculum, and virtual classes to"
+" support your pregnancy journey."
+
+msgid "track_config_description_menopause"
+msgstr ""
+"Our specialists are here to support your physical and emotional well-"
+"being through every stage (and symptom) of menopause and midlife health."
+
+msgid "track_config_description_partner_pregnant"
+msgstr ""
+"On-demand support, personalized weekly curriculum, and virtual classes to"
+" support people with pregnant partners."
+
+msgid "track_config_description_postpartum"
+msgstr ""
+"Expert support for birth recovery and caring for baby, including feeding and sleeping advice."
+
+msgid "track_config_description_postpartum_90_days"
+msgstr ""
+"Support through your baby’s first three months, including lactation "
+"consultants, infant sleep specialists, and career coaches to help you "
+"return to work."
+
+msgid "track_config_description_postpartum_168_days"
+msgstr ""
+"Support through your baby’s first six months, including lactation "
+"consultants, infant sleep specialists, and career coaches to help you "
+"return to work."
+
+msgid "track_config_description_partner_newparent"
+msgstr ""
+"Expert support for birth recovery and caring for baby, including feeding and sleeping advice."
+
+msgid "track_config_description_partner_newparent_90_days"
+msgstr ""
+"Access to infant care experts, resources, mental health and career "
+"support for partners of people who’ve given birth in the last three "
+"months."
+
+msgid "track_config_description_partner_newparent_168_days"
+msgstr ""
+"Access to infant care experts, resources, mental health and career "
+"support for partners of people who’ve given birth in the last six months."
+
+msgid "track_config_description_adoption"
+msgstr ""
+"For families who are considering adoption and need support from managing "
+"the steps of the process to bringing their child home."
+
+msgid "track_config_description_breast_milk_shipping"
+msgstr ""
+"If you’re traveling for work while pumping, ensure that your milk gets "
+"safely shipped back to your baby."
+
+msgid "track_config_description_egg_freezing"
+msgstr ""
+"Learn about egg freezing and speak to experts to plan your reproductive "
+"future, with tailored advice through every step of the process."
+
+msgid "track_config_description_fertility"
+msgstr ""
+"Complete support for planning or trying to have a baby, with 24/7 access "
+"to TTC, fertility, and IUI/IVF specialists, plus expert articles and "
+"classes."
+
+msgid "track_config_description_general_wellness_generic"
+msgstr ""
+"Mental health, physical health, career guidance, and on-demand birth "
+"control, whether or not you’re planning on starting a family."
+
+msgid "track_config_description_parenting_and_pediatrics"
+msgstr ""
+"Boost your parenting confidence and learn about your kids’ development "
+"with help from our parenting experts, for parents of children 1 year and "
+"up."
+
+msgid "track_config_description_partner_fertility"
+msgstr ""
+"Access to fertility experts, resources and mental health support if your "
+"partner is considering or pursuing IUI or IVF treatments."
+
+msgid "track_config_description_pregnancyloss"
+msgstr ""
+"Emotional support and community to help you cope with loss and grief from miscarriage or infant loss."
+
+msgid "track_config_description_pregnancy_options"
+msgstr ""
+"Mental health, physical health, career guidance, and pregnancy options "
+"counseling, whether or not you’re planning on starting a family."
+
+msgid "track_config_description_sponsored"
+msgstr ""
+"On-demand support, personalized weekly curriculum, and virtual classes to"
+" support your pregnancy journey."
+
+msgid "track_config_description_surrogacy"
+msgstr ""
+"For families considering surrogacy who need support from picking a "
+"surrogate to managing this relationship, emotional support, and more."
+
+msgid "track_config_description_trying_to_conceive"
+msgstr ""
+"Support for all of your reproductive health needs with expert guidance "
+"and resources to improve your chances of becoming pregnant."
+
+#: models/tracks/track.py:256
+msgid "track_config_display_description_im_no_longer_trying_to_conceive"
+msgstr "I'm no longer trying to conceive"
+
+msgid "track_config_display_description_im_trying_to_conceive"
+msgstr "I'm trying to conceive"
+
+msgid "track_config_display_description_im_pregnant"
+msgstr "I’m pregnant"
+
+msgid "track_config_display_description_i_have_experienced_a_loss"
+msgstr "I’ve experienced a loss"
+
+msgid "track_config_display_description_i_have_given_birth"
+msgstr "I’ve given birth"
+
+msgid "track_config_display_description_my_partner_has_given_birth"
+msgstr "My partner has given birth"
+
+msgid "track_config_display_description_we_have_experienced_a_loss"
+msgstr "We've experienced a loss"
+
+#: models/tracks/track.py:268
+msgid "track_config_label_im_pregnant"
+msgstr "I'm pregnant"
+
+msgid "track_config_label_i_want_support_on_my_menopause_journey"
+msgstr "I want support on my menopause journey"
+
+msgid "track_config_label_my_partner_is_pregnant"
+msgstr "My partner is pregnant"
+
+msgid "track_config_label_i_just_gave_birth"
+msgstr "I just gave birth"
+
+msgid "track_config_label_my_partner_just_gave_birth"
+msgstr "My partner just gave birth"
+
+msgid "track_config_label_im_adopting"
+msgstr "I'm adopting"
+
+msgid "track_config_label_im_breastfeeding"
+msgstr "I'm breastfeeding"
+
+msgid "track_config_label_i_want_to_freeze_my_eggs"
+msgstr "I want to freeze my eggs"
+
+msgid "track_config_label_im_undergoing_or_considering_iui_ivf"
+msgstr "I'm undergoing or considering IUI/IVF"
+
+msgid "track_config_label_i_want_to_manage_my_reproductive_health_and_overall_wellness"
+msgstr "I want to manage my reproductive health and overall wellness"
+
+msgid "track_config_label_i_have_a_child_between_the_ages_of_1_and_10"
+msgstr "I have a child between the ages of 1 and 10"
+
+msgid "track_config_label_my_partner_is_undergoing_or_considering_iui_ivf"
+msgstr "My partner is undergoing or considering IUI/IVF"
+
+msgid "track_config_label_ive_experienced_a_loss"
+msgstr "I've experienced a loss"
+
+msgid "track_config_label_health_plan"
+msgstr "Health Plan"
+
+msgid "track_config_label_im_using_a_surrogate"
+msgstr "I'm using a surrogate"
+
+msgid "track_config_label_i_want_to_get_pregnant_within_the_next_year"
+msgstr "I want to get pregnant within the next year"
+
+msgid "track_config_track_unavailable_for_transition_message_pregnancy"
+msgstr ""
+"Congratulations on your pregnancy! Message your Care Advocate to learn "
+"more about Maven’s maternity support."
+

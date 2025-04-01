@@ -1,0 +1,190 @@
+/* ---------- SUBSCRIPTION PURCHASE FLOW ----------- */
+
+/* IOS */
+.page-app-plan-purchase,
+.page-app-plan-purchase #page-content {
+	background: $macaroon-20;
+	&.app-static {
+		.page-inner {
+			padding-top: 40px !important;
+		}
+	}
+}
+
+/* Web product */
+.page-webapp-plan-purchase {
+	.purchase-subscription {
+		text-align: left;
+		h5 {
+			font-size: 14px;
+		}
+		form {
+			width: auto;
+		}
+	}
+}
+
+/* Web marketing */
+
+.page-plan-purchase {
+	#page-content {
+		background: $macaroon-20;
+	}
+	.page-inner {
+		padding-top: 60px;
+		padding-bottom: 60px;
+		@include susy-breakpoint($mobile-landscape) {
+			padding-top: 100px;
+		}
+		@include susy-breakpoint($desktop) {
+			padding-top: 120px;
+		}
+	}
+	background: $macaroon-20;
+}
+
+.purchase-subscription {
+	@include span(10 of 12);
+	margin-left: span(1 wide of 12);
+	@include susy-breakpoint($tablet) {
+		width: 540px;
+		max-width: 540px;
+		margin: 0 auto;
+		float: none;
+	}
+	h5,
+	h5:first-child {
+		margin-bottom: 0;
+		font-size: 14px;
+		margin-top: 15px;
+		padding-bottom: 3px;
+	}
+	form {
+		&.form-no-border {
+			position: relative;
+			.btn.btn-action {
+				position: absolute;
+				right: 0;
+				top: 6px;
+				padding: 12px;
+				width: auto;
+				&.disabled {
+					border-color: $charcoal-40;
+					background: none;
+					color: $charcoal-40;
+				}
+			}
+			input {
+				text-transform: uppercase;
+				padding: 5px 70px 5px 0;
+				font-size: 18px;
+				&:focus {
+					outline: none;
+				}
+			}
+			.btn {
+				height: auto;
+			}
+		}
+		.form-group.col2 {
+			.form-item {
+				width: 48%;
+				float: left;
+				margin-right: 1%;
+				&:last-child {
+					float: right;
+					margin-right: 0;
+					margin-left: 1%;
+				}
+			}
+		}
+	}
+	.header-section {
+		border-bottom: 1px solid $charcoal-40;
+	}
+
+	// Plan radio buttons
+	ul.plan-selection {
+		li {
+			@include susy-breakpoint($desktop) {
+				width: 50%;
+				float: left;
+			}
+			a {
+				display: block;
+				margin: 15px 0;
+				font-size: 18px;
+				text-decoration: none;
+				font-family: $font2;
+				.plan-radio {
+					float: left;
+					width: 24px;
+					height: 24px;
+					margin-right: 10px;
+					background: url("/img/app/shared/radio-inactive.png") 0 0 no-repeat;
+					background-size: contain;
+				}
+				&.active {
+					.plan-radio {
+						background-image: url("/img/app/shared/radio-active.png");
+					}
+				}
+			}
+		}
+	}
+
+	.plan-purchase-form {
+		@include susy-breakpoint($desktop) {
+			.plan-purchase-card-number,
+			.plan-purchase-cvv-exp {
+				width: 48.8%;
+			}
+			.plan-purchase-card-number {
+				float: left;
+			}
+			.plan-purchase-cvv-exp {
+				float: right;
+			}
+		}
+	}
+	.subscription-confirmation-price {
+		margin-top: 40px;
+		h3 {
+			margin: 0;
+			& + h5 {
+				margin-top: 15px;
+			}
+		}
+		.strike {
+			color: $emerald-80;
+			text-decoration: line-through;
+		}
+	}
+
+	.purchase-processing-loader {
+		padding-top: 10%;
+		img {
+			width: 100px;
+			height: 100px;
+		}
+		@include susy-breakpoint($tablet) {
+			min-height: 400px;
+			img {
+				width: 150px;
+				height: 150px;
+			}
+		}
+	}
+
+	.purchase-complete {
+		h3 {
+			margin-top: 5px;
+			margin-bottom: 40px;
+		}
+	}
+	.ios-close {
+		position: fixed;
+		top: 30px;
+		right: 10px;
+	}
+}

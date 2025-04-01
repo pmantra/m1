@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'domaine-display-regular';
+  src: url('/fonts/domaine-display/DomaineDisplayWeb-Regular.woff2') format('woff2'),   
+		url('/fonts/domaine-display/DomaineDisplayWeb-Regular.woff') format('woff'),
+		url('/fonts/domaine-display/DomaineDisplayWeb-Regular.eot') format('eot'),
+		url('/fonts/domaine-display/DomaineDisplayWeb-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'domaine-display-extra-bold';
+  src: url('/fonts/domaine-display/DomaineDisplayWeb-Extrabold.woff2') format('woff2'),
+		url('/fonts/domaine-display/DomaineDisplayWeb-Extrabold.woff') format('woff'),
+		url('/fonts/domaine-display/DomaineDisplayWeb-Extrabold.eot') format('eot'),
+		url('/fonts/domaine-display/DomaineDisplayWeb-Extrabold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'domaine-display-semi-bold';
+  src: 	url('/fonts/domaine-display/DomaineDisplayWeb-Semibold.woff2') format('woff2'),
+		url('/fonts/domaine-display/DomaineDisplayWeb-Semibold.woff') format('woff'),
+		url('/fonts/domaine-display/DomaineDisplayWeb-Semibold.eot') format('eot'),
+		url('/fonts/domaine-display/DomaineDisplayWeb-Semibold.ttf') format('truetype');
+}
+
+/*!
+ * Web Fonts from Fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and 
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2017 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Mark Simonson Studio
+ * License URL: https://www.fontspring.com/licenses/mark-simonson-studio/webfont
+ *
+ *
+ */
+@font-face {
+	font-family: 'proximanova-regular';
+	src: url('/fonts/proxima-nova/proximanova-regular-webfont.woff2') format('woff2'),
+		url('/fonts/proxima-nova/proximanova-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proximanova-regularit';
+	src: url('/fonts/proxima-nova/proximanova-regularit-webfont.woff2') format('woff2'),
+		url('/fonts/proxima-nova/proximanova-regularit-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proximanova-semibold';
+	src: url('/fonts/proxima-nova/proximanova-semibold-webfont.woff2') format('woff2'),
+		url('/fonts/proxima-nova/proximanova-semibold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'proximanova-bold';
+	src: url('/fonts/proxima-nova/proximanova-bold-webfont.woff2') format('woff2'),
+		url('/fonts/proxima-nova/proximanova-bold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* ----- SUSY config ----- */
+
+$susy: (
+	/* Tells Susy to use 12 columns */
+	columns: 12,
+	/* Gutter setup */
+	gutters: 0.25,
+	container-position: center,
+	gutter-position: after,
+	/* Tells Susy to use border-box */
+	global-box-sizing: border-box ,
+	//debug: (image: show)
+);
+
+@include border-box-sizing;
+
+/* ----- Breakpoints ----- */
+/* Allow optional 3rd param of class to add when media queries not supported */ 
+@include breakpoint-set('no query fallbacks', true);
+
+/* ----- Angular Utils ----- */
+/* avoid flash of unstyled content where ng-cloak is used, bc we're not loading angular in the head */
+[ng\:cloak], [ng-cloak], .ng-cloak { 
+	display: none; 
+}
+
+
+
+
+
+

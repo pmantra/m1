@@ -1,0 +1,28 @@
+{% extends 'admin/model/list.html' %}
+
+{% block model_menu_bar_after_filters %}
+    {{ super() }}
+    <li style="float: right;">
+        <form method="POST" action="/admin/wallet_tools/wallet_client_report_reimbursements_audit">
+        <div style="display:flex; align-items: center">
+            <div>
+                <input style="margin-bottom: 0; min-width: calc(200px - 14px)" data-date-format="YYYY-MM-DD" data-role="datetimepicker"
+                 id="peakone_date"  name="peakone_date" type="text" placeholder="Peakone Sent Date"
+          required="required">
+            </div>
+            <div>
+                <input type="submit" class="btn btn-primary btn-small" value="Download Audit File">
+            </div>
+
+        </div>
+      </form>
+    </li>
+    <li>
+</li>
+{% endblock %}
+
+{% block model_menu_bar %}
+    <H3> Wallet Client Report Reimbursements </H3>
+{{ super() }}
+{% endblock %}
+

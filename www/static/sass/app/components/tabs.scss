@@ -1,0 +1,122 @@
+/* TABS */
+
+.tab-nav {
+	margin-bottom: 15px;
+	ul {
+		@include flexbox(row, center, space-around);
+
+		li {
+			flex-grow: 1;
+		}
+
+		a {
+			color: $gray;
+			display: block;
+			font-family: $font1-semibold;
+			text-decoration: none;
+			padding: 10px 15px;
+			width: 100%;
+			border-bottom: 4px solid transparent;
+			cursor: pointer;
+
+			&.current {
+				border-color: $primary;
+				color: $primary;
+				transition: all 0.3s ease-in-out;
+			}
+		}
+	}
+}
+
+.tabs {
+	padding-left: $basepadding;
+	padding-top: 15px;
+	border-bottom: 1px solid $charcoal-40;
+	z-index: 1;
+	position: relative;
+	background: white;
+	.tab-btn-container {
+		padding: 0.5rem 0 0 0;
+		margin: 0;
+		button {
+			cursor: pointer;
+			list-style-type: none;
+			list-style-image: none;
+			padding: 0 0 8px 0;
+			margin: 0 8px 0 8px;
+			display: inline;
+			border-bottom: 5px solid transparent;
+			text-decoration: none;
+			border-radius: 0;
+			color: $primary;
+			font-family: $font1;
+			font-size: 1.125rem;
+			min-width: 20px;
+			background-color: #fff;
+			&.active {
+				color: $charcoal-100;
+				border-color: $mint-50;
+			}
+			&:hover {
+				color: $emerald-100;
+			}
+		}
+	}
+	&.no-bg {
+		background: none;
+	}
+	ul {
+		padding: 0.5rem 0 0 0;
+		margin: 0;
+		li {
+			cursor: pointer;
+			list-style-type: none;
+			list-style-image: none;
+			display: inline-block;
+			padding: 0 8px;
+			h5,
+			.h5 {
+				margin: 0;
+				button {
+					border: none;
+					border-radius: 0px;
+				}
+				a,
+				button {
+					display: block;
+					padding-bottom: 8px;
+					border-bottom: 5px solid transparent;
+					text-decoration: none;
+					&.active {
+						color: $charcoal-100;
+						border-color: $mint-50;
+					}
+				}
+			}
+		}
+	}
+}
+
+.tab-nav-container {
+	@include flexbox(row, center, space-around);
+	button {
+		padding: 0;
+		text-align: left;
+		min-width: 80px;
+		border-bottom: 2px solid transparent;
+		border-radius: 0;
+		height: auto;
+		padding: 1rem 0;
+		font-family: $font1-semibold;
+		color: $gray;
+		background-color: #fff;
+		&:first-child {
+			margin-right: 2rem;
+		}
+	}
+	button.current {
+		border-color: $primary;
+		color: $primary;
+		transition: all 0.3s ease-in-out;
+	}
+}

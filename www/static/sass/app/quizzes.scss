@@ -1,0 +1,413 @@
+.page-quiz {
+	@include susy-breakpoint(0 $mobile-landscape-max) {
+		background: $charcoal-20;
+	}
+	.app-content {
+		background: white;
+	}
+}
+
+/* Quiz list */
+.quiz-list-quiz-title {
+	margin-top: 0;
+	color: $emerald-50;
+}
+.quiz-list-quiz-desc {
+	color: $charcoal-80;
+	@include susy-breakpoint($tablet) {
+		height: 50px;
+	}
+}
+
+.quiz {
+	@include flexbox;
+	margin: 0 auto;
+	margin-top: $desktopHeaderHeight;
+	max-width: 1024px;
+	padding: 30px;
+
+	ui-view {
+		width: 100%;
+		display: block;
+	}
+
+	.assessment-tools {
+		@include flexbox(row, center, flex-start);
+		background-color: transparent;
+		// reset
+		float: auto;
+		margin-bottom: 20px;
+		position: relative;
+
+		> * {
+			// override existing styles
+			bottom: auto;
+			display: flex;
+			left: auto;
+			right: auto;
+			top: auto;
+			position: relative;
+		}
+
+		.quiz-title {
+			font-family: $font2;
+			line-height: 1.4; // helps vertically center title
+			margin: 0 0 4px 0;
+			padding-right: 30px;
+			text-transform: none;
+		}
+
+		.exit-assessment {
+			position: absolute;
+			right: 0;
+
+			:hover {
+				cursor: pointer;
+			}
+		}
+	} // end assessment-tools
+
+	.progress-container {
+		@include susy-breakpoint(0 $mobile-landscape-max) {
+			position: absolute;
+			top: $mobileHeaderHeight;
+		}
+		@include susy-breakpoint($mobile-landscape-max $tablet-max) {
+			position: absolute;
+			top: $desktopHeaderHeight;
+		}
+		background-color: $blush-40;
+		border-radius: 50px;
+		height: 8px;
+		width: 100%;
+
+		.bar-progress {
+			@extend .progress-container;
+			background-color: $blush-80;
+			background-image: none;
+			top: 0;
+		}
+	} // end progress-container
+
+	.options-container {
+		@include flexbox;
+	}
+
+	.quiz-body {
+		border: 1px solid $charcoal-50;
+		margin: 20px 0;
+	}
+
+	.next-question {
+		position: relative;
+	}
+
+	.question,
+	.quiz-info-card {
+		padding: 15px 25px;
+	}
+
+	.quiz-info-card {
+		background-color: white;
+		margin: 2.5rem auto;
+		max-width: 700px;
+		width: 90%;
+
+		.next-question {
+			position: relative;
+			bottom: auto;
+			left: auto;
+			margin-top: 2rem;
+			transform: none;
+
+			a {
+				position: relative;
+			}
+		}
+	}
+
+	.option {
+		background-color: white;
+		border-top: 1px solid $charcoal-50;
+		padding: 15px 25px;
+		position: relative;
+		transition: all 0.2s ease;
+		width: 100%;
+
+		.opt-label {
+			background-color: $emerald-20;
+			border-radius: 50%;
+			color: $emerald-50;
+			display: inline-block;
+			font-family: $font1-bold;
+			height: 35px;
+			width: 35px;
+			margin-right: 15px;
+			padding: 10px;
+			line-height: 1;
+			text-align: center;
+
+			&.incorrect {
+				background-color: $terracotta-50;
+			}
+		}
+
+		&:hover {
+			background-color: rgba(253, 242, 235, 0.3);
+			cursor: pointer;
+		}
+
+		&.selected {
+			background-color: $mktg-green-lt;
+			transition: all 0.3s ease-in;
+
+			.opt-label {
+				transition: all 0.3s ease-in;
+				background-color: $emerald-50;
+				color: white;
+			}
+		}
+
+		&.correct-answer {
+			background: $mint-50;
+		}
+	}
+
+	.icon-not-answered {
+		display: block;
+	}
+
+	.icon-answered {
+		display: none;
+	}
+
+	.answered {
+		.option,
+		.question {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+		.option {
+		}
+
+		.icon-not-answered {
+			display: none;
+		}
+		.icon-correct,
+		.icon-incorrect {
+			display: none;
+		}
+		.icon-answered {
+			display: block;
+			.icon-incorrect {
+				display: block;
+			}
+			.is-correct {
+				.icon-correct {
+					display: block;
+				}
+				.icon-incorrect {
+					display: none;
+				}
+			}
+		}
+	}
+
+	/**
+	 * Styling specifically for mobile devices.
+	 * We need to include the check for `max-device-width` here to make sure
+	 * that desktop at 400% zoom (which has a small max-width and is required for a11y)
+	 * does not render these styles.
+	 */
+	@media screen and ( max-width: $mobile-landscape-max )
+	and ( max-device-width: $mobile-landscape-max ) {
+		margin-top: $mobileHeaderHeight;
+		justify-content: space-between;
+		padding: 0;
+
+		.assessment-tools,
+		.progress-container {
+			display: none;
+		}
+
+		.quiz-container {
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+			flex-shrink: 0; // fix for iOS vh issue
+			flex-basis: auto;
+			background: $charcoal-20;
+			box-shadow: 0 0 0 15px rgba(0, 0, 0, 0) inset;
+			position: relative;
+			vertical-align: middle;
+
+			&::before,
+			&::after {
+				border: 15px solid transparent;
+				box-sizing: inherit;
+				content: "";
+				pointer-events: none;
+				position: absolute;
+				width: 0;
+				height: 0;
+				top: 0;
+				left: 0;
+			}
+		}
+
+		.quiz-body {
+			border: none;
+			margin: 0;
+		}
+
+		.question-count {
+			margin: 0;
+		}
+
+		.quiz-container.is-correct,
+		.quiz-container.is-incorrect {
+			box-shadow: 0;
+			padding: 15px;
+			z-index: 100;
+			&::before,
+			&::after {
+				width: 100%;
+				height: 100%;
+			}
+
+			&::before {
+				transition: border-right-color 0s ease-out 0.4s, width 0.3s ease-in 0.1s, height 0.3s ease-out 0.4s; // And then height
+			}
+
+			&::after {
+				transition: border-bottom-color 0s ease-out 0.4s, height 0.3s ease-in 0.1s, width 0.3s ease-out 0.4s;
+			}
+
+			.quiz-body {
+				form {
+					display: none;
+				}
+			}
+		}
+
+		.quiz-container.is-correct {
+			&::before {
+				border-top-color: $emerald-20;
+				border-right-color: $emerald-20;
+			}
+			&::after {
+				border-bottom-color: $emerald-20;
+				border-left-color: $emerald-20;
+			}
+		}
+
+		.quiz-container.is-incorrect {
+			&::before {
+				border-top-color: $terracotta-50;
+				border-right-color: $terracotta-50;
+			}
+			&::after {
+				border-bottom-color: $terracotta-50;
+				border-left-color: $terracotta-50;
+			}
+		}
+
+		.question,
+		.quiz-status {
+			padding: 25px;
+		}
+
+		.options-container {
+			@include flexbox(row, stretch, flex-start);
+			padding: 20px;
+			left: 0;
+			overflow-x: scroll;
+			width: 100%;
+			-ms-overflow-style: none; // IE 10+
+			overflow: -moz-scrollbars-none; // Firefox
+
+			&::-webkit-scrollbar {
+				width: 0px; /* remove scrollbar space */
+				background: transparent; /* optional: just make scrollbar invisible */
+			}
+		}
+
+		.option {
+			border: 3px solid white;
+			border-radius: 5px;
+			min-width: 200px;
+			margin: 0 10px;
+			padding: 50px 30px 40px 30px;
+			min-height: 175px;
+
+			.opt-label {
+				height: 50px;
+				width: 50px;
+				padding: 17px;
+				position: absolute;
+				top: -22px;
+			}
+
+			&.selected {
+				background-color: white;
+				border-color: $emerald-50;
+			}
+		} // end options
+
+		.next-question {
+			position: fixed;
+			bottom: calc(25px + #{$mobileHeaderHeight});
+			left: 50%;
+			transform: translateX(-50%);
+			margin: 0 auto;
+			width: 75%;
+			width: calc(100% - 80px);
+			a {
+				position: absolute;
+			}
+		}
+	} // end mobile breakpoint
+
+	.results-headline {
+		height: 100%;
+		padding: 15px 25px;
+		overflow-y: scroll;
+	}
+
+	// Standalone "view assessment" screen - /assessments/{id}/{slug}
+	.view-assessment {
+		padding-top: $mobileHeaderHeight;
+		width: 100%;
+		@include susy-breakpoint(0 $mobile-landscape-max) {
+			height: 100vh;
+			background: $mint-50;
+		}
+	}
+} // end quiz
+
+.quiz-results-list {
+	height: 0;
+	@include susy-breakpoint($tablet) {
+		height: auto;
+	}
+}
+.fade-in.ng-enter {
+	transition: 0.3s linear all;
+	opacity: 0;
+}
+
+.fade-in-init .fade-in.ng-enter {
+	opacity: 1;
+}
+
+.fade-in.ng-enter.ng-enter-active {
+	opacity: 1;
+}
+
+.fade-in.ng-leave {
+	transition: 0.1s linear all;
+	opacity: 1;
+}
+.fade-in.ng-leave.ng-leave-active {
+	opacity: 0;
+}

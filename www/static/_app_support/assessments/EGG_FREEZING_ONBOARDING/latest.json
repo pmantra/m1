@@ -1,0 +1,157 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "body": "Have you been pregnant before?",
+      "required": true,
+      "next": 2,
+      "widget": {
+        "type": "panel-single-choice",
+        "options": [
+          {
+            "value": "preg-yes",
+            "label": "Yes",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/yes.svg"
+          },
+          {
+            "value": "preg-no",
+            "label": "No",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/no.svg"
+          }
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "id": 2,
+      "body": "How would you describe your diet? (No judgment here!)",
+      "required": true,
+      "next": 3,
+      "widget": {
+        "type": "panel-single-choice",
+        "options": [
+          {
+            "value": "balanced",
+            "label": "Super balanced–nutrition is important to me",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/2-1.svg"
+          },
+          {
+            "value": "pretty-healthy",
+            "label": "Pretty healthy, I try to subscribe to the 80/20 rule",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/2-2.svg"
+          },
+          {
+            "value": "junk-food",
+            "label": "I get my veggies in, but should cut back on the junk food",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/2-3.svg"
+          },
+          {
+            "value": "need-help",
+            "label": "I’ve heard nutrition is linked to fertility–I need a ton of help",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/2-4.svg"
+          }
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "id": 3,
+      "body": "What keeps you up at night the most?",
+      "required": true,
+      "next": 4,
+      "widget": {
+        "type": "panel-single-choice",
+        "options": [
+          {
+            "value": "work-stress",
+            "label": "Work stress—how am I going to get everything done?",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/3-1.svg"
+          },
+          {
+            "value": "current-events",
+            "label": "Current events",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/3-2.svg"
+          },
+          {
+            "value": "having-kids",
+            "label": "Having kids—I’m not getting any younger",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/3-3.svg"
+          },
+          {
+            "value": "relationship-stress",
+            "label": "Relationship stress—it’s not easy right now!",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/3-4.svg"
+          }
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "id": 4,
+      "body": "Last question! Do any of these apply to you?",
+      "required": false,
+      "next": "end",
+      "widget": {
+        "type": "panel-multi-choice-sectioned",
+        "sections": [
+          {
+            "title": "Existing health conditions",
+            "items": [
+              "endometriosis",
+              "pcos",
+              "thyroid-disease",
+              "family-infertility"
+            ]
+          },
+          {
+            "title": "Lifestyle factors",
+            "items": [
+              "alcohol-use",
+              "tobacco-use"
+            ]
+          }
+        ],
+        "options": [
+          {
+            "id": 0,
+            "value": "endometriosis",
+            "label": "Endometriosis",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/4-1.svg"
+          },
+          {
+            "id": 1,
+            "value": "pcos",
+            "label": "PCOS",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/4-2.svg"
+          },
+          {
+            "id": 2,
+            "value": "thyroid-disease",
+            "label": "Thyroid disease",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/4-3.svg"
+          },
+          {
+            "id": 3,
+            "value": "family-infertility",
+            "label": "Infertility in the family",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/4-4.svg"
+          },
+          {
+            "id": 4,
+            "value": "alcohol-use",
+            "label": "Alcohol use",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/4-5.svg"
+          },
+          {
+            "id": 5,
+            "value": "tobacco-use",
+            "label": "Tobacco use",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/egg-freezing-onboarding/4-6.svg"
+          }
+        ]
+      },
+      "other": true,
+      "meta": {}
+    }
+  ]
+}

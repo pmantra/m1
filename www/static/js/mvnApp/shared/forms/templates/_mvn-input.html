@@ -1,0 +1,37 @@
+<div
+	class="mvn-input"
+	ng-class="{ 'has-content': !!formRef[label].$viewValue || (!!value || value === 0), 'has-error': formRef[label].$invalid && formRef[label].$touched, 'is-required': isRequired }"
+>
+	<input
+		class="mvn-form-input"
+		name="{{ label }}"
+		type="{{ type }}"
+		value="value"
+		ng-model="value"
+		ng-model-options="{ allowInvalid: true }"
+		ng-required="isRequired"
+		ng-maxlength="maxlength"
+		ng-minlength="minlength"
+		ng-change="mvnInputCtrl.inheritedOnChange()"
+		min="{{ min }}"
+		max="{{ max }}"
+		aria-label="{{ label }}"
+	/>
+
+	<label class="mvn-form-label">{{ label }}</label>
+	<div class="mvn-form-error" ng-messages="formRef[label].$error">
+		<div ng-if="formRef[label].$touched">
+			<div ng-message="required">{{ label }} is required</div>
+			<div ng-message="min" ng-if="type === 'number' || type === 'range'">{{ label }} must be at least {{ min }}</div>
+			<div ng-message="max" ng-if="type === 'number' || type === 'range'">
+				{{ label }} must be a maximum of {{ max }}
+			</div>
+			<div ng-message="min" ng-if="type === 'date'">Can be no sooner than {{ min | amDateFormat: "DD MMM YYYY" }}</div>
+			<div ng-message="max" ng-if="type === 'date'">Can be no later than {{ max | amDateFormat: "DD MMM YYYY" }}</div>
+		</div>
+		<div ng-if="formRef[label].$dirty">
+			<div ng-message="minlength">Please enter at least {{ minlength }} characters</div>
+			<div ng-message="maxlength">Field cannot exceed {{ maxlength }} characters</div>
+		</div>
+	</div>
+</div>

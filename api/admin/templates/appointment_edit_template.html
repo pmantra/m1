@@ -1,0 +1,84 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    <h2>Payment Info</h2>
+    <h3>Credits Used</h3>
+
+    {% for credit in model.credits %}
+    ${{ credit.amount }} from credit <a href="/admin/credit/edit/?id={{ credit.id }}">{{ credit.id }}</a>.
+    {% endfor %}
+
+    <h3>Payments Made</h3>
+
+    {% if model.payment %}
+    <a href="/admin/paymentaccountingentry/edit/?id={{ model.payment.id }}">${{ model.payment.amount_captured }}</a> captured at {{ model.payment.captured_at }} (${{ model.payment.amount }} authorized at {{ model.payment.created_at }}).
+    {% else %}
+    Appears to be no payment for this appointment - should have been paid with credits.
+    {% endif %}
+
+    <h3>Practitioner Fees Created</h3>
+
+    Using fee creator @ <a href="{% if model.fee_creator.id %}/admin/appointmentfeecreator/edit/?id={{ model.fee_creator.id }}{% endif %}">{{ model.fee_creator.fee_percentage }}%</a><br/>
+
+    {% if model.fees %}
+        {% for fee in model.fees %}
+            <a href="/admin/feeaccountingentry/edit/?id={{ fee.id }}">${{ fee.amount }}</a>
+        {% endfor %}
+    {% else %}
+    There are no fees for this appointment yet. Fees are created when an appointment is either completed or cancelled.
+    {% endif %}
+
+    <h2>Appointment Users</h2>
+    <p>Member: <a href="/admin/memberprofile/edit/?id={{ model.member.id }}">{{ model.member.full_name }} ({{ model.member.id }})</a></p>
+    <p>Practitioner: <a href="/admin/practitionerprofile/edit/?id={{ model.practitioner.id }}">{{ model.practitioner.full_name }} ({{ model.practitioner.id }})</a></p>
+
+    <h2>Appointment Details</h2>
+    <p>Appointment ID is: {{ model.id }}</p>
+    <p>Appointment created at: {{ model.created_at }}</p>
+    <p>Appointment status: {{ model.state }}</p>
+    <p>Admin Booked Proactively: {{ "Yes" if model.admin_booked else "No" }}</p>
+    <p>Privilege type: {{model.privilege_type }}</p>
+    <p>Anonymous?: {{ model.privacy }}</p>
+    <p>{{ "Rx Enabled" if model.rx_enabled else "Rx Disabled" }}</p>
+    <p>Scheduled Start Time: {{ model.scheduled_start }}</p>
+    <p>Scheduled End Time: {{ model.scheduled_end }}</p>
+
+    <br/>
+    <p>Member Started: {{ model.member_started_at }}</p>
+    <p>Practitioner Started: {{ model.practitioner_started_at }}</p>
+    <p>Member Ended: {{ model.member_ended_at }}</p>
+    <p>Practitioner Ended: {{ model.practitioner_ended_at }}</p>
+
+    <br/>
+    <p>Phone Call At: {{ model.phone_call_at }}</p>
+    <p>Cancelled At: {{ model.cancelled_at }}</p>
+
+    {% if model.cancelled_at %}
+        <p>Cancelled By: <a href="/admin/user/edit/?id={{ model.cancelled_by_user_id }}">{{ model.cancelled_by_user_id }}</a></p>
+        <p>Cancelled Note: {{ model.cancelled_note }}</p>
+    {% endif %}
+    <p>Rescheduled From: {{rescheduled_from}}</p>
+
+    <br/>
+    <p>Has video?: {{ 'session_id' in model.video }}</p>
+    <p>Video session id: {% if 'session_id' in model.video %}{{ model.video.session_id }}{% else %}N/A{% endif %}</p>
+
+    <br/>
+    <p>Platform Info: {{ model.json.get('platforms', {}) }}</p>
+
+    <br/>
+    <h2>RX Info:</h2>
+    {% if show_rx_info %}
+        {% for rx_info in model.rx_from_appointment() %}
+            <p>{{ rx_info.get('DateWritten') }}: {{ rx_info.get('PrescriptionStatus') }} to {{ rx_info.get('pharmacy_name') }}</p>
+        {% endfor %}
+    {% endif %}
+    <br/>
+
+    {% if show_cc_dashboard_link %}
+        <p><a href="/admin/appointment/cc_dashboard/{{ model.id }}">CC Dashboard</a></p>
+        <br/>
+    {% endif %}
+
+    {{ super() }}
+{% endblock %}

@@ -1,0 +1,33 @@
+[{
+	"type": "fertility_clinic",
+	"name": "Test Fertility Clinic",
+	"affiliated_network": "Test Network",
+	"notes": null,
+	"fee_schedule_id": 1,
+	"locations": [{
+		"name": "Main",
+		"address_1": "123 Main St",
+		"city": "New York City",
+		"subdivision_code": "US-NY",
+		"postal_code": 10001,
+		"country_code": "US",
+		"phone_number": "5555555555",
+		"email": "test-clinic@maven.com"
+	}],
+	"allowed_domains": [{
+		"domain": "mavenclinic.com"
+	}],
+	"users": [{
+			"type": "fertility_clinic_user_profile",
+			"email_prefix": "mvnqa-fc_standard_user",
+			"password": "simpleisawesome1*",
+			"role": "fertility_clinic_user"
+		},
+		{
+			"type": "fertility_clinic_user_profile",
+			"email_prefix": "mvnqa-fc_billing_user",
+			"password": "simpleisawesome1*",
+			"role": "fertility_clinic_billing_user"
+		}
+	]
+}]

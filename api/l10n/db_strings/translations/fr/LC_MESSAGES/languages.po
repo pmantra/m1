@@ -1,0 +1,655 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: fr\n"
+
+msgid "language_adamawa_fulfulde_name"
+msgstr "Peul de l'Adamaoua"
+
+msgid "language_afrikaans_name"
+msgstr "Afrikaans"
+
+msgid "language_akan_name"
+msgstr "Akan"
+
+msgid "language_albanian_name"
+msgstr "Albanais"
+
+msgid "language_algerian_spoken_arabic_name"
+msgstr "Arabe algérien"
+
+msgid "language_amazigh_name"
+msgstr "Amazighe"
+
+msgid "language_american_sign_language_name"
+msgstr "Langue des signes américaine"
+
+msgid "language_amharic_name"
+msgstr "Amharique"
+
+msgid "language_arabic_name"
+msgstr "Arabe"
+
+msgid "language_assamese_name"
+msgstr "Assamais"
+
+msgid "language_awadhi_name"
+msgstr "Awadhi"
+
+msgid "language_bamanankan_name"
+msgstr "Bambara"
+
+msgid "language_baoul_name"
+msgstr "Baoulé"
+
+msgid "language_baoulé_name"
+msgstr "Baoulé"
+
+msgid "language_bavarian_name"
+msgstr "Bavarois"
+
+msgid "language_bengali_name"
+msgstr "Bengali"
+
+msgid "language_betawi_name"
+msgstr "Betawi"
+
+msgid "language_bhojpuri_name"
+msgstr "Bhojpuri"
+
+msgid "language_borana_arsi_guji_oromo_name"
+msgstr "Oromo Borana-Arsi-Guji"
+
+msgid "language_boranaarsiguji_oromo_name"
+msgstr "Oromo Borana-Arsi-Guji"
+
+msgid "language_bugis_name"
+msgstr "Bugi"
+
+msgid "language_bulgarian_name"
+msgstr "Bulgare"
+
+msgid "language_bundeli_name"
+msgstr "Bundeli"
+
+msgid "language_burmese_name"
+msgstr "Birman"
+
+msgid "language_cameroon_pidgin_name"
+msgstr "Pidgin camerounais"
+
+msgid "language_cantonese_name"
+msgstr "Cantonais"
+
+msgid "language_catalan_name"
+msgstr "Catalan"
+
+msgid "language_cebuano_name"
+msgstr "Cebuano"
+
+msgid "language_central_atlas_tamazight_name"
+msgstr "Tamazight du Moyen Atlas oriental"
+
+msgid "language_central_kurdish_name"
+msgstr "Kurde central"
+
+msgid "language_central_pashto_name"
+msgstr "Pashto central"
+
+msgid "language_chhattisgarhi_name"
+msgstr "Chhattisgarhi"
+
+msgid "language_chichewa_name"
+msgstr "Chewa"
+
+msgid "language_chittagonian_name"
+msgstr "Chittagonien"
+
+msgid "language_congo_swahili_name"
+msgstr "Swahili congolais"
+
+msgid "language_croatian_name"
+msgstr "Croate"
+
+msgid "language_czech_name"
+msgstr "Tchèque"
+
+msgid "language_danish_name"
+msgstr "Danois"
+
+msgid "language_dari_name"
+msgstr "Dari"
+
+msgid "language_deccan_name"
+msgstr "Deccan"
+
+msgid "language_dholuo_name"
+msgstr "Dholuo"
+
+msgid "language_dutch_name"
+msgstr "Néerlandais"
+
+msgid "language_eastern_oromo_name"
+msgstr "Oromo oriental"
+
+msgid "language_eastern_punjabi_name"
+msgstr "Punjabi oriental"
+
+msgid "language_egyptian_spoken_arabic_name"
+msgstr "Arabe égyptien"
+
+msgid "language_english_name"
+msgstr "Anglais"
+
+msgid "language_finnish_name"
+msgstr "Finnois"
+
+msgid "language_french_name"
+msgstr "Français"
+
+msgid "language_gan_chinese_name"
+msgstr "Chinois Gan"
+
+msgid "language_ganda_name"
+msgstr "Ganda"
+
+msgid "language_german_name"
+msgstr "Allemand"
+
+msgid "language_ghanaian_pidgin_english_name"
+msgstr "Pidgin anglais ghanéen"
+
+msgid "language_gikuyu_name"
+msgstr "Gikuyu"
+
+msgid "language_greek_name"
+msgstr "Grec"
+
+msgid "language_gujarati_name"
+msgstr "Gujarati"
+
+msgid "language_gulf_spoken_arabic_name"
+msgstr "Arabe du Golfe"
+
+msgid "language_hadrami_spoken_arabic_name"
+msgstr "Arabe Hadrami"
+
+msgid "language_haitian_creole_name"
+msgstr "Créole haïtien"
+
+msgid "language_hakka_chinese_name"
+msgstr "Chinois Hakka"
+
+msgid "language_haryanvi_name"
+msgstr "Haryanvi"
+
+msgid "language_hassaniyya_name"
+msgstr "Hassaniyya"
+
+msgid "language_hausa_name"
+msgstr "Haoussa"
+
+msgid "language_hebrew_name"
+msgstr "Hébreu"
+
+msgid "language_hijazi_spoken_arabic_name"
+msgstr "Arabe Hijazi"
+
+msgid "language_hiligaynon_name"
+msgstr "Hiligaynon"
+
+msgid "language_hindi_name"
+msgstr "Hindi"
+
+msgid "language_huizhou_chinese_name"
+msgstr "Chinois de Huizhou"
+
+msgid "language_hungarian_name"
+msgstr "Hongrois"
+
+msgid "language_ibibio_name"
+msgstr "Ibibio"
+
+msgid "language_igbo_name"
+msgstr "Igbo"
+
+msgid "language_ilocano_name"
+msgstr "Ilocano"
+
+msgid "language_indian_sign_language_name"
+msgstr "Langue des signes indienne"
+
+msgid "language_indonesian_name"
+msgstr "Indonésien"
+
+msgid "language_iranian_persian_name"
+msgstr "Persan iranien"
+
+msgid "language_italian_name"
+msgstr "Italien"
+
+msgid "language_japanese_name"
+msgstr "Japonais"
+
+msgid "language_javanese_name"
+msgstr "Javanais"
+
+msgid "language_jinyu_chinese_name"
+msgstr "Chinois Jinyu"
+
+msgid "language_jula_name"
+msgstr "Dyula"
+
+msgid "language_kamba_name"
+msgstr "Kamba"
+
+msgid "language_kanauji_name"
+msgstr "Kannauji"
+
+msgid "language_kannada_name"
+msgstr "Kannada"
+
+msgid "language_kashmiri_name"
+msgstr "Kashmiri"
+
+msgid "language_kazakh_name"
+msgstr "Kazakh"
+
+msgid "language_khmer_name"
+msgstr "Khmer"
+
+msgid "language_kinyarwanda_name"
+msgstr "Kinyarwanda"
+
+msgid "language_kituba_name"
+msgstr "Kituba"
+
+msgid "language_koongo_name"
+msgstr "Kongo"
+
+msgid "language_korean_name"
+msgstr "Coréen"
+
+msgid "language_krio_name"
+msgstr "Krio"
+
+msgid "language_kyrgyz_name"
+msgstr "Kirghiz"
+
+msgid "language_lambadi_name"
+msgstr "Lambadi"
+
+msgid "language_lao_name"
+msgstr "Laotien"
+
+msgid "language_liberian_english_name"
+msgstr "Anglais libérien"
+
+msgid "language_libyan_spoken_arabic_name"
+msgstr "Arabe libyen"
+
+msgid "language_lingala_name"
+msgstr "Lingala"
+
+msgid "language_lithuanian_name"
+msgstr "Lituanien"
+
+msgid "language_luba_kasai_name"
+msgstr "Luba-Kasaï"
+
+msgid "language_lubakasai_name"
+msgstr "Luba-Kasaï"
+
+msgid "language_madura_name"
+msgstr "Madurais"
+
+msgid "language_magahi_name"
+msgstr "Magahi"
+
+msgid "language_maithili_name"
+msgstr "Maithili"
+
+msgid "language_malay_name"
+msgstr "Malais"
+
+msgid "language_malayalam_name"
+msgstr "Malayalam"
+
+msgid "language_malvi_name"
+msgstr "Malvi"
+
+msgid "language_mandarin_chinese_name"
+msgstr "Chinois mandarin"
+
+msgid "language_marathi_name"
+msgstr "Marathi"
+
+msgid "language_marwari_name"
+msgstr "Marwari"
+
+msgid "language_merina_malagasy_name"
+msgstr "Malgache Merina"
+
+msgid "language_mesopotamian_spoken_arabic_name"
+msgstr "Arabe mésopotamien"
+
+msgid "language_mewari_name"
+msgstr "Mewari"
+
+msgid "language_min_bei_chinese_name"
+msgstr "Chinois minbei"
+
+msgid "language_min_dong_chinese_name"
+msgstr "Chinois mindong"
+
+msgid "language_min_nan_chinese_name"
+msgstr "Chinois minnan"
+
+msgid "language_minangkabau_name"
+msgstr "Minangkabau"
+
+msgid "language_moore_name"
+msgstr "Mooré"
+
+msgid "language_mor_name"
+msgstr "Mooré"
+
+msgid "language_moroccan_spoken_arabic_name"
+msgstr "Arabe marocain"
+
+msgid "language_najdi_spoken_arabic_name"
+msgstr "Arabe najdi"
+
+msgid "language_napoletano_calabrese_name"
+msgstr "Calabrais napolitain"
+
+msgid "language_napoletanocalabrese_name"
+msgstr "Calabrais napolitain"
+
+msgid "language_nepali_name"
+msgstr "Népalais"
+
+msgid "language_nigerian_fulfulde_name"
+msgstr "Peul nigérian"
+
+msgid "language_nigerian_pidgin_name"
+msgstr "Pidgin nigérian"
+
+msgid "language_north_azerbaijani_name"
+msgstr "Azerbaïdjanais du Nord"
+
+msgid "language_north_levantine_spoken_arabic_name"
+msgstr "Arabe levantin du Nord"
+
+msgid "language_north_mesopotamian_spoken_arabic_name"
+msgstr "Arabe de la Mésopotamie du Nord"
+
+msgid "language_northeastern_thai_name"
+msgstr "Thaï du Nord-Est"
+
+msgid "language_northern_kurdish_name"
+msgstr "Kurmandji"
+
+msgid "language_northern_pashto_name"
+msgstr "Pashto du Nord"
+
+msgid "language_northern_sotho_name"
+msgstr "Sotho du Nord"
+
+msgid "language_northern_thai_name"
+msgstr "Thaï du Nord"
+
+msgid "language_northern_uzbek_name"
+msgstr "Ouzbek du Nord"
+
+msgid "language_norwegian_name"
+msgstr "Norvégien"
+
+msgid "language_odia_name"
+msgstr "Odia"
+
+msgid "language_paraguayan_guaran_name"
+msgstr "Guaraní paraguayen"
+
+msgid "language_paraguayan_guaraní_name"
+msgstr "Guaraní paraguayen"
+
+msgid "language_pedi_name"
+msgstr "Pedi"
+
+msgid "language_polish_name"
+msgstr "Polonais"
+
+msgid "language_portuguese_name"
+msgstr "Portugais"
+
+msgid "language_pulaar_name"
+msgstr "Pulaar"
+
+msgid "language_pular_name"
+msgstr "Pular"
+
+msgid "language_rangpuri_name"
+msgstr "Rangpuri"
+
+msgid "language_romanian_name"
+msgstr "Roumain"
+
+msgid "language_rundi_name"
+msgstr "Rundi"
+
+msgid "language_russian_name"
+msgstr "Russe"
+
+msgid "language_sadri_name"
+msgstr "Sadri"
+
+msgid "language_saidi_spoken_arabic_name"
+msgstr "Arabe saïdi"
+
+msgid "language_sanaani_spoken_arabic_name"
+msgstr "Arabe Sanaani"
+
+msgid "language_sango_name"
+msgstr "Sango"
+
+msgid "language_sanskrit_name"
+msgstr "Sanskrit"
+
+msgid "language_santhali_name"
+msgstr "Santali"
+
+msgid "language_saraiki_name"
+msgstr "Saraiki"
+
+msgid "language_serbian_name"
+msgstr "Serbe"
+
+msgid "language_setswana_name"
+msgstr "Tswana"
+
+msgid "language_shan_name"
+msgstr "Shan"
+
+msgid "language_shona_name"
+msgstr "Shona"
+
+msgid "language_sicilian_name"
+msgstr "Sicilien"
+
+msgid "language_sidamo_name"
+msgstr "Sidamo"
+
+msgid "language_sindhi_name"
+msgstr "Sindhi"
+
+msgid "language_sinhala_name"
+msgstr "Singhalais"
+
+msgid "language_slovak_name"
+msgstr "Slovaque"
+
+msgid "language_somali_name"
+msgstr "Somalien"
+
+msgid "language_sotho_name"
+msgstr "Sotho"
+
+msgid "language_south_azerbaijani_name"
+msgstr "Azéri du Sud"
+
+msgid "language_south_levantine_spoken_arabic_name"
+msgstr "Arabe levantin du Sud"
+
+msgid "language_southern_pashto_name"
+msgstr "Pashto du Sud"
+
+msgid "language_southern_sotho_name"
+msgstr "Sotho du Sud"
+
+msgid "language_southern_thai_name"
+msgstr "Thaï méridional"
+
+msgid "language_southern_uzbek_name"
+msgstr "Ouzbek du Sud"
+
+msgid "language_spanish_name"
+msgstr "Espagnol"
+
+msgid "language_sudanese_spoken_arabic_name"
+msgstr "Arabe soudanais"
+
+msgid "language_sukuma_name"
+msgstr "Soukouma"
+
+msgid "language_sunda_name"
+msgstr "Soundanais"
+
+msgid "language_swahili_name"
+msgstr "Swahili"
+
+msgid "language_swati_name"
+msgstr "Swati"
+
+msgid "language_swedish_name"
+msgstr "Suédois"
+
+msgid "language_swiss_german_name"
+msgstr "Allemand suisse"
+
+msgid "language_sylheti_name"
+msgstr "Sylheti"
+
+msgid "language_tachelhit_name"
+msgstr "Tachelhit"
+
+msgid "language_tagalog_name"
+msgstr "Tagalog"
+
+msgid "language_taiwanese_name"
+msgstr "Taïwanais"
+
+msgid "language_taizzi_adeni_spoken_arabic_name"
+msgstr "Arabe Ta’izzi-Adeni"
+
+msgid "language_taizziadeni_spoken_arabic_name"
+msgstr "Arabe Ta’izzi-Adeni"
+
+msgid "language_tajik_name"
+msgstr "Tadjik"
+
+msgid "language_tamil_name"
+msgstr "Tamoul"
+
+msgid "language_tarifit_name"
+msgstr "Tarifit"
+
+msgid "language_tatar_name"
+msgstr "Tatar"
+
+msgid "language_telugu_name"
+msgstr "Télougou"
+
+msgid "language_thai_name"
+msgstr "Thaï"
+
+msgid "language_tigrigna_name"
+msgstr "Tigrigna"
+
+msgid "language_tiv_name"
+msgstr "Tiv"
+
+msgid "language_tsonga_name"
+msgstr "Tsonga"
+
+msgid "language_tunisian_spoken_arabic_name"
+msgstr "Arabe tunisien"
+
+msgid "language_turkish_name"
+msgstr "Turc"
+
+msgid "language_turkmen_name"
+msgstr "Turkmène"
+
+msgid "language_ukrainian_name"
+msgstr "Ukrainien"
+
+msgid "language_umbundu_name"
+msgstr "Umbundu"
+
+msgid "language_urdu_name"
+msgstr "Ourdou"
+
+msgid "language_uyghur_name"
+msgstr "Ouïghour"
+
+msgid "language_varhadi_nagpuri_name"
+msgstr "Varhadi-Nagpuri"
+
+msgid "language_varhadinagpuri_name"
+msgstr "Varhadi-Nagpuri"
+
+msgid "language_vietnamese_name"
+msgstr "Vietnamien"
+
+msgid "language_w_name"
+msgstr "Éwé"
+
+msgid "language_west_central_oromo_name"
+msgstr "Oromo central occidental"
+
+msgid "language_western_punjabi_name"
+msgstr "Punjabi occidental"
+
+msgid "language_wolof_name"
+msgstr "Wolof"
+
+msgid "language_wu_chinese_name"
+msgstr "Chinois Wu"
+
+msgid "language_xhosa_name"
+msgstr "Xhosa"
+
+msgid "language_xiang_chinese_name"
+msgstr "Chinois Xian"
+
+msgid "language_yerwa_kanuri_name"
+msgstr "Kanuri de Yerwa"
+
+msgid "language_yoruba_name"
+msgstr "Yoruba"
+
+msgid "language_zarma_name"
+msgstr "Zarma"
+
+msgid "language_zulu_name"
+msgstr "Zoulou"
+
+msgid "language_éwé_name"
+msgstr "Éwé"

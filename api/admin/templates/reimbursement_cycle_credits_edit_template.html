@@ -1,0 +1,55 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    {{ super() }}
+    {% if model %}
+        <form action="/admin/actions/reimbursement_cycle_member_credit_transactions/new" method="post">
+            <input type="hidden" name="reimbursement_cycle_credits_id" value="{{ model.id }}">
+            <h2>Edit Cycle Credit Balance</h2>
+            <label> Amount <br/>
+                <input type="number" name="amount">
+            </label>
+            <label> Reimbursement Request ID <br/>
+                <input type="number" name="reimbursement_request_id">
+            </label>
+            <label> Global Procedures ID <br/>
+                <input name="global_procedures_id">
+            </label>
+            <label> Notes <br/>
+                <textarea name="notes"></textarea>
+            </label>
+            <p><button type="submit">Save</button></p>
+        </form>
+        <h2>Reimbursement Cycle Credit Transactions</h2>
+        <table class="table table-bordered">
+            <thead>
+                <th>Request ID</th>
+                <th>Global Procedure</th>
+                <th>Amount</th>
+                <th>Notes</th>
+            </thead>
+            <tbody>
+                {% if model.transactions %}
+                    {% for transaction in model.transactions %}
+                        <tr>
+                            <td>
+                                {% if transaction.reimbursement_request_id %}
+                                    <a href="/admin/reimbursementrequest/edit/?id={{ transaction.reimbursement_request_id }}">{{transaction.reimbursement_request_id}}</a>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if transaction.reimbursement_wallet_global_procedures_id %}
+                                    <a href="/admin/reimbursementwalletglobalprocedures/edit/?id={{ transaction.reimbursement_wallet_global_procedures_id }}">{{ transaction.reimbursement_wallet_global_procedure.name }}</a>
+                                {% endif %}
+                                </td>
+                            <td>{{ transaction.amount }}</td>
+                            <td>{{ transaction.notes }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    {% endif %}
+
+{% endblock %}
+

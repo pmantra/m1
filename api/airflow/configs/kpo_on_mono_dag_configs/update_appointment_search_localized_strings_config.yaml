@@ -1,0 +1,13 @@
+dag_id: update_appointment_search_localized_strings
+schedule: "0 0 * * *"
+task_id: update_appointment_search_localized_strings
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.care_discovery.update_appointment_search_localized_strings import update_appointment_search_localized_strings_job; update_appointment_search_localized_strings_job()"
+team_namespace: care_discovery
+service_namespace: appointments
+catchup: "False"
+start_year: 2024
+start_month: 9
+start_day: 18

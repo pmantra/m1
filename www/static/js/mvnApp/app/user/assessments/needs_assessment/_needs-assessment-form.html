@@ -1,0 +1,78 @@
+<div ng-if="!loading">
+	<div ng-if="!completed && quiz">
+		<h2>Needs Assessment</h2>
+
+		<form class="primary-app assessment">
+			<div class="form-group" ng-repeat="q in quiz" track by $index ng-hide="notApplicable(q)">
+				<h3>{{ ::q.body }}</h3>
+
+				<input type="text" ng-if="q.widget.type == 'freetextfield' " ng-model="q.answer.body" />
+
+				<input type="textarea" ng-if="q.widget.type == 'longtext' " ng-model="q.answer.body" />
+
+				<div class="mvn-select-search">
+					<ui-select
+						ng-model="answer[q.id-1]"
+						theme="select2"
+						ng-disabled="ctrl.disabled"
+						title="{{ q.widget.placeholder }}"
+						ng-if="q.widget.type == 'dropdown' "
+					>
+						<ui-select-match placeholder="{{ q.widget.placeholder }}"> {{ answer.body }}</ui-select-match>
+						<ui-select-choices class="choices" repeat="opt in q.widget.options | highlight: $select.search">
+							<div role="option" ng-bind-html="opt | highlight: $select.search"></div>
+						</ui-select-choices>
+					</ui-select>
+					<span class="ghost-label">{{ q.widget.placeholder }}</span>
+				</div>
+
+				<div ng-if="q.widget.type == 'radio' " class="assessment-radio-wrap">
+					<div ng-repeat="opt in q.widget.options" class="assessment-radio">
+						<input type="radio" value="{{ opt.value }} " id="q-{{ q.id }}-{{ opt.value }}" ng-model="q.answer.body" />
+						<label for="q-{{ q.id }}-{{ opt.value }}"
+							><span><span></span></span> {{ opt.label }}</label
+						>
+					</div>
+				</div>
+
+				<div ng-if="q.widget.type == 'multiselect' ">
+					<div ng-repeat="opt in q.widget.options" class="assessment-checkbox-wrap">
+						<label>{{ opt }}</label>
+						<input
+							type="checkbox"
+							name="{{ opt }}"
+							value="{{ opt }}"
+							ng-model="q.answer.body[$index]"
+							ng-true-value="'{{ opt }}' "
+							ng-false-value=""
+						/>
+					</div>
+					<div ng-if="q.widget.other" class="assessment-checkbox-wrap">
+						<label>Other</label>
+						<input type="checkbox" name="Other" ng-model="q.others[q.id].body" />
+						<input type="text" ng-if="q.others[q.id]" ng-model="q.answer.body[q.widget.options.length]" />
+					</div>
+				</div>
+			</div>
+
+			<p><a class="btn btn-cta" ng-click="saveAnswers(quiz)">Save Assessment</a></p>
+		</form>
+	</div>
+
+	<div ng-if="completed">
+		<h2>Thank you</h2>
+		<p>The assessment has now been saved.</p>
+	</div>
+
+	<div ng-if="!quiz && !completed">
+		<h2>Sorry...</h2>
+		<p>
+			We couldn't find this needs assessment. Please contact
+			<a href="mailto:practitionersupport@mavenclinic.com">practitionersupport@mavenclinic.com</a> for help
+		</p>
+	</div>
+</div>
+
+<div ng-if="loading">
+	<h3>Loading assessment...</h3>
+</div>

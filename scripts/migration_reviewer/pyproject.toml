@@ -1,0 +1,58 @@
+[project]
+name = "migrationreviewer"
+version = "0.1.0"
+description = "AI augmented migration review automation"
+authors = [
+    {name = "Your Name",email = "you@example.com"}
+]
+packages = [
+    {include = "migrationreviewer", from = "src"},
+]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+python-dotenv = "^1"
+requests = "^2.32.3"
+grpcio = "^1.69.0"
+google-generativeai = "^0.8.4"
+poetry = "^2.0.1"
+environ-config = "*"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7"
+
+[tool.poetry.group.lint.dependencies]
+black = "^23"
+mypy = "^1"
+isort = "^5"
+
+[tool.poetry.group.dev.dependencies]
+setuptools = "^76.1.0"
+
+[tool.black]
+line-length = 88
+extend-exclude = '''
+/(.cache/|.venv/|.poetry/|generated/)
+'''
+
+[tool.isort]
+profile = "black"
+src_paths = ["src", "tests"]
+extend_skip_glob = [".cache/*", ".venv/*"]
+
+[tool.mypy]
+mypy_path = "$MYPY_CONFIG_FILE_DIR/src/"
+no_namespace_packages = true
+python_version = "3.11"
+install_types = true
+non_interactive = true
+ignore_missing_imports = true
+no_strict_optional = true
+follow_imports = "silent"
+exclude = ".*tests/.*|.*docs/.*"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

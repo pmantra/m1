@@ -1,0 +1,25 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    {{ super() }}
+
+    <h2>Bulk Add/Delete Specialty for Practitioners</h2>
+
+    <p>
+    The targeted practitioners can be specified by two ways: CSV or vertical ID.
+    You can look up vertical ids <a href="/admin/vertical/">here</a>.
+    The CSV file should begin with a header row that has "user_id" as the only column.
+    The "user_id" column lists the practitioner's user IDs to be added/deleted.
+
+    </p>
+
+    <form method="POST" action="/admin/specialty-practitioners/bulk-action" enctype="multipart/form-data">
+        <input type="hidden" name="specialty_id" value="{{ model.id }}">
+        <input type="text" name="vertical_id" value="Vertical ID"><br>
+        Add <input type="radio" name="action_type" value="add" checked>
+        Delete <input type="radio" name="action_type" value="delete"><br>
+        <input type="file" id="csv" name="csv">
+        <input type="submit" class="btn btn-primary btn-large" value="Bulk Action">
+    </form>
+
+{% endblock %}

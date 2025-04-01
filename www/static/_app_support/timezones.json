@@ -1,0 +1,446 @@
+[
+  {
+    "displayName": "Eastern Time",
+    "identifier": "America/New_York"
+  },
+  {
+    "displayName": "Central Time",
+    "identifier": "America/Chicago"
+  },
+  {
+    "displayName": "Pacific Time",
+    "identifier": "America/Los_Angeles"
+  },
+  {
+    "displayName": "Mountain Time",
+    "identifier": "America/Denver"
+  },
+  {
+    "displayName": "London",
+    "identifier": "Europe/London"
+  },
+  {
+    "displayName": "Indian Standard Time",
+    "identifier": "Asia/Kolkata"
+  },
+  {
+    "displayName": "Tokyo",
+    "identifier": "Asia/Tokyo"
+  },
+  {
+    "displayName": "UTC",
+    "identifier": "UTC"
+  },
+  {
+    "displayName": "Pago Pago",
+    "identifier": "Pacific/Pago_Pago"
+  },
+  {
+    "displayName": "Hawaii Time",
+    "identifier": "Pacific/Honolulu"
+  },
+  {
+    "displayName": "Pacific Time - Tijuana",
+    "identifier": "America/Tijuana"
+  },
+  {
+    "displayName": "Mountain Time - Arizona",
+    "identifier": "America/Phoenix"
+  },
+  {
+    "displayName": "Mountain Time - Chihuahua, Mazatlan",
+    "identifier": "America/Mazatlan"
+  },
+  {
+    "displayName": "Central Time - Mexico City",
+    "identifier": "America/Mexico_City"
+  },
+  {
+    "displayName": "Central Time - Regina",
+    "identifier": "America/Regina"
+  },
+  {
+    "displayName": "Guatemala",
+    "identifier": "America/Guatemala"
+  },
+  {
+    "displayName": "Bogota",
+    "identifier": "America/Bogota"
+  },
+  {
+    "displayName": "Lima",
+    "identifier": "America/Lima"
+  },
+  {
+    "displayName": "Caracas",
+    "identifier": "America/Caracas"
+  },
+  {
+    "displayName": "Atlantic Time - Halifax",
+    "identifier": "America/Halifax"
+  },
+  {
+    "displayName": "Guyana",
+    "identifier": "America/Guyana"
+  },
+  {
+    "displayName": "La Paz",
+    "identifier": "America/La_Paz"
+  },
+  {
+    "displayName": "Buenos Aires",
+    "identifier": "America/Argentina/Buenos_Aires"
+  },
+  {
+    "displayName": "Godthab",
+    "identifier": "America/Godthab"
+  },
+  {
+    "displayName": "Montevideo",
+    "identifier": "America/Montevideo"
+  },
+  {
+    "displayName": "Newfoundland Time - St. Johns",
+    "identifier": "America/St_Johns"
+  },
+  {
+    "displayName": "Santiago",
+    "identifier": "America/Santiago"
+  },
+  {
+    "displayName": "Sao Paulo",
+    "identifier": "America/Sao_Paulo"
+  },
+  {
+    "displayName": "South Georgia",
+    "identifier": "Atlantic/South_Georgia"
+  },
+  {
+    "displayName": "Azores",
+    "identifier": "Atlantic/Azores"
+  },
+  {
+    "displayName": "Cape Verde",
+    "identifier": "Atlantic/Cape_Verde"
+  },
+  {
+    "displayName": "Casablanca",
+    "identifier": "Africa/Casablanca"
+  },
+  {
+    "displayName": "Dublin",
+    "identifier": "Europe/Dublin"
+  },
+  {
+    "displayName": "Lisbon",
+    "identifier": "Europe/Lisbon"
+  },
+  {
+    "displayName": "Monrovia",
+    "identifier": "Africa/Monrovia"
+  },
+  {
+    "displayName": "Algiers",
+    "identifier": "Africa/Algiers"
+  },
+  {
+    "displayName": "Amsterdam",
+    "identifier": "Europe/Amsterdam"
+  },
+  {
+    "displayName": "Berlin",
+    "identifier": "Europe/Berlin"
+  },
+  {
+    "displayName": "Brussels",
+    "identifier": "Europe/Brussels"
+  },
+  {
+    "displayName": "Budapest",
+    "identifier": "Europe/Budapest"
+  },
+  {
+    "displayName": "Central European Time - Belgrade",
+    "identifier": "Europe/Belgrade"
+  },
+  {
+    "displayName": "Central European Time - Prague",
+    "identifier": "Europe/Prague"
+  },
+  {
+    "displayName": "Copenhagen",
+    "identifier": "Europe/Copenhagen"
+  },
+  {
+    "displayName": "Madrid",
+    "identifier": "Europe/Madrid"
+  },
+  {
+    "displayName": "Paris",
+    "identifier": "Europe/Paris"
+  },
+  {
+    "displayName": "Rome",
+    "identifier": "Europe/Rome"
+  },
+  {
+    "displayName": "Stockholm",
+    "identifier": "Europe/Stockholm"
+  },
+  {
+    "displayName": "Vienna",
+    "identifier": "Europe/Vienna"
+  },
+  {
+    "displayName": "Warsaw",
+    "identifier": "Europe/Warsaw"
+  },
+  {
+    "displayName": "Athens",
+    "identifier": "Europe/Athens"
+  },
+  {
+    "displayName": "Bucharest",
+    "identifier": "Europe/Bucharest"
+  },
+  {
+    "displayName": "Cairo",
+    "identifier": "Africa/Cairo"
+  },
+  {
+    "displayName": "Jerusalem",
+    "identifier": "Asia/Jerusalem"
+  },
+  {
+    "displayName": "Johannesburg",
+    "identifier": "Africa/Johannesburg"
+  },
+  {
+    "displayName": "Helsinki",
+    "identifier": "Europe/Helsinki"
+  },
+  {
+    "displayName": "Kiev",
+    "identifier": "Europe/Kiev"
+  },
+  {
+    "displayName": "Moscow-01 - Kaliningrad",
+    "identifier": "Europe/Kaliningrad"
+  },
+  {
+    "displayName": "Riga",
+    "identifier": "Europe/Riga"
+  },
+  {
+    "displayName": "Sofia",
+    "identifier": "Europe/Sofia"
+  },
+  {
+    "displayName": "Tallinn",
+    "identifier": "Europe/Tallinn"
+  },
+  {
+    "displayName": "Vilnius",
+    "identifier": "Europe/Vilnius"
+  },
+  {
+    "displayName": "Istanbul",
+    "identifier": "Europe/Istanbul"
+  },
+  {
+    "displayName": "Baghdad",
+    "identifier": "Asia/Baghdad"
+  },
+  {
+    "displayName": "Nairobi",
+    "identifier": "Africa/Nairobi"
+  },
+  {
+    "displayName": "Minsk",
+    "identifier": "Europe/Minsk"
+  },
+  {
+    "displayName": "Riyadh",
+    "identifier": "Asia/Riyadh"
+  },
+  {
+    "displayName": "Moscow+00 - Moscow",
+    "identifier": "Europe/Moscow"
+  },
+  {
+    "displayName": "Tehran",
+    "identifier": "Asia/Tehran"
+  },
+  {
+    "displayName": "Baku",
+    "identifier": "Asia/Baku"
+  },
+  {
+    "displayName": "Moscow+01 - Samara",
+    "identifier": "Europe/Samara"
+  },
+  {
+    "displayName": "Tbilisi",
+    "identifier": "Asia/Tbilisi"
+  },
+  {
+    "displayName": "Yerevan",
+    "identifier": "Asia/Yerevan"
+  },
+  {
+    "displayName": "Kabul",
+    "identifier": "Asia/Kabul"
+  },
+  {
+    "displayName": "Karachi",
+    "identifier": "Asia/Karachi"
+  },
+  {
+    "displayName": "Moscow+02 - Yekaterinburg",
+    "identifier": "Asia/Yekaterinburg"
+  },
+  {
+    "displayName": "Tashkent",
+    "identifier": "Asia/Tashkent"
+  },
+  {
+    "displayName": "Colombo",
+    "identifier": "Asia/Colombo"
+  },
+  {
+    "displayName": "Almaty",
+    "identifier": "Asia/Almaty"
+  },
+  {
+    "displayName": "Dhaka",
+    "identifier": "Asia/Dhaka"
+  },
+  {
+    "displayName": "Rangoon",
+    "identifier": "Asia/Rangoon"
+  },
+  {
+    "displayName": "Bangkok",
+    "identifier": "Asia/Bangkok"
+  },
+  {
+    "displayName": "Jakarta",
+    "identifier": "Asia/Jakarta"
+  },
+  {
+    "displayName": "Moscow+04 - Krasnoyarsk",
+    "identifier": "Asia/Krasnoyarsk"
+  },
+  {
+    "displayName": "China Time - Beijing",
+    "identifier": "Asia/Shanghai"
+  },
+  {
+    "displayName": "Hong Kong",
+    "identifier": "Asia/Hong_Kong"
+  },
+  {
+    "displayName": "Kuala Lumpur",
+    "identifier": "Asia/Kuala_Lumpur"
+  },
+  {
+    "displayName": "Moscow+05 - Irkutsk",
+    "identifier": "Asia/Irkutsk"
+  },
+  {
+    "displayName": "Singapore",
+    "identifier": "Asia/Singapore"
+  },
+  {
+    "displayName": "Taipei",
+    "identifier": "Asia/Taipei"
+  },
+  {
+    "displayName": "Ulaanbaatar",
+    "identifier": "Asia/Ulaanbaatar"
+  },
+  {
+    "displayName": "Western Time - Perth",
+    "identifier": "Australia/Perth"
+  },
+  {
+    "displayName": "Moscow+06 - Yakutsk",
+    "identifier": "Asia/Yakutsk"
+  },
+  {
+    "displayName": "Seoul",
+    "identifier": "Asia/Seoul"
+  },
+  {
+    "displayName": "Central Time - Darwin",
+    "identifier": "Australia/Darwin"
+  },
+  {
+    "displayName": "Eastern Time - Brisbane",
+    "identifier": "Australia/Brisbane"
+  },
+  {
+    "displayName": "Guam",
+    "identifier": "Pacific/Guam"
+  },
+  {
+    "displayName": "Moscow+07 - Magadan",
+    "identifier": "Asia/Magadan"
+  },
+  {
+    "displayName": "Moscow+07 - Yuzhno-Sakhalinsk",
+    "identifier": "Asia/Vladivostok"
+  },
+  {
+    "displayName": "Port Moresby",
+    "identifier": "Pacific/Port_Moresby"
+  },
+  {
+    "displayName": "Central Time - Adelaide",
+    "identifier": "Australia/Adelaide"
+  },
+  {
+    "displayName": "Eastern Time - Hobart",
+    "identifier": "Australia/Hobart"
+  },
+  {
+    "displayName": "Eastern Time - Melbourne, Sydney",
+    "identifier": "Australia/Sydney"
+  },
+  {
+    "displayName": "Guadalcanal",
+    "identifier": "Pacific/Guadalcanal"
+  },
+  {
+    "displayName": "Noumea",
+    "identifier": "Pacific/Noumea"
+  },
+  {
+    "displayName": "Majuro",
+    "identifier": "Pacific/Majuro"
+  },
+  {
+    "displayName": "Moscow+09 - Petropavlovsk-Kamchatskiy",
+    "identifier": "Asia/Kamchatka"
+  },
+  {
+    "displayName": "Auckland",
+    "identifier": "Pacific/Auckland"
+  },
+  {
+    "displayName": "Fakaofo",
+    "identifier": "Pacific/Fakaofo"
+  },
+  {
+    "displayName": "Fiji",
+    "identifier": "Pacific/Fiji"
+  },
+  {
+    "displayName": "Tongatapu",
+    "identifier": "Pacific/Tongatapu"
+  },
+  {
+    "displayName": "Apia",
+    "identifier": "Pacific/Apia"
+  }
+]

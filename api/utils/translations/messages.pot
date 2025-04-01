@@ -1,0 +1,8 @@
+#: utils/passwords.py:11
+msgid "utils_password_include_3_of_4"
+msgstr ""
+
+#: utils/passwords.py:12
+msgid "utils_password_minimum_character"
+msgstr ""
+

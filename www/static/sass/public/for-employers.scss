@@ -1,0 +1,58 @@
+.page-for-employers {
+	//Panel 3
+	.panel-3 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		.product-shot {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
+
+			img {
+				width: 100%;
+				max-width: 350px;
+				height: auto;
+			}
+		}
+
+		.text-container {
+			width: 100%;
+			h4 {
+				margin-bottom: 0;
+				& + p {
+					margin-top: 10px;
+				}
+			}
+		}
+
+		@include susy-breakpoint(600px) {
+			.product-shot {
+				img {
+					width: 70%;
+				}
+			}
+		}
+
+		@include susy-breakpoint($desktop) {
+			flex-direction: row;
+			.product-shot {
+				width: 45%;
+				margin-top: -35px;
+
+				img {
+					margin-right: 40px;
+				}
+
+				.text-container {
+					width: 50%;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,180 @@
+msgid "answer_member_rating_placeholder_oid_4_provider_preparedness_1_text"
+msgstr "1"
+
+msgid "answer_member_rating_placeholder_oid_4_provider_preparedness_2_text"
+msgstr "2"
+
+msgid "answer_member_rating_placeholder_oid_4_provider_preparedness_3_text"
+msgstr "3"
+
+msgid "answer_member_rating_placeholder_oid_4_provider_preparedness_4_text"
+msgstr "4"
+
+msgid "answer_member_rating_placeholder_oid_4_provider_preparedness_5_text"
+msgstr "5"
+
+msgid "answer_member_rating_placeholder_oid_4_care_received_1_text"
+msgstr "1"
+
+msgid "answer_member_rating_placeholder_oid_4_care_received_2_text"
+msgstr "2"
+
+msgid "answer_member_rating_placeholder_oid_4_care_received_3_text"
+msgstr "3"
+
+msgid "answer_member_rating_placeholder_oid_4_care_received_4_text"
+msgstr "4"
+
+msgid "answer_member_rating_placeholder_oid_4_care_received_5_text"
+msgstr "5"
+
+msgid "answer_member_rating_placeholder_oid_4_overall_experience_1_text"
+msgstr "1"
+
+msgid "answer_member_rating_placeholder_oid_4_overall_experience_2_text"
+msgstr "2"
+
+msgid "answer_member_rating_placeholder_oid_4_overall_experience_3_text"
+msgstr "3"
+
+msgid "answer_member_rating_placeholder_oid_4_overall_experience_4_text"
+msgstr "4"
+
+msgid "answer_member_rating_placeholder_oid_4_overall_experience_5_text"
+msgstr "5"
+
+msgid "answer_member_rating_followup_placeholder_oid_5_problems_audio_or_video_text"
+msgstr "Poor audio or video quality"
+
+msgid "answer_member_rating_followup_placeholder_oid_5_problems_couldnt_help_text"
+msgstr "Provider couldn't help"
+
+msgid "answer_member_rating_followup_placeholder_oid_5_problems_out_of_time_text"
+msgstr "Ran out of time"
+
+msgid "answer_member_rating_followup_placeholder_oid_5_problems_repeat_info_text"
+msgstr "Had to repeat information given previously"
+
+msgid "answer_member_rating_followup_placeholder_oid_5_problems_other_text"
+msgstr "Other"
+
+msgid "answer_member_rating_v2_first_screen_question_would_meet_provider_again_1_text"
+msgstr "1"
+
+msgid "answer_member_rating_v2_first_screen_question_would_meet_provider_again_2_text"
+msgstr "2"
+
+msgid "answer_member_rating_v2_first_screen_question_would_meet_provider_again_3_text"
+msgstr "3"
+
+msgid "answer_member_rating_v2_first_screen_question_would_meet_provider_again_4_text"
+msgstr "4"
+
+msgid "answer_member_rating_v2_first_screen_question_would_meet_provider_again_5_text"
+msgstr "5"
+
+msgid "answer_member_rating_v2_first_screen_question_satisfaction_1_text"
+msgstr "1"
+
+msgid "answer_member_rating_v2_first_screen_question_satisfaction_2_text"
+msgstr "2"
+
+msgid "answer_member_rating_v2_first_screen_question_satisfaction_3_text"
+msgstr "3"
+
+msgid "answer_member_rating_v2_first_screen_question_satisfaction_4_text"
+msgstr "4"
+
+msgid "answer_member_rating_v2_first_screen_question_satisfaction_5_text"
+msgstr "5"
+
+msgid "answer_member_rating_v2_first_screen_question_first_touch_resolution_yes_text"
+msgstr "Yes"
+
+msgid "answer_member_rating_v2_first_screen_question_first_touch_resolution_same_provider_text"
+msgstr "No, I need to follow-up with this provider"
+
+msgid "answer_member_rating_v2_first_screen_question_first_touch_resolution_different_maven_provider_text"
+msgstr "No, I need to follow-up with a different provider on Maven"
+
+msgid "answer_member_rating_v2_first_screen_question_first_touch_resolution_in_person_provider_text"
+msgstr "No, I need to follow-up with an in-person provider"
+
+msgid "answer_member_rating_v2_first_screen_question_audio_video_quality_great_text"
+msgstr "Great, no problems"
+
+msgid "answer_member_rating_v2_first_screen_question_audio_video_quality_some_issues_text"
+msgstr "Some issues, but the appointment could continue"
+
+msgid "answer_member_rating_v2_first_screen_question_audio_video_quality_disrupted_appointment_text"
+msgstr "Poor, the appointment was disrupted"
+
+msgid "answer_member_rating_followup_v2_second_screen_question_survey_follow_up_v2_appointment_too_short_text"
+msgstr "The appointment was too short"
+
+msgid "answer_member_rating_followup_v2_second_screen_question_survey_follow_up_v2_provider_was_late_text"
+msgstr "Provider was late"
+
+msgid "answer_member_rating_followup_v2_second_screen_question_survey_follow_up_v2_provider_not_prepared_text"
+msgstr "Provider wasn't prepared"
+
+msgid "answer_member_rating_followup_v2_second_screen_question_survey_follow_up_v2_provider_not_empathetic_text"
+msgstr "Provider wasn't empathetic"
+
+msgid "answer_member_rating_followup_v2_second_screen_question_survey_follow_up_v2_did_not_meet_needs_text"
+msgstr "Provider wasn't able to meet my needs"
+
+msgid "answer_member_rating_followup_v2_second_screen_question_survey_follow_up_v2_other_text"
+msgstr "Other"
+
+msgid "answer_cancellation_survey_cancellation_survey_question_set_cancellation_reason_question_cancellation_reason_forgot_text"
+msgstr "Forgot about it"
+
+msgid "answer_cancellation_survey_cancellation_survey_question_set_cancellation_reason_question_cancellation_reason_something_came_up_text"
+msgstr "Something came up"
+
+msgid "answer_cancellation_survey_cancellation_survey_question_set_cancellation_reason_question_cancellation_reason_maven_resource_text"
+msgstr "Found another Maven resource"
+
+msgid "answer_cancellation_survey_cancellation_survey_question_set_cancellation_reason_question_cancellation_reason_resolved_outside_text"
+msgstr "Resolved outside of Maven"
+
+msgid "answer_cancellation_survey_cancellation_survey_question_set_cancellation_reason_question_cancellation_reason_dont_want_text"
+msgstr "No longer want this appointment"
+
+msgid "answer_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_satisfied_ca_1_text"
+msgstr "1"
+
+msgid "answer_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_satisfied_ca_2_text"
+msgstr "2"
+
+msgid "answer_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_satisfied_ca_3_text"
+msgstr "3"
+
+msgid "answer_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_satisfied_ca_4_text"
+msgstr "4"
+
+msgid "answer_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_satisfied_ca_5_text"
+msgstr "5"
+
+msgid "answer_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_intend_definitely_text"
+msgstr "Definitely"
+
+msgid "answer_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_intend_maybe_text"
+msgstr "Maybe"
+
+msgid "answer_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_intend_no_clear_steps_text"
+msgstr "No, I don't have clear next steps on Maven"
+
+msgid "answer_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_intend_no_want_text"
+msgstr "No, I don't want to use Maven in the next 30 days"
+
+msgid "answer_member_ca_rating_member_ca_rating_set_zero_audio_video_quality_some_issues_text"
+msgstr "Some issues, but the appointment could continue"
+
+msgid "answer_member_ca_rating_member_ca_rating_set_zero_audio_video_quality_great_text"
+msgstr "Great, no problems"
+
+msgid "answer_member_ca_rating_member_ca_rating_set_zero_audio_video_quality_disrupted_appointment_text"
+msgstr "Poor, the appointment was disrupted"
+

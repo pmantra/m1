@@ -1,0 +1,23 @@
+[
+  {
+    "type": "user",
+    "organization_name": "DirectPaymentUSD",
+    "track": "fertility",
+    "phase": "week-1",
+    "password": "simpleisawesome1*",
+    "email": "test+qualified-wallet.1@mavenclinic.com",
+    "date_of_birth": "2000-01-01",
+    "company_email": "test.pending-wallet.1@gmail.com",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+    
+  },
+  {
+    "type": "reimbursement_wallet",
+    "organization": "DirectPaymentUSD",
+    "member": "test+qualified-wallet.1@mavenclinic.com",
+    "primary_expense_type": "FERTILITY",
+    "state": "QUALIFIED"
+  }
+]

@@ -1,0 +1,19 @@
+<div ng-show="emailConfirmed">
+	<h1>Email confirmed</h1>
+	<h3>Thank you! Your email has now been confirmed</h3>
+	<p>You can now <a ui-sref="auth.login">Sign in</a>.</p>
+</div>
+
+<div ng-hide="emailErrorMsg" ng-show="emailError">
+	<h1>Oh no...</h1>
+	<h3>There seems to have been a problem.</h3>
+	<p>Please get in touch at <a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a> if you need any help!</p>
+</div>
+<div ng-show="emailErrorMsg">
+	<h1>Oh no...</h1>
+	<h3>There seems to have been a problem ({{ emailErrorMsg }}) </h3>
+	<p>Please get in touch at <a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a> if you need any help!</p>
+	</div>
+</div>
+
+

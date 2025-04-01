@@ -1,0 +1,12 @@
+dag_id: authn_api_identity_provider_data_sync_trigger_dag
+task_id: authn_api_identity_provider_data_sync_trigger_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.core_service_team.authn_api_identity_provider_data_sync_trigger import database_sync_job; database_sync_job()"
+team_namespace: core_services
+service_namespace: authentication
+catchup: "False"
+start_year: 2025
+start_month: 1
+start_day: 1

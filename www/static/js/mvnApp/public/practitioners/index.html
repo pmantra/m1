@@ -1,0 +1,332 @@
+<section class="hero image-bg">
+	<div class="content-wrapper">
+		<div class="text-container left has-mobile-overlay">
+			<h3>The best healthcare system is the one that you run</h3>
+			<p>
+				When we say “high-quality care,” we mean it. Join a highly specialized on-demand network of over 1,000 women’s
+				and children’s healthcare providers—the largest of its kind in the country—and help patients get the care they
+				deserve.
+			</p>
+			<a href="#practitioner-signup" class="btn btn-cta">Apply now</a>
+		</div>
+	</div>
+	<div class="mobile-headline-overlay overlay-light"></div>
+</section>
+
+<section class="ways-to-join">
+	<div class="content-wrapper">
+		<div class="headline center">
+			<h3>Two ways to join us</h3>
+			<p>
+				If you’re invited to join Maven, you’re in great company! Only one third of applicants are invited into our
+				network. See patients on Maven’s platform, get patients referred to your in-person practice, and join a
+				community of exceptional practitioners.
+			</p>
+		</div>
+		<div class="grid-container">
+			<div class=" product-shot">
+				<img id="practitioner-shot" src="/img/practitioners/practitioners-product-shot.png" alt="Product screenshot" />
+			</div>
+			<div class=" text-container right">
+				<h3>Maven Diamond</h3>
+				<p>
+					Expand your practice on Maven’s proprietary, secure telehealth platform: MPractice. As a Maven Diamond
+					Practitioner, you’ll meet with patients through video chat and private messaging on Maven, with the option of
+					in-person referrals as well. Once you’ve established a record of delivering excellent digital care, you’ll be
+					eligible to apply for an on-staff position with guaranteed hours and pay.
+				</p>
+				<br />
+				<hr class="mint" />
+
+				<h3>Maven Platinum</h3>
+				<p>
+					Apply to be a Maven Platinum Practitioner and receive in-person only referrals. When patients receive your
+					name as a Maven-recommended provider, they know they’re getting a high-quality referral. You will not provide
+					care via telemedicine or receive payments through Maven, but you’re welcome to apply to upgrade to Diamond at
+					any time.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="how-maven-works">
+	<div class="content-wrapper">
+		<h3>How Maven works</h3>
+		<div class="grid-container two-column">
+			<div class="feature-img grid-item"></div>
+			<div class="grid-item">
+				<ul class="clear">
+					<li>
+						<h3>1. Apply</h3>
+						<p>
+							Our practitioner advisory committee will evaluate your knowledge, skills, and experience through a
+							multi-step process that includes a resume review and license verification, reference checks, a timed
+							assessment, and a video interview.
+						</p>
+					</li>
+					<li>
+						<h3>2. Set your schedule</h3>
+						<p>
+							Maven was designed with busy practitioners in mind—you set your own schedule (down to the minute!) and
+							patients can book with you when you’re available.
+						</p>
+					</li>
+					<li>
+						<h3>3. Connect with patients and build relationships</h3>
+						<p>
+							See patients via video chat on your mobile device, then E-prescribe and document easily and securely via
+							Maven’s Session Notes on your laptop. Patients can follow-up via private messaging, and you can
+							participate in our Community Forum anytime.
+						</p>
+					</li>
+					<li>
+						<h3>4. Deliver coordinated care</h3>
+						<p>
+							Maven is passionate about providing transparent and coordinated care by allowing patients to share their
+							session notes across practitioners and facilitating in-person referrals and care coordination whenever
+							needed.
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="marketing-faqs">
+	<div class="content-wrapper">
+		<h3>FAQs</h3>
+		<div class="faq-wrap">
+			<ul class="faqs clear">
+				<li ng-repeat="faq in faqs" ng-class="{active: faq.id == activeFaq.id }">
+					<p class="lg faq-question clearfix" ng-click="togglefaq(faq)">
+						<span class="q">{{ faq.question }}</span>
+						<span class="expand"
+							><svg width="24" height="12" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M12 11.915L1.053.471M12 11.914L22.947.47"
+									stroke="#00413E"
+									fill="none"
+									fill-rule="evenodd"
+									stroke-linecap="square"
+								/>
+							</svg>
+						</span>
+					</p>
+					<div class="faq-answer" ng-bind-html="faq.answer"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<section class="practitioner-testimonials">
+	<div class="content-wrapper carousel-wrapper-panels">
+		<p class="lg center">What our community is saying</p>
+		<slick
+			class="carousel"
+			slide="div"
+			dots="true"
+			lazy-load="ondemand"
+			responsive="carouselBreakpoints"
+			slides-to-show="3"
+			arrows="true"
+			mobileFirst="true"
+			custom-paging="slickDots(slick, index)"
+			prev-arrow=".prev"
+			next-arrow=".next"
+		>
+			<div ng-repeat="testimonial in pracTestimonials">
+				<div class="testimonial {{ ::testimonial.category }}">
+					<span class="quot">&ldquo;</span>
+					<p class="lg">&ldquo;{{ ::testimonial.quote }}&rdquo;</p>
+					<h5>{{ ::testimonial.by }}</h5>
+				</div>
+			</div>
+		</slick>
+
+		<span class="prev">
+			<svg width="16" height="29" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M2.092 14.5l12.44-12.44M2.093 14.5l12.44 12.44"
+					stroke="#F9A89A"
+					stroke-width="2"
+					fill="none"
+					fill-rule="evenodd"
+					stroke-linecap="square"
+				/>
+			</svg>
+		</span>
+
+		<span class="next">
+			<svg width="16" height="29" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M14.533 14.5L2.093 2.06m12.44 12.44L2.093 26.94"
+					stroke="#F9A89A"
+					stroke-width="2"
+					fill="none"
+					fill-rule="evenodd"
+					stroke-linecap="square"
+				/>
+			</svg>
+		</span>
+	</div>
+</section>
+
+<section class="practitioner-sign-up" id="practitioner-signup">
+	<div>
+		<div class="content-wrap">
+			<div ng-class="{loading: loading}">
+				<h3 ng-hide="signupsuccess" class="center">Ready to join Maven? Let’s get started.</h3>
+
+				<div ng-if="!signupsuccess" class="enterprise-form">
+					<form name="pracRegForm" class="mvn-form">
+						<section class="form-section">
+							<div class="form-elements-container">
+								<div class="mvn-input" ng-class="{ 'has-content': pracReg.fname }">
+									<input type="text" class="mvn-form-input" name="first" ng-model="pracReg.fname" required="required" />
+									<label class="mvn-form-label">First name</label>
+								</div>
+								<div class="mvn-input" ng-class="{ 'has-content': pracReg.lname  }">
+									<input type="text" class="mvn-form-input" name="last" ng-model="pracReg.lname" required="required" />
+									<label class="mvn-form-label">Last name</label>
+								</div>
+							</div>
+							<div class="form-elements-container">
+								<div class="mvn-input full-width" ng-class="{ 'has-content': pracReg.email  }">
+									<input
+										type="email"
+										class="mvn-form-input"
+										name="email"
+										ng-model="pracReg.email"
+										required="required"
+									/>
+									<label class="mvn-form-label">Your email address</label>
+								</div>
+							</div>
+
+							<div class="form-elements-container">
+								<div class="mvn-select-search search-full-width">
+									<ui-select
+										ng-model="pracReg.profession"
+										theme="select2"
+										ng-disabled="ctrl.disabled"
+										title="Your profession"
+										required="required"
+									>
+										<ui-select-match placeholder="Your profession">{{ pracReg.profession }}</ui-select-match>
+										<ui-select-choices class="choices" repeat="opt in professionOpts | filter: $select.search">
+											<span role="option" ng-bind-html="opt | highlight: $select.search"></span>
+										</ui-select-choices>
+									</ui-select>
+									<span class="ghost-label">Your profession</span>
+								</div>
+							</div>
+
+							<div class="form-elements-container">
+								<div
+									ng-if="pracReg.profession === 'Other'"
+									class="mvn-input full-width"
+									ng-class="{ 'has-content': pracReg.otherProfession  }"
+								>
+									<input
+										type="text"
+										class="mvn-form-input"
+										name="zip"
+										ng-model="pracReg.otherProfession"
+										required="required"
+									/>
+									<label class="mvn-form-label">Your profession:</label>
+								</div>
+							</div>
+
+							<div class="form-elements-container">
+								<div class="mvn-select-search search-full-width">
+									<ui-select
+										ng-model="pracReg.network"
+										theme="select2"
+										ng-disabled="ctrl.disabled"
+										title="I would like to apply to the..."
+										required="required"
+									>
+										<ui-select-match placeholder="I would like to apply to the:"
+											>{{ pracReg.network | pracNetworkAbbrevToName }}</ui-select-match
+										>
+										<ui-select-choices class="choices" repeat="nw.type as nw in networkTypes | filter: $select.search">
+											<span role="option" ng-bind-html="nw.name | highlight: $select.search"></span>
+										</ui-select-choices>
+									</ui-select>
+									<span class="ghost-label">I would like to apply to the...</span>
+								</div>
+							</div>
+
+							<div class="form-elements-container">
+								<div class="mvn-input full-width" ng-class="{ 'has-content': pracReg.zip  }">
+									<input type="text" class="mvn-form-input" name="zip" ng-model="pracReg.zip" required="required" />
+									<label class="mvn-form-label">Zip code of state in which you practice</label>
+								</div>
+							</div>
+
+							<div class="form-elements-container">
+								<div class="mvn-input full-width" ng-class="{ 'has-content': pracReg.referrer  }">
+									<input
+										type="text"
+										class="mvn-form-input"
+										name="company"
+										ng-model="pracReg.referrer"
+										required="required"
+									/>
+									<label class="mvn-form-label">Where did you hear about Maven?</label>
+								</div>
+							</div>
+
+							<input
+								ng-if="pracReg.network === 'diamond'"
+								type="hidden"
+								ng-model="pracReg.list"
+								name="list"
+								ng-init="pracReg.list='d0b998eea4'"
+								value="d0b998eea4"
+							/>
+
+							<input
+								ng-if="pracReg.network === 'platinum'"
+								type="hidden"
+								ng-model="pracReg.list"
+								name="list"
+								ng-init="pracReg.list='6dea4d59b0'"
+								value="6dea4d59b0"
+							/>
+
+							<div class="form-actions centered">
+								<button
+									ng-click="processPracForm(pracReg)"
+									class="btn btn-cta"
+									ng-class="{'disabled' : pracRegForm.$invalid || loading }"
+								>
+									<span ng-if="!loading">Send</span>
+									<span ng-if="loading">Please wait...</span>
+								</button>
+							</div>
+						</section>
+					</form>
+				</div>
+
+				<div ng-show="signupsuccess">
+					<h3>Thank you for your interest in becoming a Maven practitioner</h3>
+					<p>
+						If we're currently recruiting for your profession, we'll be in touch with more information about the
+						application process within two to three weeks. Please feel free to get in touch at
+						<a href="mailto:providers@mavenclinic.com">providers@mavenclinic.com</a> if you have any questions!
+					</p>
+				</div>
+
+				<div ng-show="signuperror">
+					<p>Sorry, there seems to have been a problem.</p>
+					<p>Please try again!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

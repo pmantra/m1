@@ -1,0 +1,37 @@
+<div class="row" id="extra_data">
+    <div class="span6">
+        {% if wallet.all_active_users %}
+            <b>Wallet Users:</b> {% for wallet_user in wallet.all_active_users %}
+                <a href="{{ url_for("user.edit_view", id=wallet_user.id) }}">User {{ wallet_user.id }}</a>&nbsp;
+            {% endfor %}
+            <br>
+        {% else %}
+            <b>Wallet Member Id:</b> {{ wallet.user_id }}<br>
+        {% endif %}
+        <b>Link to Wallet:</b>
+        <a href="{{ url_for('reimbursementwallet.edit_view', id=wallet.id) }}">Wallet {{ wallet.id }}</a>
+        <br>
+        <b>Deductible Accumulation Enabled:</b>
+        {{ wallet.reimbursement_organization_settings.deductible_accumulation_enabled }}
+        {% if calculator %}<br>> <a href="#cost-breakdown-inline-calculator">Jump to Cost Breakdown Calculator</a> {% endif %}
+    </div>
+    <div class="span6">
+        {% if wallet.reimbursement_organization_settings.employer_health_plan %}
+            <!-- watch out for any changes to the manually coded filter here -->
+            <b><u>Employer Health Plans</u></b> -
+            <a href="/admin/employerhealthplan/?flt1_14={{ wallet.reimbursement_organization_settings_id }}">View
+                All</a>
+            <br>
+            <ul>
+                {% for e_h_p in wallet.reimbursement_organization_settings.employer_health_plan %}
+                    <li><a href="{{ url_for("employerhealthplan.edit_view", id=e_h_p.id) }}">{{ e_h_p.name }}
+                        - {{ e_h_p.id }}</a>
+                        <br>
+                        (<b>Is HDHP</b>: {{ e_h_p.is_hdhp }})
+                        (<b>Is RX Integrated</b>: {{ e_h_p.rx_integrated }})
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>

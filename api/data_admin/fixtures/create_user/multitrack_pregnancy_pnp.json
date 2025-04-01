@@ -1,0 +1,12 @@
+[
+  {
+    "type": "user",
+    "organization_name": "Test Organization X",
+    "tracks": ["pregnancy:week-5", "parenting_and_pediatrics"],
+    "email_prefix": "mvnqa-mt",
+    "password": "simpleisawesome1*",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

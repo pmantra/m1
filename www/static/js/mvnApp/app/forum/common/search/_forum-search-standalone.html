@@ -1,0 +1,12 @@
+<form name="forumSearchField" class="search-input" action="." ng-submit="$event.preventDefault();search(q)">
+	<div class="form-group mobile-forum-search-input">
+		<input
+			type="search"
+			name="search"
+			placeholder="What are you looking for?"
+			ng-model="q"
+			aria-label="What are you looking for?"
+		/>
+		<a ng-show="q.length >= 2" class="btn btn-action mobile-search-go" href="" ng-click="search(q)">Go</a>
+	</div>
+</form>

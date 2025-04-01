@@ -1,0 +1,51 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-08-20 14:13-0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: models/profiles.py:1114 models/profiles.py:1117
+msgid "profiles_employee_incentive_consent_form"
+msgstr "Employee Incentive Consent Form"
+
+#: models/profiles.py:1127
+msgid "profiles_employee_incentive_consent_form_cheesecake_factory"
+msgstr "Employee Incentive Consent Form (Cheesecake Factory)"
+
+#: models/profiles.py:1130
+msgid "profiles_employee_incentive_consent_form_marathon_petroleum"
+msgstr "Employee Incentive Consent Form (Marathon Petroleum)"
+
+#: models/profiles.py:1112
+msgid "profiles_gina_authorization"
+msgstr "GINA Authorization"
+
+#: models/profiles.py:1113
+msgid "profiles_microsoft_employee_consent_form"
+msgstr "Microsoft Employee Consent Form"
+
+#: models/profiles.py:1109
+msgid "profiles_practitioner_service_agreement"
+msgstr "Practitioner Service Agreement"
+
+#: models/profiles.py:1111
+msgid "profiles_privacy_policy"
+msgstr "Privacy Policy"
+
+#: models/profiles.py:1110
+msgid "profiles_terms_of_use"
+msgstr "Terms of Use"
+

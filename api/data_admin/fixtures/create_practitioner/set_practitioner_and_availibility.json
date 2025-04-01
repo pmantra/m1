@@ -1,0 +1,21 @@
+[
+  {
+    "type": "user",
+    "role": "practitioner",
+    "is_cx": true,
+    "vertical": "Nurse Practitioner",
+    "email": "test+mvnqa-nprac007@mavenclinic.com",
+    "certified_subdivision_codes": "US-NY",
+    "can_prescribe": true,
+    "anonymous_allowed": true,
+    "show_when_unavailable": true,
+    "messaging_enabled": true,
+    "next_availability": "2019-02-15T12:00:00"  
+  },
+  {
+    "type": "schedule_event",
+    "practitioner": "test+mvnqa-nprac007@mavenclinic.com",
+    "starts_in": "in 1 hour",
+    "minutes": 240
+  }
+]

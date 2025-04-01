@@ -1,0 +1,26 @@
+<h3 style="border-bottom: 1px solid #ccc;">Proactive Booking</h3>
+
+<form method="POST" action="/admin/actions/proactive_booking">
+    <p>
+        {% if member_edit_view %}
+            <input name="user_id" type="hidden" placeholder="user_id" required="required" value="{{ member.id }}">
+        {% else %}
+            <input name="user_id" type="hidden" placeholder="user_id" required="required" value="{% if member %}{{ member.id }}{% endif %}">
+        {% endif %}
+    </p>
+
+    <input id="purpose" name="purpose" type="hidden" placeholder="purpose" required="required">
+    <input id="product_id" name="product_id" type="hidden" placeholder="product_id" required="required">
+    <input id="scheduled_start" name="scheduled_start" type="hidden" placeholder="scheduled_start" required="required" >
+    <div id="form-content"></div>
+
+</form>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        AdminTool("ProactiveBooking", document.getElementById("form-content"), {
+            member_id: {{ member.id }},
+            memberState: "{{ member.member_profile.state.abbreviation if member.member_profile.state }}"
+        });
+    })
+</script>

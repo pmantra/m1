@@ -1,0 +1,52 @@
+{
+   "items":[
+      {
+         "id":1,
+         "tip": "Beware the added sweeteners: To spot hidden sugars on food labels, look out for words that end in –ose or are a \"syrup\"."
+      },
+      {
+         "id":2,
+         "tip":"Better ZZZs: A good cardio workout, like a 30-minute run, can help you get more of the rejuvenating deep sleep you need to feel refreshed."
+      },
+      {
+         "id":3,
+         "tip":"Fast asleep: If you typically conk out in less than 5 minutes, you’re likely sleep deprived.  Try sleeping 30 minutes longer each day."
+      },
+      {
+         "id":4,
+         "tip":"Skip the salt: Half of women over 45 have high blood pressure, in large part due to sodium. Cutting back on processed foods will help. "
+      },
+      {
+         "id":5,
+         "tip":"Check yourself out: Once a month after getting out of the shower, do a skin check and look for any striking, changing spots or moles."
+      },
+      {
+         "id":6,
+         "tip":"Stay home: If you’re truly sick, don’t go to work! Not only will you infect others, but you’ll also just prolong your own illness."
+      },
+      {
+         "id":7,
+         "tip":"Eat smart rule: 85% of the time, choose foods that make you stronger—like whole grains for your heart and veggies for immunity."
+      },
+      {
+         "id":8,
+         "tip":"Quit it: Smoking really kills your fertility. Women who smoke lose their eggs faster than women who don't."
+      },
+      {
+         "id":9,
+         "tip":"Sleep in: Set your alarm for when you actually have to get up—interrupting your sleep with the snooze button will leave you groggy."
+      },
+      {
+         "id":10,
+         "tip":"Feel it out: Get to know your breasts. It’s much easier to recognize changes if you regularly check yourself."
+      },
+      {
+         "id":11,
+         "tip":"Get tested: Heart disease is, surprisingly, the number-one killer of women. Ask your practitioner about a cholesterol test."
+      },
+      {
+         "id":12,
+         "tip":"To the bone: Weight-bearing exercises like walking or weight lifting for 2 ½ hours a week will keep bones strong and healthy as you age."
+      }
+   ]
+}

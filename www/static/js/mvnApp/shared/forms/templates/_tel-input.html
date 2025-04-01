@@ -1,0 +1,29 @@
+<div
+	class="mvn-input has-content"
+	ng-class="{ 'has-error': formRef[label].$invalid && formRef[label].$touched, 'is-required': isRequired }"
+>
+	<input
+		class="mvn-form-input"
+		name="{{ label }}"
+		type="tel"
+		value="value"
+		ng-model="value"
+		ng-model-options="{ allowInvalid: true }"
+		ng-required="isRequired"
+		ng-maxlength="maxlength"
+		ng-minlength="minlength"
+		ng-change="mvnInputCtrl.inheritedOnChange()"
+		intl-tel-input
+		aria-label="{{ label }}"
+	/>
+	<span class="mvn-form-label">{{ label }}</span>
+	<div class="mvn-form-error" ng-messages="formRef[label].$error">
+		<div ng-if="formRef[label].$touched">
+			<div ng-message="required">{{ label }} is required</div>
+		</div>
+		<div ng-if="formRef[label].$dirty">
+			<div ng-message="minlength">Please enter at least {{ minlength }} characters</div>
+			<div ng-message="maxlength">Field cannot exceed {{ maxlength }} characters</div>
+		</div>
+	</div>
+</div>

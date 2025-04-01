@@ -1,0 +1,1371 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: es\n"
+
+msgid "vertical_adoption_coach_description"
+msgstr "Resumen de adopción, preparación, finalización, vida después de la adopción"
+
+msgid "vertical_adoption_coach_display_name"
+msgstr "Guía de adopción"
+
+msgid "vertical_adoption_coach_long_description"
+msgstr "Los guías de adopción están aquí para ayudarte a entender todos los diferentes tipos de adopción, cómo crear tu libro de perfil y prepararte para las visitas domiciliarias, y responder cualquier pregunta que tengas sobre el proceso de adopción, hasta que finalice."
+
+msgid "vertical_adoption_coach_name"
+msgstr "Guía de adopción"
+
+msgid "vertical_adoption_coach_pluralized_display_name"
+msgstr "Guías de adopción"
+
+msgid "vertical_behavioral_analyst_description"
+msgstr "Evaluación e intervención del comportamiento de bebés y niños"
+
+msgid "vertical_behavioral_analyst_display_name"
+msgstr "Analista conductual"
+
+msgid "vertical_behavioral_analyst_long_description"
+msgstr "Los analistas conductuales pueden ayudarte a entender los comportamientos de tu hijo y ofrecer consejos para enfrentar desafíos cotidianos (como el entrenamiento de control de los esfínteres y las rabietas) o preocupaciones más complejas (como el trastorno del espectro autista, el TDAH, problemas sensoriales y más)."
+
+msgid "vertical_behavioral_analyst_name"
+msgstr "Analista conductual"
+
+msgid "vertical_behavioral_analyst_pluralized_display_name"
+msgstr "Analistas conductuales"
+
+msgid "vertical_birth_planning_specialist_description"
+msgstr "Ayuda para planificar el trabajo de parto y el parto"
+
+msgid "vertical_birth_planning_specialist_display_name"
+msgstr "Especialista en planificación del parto"
+
+msgid "vertical_birth_planning_specialist_long_description"
+msgstr "Los especialistas en planificación del parto están aquí para guiarte a través de todas las decisiones importantes que puedes tomar sobre el trabajo de parto, el parto y la experiencia después de este, y ayudarte a decidir y documentar las preferencias para compartir con tu pareja de apoyo y tu equipo de cuidado."
+
+msgid "vertical_birth_planning_specialist_name"
+msgstr "Especialista en planificación del parto"
+
+msgid "vertical_birth_planning_specialist_pluralized_display_name"
+msgstr "Especialistas en planificación del parto"
+
+msgid "vertical_care_advocate_description"
+msgstr "Preguntas sobre Maven, recomendaciones de profesionales, manejo de beneficios"
+
+msgid "vertical_care_advocate_display_name"
+msgstr "Care Advocate"
+
+msgid "vertical_care_advocate_long_description"
+msgstr "Los Care Advocates están aquí para apoyarte 24/7 con recomendaciones personales de los mejores profesionales de Maven, artículos y clases para tu recorrido, así como recomendaciones a profesionales en persona y ayuda para manejar los beneficios, la facturación y el seguro de salud."
+
+msgid "vertical_care_advocate_name"
+msgstr "Care Advocate"
+
+msgid "vertical_care_advocate_pluralized_display_name"
+msgstr "Care Advocates"
+
+msgid "vertical_career_coach_asia_pacific_description"
+msgstr "Guía profesional, licencia parental, transición de vida"
+
+msgid "vertical_career_coach_asia_pacific_display_name"
+msgstr "Guía profesional: Asia-Pacífico"
+
+msgid "vertical_career_coach_asia_pacific_long_description"
+msgstr "Los guías profesionales pueden ayudarte a afrontar el lugar de trabajo en cada fase de tu carrera y compartir consejos sobre cómo defenderte y obtener el apoyo que necesitas durante las transiciones importantes de la vida."
+
+msgid "vertical_career_coach_asia_pacific_name"
+msgstr "Guía profesional: Asia-Pacífico"
+
+msgid "vertical_career_coach_asia_pacific_pluralized_display_name"
+msgstr "Guías profesionales: Asia-Pacífico"
+
+msgid "vertical_career_coach_canada_description"
+msgstr "Guía profesional, licencia parental, transición de vida"
+
+msgid "vertical_career_coach_canada_display_name"
+msgstr "Guía profesional: Canadá"
+
+msgid "vertical_career_coach_canada_long_description"
+msgstr "Los guías profesionales pueden ayudarte a afrontar el lugar de trabajo en cada fase de tu carrera y compartir consejos sobre cómo defenderte y obtener el apoyo que necesitas durante las transiciones importantes de la vida."
+
+msgid "vertical_career_coach_canada_name"
+msgstr "Guía profesional: Canadá"
+
+msgid "vertical_career_coach_canada_pluralized_display_name"
+msgstr "Guías profesionales: Canadá"
+
+msgid "vertical_career_coach_description"
+msgstr "Guía profesional, licencia parental, transición de vida"
+
+msgid "vertical_career_coach_display_name"
+msgstr "Guía profesional"
+
+msgid "vertical_career_coach_europe_description"
+msgstr "Guía profesional, licencia parental, transición de vida"
+
+msgid "vertical_career_coach_europe_display_name"
+msgstr "Guía profesional: Europa"
+
+msgid "vertical_career_coach_europe_long_description"
+msgstr "Los guías profesionales pueden ayudarte a afrontar el lugar de trabajo en cada fase de tu carrera y compartir consejos sobre cómo defenderte y obtener el apoyo que necesitas durante las transiciones importantes de la vida."
+
+msgid "vertical_career_coach_europe_name"
+msgstr "Guía profesional: Europa"
+
+msgid "vertical_career_coach_europe_pluralized_display_name"
+msgstr "Guías profesionales: Europa"
+
+msgid "vertical_career_coach_india_description"
+msgstr "Guía profesional, licencia parental, transición de vida"
+
+msgid "vertical_career_coach_india_display_name"
+msgstr "Guía profesional: India"
+
+msgid "vertical_career_coach_india_long_description"
+msgstr "Los guías profesionales pueden ayudarte a afrontar el lugar de trabajo en cada fase de tu carrera y compartir consejos sobre cómo defenderte y obtener el apoyo que necesitas durante las transiciones importantes de la vida."
+
+msgid "vertical_career_coach_india_name"
+msgstr "Guía profesional: India"
+
+msgid "vertical_career_coach_india_pluralized_display_name"
+msgstr "Guías profesionales: India"
+
+msgid "vertical_career_coach_long_description"
+msgstr "Los guías profesionales pueden ayudarte a afrontar el lugar de trabajo en cada fase de tu carrera y compartir consejos sobre cómo defenderte y obtener el apoyo que necesitas durante las transiciones importantes de la vida."
+
+msgid "vertical_career_coach_name"
+msgstr "Guía profesional"
+
+msgid "vertical_career_coach_pluralized_display_name"
+msgstr "Guías profesionales"
+
+msgid "vertical_certified_nutritional_therapy_practitioner_description"
+msgstr "Nutrición holística, alimentación saludable"
+
+msgid "vertical_certified_nutritional_therapy_practitioner_display_name"
+msgstr "Profesional certificado en terapia nutricional"
+
+msgid "vertical_certified_nutritional_therapy_practitioner_long_description"
+msgstr "Los profesionales certificados en terapia nutricional pueden compartir enfoques holísticos para comer de manera más saludable, equilibrar la química del cuerpo y lograr el bienestar integral para promover la curación, la resistencia y la longevidad."
+
+msgid "vertical_certified_nutritional_therapy_practitioner_name"
+msgstr "Profesional certificado en terapia nutricional"
+
+msgid "vertical_certified_nutritional_therapy_practitioner_pluralized_display_name"
+msgstr "Profesionales certificados en terapia nutricional"
+
+msgid "vertical_childcare_consultant_description"
+msgstr "Soluciones de atención infantil"
+
+msgid "vertical_childcare_consultant_display_name"
+msgstr "Consultor(a) de atención infantil"
+
+msgid "vertical_childcare_consultant_long_description"
+msgstr "Los consultores de atención infantil están aquí para ayudarte a decidir sobre el profesional adecuado para tu hijo, asistirte con los contratos de niñera o formularios de guardería, y ofrecerte preguntas útiles para hacer durante una visita a la guardería o una entrevista con candidatas a niñera."
+
+msgid "vertical_childcare_consultant_name"
+msgstr "Consultor de atención infantil"
+
+msgid "vertical_childcare_consultant_pluralized_display_name"
+msgstr "Consultores de atención infantil"
+
+msgid "vertical_chinese_medicine_specialist_description"
+msgstr "Medicina herbal china desde la fertilidad hasta la menopausia"
+
+msgid "vertical_chinese_medicine_specialist_display_name"
+msgstr "Especialista en medicina china"
+
+msgid "vertical_chinese_medicine_specialist_long_description"
+msgstr "Los especialistas en medicina china pueden ayudarte a sentir más equilibrio y en control con hierbas, alimentos, prácticas físicas, técnicas de respiración y ejercicios que pueden ayudar con objetivos de fertilidad, respaldar un embarazo saludable, aliviar los síntomas de la menopausia y más."
+
+msgid "vertical_chinese_medicine_specialist_name"
+msgstr "Especialista en medicina china"
+
+msgid "vertical_chinese_medicine_specialist_pluralized_display_name"
+msgstr "Especialistas en medicina china"
+
+msgid "vertical_developmental_psychologist_description"
+msgstr "Desarrollo infantil, salud mental pediátrica, salud emocional pediátrica"
+
+msgid "vertical_developmental_psychologist_display_name"
+msgstr "Psicólogo(a) del desarrollo"
+
+msgid "vertical_developmental_psychologist_long_description"
+msgstr "Los psicólogos del desarrollo pueden ayudarte a entender cada etapa del desarrollo social, emocional y cognitivo de tu hijo, compartir lo que puedes hacer para apoyarlo y ofrecer orientación sobre cómo fomentar actitudes, comportamientos y rutinas saludables."
+
+msgid "vertical_developmental_psychologist_name"
+msgstr "Psicólogo del desarrollo"
+
+msgid "vertical_developmental_psychologist_pluralized_display_name"
+msgstr "Psicólogos del desarrollo"
+
+msgid "vertical_diabetes_coach_description"
+msgstr "Diabetes gestacional, manejo de la diabetes"
+
+msgid "vertical_diabetes_coach_display_name"
+msgstr "Guía de diabetes"
+
+msgid "vertical_diabetes_coach_long_description"
+msgstr "Los guías para la diabetes están aquí para compartir las mejores formas de manejar tus síntomas, cuándo y cómo medir tu nivel de azúcar en la sangre, cuáles deberían ser tus objetivos de azúcar en la sangre, y responder cualquier pregunta que tengas sobre vivir con diabetes tipo I, tipo II o gestacional."
+
+msgid "vertical_diabetes_coach_name"
+msgstr "Guía de diabetes"
+
+msgid "vertical_diabetes_coach_pluralized_display_name"
+msgstr "Guías para la diabetes"
+
+msgid "vertical_doula_and_childbirth_educator_description"
+msgstr "Manejo del dolor, apoyo durante el trabajo de parto y el parto, apoyo después de este"
+
+msgid "vertical_doula_and_childbirth_educator_display_name"
+msgstr "Doula y educadora para el parto"
+
+msgid "vertical_doula_and_childbirth_educator_long_description"
+msgstr "Las doulas y los guías de parto pueden decirte qué esperar durante el trabajo de parto y el parto, compartir formas de defenderte, enseñarte posiciones, técnicas de respiración y medicamentos que alivian el dolor del parto, y brindarte consejos para llevar una vida feliz y saludable después del parto."
+
+msgid "vertical_doula_and_childbirth_educator_name"
+msgstr "Doula y educadora para el parto"
+
+msgid "vertical_doula_and_childbirth_educator_pluralized_display_name"
+msgstr "Doulas y guías de parto"
+
+msgid "vertical_doula_brazil_description"
+msgstr "Manejo del dolor, apoyo durante el trabajo de parto y el parto, apoyo después de este"
+
+#, fuzzy
+msgid "vertical_doula_brazil_display_name"
+msgstr "Doula - Brasil"
+
+#, fuzzy
+msgid "vertical_doula_brazil_long_description"
+msgstr "Las doulas pueden decirle qué esperar durante el trabajo de parto y el nacimiento, compartir formas de defenderse, ofrecer posiciones, técnicas de respiración y medicamentos que alivien el dolor del parto y consejos para una vida feliz y saludable después del parto."
+
+#, fuzzy
+msgid "vertical_doula_brazil_name"
+msgstr "Doula - Brasil"
+
+#, fuzzy
+msgid "vertical_doula_brazil_pluralized_display_name"
+msgstr "Doulas - Brasil"
+
+msgid "vertical_egg_donor_consultant_description"
+msgstr "Congelación, donación y elección de óvulos, selección de donantes"
+
+msgid "vertical_egg_donor_consultant_display_name"
+msgstr "Consultor(a) de donantes de óvulos"
+
+msgid "vertical_egg_donor_consultant_long_description"
+msgstr "Los consultores de donantes de óvulos están aquí para ayudarte a entender el proceso de donación y congelación de óvulos, asesorarte sobre cómo encontrar un abogado especializado en donación de óvulos y ayudarte a sopesar los pros y los contras de la donación de óvulos para ti y tu familia."
+
+msgid "vertical_egg_donor_consultant_name"
+msgstr "Consultor de donantes de óvulos"
+
+msgid "vertical_egg_donor_consultant_pluralized_display_name"
+msgstr "Consultores de donantes de óvulos"
+
+msgid "vertical_family_physician_description"
+msgstr "Salud general para adultos y pediátrica"
+
+msgid "vertical_family_physician_display_name"
+msgstr "Médico(a) de familia"
+
+msgid "vertical_family_physician_long_description"
+msgstr "Los médicos de familia pueden ayudar a personas de todas las edades a entender, manejar y tratar sus enfermedades o lesiones, y compartir consejos para el cuidado preventivo y el mantenimiento de un estilo de vida saludable."
+
+msgid "vertical_family_physician_name"
+msgstr "Médico de familia"
+
+msgid "vertical_family_physician_pluralized_display_name"
+msgstr "Médicos de familia"
+
+msgid "vertical_fertility_awareness_educator_description"
+msgstr "Registro del período y la ovulación, programación de las relaciones sexuales"
+
+msgid "vertical_fertility_awareness_educator_display_name"
+msgstr "Educador(a) en conciencia de la fertilidad"
+
+msgid "vertical_fertility_awareness_educator_long_description"
+msgstr "Los educadores en conciencia de la fertilidad están aquí para ayudarte a entender cómo funciona la fertilidad, enseñarte formas específicas de registrar el ciclo menstrual y la ovulación, programar las relaciones sexuales, y explorar maneras de aumentar tus posibilidades de concebir sin intervención."
+
+msgid "vertical_fertility_awareness_educator_name"
+msgstr "Educador en conciencia de la fertilidad"
+
+msgid "vertical_fertility_awareness_educator_pluralized_display_name"
+msgstr "Educadores en conciencia de la fertilidad"
+
+msgid "vertical_fertility_specialist_europe_description"
+msgstr "Fertilidad, FIV/IUI/congelación de óvulos, apoyo con medicamentos"
+
+msgid "vertical_fertility_specialist_europe_display_name"
+msgstr "Especialista en fertilidad: Europa"
+
+msgid "vertical_fertility_specialist_europe_long_description"
+msgstr "Los especialistas en fertilidad pueden ayudarte a entender la concepción y la fertilidad, proporcionarte respuestas sobre cómo funcionan los tratamientos de fertilidad, darte métodos para intentar mejorar tus probabilidades de concebir y compartir si te beneficiarías de una evaluación de fertilidad."
+
+msgid "vertical_fertility_specialist_europe_name"
+msgstr "Especialista en fertilidad: Europa"
+
+msgid "vertical_fertility_specialist_europe_pluralized_display_name"
+msgstr "Especialistas en fertilidad: Europa"
+
+msgid "vertical_fertility_specialist_india_description"
+msgstr "Fertilidad, FIV/IUI/congelación de óvulos, apoyo con medicamentos"
+
+msgid "vertical_fertility_specialist_india_display_name"
+msgstr "Especialista en fertilidad: India"
+
+msgid "vertical_fertility_specialist_india_long_description"
+msgstr "Los especialistas en fertilidad pueden ayudarte a entender la concepción y la fertilidad, proporcionarte respuestas sobre cómo funcionan los tratamientos de fertilidad, darte métodos para intentar mejorar tus probabilidades de concebir y compartir si te beneficiarías de una evaluación de fertilidad."
+
+msgid "vertical_fertility_specialist_india_name"
+msgstr "Especialista en fertilidad: India"
+
+msgid "vertical_fertility_specialist_india_pluralized_display_name"
+msgstr "Especialistas en fertilidad: India"
+
+msgid "vertical_general_practitioner_africa_middle_east_description"
+msgstr "Salud general de adultos, resfriado y gripe"
+
+msgid "vertical_general_practitioner_africa_middle_east_display_name"
+msgstr "Médico(a) de cabecera: África y Medio Oriente"
+
+msgid "vertical_general_practitioner_africa_middle_east_long_description"
+msgstr "Los médicos de cabecera pueden ayudarte a entender, manejar y tratar enfermedades o lesiones, darte consejos útiles para prevenir afecciones crónicas y mantener un estilo de vida saludable, y recomendarte especialistas según tus preocupaciones de salud."
+
+msgid "vertical_general_practitioner_africa_middle_east_name"
+msgstr "Médico de cabecera: África y Medio Oriente"
+
+msgid "vertical_general_practitioner_africa_middle_east_pluralized_display_name"
+msgstr "Médicos de cabecera: África y Medio Oriente"
+
+msgid "vertical_general_practitioner_canada_description"
+msgstr "Salud general de adultos, resfriado y gripe"
+
+#, fuzzy
+msgid "vertical_general_practitioner_canada_display_name"
+msgstr "Médico general - Canadá"
+
+#, fuzzy
+msgid "vertical_general_practitioner_canada_long_description"
+msgstr "Los médicos generales pueden ayudarle a comprender, controlar y tratar enfermedades o lesiones, brindarle recomendaciones útiles para prevenir enfermedades crónicas y mantener un estilo de vida saludable y recomendarle especialistas en función de sus problemas de salud."
+
+#, fuzzy
+msgid "vertical_general_practitioner_canada_name"
+msgstr "Médico general - Canadá"
+
+#, fuzzy
+msgid "vertical_general_practitioner_canada_pluralized_display_name"
+msgstr "Médicos generales - Canadá"
+
+msgid "vertical_general_practitioner_europe_description"
+msgstr "Salud general de adultos, resfriado y gripe"
+
+msgid "vertical_general_practitioner_europe_display_name"
+msgstr "Médico(a) de cabecera: Europa"
+
+msgid "vertical_general_practitioner_europe_long_description"
+msgstr "Los médicos de cabecera pueden ayudarte a entender, manejar y tratar enfermedades o lesiones, darte consejos útiles para prevenir afecciones crónicas y mantener un estilo de vida saludable, y recomendarte especialistas según tus preocupaciones de salud."
+
+msgid "vertical_general_practitioner_europe_name"
+msgstr "Médico de cabecera: Europa"
+
+msgid "vertical_general_practitioner_europe_pluralized_display_name"
+msgstr "Médicos de cabecera: Europa"
+
+msgid "vertical_general_practitioner_india_description"
+msgstr "Salud general de adultos, resfriado y gripe"
+
+msgid "vertical_general_practitioner_india_display_name"
+msgstr "Médico(a) de cabecera: India"
+
+msgid "vertical_general_practitioner_india_long_description"
+msgstr "Los médicos de cabecera pueden ayudarte a entender, manejar y tratar enfermedades o lesiones, darte consejos útiles para prevenir afecciones crónicas y mantener un estilo de vida saludable, y recomendarte especialistas según tus preocupaciones de salud."
+
+msgid "vertical_general_practitioner_india_name"
+msgstr "Médico de cabecera: India"
+
+msgid "vertical_general_practitioner_india_pluralized_display_name"
+msgstr "Médicos de cabecera: India"
+
+msgid "vertical_genetic_counselor_description"
+msgstr "Pruebas genéticas y cromosómicas, fertilidad, embarazo"
+
+msgid "vertical_genetic_counselor_display_name"
+msgstr "Consultor(a) genético"
+
+msgid "vertical_genetic_counselor_long_description"
+msgstr "Los consultores genéticos están aquí para ayudarte a entender la genética y cómo funciona, guiarte a través de los tipos de pruebas que puedes realizar, apoyarte durante las pruebas y ofrecerte consejos si tú o un ser querido dieron positivo de una afección."
+
+msgid "vertical_genetic_counselor_name"
+msgstr "Consultor genético"
+
+msgid "vertical_genetic_counselor_pluralized_display_name"
+msgstr "Consultores genéticos"
+
+msgid "vertical_highrisk_ob_mfm_description"
+msgstr "Embarazo de alto riesgo, desarrollo prenatal"
+
+msgid "vertical_highrisk_ob_mfm_display_name"
+msgstr "Obstetra de alto riesgo (MFM)"
+
+msgid "vertical_highrisk_ob_mfm_long_description"
+msgstr "Los ginecólogos de alto riesgo pueden apoyarte durante tu embarazo guiándote a través de pruebas y procedimientos, compartiendo cualquier precaución adicional que debas tomar y ayudándote a prepararte para el parto."
+
+msgid "vertical_highrisk_ob_mfm_name"
+msgstr "Obstetras de alto riesgo (MFM)"
+
+msgid "vertical_highrisk_ob_mfm_pluralized_display_name"
+msgstr "Obstetras de alto riesgo (MFM)"
+
+msgid "vertical_highrisk_pregnancy_coach_description"
+msgstr "Consejos sobre estilo de vida, desarrollo prenatal, recursos para embarazos de alto riesgo"
+
+msgid "vertical_highrisk_pregnancy_coach_display_name"
+msgstr "Guía para embarazos de alto riesgo"
+
+msgid "vertical_highrisk_pregnancy_coach_long_description"
+msgstr "Los entrenadores de embarazos de alto riesgo pueden ayudarte a elegir un profesional de atención de alto riesgo que sea adecuado para ti, compartir consejos sobre nutrición prenatal, ejercicio y estilo de vida para un embarazo saludable, ofrecer recursos para embarazos de alto riesgo y más."
+
+msgid "vertical_highrisk_pregnancy_coach_name"
+msgstr "Guía de embarazo de alto riesgo"
+
+msgid "vertical_highrisk_pregnancy_coach_pluralized_display_name"
+msgstr "Guías de embarazos de alto riesgo"
+
+msgid "vertical_lactation_consultant_asia_pacific_description"
+msgstr "Apoyo para la lactancia y la extracción de leche, problemas de producción, mastitis, destete"
+
+msgid "vertical_lactation_consultant_asia_pacific_display_name"
+msgstr "Consultor(a) de lactancia: Asia-Pacífico"
+
+msgid "vertical_lactation_consultant_asia_pacific_long_description"
+msgstr "Los consultores de lactancia pueden ayudarte a alimentar a tu bebé con soluciones para los desafíos de la lactancia y la extracción, compartir qué hacer si sientes dolor o incomodidad durante la alimentación, ofrecer consejos para aumentar la producción de leche, el destete y más."
+
+msgid "vertical_lactation_consultant_asia_pacific_name"
+msgstr "Consultor de lactancia: Asia-Pacífico"
+
+msgid "vertical_lactation_consultant_asia_pacific_pluralized_display_name"
+msgstr "Consultores de lactancia: Asia-Pacífico"
+
+msgid "vertical_lactation_consultant_canada_description"
+msgstr "Apoyo para la lactancia y la extracción de leche, problemas de producción, mastitis, destete"
+
+msgid "vertical_lactation_consultant_canada_display_name"
+msgstr "Consultor(a) de lactancia: Canadá"
+
+msgid "vertical_lactation_consultant_canada_long_description"
+msgstr "Los consultores de lactancia pueden ayudarte a alimentar a tu bebé con soluciones para los desafíos de la lactancia y la extracción, compartir qué hacer si sientes dolor o incomodidad durante la alimentación, ofrecer consejos para aumentar la producción de leche, el destete y más."
+
+msgid "vertical_lactation_consultant_canada_name"
+msgstr "Consultor de lactancia: Canadá"
+
+msgid "vertical_lactation_consultant_canada_pluralized_display_name"
+msgstr "Consultores de lactancia: Canadá"
+
+msgid "vertical_lactation_consultant_description"
+msgstr "Apoyo para la lactancia y la extracción de leche, problemas de producción, mastitis, destete"
+
+msgid "vertical_lactation_consultant_display_name"
+msgstr "Consultor(a) de lactancia"
+
+msgid "vertical_lactation_consultant_europe_description"
+msgstr "Apoyo para la lactancia y la extracción de leche, problemas de producción, mastitis, destete"
+
+msgid "vertical_lactation_consultant_europe_display_name"
+msgstr "Consultor(a) de lactancia: Europa"
+
+msgid "vertical_lactation_consultant_europe_long_description"
+msgstr "Los consultores de lactancia pueden ayudarte a alimentar a tu bebé con soluciones para los desafíos de la lactancia y la extracción, compartir qué hacer si sientes dolor o incomodidad durante la alimentación, ofrecer consejos para aumentar la producción de leche, el destete y más."
+
+msgid "vertical_lactation_consultant_europe_name"
+msgstr "Consultor de lactancia: Europa"
+
+msgid "vertical_lactation_consultant_europe_pluralized_display_name"
+msgstr "Consultores de lactancia: Europa"
+
+msgid "vertical_lactation_consultant_india_description"
+msgstr "Apoyo para la lactancia y la extracción de leche, problemas de producción, mastitis, destete"
+
+msgid "vertical_lactation_consultant_india_display_name"
+msgstr "Consultor(a) de lactancia: India"
+
+msgid "vertical_lactation_consultant_india_long_description"
+msgstr "Los consultores de lactancia pueden ayudarte a alimentar a tu bebé con soluciones para los desafíos de la lactancia y la extracción, compartir qué hacer si sientes dolor o incomodidad durante la alimentación, ofrecer consejos para aumentar la producción de leche, el destete y más."
+
+msgid "vertical_lactation_consultant_india_name"
+msgstr "Consultor de lactancia: India"
+
+msgid "vertical_lactation_consultant_india_pluralized_display_name"
+msgstr "Consultores de lactancia: India"
+
+msgid "vertical_lactation_consultant_long_description"
+msgstr "Los consultores de lactancia pueden ayudarte a alimentar a tu bebé con soluciones para los desafíos de la lactancia y la extracción, compartir qué hacer si sientes dolor o incomodidad durante la alimentación, ofrecer consejos para aumentar la producción de leche, el destete y más."
+
+msgid "vertical_lactation_consultant_name"
+msgstr "Consultor de lactancia"
+
+msgid "vertical_lactation_consultant_pluralized_display_name"
+msgstr "Consultores de lactancia"
+
+msgid "vertical_maternity_care_provider_india_description"
+msgstr "Salud reproductiva, prenatal, embarazo, menopausia"
+
+msgid "vertical_maternity_care_provider_india_display_name"
+msgstr "Profesional de atención materna: India"
+
+msgid "vertical_maternity_care_provider_india_long_description"
+msgstr "Los profesionales de atención materna pueden ofrecer claridad y orientación sobre cualquier tema relacionado con la salud de las mujeres: desde la menstruación y la fertilidad, hasta el embarazo y el posparto. También brindan apoyo con la anticoncepción, ETS, ITS, ITU y más."
+
+msgid "vertical_maternity_care_provider_india_name"
+msgstr "Profesional de atención materna: India"
+
+msgid "vertical_maternity_care_provider_india_pluralized_display_name"
+msgstr "Profesional de atención materna: India"
+
+msgid "vertical_mens_health_nurse_practitioner_description"
+msgstr "Apoyo para la salud física, sexual y reproductiva de los hombres"
+
+msgid "vertical_mens_health_nurse_practitioner_display_name"
+msgstr "Enfermero(a) especialista en la salud del hombre"
+
+msgid "vertical_mens_health_nurse_practitioner_long_description"
+msgstr "Los enfermeros especialistas en la salud de los hombres pueden ayudarte a entender tu fertilidad, hablar sobre el análisis de semen y las opciones de tratamiento de fertilidad para mejorar tus probabilidades de concebir, además de responder cualquier pregunta general sobre la salud masculina, incluidas aquellas sobre un nivel bajo de testosterona y los problemas generales de la mediana edad."
+
+msgid "vertical_mens_health_nurse_practitioner_name"
+msgstr "Enfermero(a) especialista en la salud del hombre"
+
+msgid "vertical_mens_health_nurse_practitioner_pluralized_display_name"
+msgstr "Enfermeros especialistas en la salud de los hombres"
+
+msgid "vertical_mental_health_provider_africa_middle_east_description"
+msgstr "Estrés, depresión, ansiedad, transiciones de vida, apoyo emocional"
+
+msgid "vertical_mental_health_provider_africa_middle_east_display_name"
+msgstr "Proveedor de salud mental: África y Medio Oriente"
+
+msgid "vertical_mental_health_provider_africa_middle_east_long_description"
+msgstr "Los profesionales de salud mental pueden apoyarte en tu recorrido ofreciéndote un espacio seguro para compartir, que se te escuche y recibir consejos sin prejuicios, junto con atención especializada para el estrés, la ansiedad, la depresión o trastornos del estado de ánimo que puedas tener."
+
+msgid "vertical_mental_health_provider_africa_middle_east_name"
+msgstr "Proveedor de salud mental: África y Medio Oriente"
+
+msgid "vertical_mental_health_provider_africa_middle_east_pluralized_display_name"
+msgstr "Profesionales de salud mental: África y Medio Oriente"
+
+msgid "vertical_mental_health_provider_asia_pacific_description"
+msgstr "Estrés, depresión, ansiedad, transiciones de vida, apoyo emocional"
+
+msgid "vertical_mental_health_provider_asia_pacific_display_name"
+msgstr "Profesional de salud mental: Asia-Pacífico"
+
+msgid "vertical_mental_health_provider_asia_pacific_long_description"
+msgstr "Los profesionales de salud mental pueden apoyarte en tu recorrido ofreciéndote un espacio seguro para compartir, que se te escuche y recibir consejos sin prejuicios, junto con atención especializada para el estrés, la ansiedad, la depresión o trastornos del estado de ánimo que puedas tener."
+
+msgid "vertical_mental_health_provider_asia_pacific_name"
+msgstr "Profesional de salud mental: Asia-Pacífico"
+
+msgid "vertical_mental_health_provider_asia_pacific_pluralized_display_name"
+msgstr "Profesionales de salud mental: Asia-Pacífico"
+
+msgid "vertical_mental_health_provider_brazil_description"
+msgstr "Estrés, depresión, ansiedad, transiciones de vida, apoyo emocional"
+
+msgid "vertical_mental_health_provider_brazil_display_name"
+msgstr "Profesional de salud mental: Brasil"
+
+msgid "vertical_mental_health_provider_brazil_long_description"
+msgstr "Los profesionales de salud mental pueden apoyarte en tu recorrido ofreciéndote un espacio seguro para compartir, que se te escuche y recibir consejos sin prejuicios, junto con atención especializada para el estrés, la ansiedad, la depresión o trastornos del estado de ánimo que puedas tener."
+
+msgid "vertical_mental_health_provider_brazil_name"
+msgstr "Profesional de salud mental: Brasil"
+
+msgid "vertical_mental_health_provider_brazil_pluralized_display_name"
+msgstr "Profesionales de salud mental: Brasil"
+
+msgid "vertical_mental_health_provider_canada_description"
+msgstr "Estrés, depresión, ansiedad, transiciones de vida, apoyo emocional"
+
+msgid "vertical_mental_health_provider_canada_display_name"
+msgstr "Profesional de salud mental: Canadá"
+
+msgid "vertical_mental_health_provider_canada_long_description"
+msgstr "Los profesionales de salud mental pueden apoyarte en tu recorrido ofreciéndote un espacio seguro para compartir, que se te escuche y recibir consejos sin prejuicios, junto con atención especializada para el estrés, la ansiedad, la depresión o trastornos del estado de ánimo que puedas tener."
+
+msgid "vertical_mental_health_provider_canada_name"
+msgstr "Profesional de salud mental: Canadá"
+
+msgid "vertical_mental_health_provider_canada_pluralized_display_name"
+msgstr "Profesionales de salud mental: Canadá"
+
+msgid "vertical_mental_health_provider_description"
+msgstr "Estrés, depresión, ansiedad, transiciones de vida, apoyo emocional"
+
+msgid "vertical_mental_health_provider_display_name"
+msgstr "Profesional de salud mental"
+
+msgid "vertical_mental_health_provider_europe_description"
+msgstr "Estrés, depresión, ansiedad, transiciones de vida, apoyo emocional"
+
+msgid "vertical_mental_health_provider_europe_display_name"
+msgstr "Profesional de salud mental: Europa"
+
+msgid "vertical_mental_health_provider_europe_long_description"
+msgstr "Los profesionales de salud mental pueden apoyarte en tu recorrido ofreciéndote un espacio seguro para compartir, que se te escuche y recibir consejos sin prejuicios, junto con atención especializada para el estrés, la ansiedad, la depresión o trastornos del estado de ánimo que puedas tener."
+
+msgid "vertical_mental_health_provider_europe_name"
+msgstr "Profesional de salud mental: Europa"
+
+msgid "vertical_mental_health_provider_europe_pluralized_display_name"
+msgstr "Profesionales de salud mental: Europa"
+
+msgid "vertical_mental_health_provider_india_description"
+msgstr "Estrés, depresión, ansiedad, transiciones de vida, apoyo emocional"
+
+msgid "vertical_mental_health_provider_india_display_name"
+msgstr "Profesional de salud mental: India"
+
+msgid "vertical_mental_health_provider_india_long_description"
+msgstr "Los profesionales de salud mental pueden apoyarte en tu recorrido ofreciéndote un espacio seguro para compartir, que se te escuche y recibir consejos sin prejuicios, junto con atención especializada para el estrés, la ansiedad, la depresión o trastornos del estado de ánimo que puedas tener."
+
+msgid "vertical_mental_health_provider_india_name"
+msgstr "Profesional de salud mental: India"
+
+msgid "vertical_mental_health_provider_india_pluralized_display_name"
+msgstr "Profesionales de salud mental: India"
+
+msgid "vertical_mental_health_provider_long_description"
+msgstr "Los profesionales de salud mental pueden apoyarte en tu recorrido ofreciéndote un espacio seguro para compartir, que se te escuche y recibir consejos sin prejuicios, junto con atención especializada para el estrés, la ansiedad, la depresión o trastornos del estado de ánimo que puedas tener."
+
+msgid "vertical_mental_health_provider_name"
+msgstr "Profesional de salud mental"
+
+msgid "vertical_mental_health_provider_pluralized_display_name"
+msgstr "Proveedores de salud mental"
+
+msgid "vertical_midwife_africa_middle_east_description"
+msgstr "Embarazo, parto, posparto, menopausia"
+
+msgid "vertical_midwife_africa_middle_east_display_name"
+msgstr "Matrona: África y Medio Oriente"
+
+msgid "vertical_midwife_africa_middle_east_long_description"
+msgstr "Las parteras pueden ofrecer claridad sobre cualquier tema relacionado con la salud de las mujeres: desde la anticoncepción y la menopausia hasta el embarazo y el posparto, y brindar apoyo durante el parto con consejos para aliviar el dolor y para que el procedimiento sea saludable."
+
+msgid "vertical_midwife_africa_middle_east_name"
+msgstr "Partera: África y Oriente Medio"
+
+msgid "vertical_midwife_africa_middle_east_pluralized_display_name"
+msgstr "Parteras: África y Medio Oriente"
+
+msgid "vertical_midwife_asia_pacific_description"
+msgstr "Embarazo, parto, posparto, menopausia"
+
+msgid "vertical_midwife_asia_pacific_display_name"
+msgstr "Matrona: Asia-Pacífico"
+
+msgid "vertical_midwife_asia_pacific_long_description"
+msgstr "Las parteras pueden ofrecer claridad sobre cualquier tema relacionado con la salud de las mujeres: desde la anticoncepción y la menopausia hasta el embarazo y el posparto, y brindar apoyo durante el parto con consejos para aliviar el dolor y para que el procedimiento sea saludable."
+
+msgid "vertical_midwife_asia_pacific_name"
+msgstr "Partera: Asia-Pacífico"
+
+msgid "vertical_midwife_asia_pacific_pluralized_display_name"
+msgstr "Parteras: Asia-Pacífico"
+
+msgid "vertical_midwife_canada_description"
+msgstr "Embarazo, parto, posparto, menopausia"
+
+msgid "vertical_midwife_canada_display_name"
+msgstr "Matrona: Canadá"
+
+msgid "vertical_midwife_canada_long_description"
+msgstr "Las parteras pueden ofrecer claridad sobre cualquier tema relacionado con la salud de las mujeres: desde la anticoncepción y la menopausia hasta el embarazo y el posparto, y brindar apoyo durante el parto con consejos para aliviar el dolor y para que el procedimiento sea saludable."
+
+msgid "vertical_midwife_canada_name"
+msgstr "Partera: Canadá"
+
+msgid "vertical_midwife_canada_pluralized_display_name"
+msgstr "Parteras: Canadá"
+
+msgid "vertical_midwife_description"
+msgstr "Embarazo, parto, posparto, menopausia"
+
+msgid "vertical_midwife_display_name"
+msgstr "Matrona"
+
+msgid "vertical_midwife_europe_description"
+msgstr "Embarazo, parto, posparto, menopausia"
+
+msgid "vertical_midwife_europe_display_name"
+msgstr "Matrona: Europa"
+
+msgid "vertical_midwife_europe_long_description"
+msgstr "Las parteras pueden ofrecer claridad sobre cualquier tema relacionado con la salud de las mujeres: desde la anticoncepción y la menopausia hasta el embarazo y el posparto, y brindar apoyo durante el parto con consejos para aliviar el dolor y para que el procedimiento sea saludable."
+
+msgid "vertical_midwife_europe_name"
+msgstr "Partera: Europa"
+
+msgid "vertical_midwife_europe_pluralized_display_name"
+msgstr "Parteras: Europa"
+
+msgid "vertical_midwife_long_description"
+msgstr "Las parteras pueden ofrecer claridad sobre cualquier tema relacionado con la salud de las mujeres: desde la anticoncepción y la menopausia hasta el embarazo y el posparto, y brindar apoyo durante el parto con consejos para aliviar el dolor y para que el procedimiento sea saludable."
+
+msgid "vertical_midwife_name"
+msgstr "Matrona"
+
+msgid "vertical_midwife_pluralized_display_name"
+msgstr "Matronas"
+
+msgid "vertical_naturopathic_family_physician_description"
+msgstr "Servicios holísticos de atención primaria para todas las edades"
+
+msgid "vertical_naturopathic_family_physician_display_name"
+msgstr "Médico generalista especializado en naturopatía"
+
+msgid "vertical_naturopathic_family_physician_long_description"
+msgstr "Los médicos generalistas especializados en naturopatía pueden ayudar a personas de todas las edades a entender, manejar y tratar sus enfermedades con remedios y prácticas holísticas, que pueden incluir el uso de hierbas, masajes, ejercicio, acupuntura y asesoramiento nutricional."
+
+msgid "vertical_naturopathic_family_physician_name"
+msgstr "Médico generalista especializado en naturopatía"
+
+msgid "vertical_naturopathic_family_physician_pluralized_display_name"
+msgstr "Médicos generalistas especializados en naturopatía"
+
+msgid "vertical_nurse_practitioner_description"
+msgstr "Salud general, enfermedades, salud durante el período, anticoncepción"
+
+msgid "vertical_nurse_practitioner_display_name"
+msgstr "Enfermero(a) especialista"
+
+msgid "vertical_nurse_practitioner_long_description"
+msgstr "Los enfermeros especialistas pueden respaldar tu salud general con planes de tratamiento para enfermedades agudas y crónicas, orientación sobre la menstruación, anticoncepción y otros medicamentos, y responder cualquier pregunta que tengas sobre tu bienestar físico."
+
+msgid "vertical_nurse_practitioner_name"
+msgstr "Enfermero especialista"
+
+msgid "vertical_nurse_practitioner_pluralized_display_name"
+msgstr "Enfermeros especialistas"
+
+msgid "vertical_nutrition_coach_africa_middle_east_description"
+msgstr "Alimentación saludable, control de peso"
+
+msgid "vertical_nutrition_coach_africa_middle_east_display_name"
+msgstr "Guía de nutrición: África y Medio Oriente"
+
+msgid "vertical_nutrition_coach_africa_middle_east_long_description"
+msgstr "Los guías de nutrición están aquí para ayudarte a entender cómo la dieta influye en la salud y el bienestar generales, y ofrecerte recomendaciones sobre alimentos y pequeños cambios en el estilo de vida que pueden ayudarte a sentirte mejor."
+
+msgid "vertical_nutrition_coach_africa_middle_east_name"
+msgstr "Guía de nutrición: África y Medio Oriente"
+
+msgid "vertical_nutrition_coach_africa_middle_east_pluralized_display_name"
+msgstr "Guías de nutrición: África y Medio Oriente"
+
+msgid "vertical_nutrition_coach_asia_pacific_description"
+msgstr "Alimentación saludable, control de peso"
+
+msgid "vertical_nutrition_coach_asia_pacific_display_name"
+msgstr "Guía de nutrición: Asia-Pacífico"
+
+msgid "vertical_nutrition_coach_asia_pacific_long_description"
+msgstr "Los guías de nutrición están aquí para ayudarte a entender cómo la dieta influye en la salud y el bienestar generales, y ofrecerte recomendaciones sobre alimentos y pequeños cambios en el estilo de vida que pueden ayudarte a sentirte mejor."
+
+msgid "vertical_nutrition_coach_asia_pacific_name"
+msgstr "Guía de nutrición: Asia-Pacífico"
+
+msgid "vertical_nutrition_coach_asia_pacific_pluralized_display_name"
+msgstr "Guías de nutrición: Asia-Pacífico"
+
+msgid "vertical_nutrition_coach_brazil_description"
+msgstr "Alimentación saludable, control de peso"
+
+#, fuzzy
+msgid "vertical_nutrition_coach_brazil_display_name"
+msgstr "Coach de Nutrición - Brasil"
+
+msgid "vertical_nutrition_coach_brazil_long_description"
+msgstr "Los guías de nutrición están aquí para ayudarte a entender cómo la dieta influye en la salud y el bienestar generales, y ofrecerte recomendaciones sobre alimentos y pequeños cambios en el estilo de vida que pueden ayudarte a sentirte mejor."
+
+#, fuzzy
+msgid "vertical_nutrition_coach_brazil_name"
+msgstr "Coach de Nutrición - Brasil"
+
+#, fuzzy
+msgid "vertical_nutrition_coach_brazil_pluralized_display_name"
+msgstr "Coaches de Nutrición - Brasil"
+
+msgid "vertical_nutrition_coach_canada_description"
+msgstr "Alimentación saludable, control de peso"
+
+msgid "vertical_nutrition_coach_canada_display_name"
+msgstr "Guía de nutrición: Canadá"
+
+msgid "vertical_nutrition_coach_canada_long_description"
+msgstr "Los guías de nutrición están aquí para ayudarte a entender cómo la dieta influye en la salud y el bienestar generales, y ofrecerte recomendaciones sobre alimentos y pequeños cambios en el estilo de vida que pueden ayudarte a sentirte mejor."
+
+msgid "vertical_nutrition_coach_canada_name"
+msgstr "Guía de nutrición: Canadá"
+
+msgid "vertical_nutrition_coach_canada_pluralized_display_name"
+msgstr "Guías de nutrición: Canadá"
+
+msgid "vertical_nutrition_coach_description"
+msgstr "Alimentación saludable, control de peso"
+
+msgid "vertical_nutrition_coach_display_name"
+msgstr "Guía de nutrición"
+
+msgid "vertical_nutrition_coach_europe_description"
+msgstr "Alimentación saludable, control de peso"
+
+msgid "vertical_nutrition_coach_europe_display_name"
+msgstr "Guía de nutrición: Europa"
+
+msgid "vertical_nutrition_coach_europe_long_description"
+msgstr "Los guías de nutrición están aquí para ayudarte a entender cómo la dieta influye en la salud y el bienestar generales, y ofrecerte recomendaciones sobre alimentos y pequeños cambios en el estilo de vida que pueden ayudarte a sentirte mejor."
+
+msgid "vertical_nutrition_coach_europe_name"
+msgstr "Guía de nutrición: Europa"
+
+msgid "vertical_nutrition_coach_europe_pluralized_display_name"
+msgstr "Guías de nutrición: Europa"
+
+msgid "vertical_nutrition_coach_india_description"
+msgstr "Alimentación saludable, control de peso"
+
+msgid "vertical_nutrition_coach_india_display_name"
+msgstr "Guía de nutrición: India"
+
+msgid "vertical_nutrition_coach_india_long_description"
+msgstr "Los guías de nutrición están aquí para ayudarte a entender cómo la dieta influye en la salud y el bienestar generales, y ofrecerte recomendaciones sobre alimentos y pequeños cambios en el estilo de vida que pueden ayudarte a sentirte mejor."
+
+msgid "vertical_nutrition_coach_india_name"
+msgstr "Guía de nutrición: India"
+
+msgid "vertical_nutrition_coach_india_pluralized_display_name"
+msgstr "Guías de nutrición: India"
+
+msgid "vertical_nutrition_coach_long_description"
+msgstr "Los guías de nutrición están aquí para ayudarte a entender cómo la dieta influye en la salud y el bienestar generales, y ofrecerte recomendaciones sobre alimentos y pequeños cambios en el estilo de vida que pueden ayudarte a sentirte mejor."
+
+msgid "vertical_nutrition_coach_name"
+msgstr "Guía de nutrición"
+
+msgid "vertical_nutrition_coach_pluralized_display_name"
+msgstr "Guías de nutrición"
+
+msgid "vertical_obgyn_asia_pacific_description"
+msgstr "Salud reproductiva, prenatal, embarazo, menopausia"
+
+msgid "vertical_obgyn_asia_pacific_display_name"
+msgstr "Ginecobstetra: Asia-Pacífico"
+
+msgid "vertical_obgyn_asia_pacific_long_description"
+msgstr "Los ginecobstetras pueden brindar apoyo para todos los aspectos de la salud reproductiva, desde intentar concebir y el embarazo hasta la salud prenatal, el posparto y la menopausia, con ayuda para que tomes decisiones saludables, manejes los síntomas y conozcas tus opciones."
+
+msgid "vertical_obgyn_asia_pacific_name"
+msgstr "Ginecobstetra: Asia-Pacífico"
+
+msgid "vertical_obgyn_asia_pacific_pluralized_display_name"
+msgstr "Ginecobstetras: Asia-Pacífico"
+
+msgid "vertical_obgyn_brazil_description"
+msgstr "Salud reproductiva, prenatal, embarazo, menopausia"
+
+msgid "vertical_obgyn_brazil_display_name"
+msgstr "Ginecobstetra: Brasil"
+
+msgid "vertical_obgyn_brazil_long_description"
+msgstr "Los ginecobstetras pueden brindar apoyo para todos los aspectos de la salud reproductiva, desde intentar concebir y el embarazo hasta la salud prenatal, el posparto y la menopausia, con ayuda para que tomes decisiones saludables, manejes los síntomas y conozcas tus opciones."
+
+msgid "vertical_obgyn_brazil_name"
+msgstr "Ginecobstetra: Brasil"
+
+msgid "vertical_obgyn_brazil_pluralized_display_name"
+msgstr "Ginecobstetras: Brasil"
+
+msgid "vertical_obgyn_description"
+msgstr "Salud reproductiva, prenatal, embarazo, menopausia"
+
+msgid "vertical_obgyn_display_name"
+msgstr "Ginecobstetra"
+
+msgid "vertical_obgyn_europe_description"
+msgstr "Salud reproductiva, prenatal, embarazo, menopausia"
+
+msgid "vertical_obgyn_europe_display_name"
+msgstr "Ginecobstetra: Europa"
+
+msgid "vertical_obgyn_europe_long_description"
+msgstr "Los ginecobstetras pueden brindar apoyo para todos los aspectos de la salud reproductiva, desde intentar concebir y el embarazo hasta la salud prenatal, el posparto y la menopausia, con ayuda para que tomes decisiones saludables, manejes los síntomas y conozcas tus opciones."
+
+msgid "vertical_obgyn_europe_name"
+msgstr "Ginecobstetra: Europa"
+
+msgid "vertical_obgyn_europe_pluralized_display_name"
+msgstr "Ginecobstetras: Europa"
+
+msgid "vertical_obgyn_india_description"
+msgstr "Salud reproductiva, prenatal, embarazo, menopausia"
+
+msgid "vertical_obgyn_india_display_name"
+msgstr "Ginecobstetras: India"
+
+msgid "vertical_obgyn_india_long_description"
+msgstr "Los ginecobstetras pueden brindar apoyo para todos los aspectos de la salud reproductiva, desde intentar concebir y el embarazo hasta la salud prenatal, el posparto y la menopausia, con ayuda para que tomes decisiones saludables, manejes los síntomas y conozcas tus opciones."
+
+msgid "vertical_obgyn_india_name"
+msgstr "Ginecobstetras: India"
+
+msgid "vertical_obgyn_india_pluralized_display_name"
+msgstr "Ginecobstetras: India"
+
+msgid "vertical_obgyn_long_description"
+msgstr "Los ginecobstetras pueden brindar apoyo para todos los aspectos de la salud reproductiva, desde intentar concebir y el embarazo hasta la salud prenatal, el posparto y la menopausia, con ayuda para que tomes decisiones saludables, manejes los síntomas y conozcas tus opciones."
+
+msgid "vertical_obgyn_name"
+msgstr "Ginecobstetra"
+
+msgid "vertical_obgyn_pluralized_display_name"
+msgstr "Ginecobstetras"
+
+msgid "vertical_parent_coach_description"
+msgstr "Consejos para desafíos comunes de la crianza, apoyo en la cocrianza"
+
+msgid "vertical_parent_coach_display_name"
+msgstr "Guía para padres/madres"
+
+msgid "vertical_parent_coach_europe_description"
+msgstr "Consejos para desafíos comunes de la crianza, apoyo en la cocrianza"
+
+msgid "vertical_parent_coach_europe_display_name"
+msgstr "Guía para padres/madres: Europa"
+
+msgid "vertical_parent_coach_europe_long_description"
+msgstr "Los guías para padres/madres están aquí para apoyarte con orientación y asesoramiento sin prejuicios para la crianza de niños de todas las edades y etapas, y proporcionar recomendaciones útiles a fin de fomentar la comunicación, rutinas y la cocrianza saludables en tu familia."
+
+msgid "vertical_parent_coach_europe_name"
+msgstr "Guía para padres/madres: Europa"
+
+msgid "vertical_parent_coach_europe_pluralized_display_name"
+msgstr "Guías para padres/madres: Europa"
+
+msgid "vertical_parent_coach_long_description"
+msgstr "Los guías para padres/madres están aquí para apoyarte con orientación y asesoramiento sin prejuicios para la crianza de niños de todas las edades y etapas, y proporcionar recomendaciones útiles a fin de fomentar la comunicación, rutinas y la cocrianza saludables en tu familia."
+
+msgid "vertical_parent_coach_name"
+msgstr "Guía para padres/madres"
+
+msgid "vertical_parent_coach_pluralized_display_name"
+msgstr "Guías para padres/madres"
+
+msgid "vertical_pediatric_nurse_practitioner_canada_description"
+msgstr "Salud infantil, salud pediátrica, resfriado y gripe, apoyo con medicamentos"
+
+msgid "vertical_pediatric_nurse_practitioner_canada_display_name"
+msgstr "Enfermero(a) especialista en pediatría: Canadá"
+
+msgid "vertical_pediatric_nurse_practitioner_canada_long_description"
+msgstr "Los enfermeros especialistas en pediatría pueden brindar apoyo para la salud de los niños de todas las edades con planes de tratamiento para enfermedades agudas y crónicas, orientación sobre medicamentos y procedimientos, y responder cualquier pregunta que tengas sobre su bienestar físico."
+
+msgid "vertical_pediatric_nurse_practitioner_canada_name"
+msgstr "Enfermero(a) especialista en pediatría: Canadá"
+
+msgid "vertical_pediatric_nurse_practitioner_canada_pluralized_display_name"
+msgstr "Enfermero(a)s pediátric(o)as - Canadá"
+
+msgid "vertical_pediatric_nurse_practitioner_description"
+msgstr "Salud infantil, salud pediátrica, resfriado y gripe, apoyo con medicamentos"
+
+msgid "vertical_pediatric_nurse_practitioner_display_name"
+msgstr "Enfermero(a) especialista pediátrico"
+
+msgid "vertical_pediatric_nurse_practitioner_long_description"
+msgstr "Los enfermeros especialistas en pediatría pueden apoyar la salud de los niños de todas las edades con planes de tratamiento para enfermedades agudas y crónicas, orientación sobre medicamentos y procedimientos, y responder cualquier pregunta que tengas sobre su bienestar físico."
+
+msgid "vertical_pediatric_nurse_practitioner_name"
+msgstr "Enfermero especialista pediátrico"
+
+msgid "vertical_pediatric_nurse_practitioner_pluralized_display_name"
+msgstr "Enfermeros especialistas pediátricos"
+
+msgid "vertical_pediatric_occupational_therapist_description"
+msgstr "Desarrollo motor, alimentación, habilidades socioemocionales"
+
+msgid "vertical_pediatric_occupational_therapist_display_name"
+msgstr "Terapeuta ocupacional pediátrico"
+
+msgid "vertical_pediatric_occupational_therapist_long_description"
+msgstr "Los terapeutas ocupacionales pediátricos pueden respaldar el desarrollo de tu hijo, identificar posibles retrasos y ofrecer actividades apropiadas para su edad a fin de mejorar el habla, la visión, la cognición, la alimentación, y las habilidades motoras finas y gruesas, sensoriales y socioemocionales."
+
+msgid "vertical_pediatric_occupational_therapist_name"
+msgstr "Terapeuta ocupacional pediátrico"
+
+msgid "vertical_pediatric_occupational_therapist_pluralized_display_name"
+msgstr "Terapeutas ocupacionales pediátricos"
+
+msgid "vertical_pediatric_sleep_coach_canada_description"
+msgstr "Soluciones para el sueño infantil, rutinas de siesta y de sueño, salud del sueño"
+
+msgid "vertical_pediatric_sleep_coach_canada_display_name"
+msgstr "Guía de sueño infantil: Canadá"
+
+msgid "vertical_pediatric_sleep_coach_canada_long_description"
+msgstr "Los guías de sueño infantil pueden ofrecerte soluciones si tu hijo tiene problemas para conciliar o mantener el sueño, y proporcionarte horarios de siesta y de sueño apropiados para su edad, ayuda para prevenir el SMSL y consejos para adquirir hábitos de sueño saludables."
+
+msgid "vertical_pediatric_sleep_coach_canada_name"
+msgstr "Guía de sueño infantil: Canadá"
+
+msgid "vertical_pediatric_sleep_coach_canada_pluralized_display_name"
+msgstr "Guías de sueño infantil: Canadá"
+
+msgid "vertical_pediatric_sleep_coach_description"
+msgstr "Soluciones para el sueño infantil, rutinas de siesta y de sueño, salud del sueño"
+
+msgid "vertical_pediatric_sleep_coach_display_name"
+msgstr "Guía de sueño infantil"
+
+msgid "vertical_pediatric_sleep_coach_europe_description"
+msgstr "Soluciones para el sueño infantil, rutinas de siesta y de sueño, salud del sueño"
+
+msgid "vertical_pediatric_sleep_coach_europe_display_name"
+msgstr "Guía de sueño infantil: Europa"
+
+msgid "vertical_pediatric_sleep_coach_europe_long_description"
+msgstr "Los guías de sueño infantil pueden ofrecerte soluciones si tu hijo tiene problemas para conciliar o mantener el sueño, y proporcionarte horarios de siesta y de sueño apropiados para su edad, ayuda para prevenir el SMSL y consejos para adquirir hábitos de sueño saludables."
+
+msgid "vertical_pediatric_sleep_coach_europe_name"
+msgstr "Guía de sueño infantil: Europa"
+
+msgid "vertical_pediatric_sleep_coach_europe_pluralized_display_name"
+msgstr "Guías de sueño infantil: Europa"
+
+msgid "vertical_pediatric_sleep_coach_long_description"
+msgstr "Los guías de sueño infantil pueden ofrecerte soluciones si tu hijo tiene problemas para conciliar o mantener el sueño, y proporcionarte horarios de siesta y de sueño apropiados para su edad, ayuda para prevenir el SMSL y consejos para adquirir hábitos de sueño saludables."
+
+msgid "vertical_pediatric_sleep_coach_name"
+msgstr "Guía de sueño infantil"
+
+msgid "vertical_pediatric_sleep_coach_pluralized_display_name"
+msgstr "Guías de sueño infantil"
+
+msgid "vertical_pediatrician_description"
+msgstr "Salud general para bebés y niños, cuidado de recién nacidos, resfriado y gripe, nutrición"
+
+msgid "vertical_pediatrician_display_name"
+msgstr "Pediatra"
+
+msgid "vertical_pediatrician_europe_description"
+msgstr "Salud general para bebés y niños, cuidado de recién nacidos, resfriado y gripe, nutrición"
+
+msgid "vertical_pediatrician_europe_display_name"
+msgstr "Pediatra: Europa"
+
+msgid "vertical_pediatrician_europe_long_description"
+msgstr "Los pediatras están aquí para ayudarte a mantener a tu hijo sano, ofreciéndote una guía sobre cómo manejar y tratar enfermedades o lesiones, el desarrollo físico y las necesidades nutricionales, las vacunas, las pruebas y los procedimientos, y cuándo buscar atención de emergencia."
+
+msgid "vertical_pediatrician_europe_name"
+msgstr "Pediatra: Europa"
+
+msgid "vertical_pediatrician_europe_pluralized_display_name"
+msgstr "Pediatras: Europa"
+
+msgid "vertical_pediatrician_india_description"
+msgstr "Salud general para bebés y niños, cuidado de recién nacidos, resfriado y gripe, nutrición"
+
+msgid "vertical_pediatrician_india_display_name"
+msgstr "Pediatra: India"
+
+msgid "vertical_pediatrician_india_long_description"
+msgstr "Los pediatras están aquí para ayudarte a mantener a tu hijo sano, ofreciéndote una guía sobre cómo manejar y tratar enfermedades o lesiones, el desarrollo físico y las necesidades nutricionales, las vacunas, las pruebas y los procedimientos, y cuándo buscar atención de emergencia."
+
+msgid "vertical_pediatrician_india_name"
+msgstr "Pediatra: India"
+
+msgid "vertical_pediatrician_india_pluralized_display_name"
+msgstr "Pediatras: India"
+
+msgid "vertical_pediatrician_long_description"
+msgstr "Los pediatras están aquí para ayudarte a mantener a tu hijo sano, ofreciéndote una guía sobre cómo manejar y tratar enfermedades o lesiones, el desarrollo físico y las necesidades nutricionales, las vacunas, las pruebas y los procedimientos, y cuándo buscar atención de emergencia."
+
+msgid "vertical_pediatrician_mexico_description"
+msgstr "Salud general para bebés y niños, cuidado de recién nacidos, resfriado y gripe, nutrición"
+
+msgid "vertical_pediatrician_mexico_display_name"
+msgstr "Pediatra: México"
+
+msgid "vertical_pediatrician_mexico_long_description"
+msgstr "Los pediatras están aquí para ayudarte a mantener a tu hijo sano, ofreciéndote una guía sobre cómo manejar y tratar enfermedades o lesiones, el desarrollo físico y las necesidades nutricionales, las vacunas, las pruebas y los procedimientos, y cuándo buscar atención de emergencia."
+
+msgid "vertical_pediatrician_mexico_name"
+msgstr "Pediatra: México"
+
+msgid "vertical_pediatrician_mexico_pluralized_display_name"
+msgstr "Pediatras: México"
+
+msgid "vertical_pediatrician_name"
+msgstr "Pediatra"
+
+msgid "vertical_pediatrician_pluralized_display_name"
+msgstr "Pediatras"
+
+msgid "vertical_physical_support_coach_asia_pacific_description"
+msgstr "Fortalecimiento del suelo pélvico, manejo del dolor"
+
+msgid "vertical_physical_support_coach_asia_pacific_display_name"
+msgstr "Guía de apoyo físico: Asia-Pacífico"
+
+msgid "vertical_physical_support_coach_asia_pacific_long_description"
+msgstr "Los guías de apoyo físico pueden mejorar tu salud física con movimientos y ejercicios que alivian el dolor, mejoran la flexibilidad, restauran habilidades físicas y fortalecen grupos musculares clave, como el suelo pélvico."
+
+msgid "vertical_physical_support_coach_asia_pacific_name"
+msgstr "Guía de apoyo físico: Asia-Pacífico"
+
+msgid "vertical_physical_support_coach_asia_pacific_pluralized_display_name"
+msgstr "Guías de apoyo físico: Asia-Pacífico"
+
+msgid "vertical_physical_support_coach_description"
+msgstr "Fortalecimiento del suelo pélvico, manejo del dolor"
+
+msgid "vertical_physical_support_coach_display_name"
+msgstr "Guía de apoyo físico"
+
+msgid "vertical_physical_support_coach_long_description"
+msgstr "Los guías de apoyo físico pueden mejorar tu salud física con movimientos y ejercicios que alivian el dolor, mejoran la flexibilidad, restauran habilidades físicas y fortalecen grupos musculares clave, como el suelo pélvico."
+
+msgid "vertical_physical_support_coach_name"
+msgstr "Guía de apoyo físico"
+
+msgid "vertical_physical_support_coach_pluralized_display_name"
+msgstr "Guías de apoyo físico"
+
+msgid "vertical_physician_description"
+msgstr "Salud general de adultos, resfriado y gripe"
+
+msgid "vertical_physician_display_name"
+msgstr "Médico(a)"
+
+msgid "vertical_physician_long_description"
+msgstr "Los médicos pueden ayudarte a entender, manejar y tratar enfermedades o lesiones, darte recomendaciones útiles para prevenir afecciones crónicas y mantener un estilo de vida saludable, y recomendar especialistas según tus preocupaciones de salud."
+
+msgid "vertical_physician_name"
+msgstr "Médico"
+
+msgid "vertical_physician_pluralized_display_name"
+msgstr "Médicos"
+
+msgid "vertical_reproductive_endocrinologist_description"
+msgstr "Fertilidad, FIV/IUI, congelación de óvulos, especialista en medicamentos"
+
+msgid "vertical_reproductive_endocrinologist_display_name"
+msgstr "Endocrinólogo(a) reproductivo(a)"
+
+msgid "vertical_reproductive_endocrinologist_india_europe_description"
+msgstr "Fertilidad, FIV/IUI, congelación de óvulos, especialista en medicamentos"
+
+msgid "vertical_reproductive_endocrinologist_india_europe_display_name"
+msgstr "Endocrinólogo(a) reproductivo: India y Europa"
+
+msgid "vertical_reproductive_endocrinologist_india_europe_long_description"
+msgstr "Los endocrinólogos reproductivos pueden ayudarte a entender la concepción, la fertilidad y la congelación de óvulos, compartir cuáles son tus opciones de tratamiento, darte métodos para intentar mejorar las probabilidades de concebir y decirte si te beneficiarías de una evaluación de fertilidad."
+
+msgid "vertical_reproductive_endocrinologist_india_europe_name"
+msgstr "Endocrinólogo reproductivo: India y Europa"
+
+msgid "vertical_reproductive_endocrinologist_india_europe_pluralized_display_name"
+msgstr "Endocrinólogos reproductivos: India y Europa"
+
+msgid "vertical_reproductive_endocrinologist_long_description"
+msgstr "Los endocrinólogos reproductivos pueden ayudarte a entender la concepción, la fertilidad y la congelación de óvulos, compartir cuáles son tus opciones de tratamiento, darte métodos para intentar mejorar las probabilidades de concebir y decirte si te beneficiarías de una evaluación de fertilidad."
+
+msgid "vertical_reproductive_endocrinologist_name"
+msgstr "Endocrinólogo reproductivo"
+
+msgid "vertical_reproductive_endocrinologist_pluralized_display_name"
+msgstr "Endocrinólogos reproductivos"
+
+msgid "vertical_reproductive_nurse_africa_middle_east_description"
+msgstr "Fertilidad, FIV/IUI/congelación de óvulos, apoyo con medicamentos"
+
+msgid "vertical_reproductive_nurse_africa_middle_east_display_name"
+msgstr "Enfermero(a) especializado(a) en salud reproductiva: África y Medio Oriente"
+
+msgid "vertical_reproductive_nurse_africa_middle_east_long_description"
+msgstr "Los enfermeros especializados en salud reproductiva pueden guiarte en cada paso del proceso de tratamiento de fertilidad (desde la preparación hasta la recuperación), explicarte cómo manejar e inyectarte los medicamentos, y responder cualquier pregunta que tengas."
+
+msgid "vertical_reproductive_nurse_africa_middle_east_name"
+msgstr "Enfermero especializado en salud reproductiva: África y Medio Oriente"
+
+msgid "vertical_reproductive_nurse_africa_middle_east_pluralized_display_name"
+msgstr "Enfermeros especializados en salud reproductiva: África y Medio Oriente"
+
+msgid "vertical_reproductive_nurse_asia_pacific_description"
+msgstr "Fertilidad, FIV/IUI/congelación de óvulos, apoyo con medicamentos"
+
+msgid "vertical_reproductive_nurse_asia_pacific_display_name"
+msgstr "Enfermero(a) especializado(a) en salud reproductiva: Asia-Pacífico"
+
+msgid "vertical_reproductive_nurse_asia_pacific_long_description"
+msgstr "Los enfermeros especializados en salud reproductiva pueden guiarte en cada paso del proceso de tratamiento de fertilidad (desde la preparación hasta la recuperación), explicarte cómo manejar e inyectarte los medicamentos, y responder cualquier pregunta que tengas."
+
+msgid "vertical_reproductive_nurse_asia_pacific_name"
+msgstr "Enfermero especializado en salud reproductiva: Asia-Pacífico"
+
+msgid "vertical_reproductive_nurse_asia_pacific_pluralized_display_name"
+msgstr "Enfermeros especializados en salud reproductiva: Asia-Pacífico"
+
+msgid "vertical_reproductive_nurse_canada_description"
+msgstr "Fertilidad, FIV/IUI/congelación de óvulos, apoyo con medicamentos"
+
+msgid "vertical_reproductive_nurse_canada_display_name"
+msgstr "Enfermero(a) especializado(a) en salud reproductiva: Canadá"
+
+msgid "vertical_reproductive_nurse_canada_long_description"
+msgstr "Los enfermeros especializados en salud reproductiva pueden guiarte en cada paso del proceso de tratamiento de fertilidad (desde la preparación hasta la recuperación), explicarte cómo manejar e inyectarte los medicamentos, y responder cualquier pregunta que tengas."
+
+msgid "vertical_reproductive_nurse_canada_name"
+msgstr "Enfermero especializado en salud reproductiva: Canadá"
+
+msgid "vertical_reproductive_nurse_canada_pluralized_display_name"
+msgstr "Enfermeros especializados en salud reproductiva: Canadá"
+
+msgid "vertical_reproductive_nurse_description"
+msgstr "Fertilidad, FIV/IUI/congelación de óvulos, apoyo con medicamentos"
+
+msgid "vertical_reproductive_nurse_display_name"
+msgstr "Enfermero(a) especializado(a) en salud reproductiva"
+
+msgid "vertical_reproductive_nurse_europe_description"
+msgstr "Fertilidad, FIV/IUI/congelación de óvulos, apoyo con medicamentos"
+
+msgid "vertical_reproductive_nurse_europe_display_name"
+msgstr "Enfermero(a) especializado en salud reproductiva: Europa"
+
+msgid "vertical_reproductive_nurse_europe_long_description"
+msgstr "Los enfermeros especializados en salud reproductiva pueden guiarte en cada paso del proceso de tratamiento de fertilidad (desde la preparación hasta la recuperación), explicarte cómo manejar e inyectarte los medicamentos, y responder cualquier pregunta que tengas."
+
+msgid "vertical_reproductive_nurse_europe_name"
+msgstr "Enfermero especializado en salud reproductiva: Europa"
+
+msgid "vertical_reproductive_nurse_europe_pluralized_display_name"
+msgstr "Enfermeros especializados en salud reproductiva: Europa"
+
+msgid "vertical_reproductive_nurse_long_description"
+msgstr "Los enfermeros especializados en salud reproductiva pueden guiarte en cada paso del proceso de tratamiento de fertilidad (desde la preparación hasta la recuperación), explicarte cómo manejar e inyectarte los medicamentos, y responder cualquier pregunta que tengas."
+
+msgid "vertical_reproductive_nurse_name"
+msgstr "Enfermero especializado en salud reproductiva"
+
+msgid "vertical_reproductive_nurse_pluralized_display_name"
+msgstr "Enfermeros especializados en salud reproductiva"
+
+msgid "vertical_sex_coach_description"
+msgstr "Guía sobre relaciones, sexualidad, intimidad, apoyo en salud sexual"
+
+msgid "vertical_sex_coach_display_name"
+msgstr "Guía sexual"
+
+msgid "vertical_sex_coach_long_description"
+msgstr "Los guías sexuales están aquí para ayudarte a tener una vida sexual saludable y satisfactoria explorando cómo puedes mejorar la comunicación con tu pareja, ofreciendo formas de abordar la falta de deseo y compartiendo cómo evitar que el sexo se sienta como una tarea."
+
+msgid "vertical_sex_coach_name"
+msgstr "Guía sexual"
+
+msgid "vertical_sex_coach_pluralized_display_name"
+msgstr "Guías sexuales"
+
+msgid "vertical_special_education_advocate_description"
+msgstr "Apoyo social y académico, orientación y recursos"
+
+msgid "vertical_special_education_advocate_display_name"
+msgstr "Asesor(a) en educación especial"
+
+msgid "vertical_special_education_advocate_long_description"
+msgstr "Los asesores en educación especial están aquí para ayudarte a asegurarte de que las necesidades de tu hijo se cumplan, ayudándote a entender los servicios y los recursos que están disponibles para ti, y colaborando con los maestros para abordar cualquier desafío al que te puedas enfrentar."
+
+msgid "vertical_special_education_advocate_name"
+msgstr "Asesor en educación especial"
+
+msgid "vertical_special_education_advocate_pluralized_display_name"
+msgstr "Asesores en educación especial"
+
+msgid "vertical_speech_therapist_description"
+msgstr "Comunicación, retrasos en el habla, alimentación y orientación auditiva"
+
+msgid "vertical_speech_therapist_display_name"
+msgstr "Terapeuta del habla"
+
+msgid "vertical_speech_therapist_long_description"
+msgstr "Los terapeutas del habla pueden responder cualquier pregunta que tengas sobre la capacidad de comunicación de tu hijo, y ofrecer orientación sobre cualquier problema relacionado con la audición, hablar con claridad, tartamudeo, trastorno del espectro autista (TEA), la voz y más."
+
+msgid "vertical_speech_therapist_name"
+msgstr "Terapeuta del habla"
+
+msgid "vertical_speech_therapist_pluralized_display_name"
+msgstr "Terapeutas del habla"
+
+msgid "vertical_surrogacy_coach_description"
+msgstr "Proceso de subrogación, preparación, apoyo, vida después de la subrogación"
+
+msgid "vertical_surrogacy_coach_display_name"
+msgstr "Guía de gestación subrogada"
+
+msgid "vertical_surrogacy_coach_europe_description"
+msgstr "Proceso de subrogación, preparación, apoyo, vida después de la subrogación"
+
+msgid "vertical_surrogacy_coach_europe_display_name"
+msgstr "Guía de gestación subrogada: Europa"
+
+msgid "vertical_surrogacy_coach_europe_long_description"
+msgstr "Los guías de gestación subrogada están aquí para ayudarte a entender los acuerdos de gestación subrogada, ofrecerte consejos sobre la selección de una agencia, abogado o clínica, y brindarte apoyo en la revisión de coincidencias o en la definición de tu relación con la gestante que elijas."
+
+msgid "vertical_surrogacy_coach_europe_name"
+msgstr "Guía de gestación subrogada: Europa"
+
+msgid "vertical_surrogacy_coach_europe_pluralized_display_name"
+msgstr "Guías de gestación subrogada: Europa"
+
+msgid "vertical_surrogacy_coach_long_description"
+msgstr "Los guías de gestación subrogada están aquí para ayudarte a entender los acuerdos de gestación subrogada, ofrecerte consejos sobre la selección de una agencia, abogado o clínica, y brindarte apoyo en la revisión de coincidencias o en la definición de tu relación con la gestante que elijas."
+
+msgid "vertical_surrogacy_coach_name"
+msgstr "Guía de gestación subrogada"
+
+msgid "vertical_surrogacy_coach_pluralized_display_name"
+msgstr "Guías de gestación subrogada"
+
+msgid "vertical_wellness_coach_description"
+msgstr "Vida saludable, apoyo emocional, bienestar, nutrición"
+
+msgid "vertical_wellness_coach_display_name"
+msgstr "Asesor(a) de bienestar"
+
+msgid "vertical_wellness_coach_long_description"
+msgstr "Los asesores de bienestar son guías personales para vivir tu vida más saludable, tanto física como emocionalmente, y pueden ofrecerte métodos para dormir mejor, mejorar cómo te sientes durante el día, tener una relación saludable con la comida y más."
+
+msgid "vertical_wellness_coach_name"
+msgstr "Asesor de bienestar"
+
+msgid "vertical_wellness_coach_pluralized_display_name"
+msgstr "Asesores de bienestar"
+
+msgid "vertical_womens_health_nurse_practitioner_description"
+msgstr "Salud reproductiva, apoyo general a la salud"
+
+msgid "vertical_womens_health_nurse_practitioner_display_name"
+msgstr "Enfermero(a) especialista en la salud de la mujer"
+
+msgid "vertical_womens_health_nurse_practitioner_long_description"
+msgstr "Los enfermeros especialistas en la salud de la mujer pueden ayudarte a entender, manejar y tratar enfermedades crónicas, síntomas de la menopausia, molestias vaginales y cualquier afección que pueda afectar tu salud reproductiva y tu bienestar."
+
+msgid "vertical_womens_health_nurse_practitioner_name"
+msgstr "Enfermero especialista en la salud de la mujer"
+
+msgid "vertical_womens_health_nurse_practitioner_pluralized_display_name"
+msgstr "Enfermeros especialistas en la salud de la mujer"

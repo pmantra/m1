@@ -1,0 +1,50 @@
+import os
+
+import stripe
+
+stripe.api_version = "2019-08-14"
+PAYMENTS_STRIPE_API_KEY = os.environ.get("STRIPE_API_KEY")
+REIMBURSEMENTS_STRIPE_API_KEY = os.environ.get("STRIPE_API_REIMBURSEMENTS_KEY")
+
+
+class STRIPE_ACTION_TYPES:
+    list_cards = "list_cards"
+    card_creation = "card_creation"
+    card_creation_failed = "card_creation_failed"
+    card_deletion = "card_deletion"
+    card_deletion_failed = "card_deletion_failed"
+    customer_creation = "customer_creation"
+    customer_deletion = "customer_deletion"
+    recipient_creation = "recipient_creation"
+    recipient_creation_failed = "recipient_creation_failed"
+    recipient_edit = "recipient_edit"
+    recipient_edit_failed = "recipient_edit_failed"
+    recipient_edit_account_replaced = "recipient_edit_account_replaced"
+    recipient_deletion = "recipient_deletion"
+    recipient_deletion_failed = "recipient_deletion_failed"
+    recipient_sign_terms_failed = "recipient_sign_terms_failed"
+    bank_account_set = "bank_account_set"
+    bank_account_set_failure = "bank_account_set_failure"
+    charge_creation = "charge_creation"
+    charge_creation_failed = "charge_creation_failed"
+    refund_creation = "refund_creation"
+    refund_creation_failed = "refund_creation_failed"
+    charge_retrieval_failed = "charge_retrieval_failed"
+    charge_capture = "charge_capture"
+    charge_capture_failed = "charge_capture_failed"
+    transfer_creation = "transfer_creation"
+    transfer_creation_failure = "transfer_creation_failure"
+    transfer_cancellation = "transfer_cancellation"
+    transfer_cancellation_failure = "transfer_cancellation_failure"
+    transfer_completion_succeeded = "transfer_completion_succeeded"
+    transfer_completion_failed = "transfer_completion_failed"
+    get_customer = "get_customer"
+    get_customer_failed = "get_customer_failed"
+    get_connect_account_failed = "get_connect_account_failed"
+    get_connect_account = "get_connect_account"
+    connect_account_creation_failed = "connect_account_creation_failed"
+    connect_account_creation = "connect_account_creation"
+    get_connect_account_balance = "get_connect_account_balance"
+    get_connect_account_balance_failed = "get_connect_account_balance_failed"
+    payout_creation = "payout_creation"
+    payout_creation_failure = "payout_creation_failure"

@@ -1,0 +1,22 @@
+{% extends 'admin/model/details.html' %}
+
+{% block details_table %}
+<table class="table table-hover table-bordered searchable">
+{% for c, name in details_columns %}
+  <tr>
+    <td>
+      <b>{{ name }}</b>
+    </td>
+    <td>
+        {%- if c == 'message_billing' and model.message_billing -%}
+            <a href="/admin/messagebilling/details/?id={{ model.message_billing.id }}" >{{ get_value(model, c) }}</a>
+        {%- elif c == 'message' and model.message -%}
+            <a href="/admin/message/details/?id={{ model.message.id }}" >{{ get_value(model, c) }}</a>
+        {%- else -%}
+            {{ get_value(model, c) }}
+        {%- endif -%}
+    </td>
+  </tr>
+{% endfor %}
+</table>
+{% endblock %}

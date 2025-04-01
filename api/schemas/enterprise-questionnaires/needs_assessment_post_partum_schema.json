@@ -1,0 +1,175 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "id": "https://www.mavenclinic.com/_app_support/needs_assessment_post_partum_schema.json",
+  "title": "Schema for Post-partum Needs Assessment Enterprise Questionnaire",
+  "definitions": {
+    "answer_yes_no": {
+      "oneOf": [
+        {"type": "string", "enum": ["yes", "no"]},
+        {"type": "null"}
+      ]
+    },
+    "answer_how_many": {
+      "oneOf": [
+        {"type": "number", "minimum": 0, "maximum": 24},
+        {"type": "null"}
+      ]
+    },
+    "answer_scale": {
+      "oneOf": [
+        {"type": "number", "minimum": 1, "maximum": 5},
+        {"type": "null"}
+      ]
+    },
+    "answer_ppd_questions": {
+      "oneOf": [
+        {"type": "number", "minimum": 0, "maximum": 3},
+        {"type": "null"}
+      ]
+    },
+    "answer_free_text": {
+      "oneOf": [
+        {"type": "string"},
+        {"type": "null"}
+      ]
+    }
+  },
+
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 23,
+      "uniqueItems": true,
+      "items": [
+        {"type": "string", "title": "When was your baby’s birthday?"},
+        {"type": "string", "title": "What is the date that you are returning back to work?"},
+        {"type": "string", "title": "Did you give birth, adopt or use a surrogate your child?"},
+        {"type": "string", "title": "What was your planned mode of delivery?"},
+        {"type": "string", "title": "What kind of birth did you have?"},
+        {"type": "string", "title": "If you planned for a Vaginal birth and had a C-Section, what was the reason?"},
+        {"type": "string", "title": "How are you healing?"},
+        {"type": "string", "title": "What is your providers name?"},
+        {"type": "string", "title": "Where did you give birth?"},
+        {
+          "type": "object",
+          "properties": {
+            "parent": {"type": "string", "title": "Have you been diagnosed with any medical issues during delivery or post pregnancy?"},
+            "yes": {"type": "string", "title": "If yes, What were the medical issues or complications?"}
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "parent": {"type": "string", "title": "Are you taking any medications?"},
+            "yes": {"type": "string", "title": "If yes, What are the medications?"}
+          }
+        },
+        {"type": "string", "title": "What was your initial plan for feeding your child post delivery?"},
+        {
+          "type": "object",
+          "properties": {
+            "parent": {"type": "string", "title": "How are you currently feeding your child?"},
+            "formula": {"type": "string", "title": "If breastfeeding was the initial plan and currently not Breastfeeding, can you share why it may not have gone as planned?"}
+          }
+        },
+        {"type": "string", "title": "During the past month, have you often been bothered by feeling down, depressed, or hopeless?"},
+        {"type": "string", "title": "During the past month, have you often been bothered by having little interest or pleasure in doing things?"},
+        {"type": "string", "title": "How many hours of sleep do you need to function?"},
+        {"type": "string", "title": "How many hours of sleep are you getting?"},
+        {"type": "string", "title": "Is your baby on a sleep schedule?"},
+        {"type": "string", "title": "Is your baby on a feeding schedule?"},
+        {"type": "string", "title": "Does your infant have any health issues"},
+        {"type": "string", "title": "What is your biggest anxiety with your child?"},
+        {"type": "string", "title": "What is most exciting to you about what Maven offers during the postpartum period?"},
+        {"type": "string", "title": "Would you your spouse be interested to receive information from Maven?"}
+      ]
+    },
+    "answers" :{
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 23,
+      "uniqueItems": false,
+      "items": [
+        {"$ref": "#/definitions/answer_free_text", "title": "When was your baby’s birthday?"},
+        {"$ref": "#/definitions/answer_free_text", "title": "What is the date that you are returning back to work?"},
+        {"$ref": "#/definitions/answer_free_text", "title": "Did you give birth, adopt or use a surrogate your child?"},
+        {"type": "string", "enum": ["Vaginal", "C-Section", "VBAC"], "title": "What was your planned mode of delivery?"},
+        {"type": "string", "enum": ["Vaginal", "C-Section", "VBAC"], "title": "What kind of birth did you have?"},
+        {"$ref": "#/definitions/answer_free_text", "title": "If you planned for a Vaginal birth and had a C-Section, what was the reason?"},
+        {"$ref": "#/definitions/answer_scale", "title": "How are you healing?"},
+        {"$ref": "#/definitions/answer_free_text", "title": "What is your providers name?"},
+        {"type": "string", "enum": ["Hospital", "Birthing center", "Home"], "title": "Where did you give birth?"},
+        {
+          "type": "object",
+          "properties": {
+            "answer": {
+              "title": "Have you been diagnosed with any medical issues during delivery or post pregnancy?",
+              "$ref": "#/definitions/answer_yes_no"},
+            "yes": {
+              "title": "If yes, What were the medical issues or complications",
+              "$ref": "#/definitions/answer_free_text"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "answer": {
+              "title": "Are you taking any medications?",
+              "$ref": "#/definitions/answer_yes_no"
+            },
+            "yes": {
+              "title": "If yes, What are the medications?",
+              "$ref": "#/definitions/answer_free_text"
+            }
+          }
+        },
+        {
+          "title": "What was your initial plan for feeding your child post delivery?",
+          "oneOf": [
+            {"type": "string", "enum": ["Breastfeed", "Formula", "Didn’t know"]},
+            {"type": "null"}
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "answer": {
+              "title": "How are you currently feeding your child?",
+              "type": "string", "enum": ["breastfeed", "formula"]
+            },
+            "formula": {
+              "$ref": "#/definitions/answer_free_text",
+              "title": "If breastfeeding was the initial plan and currently not Breastfeeding, can you share why it may not have gone as planned?"
+            }
+          }
+        },
+        {"$ref": "#/definitions/answer_ppd_questions", "title": "During the past month, have you often been bothered by feeling down, depressed, or hopeless?"},
+        {"$ref": "#/definitions/answer_ppd_questions", "title": "During the past month, have you often been bothered by having little interest or pleasure in doing things?"},
+        {"$ref": "#/definitions/answer_how_many", "title": "How many hours of sleep do you need to function?"},
+        {"$ref": "#/definitions/answer_how_many", "title": "How many hours of sleep are you getting?"},
+        {"$ref": "#/definitions/answer_yes_no", "title": "Is your baby on a sleep schedule?"},
+        {"$ref": "#/definitions/answer_yes_no", "title": "Is your baby on a feeding schedule?"},
+        {
+          "title": "Does your infant have any health issues",
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {"type": "string", "enum": ["colic", "allergies", "not gaining weight"]}
+            },
+            {"type": "string"},
+            {"type": "null"}
+          ]
+        },
+        {"$ref": "#/definitions/answer_free_text", "title": "What is your biggest anxiety with your child?"},
+        {"$ref": "#/definitions/answer_free_text", "title": "What is most exciting to you about what Maven offers during the postpartum period?"},
+        {"$ref": "#/definitions/answer_yes_no", "title": "Would you your spouse be interested to receive information from Maven?"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,83 @@
+<div class="inline-field well well-medium">
+    <div class="inline-form-field">
+        <legend>Microsoft User Setup</legend>
+
+        <p class="lead">
+            Use this form to manually create verification for Microsoft user
+        <p>
+
+        <form method="POST" action="/admin/enterprise_setup/msft_setup">
+            <label for="user_id">User ID:</label>
+            <input
+                    type="number"
+                    id="user_id"
+                    name="user_id"
+                    aria-describedby="user_id_help"
+                    placeholder="Enter a user ID."
+                    required
+            >
+            <label for="unique_corp_id">Microsoft Employee ID:</label>
+            <input
+                    type="text"
+                    id="unique_corp_id"
+                    name="unique_corp_id"
+                    placeholder="Enter the Microsoft Employee ID."
+                    required
+            >
+            <label for="date_of_birth">Date of Birth:</label>
+            <input data-date-format="YYYY-MM-DD"
+                   data-role="datepicker"
+                   id="date_of_birth"
+                   name="date_of_birth"
+                   type="text"
+                   placeholder="Date of birth(YYYY-MM-DD)."
+                   required="required"
+            >
+            <br/>
+            <div class="controls">
+                <input
+                        id="is_employee"
+                        name="is_employee"
+                        type="checkbox"
+                        class="checkbox"
+                        aria-describedby="is_employee_help"
+                        checked
+                >
+                <label class="control-label checkbox" for="is_employee">Is
+                    Employee.</label>
+                <small id="is_employee_help" class="help-block text-muted">
+                    Is this user an employee of this organization? If this user
+                    is a dependent, leave this box unchecked
+                </small>
+            </div>
+            <div class="controls">
+                <label for="dependent_date_of_birth">Dependent Date of Birth:</label>
+                <input data-date-format="YYYY-MM-DD"
+                       data-role="datepicker"
+                       id="dependent_date_of_birth"
+                       name="dependent_date_of_birth"
+                       type="text"
+                       placeholder="Dependent Date of birth(YYYY-MM-DD)."
+                >
+                <small id="dependent_date_of_birth_help" class="help-block text-muted">
+                    Required if this user is a dependent
+                </small>
+            </div>
+            <div class="controls">
+                <label class="control-label" for="zendesk_id">(Optional) Zendesk ID</label>
+                <input
+                        type="text"
+                        id="zendesk_id"
+                        name="zendesk_id"
+                        aria-describedby="zendesk_id_help"
+                        optional
+                >
+                <small id="zendesk_id_help" class="help-block text-muted">
+                    (Optional) Enter the zendesk ID associated with this manual onboarding.
+                </small>
+            </div>
+            <input type="submit" class="btn btn-primary btn-medium" value="Enable User"
+                   style="background-image: linear-gradient(to bottom,#6cceaa,#00856f)">
+        </form>
+    </div>
+</div>

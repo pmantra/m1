@@ -1,0 +1,374 @@
+.page-enterprise {
+	.intro {
+		background: $macaroon-20 url("/img/enterprise/ent-banner.jpg") 80% top no-repeat;
+		@include background-cover();
+		h1 {
+			margin-bottom: 20px;
+			margin-top: 30px;
+			color: $charcoal-100;
+			@include susy-breakpoint($tablet) {
+				line-height: normal;
+			}
+		}
+		p {
+			max-width: 510px;
+			margin-bottom: 50px;
+		}
+		.headline {
+			text-align: center;
+			@include susy-breakpoint($mobile-landscape) {
+				padding-top: 30px;
+				text-align: left;
+				@include span(5 of 10);
+				margin-left: span(5 wide of 10);
+			}
+		}
+		@include susy-breakpoint($mobile-landscape) {
+			background-position: 40% top;
+		}
+	}
+
+	.wp-download-panel {
+		text-align: center;
+		.wp-list {
+			li {
+				background: $mint-20;
+				padding: 30px 20px 10px 20px;
+				text-align: center;
+				margin-bottom: 30px;
+				@include susy-breakpoint($desktop) {
+					width: 48%;
+					float: left;
+					height: 180px;
+					&:first-child {
+						margin-right: 1%;
+					}
+					&:last-child {
+						margin-left: 1%;
+					}
+				}
+				@include susy-breakpoint($desktop-xl) {
+					height: auto;
+					&:first-child {
+						p {
+							margin-top: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	.enterprise-form {
+		form {
+			.btn.btn-default {
+				margin-top: 0;
+			}
+			.employees {
+				// .ui-select-placeholder {
+				// 	font-family: $font1;
+				// 	color: $charcoal-100;
+				// }
+				// .ui-select-match {
+				// 	border: 1px solid $charcoal-100;
+				// 	padding: 24px 10px;
+				// 	margin: 5px 0;
+				// 	height: 66px;
+				// }
+				// .ui-select-choices {
+				// 	position: absolute;
+				// }
+				// .ui-select-match-text {
+				// 	font-family: $font1;
+				// 	color: $charcoal-100;
+				// }
+				text-align: left;
+				a {
+					font-family: $font1;
+					font-weight: 400;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.practitioner {
+		.content-wrap {
+			position: relative;
+			p {
+				margin-bottom: 70px;
+			}
+			h2,
+			p {
+				text-align: center;
+			}
+		}
+		.heading {
+			margin-left: span(1 wide of 12);
+			@include susy-breakpoint($mobile-landscape) {
+				margin-left: auto;
+			}
+		}
+		.people {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: stretch;
+		}
+		.person {
+			min-height: 165px;
+			float: left;
+			flex-wrap: warp;
+			width: 100%;
+			h3 {
+				margin-bottom: 5px;
+				line-height: 1.1;
+			}
+			h5 {
+				margin-top: 0;
+			}
+			.person-wrap {
+				margin-bottom: 40px;
+			}
+			@include susy-breakpoint($tablet) {
+				width: 33%;
+			}
+			.person-img {
+				text-align: center;
+			}
+			.detail {
+				text-align: center;
+				@include span(12 of 12);
+				p {
+					margin-top: 10px;
+				}
+				@include susy-breakpoint($mobile-landscape) {
+					text-align: center;
+					@include span(12 of 12);
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}
+
+/* Back to work whitepaper page */
+.public.page-btw-whitepaper {
+	section div:not(.span-full):not(.bg-wrap):not(.intro) {
+		float: none;
+		max-width: 850px;
+		margin-left: auto;
+		margin-right: auto;
+		h1,
+		h2 {
+			text-align: left;
+		}
+		h1.btw-title {
+			text-align: center;
+		}
+	}
+}
+.page-btw-whitepaper {
+	.intro {
+		background: $emerald-50;
+		h1 {
+			color: white;
+			margin-top: 60px;
+			@include susy-breakpoint($tablet) {
+				margin-top: 90px;
+			}
+		}
+	}
+
+	p.lg:not(.cta) {
+		font-style: italic;
+	}
+	.callout {
+		background: $blush-20;
+		box-shadow: 10px 10px 0 0 $blush-50;
+		padding: 20px;
+		margin: 50px auto;
+		h3 {
+			margin-top: 10px;
+		}
+		p:last-child {
+			margin-bottom: 10px;
+		}
+	}
+
+	.footnote-id {
+		font-size: 10px;
+		vertical-align: super;
+	}
+
+	.footnote {
+		font-family: $font1-bold;
+	}
+	ul {
+		@include susy-breakpoint($desktop) {
+			padding-left: 80px;
+		}
+	}
+	li {
+		margin-bottom: 15px;
+	}
+
+	.graph-img {
+		svg {
+			margin: 25px auto;
+			width: 640px;
+			max-width: 100%;
+		}
+	}
+	.wp-cta {
+		margin: 50px auto;
+		border-top: 1px solid $charcoal-20;
+		padding-top: 30px;
+	}
+	table {
+		margin: 30px auto;
+		@include susy-breakpoint($desktop) {
+			width: 50%;
+			&.table-wide {
+				width: 90%;
+			}
+			margin: 50px auto;
+		}
+		tr {
+			td:first-child {
+				width: 85%;
+				& + td {
+					text-align: right;
+				}
+			}
+			&:last-child {
+				td:last-child {
+					border-top: 3px solid $charcoal-100;
+				}
+			}
+		}
+		td {
+			padding: 15px 0;
+		}
+	}
+}
+
+.btw-slider {
+	background-color: $charcoal-20;
+	box-shadow: 10px 10px 0 0 $charcoal-40;
+	margin: 40px auto;
+	padding: 20px 30px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	.interactive {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+
+	@include susy-breakpoint($desktop) {
+		flex-direction: row;
+		justify-content: space-between;
+
+		.description {
+			width: 40%;
+		}
+
+		.interactive {
+			width: 60%;
+		}
+	}
+
+	h2 {
+		margin: 0;
+	}
+
+	.slider-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin: 15px;
+		width: 80%;
+	}
+
+	.slider {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		width: 90%;
+		height: 8px;
+		border-radius: 5px;
+		background: $emerald-20;
+		outline: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.slider::-moz-range-track {
+		background: transparent;
+		border-color: transparent;
+		color: transparent;
+	}
+
+	.slider:focus {
+		-moz-outline: none;
+		outline: none;
+	}
+
+	.slider::-moz-focus-outer {
+		border: 0;
+	}
+
+	.slider::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		background: $emerald-50;
+		cursor: pointer;
+		-webkit-transition: background 0.15s ease-in-out;
+		transition: background 0.15s ease-in-out;
+	}
+
+	.slider::-moz-range-thumb {
+		border: 0;
+		background-color: $emerald-50;
+		cursor: pointer;
+	}
+
+	.slider::-webkit-slider-thumb:hover,
+	.slider:active::-webkit-slider-thumb {
+		background: $emerald-80;
+	}
+
+	.slider::-moz-range-thumb:hover,
+	.slider:active::-moz-range-thumb {
+		border: 0;
+		background-color: $emerald-80;
+		cursor: pointer;
+	}
+
+	.label {
+		color: #333;
+		font-size: 0.75em;
+		margin: 0 5px !important;
+	}
+
+	.savings {
+		font-family: $font1-semibold;
+		height: 40px;
+		margin: 0;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}

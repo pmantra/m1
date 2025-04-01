@@ -1,0 +1,78 @@
+{% extends 'admin/model/details.html' %}
+
+{% block details_search %}
+{% endblock %}
+
+{% block details_table %}
+    <script>
+        function confirm_action(msg, form_id, button_id){
+            if (confirm(msg)) {
+                document.getElementById(form_id).submit()
+                document.getElementById(button_id).disabled = true;
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+    {% if model.payment_method.value == 'PAYMENT_GATEWAY'%}
+        <form id="process_bill_id" method="POST" action="/admin/bill/process_bill">
+            <input id="bill_id" name="bill_id" type="hidden" placeholder="bill_id" required="required"
+                   value="{{ model.id }}">
+            {% if model.status.value == 'FAILED' %}
+                <button id="retry_button_id" type="submit"
+                        onclick="return confirm_action('Are you sure you want to resubmit this bill for processing?', form.id, id)">
+                    Retry Bill
+                </button>
+            {% endif %}
+            {% if model.status.value == 'NEW' %}
+                <button id="process_button_id" type="submit"
+                        onclick="return confirm_action('Are you sure you want to submit this bill for processing?', form.id, id)">
+                    Process Bill
+                </button>
+            {% endif %}
+        </form>
+        <form id="cancel_bill_id" method="POST" action="/admin/bill/cancel_bill" id="cancel_form">
+            <input id="bill_id" name="bill_id" type="hidden" placeholder="bill_id" required="required"
+                   value="{{ model.id }}">
+            {% if model.status.value == 'FAILED' or model.status.value == 'NEW' %}
+                <button id="cancel_button_id" type="submit"
+                        onclick="return confirm_action('Are you sure you want to cancel this bill?', form.id, id)">
+                    Cancel Bill
+                </button>
+            {% endif %}
+        </form>
+        <form id="refund_paid_bill_id" method="POST" action="/admin/bill/create_refund_from_paid_bill" id="refund_paid_bill">
+            <input id="bill_id" name="bill_id" type="hidden" placeholder="bill_id" required="required"
+                   value="{{ model.id }}">
+            {% if (model.status.value == 'PAID') %}
+                <button id="refund_paid_bill_id" type="submit"
+                        onclick="return confirm_action('Are you sure you want to create a refund bill?', form.id, id)">
+                    Create Refund Bill
+                </button>
+            {% endif %}
+        </form>
+        <form id="update_payment_method_on_bill" method="POST" action="/admin/bill/update_payment_method_on_bill" id="update_payment_method_on_bill">
+            <input id="bill_id" name="bill_id" type="hidden" placeholder="bill_id" required="required"
+                   value="{{ model.id }}">
+            {% if (((model.status.value == 'NEW') or (model.status.value == 'FAILED')) and  (model.payor_type.value != 'CLINIC')) %}
+                <button id="update_payment_method_on_bill" type="submit"
+                        onclick="return confirm_action('Are you sure you want to update the payment method on this bill?', form.id, id)">
+                    Update Payment Method
+                </button>
+            {% endif %}
+        </form>
+    {% endif %}
+    {% if model.payor_type.value == 'EMPLOYER' %}
+        <form id="new_bill_id" method="POST" action="/admin/bill/new_clinic">
+            <input id="bill_id" name="bill_id" type="hidden" placeholder="bill_id" required="required"
+                   value="{{ model.id }}">
+            <button id="new_button_id" type="submit"
+                    onclick="return confirm_action('Are you sure you want to create a new clinic bill from this employer bill?', form.id, id)">
+                Create Clinic Bill from Employer Bill
+            </button>
+        </form>
+    {% endif %}
+    <hr>
+    {{ super() }}
+{% endblock %}

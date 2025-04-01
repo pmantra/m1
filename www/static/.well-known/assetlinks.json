@@ -1,0 +1,53 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mavenclinic.android.member",
+      "sha256_cert_fingerprints": [
+        "A0:99:CA:91:86:10:79:62:88:B3:21:D0:1D:4F:60:81:AC:33:61:C6:CD:84:11:EB:F4:5F:73:16:96:22:0A:37",
+        "55:A7:92:D4:D7:E5:3D:28:2E:7A:DF:22:24:34:9C:E7:03:55:A9:83:98:E6:5A:43:E0:1B:66:CD:29:7C:21:D1"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mavenclinic.android.member.uat",
+      "sha256_cert_fingerprints": [
+        "A0:99:CA:91:86:10:79:62:88:B3:21:D0:1D:4F:60:81:AC:33:61:C6:CD:84:11:EB:F4:5F:73:16:96:22:0A:37",
+        "55:A7:92:D4:D7:E5:3D:28:2E:7A:DF:22:24:34:9C:E7:03:55:A9:83:98:E6:5A:43:E0:1B:66:CD:29:7C:21:D1"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mavenclinic.android.member.qa",
+      "sha256_cert_fingerprints": [
+        "A0:99:CA:91:86:10:79:62:88:B3:21:D0:1D:4F:60:81:AC:33:61:C6:CD:84:11:EB:F4:5F:73:16:96:22:0A:37",
+        "55:A7:92:D4:D7:E5:3D:28:2E:7A:DF:22:24:34:9C:E7:03:55:A9:83:98:E6:5A:43:E0:1B:66:CD:29:7C:21:D1"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mavenclinic.android.member.debug",
+      "sha256_cert_fingerprints": [
+        "39:D3:B2:22:95:F7:E4:84:8D:F4:86:A0:80:34:CB:F8:84:EF:5A:E7:81:4C:81:84:BA:5A:EA:32:7B:7C:64:35"
+      ]
+    }
+  }
+]

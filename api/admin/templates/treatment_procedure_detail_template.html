@@ -1,0 +1,49 @@
+{% extends 'admin/model/details.html' %}
+
+{% block details_search %}
+{% endblock %}
+
+{% block details_table %}
+    <script>
+        function confirm_action(msg, form_id, button_id) {
+            if (confirm(msg)) {
+                document.getElementById(form_id).submit()
+                document.getElementById(button_id).disabled = true;
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+    {% if model.status.value == 'COMPLETED' or model.status.value == 'PARTIALLY_COMPLETED' %}
+        <form id="refund_all_bills" method="POST" action="/admin/treatmentprocedure/refund_all_bills">
+            <input id="procedure_id" name="procedure_id" type="hidden" placeholder="procedure_id" required="required"
+                   value="{{ model.id }}">
+            <button id="refund_bills_button_id" type="submit"
+                    onclick="return confirm_action('Are you sure you want to create all refund bills for this treatment procedure? ' +
+                     'This will create clinic reverse transfer bill, after it is reversed, then auto-create member employer refund bills', form.id, id)">
+                Refund All Bills
+            </button>
+        </form>
+
+        <form id="revert_payer_accumulation" method="POST" action="/admin/treatmentprocedure/revert_payer_accumulation">
+            <input id="procedure_id" name="procedure_id" type="hidden" placeholder="procedure_id" required="required"
+                   value="{{ model.id }}">
+            <button id="revert_payer_accumulation_button_id" type="submit"
+                    onclick="return confirm_action('Are you sure you want to revert payer accumulation for this treatment procedure?', form.id, id)">
+                Revert Payor Accumulation
+            </button>
+        </form>
+
+        <form id="add_back_wallet_balance" method="POST" action="/admin/treatmentprocedure/add_back_wallet_balance">
+            <input id="procedure_id" name="procedure_id" type="hidden" placeholder="procedure_id" required="required"
+                   value="{{ model.id }}">
+            <button id="add_back_wallet_balance_button_id" type="submit"
+                    onclick="return confirm_action('Are you sure you want to add back wallet balance for this treatment procedure?', form.id, id)">
+                Add Back Wallet Balance
+            </button>
+        </form>
+    {% endif %}
+    <hr>
+    {{ super() }}
+{% endblock %}

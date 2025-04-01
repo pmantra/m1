@@ -1,0 +1,81 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-11-20 10:30-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: views/referrals.py:64
+msgid "views_referrals_unknown"
+msgstr "Unknown"
+
+#: views/referrals.py:65
+msgid "views_referrals_missing_data"
+msgstr "Missing data for required field."
+
+#: views/referrals.py:66
+msgid "views_referrals_does_not_exist"
+msgstr "Referral code does not exist!"
+
+#: views/referrals.py:67
+msgid "views_referrals_already_applied"
+msgstr "Good news! This code has already been applied!"
+
+#: views/referrals.py:68
+msgid "views_referrals_expired"
+msgstr "Sorry, this code has expired."
+
+#: views/referrals.py:69
+msgid "views_referrals_too_late"
+msgstr "Sorry, this code can only be used before your first booking."
+
+#: views/referrals.py:70
+msgid "views_referrals_not_you"
+msgstr "Only get referrals for yourself!"
+
+#: views/referrals.py:71
+msgid "views_referrals_no_code"
+msgstr "No code provided in args"
+
+#: views/referrals.py:72
+msgid "views_referrals_not_found"
+msgstr "That code cannot be found..."
+
+#: views/referrals.py:73
+msgid "views_referrals_invalid"
+msgstr "Code is invalid or expired..."
+
+#: views/referrals.py:76
+msgid "views_referrals_main_message"
+msgstr ""
+"Referral code is invalid: Contact support@mavenclinic.com for help and "
+"give the reference: {reason}"
+
+#: views/tracks.py:152
+msgid "views_tracks_scheduled_to_renew_on"
+msgstr "Scheduled to renew on {date}."
+
+#: views/tracks.py:157
+msgid "views_tracks_access_will_end_on"
+msgstr "Your access will end on {date}."
+
+#: views/tracks.py:167
+msgid "views_tracks_cancel"
+msgstr "Cancel"
+
+#: views/tracks.py:177
+msgid "views_tracks_renew_program"
+msgstr "Renew program"
+

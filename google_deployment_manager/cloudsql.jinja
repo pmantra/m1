@@ -1,0 +1,18 @@
+resources:
+{% if properties['disk_size'] %}
+- name: default
+  type: sqladmin.v1beta4.instance
+  properties:
+    backendType: SECOND_GEN
+    instanceType: CLOUD_SQL_INSTANCE
+    settings:
+      tier: {{ properties['tier'] }}
+      dataDiskSizeGb: {{ properties['disk_size'] }}
+      backupConfiguration:
+        enabled: True
+        binaryLogEnabled: True
+      ipConfiguration:
+        requireSsl: True
+      locationPreference:
+        zone: {{ properties['zone'] }}
+{% endif %}

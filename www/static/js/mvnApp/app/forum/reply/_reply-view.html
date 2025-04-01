@@ -1,0 +1,35 @@
+<section class="post-replies">
+	<div class="content-container">
+
+	 	<inline-loader ng-show="loading" loading="loading" label="Loading replies..."></inline-loader>
+
+		<div ng-cloak ng-hide="loading" class="replies-wrap">
+
+			<div class="replies">
+
+				<div class="replies-count">
+					<h2 class="center h5"  ng-show="$ctrl.replies.pagination.total   < 1 ">Be the first to reply to this post</h2>
+					<h2 class="center h5" ng-show="$ctrl.replies.pagination.total  >= 1  ">{{ $ctrl.replies.pagination.total  }} replies</h2>
+				</div>
+
+				<ul ng-cloak ng-hide="loading" class="clear" >
+
+					<li class="post reply-list content {{ reply.author.role }}" ng-repeat="reply in $ctrl.replies | orderBy:'created_at' ">
+
+						<post-author ng-if="reply.author.role === 'practitioner' " ng-click="viewPrac(reply.author.id)" author="reply.author" datetime="reply.created_at" class="post-author practitioner-reply clearfix"></post-author>
+						<post-author ng-if="reply.author.role !== 'practitioner' " author="reply.author" datetime="reply.created_at" class="post-author clearfix"></post-author>
+
+						<div class="post-body">{{ ::reply.body }}</div>
+						<span ng-if="reply.author.role !== 'practitioner' " class="post-action">
+							<a href="{{'mailto:support@mavenclinic.com?subject=Reported Forum Reply&body=Reply ID: ' + reply.id + ' Reporting on the reply.'}}" tabindex="0">
+								Report
+							</a>
+						</span>
+					</li>
+				</ul>
+
+				<p class="center" ng-if="!$ctrl.loadedAll && $ctrl.replies.length >= 1"><a class="btn btn-action" ng-click="$ctrl.loadMore()">See more replies</a></p>
+			</div>
+		</div>
+
+</section>

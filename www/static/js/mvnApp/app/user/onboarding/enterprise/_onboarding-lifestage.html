@@ -1,0 +1,24 @@
+<div ng-animate class="onboarding-life-stage-choices">
+	<h3 class="serif center">How can we help? Choose the path that’s the best fit.</h3>
+
+	<form name="$ctrl.lifeStages" class="form mvn-form">
+		<div class="app-grid-container two-column mvn-input-group color-callout radio-color-callout ">
+			<div ng-repeat="stage in $ctrl.lifeStages track by $index" class="app-grid-item mvn-input-item">
+				<input type="radio" value="{{ stage }}" id="{{ stage.name }}" ng-model="$ctrl.selectedLifeStage" />
+				<label for="{{ stage.name }}">
+					<span> <span></span> </span> {{ stage.title }}
+				</label>
+			</div>
+		</div>
+	</form>
+</div>
+<mvn-onboarding-bottom-nav>
+	<a
+		class="btn btn-cta"
+		href=""
+		ng-click="$ctrl.setLifeStage($ctrl.selectedLifeStage)"
+		ng-disabled="!$ctrl.selectedLifeStage"
+		ng-class="{ 'disabled' : !$ctrl.selectedLifeStage }"
+		>Next</a
+	>
+</mvn-onboarding-bottom-nav>

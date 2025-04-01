@@ -1,0 +1,2040 @@
+[
+  {
+    "type": "text_copy",
+    "name": "cx-initiated-message-enterprise",
+    "content": "Hi there, This is a placeholder enterprise-level Care Advocate Message."
+  },
+  {
+    "type": "organization",
+    "name": "Maven",
+    "vertical_group_version": "v2",
+    "bms_enabled": true
+  },
+  {
+    "type": "organization",
+    "name": "FunCorp"
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Maven"
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Maven"
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "FunCorp",
+    "can_get_pregnant": true,
+    "address": {
+      "employee_last_name": "Smith",
+      "state": "",
+      "city": "London",
+      "employee_first_name": "Jane",
+      "country": "United Kingdom",
+      "zip_code": "10013",
+      "address_2": "",
+      "address_1": "100 Main Street"
+    }
+  },
+  {
+    "type": "user",
+    "email": "test+m1@mavenclinic.com",
+    "phone_number": "tel:+1-913-476-8475",
+    "date_of_birth": "2000-01-01",
+    "credit": {
+      "amount": 100,
+      "activated_at": "now",
+      "expires_at": "in 1 month"
+    },
+    "address": {
+      "street_address": "2976 Fake Street",
+      "city": "New York",
+      "state": "NY",
+      "zip_code": "10001",
+      "country": "US"
+    }
+  },
+  {
+    "type": "user",
+    "email": "test+m2@mavenclinic.com",
+    "credit": {
+      "amount": 100,
+      "activated_at": "now",
+      "expires_at": "in 1 month"
+    },
+    "address": {
+      "street_address": "3808 Broadway Street",
+      "city": "Charleston",
+      "state": "SC",
+      "zip_code": "29424",
+      "country": "US"
+    }
+  },
+  {
+    "type": "user",
+    "email": "test+m3@mavenclinic.com",
+    "credit": {
+      "amount": 100,
+      "activated_at": "now",
+      "expires_at": "in 1 month"
+    },
+    "address": {
+      "street_address": "1884 Lauren Drive",
+      "city": "Camp Douglas",
+      "state": "WI",
+      "zip_code": "54618",
+      "country": "US"
+    }
+  },
+  {
+    "type": "user",
+    "email": "test+m4@mavenclinic.com",
+    "credit": {
+      "amount": 100,
+      "activated_at": "now",
+      "expires_at": "in 1 month"
+    },
+    "address": {
+      "street_address": "31 Pinnickinick Street",
+      "city": "Tigard",
+      "state": "WA",
+      "zip_code": "97223",
+      "country": "US"
+    }
+  },
+  {
+    "type": "user",
+    "email": "test+m5@mavenclinic.com",
+    "credit": {
+      "amount": 100,
+      "activated_at": "now",
+      "expires_at": "in 1 month"
+    },
+    "address": {
+      "street_address": "790 Scenic Way",
+      "city": "La Harpe",
+      "state": "IL",
+      "zip_code": "61450",
+      "country": "US"
+    }
+  },
+  {
+    "type": "user",
+    "email": "test+m6@mavenclinic.com",
+    "address": {
+      "street_address": "3288 Poe Road",
+      "city": "Houston",
+      "state": "TX",
+      "zip_code": "77032",
+      "country": "US"
+    }
+  },
+  {
+    "type": "user",
+    "email": "test+m7@mavenclinic.com",
+    "address": {
+      "street_address": "1390 Pike Street",
+      "city": "San Diego",
+      "state": "CA",
+      "zip_code": "92123",
+      "country": "US"
+    }
+  },
+  {
+    "type": "user",
+    "email": "test+m8@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "email": "test+m9@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "email": "test+marketplaceinternational@mavenclinic.com",
+    "address": {
+      "street_address": "32 Murphy Street",
+      "city": "Lumeah",
+      "state": "WA",
+      "zip_code": "6395",
+      "country": "AU"
+    }
+  },
+  {
+    "type": "user",
+    "password": "SimpleYetAwesome1*",
+    "email": "test+mvnqalogin@mavenclinic.com",
+    "api_key": "c64ee09e-6d49-4917-adcf-21b72d8cedcc"
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "is_cx": true,
+    "otp_secret": "2QZOZOYJUVHRSWMU",
+    "vertical": "Nurse Practitioner",
+    "email": "test+local_np4+prac@mavenclinic.com",
+    "featured_practitioner": true
+  },
+  {
+    "type": "user",
+    "care_team": [
+      "test+local_np4+prac@mavenclinic.com"
+    ],
+    "user_flags": [
+      "Obesity"
+    ],
+    "organization_name": "Maven",
+    "module_name": "generic",
+    "email": "test+generic@mavenclinic.com",
+    "country": "United Kingdom"
+  },
+  {
+    "type": "user",
+    "care_team": [
+      "test+local_np4+prac@mavenclinic.com"
+    ],
+    "user_flags": [
+      "Tobacco use"
+    ],
+    "organization_name": "Maven",
+    "module_name": "fertility",
+    "email": "test+fertility@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "care_team": [
+      "test+local_np4+prac@mavenclinic.com"
+    ],
+    "user_flags": [
+      "Anxiety"
+    ],
+    "organization_name": "Maven",
+    "module_name": "egg_freezing",
+    "email": "test+egg_freezing@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "care_team": [
+      "test+local_np4+prac@mavenclinic.com"
+    ],
+    "user_flags": [
+      "Depression"
+    ],
+    "organization_name": "Maven",
+    "module_name": "pregnancy",
+    "due_days": 180,
+    "email": "test+preg1@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "care_team": [
+      "test+local_np4+prac@mavenclinic.com"
+    ],
+    "user_flags": [
+      "Advanced Maternal Age"
+    ],
+    "organization_name": "Maven",
+    "module_name": "postpartum",
+    "had_child_days_ago": 50,
+    "email": "test+pp1@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "care_team": [
+      "test+local_np4+prac@mavenclinic.com"
+    ],
+    "organization_name": "Maven",
+    "module_name": "pregnancy",
+    "due_days": 220,
+    "email": "test+preg2@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "care_team": [
+      "test+local_np4+prac@mavenclinic.com"
+    ],
+    "organization_name": "Maven",
+    "module_name": "postpartum",
+    "had_child_days_ago": 30,
+    "email": "test+pp2@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "care_team": [
+      "test+local_np4+prac@mavenclinic.com"
+    ],
+    "organization_name": "Maven",
+    "module_name": "pregnancy",
+    "due_days": 210,
+    "email": "test+preg3@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "care_team": [
+      "test+local_np4+prac@mavenclinic.com"
+    ],
+    "organization_name": "Maven",
+    "module_name": "postpartum",
+    "had_child_days_ago": 100,
+    "email": "test+pp3@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "care_team": [
+      "test+local_np4+prac@mavenclinic.com"
+    ],
+    "organization_name": "FunCorp",
+    "module_name": "postpartum",
+    "had_child_days_ago": 100,
+    "email": "test+pp4@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "care_team": [
+      "test+local_np4+prac@mavenclinic.com"
+    ],
+    "organization_name": "FunCorp",
+    "module_name": "postpartum",
+    "had_child_days_ago": 100,
+    "email": "test+enterpriseinternational@mavenclinic.com",
+    "address": {
+      "street_address": "21 Milbrodale Road",
+      "city": "Wylies Flat",
+      "state": "NSW",
+      "zip_code": "2330",
+      "country": "AU"
+    }
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "years_experience": 3,
+    "education": "NYU",
+    "reference_quote": "Best. Practitioner. Ever.",
+    "awards": "Most Amazingest Practitioner Award.",
+    "work_experience": "You name it.",
+    "vertical": "Nurse Practitioner",
+    "email": "test+local_np1@mavenclinic.com",
+    "certified_subdivision_codes": "US-NY",
+    "can_prescribe": true,
+    "anonymous_allowed": true,
+    "show_when_unavailable": true
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "years_experience": 4,
+    "education": "NYU",
+    "reference_quote": "Worst. Practitioner. Ever.",
+    "awards": "Least Amazingest Practitioner Award.",
+    "work_experience": "You name it.",
+    "vertical": "Nurse Practitioner",
+    "email": "test+local_np1_nj@mavenclinic.com",
+    "certified_subdivision_codes": "US-NJ",
+    "can_prescribe": true,
+    "anonymous_allowed": true,
+    "show_when_unavailable": true
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "vertical": "Nurse Practitioner",
+    "email": "test+local_np2@mavenclinic.com",
+    "messaging_enabled": false
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "vertical": "Nurse Practitioner",
+    "email": "test+local_np3@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "is_cx": true,
+    "vertical": "Nurse Practitioner",
+    "email": "test+local_np5@mavenclinic.com",
+    "next_availability": "2018-08-10T00:00:00"
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "is_cx": true,
+    "vertical": "Nurse Practitioner",
+    "email": "test+local_np6@mavenclinic.com",
+    "next_availability": "2018-08-11T12:00:00"
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "is_cx": true,
+    "vertical": "Nurse Practitioner",
+    "email": "test+local_np7@mavenclinic.com",
+    "next_availability": "2018-08-12T12:00:00"
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "vertical": "Mental Health Provider",
+    "email": "test+local_mhp1@mavenclinic.com"
+  },
+  {
+  "type":"user",
+  "role":"practitioner",
+  "vertical":"Adoption coach",
+  "email":"test+local_adoptioncoach_0@mavenclinic.com",
+  "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Adoption coach",
+    "email":"test+local_adoptioncoach_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Career coach",
+    "email":"test+local_careercoach_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Career coach",
+    "email":"test+local_careercoach_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Doula and childbirth educator",
+    "email":"test+local_doulaandchildbirtheducator_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Doula and childbirth educator",
+    "email":"test+local_doulaandchildbirtheducator_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Egg Donor Consultant",
+    "email":"test+local_eggdonorconsultant_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Egg Donor Consultant",
+    "email":"test+local_eggdonorconsultant_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Fertility Awareness Educator",
+    "email":"test+local_fertilityawarenesseducator_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Fertility Awareness Educator",
+    "email":"test+local_fertilityawarenesseducator_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"High-risk OB (MFM)",
+    "email":"test+local_high-riskob_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"High-risk OB (MFM)",
+    "email":"test+local_high-riskob_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Lactation consultant",
+    "email":"test+local_lactationconsultant_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Lactation consultant",
+    "email":"test+local_lactationconsultant_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Mental health provider",
+    "email":"test+local_mentalhealthprovider_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Mental health provider",
+    "email":"test+local_mentalhealthprovider_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Midwife and lactation consultant",
+    "email":"test+local_midwifeandlactationconsultant_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Midwife and lactation consultant",
+    "email":"test+local_midwifeandlactationconsultant_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Nutritionist and lactation consultant",
+    "email":"test+local_nutritionistandlactationconsultant_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Nutritionist and lactation consultant",
+    "email":"test+local_nutritionistandlactationconsultant_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Nutritionist",
+    "email":"test+local_nutritionist_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Nutritionist",
+    "email":"test+local_nutritionist_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"OB-GYN",
+    "email":"test+local_ob-gyn_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"OB-GYN",
+    "email":"test+local_ob-gyn_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Pediatric OT",
+    "email":"test+local_pediatricot_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Pediatric OT",
+    "email":"test+local_pediatricot_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Pediatric sleep coach",
+    "email":"test+local_pediatricsleepcoach_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Pediatric sleep coach",
+    "email":"test+local_pediatricsleepcoach_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Pediatrician",
+    "email":"test+local_pediatrician_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Pediatrician",
+    "email":"test+local_pediatrician_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Physical therapist",
+    "email":"test+local_physicaltherapist_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Physical therapist",
+    "email":"test+local_physicaltherapist_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Reproductive endocrinologist",
+    "email":"test+local_reproductiveendocrinologist_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Reproductive endocrinologist",
+    "email":"test+local_reproductiveendocrinologist_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Surrogacy coach",
+    "email":"test+local_surrogacycoach_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Surrogacy coach",
+    "email":"test+local_surrogacycoach_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Wellness Coach",
+    "email":"test+local_wellness_coach_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Wellness Coach",
+    "email":"test+local_wellness_coach_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Certified nutritional therapy practitioner",
+    "email":"test+local_nutritional_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Certified nutritional therapy practitioner",
+    "email":"test+local_nutritional_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Parent Coach",
+    "email":"test+local_parent_coach_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Parent Coach",
+    "email":"test+local_parent_coach_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Childcare Consultant",
+    "email":"test+local_childcare_0@mavenclinic.com",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"user",
+    "role":"practitioner",
+    "vertical":"Childcare Consultant",
+    "email":"test+local_childcare_1@mavenclinic.com",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type": "user",
+    "role": "staff",
+    "otp_secret": "X26YK64TUJCFEQDN",
+    "email": "test+staff@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "role": "marketing_staff",
+    "otp_secret": "JPBLDAHIQIXHUY76",
+    "email": "test+marketing+staff@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "role": "payments_staff",
+    "otp_secret": "02HGFFG2GPBT7LFV",
+    "email": "test+payments+staff@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "role": "producer",
+    "otp_secret": "JPBLDAHIQIXHUY76",
+    "email": "test+producer@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "role": "care_coordinator",
+    "otp_secret": "JPBLDAHIQIXHUY76",
+    "email": "test+care+coordinator@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "role": "care_coordinator_manager",
+    "otp_secret": "JPBLDAHIQIXHUY76",
+    "email": "test+care+coordinator+manager@mavenclinic.com"
+  },
+  {
+    "type": "schedule_event",
+    "practitioner": "test+local_np1@mavenclinic.com",
+    "starts_in": "in 1 hour",
+    "minutes": 60
+  },
+  {
+    "type": "schedule_event",
+    "practitioner": "test+local_np4+prac@mavenclinic.com",
+    "starts_in": "in 1 hour",
+    "minutes": 120
+  },
+  {
+    "type": "appointment",
+    "scheduled_start_in": "in 30 minutes",
+    "practitioner": "test+local_np1@mavenclinic.com",
+    "member": "test+m1@mavenclinic.com"
+  },
+  {
+    "type": "appointment",
+    "scheduled_start_in": "in 5 minutes",
+    "practitioner": "test+local_np3@mavenclinic.com",
+    "member": "test+m2@mavenclinic.com",
+    "purpose": "introduction"
+  },
+  {
+    "type": "appointment",
+    "scheduled_start_in": "in 10 minutes",
+    "practitioner": "test+local_np3@mavenclinic.com",
+    "member": "test+m2@mavenclinic.com",
+    "purpose": "birth_planning"
+  },
+  {
+    "type": "appointment",
+    "scheduled_start_in": "in 60 minutes",
+    "practitioner": "test+local_np1@mavenclinic.com",
+    "member": "test+m1@mavenclinic.com",
+    "cancelled_at": "now"
+  },
+  {
+    "type": "appointment",
+    "scheduled_start": "2 hours ago",
+    "practitioner": "test+local_np1@mavenclinic.com",
+    "member": "test+m1@mavenclinic.com",
+    "practitioner_started_at": "2 hours ago",
+    "member_started_at": "2 hours ago",
+    "practitioner_ended_at": "1 hour ago",
+    "member_ended_at": "1 hour ago"
+  },
+  {
+    "type": "appointment",
+    "scheduled_start": "in 2 hours",
+    "practitioner": "test+local_np4+prac@mavenclinic.com",
+    "member": "test+generic@mavenclinic.com",
+    "product_vertical": "Care Advocate"
+  },
+  {
+    "type": "forum_post",
+    "title": "post title 1",
+    "body": "Test Post 1",
+    "author": "test+m1@mavenclinic.com",
+    "category": "health-wellness"
+  },
+  {
+    "type": "forum_post",
+    "title": "post title 2",
+    "body": "Test Post 2",
+    "author": "test+m1@mavenclinic.com",
+    "category": "health-wellness",
+    "replies": [
+      {
+        "type": "forum_post",
+        "title": "post title 3",
+        "body": "Test Post 3",
+        "author": "test+m2@mavenclinic.com",
+        "category": "health-wellness"
+      },
+      {
+        "type": "forum_post",
+        "title": "post title 4",
+        "body": "Test Post 4",
+        "author": "test+local_mhp1@mavenclinic.com",
+        "category": "health-wellness"
+      }
+    ]
+  },
+  {
+    "type": "message",
+    "body": "Hello",
+    "author": "test+m1@mavenclinic.com",
+    "recipient": "test+local_np1@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "Hello",
+    "author": "test+generic@mavenclinic.com",
+    "recipient": "test+local_np4+prac@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "Hello",
+    "author": "test+local_np4+prac@mavenclinic.com",
+    "recipient": "test+fertility@mavenclinic.com"
+  },
+  {
+    "type": "message",
+    "body": "Hello",
+    "author": "test+preg1@mavenclinic.com",
+    "recipient": "test+local_np4+prac@mavenclinic.com"
+  },
+  {
+    "type": "needs_assessment",
+    "meta_type": "PREGNANCY_ONBOARDING",
+    "name": "PREGNANCY_ONBOARDING",
+    "user": "test+m1@mavenclinic.com",
+    "version": 4
+  },
+  {
+    "type": "needs_assessment",
+    "meta_type": "postpartum_onboarding",
+    "name": "postpartum_onboarding",
+    "user": "test+m2@mavenclinic.com",
+    "version": 3
+  },
+  {
+    "type": "needs_assessment",
+    "meta_type": "egg_freezing_onboarding",
+    "name": "egg_freezing_onboarding",
+    "user": "test+m3@mavenclinic.com",
+    "version": 4
+  },
+  {
+    "type": "needs_assessment",
+    "meta_type": "fertility_onboarding",
+    "name": "fertility_onboarding",
+    "user": "test+m4@mavenclinic.com",
+    "version": 5
+  },
+  {
+    "type": "needs_assessment",
+    "meta_type": "pregnancyloss_onboarding",
+    "name": "Pregnancy loss",
+    "user": "test+m5@mavenclinic.com",
+    "version": 3
+  },
+  {
+    "type": "needs_assessment",
+    "meta_type": "adoption_onboarding",
+    "name": "adoption_onboarding",
+    "user": "test+m6@mavenclinic.com",
+    "version": 3
+  },
+  {
+    "type": "needs_assessment",
+    "meta_type": "surrogacy_onboarding",
+    "name": "surrogacy_onboarding",
+    "user": "test+m7@mavenclinic.com",
+    "version": 3
+  },
+  {
+    "type": "needs_assessment",
+    "meta_type": "M_QUIZ",
+    "user": "test+m8@mavenclinic.com",
+    "name": "Maternity leave readiness",
+    "version": 1
+  },
+  {
+    "type": "needs_assessment",
+    "meta_type": "E_QUIZ",
+    "user": "test+m9@mavenclinic.com",
+    "name": "What's your pregnancy IQ?",
+    "version": 1
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"adoption",
+    "vgc":"Adoption Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"adoption",
+    "vgc":"Adoption Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"adoption",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"adoption",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"adoption",
+    "vgc":"Pediatrician",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"adoption",
+    "vgc":"Pediatrician",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"adoption",
+    "vgc":"Reproductive Endocrinologist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"adoption",
+    "vgc":"Reproductive Endocrinologist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"adoption",
+    "vgc":"Reproductive Nurse",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"adoption",
+    "vgc":"Reproductive Nurse",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"adoption",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"adoption",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"breast_milk_shipping",
+    "vgc":"Lactation Consultant",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"breast_milk_shipping",
+    "vgc":"Lactation Consultant",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Reproductive Endocrinologist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Reproductive Endocrinologist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Reproductive Nurse",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Reproductive Nurse",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Other - Wellness",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Other - Wellness",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Egg Donor Consultant",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Egg Donor Consultant",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"egg_freezing",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"Reproductive Endocrinologist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"Reproductive Endocrinologist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"Other - Wellness",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"Other - Wellness",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"Reproductive Nurse",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"Reproductive Nurse",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"fertility",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"Career Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"Career Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"Other - Wellness",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"Other - Wellness",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"Fertility Awareness Educator",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"Fertility Awareness Educator",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"general_wellness",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"parenting_and_pediatrics",
+    "vgc":"Pediatrician",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"parenting_and_pediatrics",
+    "vgc":"Pediatrician",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"parenting_and_pediatrics",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"parenting_and_pediatrics",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"parenting_and_pediatrics",
+    "vgc":"Parent Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"parenting_and_pediatrics",
+    "vgc":"Parent Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"parenting_and_pediatrics",
+    "vgc":"Sleep Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"parenting_and_pediatrics",
+    "vgc":"Sleep Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"parenting_and_pediatrics",
+    "vgc":"Childcare Consultant",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"parenting_and_pediatrics",
+    "vgc":"Childcare Consultant",
+    "certified_subdivision_codes":"NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"parenting_and_pediatrics",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"parenting_and_pediatrics",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_fertility",
+    "vgc":"Reproductive Nurse",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_fertility",
+    "vgc":"Reproductive Nurse",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_fertility",
+    "vgc":"Reproductive Endocrinologist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_fertility",
+    "vgc":"Reproductive Endocrinologist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_fertility",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_fertility",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_fertility",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_fertility",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_fertility",
+    "vgc":"Fertility Awareness Educator",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_fertility",
+    "vgc":"Fertility Awareness Educator",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_fertility",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_fertility",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_newparent",
+    "vgc":"Sleep Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_newparent",
+    "vgc":"Sleep Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_newparent",
+    "vgc":"Pediatrician",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_newparent",
+    "vgc":"Pediatrician",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_newparent",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_newparent",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_newparent",
+    "vgc":"Career Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_newparent",
+    "vgc":"Career Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_newparent",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_newparent",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_newparent",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_newparent",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"Lactation Consultant",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"Lactation Consultant",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"Doula",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"Doula",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"Career Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"Career Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"partner_pregnant",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Sleep Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Sleep Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Lactation Consultant",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Lactation Consultant",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Pediatrician",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Pediatrician",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Career Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Career Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Physical Therapy",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Physical Therapy",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"postpartum",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"Lactation Consultant",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"Lactation Consultant",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"Doula",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"Doula",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"Career Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"Career Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancy",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancyloss",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancyloss",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancyloss",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancyloss",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancyloss",
+    "vgc":"Other - Wellness",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancyloss",
+    "vgc":"Other - Wellness",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancyloss",
+    "vgc":"Reproductive Endocrinologist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancyloss",
+    "vgc":"Reproductive Endocrinologist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancyloss",
+    "vgc":"Reproductive Nurse",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancyloss",
+    "vgc":"Reproductive Nurse",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancyloss",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"pregnancyloss",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"surrogacy",
+    "vgc":"Surrogacy Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"surrogacy",
+    "vgc":"Surrogacy Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"surrogacy",
+    "vgc":"Reproductive Nurse",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"surrogacy",
+    "vgc":"Reproductive Nurse",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"surrogacy",
+    "vgc":"Pediatrician",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"surrogacy",
+    "vgc":"Pediatrician",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"surrogacy",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"surrogacy",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"surrogacy",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"surrogacy",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"surrogacy",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"surrogacy",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"OB/GYN",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"Career Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"Career Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"Mental Health",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"Nutritionist",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"Other - Wellness",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"Other - Wellness",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"Fertility Awareness Educator",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"Fertility Awareness Educator",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NJ"
+  },
+  {
+    "type":"practitioner_track_vgc",
+    "track_name":"trying_to_conceive",
+    "vgc":"Wellness Coach",
+    "certified_subdivision_codes":"US-NY"
+  },
+  {
+    "type": "track_change_reason",
+    "name": "bug",
+    "display_name": "Bug",
+    "description": "Ex: member cannot self-transition in product due to bug"
+  },
+  {
+    "type": "track_change_reason",
+    "name": "care_team_error",
+    "display_name": "Care team error",
+    "description": null
+  },
+  {
+    "type": "track_change_reason",
+    "name": "organizational_change",
+    "display_name": "Organizational change",
+    "description": "Ex: organization acquired or breaks off"
+  },
+  {
+    "type": "track_change_reason",
+    "name": "system_error",
+    "display_name": "System error",
+    "description": "Ex: organization_employee_id assigned to a member in the wrong organization"
+  },
+  {
+    "type": "track_change_reason",
+    "name": "system_limitation",
+    "display_name": "System limitation",
+    "description": "Ex: transitions not available in the product"
+  },
+  {
+    "type": "track_change_reason",
+    "name": "user_error",
+    "display_name": "User error",
+    "description": "Ex: wrong track selected or wrong account"
+  },
+  {
+    "type": "track_change_reason",
+    "name": "user_request",
+    "display_name": "User request",
+    "description": "Ex: members do not want to self-transition"
+  },
+  {
+    "type": "ca_member_transition_template",
+    "message_type": "FAREWELL",
+    "message_description": "Farewell message template",
+    "message_body": "Hi $MEMBER_FIRST_NAME, I will no longer be your care advocate and you will be assigned a new one.\n\n$OLD_CX_FIRST_NAME",
+    "sender": "OLD_CX"
+  },
+  {
+    "type": "ca_member_transition_template",
+    "message_type": "FOLLOWUP_INTRO",
+    "message_description": "Intro followup message template",
+    "message_body": "Hi $MEMBER_FIRST_NAME, I will be your new care advocate. Let me know if I can help you in any way!\n\n$NEW_CX_FIRST_NAME",
+    "sender": "NEW_CX"
+  },
+  {
+    "type": "ca_member_transition_template",
+    "message_type": "HARD_INTRO",
+    "message_description": "Hard intro message template",
+    "message_body": "Hi $MEMBER_FIRST_NAME, I will be your new care advocate. Let me know if I can help you in any way!\n\n$NEW_CX_FIRST_NAME",
+    "sender": "NEW_CX"
+  },
+  {
+    "type": "ca_member_transition_template",
+    "message_type": "SOFT_INTRO",
+    "message_description": "Soft intro message template",
+    "message_body": "Hi $MEMBER_FIRST_NAME, I am be your new care advocate. Let me know if I can help you in any way!\n\n$NEW_CX_FIRST_NAME",
+    "sender": "NEW_CX"
+  },
+  {
+    "type": "ca_member_transition_template",
+    "message_type": "ECPFAREWELL",
+    "message_description": "ECP farewell message template",
+    "message_body": "Hi $MEMBER_FIRST_NAME, I will no longer be your ECP care advocate, but your new one will take great care of you!\n\n$OLD_CX_FIRST_NAME",
+    "sender": "OLD_CX"
+  },
+  {
+    "type": "ca_member_transition_template",
+    "message_type": "FOLLOWUP_ECPINTRO",
+    "message_description": "ECP intro followup message template",
+    "message_body": "Hi $MEMBER_FIRST_NAME, I am your new ECP care advocate and am here to help you on your journey!\n\n$NEW_CX_FIRST_NAME",
+    "sender": "NEW_CX"
+  },
+  {
+    "type": "ca_member_transition_template",
+    "message_type": "UCPFAREWELL",
+    "message_description": "UCP farewell message template",
+    "message_body": "Hi $MEMBER_FIRST_NAME, I will no longer be your care UCP advocate, but your new one will take great care of you!\n\n$OLD_CX_FIRST_NAME",
+    "sender": "OLD_CX"
+  },
+  {
+    "type": "ca_member_transition_template",
+    "message_type": "FOLLOWUP_UCPINTRO",
+    "message_description": "UCP intro followup message template",
+    "message_body": "Hi $MEMBER_FIRST_NAME, I am your new UCP care advocate and am here to help you on your journey!\n\n$NEW_CX_FIRST_NAME",
+    "sender": "NEW_CX"
+  }
+]

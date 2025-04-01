@@ -1,0 +1,89 @@
+.forum-explore-practitioners {
+	@include susy-breakpoint($tablet) {
+		border: 1px solid $gray-xlt;
+		padding: 55px 0;
+		margin: 0 auto;
+	}
+	@include susy-breakpoint($desktop) {
+		margin-bottom: 55px;
+		margin-top: 55px;
+	}
+	border: none;
+	border-radius: 8px;
+	max-width: 768px;
+	margin: 50px 16px 87px;
+	padding: 0;
+	text-align: center;
+	.h4 {
+		margin: 1rem 0 0.5rem 0;
+	}
+	.care-team {
+		width: 225px;
+		@include susy-breakpoint($desktop) {
+			width: 272px;
+		}
+	}
+	.private-msg {
+		width: 100%;
+		padding: 0 10px;
+		margin: 0 auto;
+		line-height: 26px;
+		color: $gray;
+		@include susy-breakpoint($tablet) {
+			width: 54%;
+		}
+	}
+	.private-msg.sm {
+		@include font-size(14);
+		margin-top: 20px;
+		@include susy-breakpoint($tablet) {
+			width: 70%;
+		}
+	}
+	a.talk-practitioner {
+		margin: 1.8rem 0;
+	}
+	.not-sure {
+		color: $gray;
+		margin: 0px;
+		@include font-size(14);
+		img {
+			border-radius: 50%;
+			margin-right: 12px;
+		}
+	}
+	#ask-coordinator a {
+		color: $primary;
+		text-decoration: none;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	#ask-coordinator {
+		@include susy-breakpoint(0 $mobile-max) {
+			.btn.btn-tertiary {
+				margin-left: -95px;
+			}
+		}
+		.cta {
+			display: none;
+		}
+		.btn-container {
+			margin: 0px;
+		}
+		.private-message-container {
+			span {
+				display: none;
+			}
+		}
+		.private-message {
+			display: block;
+			@include susy-breakpoint($tablet) {
+				display: inline-block;
+			}
+		}
+	}
+	.need-help {
+		color: $gray;
+	}
+}

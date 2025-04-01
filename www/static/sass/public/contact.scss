@@ -1,0 +1,41 @@
+.page-contact {
+	.contact-info {
+		background-color: $macaroon-40;
+
+		@include susy-breakpoint($desktop) {
+			padding: 150px 8% 160px;
+		}
+	}
+
+	.grid-container.three-column .grid-item {
+		text-align: center;
+		@include susy-breakpoint($tablet) {
+			width: 100%;
+		}
+	}
+
+	.location {
+		justify-content: space-around;
+	}
+
+	.map {
+		img {
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
+		iframe {
+			max-width: 100%;
+		}
+	}
+
+	@include susy-breakpoint($desktop) {
+		.map {
+			text-align: right;
+		}
+	}
+
+	.address {
+		text-align: left;
+	}
+}

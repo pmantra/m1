@@ -1,0 +1,46 @@
+<div class="member-state-selection center">
+	<div class="member-add-state-icon empty-icon">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 227 230">
+			<path
+				fill="#111111"
+				d="M165.2 101.6c0-6.3-4.6-9.2-9.1-9.2-3.8 0-6.9 3.4-8.6 5.6-1.6-2.2-4.7-5.6-8.6-5.6-4.5 0-9.1 2.8-9.1 9.2 0 10.1 12.8 16.3 16.3 17.9v37.4c0 3-1.5 4.5-4.5 4.5H95.5c-2.5 0-4.8-2.3-4.8-4.8v-22.2c2-.5 3.5-2.2 3.8-4.2.8 0 1.8 0 2.8-.1 7.4-.1 11.7-9.7 11.9-10.1.6-1.4 9.4-33 9.6-38.3.2-5.5-5-9.6-9.6-11.5-.1-2.2-1.9-4-4.2-4-2.3 0-4.2 1.9-4.2 4.2 0 2.3 1.9 4.2 4.2 4.2 1.4 0 2.6-.7 3.4-1.7 3.1 1.3 7.8 4.5 7.7 8.7-.1 4.4-8.4 35.1-9.3 37.3 0 .1-3.7 8.3-9.4 8.4-1.2 0-2.2 0-3.1.1-.8-1.9-2.6-3.2-4.8-3.2-2.2 0-4 1.3-4.8 3.2-.9 0-1.9 0-3.2-.1-5.7-.1-9.4-8.3-9.4-8.4-.9-2.2-9.2-32.9-9.3-37.3-.1-4.3 4.6-7.4 7.7-8.7.8 1 2 1.7 3.4 1.7 2.3 0 4.2-1.9 4.2-4.2 0-2.3-1.9-4.2-4.2-4.2-2.3 0-4.1 1.8-4.2 4-4.6 1.9-9.8 6-9.6 11.5.2 5.2 9 36.9 9.6 38.3.2.4 4.4 9.9 11.9 10.1 1.1 0 2.1 0 2.9.1.3 2 1.7 3.6 3.6 4.1v22.3c0 3.9 3.6 7.5 7.5 7.5h46.2c4.5 0 7.3-2.7 7.3-7.3v-37.4c3.3-1.4 16.1-7.7 16.1-17.8zm-17.6 15.5c-2.6-1.1-15-6.9-15-15.5 0-4.7 3.3-6.4 6.4-6.4 3.2 0 6.4 4.4 7.4 6l1.2 2.1 1.2-2.1c.9-1.7 4.1-6 7.4-6 3.1 0 6.4 1.7 6.4 6.4-.1 8.6-12.4 14.3-15 15.5z"
+			/>
+			<path
+				fill="#111111"
+				d="M112.6 223.9c-59.9 0-108.7-48.8-108.7-108.7C3.9 55.3 52.7 6.5 112.6 6.5c59.9 0 108.7 48.8 108.7 108.7 0 60-48.7 108.7-108.7 108.7zm0-214.6c-58.4 0-106 47.5-106 106 0 58.4 47.5 106 106 106 58.4 0 106-47.5 106-106s-47.6-106-106-106z"
+			/>
+		</svg>
+	</div>
+	<h3>What state are you in?</h3>
+	<p>In order to connect you with licensed professionals, please select your current state from the list.</p>
+	<form name="userStateForm" class="mvn-form">
+		<div class="mvn-select-search">
+			<ui-select
+				ng-model="userStateForm.state"
+				theme="select2"
+				ng-disabled="ctrl.disabled"
+				required
+				ng-required="true"
+				title="state"
+			>
+				<ui-select-match placeholder="Select your current state...">{{
+					userStateForm.state | stateCodeToName
+				}}</ui-select-match>
+				<ui-select-choices class="choices" repeat="state.code as state in states | filter: $select.search">
+					<span role="option" ng-bind-html="state.name | highlight: $select.search"></span>
+				</ui-select-choices>
+			</ui-select>
+			<span class="ghost-label">Select your current state...</span>
+		</div>
+		<p>
+			<a
+				href=""
+				class="btn btn-tertiary"
+				ng-click="confirm(userStateForm)"
+				ng-class="{'disabled' : userStateForm.$invalid  }"
+				ng-disabled="userStateForm.$invalid"
+				>Save &amp; Continue
+			</a>
+		</p>
+	</form>
+</div>

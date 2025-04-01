@@ -1,0 +1,43 @@
+[run]
+omit =
+    \.*env*
+    *lib/python*
+    *site-packages*
+    # Omit test directories
+    tests/*
+    */tests/**/*
+    pytests/*
+    */pytests/**/*
+    schemas/**/*
+    */schemas/*
+    wheelhouse/**/*
+    */wheelhouse/*
+    maven_schemas/**/*
+    */maven_schemas/**/*
+    */migrations/**/*
+    data_admin/**/*
+    */data_admin/**/*
+
+[report]
+ignore_errors = True
+show_missing = True
+skip_empty = True
+# Regexes for lines to exclude from consideration
+exclude_also =
+    # Don't complain about missing debug-only code:
+    def __repr__.*
+    if self\.debug
+    \.\.\.
+    pass
+
+    # Don't complain if tests don't hit defensive assertion code:
+    raise AssertionError.*
+    raise NotImplementedError.*
+
+    # Don't complain if non-runnable code isn't run:
+    if 0:
+    if False:
+    if __name__ == .__main__.:
+    if (typing\.)?TYPE_CHECKING:
+    @(typing\.)?overload
+    @(abc\.)?abstractmethod

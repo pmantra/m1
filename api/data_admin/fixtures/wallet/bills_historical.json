@@ -1,0 +1,18 @@
+[
+  {
+    "type": "member_bill",
+    "amount": 0,
+    "user": "test+treatment_plan@mavenclinic.com",
+    "status": "PAID",
+    "cost_responsibility_type": "employer_only",
+    "treatment_procedure_id": 1
+  },
+  {
+    "type": "member_bill",
+    "amount": -5000,
+    "user": "test+treatment_plan@mavenclinic.com",
+    "status": "REFUNDED",
+    "cost_responsibility_type": "employer_only",
+    "treatment_procedure_id": 1
+  }
+]

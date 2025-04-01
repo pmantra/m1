@@ -1,0 +1,20 @@
+{% extends 'admin/model/list.html' %}
+
+{% block body %}
+    <h3 class="text-center">CC High Risk Users Dashboard</h3>
+    {{ super() }}
+{% endblock %}
+
+{% block tail %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // This displays newlines and whitespace in the note but strips other whitespace around it
+            $('td.col-member_note').each(function(_, row) {
+                row.textContent = $.trim(row.textContent);
+                $(row).css('white-space', 'pre-line');
+            });
+        });
+    </script>
+    {{ lib.form_js() }}  {# Remove this line when this has been merged and included in our current release: https://github.com/flask-admin/flask-admin/pull/1784 #}
+    {{ super() }}
+{% endblock %}

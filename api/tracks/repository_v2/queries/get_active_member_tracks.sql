@@ -1,0 +1,24 @@
+-- get_active_member_tracks
+SELECT
+    member_track.id,
+    member_track.name,
+    member_track.anchor_date,
+    member_track.start_date,
+    member_track.activated_at,
+    client_track.length_in_days,
+    organization.id as org_id,
+    organization.name as org_name,
+    organization.vertical_group_version as org_vertical_group_version,
+    organization.bms_enabled as org_bms_enabled,
+    organization.rx_enabled as org_rx_enabled,
+    organization.education_only as org_education_only,
+    organization.display_name as org_display_name,
+    client_track.track_modifiers,
+    organization.benefits_url as org_benefits_url
+FROM member_track
+LEFT OUTER JOIN client_track ON member_track.client_track_id = client_track.id
+LEFT OUTER JOIN organization ON client_track.organization_id = organization.id
+WHERE user_id = :user_id
+AND member_track.ended_at IS NULL
+AND member_track.activated_at IS NOT NULL
+ORDER BY member_track.created_at ASC;

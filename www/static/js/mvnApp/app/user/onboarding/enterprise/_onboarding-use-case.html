@@ -1,0 +1,50 @@
+<div class="onboarding-ent-complete center" ng-if="needsConfirmation">
+	<h3 class="serif">Thanks for submitting <br />your information!</h3>
+
+	<p>We need to confirm a couple of things on our end in order to complete your registration.</p>
+	<p>
+		We’ll be in touch with next steps soon! In the meantime, we’ve added $35 credit to your account so you don’t have to
+		wait to have your first appointment. Feel free to shoot {{ user.care_coordinators[0] ?
+		user.care_coordinators[0].first_name : "Kaitlyn" }}, your Care Advocate, a message with any questions about using
+		Maven in the meantime.
+	</p>
+	<br />
+	<div ng-if="!isNative">
+		<p><a class="btn btn-cta" ui-sref="app.appointment.book">Explore Maven</a></p>
+		<p>
+			<a
+				class="btn btn-tertiary"
+				ui-sref="app.practitioner-profile({practitioner_id : (user.care_coordinators[0] ? user.care_coordinators[0].id : '25159') })"
+				>Send {{ user.care_coordinators[0] ? user.care_coordinators[0].first_name : "Kaitlyn" }} a message</a
+			>
+		</p>
+	</div>
+	<div ng-if="isNative">
+		<mvn-dynamic-cta opts="nativeCtaOpts" event-name="native-exit-onboarding-alt-verify-or-loss"></mvn-dynamic-cta>
+		<mvn-dynamic-cta
+			opts="nativeCtaMsgOpts"
+			event-name="native-exit-onboarding-alt-verify-or-loss-send-message"
+		></mvn-dynamic-cta>
+	</div>
+</div>
+
+<div class="onboarding-ent-complete center" ng-if="!needsConfirmation">
+	<h3 class="serif">Hmm... something went wrong</h3>
+
+	<p class="lg">Unfortunately, the program you selected isn’t available through your employer at this time.</p>
+
+	<p>
+		If you think this is an error, please contact <a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a>.
+	</p>
+	<br />
+	<p><a class="btn btn-action" href="mailto:support@mavenclinic.com">Contact support</a></p>
+
+	<p>
+		<a ng-if="!isNative" class="btn btn-cta" ui-sref="app.appointment.book">Explore Maven</a>
+		<mvn-dynamic-cta
+			ng-if="isNative"
+			opts="nativeCtaOpts"
+			event-name="native-exit-onboarding-unsupported-module"
+		></mvn-dynamic-cta>
+	</p>
+</div>

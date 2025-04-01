@@ -1,0 +1,168 @@
+FORMAT: 1A
+HOST: https://www.mavenclinic.com/api/v2
+
+# Maven Clinic V2 API
+
+The Maven Clinic V2  API is the second version of the data storage and user management interface for The Maven Clinic.
+
+ALL requests except for user creation and password reset requesting require an *API-KEY* header (it's not case-sensitive) that contains a valid API Key for a Maven Clinic user. All requests must be transmitted over HTTPS.
+
+
+# Group Internal Data
+
+This provides app-level data for the frontends that is needed to initialize all the functionality.
+
+## Vertical Groupings [/_/vertical_groupings{?version}]
+
++ Parameter
+    + version (optional) - the version of the vertical group to be queried.
+
+### Get the data [GET]
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+              {
+                "specialties": [
+                  {
+                    "id": 1,
+                    "image_url": "https://storage.googleapis.com/maven-dev-svg/allergies.svg",
+                    "name": "Allergies"
+                  },
+                  {
+                    "id": 2,
+                    "image_url": "https://storage.googleapis.com/maven-dev-svg/cold-flu.svg",
+                    "name": "Cold & Flu"
+                  },
+                  {
+                    "id": 4,
+                    "image_url": "https://storage.googleapis.com/maven-dev-svg/diet-weight-lost.svg",
+                    "name": "Diet & Weight Loss"
+                  },
+                  {
+                    "id": 5,
+                    "image_url": "https://storage.googleapis.com/maven-dev-svg/stress-anxiety.svg",
+                    "name": "Stress & Anxiety"
+                  }
+                ],
+                "image_url": "https://storage.googleapis.com/maven-dev-svg/foo.svg",
+                "hero_image_url": "https://storage.googleapis.com/maven-dev-images/95038a62-9da6-4c5a-9108-7e920aeebfaa",
+                "name": "my-health",
+                "title": "",
+                "description": "",
+                "verticals": [
+                  {
+                    "id": 3,
+                    "name": "Women's Health Nurse Practitioner",
+                    "description": "Women's Health Nurse Practitioner",
+                    "can_prescribe": false
+                  },
+                  {
+                    "id": 5,
+                    "name": "Psychiatric Nurse Practitioner",
+                    "description": "Psychiatric Nurse Practitioner",
+                    "can_prescribe": false
+                  },
+                  {
+                    "id": 6,
+                    "name": "Nurse",
+                    "description": "Nurse",
+                    "can_prescribe": false
+                  },
+                  {
+                    "id": 7,
+                    "name": "Physical Therapist",
+                    "description": "Physical Therapist",
+                    "can_prescribe": false
+                  },
+                  {
+                    "id": 8,
+                    "name": "Nurse Practitioner",
+                    "description": "Nurse Practitioner",
+                    "can_prescribe": false
+                  },
+                  {
+                    "id": 13,
+                    "name": "Postpartum Doula",
+                    "description": "Postpartum Doula",
+                    "can_prescribe": false
+                  }
+                ]
+              },
+              {
+                "specialties": [
+                  {
+                    "id": 3,
+                    "image_url": "https://storage.googleapis.com/maven-dev-svg/birth-control.svg",
+                    "name": "Birth Control"
+                  }
+                ],
+                "image_url": null,
+                "hero_image_url": "https://storage.googleapis.com/maven-dev-images/95038a62-9da6-4c5a-9108-7e920aeebfaa",
+                "name": "pregnancy-baby",
+                "title": "",
+                "description": "",
+                "verticals": [
+                  {
+                    "id": 1,
+                    "name": "Doula",
+                    "description": "Doula",
+                    "can_prescribe": false
+                  },
+                  {
+                    "id": 2,
+                    "name": "OB/GYN",
+                    "description": "OB/GYN",
+                    "can_prescribe": false
+                  },
+                  {
+                    "id": 4,
+                    "name": "Nutritionist",
+                    "description": "Nutritionist",
+                    "can_prescribe": false
+                  },
+                  {
+                    "id": 11,
+                    "name": "Pediatrician",
+                    "description": "Pediatrician",
+                    "can_prescribe": false
+                  }
+                ]
+              },
+              {
+                "specialties": [
+                  {
+                    "id": 3,
+                    "image_url": "https://storage.googleapis.com/maven-dev-svg/birth-control.svg",
+                    "name": "Birth Control"
+                  }
+                ],
+                "image_url": null,
+                "hero_image_url": "https://storage.googleapis.com/maven-dev-images/95038a62-9da6-4c5a-9108-7e920aeebfaa",
+                "name": "family",
+                "title": "",
+                "description": "",
+                "verticals": [
+                  {
+                    "id": 9,
+                    "name": "Midwife",
+                    "description": "Midwife",
+                    "can_prescribe": false
+                  },
+                  {
+                    "id": 10,
+                    "name": "Dermatologist",
+                    "description": "Dermatologist",
+                    "can_prescribe": false
+                  },
+                  {
+                    "id": 12,
+                    "name": "Lactation Consultant",
+                    "description": "Lactation Consultant",
+                    "can_prescribe": false
+                  }
+                ]
+              }
+            ]

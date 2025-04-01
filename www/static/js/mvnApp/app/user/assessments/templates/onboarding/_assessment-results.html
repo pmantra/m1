@@ -1,0 +1,12 @@
+<div class="assessment-{{ ::$ctrl.atype }}">
+	<div ng-if="!$ctrl.isLoading" class="center">
+
+		<div ng-if="!$ctrl.isComplete">
+			<h3>Uh oh... you haven't completed this assessment yet!</h3>
+		</div>
+
+		<div ng-if="$ctrl.isComplete">
+			<h3>Great work! You've completed this assessment</h3>
+		</div>
+	</div>
+</div>

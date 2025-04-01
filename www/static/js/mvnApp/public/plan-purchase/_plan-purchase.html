@@ -1,0 +1,157 @@
+<div class="purchase-subscription">
+	<div ng-hide="loading || purchaseComplete">
+		
+		<div class="exit-arrow" ng-if="purchaseSource == 'web-product' ">
+			<a ng-click="webAppFinish()"><svg width="20" height="19" viewBox="0 0 36 35" xmlns="http://www.w3.org/2000/svg"><title>Close</title><g fill="#BCC9CE" fill-rule="evenodd"><path d="M29.16.975c1.192-1.3 2.982-1.3 4.178 0a3.34 3.34 0 0 1 0 4.55L6.815 34.237c-.397.432-2.212 1.676-3.91-.41-1.7-2.087.486-4.055.486-4.055L29.16.975z"/><path d="M30.09 33.808L1.14 5.803C-.166 4.507-.232 2.487.987 1.093 2.206-.3 4.103-.37 5.41.93l28.894 28.855c.437.432 1.71 2.432-.254 4.424-1.968 1.99-3.96-.404-3.96-.404"/></g></svg></path>
+		</div>
+
+		<div ng-if="purchaseSource == 'iOS' ">
+			<a class="ios-close" ng-click="backToIOS()"><svg width="20" height="19" viewBox="0 0 36 35" xmlns="http://www.w3.org/2000/svg"><title>Close</title><g fill="#BCC9CE" fill-rule="evenodd"><path d="M29.16.975c1.192-1.3 2.982-1.3 4.178 0a3.34 3.34 0 0 1 0 4.55L6.815 34.237c-.397.432-2.212 1.676-3.91-.41-1.7-2.087.486-4.055.486-4.055L29.16.975z"/><path d="M30.09 33.808L1.14 5.803C-.166 4.507-.232 2.487.987 1.093 2.206-.3 4.103-.37 5.41.93l28.894 28.855c.437.432 1.71 2.432-.254 4.424-1.968 1.99-3.96-.404-3.96-.404"/></g></svg></a>
+		</div>
+
+		<div ng-if="err" class="notify error">
+			<p><span class="error-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="#FF7774" d="M100.9 13c-47.5 0-86.3 38.8-86.3 86.3s38.9 86.3 86.3 86.3 86.3-38.9 86.3-86.3c.1-47.5-38.8-86.3-86.3-86.3zm2.2 139.4c-5.8 0-10.7-4.9-10.7-10.7 0-5.9 4.9-10.9 10.7-10.9 5.9 0 10.9 5 10.9 10.9-.1 5.8-5 10.7-10.9 10.7zm12.4-77.9l-6.8 39c-.1 1.1-1.4 2.2-2.6 2.2h-5.8c-1.2 0-2.5-1.1-2.6-2.2l-6.8-38.7V58.9v-.1c0-.1-.1-.2-.1-.3 0-6.8 5.5-12.3 12.3-12.3 6.8 0 12.3 5.5 12.3 12.3v.2c0 .1.1.1.1.2v15.6z"/></svg></span> {{ errorMsg }}</p>
+		</div>
+
+		<div class="select-subscription" ng-if="!planId">
+			<h5 class="header-section">Select subscription</h5>
+
+			<ul class="plan-selection clear clearfix">
+				<li ng-repeat="plan in availablePlans track by $index">
+					<a ng-class="{ 'active' : plan.id == purchase.selectedPlan.id}" ng-click="selectPlan(plan)" href=""> 
+						<span class="plan-radio">
+						</span>
+						{{ plan.description }} <span ng-if="plan.id == purchase.selectedPlan.id">({{ plan.price_per_segment | currency:"$":0 }} {{ plan.billing_description }})</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		
+		<form name="subForm"  class="form primary-app">
+			<div ng-if=" !purchase.hasPaymentMethod " class="plan-purchase-form clearfix">
+				<h5>Add a payment card</h5>
+				
+				<div class="form-group plan-purchase-card-number">
+					<input class="" name="cc-number" type="text" ng-model="purchase.cardNumber" required="" payments-format="card" payments-type-model="type" placeholder="Card number" placeholder="Card number"/>
+				</div>
+				<div class="form-group col2 plan-purchase-cvv-exp ">
+					<div class="form-item">
+						<input class="payments-card-expiry" name="expiry" type="text" model-ref="purchase.cardExpiry" required ng-model="purchase.cardExpiry"  required="" value="MM/YYYY"  payments-format="expiry" placeholder="Exp (MM/YYYY)"/>
+					</div>
+					<div class="form-item">
+						<input class="payments-card-cvc" name="cvc" type="text" ng-model="purchase.cardCvc" required model-ref="cvc" required="" value="XXX" payments-type-model="type"  payments-format="cvc" placeholder="CVC" />
+					</div>
+				</div>
+					
+				
+			</div>
+		
+			<div ng-if="!buyingForSelf">
+				<div class="subscription payer-email">
+					<h5>Your email address</h5>
+					
+					<div class="form-group">
+						<input name="payeremail" type="email" ng-model="purchase.payerEmailAddress" required=""  placeholder="Your email address" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" />
+					</div>
+					<div class="help-block" ng-messages="subForm.payeremail.$error" ng-if="subForm.payeremail.$touched">
+						<div ng-messages-include="/js/mvnApp/shared/messages.html"></div>
+					</div>
+			
+				</div>
+			</div>
+			<div ng-if="!buyingForSelf">
+				
+				<div ng-if="!purchasingUser.email" class="subscription recipient-email">
+					<h5>Daughter's email address</h5>
+					
+					<div class="form-group">
+						<input type="email" name="useremail" ng-model="purchase.forEmailAddress" required="" placeholder="Daughter's email address" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" />
+					</div>
+					<div class="help-block" ng-messages="subForm.useremail.$error" ng-if="subForm.useremail.$touched">
+						<div ng-messages-include="/js/mvnApp/shared/messages.html"></div>
+					</div>
+					
+				</div>
+
+				<div ng-if="purchasingUser.email" >
+					<h5>Daughter's email address</h5>
+					<p>{{ purchase.userEmail }}</p>
+				</div>
+				
+			</div>
+		</form>
+
+
+		<div ng-if="buyingForSelf">
+			<h3 ng-if="!purchase.userEmail">Have a Maven account? Sign in to purchase a subscription</h3>
+		</div>
+
+		<div ng-if="purchase.availableCredits <= 0" class="add-referral-code">
+			<h5 class="header-section">Have a referral code?</h5>
+			<form name="refCodeForm" class="form-no-border clearfix">
+				<input class="paper-input add-referral-code" type="text" ng-model="purchase.referralCode" required="" placeholder="Enter your code" />
+				<a class="btn btn-action apply-code" href="#" ng-click="addNewReferralCode(purchase.referralCode)" ng-class="{disabled: refCodeForm.$invalid || addingCode }">Apply</a>
+			</form>
+		</div>
+
+
+		<div class="subscription-confirmation-price center">
+			<h5>Confirm purchase</h5>
+			<h3>{{ purchase.selectedPlan.description }} Subscription</h3>
+			<p ng-if="purchase.selectedPlan.description === 'Annual' ">&dollar;{{ purchase.selectedPlan.price_per_segment / 12 }} x 12 months</p>
+			<h5>Total due now: 
+				<span ng-if="purchase.availableCredits >= 1"><span class="strike">{{ purchase.selectedPlan.price_per_segment  | minzero | currency:"$":0 }}</span> {{ purchase.selectedPlan.price_per_segment - purchase.availableCredits| minzero | currency:"$":0 }}</span>
+				<span ng-if="purchase.availableCredits < 1">{{ purchase.selectedPlan.price_per_segment | currency:"$":0 }} </span>
+			</h5>
+
+			<p><a class="btn btn-cta" ng-click="initPurchase()" ng-class="{'disabled': subForm.$invalid  }">Purchase</a></p>
+
+			<div ng-if="purchaseSource !== 'iOS' ">
+				<p>By purchasing I agree to the <a ui-sref="public.terms" target="_blank">terms &amp; conditions</a> and understand that my card will be billed for the agreed subscription length until I cancel</p>
+			</div>
+
+			<div ng-if="purchaseSource == 'iOS' ">
+				<p>By purchasing I agree to the <a ng-click="iOSTerms()">terms &amp; conditions</a> and understand that my card will be billed for the agreed subscription length until I cancel</p>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div ng-show="loading" class="purchase-processing-loader center">
+		<h3>Processing....</h3>
+		<img src="/img/app/shared/heartbeat.gif" alt="loading page..." />
+	</div>
+
+	<div ng-show="purchaseComplete"  class="center" class="purchase-complete">
+		<h5>Success!</h5>
+		<h3>You've just purchased a Maven subscription!</h3>
+		<img src="/img/app/shared/backpack-circle.png" width="183" height="183" />
+		
+		<div ng-if="buyingForSelf">
+			<div ng-if="purchaseSource == 'iOS' ">
+				<p>Your subscription is now active and 24/7 access to healthcare is now in your hands.</p>
+				<p><a class="btn btn-cta" ng-click="iosFinish()">Get started</a></p>
+			</div>
+
+			<div ng-if="purchaseSource == 'web-product' ">
+				<p>Your subscription is now active and 24/7 access to healthcare is now in your hands.</p>
+				<p><a class="btn btn-action" ng-click="webAppFinish()">Get started</a></p>
+			</div>
+
+			<div ng-if="purchaseSource == 'web-marketing' ">
+				<p>Your subscription is now active and 24/7 access to healthcare is now in your hands.</p>
+				<p><a class="btn btn-action" ng-click="webAppFinish()">Continue to Maven</a></p>
+			</div>
+
+		</div>
+
+		<div ng-if="!buyingForSelf">
+			<p>We've sent a receipt to your email address ({{ purchase.payerEmailAddress }}).</p>
+			<p>The person you purchased the plan for <span ng-if="purchase.forEmailAddress">({{ purchase.forEmailAddress }})</span><span ng-if="purchase.userEmail">({{ purchase.userEmail }})</span> will receive and email with instructions on how to activate their new plan.</p>
+		</div>
+		
+	</div>
+</div>

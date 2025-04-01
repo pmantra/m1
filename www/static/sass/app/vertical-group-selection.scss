@@ -1,0 +1,172 @@
+/* BOOK – CHOOSE VERTICAL GROUP */
+
+.appointment-book {
+	.book-headline {
+		padding: 15px 30px;
+		text-align: left;
+		@include susy-breakpoint($desktop) {
+			padding: 30px;
+		}
+	}
+
+	.book-vertical-specialties {
+		.page-right-empty {
+			height: 100%;
+		}
+		.lg {
+			margin-top: 27px;
+		}
+	}
+	ul.list-wide {
+		li {
+			clear: both;
+
+			a {
+				display: block;
+				min-height: 80px;
+				color: $charcoal-100;
+				text-decoration: none;
+				padding: 10px;
+				margin: 0 15px;
+				border-bottom: 2px solid $charcoal-40;
+				font-family: $font1-semibold;
+				&:hover {
+					.p {
+						color: $charcoal-100;
+					}
+				}
+				.list-wide-image {
+					float: left;
+				}
+				.list-wide-image {
+					padding: 0 25px 0 0;
+					text-align: right;
+					span {
+						width: 60px;
+						height: 60px;
+						float: right;
+					}
+					img,
+					svg {
+						width: 35px;
+						height: 35px;
+						margin: 12px;
+					}
+				}
+				.p {
+					text-transform: lowercase;
+					margin: 0;
+					padding: 13px 0;
+					&:first-letter {
+						text-transform: capitalize;
+					}
+				}
+				@include susy-breakpoint($desktop) {
+					height: 110px;
+					margin: 0 25px;
+					.list-wide-image {
+						span {
+							width: 90px;
+							height: 90px;
+							img,
+							svg {
+								width: 60px;
+								height: 60px;
+								margin: 15px;
+							}
+						}
+					}
+					.p {
+						padding: 27px 0 45px;
+					}
+				}
+			}
+			&.made-selection {
+				a {
+					.p {
+						color: $charcoal-50;
+					}
+				}
+			}
+			&.is-selected {
+				a {
+					.p {
+						color: $charcoal-100;
+					}
+				}
+			}
+		}
+		&.list-wide-sm {
+			li {
+				a {
+					height: auto;
+					.list-wide-image {
+						padding: 20px 15px 20px 0;
+						svg,
+						img {
+							margin: 0 10px 0 0;
+						}
+					}
+					.p {
+						padding: 20px 0 20px;
+					}
+				}
+				@include susy-breakpoint($desktop) {
+					a {
+						.list-wide-image {
+							svg {
+								width: 40px;
+								height: 40px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	/* Right panel */
+	.book-vertical-specialties {
+		background: $charcoal-20;
+		.vertical-specialty-header {
+			background: $macaroon-20;
+			padding: 20px 10px;
+			svg,
+			.h5 {
+				float: left;
+				margin: 0;
+			}
+			.h5 {
+				margin-left: 15px;
+				margin-top: 3px;
+			}
+		}
+	}
+
+	.need-medication-modal {
+		.need-medication-icon {
+			margin: 30px auto;
+		}
+		.need-medication-opts {
+			.p {
+				margin: 10px auto;
+				.btn {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+/* Member add state modal */
+.member-state-selection {
+	form {
+		max-width: 320px;
+		margin: 0 auto;
+		// .ui-select-bootstrap > .ui-select-match > .btn {
+		// 	text-align: center !important;
+		// }
+		.btn {
+			margin: 0;
+		}
+	}
+}

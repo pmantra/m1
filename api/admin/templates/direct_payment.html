@@ -1,0 +1,37 @@
+{% extends 'admin/base.html' %}
+{% import 'admin/lib.html' as lib with context %}
+{% block head %}
+{{ super() }}
+{{ lib.form_css() }}
+{% endblock %}
+
+{% block body %}
+    <h1>Direct Payment Tools</h1>
+    <br>
+            <legend id="billing_account">Run Direct Payment Wallet Configuration Report</legend>
+                <div class="inline-form-field">
+                    <form method="POST" action="/admin/direct_payment_tools/wallet_configuration_report">
+
+                        <p>This report contacts Stripe to confirm account setup for each wallet. It may be slow.</p>
+
+                        <div class="control-group">
+                            <label class="control-label" for="org_id">Organizations to include:</label>
+                            <div class="controls">
+                                {% for org_id, org_name in dp_wallet_organizations %}
+                                <p><input type="checkbox" name="org_id" value="{{ org_id }}" checked> {{ org_name }}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <input type="submit" class="btn btn-primary btn-medium"  value="Submit">
+                    </form>
+                </div>
+        <br>
+{% endblock %}
+
+{% block tail %}
+{{ super() }}
+{{ lib.form_js() }}
+{% endblock %}
+
+

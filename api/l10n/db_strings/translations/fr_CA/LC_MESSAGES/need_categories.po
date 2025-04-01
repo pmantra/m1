@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: fr_CA\n"
+
+msgid "need_category_adoption_name"
+msgstr "Adoption"
+
+msgid "need_category_early_pregnancy_name"
+msgstr "Début de grossesse"
+
+msgid "need_category_egg_freezing_name"
+msgstr "Congélation d'ovocytes"
+
+msgid "need_category_emotional_health_name"
+msgstr "Santé émotionnelle"
+
+msgid "need_category_fertility_tests_treatment_name"
+msgstr "Tests et traitements en matière de fertilité"
+
+msgid "need_category_general_health_name"
+msgstr "Santé générale"
+
+msgid "need_category_infant_feeding_name"
+msgstr "Alimentation du nourrisson"
+
+msgid "need_category_labor_delivery_name"
+msgstr "Travail et accouchement"
+
+msgid "need_category_lifestyle_nutrition_name"
+msgstr "Mode de vie et alimentation"
+
+msgid "need_category_loss_support_name"
+msgstr "Soutien en cas de perte"
+
+msgid "need_category_male_fertility_name"
+msgstr "Fertilité masculine"
+
+msgid "need_category_menopause_medications_name"
+msgstr "Médicaments pour la ménopause"
+
+msgid "need_category_menopause_name"
+msgstr "Ménopause"
+
+msgid "need_category_more_paths_to_parenthood_name"
+msgstr "Davantage de chemins vers la parentalité"
+
+msgid "need_category_nutrition_name"
+msgstr "Nutrition"
+
+msgid "need_category_parenting_name"
+msgstr "Parentalité"
+
+msgid "need_category_pediatrics_name"
+msgstr "Pédiatrie"
+
+msgid "need_category_physical_health_name"
+msgstr "Santé physique"
+
+msgid "need_category_postpartum_name"
+msgstr "Post-partum"
+
+msgid "need_category_pregnancy_name"
+msgstr "Grossesse"
+
+msgid "need_category_surrogacy_name"
+msgstr "Maternité de substitution"
+
+msgid "need_category_trying_to_conceive_name"
+msgstr "Essayer de tomber enceinte"
+
+msgid "need_category_your_pregnancy_options_name"
+msgstr "Vos options en matière de grossesse"

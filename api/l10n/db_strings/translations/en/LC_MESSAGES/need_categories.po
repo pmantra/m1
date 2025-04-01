@@ -1,0 +1,89 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-08-18 14:18-0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+msgid "need_category_lifestyle_nutrition_name"
+msgstr "Lifestyle & Nutrition"
+
+msgid "need_category_emotional_health_name"
+msgstr "Emotional Health"
+
+msgid "need_category_fertility_tests_treatment_name"
+msgstr "Fertility Tests & Treatment"
+
+msgid "need_category_trying_to_conceive_name"
+msgstr "Trying to Conceive"
+
+msgid "need_category_general_health_name"
+msgstr "General Health"
+
+msgid "need_category_more_paths_to_parenthood_name"
+msgstr "More Paths to Parenthood"
+
+msgid "need_category_nutrition_name"
+msgstr "Nutrition"
+
+msgid "need_category_physical_health_name"
+msgstr "Physical Health"
+
+msgid "need_category_labor_delivery_name"
+msgstr "Labor & Delivery"
+
+msgid "need_category_pregnancy_name"
+msgstr "Pregnancy"
+
+msgid "need_category_postpartum_name"
+msgstr "Postpartum"
+
+msgid "need_category_infant_feeding_name"
+msgstr "Infant Feeding"
+
+msgid "need_category_pediatrics_name"
+msgstr "Pediatrics"
+
+msgid "need_category_early_pregnancy_name"
+msgstr "Early Pregnancy"
+
+msgid "need_category_menopause_medications_name"
+msgstr "Menopause Medications"
+
+msgid "need_category_menopause_name"
+msgstr "Menopause"
+
+msgid "need_category_egg_freezing_name"
+msgstr "Egg Freezing"
+
+msgid "need_category_adoption_name"
+msgstr "Adoption"
+
+msgid "need_category_surrogacy_name"
+msgstr "Surrogacy"
+
+msgid "need_category_loss_support_name"
+msgstr "Loss Support"
+
+msgid "need_category_your_pregnancy_options_name"
+msgstr "Your Pregnancy Options"
+
+msgid "need_category_parenting_name"
+msgstr "Parenting"
+
+msgid "need_category_male_fertility_name"
+msgstr "Male Fertility"
+
+

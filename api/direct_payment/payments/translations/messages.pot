@@ -1,0 +1,114 @@
+#: direct_payment/payments/constants.py:16
+msgid "payments_mmb_estimated_initial"
+msgstr ""
+
+#: direct_payment/payments/constants.py:20
+msgid "payments_mmb_estimated_bill"
+msgstr ""
+
+#: direct_payment/payments/constants.py:22
+msgid "payments_mmb_estimated_len_obj"
+msgstr ""
+
+#: direct_payment/payments/constants.py:26
+msgid "payments_mmb_estimated_total_cost"
+msgstr ""
+
+#: direct_payment/payments/constants.py:28
+msgid "payments_mmb_fully_covered"
+msgstr ""
+
+#: direct_payment/payments/constants.py:35
+msgid "payments_mmb_hra_applied"
+msgstr ""
+
+#: direct_payment/payments/constants.py:36
+msgid "payments_mmb_hra_credit"
+msgstr ""
+
+#: direct_payment/payments/constants.py:33
+msgid "payments_mmb_coinsurance"
+msgstr ""
+
+#: direct_payment/payments/constants.py:34
+msgid "payments_mmb_copay"
+msgstr ""
+
+#: direct_payment/payments/constants.py:35
+msgid "payments_mmb_deductible"
+msgstr ""
+
+#: direct_payment/payments/constants.py:36
+msgid "payments_mmb_fees"
+msgstr ""
+
+#: direct_payment/payments/constants.py:37
+msgid "payments_mmb_not_covered"
+msgstr ""
+
+#: direct_payment/payments/constants.py:38
+msgid "payments_mmb_maven_benefit"
+msgstr ""
+
+#: direct_payment/payments/constants.py:39
+msgid "payments_mmb_medical_plan"
+msgstr ""
+
+#: direct_payment/payments/constants.py:40
+msgid "payments_mmb_total_member_responsibility"
+msgstr ""
+
+#: direct_payment/payments/constants.py:43
+msgid "payments_mmb_previous_charges"
+msgstr ""
+
+#: direct_payment/payments/constants.py:44
+msgid "payments_mmb_estimate_adjustment"
+msgstr ""
+
+#: direct_payment/payments/constants.py:48
+msgid "payments_mmb_estimate_responsibility"
+msgstr ""
+
+#: direct_payment/payments/constants.py:49
+msgid "payments_mmb_covered_amount"
+msgstr ""
+
+#: direct_payment/payments/constants.py:53
+msgid "payments_mmb_full_cost_covered"
+msgstr ""
+
+#: direct_payment/payments/constants.py:54
+msgid "payments_mmb_remaining_cost_covered"
+msgstr ""
+
+#: direct_payment/payments/constants.py:58
+msgid "payments_mmb_due_billed_date"
+msgstr ""
+
+#: direct_payment/payments/constants.py:59
+#: direct_payment/payments/constants.py:61
+msgid "payments_mmb_computed_billed_date"
+msgstr ""
+
+#: direct_payment/payments/constants.py:60
+msgid "payments_mmb_calculating_date"
+msgstr ""
+
+#: direct_payment/payments/constants.py:63
+#: direct_payment/payments/constants.py:66
+msgid "payments_mmb_computed_date"
+msgstr ""
+
+#: direct_payment/payments/constants.py:64
+msgid "payments_mmb_due_date"
+msgstr ""
+
+#: direct_payment/payments/constants.py:65
+msgid "payments_mmb_returned_date"
+msgstr ""
+
+#: direct_payment/payments/constants.py:67
+msgid "payments_mmb_voided_date"
+msgstr ""
+

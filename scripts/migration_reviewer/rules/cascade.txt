@@ -1,0 +1,2 @@
+Check: If a new table is created, there should be a CASCADE in your statement or a comment explaining the missing CASCADE.
+Fix: Please add the appropriate CASCADE in your statement or a comment.

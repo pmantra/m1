@@ -1,0 +1,13 @@
+[
+  {
+    "type": "user",
+    "organization_name": "Test Organization X",
+    "track": "egg_freezing",
+    "email_prefix": "mvnqa-egg",
+    "password": "simpleisawesome1*",
+    "phase": "week-5",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

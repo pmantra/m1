@@ -1,0 +1,169 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: fr\n"
+
+#: appointments/resources/appointment.py:93
+msgid "anonymous_appointment_pharmacy_error_message"
+msgstr "Impossible de définir une pharmacie pour un rendez-vous anonyme !"
+
+#: appointments/resources/appointment.py:78
+msgid "appointment_cancelled_edit_error_message"
+msgstr "Impossible de modifier un rendez-vous annulé !"
+
+#: appointments/resources/appointment.py:81
+msgid "appointment_cannot_cancel_error_message"
+msgstr "Le rendez-vous n'a pas pu être annulé"
+
+#: appointments/resources/appointment.py:84
+msgid "appointment_disconnected_at_processing_error_message"
+msgstr "Erreur de traitement des données déconnectées"
+
+#: appointments/resources/appointment.py:87
+msgid "appointment_servey_disconnected_at_processing_error_message"
+msgstr "Erreur lors du traitement des résultats de l'enquête du membre sur les données déconnectés"
+
+#: appointments/schemas/provider.py:257
+msgid "cancellation_policy_explanation_conservative"
+msgstr "Remboursement de 50 % en cas d'annulation au moins 2 heures à l'avance"
+
+#: appointments/schemas/provider.py:261
+msgid "cancellation_policy_explanation_flexible"
+msgstr "Remboursement intégral en cas d'annulation au moins 24 heures à l'avance"
+
+#: appointments/schemas/provider.py:265
+msgid "cancellation_policy_explanation_moderate"
+msgstr "Remboursement de 50 % en cas d'annulation au moins 24 heures à l'avance"
+
+#: appointments/schemas/provider.py:269
+msgid "cancellation_policy_explanation_strict"
+msgstr "Aucun remboursement"
+
+msgid "cta_how_to_launch_link"
+msgstr "ou visitez {url}"
+
+msgid "cta_notify_member_upcoming_appointment_link"
+msgstr "Lancez ici {url}"
+
+msgid "cta_sms_notify_member_about_new_appointment"
+msgstr "Gérez vos rendez-vous à tout moment ici : {url}"
+
+msgid "cta_sms_notify_member_about_new_appointment_link_url"
+msgstr "Gérez vos rendez-vous à tout moment ici : {url}"
+
+msgid "cta_sms_notify_member_about_new_appointment_no_url"
+msgstr "Gérez vos rendez-vous dans l'App Maven."
+
+#: appointments/tasks/appointment_notifications.py:1592
+msgid "how_to_launch_notif"
+msgstr "Votre rendez-vous Maven commence à {start_time} ! Quand il sera temps de commencer, lancez votre rendez-vous depuis l'App Maven."
+
+#: appointments/tasks/appointment_notifications.py:1829
+msgid "how_to_launch_notif_new_path"
+msgstr "Votre rendez-vous Maven commence à {start_time} ! Quand il sera temps de commencer, lancez votre rendez-vous depuis l'App Maven."
+
+#: appointments/tasks/appointment_notifications.py:1968
+msgid "how_to_launch_notif_old_path"
+msgstr "Votre rendez-vous Maven commence dans 1 heure ! Lorsque le moment sera venu, lancez votre rendez-vous depuis l'App Maven."
+
+#: appointments/tasks/appointment_notifications.py:719
+msgid "member_24_hour_reminder_sms"
+msgstr "Ceci est un rappel pour votre rendez-vous Maven prévu dans 24 heures. Si vous ne pouvez pas honorer votre rendez-vous, nous vous demandons de le reprogrammer ou de l'annuler au moins 3 heures à l'avance afin de libérer ce créneau pour quelqu'un d'autre."
+
+#: appointments/tasks/appointment_notifications.py:1104
+msgid "member_cancellation_note"
+msgstr "{name} a dû annuler votre prochain rendez-vous. Nous sommes vraiment désolés ! Veuillez ouvrir Maven pour le reprogrammer."
+
+#: appointments/services/acknowledgement.py:117
+msgid "member_confirm_invalid_response"
+msgstr "Ceci est un message automatique. Pour obtenir de l'aide pour reprogrammer un rendez-vous ou pour toute autre question, envoyez-nous un message sur l'App Maven."
+
+#: appointments/services/acknowledgement.py:115
+msgid "member_confirm_response"
+msgstr "Merci ! Nous vous verrons bientôt."
+
+#: appointments/resources/appointment.py:962
+#: appointments/tasks/appointments.py:77
+msgid "member_post_appointment_note_message"
+msgstr "Bonjour {member_first_name},\n\nJ'ai laissé des notes concernant notre session vidéo dans votre section Rendez-vous :\n\n'{post_session_content}'\n\nVous pouvez toujours consulter les notes de nos sessions sous Moi > Rendez-vous. Veuillez me faire savoir si vous avez d'autres questions.\n\nRendez-vous : {base_url}/my-appointments "
+
+#: appointments/tasks/availability_notifications.py:161
+msgid "notify_member_about_new_prac_availability_url_disabled"
+msgstr "Bonne nouvelle ! {practitioner_name} a ajouté de nouvelles disponibilités pour les rendez-vous sur Maven ! Pour voir les horaires disponibles et réserver, rendez-vous sur l'application Maven."
+
+#: appointments/tasks/availability_notifications.py:155
+msgid "notify_member_about_new_prac_availability_url_enabled"
+msgstr "Bonne nouvelle ! {practitioner_name} a ajouté de nouvelles disponibilités pour les rendez-vous sur Maven ! Pour voir les horaires disponibles et réserver un créneau, rendez-vous ici : {url} /practitioner/ {practitioner_id}"
+
+#: appointments/tasks/appointment_rx_notifications.py:128
+msgid "notify_member_about_written_rx"
+msgstr "Votre praticien a envoyé votre ordonnance à {pharmacy_name}. Veuillez contacter la pharmacie au {pharmacy_phone} pour toute question."
+
+#: appointments/tasks/appointment_notifications.py:578
+msgid "notify_member_upcoming_appointment"
+msgstr "Votre prochain rendez-vous Maven commence dans {appointment_start_time_remaining} minutes ! Pour une expérience optimale, assurez-vous d'avoir une connexion Wifi solide."
+
+#: appointments/resources/appointment.py:96
+msgid "practitioner_not_enabled_error_message"
+msgstr "Praticien non activé !"
+
+#: appointments/resources/appointment.py:90
+msgid "prescription_missing_data_error_message"
+msgstr "Le membre doit compléter les informations sur l'ordonnance !"
+
+#: appointments/services/acknowledgement.py:62
+msgid "provider_confirm_invalid_response"
+msgstr "Pour obtenir de l'aide pour reprogrammer un rendez-vous ou pour toute autre question, veuillez envoyer un e-mail à providersupport@mavenclinic.com."
+
+#: appointments/services/acknowledgement.py:82
+msgid "provider_confirm_response"
+msgstr "Merci de confirmer ce rendez-vous. Si vous avez des questions, envoyez un e-mail à providersupport@mavenclinic.com."
+
+#: appointments/schemas/provider.py:171
+msgid "provider_dynamic_subtext_last_met"
+msgstr "Dernier rendez-vous le"
+
+#: appointments/schemas/provider.py:178
+msgid "provider_dynamic_subtext_speaks"
+msgstr "Parle"
+
+#: appointments/resources/report_problem.py:33
+msgid "report_problem_app_missing"
+msgstr "L'identifiant de rendez-vous est manquant ou incorrect"
+
+#: appointments/resources/report_problem.py:32
+msgid "report_problem_header"
+msgstr "Si vous avez rencontré un problème lors de votre rendez-vous vidéo, veuillez le signaler ici pour nous en informer."
+
+#: appointments/resources/report_problem.py:17
+msgid "report_problem_q1_o1"
+msgstr "Je n'ai pas pu entendre l'autre participant"
+
+#: appointments/resources/report_problem.py:18
+msgid "report_problem_q1_o2"
+msgstr "L'autre participant ne pouvait pas m'entendre"
+
+#: appointments/resources/report_problem.py:19
+msgid "report_problem_q1_o3"
+msgstr "Je ne pouvais pas voir l'autre participant"
+
+#: appointments/resources/report_problem.py:20
+msgid "report_problem_q1_o4"
+msgstr "L'autre participant ne pouvait pas me voir"
+
+#: appointments/resources/report_problem.py:23
+msgid "report_problem_q1_text"
+msgstr "Quel problème avez-vous rencontré ? Veuillez cocher les réponses qui s'appliquent."
+
+#: appointments/resources/report_problem.py:31
+msgid "report_problem_title"
+msgstr "Signaler un problème"
+
+msgid "sms_notify_member_about_new_appointment"
+msgstr "Bonne nouvelle : votre rendez-vous Maven est confirmé ! Si vous ne pouvez pas honorer votre rendez-vous, nous vous demandons de le reprogrammer ou de l'annuler au moins 3 heures à l'avance afin de libérer ce créneau pour quelqu'un d'autre."

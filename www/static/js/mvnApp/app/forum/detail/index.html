@@ -1,0 +1,30 @@
+<forum-header title="Join the conversation" cats="$ctrl.cats" show-search-menu="$ctrl.showSearchMenu"></forum-header>
+<div class="content-container">
+	<section class="forum-post-body">
+		<forum-post-body user="$ctrl.user" post="$ctrl.post"></forum-post-body>
+	</section>
+
+	<section class="forum-post-replies">
+		<forum-post-replies ng-if="$ctrl.post" class="reply-view" user="$ctrl.user" post="$ctrl.post"
+			get-replies="$ctrl.getReplies(post_id)" replies="$ctrl.replies"></forum-post-replies>
+	</section>
+
+	<section class="forum-create-reply content">
+		<forum-create-reply ng-if="$ctrl.post" user="$ctrl.user" post="$ctrl.post"
+			get-replies="$ctrl.getReplies(post_id)" is-modal="$ctrl.isModal"
+			replies="$ctrl.replies"></forum-create-reply>
+	</section>
+
+	<section class="forum-recommended-posts">
+		<forum-recommended-posts ng-if="$ctrl.post" post="$ctrl.post" show="4"></forum-recommended-posts>
+	</section>
+
+	<section>
+		<write-post></write-post>
+	</section>
+
+	<section>
+		<explore-practitioners user="$ctrl.user"></explore-practitioners>
+	</section>
+</div>
+<div ng-include="'js/mvnApp/app/shared/_condensed-footer.html'" class="footer-container"></div>

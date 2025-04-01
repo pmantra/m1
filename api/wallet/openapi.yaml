@@ -1,0 +1,3691 @@
+openapi: 3.0.3
+info:
+  title: Maven Clinic V1 API (Maven Wallet feature)
+  version: 1.0.0
+  description: >-
+    The Maven Clinic API is the data storage and user management interface for
+    The Maven Clinic.
+
+
+    ALL requests except for internal metadata, subscription plans, user creation
+    and password reset require an *API-KEY* header (it's not case-sensitive)
+    that contains a valid API Key--prepended with a TTL--for a Maven Clinic
+    user. All requests must be transmitted over HTTPS.
+
+
+    API requests made directly during local development require an
+    *X-Maven-User-Id* header containing a valid user id, and must be transmitted
+    over HTTP.
+servers:
+  - url: https://www.mavenclinic.com/api/v1
+  - url: https://www.qa1.mvnapp.net/api/v1
+  - url: https://www.qa2.mvnapp.net/api/v1
+  - url: https://www.staging.mvnapp.net
+paths:
+  /reimbursement_wallet:
+    get:
+      summary: View all of a member's wallets
+      description: View all existing wallet objects for the logged in user.
+      operationId: getReimbursementWallets
+      tags:
+        - Maven Wallet
+      parameters:
+        - in: query
+          name: get_non_member_dependents
+          description: flag that informs the API to retrieve non-maven-member dependents (set to "true" if dependents are needed)
+          required: false
+      responses:
+        "200":
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    minimum: 0
+                    items:
+                      $ref: "#/components/schemas/reimbursement_wallet"
+              example:
+                data:
+                    - id: "1128702692721009835"
+                      reimbursement_organization_settings:
+                        id: "814606626438882937"
+                        organization_id: 7
+                        allowed_reimbursement_categories:
+                          - id: "802610761642247822"
+                            label: RX
+                            reimbursement_request_category_maximum: 1000
+                            reimbursement_request_category_maximum_amount:
+                              currency_code: "USD"
+                              amount: 1000
+                              formatted_amount: "$10.00"
+                              formatted_amount_truncated: "$10"
+                              raw_amount: "10.00"
+                            benefit_type: CURRENCY
+                            credit_maximum: 0
+                          - id: "1118607832289455429"
+                            label: Clinic Visits
+                            reimbursement_request_category_maximum: 9000
+                            reimbursement_request_category_maximum_amount:
+                              currency_code: "USD"
+                              amount: 9000
+                              formatted_amount: "$90.00"
+                              formatted_amount_truncated: "$90"
+                              raw_amount: "90.00"
+                            benefit_type: CYCLE
+                            credit_maximum: 24
+                        benefit_overview_resource:
+                          title: Maven Wallet Details Resource
+                          url: >-
+                            https://www.mavenclinic.com/resources/content/article/maven-wallet-details-resource
+                        benefit_faq_resource:
+                          title: Maven Wallet FAQ Resource
+                          url: >-
+                            https://www.mavenclinic.com/resources/content/article/maven-wallet-faq-resource
+                        survey_url: https://www.surveymonkey.com/something/
+                        reimbursement_request_maximum: 10000
+                        is_active: true
+                        debit_card_enabled: true
+                        direct_payment_enabled: false
+                      currency_code: USD
+                      state: QUALIFIED
+                      reimbursement_method: "DIRECT_DEPOSIT"
+                      zendesk_ticket_id: 98765
+                      debit_card_eligible: true
+                      reimbursement_wallet_debit_card:
+                        reimbursement_wallet_id: 1128702692721009835
+                        id: 1170270113142406611
+                        card_proxy_number: "1100054015522128"
+                        card_last_4_digits: "2128"
+                        card_status: "ACTIVE"
+                        card_status_reason: 0
+                        card_status_reason_text: ""
+                        created_date: "2022-11-01"
+                        issued_date: "2022-11-01"
+                        shipped_date: null
+                      hdhp_status: NONE
+                      debit_banner: null
+                      payment_block:
+                        variant: MEMBER
+                        show_benefit_amount: true
+                        num_errors: 0
+                      treatment_block:
+                        variant: IN_TREATMENT
+                        clinic: "Foo - Bar Harbor"
+                      employee:
+                        first_name: Jane
+                        last_name: Doe
+                        name: Jane Doe
+                      dependents:
+                        - first_name: Forrest
+                          last_name: Gump
+                          name: Forrest Gump
+                          id: 3
+                        - first_name: Barney
+                          last_name: Gumble
+                          name: Barney Gumble
+                          id: 2
+                      members:
+                        - first_name: Jane
+                          last_name: Doe
+                          name: Jane Doe
+                          id: 1
+                        - first_name: Barney
+                          last_name: Gumble
+                          name: Barney Gumble
+                          id: 2
+                      household:
+                        - first_name: Jane
+                          last_name: Doe
+                          name: Jane Doe
+                          id: 1
+                        - first_name: Barney
+                          last_name: Gumble
+                          name: Barney Gumble
+                          id: 2
+                        - first_name: Forrest
+                          last_name: Gump
+                          name: Forrest Gump
+                          id: 3
+                      channel_id: 12345
+                      benefit_id: "491043"
+                      payments_customer_id: null
+                      upcoming_payments:
+                        summary:
+                          total_member_amount: 200000
+                          member_method: "1111"
+                          member_method_formatted: "***1111"
+                          total_benefit_amount: 500000
+                          benefit_remaining: 400000
+                          procedure_title: "Fresh IVF"
+                        payments:
+                          - member_amount: 200000
+                            member_method: "1111"
+                            member_method_formatted: "***1111"
+                            member_date: "2023-08-31"
+                            benefit_amount: 100000
+                            benefit_date: "2023-09-01"
+                            benefit_remaining: 800000
+                            error_type: null
+                            procedure_id: 11112
+                            procedure_title: "Fresh IVF"
+                            bill_uuid: "05f3d3a5-7f60-44b9-8c6a-0c99823e9209"
+                          - member_amount: null
+                            member_method: null
+                            member_method_formatted: null
+                            member_date: null
+                            benefit_amount: 400000
+                            benefit_date: "2023-09-16"
+                            benefit_remaining: 400000
+                            error_type: null
+                            procedure_id: 11113
+                            procedure_title: "Frozen IVF"
+                            bill_uuid: "aa33d3a5-0f60-24b9-1c6a-1c99823e92ee"
+                      estimate_block:
+                          estimate_text: "Estimated Bill"
+                          total_estimates: 2
+                          total_member_estimate: "$600.00"
+                          payment_text: "Estimated Total Cost"
+                          estimate_bill_uuid: "aa33d3a5-0f60-24b9-1c6a-1c99823e92ee"
+                      pharmacy:
+                        name: Alto Pharmacy
+                        url: https://www.mavenclinic.com/app/resources/content/r/mavenrx-alto-pharmacy
+                      reimbursement_request_block:
+                        title: "Kaiser Permanente"
+                        total: 1,
+                        reimbursement_text: "Estimated return to you."
+                        expected_reimbursement_amount: "$1,780.00"
+                        original_claim_text: "Original claim:"
+                        original_claim_amount: "2,150.00"
+                        reimbursement_request_uuid: "1168905375706931595"
+                        details_text: null
+                        has_cost_breakdown_available: true
+    post:
+      summary: Create a new wallet.
+      operationId: postReimbursementWallet
+      description: >-
+        Create a Maven Wallet record for the logged in user. This is used after
+        the survey is complete. It creates wallets in the pending state.
+      tags:
+        - Maven Wallet
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reimbursement_organization_settings_id:
+                  type: string
+                initial_wallet_state:
+                  type: string
+                  description: > 
+                    This is an OPTIONAL parameter introduced for the wallet automatic qualification work. If it is not provided,
+                    then the wallet will be created in a PENDING state. If it is provided, then the wallet will be created in
+                    the DISQUALIFIED state if the initial_wallet_state is "DISQUALIFIED", it the wallet will be created in the 
+                    PENDING state in ALL OTHER SCENARIOS.
+                  oneOf:
+                    - DISQUALIFIED
+                    - PENDING
+                  
+              required: [reimbursement_organization_settings_id]
+      responses:
+        "200":
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet"
+              examples:
+                complete:
+                  $ref: "#/components/examples/reimbursement_wallet"
+        "403":
+          description: >-
+            Not authorized: User is not an enterprise user linked to an organization
+            that has Wallet enabled.
+        "500":
+          description: Internal error
+  /reimbursement_wallet/state:
+    get:
+      summary: Returns metadata about the state of a user's wallet
+      description: Displays the summary/eligible/enrolled information for a user's wallet
+      operationId: getReimbursementWalletState
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet_state"
+              examples:
+                reimbursement_wallet_state_not_eligible_marketplace:
+                  $ref: "#/components/examples/reimbursement_wallet_state_not_eligible_marketplace"
+                reimbursement_wallet_state_not_eligible_access:
+                  $ref: "#/components/examples/reimbursement_wallet_state_not_eligible_access"
+                reimbursement_wallet_state_apply_access:
+                  $ref: "#/components/examples/reimbursement_wallet_state_apply_access"
+                reimbursement_wallet_state_pending_access:
+                  $ref: "#/components/examples/reimbursement_wallet_state_pending_access"
+                reimbursement_wallet_state_disqualified_access:
+                  $ref: "#/components/examples/reimbursement_wallet_state_disqualified_access"
+                reimbursement_wallet_state_expired_access:
+                  $ref: "#/components/examples/reimbursement_wallet_state_expired_access"
+                reimbursement_wallet_state_runout_access:
+                  $ref: "#/components/examples/reimbursement_wallet_state_runout_access"
+                reimbursement_wallet_state_enrolled_green:
+                  $ref: "#/components/examples/reimbursement_wallet_state_enrolled_green"
+                reimbursement_wallet_state_enrolled_gold:
+                  $ref: "#/components/examples/reimbursement_wallet_state_enrolled_gold"
+                reimbursement_wallet_state_expired:
+                  $ref: "#/components/examples/reimbursement_wallet_state_enrolled_gold"
+        "500":
+          description: Internal server error
+  /reimbursement_wallet/available_currencies:
+    get:
+      summary: Returns a list of available currencies for the reimbursement request form
+      description: Based on a member's organization's configured currencies
+      operationId: getReimbursementWalletAvailableCurrencies
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    currency_code:
+                      description: ISO 4217 currency code
+                      type: string
+                      nullable: false
+                    minor_unit:
+                      description: ISO 4217 minor unit of the currency
+                      type: integer
+                      nullable: false
+                    display_name:
+                      description: Descriptive name of the currency
+                      type: string
+                      nullable: false
+              example:
+                - currency_code: "USD"
+                  minor_unit: 2
+                  display_name: "US Dollars"
+                - currency_code: "GBP"
+                  minor_unit: 2
+                  display_name: "British Pounds"
+                - currency_code: "JPY"
+                  minor_unit: 0
+                  display_name: "Japanese Yen"
+
+        "500":
+          description: Internal server error
+  /reimbursement_wallet/{id}:
+    put:
+      summary: Edit a wallet record.
+      operationId: putReimbursementWallet
+      description: >-
+        Edit a wallet record for the logged in user. This endpoint will
+        give an error if you attempt to use it to switch the wallet's user_id,
+        if you attempt to move a wallet from one organization to another, or if
+        you attempt to move a wallet to a reimbursement_setting missing some of
+        the original wallet's categories while the wallet contains reimbursement
+        requests.
+      tags:
+        - Maven Wallet
+      parameters:
+        - name: id
+          in: path
+          description: ID of the reimbursement wallet to be edited
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reimbursement_organization_settings_id:
+                  type: string
+                state:
+                  $ref: "#/components/schemas/wallet_state_enum"
+      responses:
+        "200":
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet"
+              examples:
+                complete:
+                  $ref: "#/components/examples/reimbursement_wallet"
+        "400":
+          description: Error in input.
+        "404":
+          description: >-
+            Not found: an Organization Settings record could not be found for the given ID.
+        "500":
+          description: Internal error
+  /reimbursement_wallet/{id}/users:
+    parameters:
+      - name: id
+        in: path
+        description: ID of the reimbursement wallet
+        required: true
+        schema:
+          type: integer
+    get:
+      summary: Get a list of other users of a wallet and their statuses
+      operationId: getReimbursementWalletUsers
+      description: Get a list of the others users of a reimbursement wallet and their statuses
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/users"
+              examples:
+                users:
+                  $ref: "#/components/examples/users"
+        "401":
+          description: User is not authorized to view the users of the wallet
+  /reimbursement_wallet/{id}/add_user:
+    parameters:
+      - name: id
+        in: path
+        description: ID of the reimbursement wallet
+        required: true
+        schema:
+          type: integer
+    post:
+      summary: Send an email invitation to someone to join the reimbursment wallet
+      description: Create an email invitation to someone to join the reimbursement wallet
+      operationId: postReimbursementWalletAddUser
+      tags:
+        - Maven Wallet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: Email address of the recipient
+                date_of_birth:
+                  type: string
+                  description: Date of birth (YYYY-MM-DD) of the recipient
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/add_user"
+              examples:
+                complete:
+                  $ref: "#/components/examples/add_user"
+        "409":
+          description: The sender will see the message "This person you are trying to add is already part of your Wallet."
+        "500":
+          description: The sender will see one of several error messages depending on the scenario.      
+  /reimbursement_wallet/invitation/{invitationId}:
+    parameters:
+      - name: id
+        in: path
+        description: ID of the reimbursement wallet invitation
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get the Wallet invitation details
+      operationId: getReimbursementWalletInvitation
+      description: >-
+        Returns inviter name and survey url if Wallet invitation is valid. Returns error message if invitation is invalid.
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet_invitation"
+              examples:
+                complete:
+                  $ref: "#/components/examples/reimbursement_wallet_invitation_response"
+        "404":
+          description: Invitation does not exist.
+        "409":
+          description: Returns one of several error messages depending on the scenario. 
+    post:
+      summary: Accept or decline a Wallet invitation
+      operationId: postReimbursementWalletInvitation
+      description: >-
+        Accept or decline a Wallet a valid invitation. Returns an error message if invitation is invalid.
+      tags:
+        - Maven Wallet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                $ref: "#/components/schemas/reimbursement_wallet_invitation_input"
+            examples:
+              complete:
+                $ref: "#/components/examples/reimbursement_wallet_invitation_input"
+      responses:
+        "200":
+          description: The invitation has been accepted or declined
+          content:
+          application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet_invitation_response"
+              examples:
+                complete:
+                  $ref: "#/components/examples/reimbursement_wallet_invitation_response"
+        "404":
+          description: Invitation id does not exist
+        "409":
+          description: Returns one of several error messages depending on the scenario.
+    delete:
+      summary: Cancel Wallet invitation
+      operationId: postReimbursementWalletInvitation
+      description: >-
+        Cancel Wallet invitation before the recipient has claimed it.
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: Your invite has been canceled.
+          content:
+          application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet_invitation_cancel_response"
+              examples:
+                complete:
+                  $ref: "#/components/examples/reimbursement_wallet_invitation_cancel_response"
+        "404":
+          description: Cannot find the invitation.
+        "409":
+          description: Invitation already used/Invitation expired.
+        "500":
+          description: Failed to cancel invitation.
+  /reimbursement_wallets/{id}/insurance/annual_questionnaire:
+    parameters:
+      - name: id
+        in: path
+        description: ID of the reimbursement wallet
+        required: true
+        schema:
+          type: integer
+      - name: plan_year
+        in: query
+        description: Populate to request survey for a particular plan year
+        required: false
+        schema:
+          type: string
+    get:
+      summary: Get the questionnaire for a wallet
+      operationId: getReimbursementAnnualQuestionnaire
+      description: >-
+        Get the annual_questionnaire the given wallet. The wallet must be owned by the logged-in user.
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet_questionnaire"
+              examples:
+                complete:
+                  $ref: "#/components/examples/reimbursement_wallet_questionnaire"
+        "400":
+          description: The request could not be authenticated.
+        "403":
+          description: Not Authorized for Wallet.
+        "404":
+          description: wallet_id is invalid.
+    post:
+      summary: Submit the questionnaire responses
+      operationId: postReimbursementAnnualQuestionnaire
+      description: >-
+        Questionnaire responses for the given wallet. The wallet must be owned by the logged-in user.
+      tags:
+        - Maven Wallet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                $ref: "#/components/schemas/reimbursement_wallet_questionnaire_response"
+            examples:
+              complete:
+                $ref: "#/components/examples/reimbursement_wallet_questionnaire_response"
+      responses:
+        "200":
+          description: Created
+        "201":
+          description: Follow Up Survey
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet_questionnaire"
+              examples:
+                complete:
+                  $ref: "#/components/examples/reimbursement_wallet_questionnaire"
+        "409":
+          description: User has already completed this questionnaire
+        "403":
+          description: User is not allowed to take this action
+        "404":
+          description: Request body does not match schema=
+  /reimbursement_wallets/{wallet_id}/insurance/annual_questionnaire/needs_survey:
+    parameters:
+      - name: wallet_id
+        in: path
+        description: ID of the reimbursement wallet
+        required: true
+        schema:
+          type: integer
+      - name: any_survey
+        in: query
+        description: When set to true, includes the needs_any_survey field in the response
+        required: false
+        schema:
+          type: boolean
+    get:
+      summary: >-
+        Returns true if the user needs to fill out the questionnaire/survey for their associated wallet. 
+      operationId: getReimbursementAnnualQuestionnaire
+      description: >-
+        Returns whether questionnaires/surveys need to be filled out for the associated wallet.
+        The response includes needs_survey for backward compatibility with old native apps and reimbursement cycle buttons.
+        When any_survey query parameter is true, also includes needs_any_survey field used by dashboard banners.
+        All errors except auth failure, e.g: wallet not found, user not permissioned to wallet, will be returned as false.
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet_questionnaire_needs_survey_response"
+        "400":
+          description: The request could not be authenticated.
+
+  /reimbursement_wallets/{wallet_id}/insurance/annual_questionnaire/clinic_portal/needs_survey:
+    parameters:
+      - name: wallet_id
+        in: path
+        description: ID of the reimbursement wallet
+        required: true
+        schema:
+          type: integer
+      - name: member_user_id
+        in: query
+        description: user id of the member(patient) being looked up
+        required: true
+        schema:
+          type: boolean
+    get:
+      summary: >-
+        Returns a dict to let the clinic portal know if the user needs to fill the survey for this or future plan years.
+      operationId: getReimbursementAnnualQuestionnaire
+      description: >-
+        Returns whether questionnaires/surveys need to be filled out for the associated wallet.
+        The response includes needs_survey, for the current year and needs_any_survey for any year including the 
+        current year.
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet_questionnaire_needs_survey_response"
+        "401":
+          description: Unauthorized.
+        "400":
+          description: Bad request.
+        "404":
+          description: The member does not have access to the specified wallet.
+
+  /reimbursement_wallets/{id}/bank_account:
+    parameters:
+      - name: id
+        in: path
+        description: ID of the reimbursement wallet
+        required: true
+        schema:
+          type: integer
+    get:
+      summary: Get the bank account information for a wallet
+      operationId: getReimbursementWalletBankAccount
+      description: >-
+        Get the direct deposit bank account record for the given wallet.
+        The wallet must be owned by the logged-in user.
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet_bank_account"
+              examples:
+                bank_account:
+                  $ref: "#/components/examples/reimbursement_wallet_bank_account"
+        "404":
+          description: >-
+            The wallet does not exist, does not belong to the logged-in user,
+            or does not have an associated bank account.
+    post:
+      summary: Add bank account information for a wallet
+      operationId: postReimbursementWalletBankAccount
+      description: >-
+        Add direct deposit bank account information for a given wallet. Cannot be used to update existing bank account
+        information. The wallet must be owned by the logged-in user.
+      tags:
+        - Maven Wallet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                $ref: "#/components/schemas/reimbursement_wallet_bank_account_input"
+            examples:
+              bank_account_input:
+                $ref: "#/components/examples/reimbursement_wallet_bank_account_input"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet_bank_account"
+              examples:
+                bank_account:
+                  $ref: "#/components/examples/reimbursement_wallet_bank_account"
+        "400":
+          description: Generic error
+        "404":
+          description: >-
+            The wallet does not exist, does not belong to the logged-in user,
+            or does not have an associated bank account.
+        "409":
+          description: Wallet already has bank account.
+    put:
+      summary: Update bank account information for a wallet
+      operationId: putReimbursementWalletBankAccount
+      description: >-
+        Update direct deposit bank account information for a given wallet.
+        The wallet must be owned by the logged-in user.
+      tags:
+        - Maven Wallet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+                $ref: "#/components/schemas/reimbursement_wallet_bank_account_input"
+            examples:
+              bank_account_input:
+                $ref: "#/components/examples/reimbursement_wallet_bank_account_input"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet_bank_account"
+              examples:
+                bank_account:
+                  $ref: "#/components/examples/reimbursement_wallet_bank_account"
+        "400":
+          description: Generic error
+        "404":
+          description: >-
+            The wallet does not exist, does not belong to the logged-in user,
+            or does not have an associated bank account.
+    delete:
+      summary: Delete bank account information for a wallet
+      operationId: deleteReimbursementWalletBankAccount
+      description: >-
+        Remove direct deposit bank account information from a given wallet. The wallet cannot have a
+        reimbursement method of direct deposit or in-flight (pending or approved) reimbursement requests.
+        The wallet must be owned by the logged-in user.
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: >-
+            The bank account has been removed OR there are in-flight reimbursement requests and a ticket
+            has been filed to the Care Team for assistance.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              examples:
+                removed:
+                  summary: Bank account removed
+                  value:
+                    message: Removed a bank account
+                in-flight_requests:
+                  summary: Ticket sent to Care Team
+                  value:
+                    message: >-
+                      This bank account cannot be removed automatically
+                      due to reimbursement requests in flight.
+                      Your Maven Care Advocate will contact you shortly
+                      to unlink your bank account from Maven Wallet.
+        "400":
+          description: Generic error
+        "404":
+          description: >-
+            The wallet does not exist, does not belong to the logged-in user,
+            or does not have an associated bank account.
+        "409":
+          description: Wallet has reimbursement method of direct deposit.
+  /reimbursement_wallets/{id}/debit_card:
+    parameters:
+      - name: id
+        in: path
+        description: ID of the reimbursement wallet
+        required: true
+        schema:
+          type: integer
+    get:
+      summary: View active debit card associated with members reimbursement wallet
+      description: View active debit card associated with members reimbursement wallet
+      operationId: getReimbursementWalletDebitCard
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/reimbursement_wallet_debit_card"
+              examples:
+                complete:
+                  $ref: "#/components/examples/reimbursement_wallet_debit_card"
+        "404":
+          description: No active debit card for current member
+    post:
+      summary: Create new debit card for members reimbursement wallet
+      description: Create new debit card for members reimbursement wallet
+      operationId: postReimbursementWalletDebitCard
+      tags:
+        - Maven Wallet
+      requestBody:
+        description: Indicates whether or not member has opted in for SMS messaging. Defaults to false.
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sms_opt_in:
+                  type: boolean
+      responses:
+        "201":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_wallet_debit_card"
+              examples:
+                complete:
+                  $ref: "#/components/examples/reimbursement_wallet_debit_card"
+        "402":
+          description: Member has not met their HDHP deductible
+        "403":
+          description: Debit card is not enabled for associated Wallet organization or associated Wallet is not qualified
+        "409":
+          description: Member has an active debit card
+        "500":
+          description: Could not complete request or issue a debit card
+  /reimbursement_wallets/{id}/debit_card/lost_stolen:
+    post:
+      summary: Update debit card status to lost / stolen
+      operationId: postReimbursementWalletDebitCardLostStolen
+      description: Update debit card status to lost / stolen
+      tags:
+        - Maven Wallet
+      parameters:
+        - name: id
+          in: path
+          description: ID of the reimbursement wallet
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/reimbursement_wallet_debit_card"
+              examples:
+                complete:
+                  $ref: "#/components/examples/reimbursement_wallet_debit_card"
+        "404":
+          description: No debit card found associated with reimbursement wallet
+        "409":
+          description: Debit card status is already marked as 'CLOSED'
+        "500":
+          description: Internal error
+  /reimbursement_wallets/{id}/upcoming_transactions:
+    get:
+      summary: View upcoming maven transactions and balance in wallet after they are complete.
+      description: >-
+        Returns upcoming maven transactions. 
+        This includes the employer responsibility on treatment procedures that do not yet have employer bills,
+        and employer bills that are in the NEW, PROCESSING or FAILED states. 
+        Transactions will be shared (has member responsibility) or no_member (member 0 responsibility)
+      operationId: getReimbursementWalletUpcomingTransactions
+      tags:
+        - Maven Wallet
+      parameters:
+        - name: id
+          in: path
+          description: ID of the reimbursement wallet.
+          required: true
+          schema:
+            type: integer
+        - name: offset
+          in: query
+          description: >-
+            Result offset. e.g. if 9 will return from results[9], 0 indexed. Default 0.
+            If offset > max index, then will return empty list of transactions.
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/reimbursement_wallet_transactions"
+              examples:
+                complete:
+                  $ref: "#/components/examples/reimbursement_wallet_transactions"
+        "404":
+          description: >-
+            The wallet id does not exist or does not belong to the logged-in user.
+        "500":
+          description: Internal error
+
+  /reimbursement_request:
+    get:
+      summary: View reimbursement requests and metadata for a wallet
+      operationId: getReimbursementRequestsForWallet
+      description: >-
+        View user reimbursement requests with summary data. Only works for
+        wallets that belong to the logged in user.
+      tags:
+        - Maven Wallet
+      parameters:
+        - name: reimbursement_wallet_id
+          in: query
+          description: >-
+            ID of the wallet for which you want to see associated reimbursement
+            requests
+          required: true
+          schema:
+            type: number
+        - name: category
+          in: query
+          description: Reimbursement request category label to limit by
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    $ref: "#/components/schemas/reimbursement_requests_meta"
+                  data:
+                    type: object
+                    properties:
+                      summary:
+                        $ref: "#/components/schemas/reimbursement_requests_summary"
+                      reimbursement_requests:
+                        type: array
+                        items:
+                          allOf:
+                              - $ref: "#/components/schemas/reimbursement_request_with_no_state_prop"
+                              - type: object
+                                properties:
+                                  state:
+                                    type: string
+                                    enum:
+                                      - NEW
+                                      - PENDING
+                                      - APPROVED
+                                      - REIMBURSED
+                                      - DENIED
+                                      - FAILED
+                                      - NEEDS_RECEIPT
+                                      - RECEIPT_SUBMITTED
+                                      - INSUFFICIENT_RECEIPT
+                                      - INELIGIBLE_EXPENSE
+                                      - RESOLVED
+                                      - REFUNDED
+
+
+              example:
+                meta:
+                  reimbursement_wallet_id: "1128702692721009835"
+                  category: "Fertility"
+                data:
+                  summary:
+                    reimbursement_request_maximum: 10000
+                    reimbursement_spent: 1065
+                    currency_code: "USD"
+                    wallet_shareable: false
+                    category_breakdown:
+                      - category:
+                          id: "1118607832289455429"
+                          label: Fertility
+                          is_unlimited: true
+                          reimbursement_request_category_maximum: 0
+                          reimbursement_request_category_maximum_amount:
+                            currency_code: "USD"
+                            amount: 0
+                            formatted_amount: "$0.00"
+                            formatted_amount_truncated: "$0"
+                            raw_amount: "0.00"
+                          title: 'Fertility Category'
+                          subtitle: ''
+                          benefit_type: 'CURRENCY'
+                          is_fertility_category: True
+                          direct_payment_eligible: True
+                          credits_remaining: 0
+                          credit_maximum: 0
+                        spent: 1050
+                        spent_amount:
+                          currency_code: "USD"
+                          amount: 1050
+                          formatted_amount: "$10.50"
+                          formatted_amount_truncated: "$10"
+                          raw_amount: "10.50"
+                        remaining_amount:
+                          currency_code: "USD"
+                          amount: 0
+                          formatted_amount: "$0.00"
+                          formatted_amount_truncated: "$0"
+                          raw_amount: "0.00"
+                      - category:
+                          id: "1118607832289455429"
+                          label: Clinic Visits
+                          is_unlimited: false
+                          reimbursement_request_category_maximum: 9000
+                          reimbursement_request_category_maximum_amount:
+                            currency_code: "USD"
+                            amount: 9000
+                            formatted_amount: "$90.00"
+                            formatted_amount_truncated: "$90"
+                            raw_amount: "90.00"
+                          title: 'Clinic Visits'
+                          subtitle: ''
+                          benefit_type: 'CURRENCY'
+                          is_fertility_category: True
+                          direct_payment_eligible: False
+                          credits_remaining: 0
+                          credit_maximum: 0
+                        spent: 1050
+                        spent_amount:
+                          currency_code: "USD"
+                          amount: 1050
+                          formatted_amount: "$10.50"
+                          formatted_amount_truncated: "$10"
+                          raw_amount: "10.50"
+                        remaining_amount:
+                          currency_code: "USD"
+                          amount: 7950
+                          formatted_amount: "$79.50"
+                          formatted_amount_truncated: "$79"
+                          raw_amount: "79.50"
+                      - category:
+                          id: "1118607832289452222"
+                          label: IVF
+                          is_unlimited: false
+                          reimbursement_request_category_maximum: 0
+                          reimbursement_request_category_maximum_amount:
+                            currency_code: "USD"
+                            amount: 0
+                            formatted_amount: "$0.00"
+                            formatted_amount_truncated: "$0"
+                            raw_amount: "0.00"
+                          title: 'IVF'
+                          subtitle: ''
+                          benefit_type: 'CYCLE'
+                          is_fertility_category: True
+                          direct_payment_eligible: False
+                          credits_remaining: 10
+                          credit_maximum: 24
+                        spent: 0
+                        spent_amount:
+                          currency_code: "USD"
+                          amount: 0
+                          formatted_amount: "$0.00"
+                          formatted_amount_truncated: "$0"
+                          raw_amount: "0.00"
+                        remaining_amount:
+                          currency_code: "USD"
+                          amount: 0
+                          formatted_amount: "$0.00"
+                          formatted_amount_truncated: "$0"
+                          raw_amount: "0.00"
+                      - category:
+                          id: "802610761642247822"
+                          label: RX
+                          is_unlimited: false
+                          reimbursement_request_category_maximum: 1000
+                          reimbursement_request_category_maximum_amount:
+                            currency_code: "USD"
+                            amount: 1000
+                            formatted_amount: "$10.00"
+                            formatted_amount_truncated: "$10"
+                            raw_amount: "10.00"
+                          title: 'RX'
+                          subtitle: ''
+                          benefit_type: 'CURRENCY'
+                          is_fertility_category: True
+                          direct_payment_eligible: False
+                          credits_remaining: 0
+                          credit_maximum: 0
+                        spent: 15
+                        spent_amount:
+                          currency_code: "USD"
+                          amount: 15
+                          formatted_amount: "$0.15"
+                          formatted_amount_truncated: "$0"
+                          raw_amount: "0.15"
+                        remaining_amount:
+                          currency_code: "USD"
+                          amount: 985
+                          formatted_amount: "$9.85"
+                          formatted_amount_truncated: "$9"
+                          raw_amount: "9.85"
+                    expense_types:
+                      - label: Fertility
+                        currency_code: "USD"
+                        is_fertility_expense: true
+                        form_options:
+                          - name: infertility_dx
+                            label: Is this expense related to a medical diagnosis of infertility issued by a medical provider? (We need this information to determine if your reimbursement is taxable)
+                        subtypes:
+                          - id: "33"
+                            label: "Fertility medication"
+                          - id: "34"
+                            label: "Initial evaluation or timed intercourse (TI) procedures"
+                          - id: "36"
+                            label: "IUI"
+                          - id: ""
+                            label: "Other"
+                      - label: Maternity
+                        currency_code: "USD"
+                        is_fertility_expense: false
+                        form_options: []
+                        subtypes:
+                          - id: "13"
+                            label: "Maternity-related prescriptions not covered under health insurance"
+                          - id: "12"
+                            label: "Lactation consult"
+                          - id: ""
+                            label: "Other"
+                  reimbursement_requests:
+                    - id: "1168905375706931595"
+                      label: Lab (Medical)
+                      service_provider: Some Laboratory
+                      person_receiving_service: null
+                      employee_name: User T. Est
+                      description: ""
+                      amount: 1050
+                      benefit_amount:
+                        currency_code: "USD"
+                        amount: 1050
+                        formatted_amount: "$10.50"
+                        formatted_amount_truncated: "$10"
+                        raw_amount: "10.50"
+                      state: APPROVED
+                      state_description: >-
+                        Your expenses have been preliminarily approved by our
+                        care team per your company’s eligibility criteria and
+                        have been submitted to your company for final review!
+                      category:
+                        id: "1118607832289455429"
+                        label: Clinic Visits
+                      source:
+                        type: user_asset
+                        source_id: "76"
+                        source_url: "https://www.example.com/76.jpg"
+                        created_at: "2020-10-03T11:27:41"
+                      sources:
+                        - type: user_asset
+                          source_id: "76"
+                          source_url: "https://www.example.com/76.jpg"
+                          created_at: "2020-10-03T11:27:41"
+                      created_at: "2020-10-03T21:13:49"
+                      service_start_date: "2020-10-01T18:23:01"
+                      service_end_date: "2020-10-01T18:23:01"
+                      cost_share_details:
+                        reimbursement_amount: "$150.00"
+                        reimbursement_expected_message: "Your expenses have been received. Family building services can be subject to coinsurance, copay, and deductible. If you have financial responsibility towards this claim, our care team will calculate this when they review your claim. It will be deducted from the amount reimbursed to you."
+                        original_claim_amount: "$500.00"
+                    - id: "1168905376982765482"
+                      label: CVS pharmacy
+                      service_provider: A Pharmacy
+                      person_receiving_service: Some Other User
+                      employee_name: User T. Est
+                      description: ''
+                      amount: 15
+                      benefit_amount:
+                        currency_code: "USD"
+                        amount: 15
+                        formatted_amount: "$0.15"
+                        formatted_amount_truncated: "$0"
+                        raw_amount: "0.15"
+                      state: PENDING
+                      state_description: >-
+                        Your expenses have been received by our care team and
+                        are pending further review.
+                      category:
+                        id: "802610761642247822"
+                        label: RX
+                      source:
+                        type: user_asset
+                        source_id: "99"
+                        source_url: "https://www.example.com/99.jpg"
+                        created_at: "2020-11-03T16:13:49"
+                      sources:
+                        - type: user_asset
+                          source_id: "99"
+                          source_url: "https://www.example.com/99.jpg"
+                          created_at: "2020-11-03T16:13:49"
+                      created_at: "2020-11-04T21:13:49"
+                      service_start_date: "2020-11-05T18:23:01"
+                      service_end_date: null
+
+        "400":
+          description: Error in input.
+        "404":
+          description: Wallet not found.
+    post:
+      summary: Create a reimbursement request
+      operationId: postReimbursementRequest
+      description: >-
+        The endpoint will create a new Reimbursement Request object
+      tags:
+        - Maven Wallet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                category_id: '1118607832289452222'
+                expense_type: "Fertility"
+                expense_subtype_id: "33"
+                infertility_dx: true
+                service_provider: 'NYU Langone Fertility Center'
+                description: 'Fertility expenses'
+                service_start_date: '2024-01-01'
+                person_receiving_service_id: '123'
+                person_receiving_service_name: 'Amelia'
+                currency_code: "USD"
+                amount: 4000
+                wallet_id: '1234'
+                sources: [
+                  {
+                    source_id: '1289737492813004386'
+                  }
+                ]
+                required_plan_year: '2024-2025'
+              properties:
+                category_id:
+                  type: string
+                  required: false
+                expense_type:
+                  type: string
+                  required: false
+                expense_subtype_id:
+                  type: string
+                  required: false
+                infertility_dx:
+                  type: boolean
+                  required: false
+                service_provider:
+                  type: string
+                  required: true
+                description:
+                  type: string
+                  required: false
+                wallet_id:
+                  type: string
+                  required: true
+                service_start_date:
+                  type: string
+                  required: true
+                person_receiving_service_id:
+                  type: string
+                  required: true
+                person_receiving_service_name:
+                  type: string
+                  required: true
+                amount:
+                  description: The amount in the minor unit of the currency described by `currency_code` field
+                  type: integer
+                  required: true
+                currency_code:
+                  description: The ISO 4217 currency of the `amount` field, defaults to "USD" for backwards compatibility
+                  type: string
+                  required: false
+                sources:
+                  type: array
+                  required: true
+                  items:
+                    allOf:
+                      - type: object
+                        properties:
+                          source_id:
+                            type: string
+                            required: true
+                document_mapping_uuid:
+                  type: string
+                  format: uuid
+                  required: false
+                required_plan_year:
+                  type: string
+                  required: False
+                  description: >-
+                    Populated if the front ends needs to redirect to the new survey flow. 
+                    This value must be passed back to the back end.
+      responses:
+        "200":
+          description: OK
+        "201":
+          description: UI should redirect to survey for specified year
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  plan_year:
+                    type: string
+                    required: true
+                    description: Lets the backend know if the survey for a specific year is being requested.
+                    example: '2024-2025'
+        "400":
+          description: Invalid data provided
+        "500":
+          description: Error uploading attachment
+  /reimbursement_request/{id}:
+    get:
+      summary: Returns the details of a reimbursement request with the latest associated cost breakdown data, if available.
+      operationId: getReimbursementRequest
+      description: >-
+        Returns the details of a reimbursement request with the latest associated cost breakdown data, if available.
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/reimbursement_request_details"
+        "404":
+          description: Reimbursement request not found.
+
+  /reimbursement_request/state:
+    get:
+      summary: View reimbursement requests with state and metadata for a wallet
+      operationId: getReimbursementRequestsWithStateForWallet
+      description: >-
+        View user reimbursement requests with state in needs attention and transaction history lists. Only works for
+        wallets that belong to the logged in user.
+      tags:
+        - Maven Wallet
+      parameters:
+        - name: reimbursement_wallet_id
+          in: query
+          description: >-
+            ID of the wallet for which you want to see associated reimbursement
+            requests
+          required: true
+          schema:
+            type: number
+        - name: category
+          in: query
+          description: Reimbursement request category label to limit by
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          headers: { }
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  meta:
+                    $ref: "#/components/schemas/reimbursement_requests_meta"
+                  data:
+                    type: object
+                    properties:
+                      summary:
+                        $ref: "#/components/schemas/reimbursement_requests_summary"
+                      reimbursement_requests:
+                        type: object
+                        properties:
+                          transaction_history:
+                            type: array
+                            items:
+                              allOf:
+                                - $ref: "#/components/schemas/reimbursement_request_with_no_state_prop"
+                                - type: object
+                                  properties:
+                                    state:
+                                      type: string
+                                      enum:
+                                        - REIMBURSED
+                                        - INELIGIBLE_EXPENSE
+                                        - RESOLVED
+                                        - REFUNDED
+                                        - DENIED
+                          needs_attention:
+                            type: array
+                            items:
+                              allOf:
+                                - $ref: "#/components/schemas/reimbursement_request_with_no_state_prop"
+                                - type: object
+                                  properties:
+                                    state:
+                                      type: string
+                                      enum:
+                                        - NEEDS_RECEIPT
+                                        - PENDING
+                                        - INSUFFICIENT_RECEIPT
+                                        - NEW
+                                        - APPROVED
+                                        - RECEIPT_SUBMITTED
+                          most_recent:
+                            type: array
+                            maxLength: 2
+                            minLength: 0
+                            items:
+                              allOf:
+                                - $ref: "#/components/schemas/reimbursement_request_with_no_state_prop"
+                                - type: object
+                                  properties:
+                                    state:
+                                      type: string
+                                      enum:
+                                        - NEEDS_RECEIPT
+                                        - PENDING
+                                        - INSUFFICIENT_RECEIPT
+                                        - NEW
+                                        - APPROVED
+                                        - REIMBURSED
+                                        - RECEIPT_SUBMITTED
+                                        - INELIGIBLE_EXPENSE
+                                        - RESOLVED
+                                        - REFUNDED
+              example:
+                meta:
+                  reimbursement_wallet_id: "1128702692721009835"
+                  category: "Fertility"
+                data:
+                  summary:
+                    reimbursement_request_maximum: 10000
+                    reimbursement_spent: 1065
+                    currency_code: "USD"
+                    wallet_shareable: false
+                    expense_types:
+                    - label: Fertility
+                      currency_code: "USD"
+                      is_fertility_expense: true
+                      form_options:
+                      - name: infertility_dx
+                        label: Is this expense related to a medical diagnosis of infertility issued by a medical provider? (We need this information to determine if your reimbursement is taxable)
+                      subtypes:
+                        - id: "33"
+                          label: "Fertility medication"
+                        - id: "34"
+                          label: "Initial evaluation or timed intercourse (TI) procedures"
+                        - id: "36"
+                          label: "IUI"
+                        - id: ""
+                          label: "Other"
+                    - label: Maternity
+                      currency_code: "USD"
+                      is_fertility_expense: false
+                      form_options: [ ]
+                      subtypes:
+                        - id: "13"
+                          label: "Maternity-related prescriptions not covered under health insurance"
+                        - id: "12"
+                          label: "Lactation consult"
+                    category_breakdown:
+                      - category:
+                          id: "1118607832289455429"
+                          label: Clinic Visits
+                          is_unlimited: false
+                          reimbursement_request_category_maximum: 9000
+                          reimbursement_request_category_maximum_amount:
+                            currency_code: "USD"
+                            amount: 9000
+                            formatted_amount: "$90.00"
+                            formatted_amount_truncated: "$90"
+                            raw_amount: "90.00"
+                          title: 'Clinic Visits'
+                          subtitle: ''
+                          benefit_type: 'CURRENCY'
+                          is_fertility_category: True
+                          direct_payment_eligible: False
+                          credits_remaining: 0
+                          credit_maximum: 0
+                        spent: 1050
+                        spent_amount:
+                          currency_code: "USD"
+                          amount: 1050
+                          formatted_amount: "$10.50"
+                          formatted_amount_truncated: "$10"
+                          raw_amount: "10.50"
+                        remaining_amount:
+                          currency_code: "USD"
+                          amount: 7950
+                          formatted_amount: "$79.50"
+                          formatted_amount_truncated: "$79"
+                          raw_amount: "79.50"
+                      - category:
+                          id: "1118607832289455429"
+                          label: Fertility
+                          is_unlimited: true
+                          reimbursement_request_category_maximum: 0
+                          reimbursement_request_category_maximum_amount:
+                            currency_code: "USD"
+                            amount: 0
+                            formatted_amount: "$0.00"
+                            formatted_amount_truncated: "$0"
+                            raw_amount: "0.00"
+                          title: 'Fertility Category'
+                          subtitle: ''
+                          benefit_type: 'CURRENCY'
+                          is_fertility_category: True
+                          direct_payment_eligible: True
+                          credits_remaining: 0
+                          credit_maximum: 0
+                        spent: 1050
+                        spent_amount:
+                          currency_code: "USD"
+                          amount: 1050
+                          formatted_amount: "$10.50"
+                          formatted_amount_truncated: "$10"
+                          raw_amount: "10.50"
+                        remaining_amount:
+                          currency_code: "USD"
+                          amount: 0
+                          formatted_amount: "$0.00"
+                          formatted_amount_truncated: "$0"
+                          raw_amount: "0.00"
+                      - category:
+                          id: "1118607832289452222"
+                          label: IVF
+                          is_unlimited: false
+                          reimbursement_request_category_maximum: 0
+                          reimbursement_request_category_maximum_amount:
+                            currency_code: "USD"
+                            amount: 0
+                            formatted_amount: "$0.00"
+                            formatted_amount_truncated: "$0"
+                            raw_amount: "0.00"
+                          title: 'IVF'
+                          subtitle: ''
+                          benefit_type: 'CYCLE'
+                          is_fertility_category: True
+                          direct_payment_eligible: False
+                          credits_remaining: 10
+                          credit_maximum: 24
+                        spent: 0
+                        spent_amount:
+                          currency_code: "USD"
+                          amount: 0
+                          formatted_amount: "$0.00"
+                          formatted_amount_truncated: "$0"
+                          raw_amount: "0.00"
+                        remaining_amount:
+                          currency_code: "USD"
+                          amount: 0
+                          formatted_amount: "$0.00"
+                          formatted_amount_truncated: "$0"
+                          raw_amount: "0.00"
+                      - category:
+                          id: "802610761642247822"
+                          label: RX
+                          is_unlimited: false
+                          reimbursement_request_category_maximum: 1000
+                          reimbursement_request_category_maximum_amount:
+                            currency_code: "USD"
+                            amount: 1000
+                            formatted_amount: "$10.00"
+                            formatted_amount_truncated: "$10"
+                            raw_amount: "10.00"
+                          title: 'RX'
+                          subtitle: ''
+                          benefit_type: 'CURRENCY'
+                          is_fertility_category: True
+                          direct_payment_eligible: False
+                          credits_remaining: 0
+                          credit_maximum: 0
+                        spent: 15
+                        spent_amount:
+                          currency_code: "USD"
+                          amount: 15
+                          formatted_amount: "$0.15"
+                          formatted_amount_truncated: "$0"
+                          raw_amount: "0.15"
+                        remaining_amount:
+                          currency_code: "USD"
+                          amount: 985
+                          formatted_amount: "$9.85"
+                          formatted_amount_truncated: "$9"
+                          raw_amount: "9.85"
+                  reimbursement_requests:
+                    transaction_history:
+                      - id: "1168905375706931595"
+                        label: Lab (Medical)
+                        service_provider: Some Laboratory
+                        person_receiving_service: null
+                        employee_name: User T. Est
+                        description: ""
+                        amount: 1050
+                        benefit_amount:
+                          currency_code: "USD"
+                          amount: 1050
+                          formatted_amount: "$10.50"
+                          formatted_amount_truncated: "$10"
+                          raw_amount: "10.50"
+                        state: APPROVED
+                        state_description: >-
+                          Your expenses have been preliminarily approved by our
+                          care team per your company’s eligibility criteria and
+                          have been submitted to your company for final review!
+                        category:
+                          id: "1118607832289455429"
+                          label: Clinic Visits
+                        source:
+                          type: user_asset
+                          source_id: "76"
+                          source_url: "https://www.example.com/76.jpg"
+                          created_at: "2020-10-03T11:27:41"
+                        sources:
+                          - type: user_asset
+                            source_id: "76"
+                            source_url: "https://www.example.com/76.jpg"
+                            created_at: "2020-10-03T11:27:41"
+                        created_at: "2020-10-03T21:13:49"
+                        service_start_date: "2020-10-01T18:23:01"
+                        service_end_date: "2020-10-01T18:23:01"
+                        cost_share_details:
+                          reimbursement_amount: "$150.00"
+                          reimbursement_expected_message: "Your expenses have been received.Family building services can be subject to coinsurance, copay, and deductible. If you have financial responsibility towards this claim, our care team will calculate this when they review your claim. It will be deducted from the amount reimbursed to you."
+                          original_claim_amount: "$500.00"
+                    needs_attention:
+                      - id: "1168905376982765482"
+                        label: CVS pharmacy
+                        service_provider: A Pharmacy
+                        person_receiving_service: Some Other User
+                        employee_name: User T. Est
+                        description: ''
+                        amount: 15
+                        benefit_amount:
+                          currency_code: "USD"
+                          amount: 15
+                          formatted_amount: "$0.15"
+                          formatted_amount_truncated: "$0"
+                          raw_amount: "0.15"
+                        state: PENDING
+                        state_description: >-
+                          Your expenses have been received by our care team and
+                          are pending further review.
+                        category:
+                          id: "802610761642247822"
+                          label: RX
+                        source:
+                          type: user_asset
+                          source_id: "99"
+                          source_url: "https://www.example.com/99.jpg"
+                          created_at: "2020-11-03T16:13:49"
+                        sources:
+                          - type: user_asset
+                            source_id: "99"
+                            source_url: "https://www.example.com/99.jpg"
+                            created_at: "2020-11-03T16:13:49"
+                        created_at: "2020-11-04T21:13:49"
+                        service_start_date: "2020-11-05T18:23:01"
+                        service_end_date: null
+                    most_recent:
+                      - id: "1168905375706931595"
+                        label: Lab (Medical)
+                        service_provider: Some Laboratory
+                        person_receiving_service: null
+                        employee_name: User T. Est
+                        description: ""
+                        amount: 1050
+                        benefit_amount:
+                          currency_code: "USD"
+                          amount: 1050
+                          formatted_amount: "$10.50"
+                          formatted_amount_truncated: "$10"
+                          raw_amount: "10.50"
+                        state: APPROVED
+                        state_description: >-
+                          Your expenses have been preliminarily approved by our
+                          care team per your company’s eligibility criteria and
+                          have been submitted to your company for final review!
+                        category:
+                          id: "1118607832289455429"
+                          label: Clinic Visits
+                        source:
+                          type: user_asset
+                          source_id: "76"
+                          source_url: "https://www.example.com/76.jpg"
+                          created_at: "2020-10-03T11:27:41"
+                        sources:
+                          - type: user_asset
+                            source_id: "76"
+                            source_url: "https://www.example.com/76.jpg"
+                            created_at: "2020-10-03T11:27:41"
+                        created_at: "2020-10-03T21:13:49"
+                        service_start_date: "2020-10-01T18:23:01"
+                        service_end_date: "2020-10-01T18:23:01"
+                        reimbursement_request_expected_amount: "$150.00"
+                        reimbursement_request_expected_message: "Your expenses have been received.Family building services can be subject to coinsurance, copay, and deductible. If you have financial responsibility towards this claim, our care team will calculate this when they review your claim. It will be deducted from the amount reimbursed to you."
+                      - id: "1168905376982765482"
+                        label: CVS pharmacy
+                        service_provider: A Pharmacy
+                        person_receiving_service: Some Other User
+                        employee_name: User T. Est
+                        description: ''
+                        amount: 15
+                        benefit_amount:
+                          currency_code: "USD"
+                          amount: 15
+                          formatted_amount: "$0.15"
+                          formatted_amount_truncated: "$0"
+                          raw_amount: "0.15"
+                        state: PENDING
+                        state_description: >-
+                          Your expenses have been received by our care team and
+                          are pending further review.
+                        category:
+                          id: "802610761642247822"
+                          label: RX
+                        source:
+                          type: user_asset
+                          source_id: "99"
+                          source_url: "https://www.example.com/99.jpg"
+                          created_at: "2020-11-03T16:13:49"
+                        sources:
+                          - type: user_asset
+                            source_id: "99"
+                            source_url: "https://www.example.com/99.jpg"
+                            created_at: "2020-11-03T16:13:49"
+                        created_at: "2020-11-04T21:13:49"
+                        service_start_date: "2020-11-05T18:23:01"
+                        service_end_date: null
+        "400":
+          description: Invalid User.
+        "404":
+          description: Wallet not found.
+  /reimbursement_request/{id}/sources:
+    post:
+      summary: Associate user asset with reimbursement request
+      operationId: postReimbursementRequestSources
+      description: >-
+        This endpoint will take a user asset and associate it to its respective reimbursement request.
+        Consequently, if successful, this will create a new unique reimbursement request source.
+      tags:
+        - Maven Wallet
+      parameters:
+        - name: id
+          in: path
+          description: ID of the reimbursement request
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_asset_id:
+                  type: string
+      responses:
+        "201":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/reimbursement_request_source"
+              examples:
+                complete:
+                  $ref: "#/components/examples/reimbursement_request_source"
+        "404":
+          description: Could not find ReimbursementRequest by id or related resources (e.g. ReimbursementWallet)
+        "500":
+          description: Error uploading attachment
+  /reimbursement_wallet/dashboard:
+    get:
+      summary: Get information to render the member's wallet dashboard
+      operationId: getReimbursementWalletDashboard
+      description: ->
+        Returns dynamic information for the wallet dashboard. This may be member- or
+        wallet-specific. Currently only includes the dashboard cards.
+      tags:
+        - Maven Wallet
+      responses:
+        "200":
+          description: OK
+          headers: {}
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    minimum: 0
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+                        body:
+                          type: string
+                        img_url:
+                          type: string
+                        link_text:
+                          type: string
+                        link_url:
+                          type: string
+                  show_apply_for_wallet:
+                    type: boolean
+                    nullable: false
+                  show_prompt_to_ask_for_invitation:
+                    type: boolean
+                    nullable: false
+                required: [data, show_apply_for_wallet, show_prompt_to_ask_for_invitation]
+              example:
+                data:
+                  - body: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    link_url: https://www.mavenclinic.com/go
+                    img_url: https://assets-global.website-files.com/5fb2b678e994739660d95086/6030ea859d1140824da429d0_maven-family.png
+                    link_text: Go
+                    title: What's covered?
+                  - body: Vestibulum a risus eget purus aliquam luctus
+                    link_url:
+                    img_url: https://assets-global.website-files.com/5fb2b678e994739660d95086/6030ea859d1140824da429d0_maven-family.png
+                    link_text:
+                    title: How does it work?
+                show_apply_for_wallet: true
+components:
+  examples:
+    reimbursement_request_source:
+      summary: Reimbursement request source object
+      value:
+        data:
+          type: "user_asset"
+          source_id: "123"
+          source_url: "www.userasset.com"
+          created_at: "2022-11-11T20:24:15"
+          file_name: "user_asset.png"
+    reimbursement_wallet:
+      summary: Complete Wallet object
+      value:
+        data:
+          id: "1128702692721009835"
+          reimbursement_organization_settings:
+            id: "814606626438882937"
+            organization_id: 7
+            allowed_reimbursement_categories:
+              - id: "802610761642247822"
+                label: RX
+                reimbursement_request_category_maximum: 1000
+                benefit_type: "CURRENCY"
+              - id: "1118607832289455429"
+                label: Clinic Visits
+                reimbursement_request_category_maximum: 9000
+                benefit_type: "CYCLE"
+            benefit_overview_resource:
+              title: Maven Wallet Details Resource
+              url: >-
+                https://www.mavenclinic.com/resources/content/article/maven-wallet-details-resource
+            benefit_faq_resource:
+              title: Maven Wallet FAQ Resource
+              url: >-
+                https://www.mavenclinic.com/resources/content/article/maven-wallet-faq-resource
+            survey_url: https://www.surveymonkey.com/something/
+            reimbursement_request_maximum: 10000
+            is_active: true
+            debit_card_enabled: true
+            direct_payment_enabled: false
+          currency_code: USD
+          state: PENDING
+          reimbursement_method: "DIRECT_DEPOSIT"
+          zendesk_ticket_id: 98765
+          debit_card_eligible: true
+          reimbursement_wallet_debit_card: null
+          hdhp_status: NONE
+          debit_banner: null
+          payment_block: null
+          treatment_block: null
+          employee:
+            first_name: Jane
+            last_name: Doe
+            name: Jane Doe
+          dependents:
+            - first_name: Forrest
+              last_name: Gump
+              name: Forrest Gump
+              id: 3
+            - first_name: Barney
+              last_name: Gumble
+              name: Barney Gumble
+              id: 2
+          members:
+            - first_name: Jane
+              last_name: Doe
+              name: Jane Doe
+              id: 1
+            - first_name: Barney
+              last_name: Gumble
+              name: Barney Gumble
+              id: 2
+          household:
+            - first_name: Jane
+              last_name: Doe
+              name: Jane Doe
+              id: 1
+            - first_name: Barney
+              last_name: Gumble
+              name: Barney Gumble
+              id: 2
+            - first_name: Forrest
+              last_name: Gump
+              name: Forrest Gump
+              id: 3
+          channel_id: 12345
+          benefit_id: "491043"
+          payments_customer_id: null
+          upcoming_payments:
+            summary: null
+            payments: []
+          estimate_block: null
+          pharmacy: null
+    reimbursement_wallet_state_not_eligible_marketplace:
+      summary: Marketplace member (non-enterprise)
+      value:
+        {
+          "summary": {
+            "show_wallet": false,
+            "dashboard_state": null,
+            "member_benefit_id": null,
+            "member_type": "MARKETPLACE",
+            "wallet_id": null,
+            "channel_id": null,
+            "pharmacy": null,
+            "is_shareable": null,
+          },
+          "enrolled": [ ],
+          "eligible": [ ]
+        }
+    reimbursement_wallet_state_not_eligible_access:
+      summary: Wallet ineligible access member (org doesn't offer wallet)
+      value:
+        {
+          "summary": {
+            "show_wallet": false,
+            "dashboard_state": null,
+            "member_benefit_id": "MJS3FJSG2",
+            "member_type": "MAVEN_ACCESS",
+            "wallet_id": null,
+            "channel_id": null,
+            "pharmacy": {
+              "name": "SMP Pharmacy",
+              "url": "https://www.mavenclinic.com/app/resources/content/r/mavenrx-smp-pharmacy",
+            },
+            "is_shareable": null,
+          },
+          "enrolled": [ ],
+          "eligible": []
+        }
+    reimbursement_wallet_state_apply_access:
+      summary: Wallet eligible access member (org offers wallet, MAVEN_GREEN/MAVEN_GOLD eligible)
+      value:
+        {
+          "summary": {
+            "show_wallet": true,
+            "dashboard_state": "APPLY",
+            "member_benefit_id": "MJS3FJSG2",
+            "member_type": "MAVEN_ACCESS",
+            "wallet_id": null,
+            "channel_id": null,
+            "pharmacy": {
+              "name": "SMP Pharmacy",
+              "url": "https://www.mavenclinic.com/app/resources/content/r/mavenrx-smp-pharmacy",
+            },
+            "is_shareable": null,
+          },
+          "enrolled": [],
+          "eligible": [
+            {
+              "wallet_id": null,
+              "organization_setting_id": "1365730346010417119",
+              "survey_url": "https://www.qa2.mvnapp.net/app/wallet-form-redirect?member_id_hash=768ecd29-6c11-4e4c-9ea9-ab08fe0a705d",
+              "state": null,
+              "benefit_overview_resource": {
+                "url": "https://www.qa2.mvnapp.net/resources/custom/4429",
+                "title": "Maven Wallet Details Resource"
+              },
+              "benefit_faq_resource": {
+                "url": "https://www.qa2.mvnapp.net/resources/content/article/considering-fertility-treatment-heres-how-maven-can-help",
+                "title": "considering-fertility-treatment-heres-how-maven-can-help"
+              }
+            }
+          ]
+        }
+    reimbursement_wallet_state_pending_access:
+      summary: Wallet pending access member
+      value:
+        {
+          "summary": {
+            "show_wallet": true,
+            "dashboard_state": "PENDING",
+            "member_benefit_id": "MJS3FJSG2",
+            "member_type": "MAVEN_ACCESS",
+            "wallet_id": "1365752626700387250",
+            "channel_id": 450220,
+            "pharmacy": {
+              "name": "SMP Pharmacy",
+              "url": "https://www.mavenclinic.com/app/resources/content/r/mavenrx-smp-pharmacy",
+            },
+            "is_shareable": False,
+          },
+          "enrolled": [
+            {
+              "wallet_id": "1365752626700387250",
+              "channel_id": 450220,
+              "state": "PENDING",
+              "benefit_overview_resource": {
+                "title": "Maven Wallet Details Resource",
+                "url": "https://www.qa2.mvnapp.net/resources/custom/4429"
+              },
+              "benefit_faq_resource": {
+                "title": "Maven Wallet Details Resource",
+                "url": "https://www.qa2.mvnapp.net/resources/content/article/maven-wallet-details-resource"
+              }
+            }
+          ],
+          "eligible": [ ]
+        }
+    reimbursement_wallet_state_disqualified_access:
+      summary: Wallet disqualified access member
+      value:
+        {
+          "summary": {
+            "show_wallet": true,
+            "dashboard_state": "DISQUALIFIED",
+            "member_benefit_id": "MJS3FJSG2",
+            "member_type": "MAVEN_ACCESS",
+            "wallet_id": null,
+            "channel_id": null,
+            "pharmacy": {
+              "name": "SMP Pharmacy",
+              "url": "https://www.mavenclinic.com/app/resources/content/r/mavenrx-smp-pharmacy",
+            },
+            "is_shareable": null,
+          },
+          "enrolled": [ ],
+          "eligible": [
+            {
+              "wallet_id": "1367567173104629243",
+              "organization_setting_id": "1365730346010417119",
+              "survey_url": "https://www.qa2.mvnapp.net/app/wallet-form-redirect?member_id_hash=768ecd29-6c11-4e4c-9ea9-ab08fe0a705d",
+              "state": "DISQUALIFIED",
+              "benefit_overview_resource": {
+                "url": "https://www.qa2.mvnapp.net/resources/custom/4429",
+                "title": "Maven Wallet Details Resource"
+              },
+              "benefit_faq_resource": {
+                "url": "https://www.qa2.mvnapp.net/resources/content/article/considering-fertility-treatment-heres-how-maven-can-help",
+                "title": "considering-fertility-treatment-heres-how-maven-can-help"
+              }
+            }
+          ]
+        }
+    reimbursement_wallet_state_expired_access:
+      summary: Wallet expired access member
+      value:
+        {
+          "summary": {
+            "show_wallet": false,
+            "dashboard_state": null,
+            "member_benefit_id": "MJS3FJSG2",
+            "member_type": "MAVEN_ACCESS",
+            "wallet_id": null,
+            "channel_id": null,
+            "pharmacy": {
+              "name": "SMP Pharmacy",
+              "url": "https://www.mavenclinic.com/app/resources/content/r/mavenrx-smp-pharmacy",
+            },
+            "is_shareable": null,
+          },
+          "enrolled": [ ],
+          "eligible": [ ]
+        }
+    reimbursement_wallet_state_runout_access:
+      summary: Wallet runout access member
+      value:
+        {
+          "summary": {
+            "show_wallet": false,
+            "dashboard_state": null,
+            "member_benefit_id": "MJS3FJSG2",
+            "member_type": "MAVEN_ACCESS",
+            "wallet_id": "1365752626700387250",
+            "channel_id": 450220,
+            "pharmacy": {
+              "name": "SMP Pharmacy",
+              "url": "https://www.mavenclinic.com/app/resources/content/r/mavenrx-smp-pharmacy",
+            },
+            "is_shareable": False,
+          },
+          "enrolled": [
+            {
+              "wallet_id": "1365752626700387250",
+              "channel_id": 450220,
+              "state": "RUNOUT",
+              "benefit_overview_resource": {
+                "title": "Maven Wallet Details Resource",
+                "url": "https://www.qa2.mvnapp.net/resources/custom/4429"
+              },
+              "benefit_faq_resource": {
+                "title": "Maven Wallet Details Resource",
+                "url": "https://www.qa2.mvnapp.net/resources/content/article/maven-wallet-details-resource"
+              }
+            }
+          ],
+          "eligible": [ ]
+        }
+    reimbursement_wallet_state_enrolled_green:
+      summary: Wallet enrolled green (reimbursement wallet) member
+      value:
+        {
+          "summary": {
+            "show_wallet": true,
+            "dashboard_state": "QUALIFIED",
+            "member_benefit_id": "MJS3FJSG2",
+            "member_type": "MAVEN_GREEN",
+            "wallet_id": "1365752626700387250",
+            "channel_id": 450220,
+            "pharmacy": {
+              "name": "SMP Pharmacy",
+              "url": "https://www.mavenclinic.com/app/resources/content/r/mavenrx-smp-pharmacy",
+            },
+            "is_shareable": False,
+          },
+          "enrolled": [
+            {
+              "wallet_id": "1365752626700387250",
+              "channel_id": 450220,
+              "state": "QUALIFIED",
+              "benefit_overview_resource": {
+                "title": "Maven Wallet Details Resource",
+                "url": "https://www.qa2.mvnapp.net/resources/custom/4429"
+              },
+              "benefit_faq_resource": {
+                "title": "Maven Wallet Details Resource",
+                "url": "https://www.qa2.mvnapp.net/resources/content/article/maven-wallet-details-resource"
+              }
+            }
+          ],
+          "eligible": []
+        }
+    reimbursement_wallet_state_enrolled_gold:
+      summary: Wallet enrolled gold (direct payment wallet) member
+      value:
+        {
+          "summary": {
+            "show_wallet": true,
+            "dashboard_state": "QUALIFIED",
+            "member_benefit_id": "MJS3FJSG2",
+            "member_type": "MAVEN_GOLD",
+            "wallet_id": "1365752626700387250",
+            "channel_id": 450220,
+            "pharmacy": {
+              "name": "SMP Pharmacy",
+              "url": "https://www.mavenclinic.com/app/resources/content/r/mavenrx-smp-pharmacy",
+            },
+            "is_shareable": True,
+          },
+          "enrolled": [
+            {
+              "wallet_id": "1365752626700387250",
+              "channel_id": 450220,
+              "state": "QUALIFIED",
+              "benefit_overview_resource": {
+                "title": "Maven Wallet Details Resource",
+                "url": "https://www.qa2.mvnapp.net/resources/custom/4429"
+              },
+              "benefit_faq_resource": {
+                "title": "Maven Wallet Details Resource",
+                "url": "https://www.qa2.mvnapp.net/resources/content/article/maven-wallet-details-resource"
+              }
+            }
+          ],
+          "eligible": []
+        }
+    reimbursement_wallet_bank_account:
+      summary: Wallet bank account object
+      value:
+        bank_name: "Checking"
+        last4: "4444"
+        country: ""
+    reimbursement_wallet_bank_account_input:
+      summary: Wallet bank account input
+      value:
+        BankAcctName: "Checking"
+        BankAccount: "0123456789"
+        BankRoutingNumber: "021000089"
+        BankAccountTypeCode: "CHECKING"
+    reimbursement_wallet_debit_card:
+      summary: Complete debit card object
+      value:
+        data:
+          id: 1170270113142406611
+          reimbursement_wallet_id: 1128702692721009835
+          card_proxy_number: "1100054015522128"
+          card_last_4_digits: "2128"
+          card_status: "NEW"
+          card_status_reason: 0
+          card_status_reason_text: ""
+          created_date: "2022-11-01"
+          issued_date: "2022-11-01"
+          shipped_date: null
+          shipping_tracking_number: ""
+    reimbursement_wallet_questionnaire:
+      summary: Annual wallet questionnaire
+      value:
+        {
+          "status": "required",
+          "questionnaire": {
+            "id": "d2b1cfd",
+            "title": "Action Required: 2024 Health Insurance information needed",
+            "body": "We need a bit of information from you regarding...",
+            "expandableDetails":
+            {
+              header: "What is HDHP?",
+              content: "A High Deductible Health Plan is..."
+            },
+            "questions": [
+              {
+                "id": "b1c54fa",
+                "text": "Will you be on an HDHP?",
+                "options": [
+                  { text: "Yes", value: "yes" },
+                  { text: "No", value: "no" }
+                ]
+              },
+              {
+                "id": "c4e92bc",
+                "text": "Will your partner be on an HDHP?",
+                "options": [
+                  { text: "Yes", value: "yes" },
+                  { text: "No", value: "no" }
+                ]
+              },
+            ],
+            "questionnaire_type": "LEGACY",
+            "plan_year": "2024"
+          }
+        }
+    reimbursement_wallet_questionnaire_response:
+      summary: Annual wallet questionnaire response
+      value:
+        {
+          "id": "d2b1cfd",
+          "answers": {
+            "b1c54fa": "yes",
+            "cf164ee": "no"
+          },
+          "questionnaire_type": "LEGACY",
+          "plan_year": "2024"
+        }
+
+
+    reimbursement_wallet_transactions:
+      summary: Transaction list
+      value:
+        {
+          "balance_after_upcoming_transactions": "$4822.78",
+          "limit": 100,
+          "offset": 0,
+          "total": 2,
+          "upcoming":
+          [
+            {
+              "bill_uuid": "3764dd99-9858-47df-97af-40107a1873e4",
+              "procedure_uuid": "0238c359-eebb-4128-92da-360448d331f2",
+              "procedure_name": "IVF Fresh",
+              "procedure_details": "June 1, 2023 | Covered by Maven",
+              "maven_responsibility": "$2,532.23",
+              "status": "PROCESSING",
+            },
+            {
+              "bill_uuid": "",
+              "procedure_uuid": "0cff31be-ba0e-4931-9ba9-ffae0f86e41d",
+              "procedure_name": "Preservation",
+              "procedure_details": "June 10, 2023 | Covered by Maven",
+              "maven_responsibility": "$2464.99",
+              "status": "NEW",
+            }
+          ]
+        }
+    users:
+      summary:
+        Wallet users objects
+      value:
+        [
+          {
+            "title": "Hank Hill",
+            "subtitle": "",
+            "can_cancel_invitation": false,
+            "invitation_id": "",
+          },
+          {
+            "title": "Sue Bird",
+            "subtitle": "Pending approval",
+            "can_cancel_invitation": false,
+            "invitation_id": "",
+          },
+          {
+            "title": "steve.kerr@warriors.com",
+            "subtitle": "Invitation sent",
+            "con_cancel_invitation": true,
+            "invitation_id": "0ff593b5-fd1e-4873-9c37-b2f52d39e10c",
+          }
+        ]
+    add_user:
+      summary:
+        Example add_user response
+      value:
+        {
+          "message": "Your invite has been sent.",
+          "can_retry": false
+        }
+    reimbursement_wallet_invitation_response:
+      summary:
+        Example get invitation response
+      value:
+        {
+          "message": "Invitation found.",
+          "inviter_name": "Sue",
+          "survey_url": "surveymonkey.com/survey234"
+        }
+    reimbursement_wallet_invitation_input:
+      summary:
+        Example accept invitation input
+      value:
+        {
+          "accept": true,
+        }
+    reimbursement_wallet_invitation_cancel_response:
+      summary:
+        Example cancel invitation response
+      value:
+        {
+          "message": "Your invite has been canceled.",
+        }
+  schemas:
+    benefit_resource:
+      type: object
+      properties:
+        title:
+          type: string
+        url:
+          type: string
+    reimbursement_request_source:
+      type: object
+      properties:
+        type:
+          type: string
+        source_id:
+          type: string
+        source_url:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        file_name:
+          type: string
+    reimbursement_request_state_enum:
+      type: string
+      enum:
+        - NEW
+        - PENDING
+        - APPROVED
+        - REIMBURSED
+        - DENIED
+        - FAILED
+        - NEEDS_RECEIPT
+        - RECEIPT_SUBMITTED
+        - INSUFFICIENT_RECEIPT
+        - INELIGIBLE_EXPENSE
+        - RESOLVED
+        - REFUNDED
+    reimbursement_request_with_no_state_prop:
+      type: object
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        service_provider:
+          type: string
+        person_receiving_service:
+          type: string
+        employee_name:
+          type: string
+        description:
+          type: string
+        amount:
+          type: integer
+        benefit_amount:
+          nullable: false
+          oneOf:
+            - $ref: "#/components/schemas/reimbursement_amount_obj"
+        transaction_amount:
+          nullable: false
+          oneOf:
+            - $ref: "#/components/schemas/reimbursement_amount_obj"
+        state_description:
+          type: string
+        category:
+          type: object
+          properties:
+            id:
+              type: string
+            label:
+              type: string
+            benefit_type:
+              type: string
+              enum:
+                - CURRENCY
+                - CYCLE
+        source:
+          $ref: "#/components/schemas/reimbursement_request_source"
+        sources:
+          type: array
+          items:
+            $ref: "#/components/schemas/reimbursement_request_source"
+        service_state_date:
+          type: string
+          format: date-time
+        service_end_date:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+        taxation_status:
+          type: string
+          enum:
+            - QUALIFIED
+            - NON_QUALIFIED
+        reimbursement_type:
+          type: string
+          enum:
+            - MANUAL
+            - DEBIT_CARD
+        cost_share_details:
+          type: object
+          nullable: true
+          properties:
+            reimbursement_amount:
+              type: string
+              nullable: true
+            reimbursement_expected_message:
+              type: string
+              nullable: true
+            original_claim_amount:
+              type: string
+              nullable: false
+    reimbursement_requests_meta:
+      type: object
+      properties:
+        reimbursement_wallet_id:
+          type: string
+        category:
+          type: string
+          description: category label, if category-limited data is requested
+    reimbursement_amount_obj:
+      type: object
+      properties:
+        currency_code:
+          type: string
+          description: ISO 4217 currency code
+          required: true
+          nullable: false
+        formatted_amount:
+          type: string
+          description: Formatted amount with currency symbol and separators for display
+          required: true
+          nullable: false
+        formatted_amount_truncated:
+          type: string
+          description: Formatted amount with currency symbol and separators for display, truncated without anything after decimal.
+          required: true
+          nullable: false
+        raw_amount:
+          type: string
+          description: Decimal amount
+          required: true
+          nullable: false
+        amount:
+          type: integer
+          description: Integer amount in the currency's minor unit
+          required: true
+          nullable: false
+    users:
+      type: array
+      minItems: 0
+      items:
+        properties:
+          title:
+            type: string
+          status:
+            type: string
+          can_cancel_invitation:
+            type: boolean
+          invitation_id:
+            type: string
+    add_user:
+      type: object
+      properties:
+        message:
+          type: string
+          enum:
+            - "Your invite has been sent."
+            - "This person you are trying to add is already part of your Wallet."
+            - "Invalid email address"
+            - "Sorry, something went wrong. Please try submitting again."
+        can_retry:
+          type: boolean
+          description: False in a 200 response, otherwise signals whether the user can retry adding the user
+    reimbursement_wallet_invitation:
+      type: object
+      properties:
+        message:
+          type: string
+          enum:
+            - "Invitation found."
+            - "Cannot find the invitation."
+            - "Your information did not match the invitation."
+            - "It looks like you already have an active wallet."
+            - "Missing profile information."
+            - "Invitation expired."
+            - "Invitation already used."
+        inviter_name:
+          type: string      
+        survey_url:
+          type: string
+    reimbursement_wallet_invitation_input:
+      type: object
+      properties:
+        accept:
+          type: boolean
+    reimbursement_wallet_invitation_response:
+      type: object
+      properties:
+        message:
+          type: string
+          enum:
+            - "The invitation has been accepted."
+            - "The invitation has been declined."
+            - "Cannot find the invitation."
+            - "Invitation already used."
+            - "Invitation expired"
+            - "Your information did not match the invitation."   
+    reimbursement_wallet_invitation_cancel_response:
+      type: object
+      properties:
+        message:
+          type: string
+          enum:
+            - "Your invite has been canceled."
+            - "Invitation already used."
+            - "Invitation expired."
+            - "Cannot find the invitation."
+            - "Failed to cancel invitation."
+    reimbursement_requests_summary:
+      type: object
+      properties:
+        reimbursement_request_maximum:
+          type: integer
+        reimbursement_spent:
+          type: integer
+        currency_code:
+          type: string
+          minLength: 3
+          maxLength: 3
+        wallet_shareable:
+          type: boolean
+        category_breakdown:
+          type: array
+          items:
+            type: object
+            properties:
+              category:
+                type: object
+                required: [id, label, is_unlimited, reimbursement_request_category_maximum, reimbursement_request_category_maximum_amount, title, subtitle, credit_maximum, credits_remaining, benefit_type, direct_payment_eligible, is_fertility_category]
+                properties:
+                  id:
+                    description: DB ID for the reimbursement_request_category object
+                    type: string
+                    nullable: false
+                  label:
+                    description: Label for reimbursement_request_category
+                    type: string
+                    nullable: false
+                  title:
+                    description: Title for reimbursement_request_category
+                    type: string
+                    nullable: false
+                  subtitle:
+                    description: Subtitle for reimbursement_request_category
+                    type: string
+                    nullable: false
+                  is_unlimited:
+                    description: Indicates if a category is subject to a LTM maximum
+                    nullable: false
+                    type: boolean
+                  reimbursement_request_category_maximum:
+                    description: Category maximum in minor unit amount of currency
+                    type: integer
+                    nullable: false
+                  reimbursement_request_category_maximum_amount:
+                    description: Category maximum amount in various formats
+                    nullable: false
+                    oneOf:
+                      - $ref: "#/components/schemas/reimbursement_amount_obj"
+                  credits_remaining:
+                    description: Remaining credits if benefit_type is CYCLE
+                    type: integer
+                    nullable: false
+                  credit_maximum:
+                    description: Maximum LTM/annual credits if benefit_type is CYCLE
+                    type: integer
+                    nullable: false
+                  benefit_type:
+                    description: The benefit type, either CURRENCY or CYCLE
+                    type: string
+                    nullable: true
+                    enum:
+                      - CURRENCY
+                      - CYCLE
+                  direct_payment_eligible:
+                    description: Is this a direct payment eligible category
+                    type: boolean
+                    nullable: false
+                  is_fertility_category:
+                    description: If this category has a fertility expense type
+                    type: boolean
+                    nullable: false
+              plan_type:
+                nullable: false
+                type: string
+              plan_start:
+                nullable: false
+                type: string
+                format: date
+              plan_end:
+                nullable: false
+                type: string
+                format: date
+              spent:
+                nullable: false
+                type: integer
+              spent_amount:
+                nullable: false
+                oneOf:
+                  - $ref: "#/components/schemas/reimbursement_amount_obj"
+              remaining_amount:
+                nullable: false
+                oneOf:
+                  - $ref: "#/components/schemas/reimbursement_amount_obj"
+        expense_types:
+          type: array
+          items:
+            type: object
+            required: [label, form_options, currency_code, is_fertility_expense, subtypes]
+            properties:
+              label:
+                type: string
+                nullable: false
+              form_options:
+                type: array
+                items:
+                  type: object
+                  required: [name, label]
+                  properties:
+                    name:
+                      type: string
+                      nullable: false
+                    label:
+                      type: string
+                      nullable: false
+              currency_code:
+                description: ISO 4217 currency code of the expense type, could be null for credit based categories
+                type: string
+                nullable: true
+              is_fertility_expense:
+                description: Indicates if the expense type is a fertility expense type
+                type: boolean
+                nullable: false
+              subtypes:
+                type: array
+                items:
+                  type: object
+                  required: [id, label]
+                  properties:
+                     id:
+                       type: string
+                       nullable: false
+                       minLength: 0
+                       maxLength: 10
+                     label:
+                       type: string
+                       nullable: false
+                       minLength: 1
+                       maxLength: 100
+    reimbursement_wallet:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Wallet ID
+        reimbursement_organization_settings:
+          type: object
+          description: Organization settings
+          required: [direct_payment_enabled]
+          properties:
+            id:
+              type: string
+            organization_id:
+              type: integer
+            allowed_reimbursement_categories:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  label:
+                    type: string
+                  reimbursement_request_category_maximum:
+                    type: integer
+                  reimbursement_request_category_maximum_amount:
+                    nullable: false
+                    oneOf:
+                      - $ref: "#/components/schemas/reimbursement_amount_obj"
+                  benefit_type:
+                    type: string
+                    enum:
+                      - CURRENCY
+                      - CYCLE
+            benefit_overview_resource:
+              $ref: "#/components/schemas/benefit_resource"
+            benefit_faq_resource:
+              $ref: "#/components/schemas/benefit_resource"
+            survey_url:
+              type: string
+            reimbursement_request_maximum:
+              type: integer
+            is_active:
+              type: boolean
+            debit_card_enabled:
+              type: boolean
+            direct_payment_enabled:
+              type: boolean
+        currency_code:
+          type: string
+          description: Wallet currency
+          minLength: 3
+          maxLength: 3
+        state:
+          $ref: "#/components/schemas/wallet_state_enum"
+        reimbursement_method:
+          type: string
+          enum:
+            - DIRECT_DEPOSIT
+            - PAYROLL
+        zendesk_ticket_id:
+          type: integer
+        debit_card_eligible:
+          type: boolean
+        reimbursement_wallet_debit_card:
+          $ref: "#/components/schemas/reimbursement_wallet_debit_card"
+        hdhp_status:
+          type: string
+          enum:
+            - NONE
+            - MET
+            - UNMET
+        debit_banner:
+          type: string
+          nullable: true
+          enum:
+            - REQUEST_DEBIT_BANNER
+            - NEW_DEBIT_BANNER
+            - HDHP_DEBIT_BANNER
+        payment_block:
+          type: object
+          nullable: true
+          required: [variant, show_benefit_amount, num_errors]
+          properties:
+            variant:
+              type: string
+              enum:
+                - MEMBER
+                - FULLY_COVERED
+                - NO_PAYMENTS
+                - ZERO_CURRENCY
+                - ZERO_CYCLES
+                - PENDING_COST
+                - RUNOUT
+            show_benefit_amount:
+              type: boolean
+            num_errors:
+              type: integer
+              minimum: 0
+        treatment_block:
+          type: object
+          nullable: true
+          required: [variant, clinic, clinic_location]
+          properties:
+            variant:
+              type: string
+              enum:
+                - NONE
+                - IN_TREATMENT
+                - DX_INSURANCE
+                - DX_REQUIRED
+            clinic:
+              type: string
+              minLength: 0
+              maxLength: 153
+            clinic_location:
+              type: string
+              minLength: 0
+              maxLength: 50
+        reimbursement_request_block:
+          type: object
+          nullable: true
+          properties:
+            title:
+              type: string
+              nullable: true
+            total:
+              type: integer
+              nullable: false
+            reimbursement_text:
+              type: string
+              nullable: true
+            expected_reimbursement_amount:
+              type: string
+              nullable: true
+            original_claim_text:
+              type: string
+              nullable: true
+            original_claim_amount:
+              type: string
+              nullable: true
+            reimbursement_request_uuid:
+              type: string
+              nullable: true
+            details_text:
+              type: string
+              nullable: true
+            has_cost_breakdown_available:
+              type: boolean
+              example: false
+              nullable: false
+        employee:
+          type: object
+          properties:
+            first_name:
+              type: string
+            last_name:
+              type: string
+            name:
+              type: string
+        dependents:
+          type: array
+          minItems: 0
+          items:
+            type: object
+            properties:
+              first_name:
+                type: string
+                minLength: 0
+                maxLength: 40
+              last_name:
+                type: string
+                minLength: 0
+                maxLength: 40
+              name:
+                type: string
+                minLength: 0
+                maxLength: 81
+              id:
+                type: number
+        members:
+          type: array
+          minItems: 0
+          items:
+            type: object
+            properties:
+              first_name:
+                type: string
+                minLength: 0
+                maxLength: 40
+              last_name:
+                type: string
+                minLength: 0
+                maxLength: 40
+              name:
+                type: string
+                minLength: 0
+                maxLength: 81
+              id:
+                type: number
+        household:
+          type: array
+          minItems: 0
+          description: "individuals of the wallet that include both maven members or non-maven members"
+          items:
+            type: object
+            properties:
+              first_name:
+                type: string
+                minLength: 0
+                maxLength: 40
+              last_name:
+                type: string
+                minLength: 0
+                maxLength: 40
+              name:
+                type: string
+                minLength: 0
+                maxLength: 81
+              id:
+                type: integer
+        channel_id:
+          type: integer
+          description: Channel ID for Wallet messages thread
+        benefit_id:
+          type: string
+          minLength: 6
+          nullable: true
+          description: Maven Benefit ID
+        payments_customer_id:
+          type: string
+          format: uuid
+          minLength: 36
+          maxLength: 36
+          nullable: true
+          description: Payments Gateway Customer ID
+        upcoming_payments:
+          type: object
+          nullable: true
+          required: [summary, payments]
+          properties:
+            summary:
+              type: object
+              nullable: true
+              required: [total_member_amount, member_method, member_method_formatted, total_benefit_amount, benefit_remaining, procedure_title]
+              properties:
+                total_member_amount:
+                    type: integer
+                    nullable: true
+                member_method:
+                  type: string
+                  nullable: true
+                member_method_formatted:
+                  type: string
+                  nullable: true
+                total_benefit_amount:
+                  type: integer
+                  nullable: true
+                benefit_remaining:
+                  type: integer
+                  nullable: true
+                procedure_title:
+                  type: string
+                  minLength: 0
+                  maxLength: 191
+            payments:
+              type: array
+              minItems: 0
+              items:
+                type: object
+                required: [member_amount, member_method, member_method_formatted, member_date, benefit_amount, benefit_date, benefit_remaining, procedure_id, procedure_title, bill_uuid, error_type:]
+                properties:
+                  member_amount:
+                    type: integer
+                    nullable: true
+                  member_method:
+                    type: string
+                    nullable: true
+                  member_method_formatted:
+                    type: string
+                    nullable: true
+                  member_date:
+                    type: string
+                    format: date
+                    nullable: true
+                  benefit_amount:
+                    type: integer
+                    nullable: true
+                  benefit_date:
+                    type: string
+                    format: date
+                    nullable: true
+                  benefit_remaining:
+                    type: integer
+                    nullable: true
+                  procedure_id:
+                    type: integer
+                  procedure_title:
+                    type: string
+                    minLength: 0
+                    maxLength: 191
+                  bill_uuid:
+                    type: string
+                    format: UUID
+                    nullable: true
+                    minLength: 36
+                    maxLength: 36
+                  error_type:
+                    type: string
+                    nullable: true
+                    enum:
+                      - "REQUIRES_UPDATE_PAYMENT"
+                      - "REQUIRES_AUTHENTICATE_PAYMENT"
+                      - "PAYMENT_METHOD_HAS_EXPIRED"
+                      - "INSUFFICIENT_FUNDS"
+                      - "CONTACT_CARD_ISSUER"
+                      - "OTHER_MAVEN"
+        estimate_block:
+          type: object
+          nullable: true
+          required: [estimate_text, total_member_estimate, payment_text]
+          properties:
+            estimate_text:
+              type: string
+              nullable: false
+            total_estimates:
+              type: integer
+              nullable: false
+            total_member_estimate:
+              type: string
+              nullable: false
+            payment_text:
+              type: string
+              nullable: False
+            estimate_bill_uuid:
+              type: string
+              nullable: True
+        pharmacy:
+          type: object
+          nullable: true
+          required: [name, url]
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 255
+            url:
+              type: string
+              minLength: 1
+              maxLength: 255
+    reimbursement_wallet_state:
+      type: object
+      required: [summary, eligible, enrolled]
+      properties:
+        summary:
+          type: object
+          required: [show_wallet, dashboard_state, member_benefit_id, wallet_id, channel_id, is_shareable, pharmacy, member_type]
+          properties:
+            show_wallet:
+              type: boolean
+              nullable: false
+            dashboard_state:
+              type: string
+              enum:
+                - APPLY
+                - PENDING
+                - DISQUALIFIED
+                - QUALIFIED
+                - RUNOUT
+              nullable: true
+            member_benefit_id:
+              type: string
+              nullable: true
+            wallet_id:
+              type: string
+              nullable: true
+            channel_id:
+              type: integer
+              nullable: true
+            is_shareable:
+              type: boolean
+              nullable: true
+            pharmacy:
+              type: object
+              nullable: true
+              properties:
+                name:
+                  type: string
+                  nullable: false
+                url:
+                  type: string
+                  nullable: false
+            member_type:
+              type: string
+              enum:
+                - MARKETPLACE
+                - MAVEN_ACCESS
+                - MAVEN_GREEN
+                - MAVEN_GOLD
+              nullable: false
+        eligible:
+          type: array
+          minimum: 0
+          items:
+            type: object
+            required: [wallet_id, organization_setting_id, state, survey_url, benefit_overview_resource, benefit_faq_resource]
+            properties:
+              wallet_id:
+                type: string
+                nullable: true
+              organization_setting_id:
+                type: string
+                nullable: false
+              state:
+                type: string
+                nullable: true
+                enum:
+                  - DISQUALIFIED
+              survey_url:
+                type: string
+                nullable: false
+              benefit_overview_resource:
+                $ref: "#/components/schemas/benefit_resource"
+              benefit_faq_resource:
+                $ref: "#/components/schemas/benefit_resource"
+        enrolled:
+          type: array
+          minimum: 0
+          items:
+            type: object
+            required: [wallet_id, channel_id, state, benefit_overview_resource, benefit_faq_resource]
+            properties:
+              wallet_id:
+                type: string
+                nullable: false
+              channel_id:
+                type: integer
+                nullable: false
+              state:
+                type: string
+                enum:
+                  - PENDING
+                  - QUALIFIED
+                  - RUNOUT
+                nullable: false
+              benefit_overview_resource:
+                $ref: "#/components/schemas/benefit_resource"
+              benefit_faq_resource:
+                $ref: "#/components/schemas/benefit_resource"
+    reimbursement_wallet_bank_account:
+      type: object
+      properties:
+        bank_name:
+          type: string
+          description: Usually a generic type instead of the bank name.
+        last4:
+          type: string
+          minLength: 4
+          maxLength: 4
+        country:
+          type: string
+          maxLength: 0
+          description: Currently empty.
+    reimbursement_wallet_questionnaire:
+      type: object
+      required: [status, questionnaire]
+      properties:
+        status:
+          type: string
+          description: Status - self explanatory.
+          enum:
+            - required
+            - not_required
+            - completed
+        questionnaire:
+          required: [id, title, body, expandableDetails, questions, questionnaire_type, plan_year]
+          properties:
+            id:
+              type: string
+              description: Unique identifier of this questionnaire
+              maxLength: 36
+            title:
+              type: string
+              description: Title text to display at the top of the questionnaire
+              maxLength: 360
+            body:
+              description: Body text to display above questions.
+              maxLength: 360
+            subtext:
+              description: subtext to display below the body but before any questions or explainers.
+              maxLength: 360
+            expandableDetails:
+              description: Expandable detailed information to help user understand.
+              items:
+                type: object
+                required: [header, content]
+                properties:
+                  header:
+                    type: string
+                    description: Text that the user can click on to reveal content
+                    maxLength: 40
+                  content:
+                    type: string
+                    description: Full details
+                    maxLength: 360
+            questions:
+              description: List of questions
+              items:
+                type: object
+                required: [id, text]
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier of this question
+                    maxLength: 36
+                  text:
+                    type: string
+                    description: >- 
+                      Question text or group title if question is part of a group. 
+                      All questions in a group will have the same group title.
+                    maxLength: 360
+                  group_number:
+                    type: number
+                    description: The group that the question belongs to.
+                  place_holder_text:
+                    type: string
+                    description: Place holder text that displayed in an input element.
+                    maxLength: 360
+                  element_type:
+                    type: string
+                    description: the type of element that the UI should render
+                    enum:
+                    - radio_button
+                    - text_box
+                    - dropdown
+                    - datepicker
+                  options:
+                    type: array
+                    description: List of structures containing “text” and “value” fields
+                    minimum: 0
+                    items:
+                      type: object
+                      properties:
+                        text:
+                          type: string
+                        value:
+                          type: string
+            questionnaire_type:
+                $ref: "#/components/schemas/questionnaire_type"
+            plan_year:
+              type: string
+              description: The plan year this survey is for. Acceptable e.g.s are 2024, 2024-2025, 2024_06_01-2025_05_31.
+              maxLength: 40
+    reimbursement_wallet_questionnaire_response:
+      type: object
+      required: [id, answers, questionnaire_type, plan_year]
+      properties:
+        id:
+          type: string
+          description: Unique identifier of this questionnaire
+          maxLength: 36
+        answers:
+          type: object
+          description: Map with questionId as the key and answer value as the value.
+          additionalProperties:
+            type: string
+        questionnaire_type:
+          $ref: "#/components/schemas/questionnaire_type"
+        plan_year:
+          type: string
+          description: >-
+            The plan year this survey is for. Acceptable e.g.s are 2024, 2024-2025, 2024_06_01-2025_05_31.
+            Should be copied into the response from a previous BE response
+          maxLength: 256
+        single_questionnaire:
+          type: boolean
+          description: Indicate to the BE that follow up questionnaires are not expected and will not be accepted.
+
+    reimbursement_wallet_questionnaire_needs_survey_response:
+      type: object
+      required: [needs_survey, needs_any_survey]
+      properties:
+        needs_survey:
+          type: boolean
+          description: true if survey is needed. false otherwise.
+          example: true
+        needs_any_survey:
+          type: boolean
+          description: >-            
+            any_survey absent or false- needs_any_survey will be present and will be false
+            any_survey true -  needs_any_survey will be present and can be either false or true
+          example: true
+    reimbursement_wallet_bank_account_input:
+      type: object
+      properties:
+        BankAccountName:
+          type: string
+          description: Display name for bank account
+        BankAccount:
+          type: string
+          description: Bank account number
+        BankAccountRoutingNumber:
+          type: string
+          description: Bank account routing number
+        BankAccountTypeCode:
+          type: string
+          enum:
+            - NONE
+            - CHECKING
+            - SAVINGS
+    reimbursement_wallet_debit_card:
+      type: object
+      properties:
+        id:
+          type: integer
+        reimbursement_wallet_id:
+          type: integer
+        card_proxy_number:
+          type: string
+        card_last_4_digits:
+          type: string
+        card_status:
+          type: string
+          enum:
+            - NEW
+            - ACTIVE
+            - INACTIVE
+            - CLOSED
+        card_status_reason:
+          type: integer
+          enum:
+            - 0
+            - 100
+            - 101
+            - 102
+            - 103
+            - 200
+            - 201
+            - 202
+          description: >
+            * 0 = NONE
+            * 100 = PAST_DUE_RECEIPT
+            * 101 = INELIGIBLE_EXPENSE
+            * 102 = FRAUD_FLAG
+            * 103 = HDHP_DEDUCTIBLE_UNMET
+            * 200 = LOST_STOLEN
+            * 201 = HEALTH_PLAN_CHANGE
+            * 202 = EMPLOYMENT_ENDED
+        card_status_reason_text:
+          type: string
+        created_date:
+          type: string
+        issued_date:
+          type: string
+        shipped_date:
+          type: string
+        shipping_tracking_number:
+          type: string
+    wallet_state_enum:
+      type: string
+      enum:
+        - PENDING
+        - QUALIFIED
+        - DISQUALIFIED
+        - EXPIRED
+    reimbursement_wallet_transactions:
+      type: object
+      properties:
+        balance_after_upcoming_transactions:
+          type: string
+          description: >-
+            Balance with currency/credits in the wallet after the upcoming transactions are applied.
+            Formatted with appropriate currency if currency based, else credits.
+          required: true
+        limit:
+          type: integer
+          description: Page size
+          required: true
+        offset:
+          type: integer
+          description: Result offset. e.g. if 9 will return results from results[9], 0 indexed.
+          required: true
+        total:
+          type: integer
+          description: Total number of upcoming transactions.
+          required: true
+        upcoming:
+          type: array
+          description: A list of the upcoming transactions. Can be empty. Will never be longer than limit.
+          required: true
+          items:
+            $ref: "#/components/schemas/reimbursement_wallet_transaction_detail"
+    reimbursement_wallet_transaction_detail:
+      type: object
+      properties:
+        bill_uuid:
+          type: string
+          maxLength: 36
+          description: >-
+            Unique id for the upcoming transaction bill. This can be blank if an employer bill does not exist.
+          required: true
+        procedure_uuid:
+          type: string
+          maxLength: 36
+          description: >-
+            Unique id for the treatment procedure linked to this transaction.
+          required: true
+        procedure_name:
+          type: string
+          maxLength: 191
+          description: The name of the procedure
+          required: true
+        procedure_details:
+          type: string
+          description: Procedure details.
+          required: true
+        maven_responsibility:
+          type: string
+          description: >-
+            The payout from wallet for this procedure. 
+            Formatted with appropriate currency if currency based, else credits.
+          required: true
+        status:
+          type: string
+          description: >-
+            The transaction status:
+            NEW - The bill has not been created yet or has not yet been sent to payment gateway.
+            PROCESSING - The bill was created and has been sent to payment gateway.
+            FAILED - The bill failed to process and will be retried.
+          required: true
+          enum:
+            - "NEW"
+            - "PROCESSING"
+            - "FAILED"
+    reimbursement_request_details:
+      type: object
+      required:
+        [
+          "id",
+          "label",
+          "service_provider",
+          "amount",
+          "fomatted_amount",
+          "state",
+          "state_description",
+          "sources",
+          "created_at",
+          "service_start_date",
+          "service_end_date",
+          "service_start_date_formatted",
+          "created_at_date_formatted",
+          "original_claim_amount"
+        ]
+      properties:
+        id:
+          type: string
+          example: "1168905375706931595"
+          nullable: false
+        label:
+          type: string
+          example: "Title of service"
+          nullable: false
+        service_provider:
+          type: string
+          example: "Kaiser Permanente Fertility Clinic"
+          nullable: false
+        amount:
+          type: integer
+          example: 170000
+          nullable: false
+        original_claim_amount:
+          type: string
+          example: "$1,700.00"
+          nullable: false
+        cost_breakdown_details:
+          type: object
+          nullable: false
+          properties:
+            reimbursement_breakdown:
+              nullable: true
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: "Expected reimbursement"
+                total_cost:
+                  type: string
+                  example: "$200.00"
+                items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      label:
+                        type: string
+                        example: "Maven benefit"
+                      cost:
+                        type: string
+                        example: "$200.00"
+            member_responsibility_breakdown:
+              nullable: true
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: "Your responsibility"
+                total_cost:
+                  type: string
+                  example: "$1,500.00"
+                items:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      label:
+                        type: string
+                        example: "Deductible"
+                      cost:
+                        type: string
+                        example: "$1,400.00"
+            credits_details:
+              nullable: true
+              type: object
+              properties:
+                credits_used_formatted:
+                  nullable: false
+                  type: string
+                  example: "0 credits"
+                credits_used:
+                  nullable: false
+                  type: integer
+                  example: 0
+            refund_explanation:
+              nullable: true
+              type: object
+              properties:
+                label:
+                  type: string
+                  example: "Why do I only receive a partial refund?"
+                content:
+                  type: array
+                  items:
+                    type: string
+                  example:
+                    - "Just like any visit to an in-person provider, family building services are subject to copays and deductibles."
+                    - "Your family building benefit has a maximum coverage amount. After that maximum is added to your total cost, we apply your additional coverage through your health plan. Anything that isn't covered will have to be paid out of pocket."
+        state:
+          $ref: "#/components/schemas/reimbursement_request_state_enum"
+          example: "APPROVED"
+          nullable: false
+        state_description:
+          type: string
+          example: "Your expenses have been preliminarily approved by our care team per your company's eligibility criteria and have been submitted to your company for final review!"
+          nullable: false
+        sources:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                example: "user_asset"
+              source_id:
+                type: string
+                example: "76"
+              source_url:
+                type: string
+                example: "https://www.example.com/76.jpg"
+              created_at:
+                type: string
+                format: date-time
+                example: "2020-10-03T11:27:41"
+              file_name: 
+                type: string
+                example: "76.jpg"
+              content_type: 
+                type: string
+                enum:
+                  - "application/pdf"
+                  - "image/jpeg"
+                  - "image/png"
+                example: "image/jpeg"
+              inline_url:
+                type: string
+                example: "https://www.example.com/76.jpg"
+                nullable: true
+        created_at:
+          type: string
+          format: date-time
+          example: "2023-10-03T21:13:49"
+          nullable: false
+        service_start_date:
+          type: string
+          format: date-time
+          example: "2023-09-01T18:23:01"
+          nullable: false
+        service_end_date:
+          type: string
+          format: date-time
+          example: "2023-09-01T18:23:01"
+          nullable: true
+        service_start_date_formatted:
+          type: string
+          example: "September 10, 2023"
+          nullable: false
+        created_at_date_formatted:
+          type: string
+          example: "October 3, 2023"
+          nullable: false
+    questionnaire_type:
+      type: string
+      enum:
+        - TRADITIONAL_HDHP
+        - DIRECT_PAYMENT_HDHP
+        - DIRECT_PAYMENT_HEALTH_INSURANCE
+        - DIRECT_PAYMENT_HEALTH_INSURANCE_SCREENER
+        - LEGACY
+      description: Questionnaire type. Used for backend routing.
+
+
+
+tags:
+  - name: Maven Wallet

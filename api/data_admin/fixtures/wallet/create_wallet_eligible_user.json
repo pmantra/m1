@@ -1,0 +1,36 @@
+[
+  {
+    "type": "organization",
+    "name": "Wayne Enterprises LAP",
+    "allowed_track_names": [
+        "adoption",
+        "breast_milk_shipping",
+        "egg_freezing",
+        "fertility",
+        "parenting_and_pediatrics",
+        "partner_fertility",
+        "surrogacy"
+    ],
+    "activated_at": "2021-01-01 00:00:00"
+  },
+  {
+    "type": "user",
+    "organization_name": "Wayne Enterprises LAP",
+    "first_name": "Michael",
+    "last_name": "East",
+    "track": "fertility",
+    "phase": "week-1",
+    "password": "simpleisawesome1*",
+    "email": "test+mvnqa-email450@mavenclinic.com",
+    "company_email": "test.email450@gmail.com",
+    "date_of_birth": "2000-01-01",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  },
+  {
+    "type": "reimbursement_organization_settings",
+    "started_at": "1 days ago",
+    "organization": "Wayne Enterprises LAP"
+  }
+]

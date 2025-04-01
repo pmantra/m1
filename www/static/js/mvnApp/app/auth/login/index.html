@@ -1,0 +1,44 @@
+<nav class="tab-nav">
+	<ul class="clear">
+		<li>
+			<a ui-sref-active="current" ui-sref="auth.locallogin">Sign in</a>
+		</li>
+		<li>
+			<a ui-sref-active="current" ui-sref="auth.localregister(postAuthParams)">Create account</a>
+		</li>
+	</ul>
+</nav>
+
+<h1 class="serif h3">Welcome back!</h1>
+<div ng-show="errorMsg"  class="notify error">
+	<p>{{ err }}</p>
+</div>
+
+<form ng-submit="login(loginForm, true)" role="form" method="post" class="mvn-form single-column" name="userLoginForm" aria-label="Sign in">
+	<section class="form-section">
+		<div class="form-elements-container">
+			<div class="mvn-input" ng-class="{ 'has-content': userLoginForm.email.$viewValue }">
+				<input class="mvn-form-input" name="email" type="email" ng-model="loginForm.email" required="" maxlen="75"  ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" aria-required="true" aria-labelledby="email-address-sign-in"></input>
+				<label id="email-address-sign-in" class="mvn-form-label" for="email">Email address</label>
+			</div>
+			<div class="help-block" ng-messages="userLoginForm.email.$error" ng-if="userLoginForm.email.$touched">
+				<div ng-messages-include="/js/mvnApp/shared/messages.html"></div>
+			</div>
+		</div>
+		<div class="form-elements-container">
+			<div class="mvn-input" ng-class="{ 'has-content': userLoginForm.password.$viewValue }">
+				<input class="mvn-form-input" name="password" type="password" ng-model="loginForm.password" required="" aria-required="true" aria-labelledby="password-sign-in"></input>
+				<label id="password-sign-in" class="mvn-form-label" for="password">Password</label>
+			</div>
+			<div class="help-block" ng-messages="userLoginForm.password.$error" ng-if="userLoginForm.password.$touched">
+				<div ng-messages-include="/js/mvnApp/shared/messages.html"></div>
+			</div>
+		</div>
+	</section>
+
+	<p><a ui-sref="auth.forgot">Forgot your password?</a></p>
+
+	<div class="form-group clearfix">
+		<button type="submit" class="btn btn-cta btn-lg" ng-class="{ 'disabled' :  userLoginForm.$invalid }">Sign in</button>
+	</div>
+</form>

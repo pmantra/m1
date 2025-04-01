@@ -1,0 +1,37 @@
+<div class="inline-field well well-medium">
+    <div class="inline-form-field">
+        <legend>CX Message</legend>
+
+        <p class="lead">
+            You can send a message to a user from the CX practitioner using this. Both user
+            ID and message text are required. This will send the new message
+            email/push-notification to the member.
+        <p>
+
+        <form method="POST" action="/admin/actions/send_cx_message">
+            <label for="user_id">User ID:</label>
+            <input
+                    id="user_id"
+                    name="user_id"
+                    type="number"
+                    placeholder="User ID"
+                    {% if model and model.user %}
+                    value="{{ model.user.id }}"
+                    {% elif member %}
+                    value="{{ member.id }}"
+                    {% endif %}
+                    required
+            >
+            <label for="message_text">Message:</label>
+            <textarea
+                    id="message_text"
+                    name="message_text"
+                    placeholder="Put your message here..."
+                    required
+            ></textarea>
+            <br/>
+            <input type="submit" class="btn btn-primary btn-medium" value="Send Message!"
+                   style="background-image: linear-gradient(to bottom,#6cceaa,#00856f)">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<h3>This whitepaper is coming soon!</h3>
+<p>Fill out your info and we'll send it straight to your inbox as soon as it's available.</p>
+
+<div ng-if="!formSubmitted" class="enterprise-form">
+	<form name="enterpriseForm" class="mvn-form">
+		<section class="form-section">
+			<div class="form-elements-container">
+				<div class="mvn-input" ng-class="{ 'has-content': entForm.first_name }">
+					<input type="text" class="mvn-form-input" name="first" ng-model="entForm.first_name" required="required" />
+					<label class="mvn-form-label">First name</label>
+				</div>
+				<div class="mvn-input" ng-class="{ 'has-content': entForm.last_name  }">
+					<input type="text" class="mvn-form-input" name="last" ng-model="entForm.last_name" required="required" />
+					<label class="mvn-form-label">Last name</label>
+				</div>
+			</div>
+			<div class="form-elements-container">
+				<div class="mvn-input full-width" ng-class="{ 'has-content': entForm.email  }">
+					<input type="text" class="mvn-form-input" name="email" ng-model="entForm.email" required="required" />
+					<label class="mvn-form-label">Your email address</label>
+				</div>
+			</div>
+
+			<div class="form-elements-container">
+				<div class="mvn-input full-width" ng-class="{ 'has-content': entForm.company_name  }">
+					<input
+						type="text"
+						class="mvn-form-input"
+						name="company"
+						ng-model="entForm.company_name"
+						required="required"
+					/>
+					<label class="mvn-form-label">Organization name</label>
+				</div>
+			</div>
+
+			<div class="form-elements-container">
+				<div class="mvn-input" ng-class="{ 'has-content': entForm.position  }">
+					<input type="text" class="mvn-form-input" name="position" ng-model="entForm.position" required="required" />
+					<label class="mvn-form-label">Position</label>
+				</div>
+				<div class="mvn-select-search">
+					<ui-select
+						ng-model="entForm.company_size"
+						theme="select2"
+						ng-disabled="ctrl.disabled"
+						title="Employees"
+						required="required"
+					>
+						<ui-select-match placeholder="Company size">{{ entForm.company_size }}</ui-select-match>
+						<ui-select-choices class="choices" repeat="c in companySize | filter: $select.search">
+							<span role="option" ng-bind-html="c | highlight: $select.search"></span>
+							<span>employees</span>
+						</ui-select-choices>
+					</ui-select>
+					<span class="ghost-label">Company size</span>
+				</div>
+			</div>
+			<div class="form-actions centered">
+				<input
+					type="hidden"
+					ng-model="entForm.lead_source"
+					value="enterprise_millennial_whitepaper_interest"
+					ng-init="entForm.lead_source='enterprise_millennial_whitepaper_interest' "
+					ng-value="enterprise_millennial_whitepaper_interest"
+				/>
+
+				<button
+					ng-click="submitEntContactForm(entForm)"
+					class="btn btn-cta"
+					ng-class="{'disabled' : enterpriseForm.$invalid || loading }"
+				>
+					<span ng-if="!loading">Send</span>
+					<span ng-if="loading">Please wait...</span>
+				</button>
+			</div>
+		</section>
+	</form>
+</div>

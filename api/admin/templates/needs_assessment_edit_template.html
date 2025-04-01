@@ -1,0 +1,24 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+
+    <h3>{{ model.assessment_template.title }}</h3>
+    <p>Quiz status: {{ model.status }}</p>
+
+    <h4>Questions/Answers:</h4>
+    <ul>
+        {% for question, answer in quiz_content %}
+            <li>
+                <p><strong>{{ question }}</strong></p>
+                {% if answer %}
+                    <p>{{ answer|safe }}</p>
+                {% else %}
+                    <p><i>No answer provided.</i></p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    {{ super() }}
+
+{% endblock %}

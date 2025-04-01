@@ -1,0 +1,19 @@
+<h2 class="h4">{{ label }}</h2>
+<div class="mvn-checkbox-group {{ type }}" ng-model="modelRef">
+		<div class="checkbox-container" ng-repeat="option in options track by $index">
+			<input
+				id="{{option.split(' ')[0].toLowerCase()}}-{{$index}}"
+				type="checkbox"
+				name="{{option.split(' ')[0].toLowerCase()}}-{{$index}}" 
+				class="checkmark"
+				ng-change="mvnCheckboxGroupCtrl.updateSelection()" ng-model="mvnCheckboxGroupCtrl.modelRefCopy[option]"
+				ng-checked="mvnCheckboxGroupCtrl.modelRefCopy[option]"
+				tabindex="0" />
+			<label class="label-text" for="{{option.split(' ')[0].toLowerCase()}}-{{$index}}" id="{{option.split(' ')[0]}}-label">
+				{{ option }}
+			</label>
+		</div>
+	</div>
+</div>
+
+<!-- ng-true-value="'{{ option }}'" -->

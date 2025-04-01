@@ -1,0 +1,143 @@
+[
+  {
+    "type": "user",
+    "email": "test+user_one@mavenclinic.com",
+    "password": "simpleisawesome1*",
+    "credit": {
+      "amount": 1000,
+      "activated_at": "now",
+      "expires_at": "in 1 month"
+    }
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "years_experience": 3,
+    "education": "NYU",
+    "reference_quote": "Best. Practitioner. Ever.",
+    "awards": "Most Amazingest Practitioner Award.",
+    "work_experience": "I am just good at pretty much everything. I have a PhD. from QA research institute. People call me the QA Doctor!",
+    "vertical": "Nurse Practitioner",
+    "email": "test+prac_one@mavenclinic.com",
+    "is_cx": true,
+    "certified_subdivision_codes": "US-NY",
+    "can_prescribe": true,
+    "anonymous_allowed": true,
+    "show_when_unavailable": true,
+    "messaging_enabled": true,
+    "next_availability": "2019-03-21T10:00:00"
+  },
+  {
+    "type": "schedule_event",
+    "practitioner": "test+prac_one@mavenclinic.com",
+    "starts_in": "in 3 hour",
+    "minutes": 240
+  },
+  {
+    "type": "appointment",
+    "scheduled_start": "2 hours ago",
+    "practitioner": "test+prac_one@mavenclinic.com",
+    "member": "test+user_one@mavenclinic.com",
+    "practitioner_started_at": "2 hours ago",
+    "member_started_at": "2 hours ago",
+    "practitioner_ended_at": "1 hour ago",
+    "member_ended_at": "1 hour ago"
+  },
+  {
+    "type": "appointment",
+    "scheduled_start_in": "in 60 minutes",
+    "practitioner": "test+prac_one@mavenclinic.com",
+    "member": "test+user_one@mavenclinic.com",
+    "cancelled_at": "now"
+  },
+  {
+    "type": "forum_post",
+    "title": "QA forum post",
+    "body": "Hi this is the body of my post",
+    "author": "test+user_one@mavenclinic.com",
+    "category": "health-wellness",
+    "replies": [
+      {
+        "type": "forum_post",
+        "title": "First reply",
+        "body": "Hi this is the first reply to my post",
+        "author": "test+user_one@mavenclinic.com",
+        "category": "health-wellness"
+      },
+      {
+        "type": "forum_post",
+        "title": "Second reply",
+        "body": "Hi this is the second reply to my post",
+        "author": "test+user_one@mavenclinic.com",
+        "category": "health-wellness"
+      }
+    ]
+  },
+   {
+    "type": "message",
+    "body": "Hello this is a message between user and practitioner",
+    "author": "test+user_one@mavenclinic.com",
+    "recipient": "test+prac_one@mavenclinic.com"
+  },
+  {
+    "type": "needs_assessment",
+    "meta_type": "M_QUIZ",
+    "user": "test+user_one@mavenclinic.com",
+    "name": "Maternity leave readiness",
+    "title": "Maternity leave readiness",
+    "version": 1,
+    "quiz_body": {
+      "questions": [
+        {
+          "meta": {},
+          "widget": {
+            "options": [
+              {
+                "label": "Yes! I know it by heart.",
+                "value": "A"
+              },
+              {
+                "label": "Yes, but I’m still confused.",
+                "value": "B"
+              },
+              {
+                "label": "Not yet, but it’s on my to-do list!",
+                "value": "C"
+              },
+              {
+                "label": "I feel uncomfortable asking HR about it.",
+                "value": "D"
+              }
+            ],
+            "type": "m-quiz-question-single"
+          },
+          "next": "2",
+          "body": "Do you know your company’s maternity policy?",
+          "required": true,
+          "id": 1
+        }
+      ]
+    },
+    "score_band": {
+      "A": {
+        "header": "Go maternity leave pro, go!",
+        "desc": [
+          "Great work! You’re so well prepared, you could take off tomorrow and know everything’s in place.",
+          "You’re so ahead of the game, let us know if you need help making a back-to-work plan, too. Our Career Coaches can advise on daycare, nursing, separation anxiety or anything else that’s on your mind."
+        ],
+        "cta": {
+          "vertical_ids": "41",
+          "label": "Talk to a back-to-work coach",
+          "type": "check-availability"
+        },
+        "icon": "https://storage.googleapis.com/maven-prod-svg/quizzes/results/90-100-or-a.svg"
+      }
+    }
+  },
+    {
+  	"type": "user",
+   	"role": "staff",
+   	"otp_secret": null,
+   	"email": "your_email"
+  }
+]

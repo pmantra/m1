@@ -1,0 +1,118 @@
+<h1 class="serif h3">{{ rg_header }}</h1>
+<p class="lg sub" ng-if="rg_subhead.length">{{ rg_subhead }}<a ng-if="ref" href={{ref}}>Learn more.</a></p>
+<div ng-show="errorMsg" class="notify error" role="alert" aria-live="assertive">
+	<p>{{ err }}</p>
+	<br/>
+</div>
+
+<form name="registerForm" ng-submit="register(regForm, true)" role="form" class="mvn-form single-column">
+	<section class="form-section">
+		<div class="form-elements-container">
+			<div class="mvn-input" ng-class="{ 'has-content': registerForm.firstname.$viewValue }">
+				<input class="mvn-form-input" name="firstname" type="text" ng-model="regForm.first_name" required="" aria-required="true" maxlength="30" aria-labelledby="sign-up-first-name"></input>
+				<label id="sign-up-first-name" class="mvn-form-label">First name</label>
+			</div>
+			<div class="help-block" ng-messages="registerForm.firstname.$error" ng-if="registerForm.firstname.$touched">
+				<div ng-messages-include="/js/mvnApp/shared/messages.html"></div>
+			</div>
+
+			<div class="mvn-input" ng-class="{ 'has-content': registerForm.lastname.$viewValue }">
+				<input class="mvn-form-input" name="lastname" type="text" ng-model="regForm.last_name" required="" aria-required="true" maxlength="30" aria-labelledby="sign-up-last-name"></input>
+				<label id="sign-up-last-name" class="mvn-form-label">Last name</label>
+			</div>
+			<div class="help-block" ng-messages="registerForm.lastname.$error" ng-if="registerForm.lastname.$touched">
+				<div ng-messages-include="/js/mvnApp/shared/messages.html"></div>
+			</div>
+
+			<div class="mvn-input" ng-class="{ 'has-content': registerForm.email.$viewValue }">
+				<input id="email" class="mvn-form-input" name="email" type="email" ng-model="regForm.email" required="" aria-required="true" maxlength="75" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" aria-labelledby="sign-up-email"></input>
+				<label id="sign-up-email" class="mvn-form-label">Personal email</label>
+			</div>
+			<div class="help-block" ng-messages="registerForm.email.$error" ng-if="registerForm.email.$touched">
+				<div ng-messages-include="/js/mvnApp/shared/messages.html"></div>
+			</div>
+			<mvn-tooltip hed="We recommend using your personal email address" dek="since you'll use it to sign in and get Maven updates delivered to this inbox."></mvn-tooltip>
+
+			<div class="mvn-input" ng-class="{ 'has-content': registerForm.password.$viewValue }">
+				<input class="mvn-form-input" name="password" type="password" ng-model="regForm.password" required="" aria-required="true" ng-change="checkPwStrength()" aria-labelledby="sign-up-password"></input>
+				<label id="sign-up-password" class="mvn-form-label">Password</label>
+			</div>
+			<div class="help-block" ng-messages="registerForm.password.$error" ng-if="registerForm.password.$touched">
+				<div class="form-field-message error" ng-message="required"><p class="legal">Please create a password</p></div>
+			</div>
+			<div class="pw-strength-meter">
+				<div class="pw-strength-bar" ng-class="verbalScore">
+					<div class="pw-block" ng-class="{ 'active': pwScore >= 0 }"></div>
+					<div class="pw-block" ng-class="{ 'active': pwScore >= 2 }"></div>
+					<div class="pw-block" ng-class="{ 'active': pwScore >= 3 }"></div>
+					<div class="pw-block" ng-class="{ 'active': pwScore >= 4 }"></div>
+				</div>
+				<p ng-if="!!errMessage" class="sm err-message">{{ errMessage }}</p>
+				<div ng-if="pwFeedback[0]">
+					<ul class="help-block">
+						<li ng-repeat="tip in pwFeedback track by $index">{{ tip }}</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mvn-input" ng-class="{ 'has-content': registerForm.phone.$viewValue }" ng-if="showPhoneField">
+				<mvn-tel-input
+						form-ref="registerForm"
+						label="Cell phone number"
+						value="regForm.phone"
+						required="required"
+				></mvn-tel-input>
+			</div>
+		</div>
+	</section>
+
+	<section ng-if="!hideEntToggle" class="form-section">
+		<div class="form-elements-container">
+			<p class="form-element-header">Do you get Maven through your employer?</p>
+			<div class="mvn-input btn-toggle">
+				<a title="Yes, I get Maven through my employer" class="" href="" ng-class="{ 'toggle-on' : regForm.is_enterprise === 'isEnterprise' }" ng-click="regForm.is_enterprise = 'isEnterprise'; regForm.is_sponsored = '' ">Yes</a>
+				<a title="No, I don't get Maven through my employer" class="" href="" ng-class="{ 'toggle-on' : regForm.is_enterprise === 'notEnterprise' }"  ng-click="regForm.is_enterprise = 'notEnterprise'; regForm.is_sponsored = '' ">No</a>
+			</div>
+		</div>
+	</section>
+
+	<section ng-if="!hideSponsorToggle && !hideEntToggle && regForm.is_enterprise === 'notEnterprise'" class="form-section">
+		<div class="form-elements-container">
+			<p class="form-element-header">Are you a member of MassHealth?</p>
+			<div class="mvn-input btn-toggle">
+				<a title="Yes, I am a member of MassHealth" class="" href="" ng-class="{ 'toggle-on' : regForm.is_sponsored === 'isSponsored' }" ng-click="regForm.is_sponsored = 'isSponsored'; regForm.org = 'MassHealth' ">Yes</a>
+				<a title="No, I am not a member of MassHealth" class="" href="" ng-class="{ 'toggle-on' : regForm.is_sponsored === 'notSponsored' }"  ng-click="regForm.is_sponsored = 'notSponsored'; regForm.org = ''  ">No</a>
+			</div>
+		</div>
+	</section>
+
+	<input type="hidden" ng-model="regForm.source" name="source" ng-init="regForm.source='web'" value="web">
+	<input name="refcode" placeholder="Referral code (optional)" type="hidden" ng-model="regForm.referral_code"></input>
+
+
+	<div class="mvn-checkbox-group">
+		<div class="checkbox-container reg-agree-to-terms">
+			<input
+				id="enabled-check"
+				name="enabled-check"
+				class="checkmark"
+				required="required"
+				aria-required="true"
+				type="checkbox" 
+				ng-model="regForm.agreements_accepted" 
+				ng-checked="regForm.agreements_accepted"
+				tabindex="0" />
+			<label class="label-text" for="enabled-check" id="enabled-check-mark"><span class="label-copy">By checking this box, I confirm I have read and agree to the <a target="_blank" rel="noopener noreferrer nofollow" href="/app/privacy">Privacy Policy</a> and <a rel="noopener noreferrer nofollow" target="_blank" href="/app/terms-of-use">Terms of Use</a>.</span></label>
+		</div>
+	</div>
+
+	<div class="form-group clearfix">
+		<button type="submit" class="btn btn-cta btn-lg"  ng-disabled="(registerForm.$invalid || !regForm.is_enterprise || !regForm.agreements_accepted) || loading || !pwValid" ng-class="{ 'disabled' : (registerForm.$invalid || !regForm.is_enterprise || !regForm.agreements_accepted) || loading || !pwValid }">Register</button>
+	</div>
+
+	<div>
+		<p class="sub">Already have an account? <a ui-sref-active="current" ui-sref="auth.login(fPath)">Sign in.</a></p>
+	</div>
+
+</form>
+
+

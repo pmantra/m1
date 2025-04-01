@@ -1,0 +1,35 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+
+    {% if model.appointment %}
+        <h2>Appointment Info</h2>
+
+        <p><a href="/admin/appointment/edit/?id={{ model.appointment.id }}">{{ model.appointment }}</a></p>
+        <p>Scheduled Start Time: {{ model.appointment.scheduled_start }}</p>
+        <p>Scheduled End Time: {{ model.appointment.scheduled_end }}</p>
+
+        <p>Member: {{ model.appointment.member }}</p>
+        <p>Member Started: {{ model.appointment.member_started_at }}</p>
+        <p>Member Ended: {{ model.appointment.member_ended_at }}</p>
+
+        <p>Practitioner: {{ model.appointment.practitioner }}</p>
+        <p>Practitioner Started: {{ model.appointment.practitioner_started_at }}</p>
+        <p>Practitioner Ended: {{ model.appointment.practitioner_ended_at }}</p>
+    {% endif %}
+
+    {% if model.invoice %}
+        <h2>Payment Info</h2>
+        <p>Invoice Link: <a href="/admin/invoice/edit/?id={{ model.invoice.id }}">{{ model.invoice }}</a></p>
+    {% endif %}
+
+    {% if model.message %}
+        <h2>Message Info</h2>
+
+        <p>Message Author Link: <a href="/admin/user/edit/?id={{ model.message.user.id }}">{{ model.message.user.full_name }}</a></p>
+        <p>Message Created At: {{ model.message.created_at }}</p>
+        <p>Message Modified At: {{ model.message.modified_at }}</p>
+    {% endif %}
+
+    {{ super() }}
+{% endblock %}

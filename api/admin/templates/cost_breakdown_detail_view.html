@@ -1,0 +1,27 @@
+{% extends 'admin/model/details.html' %}
+
+{% block body %}
+    {% block navlinks %}{{ super() }}{% endblock %}
+    {% block details_table %}
+        <table class="table table-hover table-bordered searchable">
+            <td>
+                <b>Employer Health Plan</b>
+            </td>
+            <td>
+                {% if employer_health_plan %}
+                    <a href="{{ url_for("employerhealthplan.edit_view", id=employer_health_plan.id) }}">{{ employer_health_plan.id }}</a>
+                {% endif %}
+            </td>
+            {% for c, name in details_columns %}
+                <tr>
+                    <td>
+                        <b>{{ name }}</b>
+                    </td>
+                    <td>
+                        {{ get_value(model, c) }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endblock %}
+{% endblock %}

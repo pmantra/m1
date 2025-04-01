@@ -1,0 +1,20 @@
+<div ng-if="post" class="landing-post {{ postMainCat.name }}">
+	<div class="landing-post-header">
+		<h5 class="landing-post-cat">{{ postMainCat.display_name }}</h5>
+	</div>
+	<div class="landing-post-body">
+		<h3><a ui-sref="app.forum.community.post-detail({community: postMainCat.name, post_id: post.id, slug: slug(post.title)})">{{ post.title }}</a></h3>
+		<p>{{ post.body | trimString:true:200:true }}</p>
+	</div>
+
+	<div class="post-landing-actions clearfix">
+		<div>
+			<mvn-follow class="follow-post" post="post"></mvn-follow>
+			<div class="post-landing-read">
+				<h5><a ui-sref="app.forum.community.post-detail({community: postMainCat.name, post_id: post.id, slug: slug(post.title)})">Read &rsaquo;</a></h5>
+			</div>
+		</div>
+	</div>
+</div>
+
+

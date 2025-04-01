@@ -1,0 +1,25 @@
+<section class="forum-header">
+	<div class="content-container">
+		<div class="clearfix forum-header-content content">
+			<div class="forum-return-community">
+				<svg width="8" height="14" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M8.2 0.800049L1 8.00005L8.2 15.2" stroke="#00856F" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+				<a class="btn btn-tertiary" ui-sref="app.forum.landing">All Community</a>
+			</div>
+			<div>
+				<div ng-if="$ctrl.title" class="forum-header-title">
+					<h1 class="serif">{{ $ctrl.title }}</h1>
+				</div>
+				<div class="forum-header-actions" ng-class="{ 'show-menu' : $ctrl.showSearchMenu }">
+					<div
+						class="forum-header-search forum-header-search-mobile"
+						forum-search-standalone
+						q="$ctrl.q"
+						user="$ctrl.user"
+					></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

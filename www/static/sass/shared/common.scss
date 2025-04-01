@@ -1,0 +1,764 @@
+/*Remove text-shadow in selection highlight:*/
+::-moz-selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+::selection {
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+/* Remove the gap between audio, canvas, iframes,*/
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+/*Remove default fieldset styles.*/
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+/*Allow only vertical resizing of textareas.*/
+textarea {
+	resize: vertical;
+}
+/*Hide only visually, but have it available for screen readers:*/
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+/*Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:*/
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/* ------ SHARED ----- */
+
+.cover {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.invis {
+	visibility: hidden;
+}
+
+.center {
+	text-align: center;
+}
+
+ul.clear {
+	padding: 0;
+	margin: 0;
+	clear: both;
+	li {
+		list-style-image: none;
+		list-style-type: none;
+	}
+	&.inline {
+		li {
+			display: inline-block;
+		}
+	}
+}
+
+/* smooth scrolling on iOS */
+div {
+	-webkit-overflow-scrolling: touch;
+}
+.base-wrap {
+	padding: $basepadding;
+}
+
+/* Mobile styles */
+.mobile-hide {
+	@media (min-width: 1024px) {
+		visibility: visible;
+	}
+	visibility: hidden;
+}
+.mobile-show {
+	@media (min-width: 1024px) {
+		visibility: hidden;
+	}
+	visibility: visible;
+}
+.mobile-only {
+	display: block;
+	@media (min-width: 1024px) {
+		display: none !important;
+	}
+}
+.mobile-none {
+	@media (min-width: 1024px) {
+		display: block !important;
+	}
+	display: none;
+}
+.phone-none {
+	@media (max-width: 540px) {
+		display: none;
+	}
+}
+
+/* Errors and warnings */
+.notify {
+	padding: 8px;
+	p,
+	.p {
+		margin: 0;
+		&.error-title {
+			font-weight: 600;
+		}
+	}
+	&.error {
+		color: $terracotta-100;
+	}
+	ul {
+		margin: 1rem 0 1.5rem 0;
+		padding-left: 46px;
+		li {
+			margin: 0.5rem 0;
+		}
+	}
+}
+form {
+	.form-field-message {
+		p {
+			margin: 0;
+		}
+		&.error,
+		&.error p {
+			color: $ui-red;
+			font-family: $font1-bold;
+			font-size: 0.725rem;
+		}
+	}
+}
+.error-icon {
+	svg {
+		width: 20px;
+		height: 20px;
+		margin-right: 6px;
+		margin-bottom: 3px;
+	}
+}
+
+/* MODALS */
+@-webkit-keyframes ngdialog-fadeout {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes ngdialog-fadeout {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes ngdialog-fadein {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes ngdialog-fadein {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.ngdialog {
+	box-sizing: border-box;
+}
+
+.ngdialog *,
+.ngdialog *:before,
+.ngdialog *:after {
+	box-sizing: inherit;
+}
+
+.ngdialog {
+	position: fixed;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	z-index: 10;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.ngdialog.ngdialog-disabled-animation,
+.ngdialog.ngdialog-disabled-animation .ngdialog-overlay,
+.ngdialog.ngdialog-disabled-animation .ngdialog-content {
+	-webkit-animation: none !important;
+	animation: none !important;
+}
+
+.ngdialog-overlay {
+	position: fixed;
+	background: rgba(0, 0, 0, 0.4);
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	-webkit-animation: ngdialog-fadein 0.5s;
+	animation: ngdialog-fadein 0.5s;
+}
+
+.ngdialog-no-overlay {
+	pointer-events: none;
+}
+
+.ngdialog.ngdialog-closing .ngdialog-overlay {
+	-webkit-backface-visibility: hidden;
+	-webkit-animation: ngdialog-fadeout 0.5s;
+	animation: ngdialog-fadeout 0.5s;
+}
+
+.ngdialog-content {
+	background: $macaroon-20;
+	-webkit-backface-visibility: hidden;
+	-webkit-animation: ngdialog-fadein 0.5s;
+	animation: ngdialog-fadein 0.5s;
+	pointer-events: all;
+}
+
+.ngdialog.ngdialog-closing .ngdialog-content {
+	-webkit-backface-visibility: hidden;
+	-webkit-animation: ngdialog-fadeout 0.5s;
+	animation: ngdialog-fadeout 0.5s;
+}
+
+.ngdialog-close:before {
+	font-family: "Helvetica", Arial, sans-serif;
+	content: "\00D7";
+	cursor: pointer;
+}
+
+html.ngdialog-open,
+body.ngdialog-open {
+	overflow: hidden;
+}
+
+@-webkit-keyframes ngdialog-flyin {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(-40px);
+		transform: translateY(-40px);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+@keyframes ngdialog-flyin {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(-40px);
+		transform: translateY(-40px);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes ngdialog-flyout {
+	0% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translateY(-40px);
+		transform: translateY(-40px);
+	}
+}
+
+@keyframes ngdialog-flyout {
+	0% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translateY(-40px);
+		transform: translateY(-40px);
+	}
+}
+
+.ngdialog.ngdialog-theme-default {
+	padding-bottom: 160px;
+	padding-top: 160px;
+}
+
+.ngdialog.ngdialog-theme-default.ngdialog-closing .ngdialog-content {
+	-webkit-animation: ngdialog-flyout 0.5s;
+	animation: ngdialog-flyout 0.5s;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+	-webkit-animation: ngdialog-flyin 0.5s;
+	animation: ngdialog-flyin 0.5s;
+	background: #f0f0f0;
+	border-radius: 5px;
+	color: $charcoal-100;
+	font-family: "Helvetica", sans-serif;
+	font-size: 1.1em;
+	line-height: 1.5em;
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 1em;
+	position: relative;
+	width: 450px;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-close {
+	border-radius: 5px;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-close:before {
+	background: transparent;
+	border-radius: 3px;
+	color: #bbb;
+	content: "\00D7";
+	font-size: 26px;
+	font-weight: 400;
+	height: 30px;
+	line-height: 26px;
+	position: absolute;
+	right: 3px;
+	text-align: center;
+	top: 3px;
+	width: 30px;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-close:hover:before,
+.ngdialog.ngdialog-theme-default .ngdialog-close:active:before {
+	color: #777;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-message {
+	margin-bottom: 0.5em;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-input {
+	margin-bottom: 1em;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-input textarea,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="text"],
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="password"],
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="email"],
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="url"] {
+	background: #fff;
+	border: 0;
+	border-radius: 3px;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	margin: 0 0 0.25em;
+	min-height: 2.5em;
+	padding: 0.25em 0.67em;
+	width: 100%;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-input textarea:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="text"]:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="password"]:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="email"]:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="url"]:focus {
+	box-shadow: inset 0 0 0 2px #8dbdf1;
+	outline: none;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-buttons {
+	*zoom: 1;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-buttons:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button {
+	border: 0;
+	border-radius: 3px;
+	cursor: pointer;
+	float: right;
+	font-family: inherit;
+	font-size: 0.8em;
+	letter-spacing: 0.1em;
+	line-height: 1em;
+	margin: 0 0 0 0.5em;
+	padding: 0.75em 2em;
+	text-transform: uppercase;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button:focus {
+	-webkit-animation: ngdialog-pulse 1.1s infinite;
+	animation: ngdialog-pulse 1.1s infinite;
+	outline: none;
+}
+
+@media (max-width: 568px) {
+	.ngdialog.ngdialog-theme-default .ngdialog-button:focus {
+		-webkit-animation: none;
+		animation: none;
+	}
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-primary {
+	background: #3288e6;
+	color: #fff;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-secondary {
+	background: #e0e0e0;
+	color: #777;
+}
+
+/* CUSTOM MODAL */
+.dialog-full {
+	padding: 0 !important;
+	.ngdialog-content {
+		top: 0;
+		position: absolute;
+		width: 80% !important;
+		height: 80% !important;
+		border-radius: 0 !important;
+		margin-top: 5% !important;
+		@include susy-breakpoint($desktop) {
+			top: $desktopHeaderHeight;
+		}
+		> div {
+			padding: 40px;
+			@include susy-breakpoint($desktop) {
+				padding: 60px;
+			}
+		}
+	}
+}
+
+.dialog-page-overlay {
+	.ngdialog-overlay {
+		display: none;
+	}
+	.ngdialog-content {
+		width: 100% !important;
+		height: 100% !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		z-index: 50;
+	}
+}
+/* base dialog styles */
+.ngdialog {
+	&.mvndialog {
+		.ngdialog-content {
+			top: 1%;
+			-webkit-animation: ngdialog-flyin 0.5s;
+			animation: ngdialog-flyin 0.5s;
+			background: #fff;
+			border-radius: 0;
+			margin: 0 auto;
+			max-width: 100%;
+			padding: 30px 15px;
+			border: none;
+			position: relative;
+			width: 95%;
+			margin-top: 5%;
+			max-width: 800px;
+			@include susy-breakpoint($desktop) {
+				top: 5%;
+			}
+			.center {
+				max-width: 670px;
+				margin: 0 auto;
+			}
+
+			h2 {
+				margin-top: 0;
+			}
+			h3,
+			.h3 {
+				padding-bottom: 15px;
+			}
+			.app {
+				position: relative;
+				background: white;
+			}
+			.btn {
+				margin-top: 30px;
+				& + .btn {
+					margin-top: 10px;
+				}
+			}
+
+			p:last-child {
+				margin-bottom: 0;
+			}
+			@include susy-breakpoint($desktop) {
+				padding: 30px;
+				width: 60%;
+				padding: 60px;
+			}
+		}
+		.ngdialog-close {
+			color: $emerald-50;
+			position: absolute;
+			top: 0;
+			right: 8px;
+			line-height: 1;
+			font-size: 2.5rem;
+			font-weight: 200;
+			display: inline;
+			width: auto;
+			height: auto;
+			background: none;
+			border: none;
+			padding: 0;
+			min-width: 0;
+			@include susy-breakpoint($desktop) {
+				font-size: 2rem;
+				top: 10px;
+				right: 18px;
+			}
+		}
+		&.dialogdark {
+			.ngdialog-overlay {
+				background: #000000;
+				background: rgba(0, 0, 0, 0.85);
+			}
+		}
+
+		&.zeropad {
+			.ngdialog-content {
+				padding: 0;
+			}
+		}
+
+		&.carddialog {
+			.ngdialog-content {
+				padding: 0;
+				max-width: 600px;
+				.img-wrapper {
+					background: $secondary-2;
+					height: 170px;
+					@include background-cover;
+					@include susy-breakpoint($tablet) {
+						height: 280px;
+					}
+				}
+				.text-container {
+					padding: 1rem;
+					@include susy-breakpoint($tablet) {
+						padding: 2rem;
+					}
+					> h4 {
+						margin-top: 0;
+					}
+					p,
+					.p {
+						color: $gray;
+					}
+				}
+				.ui-action-container {
+					border-top: 1px solid $gray-xlt;
+					border-bottom: 1px solid $gray-xlt;
+					.btn {
+						margin: 0;
+					}
+					.ui-action {
+						@include ui-action;
+						padding: 1rem;
+						font-family: $font1-semibold;
+						@include susy-breakpoint($tablet) {
+							padding: 1rem 2rem;
+						}
+						&.nopad {
+							padding: 0;
+							a.btn.btn-cta {
+								padding: 1rem;
+								width: 100%;
+								@include susy-breakpoint($tablet) {
+									padding: 1rem 2rem;
+								}
+							}
+							&:after {
+								position: absolute;
+								right: 1rem;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.videodialog {
+			.ngdialog-content {
+				width: 100%;
+				max-width: none;
+				height: 32%;
+				@include susy-breakpoint($tablet) {
+					width: 80%;
+					height: 34%;
+				}
+				@include susy-breakpoint($desktop) {
+					height: 60%;
+				}
+				@include susy-breakpoint($desktop-hd) {
+					height: 73%;
+				}
+				@include susy-breakpoint($desktop-xl) {
+					width: 71%;
+				}
+			}
+		}
+		&.authdialog {
+			h1 {
+				margin-top: 0;
+			}
+			button.btn {
+				margin-top: 10px;
+			}
+		}
+
+		&.ngdialog-closing {
+			.ngdialog-content {
+				-webkit-animation: ngdialog-flyout 0.5s;
+				animation: ngdialog-flyout 0.5s;
+			}
+		}
+	}
+	&.prompt-overlay {
+		.ngdialog-content {
+			padding: 0;
+		}
+	}
+}
+
+.modal-exit {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	text-align: right;
+	@include susy-breakpoint($desktop) {
+		top: 15px;
+		right: 15px;
+	}
+}
+
+/* ADA */
+
+.sr-only {
+	position: absolute;
+	left: -10000px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+/**
+ * Support for iOS Dynamic Type in WebViews
+ * Note: the font on mobile breakpoints on Safari will look slightly different 
+ * TODO: need to figure out how to apply styles to just webviews
+ */
+@supports (font: -apple-system-body) {
+	@media (max-width: $mobile-max) {
+		html {
+			font: -apple-system-body;
+		}
+	}
+}
+
+/* Badges */
+
+.badge {
+	margin: 10px 0 5px 0;
+	display: inline-block;
+	text-align: center;
+	font-size: 0.8rem;
+	border-radius: 4px;
+	color: black;
+	padding: 0 15px;
+	max-width: 400px;
+	@include susy-breakpoint($desktop) {
+		text-align: center;
+		font-size: 0.8rem;
+		border-radius: 4px;
+	}
+}
+
+.badge-orange {
+	background-color: ($ui-yellow-lt);
+}
+
+.badge-green-lt {
+	background-color: ($secondary-4);
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "type": "user",
+    "organization_name": "Test Organization X",
+    "track": "partner_newparent",
+    "email_prefix": "mvnqa-np",
+    "password": "simpleisawesome1*",
+    "phase": "week-41",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

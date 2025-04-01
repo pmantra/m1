@@ -1,0 +1,2 @@
+Check: Use ALGORITHM=INSTANT for metadata-only changes to avoid table copies and locks.
+Fix: If you have an ALTER TABLE operation for metadata-only changes, explicitly specify ALGORITHM=INSTANT in your ALTER TABLE statement.

@@ -1,0 +1,19 @@
+<div class="grid-container two-column multi-faq">
+	<div class="grid-item faq-nav">
+		<h3>FAQ</h3>
+		<ul class="nav">
+			<li class="nav-item" ng-repeat="title in titles" ng-click="toggleSection($index)" ng-class="{active: activeSection === $index }"><h5>{{ title }}</h5></li>
+		</ul>
+	</div>
+	<div class="grid-item faq-wrap">
+		<ul class="faqs clear" ng-repeat="faq in faqs" ng-show="activeSection === $index">
+			<li ng-repeat="question in faq" ng-class="{active: activeQuestion === $index }">
+				<p class="lg faq-question clearfix" ng-click="togglefaq($index)">
+					<span class="q">{{ question.question }}</span>
+					<span class="expand"><svg width="24" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M12 11.915L1.053.471M12 11.914L22.947.47" stroke="#00413E" fill="none" fill-rule="evenodd" stroke-linecap="square"/></svg></span>
+				</p>
+				<p class="faq-answer" ng-bind-html="question.answer"></p>
+			</li>
+		</ul>
+	</div>
+</div>

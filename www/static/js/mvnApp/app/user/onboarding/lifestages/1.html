@@ -1,0 +1,33 @@
+<div ng-animate class="onboarding-life-stage center">
+	<h3 class="serif">Congrats! When is your baby due?</h3>
+	<p>We'll send you helpful tips along the way.</p>
+
+	<form class="mvn-form max-w" name="dueDateForm">
+		<mvn-date-input
+			ng-if="$ctrl.noDatePicker"
+			form-ref="dueDateForm"
+			model-ref="$ctrl.newU.dueDate"
+			label="Due date"
+			required="required"
+		></mvn-date-input>
+		<mvn-input
+			ng-if="!$ctrl.noDatePicker"
+			type="date"
+			form-ref="dueDateForm"
+			value="$ctrl.newU.dueDate"
+			label="Due date"
+			required="required"
+		></mvn-input>
+	</form>
+</div>
+
+<mvn-onboarding-bottom-nav>
+	<a class="btn btn-tertiary" ui-sref="app.onboarding.lifestage">Go back</a>
+	<a
+		class="btn btn-cta"
+		href=""
+		ng-click="$ctrl.saveDueDate()"
+		ng-class="{ 'disabled' : $ctrl.newU.dueDate < $ctrl.dateToday || !$ctrl.newU.dueDate }"
+		>Next</a
+	>
+</mvn-onboarding-bottom-nav>

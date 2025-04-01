@@ -1,0 +1,62 @@
+<main class="app-page">
+	<div class="single-panel" mvn-inf-scroll scroll-container="scroll-container" scroll-action="$ctrl.loadMoreAssessments()" is-loading="false">
+		<section class="card-section">
+			<div class="section-header">
+				<svg class="icon" width="50" height="50" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<title>Quiz icon</title>
+					<defs>
+						<path id="a" d="M0 64h64.24V.093H0z" />
+					</defs>
+					<g fill="none" fill-rule="evenodd">
+						<path fill="#E7E7E7" d="M.5 1.5v56.343h5.436L41.527 7.79V1.5z" />
+						<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M5.936 57.843H.5V1.498h41.026v6.29" />
+						<path fill="#FFF" d="M5.97 64.407H47V8.064H5.97z" />
+						<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M5.97 64.407h41.027V8.064H5.97z" />
+						<path fill="#AFCDBF" d="M11.167 44.968h6.564v-6.564h-6.563z" />
+						<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M11.167 44.968h6.564v-6.564h-6.563zM24.91 41.686h16.514"
+						/>
+						<path fill="#AFCDBF" d="M11.167 58.15h6.564v-6.563h-6.563z" />
+						<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M11.167 58.15h6.564v-6.563h-6.563zM24.91 54.868h16.514"
+						/>
+						<path fill="#AFCDBF" d="M11.167 31.786h6.564v-6.564h-6.563z" />
+						<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M11.167 31.786h6.564v-6.564h-6.563zM24.91 28.504h16.514"
+						/>
+						<g transform="translate(0 .907)">
+							<path d="M63.74 5.41a4.816 4.816 0 0 0-9.632 0v50.295l4.65 7.385 4.983-7.385V5.41z" fill="#B97965" />
+							<path d="M63.74 5.41a4.816 4.816 0 0 0-9.632 0v50.295l4.65 7.385 4.983-7.385V5.41z" stroke="#000" stroke-linecap="round"
+							 stroke-linejoin="round" />
+							<path fill="#585858" d="M63.74 55.705L58.76 63.09l-4.65-7.385z" />
+							<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" d="M63.74 55.705L58.76 63.09l-4.65-7.385z" />
+							<path d="M63.74 9.448v-4.04a4.817 4.817 0 0 0-9.632 0v4.04h9.633z" fill="#F8A89A" />
+							<path d="M63.74 9.448v-4.04a4.817 4.817 0 0 0-9.632 0v4.04h9.633zM24.91 15.406h16.514M11.27 15.406l2.29 2.29 4.58-4.58"
+							 stroke="#000" stroke-linecap="round" stroke-linejoin="round" />
+							<mask id="b" fill="#fff">
+								<use xlink:href="#a" />
+							</mask>
+							<path fill="#E7E7E7" mask="url(#b)" d="M54.117 13.27h9.563V9.396h-9.563z" />
+							<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" mask="url(#b)" d="M54.117 13.27h9.563V9.396h-9.563z"
+							/>
+						</g>
+					</g>
+				</svg>&nbsp;
+				<h3 class="section-title">Quizzes</h3>
+			</div>
+			<ul class="card-container">
+				<li ng-repeat="assessment in $ctrl.assessments" class="visual-content">
+					<div class="card-content">
+						<!-- <span class="card-tags inset">{{ assessment.type }}</span>-->
+						<h4 class="mobile-none quiz-list-quiz-title">{{ ::assessment.title }}</h4>
+						<p class="mobile-only lg">{{ ::assessment.title }}</p>
+						<p class="quiz-list-quiz-desc">{{ ::assessment.description }}</p>
+						<p><strong>Estimated time:</strong> {{ ::assessment.estimated_time | secondsToMinutes }} minutes</p>
+					</div>
+					<div class="card-actions">
+						<a ng-if="!assessment.meta.completed" class="btn btn-action" title="Go to assessment" ui-sref="app.assessments.one.take({ 'id' : assessment.id , 'slug' : assessment.slug , 'qid' : '1'})">Take the quiz</a>
+						<a ng-if="assessment.meta.completed" class="btn btn-action" title="View results" ui-sref="app.assessments.one.results({ 'id' : assessment.id , 'slug' : assessment.slug })">View results</a>
+					</div>
+				</li>
+			</ul>
+		</section>	
+		<div ng-show="$ctrl.loadingMore" class="list-loader"><inline-loader ng-show="$ctrl.loadingMore" loading="$ctrl.loadingMore" label="Getting more quizzes..."></inline-loader></div>
+	</div>
+</main>

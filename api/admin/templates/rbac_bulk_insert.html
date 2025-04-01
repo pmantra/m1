@@ -1,0 +1,74 @@
+{% extends 'admin/base.html' %}
+{% block head %}<title>RBAC Bulk Insert</title>{% endblock %}
+
+{% block body %}
+    <p>We use this page to bulk insert rows into Authz tables.</p>
+    <p>Tables: AuthzRole, AuthzPermission, AuthzRolePermission, AuthzUserRole</p>
+    <p>Please use the respective section to upload a CSV</p>
+    {% set can_insert = True %}
+    {% if not can_insert %}
+        <div class="alert-danger">You don't have permissions to use Bulk Insert. Please contact the core-services team
+            if you think this is a mistake.
+        </div>
+    {% endif %}
+    <h3>Authz Role</h3>
+    <div class="alert-info">
+        <p>
+            Required columns: name, description.</p>
+        <p>
+            The role name should follow the format of {name1-name2}, No character besides lowercase characters and ‘-’
+            is allowed.
+        </p>
+    </div>
+    <form method="post" action="/admin/rbac/bulk_insert" enctype="multipart/form-data">
+        <div>
+            <input type="file" name="authz_role_csv" accept=".csv" {% if not can_insert %}disabled{% endif %}>
+            <input type="submit" class="btn btn-warning btn-medium" value="Upload CSV"
+                   {% if not can_insert %}disabled{% endif %}>
+            <input type="hidden" name="table" value="authz_role">
+        </div>
+    </form>
+    <hr>
+    <h3>Authz Permission</h3>
+    <div class="alert-info">
+        <p>
+            Required columns: name, description.
+        </p>
+        <p>The permission should be of form {verb:object}. verb and object separated by a colon ‘:’. All lower case.
+            object can have words separated by ‘-’</p>
+    </div>
+    <form method="post" action="/admin/rbac/bulk_insert" enctype="multipart/form-data">
+        <input type="file" name="authz_permission_csv" accept=".csv" {% if not can_insert %}disabled{% endif %}>
+        <input type="submit" class="btn btn-warning btn-medium" value="Upload CSV"
+               {% if not can_insert %}disabled{% endif %}>
+        <input type="hidden" name="table" value="authz_permission">
+    </form>
+    <hr>
+    <h3>Authz Role Permission Mapping</h3>
+    <div class="alert-info">
+        <p>
+            Required columns: role_name, permission_name.
+        </p>
+        <p>The role_name and permission_name should be already present in the table. Mappings already present will be
+            ignored </p>
+    </div>
+    <form method="post" action="/admin/rbac/bulk_insert" enctype="multipart/form-data">
+        <input type="file" name="authz_role_permission_csv" accept=".csv" {% if not can_insert %}disabled{% endif %}>
+        <input type="submit" class="btn btn-warning btn-medium" value="Upload CSV"
+               {% if not can_insert %}disabled{% endif %}>
+        <input type="hidden" name="table" value="authz_role_permission">
+    </form>
+    <hr>
+    <h3>Authz User Role Mapping</h3>
+    <div class="alert-info">
+        <p>Required columns: user_email, role_name.</p>
+        <p>The role_name and permission_name should be already present in the table. Mappings already present will be
+            ignored </p>
+    </div>
+    <form method="post" action="/admin/rbac/bulk_insert" enctype="multipart/form-data">
+        <input type="file" name="authz_user_role_csv" accept=".csv" {% if not can_insert %}disabled{% endif %}>
+        <input type="submit" class="btn btn-warning btn-medium" value="Upload CSV"
+               {% if not can_insert %}disabled{% endif %}>
+        <input type="hidden" name="table" value="authz_user_role">
+    </form>
+{% endblock %}

@@ -1,0 +1,76 @@
+import enum
+
+
+class RegionName(str, enum.Enum):
+    EUROPE = "Europe"
+    INDIA = "India"
+    CANADA = "Canada"
+    ASIA_PACIFIC = "Asia Pacific"
+    AFRICA_MIDDLE_EAST = "Africa & Middle East"
+    LATIN_AMERICA = "Latin America"
+
+
+COUNTRY_REGION_MAPPING = {
+    "GB": RegionName.EUROPE,
+    "IN": RegionName.INDIA,
+    "CA": RegionName.CANADA,
+    "IE": RegionName.EUROPE,
+    "AU": RegionName.ASIA_PACIFIC,
+    "CN": RegionName.ASIA_PACIFIC,
+    "JP": RegionName.ASIA_PACIFIC,
+    "SE": RegionName.EUROPE,
+    "PL": RegionName.EUROPE,
+    "DE": RegionName.EUROPE,
+    "SG": RegionName.ASIA_PACIFIC,
+    "BG": RegionName.EUROPE,
+    "AE": RegionName.AFRICA_MIDDLE_EAST,
+    "FR": RegionName.EUROPE,
+    "CR": RegionName.LATIN_AMERICA,
+    "ES": RegionName.EUROPE,
+    "PH": RegionName.ASIA_PACIFIC,
+    "UA": RegionName.EUROPE,
+    "NZ": RegionName.ASIA_PACIFIC,
+    "IT": RegionName.EUROPE,
+    "TR": RegionName.EUROPE,
+    "AR": RegionName.LATIN_AMERICA,
+    "AM": RegionName.EUROPE,
+    "HK": RegionName.ASIA_PACIFIC,
+    "KR": RegionName.ASIA_PACIFIC,
+    "AT": RegionName.EUROPE,
+    "CH": RegionName.EUROPE,
+    "EG": RegionName.AFRICA_MIDDLE_EAST,
+    "IL": RegionName.AFRICA_MIDDLE_EAST,
+    "MY": RegionName.ASIA_PACIFIC,
+    "BR": RegionName.LATIN_AMERICA,
+    "MX": RegionName.LATIN_AMERICA,
+    "QA": RegionName.AFRICA_MIDDLE_EAST,
+    "SA": RegionName.AFRICA_MIDDLE_EAST,
+    "FI": RegionName.EUROPE,
+    "BE": RegionName.EUROPE,
+    "DK": RegionName.EUROPE,
+    "CZ": RegionName.EUROPE,
+    "TW": RegionName.ASIA_PACIFIC,
+    "ID": RegionName.ASIA_PACIFIC,
+    "CO": RegionName.LATIN_AMERICA,
+    "TH": RegionName.ASIA_PACIFIC,
+    "CL": RegionName.LATIN_AMERICA,
+    "SK": RegionName.EUROPE,
+    "LV": RegionName.EUROPE,
+    "LB": RegionName.AFRICA_MIDDLE_EAST,
+    "UY": RegionName.LATIN_AMERICA,
+    "HU": RegionName.EUROPE,
+    "RO": RegionName.EUROPE,
+    "LU": RegionName.EUROPE,
+    "PT": RegionName.EUROPE,
+    "VN": RegionName.ASIA_PACIFIC,
+    "HR": RegionName.EUROPE,
+    "KZ": RegionName.EUROPE,
+    "RS": RegionName.EUROPE,
+    "KW": RegionName.AFRICA_MIDDLE_EAST,
+    "KE": RegionName.AFRICA_MIDDLE_EAST,
+    "LT": RegionName.EUROPE,
+    "PE": RegionName.LATIN_AMERICA,
+    "NG": RegionName.AFRICA_MIDDLE_EAST,
+    "GR": RegionName.EUROPE,
+    "EE": RegionName.EUROPE,
+}

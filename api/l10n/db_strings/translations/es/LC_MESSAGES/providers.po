@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: es\n"
+
+msgid "ca_member_transition_template_ecpfarewell_message_body"
+msgstr "Hola, $MEMBER_FIRST_NAME:\n\nSoy $OLD_CX_FIRST_NAME y estaba pensando en ti. Te escribo para saber cómo estás. ¿Cómo te están yendo las citas en Maven y fuera?\n\nTambién te escribo para compartir una actualización: cambiaré de rol en Maven y no podré tener citas. Fue un gran placer acompañarte en el recorrido de embarazo y haberte ayudado hasta ahora.\n\nCon esto en mente, se agregará a tu nuevo Care Advocate al equipo de cuidado y te contactá pronto.\n\nQuedo a la espera de tu respuesta.\n\n$OLD_CX_FIRST_NAME\nEquipo de cuidado de Maven"
+
+#. ca member transition
+msgid "ca_member_transition_template_farewell_message_body"
+msgstr "Hola, $MEMBER_FIRST_NAME:\n\nEspero que estés bien.\n\nQuería informarte que me voy de Maven. Me alegra mucho haber tenido el privilegio de ser tu Care Advocate y me entristece irme, pero te dejo en buenas manos. Tu nuevo Care Advocate será $NEW_CX_FIRST_NAME: es una persona maravillosa y definitivamente podrá ayudarte con cualquier pregunta que surja.\n\nTe deseo lo mejor.\n$OLD_CX_FIRST_NAME"
+
+msgid "ca_member_transition_template_followup_ecpintro_message_body"
+msgstr "Hola, $MEMBER_FIRST_NAME:\n\nEspero que estés bien. Mi nombre es $NEW_CX_FIRST_NAME y soy otro miembro del equipo de cuidado. Dada la última actualización de $OLD_CX_FIRST_NAME sobre la transición a un nuevo equipo, me emociona mucho ser tu Care Advocate de ahora en adelante.\n\n¡Espero que trabajemos juntos! Si tienes alguna pregunta, no dudes en contactarme.\n\nQuedo a la espera de noticias.\n\nSaludos,\n$NEW_CX_FIRST_NAME"
+
+msgid "ca_member_transition_template_followup_intro_message_body"
+msgstr "Hola, $MEMBER_FIRST_NAME:\n\nEspero que estés bien. Mi nombre es $NEW_CX_FIRST_NAME y seré tu nuevo Care Advocate de Maven. ¡Me emociona mucho trabajar contigo!\n\nAvísame si necesitas apoyo en este momento. ¡Será un placer dirigirte a los recursos adecuados!\n\nQuedo a la espera de noticias.\n\nSaludos,\n$NEW_CX_FIRST_NAME"
+
+msgid "ca_member_transition_template_followup_ucpintro_message_body"
+msgstr "Hola, $MEMBER_FIRST_NAME:\n\nEspero que estés bien. Mi nombre es $NEW_CX_FIRST_NAME y soy otro miembro del equipo de cuidado. Me emociona ser tu Care Advocate desde ahora en adelante.\n\n¡Espero que trabajemos juntos! Si tienes alguna pregunta, no dudes en contactarme.\n\nQuedo a la espera de noticias.\n\nSaludos,\n$NEW_CX_FIRST_NAME"
+
+msgid "ca_member_transition_template_hard_intro_message_body"
+msgstr "Hola, $MEMBER_FIRST_NAME:\n\nEspero que estés bien. Mi nombre es $NEW_CX_FIRST_NAME y seré tu nuevo Care Advocate de Maven.\n\n$OLD_CX_FIRST_NAME se fue de Maven, así que trabajaré contigo durante el resto de tu tiempo en la clínica.\n\nAvísame si necesitas apoyo en este momento. ¡Será un placer dirigirte a los recursos adecuados!\n\nQuedo a la espera de noticias.\n\nSaludos,\n$NEW_CX_FIRST_NAME"
+
+msgid "ca_member_transition_template_soft_intro_message_body"
+msgstr "Hola, $MEMBER_FIRST_NAME:\n\nEspero que estés bien. Mi nombre es $NEW_CX_FIRST_NAME y soy tu Care Advocate de Maven.\n\nAvísame si necesitas apoyo en este momento. ¡Será un placer dirigirte a los recursos adecuados!\n\nQuedo a la espera de noticias.\n\nSaludos,\n$NEW_CX_FIRST_NAME"
+
+msgid "ca_member_transition_template_ucpfarewell_message_body"
+msgstr "Hola, $MEMBER_FIRST_NAME:\n\nSoy $OLD_CX_FIRST_NAME y estaba en ti. Te escribo para saber cómo estás. ¿Cómo van tus citas en Maven y fuera?\n\nTambién te escribo para compartir una actualización: cambiaré de rol. Fue un gran placer acompañarte en tu recorrido de embarazo y compartir recursos contigo hasta ahora. También quería informarte que otro Care Advocate con experiencia se unirá al equipo de cuidado, para seguir siendo tu fuente de apoyo mientras trabajas para alcanzar las metas que estableciste en el plan de cuidado.\n\n¡Te deseo lo mejor!\n$OLD_CX_FIRST_NAME\nEquipo de cuidado de Maven"
+
+msgid "cancellation_policy_conservative_name"
+msgstr "conservador"
+
+msgid "cancellation_policy_flexible_name"
+msgstr "flexible"
+
+msgid "cancellation_policy_moderate_name"
+msgstr "moderado"
+
+#. cancellation policy
+msgid "cancellation_policy_strict_name"
+msgstr "estricto"

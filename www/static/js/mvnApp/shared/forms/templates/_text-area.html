@@ -1,0 +1,13 @@
+<div class="text-area" ng-class="{ 'has-content': !!value }">
+	<textarea
+		class="mvn-form-input"
+		value="value"
+		ng-model="value"
+		id="{{ textareaid }}"
+		ng-required="isRequired"
+		maxlength="{{ maxlen }}"
+		aria-label="{{ label }}"
+		ng-change="mvnInputCtrl.inheritedOnChange()"
+	></textarea>
+	<label class="mvn-form-label">{{label}}</label>
+</div>

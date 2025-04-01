@@ -1,0 +1,23 @@
+{% extends 'admin/base.html' %}
+
+{% block body %}
+
+<div id="service-metrics-app"></div>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        AdminTool(
+            "ServiceMetrics", 
+            document.getElementById("service-metrics-app"),
+            {
+                all_metric_names: [
+                    {% for response in all_metric_names %}
+                        "{{ response }}",
+                    {% endfor %}
+                ]
+            }
+        );
+    })
+</script>
+
+{% endblock %}

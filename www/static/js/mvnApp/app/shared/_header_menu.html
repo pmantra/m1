@@ -1,0 +1,33 @@
+<header id="header">
+	<div class="logo">
+		<a ui-sref="app.forum.dashboard"><img src="/img/maven.svg" alt="Maven"/></a>
+	</div>
+	<div class="nav">
+		<nav class="primary-nav mobile-none">
+			<ul class="nav" ng-cloak ng-if="!isAuthenticated">
+				<li><a ui-sref-active="current" ui-sref="app.register">Create account</a></li>
+				<li><a ui-sref-active="current" ui-sref="auth.login" class="btn btn-secondary">Sign in</a></li>
+			</ul>
+			<ul class="nav" ng-cloak ng-if="isAuthenticated">
+				<li><a ui-sref-active="current" ui-sref="app.forum.dashboard">Forum</a></li>
+				<li><a ui-sref="app.account.view">My Account</a></li>
+				<li><a ng-click="logout()">Logout</a></li>
+			</ul>
+		</nav>
+		<div class="nav-toggle mobile-show">
+			<a href="" ng-click="toggle()">
+				<div class="menu-toggle">&nbsp;</div>
+			</a>
+		</div>
+	</div>
+</header>
+<div id="side-nav" aria-hidden="{{ nav.hideNav ? true : false }}" ng-class="{active: nav.hideNav}">
+	<ul class="nav" ng-click="toggle()">
+		<li><a ui-sref-active="current" ui-sref="app.forum.dashboard">Forum</a></li>
+		<li><a ui-sref="app.my_posts">My questions &amp; replies &rsaquo;</a></li>
+		<li><a ui-sref="app.posts_i_follow">Following &rsaquo;</a></li>
+		<li><a ui-sref="app.account.view">My Account</a></li>
+		<li><a ng-click="logout()">Logout</a></li>
+		<li><a class="btn" ui-sref="public.download({ ref: 'header' })">Get the app</a></li>
+	</ul>
+</div>

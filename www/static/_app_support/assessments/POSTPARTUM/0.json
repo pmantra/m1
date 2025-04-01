@@ -1,0 +1,189 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "body": "How are you feeling?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "0",
+                        "label": "0 - not good"
+                    },
+                    {
+                        "value": "1",
+                        "label": "1 - could be better"
+                    },
+                    {
+                        "value": "2",
+                        "label": "2 - okay"
+                    },
+                    {
+                        "value": "3",
+                        "label": "3 - good"
+                    }
+                ]
+            },
+            "meta": {
+                "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/1.svg",
+                "subtext": "* Feelings can be approximate",
+                "skip": "I don't know how i feel"
+            }
+        },
+        {
+            "id": 2,
+            "body": "How are you feeling?",
+            "widget": {
+                "type": "range",
+                "max": 3,
+                "options": [
+                    {
+                        "value": 0,
+                        "label": "0 - not good"
+                    },
+                    {
+                        "value": 1,
+                        "label": "1 - could be better"
+                    },
+                    {
+                        "value": 2,
+                        "label": "2 - okay"
+                    },
+                    {
+                        "value": 3,
+                        "label": "3 - good"
+                    }
+                ]
+            },
+            "meta": {
+                "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/2.svg",
+                "subtext": "* Feelings can be approximate"
+            }
+        },
+        {
+            "id": 3,
+            "body": "What kind of birth did you have?",
+            "widget": {
+                "type": "singleanswer",
+                "options": [
+                    "Vaginal",
+                    "C-section",
+                    "VBAC"
+                ]
+            },
+            "meta": {
+                "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/3.svg"
+            }
+        },
+        {
+            "id": 4,
+            "body": "What were they?",
+            "widget": {
+                "type": "multiselect",
+                "options": [
+                    "diabetes",
+                    "hypertension",
+                    "asthma"
+                ],
+                "other": true
+            },
+            "parent": {
+                "id": 2,
+                "requiredValue": "yes"
+            },
+            "meta": {
+                "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/4.svg"
+            }
+        },
+        {
+            "id": 5,
+            "body": "When was your baby born?",
+            "widget": {
+                "type": "date"
+            },
+            "parent": {
+                "id": 3,
+                "requiredValue": "asthma"
+            },
+            "meta": {
+                "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/5.svg",
+                "subtext": "* We don't share this with anyone"
+            }
+        },
+        {
+            "id": 6,
+            "body": "What's your favorite hobby?",
+            "widget": {
+                "type": "freetextfield",
+                "placeholder": "Your hobbies....",
+                "label": "Add your hobbies here"
+            },
+            "meta": {
+                "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/6.svg",
+                "subtext": "* We don't share this with anyone"
+            }
+        },
+        {
+            "id": 7,
+            "body": "Who is your PCP?",
+            "widget": {
+                "type": "freetextmulti",
+                "options": [
+                    {
+                        "value": "first_name",
+                        "label": "First name",
+                        "placeholder": "Jane",
+                        "fieldtype": "text"
+                    },
+                    {
+                        "value": "last_name",
+                        "label": "Last name",
+                        "placeholder": "Jones",
+                        "fieldtype": "text"
+                    },
+                    {
+                        "value": "email",
+                        "label": "Email address (optional)",
+                        "placeholder": "email@company.com",
+                        "fieldtype": "email"
+                    },
+                    {
+                        "value": "years_known",
+                        "label": "Years known (optional)",
+                        "placeholder": "0",
+                        "fieldtype": "number"
+                    }
+                ]
+            },
+            "meta": {
+                "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/7.svg",
+                "subtext": "* We don't share this with anyone",
+                "skip": "I don't have one"
+            }
+        },
+        {
+            "id": 8,
+            "body": "What's drugs are you taking right now",
+            "widget": {
+                "type": "textarea",
+                "placeholder": "List of medications... "
+            },
+            "meta": {
+                "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/8.svg"
+            }
+        },
+        {
+            "id": 9,
+            "body": "How old are you",
+            "widget": {
+                "type": "number",
+                "placeholder": "35",
+                "label": "Your age"
+            },
+            "meta": {
+                "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/postpartum/9.svg",
+                "subtext": "* We don't share this with anyone"
+            }
+        }
+    ]
+}

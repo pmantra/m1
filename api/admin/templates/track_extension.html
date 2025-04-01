@@ -1,0 +1,174 @@
+{% extends 'admin/base.html' %}
+
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block body %}
+<div id="track-extension"></div>
+<h3>Extend Track Length</h3>
+<p>
+  This is currently intended for testing purposes (in dry run mode), and no actual actions are being executed at the moment.
+</p>
+<div id="error" class="alert alert-error"></div>
+<div id="success" class="alert alert-success"></div>
+<hr />
+<div style="width: 250px; margin-bottom: 20px;">
+  <label for="org_id">Org ID: </label>
+<input type="text" id="org_id" name="org_id" placeholder="Enter Org ID (optional)" />
+</div>
+<div style="width: 250px; margin-bottom: 20px;">
+  <label for="track_name">Track Name: <span style="color: red;">*</span></label>
+<select id="track_name">
+  <option value="adoption">Adoption</option>
+  <option value="breast_milk_shipping">Breast Milk Shipping</option>
+  <option value="egg_freezing">Egg Freezing</option>
+  <option value="fertility">Fertility</option>
+  <option value="generic">Generic</option>
+  <option value="general_wellness">General Wellness</option>
+  <option value="menopause">Menopause</option>
+  <option value="parenting_and_pediatrics">Parenting and Pediatrics</option>
+  <option value="partner_fertility">Partner Fertility</option>
+  <option value="partner_newparent">Partner New Parent</option>
+  <option value="partner_pregnant">Partner Pregnant</option>
+  <option value="pregnancy">Pregnancy</option>
+  <option value="pregnancyloss">Pregnancy Loss</option>
+  <option value="postpartum">Postpartum</option>
+  <option value="sponsored">Sponsored</option>
+  <option value="surrogacy">Surrogacy</option>
+  <option value="trying_to_conceive">Trying to Conceive</option>
+</select>
+</div>
+
+<div style="width: 250px; margin-bottom: 20px;">
+  <label for="old_length">Old Length: <span style="color: red;">*</span></label>
+<select id="old_length">
+  <option value="182">6 months (182 days)</option>
+  <option value="294">9 months (294 days)</option>
+  <option value="364">12 months (364 days)</option>
+  <option value="728">24 months (728 days)</option>
+  <option value="90">12-Month Maternity</option>
+  <option value="168">15-Month Maternity</option>
+  <option value="348">21-Month Maternity</option>
+</select>
+</div>
+
+<div style="width: 250px; margin-bottom: 20px;">
+  <label for="new_length">New Length: <span style="color: red;">*</span></label>
+  <select id="new_length">
+  <option value="294">9 months (294 days)</option>
+  <option value="364">12 months (364 days)</option>
+  <option value="728">24 months (728 days)</option>
+  <option value="90">12-Month Maternity (90 days)</option>
+  <option value="168">15-Month Maternity (168 days)</option>
+  <option value="348">21-Month Maternity (348 days)</option>
+</select>
+</div>
+
+<button type="button" class="btn-primary" onclick="submitClientTrackExtension()">Extend</button>
+<span>&emsp;</span>
+<button type="button" onclick="refreshPage()">Cancel</button>
+</div>
+
+<script>
+  function populateOptions(selectId, options) {
+    const selectElement = document.getElementById(selectId);
+    options.forEach(option => {
+      const optionElement = document.createElement("option");
+      optionElement.value = option.value;
+      optionElement.text = option.label;
+      selectElement.appendChild(optionElement);
+    });
+  }
+
+  function updateLengthOptions() {
+    const trackNameSelect = document.getElementById('track_name');
+    const oldLengthSelect = document.getElementById('old_length');
+    const newLengthSelect = document.getElementById('new_length');
+
+    const defaultOptions = [
+      {label: '6 months (182 days)', value: '182'},
+      {label: '9 months (294 days)', value: '294'},
+      {label: '12 months (364 days)', value: '364'},
+      {label: '24 months (728 days)', value: '728'},
+    ];
+
+    const maternityOptions = [
+      {label: '12-Month Maternity (90 days)', value: '90'},
+      {label: '15-Month Maternity (168 days)', value: '168'},
+      {label: '21-Month Maternity (348 days)', value: '348'},
+    ];
+
+    const newMaternityOptions = [
+      {label: '15-Month Maternity (168 days)', value: '168'},
+      {label: '21-Month Maternity (348 days)', value: '348'},
+    ];
+
+    oldLengthSelect.innerHTML = ''; // Clear existing options
+    newLengthSelect.innerHTML = ''; // Clear existing options
+
+    if (trackNameSelect.value === 'postpartum') {
+      populateOptions('old_length', maternityOptions);
+      populateOptions('new_length', newMaternityOptions);
+    } else {
+      populateOptions('old_length', defaultOptions);
+      populateOptions('new_length', defaultOptions);
+    }
+  }
+
+  updateLengthOptions(); // Call initially to set options based on the default value
+
+  async function submitClientTrackExtension() {
+      const trackName = document.getElementById('track_name').value;
+      const oldLength = document.getElementById('old_length').value;
+      const newLength = document.getElementById('new_length').value;
+      const orgId = document.getElementById('org_id').value;
+
+      // Example alert for testing
+      let alertMessage = `Extended for `;
+      if (orgId.trim() !== '') {
+        alertMessage += `Organization ID - ${orgId}, `;
+      }
+      alertMessage +=  `track name - ${trackName}, from ${oldLength} days to ${newLength} days.`;
+
+      // Prepare data for the request
+      const requestData = new URLSearchParams();
+      requestData.append('track_name', trackName);
+      requestData.append('old_length', oldLength);
+      requestData.append('new_length', newLength);
+      if (orgId.trim() !== '') {
+          requestData.append('org_id', orgId);
+      }
+      // Make an asynchronous POST request to the server endpoint
+      // http://localhost:8081/admin/tracks_extension/do_extend
+      const response = await fetch('/admin/tracks_extension/do_extend', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: requestData,
+      });
+
+      if (response.ok) {
+        // Update the success div with the success message
+        document.getElementById('success').innerText = "Succeeded. " + alertMessage;
+      } else {
+        // Parse the response JSON
+        const data = await response.json();
+        // Update the error div with the error message
+        document.getElementById('error').innerText = data.error || "Error trying to extend track. Maybe try again?";
+      }
+  }
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
+  // Attach the function to the change event of the track_name select element
+  document.getElementById('track_name').addEventListener('change', updateLengthOptions);
+</script>
+{% endblock %}
+
+{% block tail %}
+  {{ super() }}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'admin/model/edit.html' if model else 'admin/model/create.html' %}
+
+{% block body %}
+    {{ super() }}
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        function renderBuilder() {
+            AdminTool("MatchingRules", document.getElementById("matching-rule-override-with-react").parentElement, {
+                countries: {{ countries_json|safe if countries_json else [] |safe }},
+                organizations: {{ organizations_json|safe if organizations_json else []|safe }},
+                tracks: {{ tracks_json|safe if tracks_json else [] |safe }},
+                riskFactors: {{ risk_factors_json|safe if risk_factors_json else [] |safe }},
+                matchingRuleSets: {{ matching_rule_sets_json|safe if matching_rule_sets_json else []|safe }},
+                assignableAdvocateId: {{ assignable_advocate_id|safe if assignable_advocate_id else 0|safe }}
+            });
+        }
+
+        renderBuilder()
+    })
+</script>
+{% endblock %}

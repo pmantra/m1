@@ -1,0 +1,316 @@
+.mvn-toast {
+	.toast-overlay {
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 5;
+	}
+	.toast-container {
+		bottom: -600px;
+		margin: 0 3%;
+		border: 1px solid $gray-xlt;
+		border-bottom: none;
+		background: white;
+		padding: 2rem;
+		text-align: left;
+		color: $gray-dk;
+		max-width: 1170px;
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		z-index: 20;
+		@include susy-breakpoint($desktop-md) {
+			margin: 0 auto;
+			padding: 60px 100px;
+		}
+		> span {
+			display: flex;
+			flex-direction: column-reverse;
+			@include susy-breakpoint($tablet) {
+				flex-direction: row;
+				align-items: center;
+			}
+		}
+
+		&.toast-type-icon-left {
+			text-align: center;
+			@include susy-breakpoint($tablet) {
+				text-align: initial;
+				> span {
+					flex-direction: row-reverse;
+				}
+			}
+
+			.toast-content {
+				display: flex;
+				flex-direction: column;
+				@include susy-breakpoint($tablet) {
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					margin-left: 15px;
+				}
+
+				h3 {
+					margin-bottom: 0;
+				}
+				p {
+					margin-top: 10px;
+				}
+			}
+			.toast-dismiss {
+				color: $gray;
+			}
+			.toast-action {
+				border: none;
+				margin: 0;
+				padding: 0;
+			}
+		}
+
+		&.toast-type-download {
+			z-index: 10;
+			text-align: center;
+
+			.toast-dismiss {
+				color: $gray;
+			}
+			.toast-action {
+				border: none;
+				margin: 0;
+				padding: 0;
+			}
+		}
+
+		.toast-content {
+			flex-grow: 1;
+			margin-right: 3rem;
+			h3 {
+				margin-top: 0;
+			}
+		}
+		.toast-icon {
+			width: 100px;
+			height: 100px;
+			background-size: contain;
+			background-position: left 0;
+			background-repeat: no-repeat;
+			margin-bottom: 1rem;
+			@include susy-breakpoint($desktop) {
+				width: 150px;
+				height: 150px;
+				flex-shrink: 0;
+				background-position: 0 0;
+				margin-bottom: 0;
+			}
+			&.icon-thumbsup {
+				background-image: url("/img/app/shared/toasts/thumbsup.png");
+			}
+			&.icon-booked {
+				background-image: url("/img/app/shared/toasts/booked.png");
+			}
+			&.icon-sms-sent {
+				background-image: url("/img/app/shared/toasts/icon-sms-sent.png");
+			}
+			&.icon-gifts {
+				background-image: url("/img/app/shared/toasts/gifts.png");
+			}
+			&.icon-download {
+				background-image: url("/img/app/shared/toasts/download.png");
+				margin: 0 auto;
+				width: 100px;
+				height: 100px;
+			}
+			&.icon-questions-corona {
+				background-image: url("/img/app/shared/toasts/questions_corona.png");
+				margin: 1rem auto 0;
+				width: 100px;
+				height: 100px;
+				@include susy-breakpoint($tablet) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
+	&.toast-timed {
+		.toast-overlay {
+			animation: overlayFadeInOut ease-in-out;
+		}
+		.toast-container {
+			animation: toastSlideUpDown ease-in-out;
+
+			opacity: 0;
+			border-top: none;
+		}
+	}
+
+	&.toast-dismissible,
+	&.toast-minimizable {
+		@include susy-breakpoint(0 $mobile-landscape-max) {
+			.toast-icon {
+				height: 80px;
+				width: 80px;
+			}
+			.toast-content {
+				margin-right: 0;
+			}
+		}
+		.toast-overlay {
+			animation: overlayFadeIn ease-in;
+		}
+		.toast-container {
+			animation: toastSlideUp ease-in;
+			@include mvn-container(large);
+		}
+		.toast-dismiss {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			cursor: pointer;
+			font-size: 3rem;
+			line-height: 1.5rem;
+			text-decoration: none;
+		}
+		.toast-action {
+			border-top: 1px solid $gray-xlt;
+			margin-top: 1.5rem;
+			padding-top: 1.5rem;
+			position: relative;
+
+			.btn-tertiary {
+				color: $ui-green;
+				width: 100%;
+
+				* {
+					color: $ui-green;
+				}
+
+				&:after {
+					content: "";
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					height: 10px;
+					position: absolute;
+					right: 0;
+					width: 10px;
+					background-image: url("/img/app/dashboard/ui-action/primary.png");
+				}
+			}
+		}
+	}
+
+	&.toast-minimized {
+		.toast-container {
+			transition: all 0.4s ease;
+			bottom: -12px;
+			padding: 1rem;
+			@include susy-breakpoint($desktop-md) {
+				padding: 2rem;
+			}
+		}
+		.toast-content {
+			@include flexbox(column, center, center);
+			@include susy-breakpoint($tablet) {
+				flex-direction: row;
+			}
+		}
+		.toast-icon {
+			width: 42px;
+			height: 42px;
+		}
+		h5 {
+			width: 80%;
+			margin: 0;
+		}
+		.toast-action {
+			width: 200px;
+			border: none;
+			margin: 0;
+			padding: 0;
+			@include susy-breakpoint(0 $desktop-max) {
+				text-align: center;
+			}
+		}
+	}
+
+	mvn-progress-bar {
+		display: block;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		left: 0;
+		right: 0;
+	}
+}
+
+@keyframes overlayFadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.8;
+	}
+}
+
+@keyframes overlayFadeInOut {
+	0% {
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes toastSlideUp {
+	0% {
+		opacity: 0;
+		bottom: -600px;
+	}
+	100% {
+		opacity: 1;
+		bottom: 0;
+	}
+}
+
+@keyframes toastSlideUpDown {
+	0% {
+		opacity: 0;
+		bottom: -600px;
+	}
+	10% {
+		opacity: 1;
+		bottom: 0;
+	}
+	95% {
+		opacity: 1;
+		bottom: 0;
+	}
+	100% {
+		opacity: 0;
+		bottom: -600px;
+	}
+}
+
+@keyframes toastMinimize {
+	0% {
+		opacity: 0;
+		bottom: 0;
+	}
+	100% {
+		opacity: 1;
+		bottom: -200;
+	}
+}

@@ -1,0 +1,464 @@
+Field Name,Segment,Format,Data Type,Length,Starting Position,,Ending Position,Required I/B,Required O/B,Definition," INBOUND VALUES
+(Data from Partner to Express Scripts)","OUTBOUND VALUES
+(Data from Express Scripts to Partner)",Comments
+Processor Routing Identification,Header ,X(200),AN,200,1,-,200,Y ,N,MQ Header or Spaces,Refer to comments,Express Scripts Use Only,"MQ Record for Realtime
+Spaces for Batch.  If populated by Express Scripts, Partner should ignore."
+Record Type,Header ,X(2),AN,2,201,-,202,Y ,Y ,,"DT
+
+
+","DT
+
+",Always DT
+Transmission File Type,Header ,X(2),AN,2,203,-,204,Y ,Y ,Identifies the specific function of the transmission,"DQ = Data Request    Used for initiating a claim event 
+DR = Data response Used for responding to a claim event sent by the partner.
+
+
+","DQ = Data Request    Used for initiating a claim event 
+DR = Data response Used for responding to a claim event sent by the partner.
+
+","1 Occurrence
+For MQ connections: 
+DR’s are required.  Both Express Scripts and partner must send a response to each transaction.
+ 
+For XML connections:
+DR’s are required.  Both Express Scripts and partner must send a response to each transaction.
+
+For batch connections:
+Express Scripts will send responses to the partner.
+The partner is not required to send Express Scripts responses, but it is strongly encouraged.
+
+Note:  A DR record should be an ‘echo-back’ of all data passed on the DQ record EXCEPT that the sender and receiver ID’s must be reversed from the DQ transaction AND the DR record should reflect the appropriate response code (see Transaction Response Status and Reject Code fields) to indicate whether the transaction was loaded successfully or not.
+
+"
+Version/Release Number,Header ,X(2),AN,2,205,-,206,N,N,,always 10,01 or 10, 
+Sender Id,Header ,X(30),AN,30,207,-,236,Y ,Y ,Identifies the sender of the transmission,Express Scripts-assigned identifier for the Partner– see comments,Express Scripts Identifier= MHS,"Express Scripts will assign a code to the Trading Partner.
+When Partner is sending a transaction to Express Scripts, Partner should pass Sender ID = the Express Scripts assigned ID for the Partner and Receiver ID = MHS; this applies to both DQ and DR records
+
+On transactions from Express Scripts to Partner, both DQ and DR records will show Sender ID = MHS and Receiver ID = the Express Scripts assigned ID for the Partner
+"
+Receiver Id,Header ,X(30),AN,30,237,-,266,Y ,Y ,Identifies to whom the transmission will be sent, MHS,"Trading partner Identifier
+Express Scripts-assigned identifier for the Partner",See comments under Sender ID
+Submission Number,Header ,9(4),N,4,267,-,270,Y ,Y ,Tracks the number of times the transaction has been retransmitted ,Default to Zeros,Increment by one until successful receipt,"Applies to REALTIME connections only.
+
+Each partner must increment this field by 1 each time a transaction 
+is resent due to lack of response. 
+
+See prior discussion on Response Transactions.
+"
+Transaction Response Status,Header ,X(1),AN,1,271,-,271,N,Y ,,"Space
+For Response records:
+A = Approved
+E = Duplicate Record
+R = Rejected","Space
+For Response records:
+A = Approved
+E = Duplicate Record
+R = Rejected","Required in Response (DR) transactions when error conditions exist.
+Not used in Request (DQ) transactions. Space Filled"
+Reject Code,Header ,X(3),AN,3,272,-,274,Y ,Y ,"Indicates whether receiver successfully loaded the transaction or not, and if not, why","Required in Response transaction when error conditions exist.  if Request transaction was not processed.
+
+Not used in Request transactions. Space Filled.
+If Transaction Response Status = A, default to '000'","Required in Response transaction when error conditions exist.  if Request transaction was not processed.
+
+Not used in Request transactions. Space Filled.",See Critical Success Factors  (Error Handling section) for notes on handling Over Accumulations
+Record Length,Header ,9(5),N,5,275,-,279,Y,Y,Record Length,01700,01700,Express Scripts cannot accept a leading space in this field
+Reserved,Header ,X(20),AN,20,280,-,299,N,N,,Spaces,Express Scripts Use Only,"If populated by Express Scripts, Partner should ignore."
+Transmission Date,Profile,9(8),N,8,300,-,307,Y,Y ,The date the file was created,CCYYMMDD – the Current date,CCYYMMDD – the Current date,"Format=CCYYMMDD
+CC=Century
+YY=Year
+MM=Month
+DD=Day
+"
+Transmission Time,Profile,9(8),N,8,308,-,315,Y,Y ,The actual time the transaction was sent by the originator,"HHMMSSDD (down to the milliseconds) for the  current time
+","HHMMSSDD (down to the milliseconds) for the  current time
+",Format= HHMMSSDD
+Date of Service,Profile,9(8),N,8,316,-,323,Y,Y ,"Identifies the date on which the service was performed or, for a flat adjustment, the effective date of the adjustment.",CCYYMMDD,CCYYMMDD,Note: Express Scripts cannot load an inbound transaction if the patient was not eligible for Rx benefits on the date of service passed.  See additional  notes in the “Prior Balance Load” section of this document.
+Service Provider ID Qualifier,Profile,X(2),AN,2,324,-,325,Y,Y ,Qualifies the identification number being used to identify the provider,"ID Qualifier per Partner
+(free form: partner can default to space)","07 = NCPDP/NABP
+01 or 08 = NPI (depending on ESI configuration)
+99 = Copay Assist","Express Scripts Default is to pass 07, unless Partner indicates that NPI is required"
+Service Provider ID,Profile,X(15),AN,15,326,-,340,Y,Y ,"Service Provider Identification number qualified by Service Provider ID Qualifier
+",ID Number of Provider (free form; partner can default to space),ID Number of Provider  (NCPDP or NPI), Express Scripts stores this value for use in Reconciliation processing only if  explicitly requested by the CDH Partner
+Document Reference Identifier Qualifier,Profile,X(2),AN,2,341,-,342,Y,Y ,"Qualifies the Document Rference ID used to identify the claim document
+",05 =  Default qualifier for Medical Claim Reference Id,"01 =  Prescription No.
+90 = Flat Adjustment",NOTE:  A value of 90 is populated in this field for outbound  flat adjustments (adjustments that debit or credit accumulators but are not tied to a specific claim)
+ Document Reference Identifer,Profile,X(15),AN,15,343,-,357,Y,Y ,"Document Reference ID qualified by Document Refernce ID Qualifier
+","Assigned by Partner.  Default to ‘999999999999999’
+","Pharmacy-assigned prescription number
+NOTE:  The string “FLAT” appears in this field for  flat adjustments (adjustments that debit or credit accumulators but are not tied to a specific claim)","For NCPDP claim versions prior to D.0, the prescription number will always be 7 bytes.  For D.0 and subsequent versions, the number may be up to 12 bytes. "
+Transmission ID,Profile,X(50),AN,50,358,-,407,Y,Y ,"Serves as part of the key to uniquely identify a transaction.  When duplicate checking is turned on at a transaction level, the following fields must be unique: Sender ID, Cardholder ID, and THE FIRST 26 BYTES OF THE Transmission ID ",See comment area,CCYYMMDDHHMMSSLLL#@@@@@@@@,"Format of Express Scripts transaction Signature = CCYYMMDDHHMMSSLLL#@@@@@@@@
+Comprised of:
+CCYYMMDDHHMMSS = Date and Time
+LLL = Milliseconds
+# = sequence number
+@@@@@@@@ identifies the Express Scripts application from which the transaction originated 
+Express Scripts utilizes the combination of Transmission Id, Sender Id and Cardholder Id as the overall unique key to the transaction.  
+
+It is required that the partner also populate this field such that transactions can be uniquely identified, so that Express Scripts standard duplicate checking and reconciliation procedures can be implemented with the partner.
+Millisecond is a new feature that  was implemented due to increased processing speed.  Beginning 1/1/2010, all new partners will be set up this way to receive claims from Express Scripts in this format to further ensure uniqueness.  Partners in effect before that date will still receive data in the original format, but it is recommended that they migrate to the new format.  
+If multiple flat adjustments are sent, the signature will not be unique.  It will be necessary to contact the Express Scripts CDH Triage team.
+"
+Benefit Type,Profile,X(1),AN,1,408,-,408,Y,Y ,Identifies the benefit type,"9 = Medical
+
+Others not used:
+A = Dental
+B = Lab
+C = Behavior Health
+E = Vision
+
+
+",D = Pharmacy,
+ In Network Indicator,Profile,X(1),AN,1,409,-,409,Y,Y ,Identifies whether the claim was processed by an in- or out-of-network provider ,"1  =  In Network
+2  =  Out of Network
+3 = Both in and 0ut of Network
+4 = Extended Network
+5 = INN House
+Default is Spaces
+
+","1  =  In Network
+2  =  Out of Network
+3 = Both in and 0ut of Network
+4 = Extended Network
+5 = INN House
+Spaces = Reversal or Adjustment
+","Default is 1 for Claims
+Default is Spaces for Reversals and Adjustments.  Note that this Network Indicator indicates if the Provider  is in Network or Out of Network, whereas the Accumulator Network Indicator (position 992) indicates which accumulator level the associated amount should be applied to. If separate In and Out of  Network dollars are being accumulated for a client, this field should be discussed further with Express Scripts."
+ Formulary Status,Profile,X(1),AN,1,410,-,410,Y,Y ,Identifies if the product is on the client’s formulary or not,"0  =  Not applicable
+Default = Spaces","0 or Spaces  =  Not applicable
+1  =  In Formulary
+2  =  Non Formulary",Not populated for Reversals or Adjustments
+Accumulator Action Code,Profile,X(2),AN,2,411,-,412,Y,Y ,Type of activity being passed,"00 = Claim
+01 = HRA spending account Initial balance
+02 = Coverage Change (HRA only)
+03 = Prorated Changes 
+04 = Rollover (HRA only)
+05 = Incentives
+10 = Adjustment (Flat or Paired)
+11 = Reversal
+12 = Not used
+91 = Accumulator Exchange (Medical only)
+92 =  Reconcilliation Exchange (not used by ESI)
+
+","00 = Claim
+10 = Adjustment (Flat or Paired)
+11 = Reversal","Express Scripts and Partner must agree on which Accumulator Action Codes  will be shared and Partner must clearly understand how each one is used.
+
+Please see Adjustments/Reversals section for more detail on these transactions.
+"
+Sender Reference Number,Profile,X(30),AN,30,413,-,442,N,N,Provides client specific data ,"Allows Partner to pass data that will be echoed back on DR record from Express Scripts
+* Express Scripts stores this value for use in Reconciliation processing only if explicitly requested by the CDH Partner","Populated on DR record, echoing back what partner passed..",Partner can use this field to store any data that is needed back on DR response records from Express Scripts
+Insurance Code,Profile,X(20),AN,20,443,-,462,N,N,Reporting field within Express Scripts eligibility system,"Spaces
+* Express Scripts stores this value for use in Reconciliation processing only if explicitly requested by the CDH Partner",Express Scripts will populate outbound transaction with value stored on eligibility,
+Accumulator Balance Benefit Type,Profile,X(1),AN,1,463,-,463,N,N,Not used,"0 = Not specified
+I = Individual
+F = Family
+Default to 'I'","0 = not specified
+I = Individual
+F = Family
+Default to 'S'. ESI only sends 'S'",Not populated for Reversals or Adjustments
+Benefit Effective Date,Profile,9(8),N,8,464,-,471,N,Y ,The benefit period effective date which applies to this transaction,CCYYMMDD,CCYYMMDD,"Express Scripts does not use this date, it is informational only.  It should not be used for determining the benefit period for which claims can be applied (the Date of Service MUST be used for this purpose). If no date or an invalid date is sent, Express Scripts will Default this field  to 1/1/2001. Not populated outbound from Express Scripts for Reversals or Adjustments  
+If the group has a carryover period, the informational benefit start date on the Rx transaction will be backdated to the beginning of the carryover period.  For  example, transactions for a group with a 4th quarter carryover and a benefit start date of 1/1,  will show a benefit start date of 10/1 on the Rx transaction "
+Benefit Termination Date,Profile,9(8),N,8,472,-,479,N,Y ,The benefit period expiration date which applies to this transaction,CCYYMMDD,CCYYMMDD,"Express Scripts does not use this date, it is informational only.  It should not be used for determining the benefit period for which claims can be applied (the Date of Service MUST be used for this purpose). If no date or an invalid date is sent, Express Scripts will Default this field  to 1/1/2001. Not populated outbound from Express Scripts for Reversals or Adjustments  "
+Accumulator Change Source Code,Profile,X(1),AN,1,480,-,480,N,Y ,Identifies the channel that was used in processing the claim,Spaces,"C = Card
+D =Direct
+M = Mail
+",
+Transaction ID,Profile,X(30),AN,30,481,-,510,Y,Y ,Unique identifier of a claim,"ID assigned by the Partner
+default to zeros
+Express Scripts stores this value for use in Reconciliation processing only if explicitly requested by the CDH Partner
+",Populated with the unique Express Scripts Adjudicated Claim ID,"This corresponds to the Claim ID number passed on the client’s claim billing file.
+Note:  Claim ID is set to zeros for flat adjustments. Partner does not need to validate this field, it is for Express Scripts use only.
+"
+Transaction ID Cross Reference,Profile,X(30),AN,30,511,-,540,Y,Y ,Identifies the original or related claim on a  reversal or paired adjustment ,"ID assigned by the Partner
+default to zeros
+Express Scripts stores this value for use in Reconciliation processing only if explicitly requested by the CDH Partner
+",Only populated on reversals and paired adjustments; contains the Transaction Id of the original transaction that was reversed/adjusted,"When Express Scripts is the originator, and a flat adjustment occurs, the value will Default to zeros."
+Adjustment Reason Code,Profile,X(1),AN,1,541,-,541,N,N,Identifies the type of adjustment reported,Spaces,"F = Flat Adjustment
+P = Paired Adjustment
+S = Standard Adjustment
+
+",This field is used internally at Express Scripts.  Partners can ignore this field regardless of whether they are the receiver or originator.
+Accumulator Reference Time Stamp,Profile,X(26),AN,26,542,-,567,N,N,,Spaces,Spaces,"Required if necessary to indicate the date and time of the accumulator adjustment.
+Format: CCYY-MM-DD-HH.MM.SS.mmmmmm  
+
+"
+Reserved,Profile,X(13),AN,13,568,-,580,N,N,,Spaces,Express Scripts Use Only,"If populated by Express Scripts, Partner should ignore."
+Cardholder ID,Eligibility,X(20),AN,20,581,-,600,Y,Y,Primary or Alternate Identifier of the Cardholder ID ,Subscriber ID or Client Account Number stored in Express Scripts Eligibility,Express Scripts Client Account Number,The values for this field and the Partner Subscriber Id field depend on how the client’s eligibility is stored on the Express Scripts system. See Eligibility section below.
+Group ID,Eligibility,X(15),AN,15,601,-,615,Y,Y,Express Scripts eligibility Group Number,Express Scripts Group number or Express Scripts Umbrella Group number ,Express Scripts Group Number,
+Patient First Name,Eligibility,X(25),AN,25,616,-,640,Y,Y,Patient’s first name,Patient’s First Name,Patient’s First Name,Outbound Pharmacy File: Only the 1st 15 positions from Eligibility are populated.
+Middle Initial,Eligibility,X(1),AN,1,641,-,641,N,N,Middle Intial,Patients Middle Initial or Spaces if not available,Patients Middle Initial or Spaces if not available,
+Patient Last Name,Eligibility,X(35),AN,35,642,-,676,Y,Y,Patient’s last name,Patient’s Last Name,Patient’s Last Name,Outbound Pharmacy File: Only the 1st 15 positions from Eligibility are populated.
+Patient Relationship Code,Eligibility,X(1),AN,1,677,-,677,Y,Y,Identifies the patient’s relationship to the subscriber,"1 = Subscriber
+2 = Spouse
+3 = Dependent
+5= Student
+6 = Disabled Dependent
+7 = Adult Dependent
+8 = Domestic Partner
+
+
+","1 = Subscriber
+2 = Spouse
+3 = Dependent
+5= Student
+6 = Disabled Dependent
+7 = Adult Dependent
+8 = Domestic Partner
+
+
+",
+Date of Birth,Eligibility,9(8),N,8,678,-,685,Y,Y,Patient’s birthdate,CCYYMMDD,CCYYMMDD,
+Patient Gender Code,Eligibility,X(1),AN,1,686,-,686,Y,Y,Patient’s gender,"0 = Unknown
+1 = Male
+2 = Female
+3 = Non-Binary","0 = Unknown
+1 = Male
+2 = Female",
+Patient State/Province Address,Eligibility,X(2),AN,2,687,-,688,N,N,Subscriber’s state of residence,Standard postal abbreviations used,Standard postal abbreviations used,
+Cardholder Last Name,Eligibility,X(35),AN,35,689,-,723,N,N,Subscriber’s last name,Can be used when the patient’s last name is different from the subscriber,Express Scripts will always populate with subscriber’s last name from eligibility files,Outbound Pharmacy File: Only the 1st 15 positions from Eligibility are populated.
+Carrier Number,Eligibility,X(9),AN,9,724,-,732,N,Y,Express Scripts Carrier Number assigned to the client and associated with the group from which the claim paid,Spaces,Express Scripts Carrier Number,The Carrier Number is an overall client  identifier within the Express Scripts system. Not populated for Reversals or Adjustments
+Contract Number,Eligibility,X(15),AN,15,733,-,747,N,Y,Express Scripts Contract Number associated with the group from which the claim paid,Spaces,Express Scripts Contract Number,The Contract Number is part of the client’s account structure and typically identifies a particular subset of the client’s population. Not populated for Reversals or Adjustments
+Client Pass Through,Eligibility,X(50)   ,AN,50,748,-,797,N,N,Reporting field stored in Express Scripts eligibility ,Spaces,Eligibility Passthru   ,"This field holds two parts of Elig Data.  The first 35 bytes holds the pass through data and the last 15 hold the locator data.
+Pass Through: Pos 748 - 782
+Locator: Pos 783 - 797"
+Family ID,Eligibility,X(20),AN,20,798,-,817,N,N,,Spaces,,
+Cardholder ID (Alternate),Eligibility,X(20),AN,20,818,-,837,N,N,Primary or Alternate Identifier of the Cardholder ID ,Spaces (not used in any manner to identify a claim) ,Express Scripts Subscriber ID,"This field may be  used to build  subscriber number cross reference between Express Scripts and Trading Partner;More typically it is used to pass an Alternate ID Number to the Partner.
+The outbound values for this field and the Subscriber Id field depend on how the client’s eligibility is stored on the Express Scripts system. See Eligibility section below."
+Group ID (Alternate),Eligibility,X(15),AN,15,838,-,852,N,N,Primary or Alternate Identifier of the Client,Spaces or populate with Express Scripts Group Number or Client Policy Number as assigned by Express Scripts or by Partner,Express Scripts Group Number or Client Policy Number as assigned by Express Scripts or by Partner,The values for this field and the Subscriber Id field depend on how the client’s eligibility is stored on the Express Scripts system. See Eligibility section below
+Patient ID,Eligibility,X(20),AN,20,853,-,872,N,N,Not available for use ,Spaces,Spaces, 
+Person Code ,Eligibility,X(3),AN,3,873,-,875,N,N,,Spaces,Person Number,"001=Cardholder
+002=Spouse
+003-999=Dependents and Others (including second spouses, etc.)
+"
+Reserved,Eligibility,X(90),AN,90,876,-,965,N,N,,,Express Scripts Use Only,"If populated by Express Scripts, Partner should ignore."
+Accumulator Balance Count,Request Accumulator,9(2),N,2,966,-,967,Y,Y,Identifies the number of accumulators being submitted on a transaction,Valid values are 01 –12,"Valid values are 1 – 12
+0 is not valid for standard implementation, but may be valid value depending on specific partner configuration","The number of occurrences in the Request Accumulator detail indicates the number of accumulators that will be updated.  A separate occurrence for EACH accumulator is required (i.e., Express Scripts will not apply a dollar value in an occurrence to more than one accumulator; e.g., Express Scripts would not apply dollars labeled as ‘deductible’ to any other bucket than deductible). 
+All inbound  fields for unused occurrences are not validated.  
+All outbound fields for unused occurrences are initialized to Zeroes (numeric fields) or Spaces (character fields)."
+Accumulator Specific Category Type,Request Accumulator,X(2),AN,2,968,-,969,N,N,Represents mutually defined drug type  ,Spaces unless a shared benefit specific cap is in place and applies to the transaction,Spaces unless a shared benefit specific cap is in place and applies to the transaction,"Can be used to identify a particular type of benefit, typically a combined therapy, for  which a plan maximum applies (i.e., a fertility cap)
+This field would only be populated on transactions that have impact to the benefit maximum
+For a shared lifetime cap on infertility drugs/services, Express Scripts and partner must both populate Product ID (see list below) on any claims that have impact to the combined maximum.  The sharing of any type of benefit specific cap must be reviewed with the Express Scripts CDH product and IT teams prior to implementation, as additional development work/testing may be required to support data sharing. For caps other than Infertility, appropriate Product ID’s will be assigned after discussion with the trading partner.
+Allowed values:
+
+'6 '            -              'CHEMOSPLTY' 
+'3 ’            -               ‘DIABETES’
+‘8 ’            -               'INFERTILIT'          
+‘E ’           -               ‘SMOKINGCES'      
+‘F '           -               'SPECIALTY'
+‘A ’          -                'MENTALHLTH'
+‘4 ’           -               'AUTISMDRUG'
+‘D ’          -               'CHEMOTHERA'
+'AA'            -             'MEDPARTB'
+'CC'            -             ''DME'
+'I '              -              'WEIGHTLOSS' 
+(Note that single character codes require a trailing space.)"
+Reserved,Request Accumulator,X(20),AN,20,970,-,989,N,N,,Spaces,Express Scripts Use Only, 
+Accumulator Balance Qualifier 1,Request Accumulator,X(2),AN,2,990,-,991,Y,Y,Identifies to which account or accumulator the dollars should be applied,"02 = HRA
+04 = Deductible
+05 = Out of pocket
+06 = Cap
+07 = Lifetime Cap
+08 = Drug-specific Cap
+14 = Benefit specific DED (Modular Platform Only)
+15 = Benefit specific OOP (Modular Platform Only)
+24 = Base Deductible (for  use in subsidy calc)
+25 = Base Out of Pocket
+(for  use in subsidy calc)
+35  = TMOOP","02 = HRA
+04 = Deductible
+05 = Out of pocket
+06 = Cap
+07 = Lifetime Cap
+08 = Drug-specific Cap
+14 = Benefit specific DED (Modular Platform Only)
+15 = Benefit specific OOP (Modular Platform Only)
+24 = Base Deductible (for  use in subsidy calc)
+25 =  Base Out of Pocket
+(for  use in subsidy calc)
+35 = TMOOP","If the Accumulator Balance Count field indicates that an occurrence of this field will be populated,  Do not populate this field with Spaces on a USED occurrence as this will be flagged as an error.
+Repeating field, occurs up to six (6) times.
+
+See comment in Accumulator Balance Count field regarding unused occurrences.
+
+A type 08 would be used to share a cap (benefit maximum) for a combined therapy, such as infertility.  Note that the sharing of any benefit specific/combined therapy cap must be reviewed with the Express Scripts CDH product and IT teams prior to implementation, as additional development work/testing may be required to support data sharing.
+
+
+"
+Accumulator Network Indicator 1,Request Accumulator,X(1),AN,1,992,-,992,Y,Y,Identifies account type from which the amount is drawn and applied by originator,"1 = In Network (Default)
+2 = Out of Network
+3 = Combined
+5 = INN House
+
+","1 = In Network (Default)
+2 = Out of Network
+3 = Combined
+5 = INN House
+
+","Repeating field, occurs up to six (6) times.
+See comment in Accumulator Balance Count field regarding unused occurrences. 
+Note that this field indicates which accumulator  level the associated amount should be applied to, whereas the In Network Indicator (position 409)  indicates if the Provider is in Network or Out of Network.  If separate In and Out of  Network dollars are being accumulated for a client, this field should be discussed further with Express Scripts. 
+
+"
+Accumulator Applied Amount 1,Request Accumulator,9(10),D2,10,993,-,1002,Y,Y,The amount to be added to or subtracted from specified account or accumulator,Amount to be added to or subtracted from account or accumulator,Amount to be added to or subtracted from account or accumulator,"This field is not used to populate HRA initial balance amount (see Accumulator Remaining Balance )
+Repeating field, occurs up to six (6) times.
+See comment in Accumulator Balance Count “field regarding unused occurrences."
+Action Code 1,Request Accumulator,X(1),AN,1,1003,-,1003,Y,Y,Indicates whether dollars in the current amount are positive or negative,"Populate with ‘+’, ‘-‘, 'B'  or 'R' as appropriate ",Populate with ‘+’ or ‘-‘ as appropriate,"A ‘+’ indicates that the current amount should be deducted from the remaining amount available, e.g., a claim that utilizes DED, OOP, cap or spending account
+A ‘-‘ indicates that the current amount should be added to the remaining amount available e.g., a reversal that restores dollars used from the original claim
+Repeating field, occurs up to six (6) times.
+See comment in Accumulator Balance Count  field regarding unused occurrences."
+Accumulator Benefit Period Amount 1,Request Accumulator,9(10),D2,10,1004,-,1013,N,N,Total accumulated dollars to date for the specified account or accumulator,"Total accumulated dollars to date for the specified account or accumulator
+Not required on standard implementations.",Total accumulated dollars to date for the specified account or accumulator,"Related response codes:  25 &  29 Repeating field, occurs up to six (6) times. This field was not designed to be used for Reconciliation, and Express Scripts recommends against doing so, due to potential inconsistencies.
+See comment in Accumulator Balance Count  field regarding unused occurrences   
+This field may not reflect Reversal and Adjustment dollars..  It is for informational purposes only and can not be relied on for financial posting."
+Action Code 1,Request Accumulator,X(1),AN,1,1014,-,1014,N,N,,"Populate with ‘+’, ‘-‘, 'B'  or 'R' as appropriate ",Populate with ‘+’ or ‘-‘ as appropriate,Required if Accumulator Benefit Period Amount (XXX) is exchanged.
+Accumulator Remaining Balance 1,Request Accumulator,9(10),D2,10,1015,-,1024,N,N,The amount remaining to be satisfied for the specified account or accumulator,"The amount remaining to be satisfied for the specified account or accumulator
+Not required on standard implementations except as noted in comments.",The amount remaining to be satisfied for the specified account or accumulator,"This field is not required, except for HRA initial balance records.  To pass an initial balance, use Accumulator Action Code  = 01 and populate the balance amount in the Remaining Amount field.
+Repeating field, occurs up to six (6) times.  
+This field was not designed to be used for Reconciliation, and Express Scripts recommends against doing so, due to potential inconsistencies. See comment in Accumulator Balance Count  field regarding unused occurrences. 
+This field may not reflect Reversal and Adjustment dollars..  It is for informational purposes only and can not be relied on for financial posting."
+Action Code 1,Request Accumulator,X(1),AN,1,1025,-,1025,N,N,,"Populate with ‘+’, ‘-‘, 'B'  or 'R' as appropriate ",Populate with ‘+’ or ‘-‘ as appropriate,Required if Accumulator Remaining Balance is exchanged
+Accumulator Balance Qualifier 2,Request Accumulator,X(2),AN,2,1026,-,1027,Y,Y,,Default to Spaces,Default to Spaces,"IF Accumulator Balance Count   > 1: see definition, values and comments in Accumulator Balance Qualifier 1"
+ Accumulator Network Indicator 2,Request Accumulator,X(1),AN,1,1028,-,1028,Y,Y,,Default to Spaces,Default to Spaces,"IF Accumulator Balance Count   > 1: see definition, values and comments in Accumulator Network Indicator 1"
+Accumulator Applied Amount 2,Request Accumulator,9(10),D2,10,1029,-,1038,Y,Y,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 1: see definition, values and comments in Accumulator Applied Amount 1"
+Action Code 2,Request Accumulator,X(1),AN,1,1039,-,1039,Y,Y,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 1
+Accumulator Benefit Period Amount 2,Request Accumulator,9(10),D2,10,1040,-,1049,N,N,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 1: see definition, values and comments in Accumulator Benefit Period 1"
+Action Code 2,Request Accumulator,X(1),AN,1,1050,-,1050,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 1: Required if Accumulator Benefit Period Amount (XXX) is exchanged.
+Accumulator Remaining Balance 2,Request Accumulator,9(10),D2,10,1051,-,1060,N,N,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 1: see definition, values and comments in Accumulator Remaining Balance 1"
+Action Code 2,Request Accumulator,X(1),AN,1,1061,-,1061,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 1
+Accumulator Balance Qualifier 3,Request Accumulator,X(2),AN,2,1062,-,1063,Y,Y,,Default to Spaces,Default to Spaces,"IF Accumulator Balance Count   > 2: see definition, values and comments in Accumulator Balance Qualifier 1"
+ Accumulator Network Indicator 3,Request Accumulator,X(1),AN,1,1064,-,1064,Y,Y,,Default to Spaces,Default to Spaces,"IF Accumulator Balance Count   > 2: see definition, values and comments in Accumulator Network Indicator 1"
+Accumulator Applied Amount 3,Request Accumulator,9(10),D2,10,1065,-,1074,Y,Y,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 2: see definition, values and comments in Accumulator Applied Amount 1"
+Action Code 3,Request Accumulator,X(1),AN,1,1075,-,1075,Y,Y,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 2
+Accumulator Benefit Period Amount 3,Request Accumulator,9(10),D2,10,1076,-,1085,N,N,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 2: see definition, values and comments in Accumulator Benefit Period 1"
+Action Code 3,Request Accumulator,X(1),AN,1,1086,-,1086,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 2: Required if Accumulator Benefit Period Amount (XXX) is exchanged.
+Accumulator Remaining Balance 3,Request Accumulator,9(10),D2,10,1087,-,1096,N,N,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 2: see definition, values and comments in Accumulator Remaining Balance 1"
+Action Code 3,Request Accumulator,X(1),AN,1,1097,-,1097,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 2
+Accumulator Balance Qualifier 4,Request Accumulator,X(2),AN,2,1098,-,1099,Y,Y,,Default to Spaces,Default to Spaces,"IF Accumulator Balance Count   > 3: see definition, values and comments in Accumulator Balance Qualifier 1"
+ Accumulator Network Indicator 4,Request Accumulator,X(1),AN,1,1100,-,1100,Y,Y,,Default to Spaces,Default to Spaces,"IF Accumulator Balance Count   > 3: see definition, values and comments in Accumulator Network Indicator 1"
+Accumulator Applied Amount 4,Request Accumulator,9(10),D2,10,1101,-,1110,Y,Y,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 3: see definition, values and comments in Accumulator Applied Amount 1"
+Action Code 4,Request Accumulator,X(1),AN,1,1111,-,1111,Y,Y,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 3
+Accumulator Benefit Period Amount 4,Request Accumulator,9(10),D2,10,1112,-,1121,N,N,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 3: see definition, values and comments in Accumulator Benefit Period 1"
+Action Code 4,Request Accumulator,X(1),AN,1,1122,-,1122,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 3: Required if Accumulator Benefit Period Amount (XXX) is exchanged.
+Accumulator Remaining Balance 4,Request Accumulator,9(10),D2,10,1123,-,1132,N,N,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 3: see definition, values and comments in Accumulator Remaining Balance 1"
+Action Code 4,Request Accumulator,X(1),AN,1,1133,-,1133,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 3
+Accumulator Balance Qualifier 5,Request Accumulator,X(2),AN,2,1134,-,1135,Y,Y,,Default to Spaces,Default to Spaces,"IF Accumulator Balance Count   > 4: see definition, values and comments in Accumulator Balance Qualifier 1"
+ Accumulator Network Indicator 5,Request Accumulator,X(1),AN,1,1136,-,1136,Y,Y,,Default to Spaces,Default to Spaces,"IF Accumulator Balance Count   > 4: see definition, values and comments in Accumulator Network Indicator 1"
+Accumulator Applied Amount 5,Request Accumulator,9(10),D2,10,1137,-,1146,Y,Y,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 4: see definition, values and comments in Accumulator Applied Amount 1"
+Action Code 5,Request Accumulator,X(1),AN,1,1147,-,1147,Y,Y,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 4
+Accumulator Benefit Period Amount 5,Request Accumulator,9(10),D2,10,1148,-,1157,N,N,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 4: see definition, values and comments in Accumulator Benefit Period 1"
+Action Code 5,Request Accumulator,X(1),AN,1,1158,-,1158,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 4: Required if Accumulator Benefit Period Amount (XXX) is exchanged.
+Accumulator Remaining Balance 5,Request Accumulator,9(10),D2,10,1159,-,1168,N,N,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 4: see definition, values and comments in Accumulator Remaining Balance 1"
+Action Code 5,Request Accumulator,X(1),AN,1,1169,-,1169,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 4
+Accumulator Balance Qualifier 6,Request Accumulator,X(2),AN,2,1170,-,1171,Y,Y,,Default to Spaces,Default to Spaces,"IF Accumulator Balance Count   > 5: see definition, values and comments in Accumulator Balance Qualifier 1"
+ Accumulator Network Indicator 6,Request Accumulator,X(1),AN,1,1172,-,1172,Y,Y,,Default to Spaces,Default to Spaces,"IF Accumulator Balance Count   > 5: see definition, values and comments in Accumulator Network Indicator 1"
+Accumulator Applied Amount 6,Request Accumulator,9(10),D2,10,1173,-,1182,Y,Y,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 5: see definition, values and comments in Accumulator Applied Amount 1"
+Action Code 6,Request Accumulator,X(1),AN,1,1183,-,1183,Y,Y,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 5
+Accumulator Benefit Period Amount 6,Request Accumulator,9(10),D2,10,1184,-,1193,N,N,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 5: see definition, values and comments in Accumulator Benefit Period 1"
+Action Code 6,Request Accumulator,X(1),AN,1,1194,-,1194,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 5: Required if Accumulator Benefit Period Amount (XXX) is exchanged.
+Accumulator Remaining Balance 6,Request Accumulator,9(10),D2,10,1195,-,1204,N,N,,Default to Zeros,Default to Zeros,"IF Accumulator Balance Count   > 5: see definition, values and comments in Accumulator Remaining Balance 1"
+Action Code 6,Request Accumulator,X(1),AN,1,1205,-,1205,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count    > 5
+Reserved,Request Accumulator,X(24),AN,24,1206,-,1229,N,N,,Spaces,Express Scripts Use Only,"FUTURE USE.  If populated by Express Scripts, Partner should ignore."
+Accumulator Balance Qualifier 7,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(2),AN,2,1230,-,1231,N,N,Identifies to which accumulator the dollars should be applied,Spaces,"00 = Not specified
+02 = HRA
+04 = Deductible
+05 = Out of pocket
+06 = Benefit Cap
+","Repeating field, occurs up to six (6) times."
+Accumulator Network Indicator 7,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1232,-,1232,N,N,Identifies account type from which the amount is drawn and applied by originator,Spaces,Spaces,"Repeating field, occurs up to 6 times.
+See comments in Accumulator Balance Count field regarding inbound fields and unused occurrences."
+Accumulator Applied Amount 7,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1233,-,1242,N,N,The amount to be applied to or subtracted from the type of benefit account accumulator,Default to Zeros,Zeroes,"Repeating field, occurs up to six (6) times
+See comments in Accumulator Balance Count field regarding inbound fields and unused occurrences."
+Action Code 7,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1243,-,1243,N,N,Filed indicates whether dollars in the current amount are positive or negative,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate","Repeating field, occurs up to six (6) times
+See comments in Accumulator Balance Count  field regarding inbound fields and unused occurrences."
+Accumulator Benefit Period Amount 7,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1244,-,1253,N,N,Total accumulated dollars to date for the type of benefit accumulator,Default to Zeros,"Accumulated total for DED/CAP/OOP
+Computed from the accumulated amount for benefit type Express Scripts is attempting to process i.e. HRA would reflect HRA accumulated amt","Repeating field, occurs up to six (6) times. This field was not designed to be used for Reconciliation, and Express Scripts recommends against doing so, due to potential. Inconsistencies."
+Action Code 7,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1254,-,1254,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 6
+Accumulator Remaining Balance 7,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1255,-,1264,N,N,The amount remaining to be satisfied or available for the type of benefit accumulator,Default to Zeros,Spaces,"Repeating field, occurs up to six (6) times.  This field was not designed to be used for Reconciliation, and Express Scripts recommends against doing so, due to potential. Inconsistencies.
+See comments in Accumulator Balance Count field regarding inbound fields and unused occurrences."
+Action Code 7,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1265,-,1265,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 6
+Accumulator Balance Qualifier 8,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(2),AN,2,1266,-,1267,N,N,,Default to Spaces,Default to Spaces,IF Accumulator Balance Count   > 7
+Accumulator Network Indicator 8,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1268,-,1268,N,N,,Default to Spaces,Default to Spaces,IF Accumulator Balance Count   > 7
+Accumulator Applied Amount 8,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1269,-,1278,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 7
+Action Code 8,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1279,-,1279,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 7
+Accumulator Benefit Period Amount 8,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1280,-,1289,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 7
+Action Code 8,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1290,-,1290,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 7
+Accumulator Remaining Balance 8,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1291,-,1300,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 7
+Action Code 8,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1301,-,1301,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 7
+Accumulator Balance Qualifier 9,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(2),AN,2,1302,-,1303,N,N,,Default to Spaces,Default to Spaces,IF Accumulator Balance Count   > 8
+Accumulator Network Indicator 9,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1304,-,1304,N,N,,Default to Spaces,Default to Spaces,IF Accumulator Balance Count   > 8
+Accumulator Applied Amount 9,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1305,-,1314,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 8
+Action Code 9,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1315,-,1315,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 8
+Accumulator Benefit Period Amount 9,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1316,-,1325,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 8
+Action Code 9,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1326,-,1326,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 8
+Accumulator Remaining Balance 9,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1327,-,1336,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 8
+Action Code 9,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1337,-,1337,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 8
+Accumulator Balance Qualifier 10,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(2),AN,2,1338,-,1339,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 9
+Accumulator Network Indicator 10,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1340,-,1340,N,N,,Default to Spaces,Default to Spaces,IF Accumulator Balance Count   > 9
+Accumulator Applied Amount 10,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1341,-,1350,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 9
+Action Code 10,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1351,-,1351,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 9
+Accumulator Benefit Period Amount 10,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1352,-,1361,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 9
+Action Code 10,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1362,-,1362,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 9
+Accumulator Remaining Balance 10,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1363,-,1372,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 9
+Action Code 10,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1373,-,1373,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 9
+Accumulator Balance Qualifier 11,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(2),AN,2,1374,-,1375,N,N,,Default to Spaces,Default to Spaces,IF Accumulator Balance Count   > 10
+Accumulator Network Indicator 11,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1376,-,1376,N,N,,Default to Spaces,Default to Spaces,IF Accumulator Balance Count   > 10
+Accumulator Applied Amount 11,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1377,-,1386,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 10
+Action Code 11,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1387,-,1387,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 10
+Accumulator Benefit Period Amount 11,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1388,-,1397,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 10
+Action Code 11,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1398,-,1398,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 10
+Accumulator Remaining Balance 11,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1399,-,1408,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 10
+Action Code 11,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1409,-,1409,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 10
+Accumulator Balance Qualifier 12,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(2),AN,2,1410,-,1411,N,N,,Default to Spaces,Default to Spaces,IF Accumulator Balance Count   > 11
+Accumulator Network Indicator 12,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1412,-,1412,N,N,,Default to Spaces,Default to Spaces,IF Accumulator Balance Count   > 11
+Accumulator Applied Amount 12,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1413,-,1422,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 11
+Action Code 12,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1423,-,1423,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 11
+Accumulator Benefit Period Amount 12,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1424,-,1433,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 11
+Action Code 12,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1434,-,1434,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 11
+Accumulator Remaining Balance 12,Request Accumulator 7-12 or Response Accumulator for Reconciliation,9(10),D2,10,1435,-,1444,N,N,,Default to Zeros,Default to Zeros,IF Accumulator Balance Count   > 11
+Action Code 12,Request Accumulator 7-12 or Response Accumulator for Reconciliation,X(1),AN,1,1445,-,1445,N,N,,"Default to Spaces or populate with: ‘+’, ‘-‘, 'B'  or 'R' as appropriate","Default to Space. ESI will populate with '+' or ""-"" as appropriate",IF Accumulator Balance Count   > 11
+Optional Data Indicator,Not supported: Optional Information Only,X(1),AN,1,1446,-,1446,N,N,Indicates whether Express Scripts is providing the Optional Information Only segment,Populate with space or N (not sent) ,Governed by trading partner agreement,"Optional Information Only segment applies to outbound transactions only and is not available to all partners; partner may need to sign a confidentiality agreement in order to receive this Segment.  When available, it identifies additional pharmacy claim data.  "
+Total Amount Paid,Not supported: Optional Information Only,9(10),D2,10,1447,-,1456,N,N,,Default to Zeros,Total Approved Amount (total cost of the claim),"Note that these amounts should only be used for displaying benefit information, and should not be used for calculating accumulator amounts."
+Action Code 1,Not supported: Optional Information Only,X(1),AN,1,1457,-,1457,N,N,,Default to Spaces,Populate with ‘+’ or ‘-‘ as appropriate,Used in Outbound Pharmarcy records only and if Optional Information Section is configured to be provided
+Amount of Copay,Not supported: Optional Information Only,9(10),D2,10,1458,-,1467,N,N,,Default to Zeros,Normal copay /  coinsurance,"Note that these amounts should only be used for displaying benefit information, and should not be used for calculating accumulator amounts."
+Action Code 2,Not supported: Optional Information Only,X(1),AN,1,1468,-,1468,N,N,,Default to Spaces,Populate with ‘+’ or ‘-‘ as appropriate,Used in Outbound Pharmarcy records only and if Optional Information Section is configured to be provided
+Patient Pay Amount,Not supported: Optional Information Only,9(10),D2,10,1469,-,1478,N,N,,Default to Zeros,"Total patient’s 
+Responsibility (what the patient paid at the pharmacy) Equals the sum of Copay/Coinsurance, Sales Tax, Deductible, Brand/Generic Difference, and CAP Exceeded","Note that these amounts should only be used for displaying benefit information, and should not be used for calculating accumulator amounts."
+Action Code 3,Not supported: Optional Information Only,X(1),AN,1,1479,-,1479,N,N,,Default to Spaces,Populate with ‘+’ or ‘-‘ as appropriate,Used in Outbound Pharmarcy records only and if Optional Information Section is configured to be provided
+Amount Attributed to Product Selection/Brand,Not supported: Optional Information Only,9(10),D2,10,1480,-,1489,N,N,,Default to Zeros,"Patient penalty 
+Amount  (will not be passed for D.0 claims)","Note that these amounts should only be used for displaying benefit information, and should not be used for calculating accumulator amounts."
+Action Code 4,Not supported: Optional Information Only,X(1),AN,1,1490,-,1490,N,N,,Default to Spaces,Populate with ‘+’ or ‘-‘ as appropriate,Used in Outbound Pharmarcy records only and if Optional Information Section is configured to be provided
+Amount Attributed to Sales Tax,Not supported: Optional Information Only,9(10),D2,10,1491,-,1500,N,N,,Default to Zeros,Sales Tax,"Note that these amounts should only be used for displaying benefit information, and should not be used for calculating accumulator amounts."
+Action Code 5,Not supported: Optional Information Only,X(1),AN,1,1501,-,1501,N,N,,Default to Spaces,Populate with ‘+’ or ‘-‘ as appropriate,Used in Outbound Pharmarcy records only and if Optional Information Section is configured to be provided
+Amount Attributed to Processor Fee,Not supported: Optional Information Only,9(10),D2,10,1502,-,1511,N,N,,Default to Zeros,Dispensing Fee,"Note that these amounts should only be used for displaying benefit information, and should not be used for calculating accumulator amounts."
+Action Code 6,Not supported: Optional Information Only,X(1),AN,1,1512,-,1512,N,N,,Default to Spaces,Populate with ‘+’ or ‘-‘ as appropriate,Used in Outbound Pharmarcy records only and if Optional Information Section is configured to be provided
+Gross Amount Due,Not supported: Optional Information Only,9(10),D2,10,1513,-,1522,N,N,,Default to Zeros,"Charged Amount (pharmacy submitted amount or, for directs, member submitted amount)","Note that these amounts should only be used for displaying benefit information, and should not be used for calculating accumulator amounts."
+Action Code 7,Not supported: Optional Information Only,X(1),AN,1,1523,-,1523,N,N,,Default to Spaces,Populate with ‘+’ or ‘-‘ as appropriate,Used in Outbound Pharmarcy records only and if Optional Information Section is configured to be provided
+Invoiced Amount,Not supported: Optional Information Only,9(10),D2,10,1524,-,1533,N,N,,Default to Zeros,Net Check Amount (amount billed to client for claim),"Note that these amounts should only be used for displaying benefit information, and should not be used for calculating accumulator amounts."
+Action Code 8,Not supported: Optional Information Only,X(1),AN,1,1534,-,1534,N,N,,Default to Spaces,Populate with ‘+’ or ‘-‘ as appropriate,Used in Outbound Pharmarcy records only and if Optional Information Section is configured to be provided
+Penalty Amount,Not supported: Optional Information Only,9(10),D2,10,1535,-,1544,N,N,,Default to Zeros,Brand/generic difference,"Note that these amounts should only be used for displaying benefit information, and should not be used for calculating accumulator amounts."
+Action Code 9,Not supported: Optional Information Only,X(1),AN,1,1545,-,1545,N,N,,Default to Spaces,Populate with ‘+’ or ‘-‘ as appropriate,Used in Outbound Pharmarcy records only and if Optional Information Section is configured to be provided
+Reserved,Not supported: Optional Information Only,X(23),AN,23,1546,-,1568,N,N,,Default to Spaces,Express Scripts Use Only,"Express Scripts Use Only.  If populated by Express Scripts, Partner should ignore."
+Product / Service Id Qualifier,Not supported: Optional Information Only,X(2),AN,2,1569,-,1570,N,N,Identifies the type of product or service,Default to Spaces,03 = NDC Code,"Spaces by Default, must be requested and requires a signed Confidentiality Agreement.   Otherwise field will be Spaces."
+Product / Service Id,Not supported: Optional Information Only,X(19),AN,19,1571,-,1589,N,N,Identifies the Product or Service,Default to Spaces,Actual NDC,"Spaces by Default, must be requested and requires a signed Confidentiality Agreement.  Otherwise field will be Spaces"
+Days Supply,Not supported: Optional Information Only,9(3),N,3,1590,-,1592,N,N,The Days Supply for the drug dispensed ,Default to Zeros,Days Supply of Rx claim processed,
+Quantity Dispense,Not supported: Optional Information Only,9(10),D3,10,1593,-,1602,N,N,The metric decimal quantity of the drug dispensed ,Default to Zeros,Quantity of RX dispensed ,
+Product / Service Name,Not supported: Optional Information Only,X(30),AN,30,1603,-,1632,N,N,,Default to Spaces,Drug Name,"Spaces by Default, must be requested and requires a signed Confidentiality Agreement..  Otherwise field will be Spaces.  For claims for compounds in version D.0, drug name will be populated with “COMPOUND”."
+Brand/Generic Indicator,Not supported: Optional Information Only,X(1),AN,1,1633,-,1633,N,N,Identifies if the drug was a brand or generic,Default to Spaces,"B = Brand
+G = Generic
+M = Multi-Source
+",
+Therapeutic Class Code Qualifier,Not supported: Optional Information Only,X(1),AN,1,1634,-,1634,N,N,,Default to Spaces,Default to Spaces,
+Therapeutic Class Code – Specific,Not supported: Optional Information Only,X(17),AN,17,1635,-,1651,N,N,Specific classification of drug for users needing a definitive therapeutic classification system.,Default to Spaces,Therapeutic Class Code of drug dispensed,Will not be passed for compound claims in version D.0.
+Dispensed As Written (DAW)/Product Selection,Not supported: Optional Information Only,X(1),AN,1,1652,-,1652,N,N,Code indicating whether or not the transcriber’s instructions regarding generic substitution were followed,Default to Spaces,"0 – no product selection indicated
+1 – substitution not allowed by prescribe
+2 – substitution allowed; patient requested product dispensed
+3 – Substitution allowed; pharmacist selected product dispensed.
+4- substitution allowed; generic drug not in stock
+5- substitution allowed; brand drug dispensed as generic
+6- override
+7- substitution not allowed; brand drug mandated by law
+8- substitution allowed; generic drug not available in marketplace
+9 – other
+",
+Reserved,Not supported: Optional Information Only,X(48),AN,48,1653,-,1700,N,N, ,Spaces,Express Scripts Use Only,"Express Scripts Use Only
+If populated by Express Scripts, Partner should ignore."

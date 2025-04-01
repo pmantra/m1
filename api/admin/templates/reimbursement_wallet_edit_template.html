@@ -1,0 +1,33 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    {{ super() }}
+
+    {% if model %}
+        <h3>Maven Benefit ID</h3>
+        <p>
+            {% if member_benefits %}
+                <table class="table table-bordered">
+                    <thead>
+                        <th>Wallet User ID</th>
+                        <th>Benefit ID</th>
+                    </thead>
+                    <tbody>
+                    {% for member_benefit in member_benefits %}
+                    <tr>
+                        <td>{{ member_benefit.user_id }}</td>
+                        <td>{{ member_benefit.benefit_id }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% elif wallet_benefit_id %}
+                {{ wallet_benefit_id }}
+            {% else %}
+                None
+            {% endif %}
+        </p>
+    {% endif %}
+
+{% endblock %}
+

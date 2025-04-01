@@ -1,0 +1,5 @@
+type,name,amount,vendor,design_asset,active
+Welcome box,Maven Welcome Box,,Maven,Welcome box,TRUE
+Gift card,$25 Amazon Gift Card,25,Amazon,Amazon gift card,TRUE
+Gift card,$20 Amazon Gift Card,20,Amazon,Amazon gift card,TRUE
+Gift card,$25 Walmart Gift Card,25,Walmart,Generic gift card,TRUE

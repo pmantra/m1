@@ -1,0 +1,99 @@
+{% extends 'admin/model/edit.html' if model else 'admin/model/create.html' %}
+
+{% block edit_form %}
+    {{ super() }}
+    {%  if model %}
+        <hr>
+        <h3>Sub-Populations</h3>
+        <form method="post"
+              action="/admin/backfill_org_sub_populations"
+              onsubmit="return confirm('Please do not apply a sub-population backfill without first consulting with the Eligibility team to confirm the sub-population configurations. Are you sure you want to apply this backfill?');"
+        >
+            <a href="/eligibility-admin/population/organization/{{ model.id }}/" class="btn btn-info">Configure sub-populations</a>
+            <input type="hidden" id="organization_id" name="organization_id" value="{{ model.id }}">
+            <input type="submit"
+                   class="btn btn-warning"
+                   id="backfill_submit_button"
+                   name="submit"
+                   value="Backfill member track sub-population IDs"
+            >
+        </form>
+        <hr>
+    {%  endif %}
+{% endblock %}
+
+{% block tail_js %}
+{{ super() }}
+
+<script type="text/javascript">
+    function filterLengthOptionsByTrack() {
+        // This method exists so that users can edit the "Track" and "Length In Days" properties
+        // of client tracks and prevent them from getting out of sync
+        const hasSetupListenerByForm = {};
+        function setupAllClientTrackForms() {
+            const clientTrackForms = $("div[id^='client_tracks-'].inline-field");
+            clientTrackForms.each(function() {
+                // We only want to setup each client track form once
+                if (hasSetupListenerByForm[this.id]) return;
+                hasSetupListenerByForm[this.id] = true;
+
+                const lengthSelect = $(this).find("select[id$='length_in_days']");
+                const trackSelect = $(this).find("select[id$='track']");
+                // Check preconditions: there should be values in both these selects
+                if (lengthSelect.length < 1 || trackSelect.length < 1) {
+                    console.warn("Something unexpected has happened with Client Track forms -- check out the code in organization_edit.html to make sure it is still applicable");
+                    return;
+                }
+
+                // This works by keeping track of ALL options and selectively filtering as the user changes track
+                const allOptions = lengthSelect.children();
+                function getSelectedTrackName() {
+                    return trackSelect.find("option:selected").text();
+                }
+                function filterByTrack() {
+                    const track = getSelectedTrackName();
+                    lengthSelect.empty();
+                    const filteredOptions = allOptions.filter(function() {
+                        // Filter out options that are not for the selected track
+                        return $(this).text().startsWith(`[${track}]`);
+                    }).clone().text(function() {
+                        // Get rid of the [trackname] label at the beginning of the option
+                        // `[fertility] Default (128 Days)` => `Default (128 Days)`
+                        return $(this).text().replace(/\[.+\]/, "");
+                    });
+                    if (filteredOptions.length <= 1) {
+                        // Disable input if there is no more than one option
+                        lengthSelect.prop("disabled", true);
+                    } else {
+                        lengthSelect.prop("disabled", false);
+                    }
+                    filteredOptions.appendTo(lengthSelect);
+                    // We trigger a change event here so that select2 picks up changes we've made
+                    lengthSelect.trigger("change");
+                }
+                // Explicitly select the value that the backend specified
+                const selectedValue = lengthSelect.find("option:selected").attr("value");
+                filterByTrack()
+                if (selectedValue) {
+                    lengthSelect.val(selectedValue);
+                }
+                trackSelect.on("change", filterByTrack);
+                console.log("Set up client track form", this.id);
+            });
+        }
+        setupAllClientTrackForms();
+
+        // Make sure to set up new client track forms that the user creates with JS
+        $("#client_tracks-button").click(() => requestAnimationFrame(setupAllClientTrackForms));
+
+        // This is dark stuff -- right before form submission, un-disable all the select fields.
+        // If we don't do this, the fields are not submitted (disabled fields are not included
+        // in form payloads)
+        $('form.admin-form').submit(() => {
+            $("select[name$='length_in_days']").prop("disabled", false);
+        });
+    }
+    requestAnimationFrame(() => filterLengthOptionsByTrack());
+</script>
+
+{% endblock %}

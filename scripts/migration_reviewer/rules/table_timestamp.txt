@@ -1,0 +1,2 @@
+Check: New tables should have "created_at" and "modified_at" columns of type timestamp. The "created_at" column should be filled with the current timestamp by default when the row is created. The "modified_at" column should be filled with the latest timestamp of a row creation or update.
+Fix: Please add "created_at" and "modified_at" columns if the check fails.

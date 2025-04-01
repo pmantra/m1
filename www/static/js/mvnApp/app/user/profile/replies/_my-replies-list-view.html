@@ -1,0 +1,7 @@
+<div class="post-list-view content">
+	<h2 class="your-reply-header h5">{{ post.parent.title | capitalize }}</h2>
+	<h2 class="h5">Your reply:</h2>
+	<post-author class="post-author" author="post.author" datetime="post.created_at"></post-author>
+	<p class="post-list-body">{{ post.body | trimString: true:200:true }}</p>
+	<p><a class="btn btn-tertiary" ui-sref="app.forum.post-detail({'post_id' : post.parent.id })">See post</a></p>
+</div>

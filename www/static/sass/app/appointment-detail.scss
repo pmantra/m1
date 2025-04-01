@@ -1,0 +1,199 @@
+/* APPOINTMENT DETAIL */
+.page-appointment .right-panel,
+.appointment-detail {
+	background: $charcoal-20;
+}
+.appointment-detail {
+	@include container;
+	section {
+		margin: 2rem auto;
+	}
+	.repeat-patient {
+		color: $gray;
+		letter-spacing: 1px;
+		font-family: $font1-it;
+		font-weight: 700;
+	}
+	.practitioner-actions {
+		.btn {
+			display: block;
+			max-width: 320px;
+			margin: 1rem auto;
+		}
+		@include susy-breakpoint($desktop) {
+			padding-bottom: 10px;
+		}
+	}
+	.appt-mins {
+		margin-bottom: 10px;
+	}
+	.appointment-info {
+		@include span(12);
+		padding: $basepadding;
+		text-align: center;
+		> div {
+			max-width: 550px;
+			margin: 0 auto;
+		}
+	}
+	.appointment-cta {
+		margin-top: 20px;
+	}
+	.appointment-complete-note {
+		background: white;
+		border: 1px solid $charcoal-40;
+		padding: $basepadding;
+		p,
+		.p {
+			white-space: pre-wrap;
+		}
+	}
+	.ios-get-app-launch-appointment {
+		background: white;
+		padding: 10px 30px;
+		border: 2px solid #d55b61;
+		margin-top: 10px;
+		img {
+			max-width: 100%;
+		}
+	}
+	.mpract-presciption-restricted {
+		color: $ui-red;
+	}
+}
+
+/* Pharmacy info modal */
+
+.ngdialog.mvndialog .ngdialog-content .pharmacy-info .btn {
+	margin-top: 0;
+	&.btn-action {
+		margin-top: 30px;
+	}
+}
+
+.searching-pharmacy {
+	form {
+		margin: 0 auto;
+		max-width: 320px;
+		input {
+			text-align: center;
+		}
+	}
+	.form-group {
+		margin: 15px 0;
+	}
+
+	.btn {
+		margin-top: 10px;
+	}
+}
+.pharmacies-list {
+	height: 270px;
+	margin-top: 30px;
+	overflow-y: scroll;
+	background-color: $macaroon-20;
+	border: 1px solid $charcoal-20;
+	padding: 10px;
+	&::-webkit-scrollbar {
+		-webkit-appearance: none;
+		width: 7px;
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+		background-color: rgba(0, 0, 0, 0.5);
+		box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+	}
+	&.pharmacies-list-empty {
+		height: auto;
+	}
+	.pharmacy-entry {
+		a {
+			display: block;
+			cursor: pointer;
+			background-color: white;
+			padding: $basepadding;
+			margin: 0 auto 10px auto;
+			border: 1px solid $charcoal-40;
+			h5,
+			h5 {
+				margin: 0;
+			}
+			h5 {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
+/* Rate appointment */
+.rate-appointment {
+	h5 {
+		font-family: $font2;
+		font-size: 18px;
+		text-transform: none;
+	}
+
+	.rating {
+		margin-bottom: 8px;
+		width: 100%;
+
+		.criteria {
+			@include flexbox(row, center, space-between);
+
+			h5 {
+				width: auto;
+			}
+
+			@keyframes star-select {
+				from {
+					transform: scale(0.9);
+				}
+
+				to {
+					transform: scale(1.05);
+				}
+			}
+
+			.star-rating {
+				margin: 0;
+				padding: 0;
+
+				li {
+					list-style-type: none;
+					list-style-image: none;
+					display: inline-block;
+					padding: 5px;
+					cursor: pointer;
+
+					.star-icon {
+						display: block;
+						height: 22px;
+						width: 22px;
+					}
+					&.filled {
+						.star-icon {
+							animation: star-select 0.35s ease;
+							fill: $emerald-50;
+						}
+					}
+				}
+			} // end star-rating
+		} // end criteria
+
+		p,
+		.p {
+			color: $charcoal-80;
+			margin-top: 0;
+		}
+	}
+	.rating-comments {
+		form {
+			margin-top: 2rem;
+			.btn {
+				text-align: center;
+				display: block;
+				top: 10px;
+			}
+		}
+	}
+}

@@ -1,0 +1,1514 @@
+Payer_Code,Payer_Name,Type,Eligibility,Claim Status
+BO00017,47198 BO,NON EDI,Yes,No
+00283,AARP (A United HealthCare Insurance Company),EDI,Yes,Yes
+DE001,AARP Dental,Dental,Yes,No
+00344,Absolute Total Care,EDI,Yes,Yes
+BO10061,ACCESS IPA BO,NON EDI,Yes,No
+BO00018,ACCESS IPA-BO,NON EDI,Yes,No
+000903,Access Medicare,EDI,Yes,No
+01410,Acclaim Inc,EDI,Yes,No
+000947,ACS Benefit Services,EDI,Yes,No
+BO00013,Adavanced Primary Care Network BO,NON EDI,Yes,No
+00468,Administrative Services Inc,EDI,Yes,No
+BO10002,ADOC aka ADVANCED DOCTORS OF ORANGE COUNTY BO,NON EDI,Yes,No
+BO10049,ADVANCED MEDICAL DOCTORS OF CA BO,NON EDI,Yes,No
+00345,Advantage by Bridgeway Health Solutions,EDI,Yes,No
+00346,Advantage by Buckeye Community Health Plan,EDI,Yes,No
+00347,Advantage by Managed Health Services,EDI,Yes,No
+00348,Advantage by Superior HealthPlan,EDI,Yes,No
+BO10014,ADVANTAGE CARE IPA BO,NON EDI,Yes,No
+DE002,Advantica Benefits Dental,Dental,Yes,No
+BO00123,Advantica BO,NON EDI,Yes,No
+00292,"ADVANTRA (TEXAS, NEW MEXICO, ARIZONA ONLY)",EDI,Yes,No
+00001,Aetna,EDI,Yes,Yes
+00501,Aetna American Continental Ins Co,EDI,Yes,No
+00979,Aetna Better Health (CA),EDI,Yes,No
+00980,Aetna Better Health (FL),EDI,Yes,No
+000936,AETNA BETTER HEALTH (IL),EDI,Yes,No
+01411,Aetna Better Health (KS),EDI,Yes,No
+000937,AETNA BETTER HEALTH (KY),EDI,Yes,Yes
+000938,AETNA BETTER HEALTH (LA),EDI,Yes,No
+00981,Aetna Better Health (MD),EDI,Yes,No
+000939,AETNA BETTER HEALTH (MI),EDI,Yes,No
+000940,AETNA BETTER HEALTH (MO),EDI,Yes,No
+000941,AETNA BETTER HEALTH (NE),EDI,Yes,No
+000942,AETNA BETTER HEALTH (NJ),EDI,Yes,No
+00982,Aetna Better Health (NV),EDI,Yes,No
+000943,AETNA BETTER HEALTH (PA),EDI,Yes,No
+000944,AETNA BETTER HEALTH (TX),EDI,Yes,No
+000945,AETNA BETTER HEALTH (TX) CHIP,EDI,Yes,No
+000946,AETNA BETTER HEALTH (WV),EDI,Yes,No
+00921,Aetna Better Health NJ-REV,EDI,Yes,No
+000935,AETNA BETTER HEALTH VIRGINIA,EDI,Yes,Yes
+DE003,Aetna Dental,Dental,Yes,No
+00010,Aetna Long Term Care,EDI,Yes,No
+00983,Aetna Retiree Medical Plan - Administrator,EDI,Yes,No
+00677,Aetna Senior Supplemental,EDI,Yes,No
+BO00034,Affinity BO,NON EDI,Yes,No
+000948,Affinity Essentials,EDI,Yes,No
+00349,Affinity Health Plan,EDI,Yes,No
+00469,Affinity Health Plan Medicare,EDI,Yes,No
+000949,AFLAC,EDI,Yes,No
+00011,AFLAC - Dental,EDI,Yes,No
+00470,AFLAC - Medicare Supplemental,EDI,Yes,No
+00012,Aftra Health Fund,EDI,Yes,No
+00985,AgeWell NewYork *,EDI,Yes,No
+000950,AGIA INC,EDI,Yes,No
+00986,AGIA. Inc. ,EDI,Yes,No
+BO00599,AHMC HEALTHCARE BO,NON EDI,Yes,No
+BO10042,AIG,NON EDI,Yes,No
+BO10076,AIMS,NON EDI,Yes,No
+00013,Alabama Medicaid,EDI,Yes,Yes
+DE0068,Alabama Medicaid Dental,Dental,Yes,No
+00459,Alameda Alliance Health Plan,EDI,Yes,No
+000951,Alaska Medicaid,EDI,Yes,No
+BO00062,Alicare Multiplan-BO,NON EDI,Yes,No
+01345,ALIERA HEALTH CARE,EDI,Yes,No
+BO00192,Alignment Health Plan BO,NON EDI,Yes,No
+DC001,All Savers Insurance,EDI,Yes,No
+00635,All Savers Life Insurance,EDI,Yes,No
+00471,Allegiance Benefit Plan Management,EDI,Yes,Yes
+00988,Alliant Health Plans,EDI,Yes,No
+00636,Allied Benefit Systems,EDI,Yes,No
+BO00035,Allied Benefits-BO,NON EDI,Yes,No
+01346,Allina Health Aetna,EDI,Yes,No
+BO000214,Allways Health,NON EDI,Yes,No
+01589,Allways Health Plan,EDI,Yes,No
+01336,ALLWELL,EDI,Yes,No
+00989,AlohaCare,EDI,Yes,No
+BO00024,ALTAMED HEALTH SERVICES-BO,NON EDI,Yes,No
+00990,"Alternative Insurance Resources, Inc",EDI,Yes,No
+DE0129,Altus Dental,Dental,Yes,No
+01328,AMBETTER,EDI,Yes,Yes
+00991,Ambetter of Arkansas,EDI,Yes,Yes
+00670,Ambetter Superior Health Plan,EDI,Yes,No
+00015,AMC - Alaska Electrical Health Welfare Fund,EDI,Yes,No
+00016,AMC - Health Future,EDI,Yes,No
+00017,AMC - Poly America,EDI,Yes,No
+00018,AMC - Touchstone,EDI,Yes,No
+00019,AMC - Touchstone PSO,EDI,Yes,No
+00637,Ameriben,EDI,Yes,No
+000918,American Behavioral Benefit Managers,EDI,Yes,No
+00020,American Community Mutual,EDI,Yes,No
+00316,American Family Insurance Group - Medicare Supplemental and PPO Policies,EDI,Yes,No
+DE004,American Family Life Assurance Co. (AFLAC) Dental,Dental,Yes,No
+00021,American General Life and Accident,EDI,Yes,No
+00467,American Health Medicare,EDI,Yes,No
+00992,American Income Life Ins.Co.,EDI,Yes,No
+00993,American Medical Security (AMS),EDI,Yes,No
+00412,American National Insurance Company,EDI,Yes,No
+00413,American National Life Insurance Company of Texas,EDI,Yes,No
+00994,American Network Ins. Medicare Supplement,EDI,Yes,No
+00022,American Postal Workers Union (APWU),EDI,Yes,No
+00023,American Republic Insurance Company (ARIC),EDI,Yes,No
+MD002,American Republic Insurance Company (ARIC),EDI,Yes,No
+00350,American Retirement Life Insurance Company Medicare Supplement,EDI,Yes,No
+00024,AmeriChoice of New Jersey (Commercial),EDI,Yes,No
+01412,AmeriChoice of New Jersey (Medicaid),EDI,Yes,No
+00995,Americo Financial Life Annuity,EDI,Yes,No
+00025,AMERIGROUP,EDI,Yes,Yes
+000929,"AmeriHealth (DE, NJ, PA)",EDI,Yes,No
+00460,AmeriHealth Administrators,EDI,Yes,No
+00996,AmeriHealth Caritas DC,EDI,Yes,No
+01413,AmeriHealth Caritas Delaware,EDI,Yes,No
+00997,AmeriHealth Caritas Iowa,EDI,Yes,No
+00998,AmeriHealth Caritas Louisiana (LaCare),EDI,Yes,No
+00351,AmeriHealth Caritas PA,EDI,Yes,No
+00999,AmeriHealth Caritas VIP Care Plus,EDI,Yes,No
+01000,AmeriHealth New Jersey,EDI,Yes,No
+01001,AmeriHealth Northeast Pennsylvania,EDI,Yes,No
+01002,AmeriHealth Pennsylvania ,EDI,Yes,No
+01003,AmeriHealth VIP Care,EDI,Yes,No
+REV02,AmeriHealth-REV,EDI,Yes,No
+BO00061,Amerisure-BO,NON EDI,Yes,No
+00026,Ameritas Life,EDI,Yes,No
+DE0137,Ameritas Life Insurance Company Dental,Dental,Yes,No
+BO00033,Angeles IPA-BO,NON EDI,Yes,No
+00352,Antares,EDI,Yes,No
+01347,ANTHEM - GA,EDI,Yes,No
+00036,Anthem BCBS Kentucky,EDI,Yes,Yes
+DE0055,Anthem Blue Cross CA Dental,Dental,Yes,No
+01004,Apex Benefits Services,EDI,Yes,No
+BO00028,APPLECARE MEDICAL GROUP-BO,NON EDI,Yes,No
+01325,Arbor Health Plan,EDI,Yes,No
+00461,Arbor Health Plan (Only Nebraska Area),EDI,Yes,No
+01005,Arise Health Care,EDI,Yes,No
+01006,Arise Health Plan Medicare Select Policy,EDI,Yes,No
+01348,ARIZONA COMPLETE HEALTH,EDI,Yes,No
+00027,Arizona Medicaid (AHCCCS),EDI,Yes,No
+DE0069,Arizona Medicaid Dental,Dental,Yes,No
+00205,Arizona Physician's IPA,EDI,Yes,No
+00028,Arkansas Medicaid,EDI,Yes,No
+DE0070,Arkansas Medicaid Dental,Dental,Yes,No
+01349,ARKANSAS TOTAL CARE,EDI,Yes,Yes
+01350,ARNETT HEALTH PLANS,EDI,Yes,No
+01400,ASR Health Benefits,EDI,Yes,No
+01007,Associacion De Maestros Puerto Rico,EDI,Yes,No
+BO10040,ASSOCIATED HISPANIC PHYS.,NON EDI,Yes,No
+BO00026,ASSOCIATED HISPANIC PHYS.-BO,NON EDI,Yes,No
+00120,ASSURANT HEALTH-JOHN ALDEN LIFE,EDI,Yes,No
+00188,ASSURANT HEALTH-TIME INSURANCE,EDI,Yes,No
+00191,ASSURANT HEALTH-UNION SECURITY,EDI,Yes,No
+00411,Asuris Northwest Health,EDI,Yes,Yes
+BO017,ATRIO HEALTH PLANS-BO,NON EDI,Yes,No
+00318,Aultcare,EDI,Yes,No
+01008,Automated Benefit Services,EDI,Yes,No
+01009,Auxiant,EDI,Yes,No
+01010,Avalon Administrative Services,EDI,Yes,No
+BO001800,Avera Health BO-BO,NON EDI,Yes,No
+000896,Avera Health Plan,EDI,Yes,No
+BO100065,AVESIS INCORPORATED BO,NON EDI,Yes,No
+BO00149,Avesis Vision BO,NON EDI,Yes,No
+00206,AvMed Health Plans,EDI,Yes,No
+01011,Bankers Fidelity Life Insurance Company,EDI,Yes,No
+BO001830,Bankers Fidelity-BO,NON EDI,Yes,No
+000926,Bankers Life And Casualty - EDI,EDI,Yes,No
+BO00063,Bankers Life And Casualty-BO,NON EDI,Yes,No
+01012,Bankers Life Casualty,EDI,Yes,No
+01351,Banner Aetna,EDI,Yes,No
+00472,Banner Health Plans,EDI,Yes,No
+01013,Banner University Family Care,EDI,Yes,No
+01401,Baycare Select Health Plan,EDI,Yes,No
+01329,BC ILLINOIS MEDICARE ADVANTAGE,EDI,Yes,Yes
+01330,BC MONTANA MEDICARE ADVANTAGE,EDI,Yes,Yes
+01331,BC NEW MEXICO MEDICARE ADVANTAGE,EDI,Yes,Yes
+01332,BC OKLAHOMA MEDICARE ADVANTAGE,EDI,Yes,Yes
+01333,BC TEXAS MEDICARE ADVANTAGE,EDI,Yes,Yes
+000931,BCBS ANTHEM VIVITY,EDI,Yes,Yes
+00462,BCBS Of Alabama (Institutional),EDI,Yes,No
+01014,BCBS of Alaska (Premera),EDI,Yes,No
+00029,BCBS of Arizona,EDI,Yes,Yes
+00030,BCBS of Arkansas,EDI,Yes,No
+00330,BCBS of Central New York,EDI,Yes,No
+00031,BCBS of Connecticut,EDI,Yes,Yes
+01015,BCBS of Delaware,EDI,Yes,No
+00032,BCBS of Georgia,EDI,Yes,Yes
+00463,BCBS of Hawaii,EDI,Yes,No
+00033,BCBS of Illinois,EDI,Yes,Yes
+00034,BCBS of Indiana,EDI,Yes,Yes
+00035,BCBS of Indiana - DO NOT USE,EDI,Yes,No
+00037,BCBS of Louisiana,EDI,Yes,No
+00038,BCBS of Maine,EDI,Yes,Yes
+00464,BCBS of Michigan (Institutional),EDI,Yes,No
+01016,BCBS of Michigan (Professional),EDI,Yes,No
+00039,BCBS of Michigan (Thru Blue Exchange),EDI,Yes,Yes
+00040,BCBS of Minnesota,EDI,Yes,Yes
+DE0179,BCBS of Minnesota Dental,Dental,Yes,No
+00041,BCBS of Mississippi,EDI,Yes,Yes
+00042,BCBS of Missouri,EDI,Yes,Yes
+00475,BCBS of Montana,EDI,Yes,Yes
+00043,BCBS of Nevada,EDI,Yes,Yes
+00044,BCBS of New Hampshire,EDI,Yes,Yes
+00045,BCBS of New Jersey (Horizon),EDI,Yes,Yes
+00046,BCBS of New Mexico,EDI,Yes,Yes
+00047,BCBS of New York (Empire),EDI,Yes,Yes
+00465,BCBS of New York (Excellus),EDI,Yes,No
+00311,BCBS of North Dakota,EDI,Yes,Yes
+00048,BCBS of Ohio,EDI,Yes,Yes
+00454,BCBS of Oklahoma,EDI,Yes,Yes
+00049,BCBS of Oregon (Regence),EDI,Yes,Yes
+00050,BCBS of Pennsylvania (Highmark),EDI,Yes,No
+00476,BCBS of Pennsylvania (Highmark) [Institutional],EDI,Yes,No
+00051,BCBS of Rhode Island,EDI,Yes,No
+DE0056,BCBS of Rochester New York Dental,Dental,Yes,No
+00308,BCBS of the Rochester Area (NY),EDI,Yes,No
+00309,BCBS of Utica-Watertown (NY),EDI,Yes,No
+00477,BCBS of Vermont,EDI,Yes,No
+00052,BCBS of Virginia,EDI,Yes,Yes
+00331,BCBS of West Virginia,EDI,Yes,No
+00325,BCBS of Western New York,EDI,Yes,No
+00053,BCBS of Wisconsin,EDI,Yes,Yes
+00312,BCBS of Wyoming,EDI,Yes,Yes
+01300,BCBS Puerto Rico(Triple-S Salud),EDI,Yes,No
+01017,BCBS Texas Medicaid STAR CHIP,EDI,Yes,Yes
+01352,BCBS TEXAS MEDICAID STAR Kids,EDI,Yes,No
+01353,BCBSMN BLUE PLUS MEDICAID,EDI,Yes,No
+01354,BCBSMN BLUE PLUS MEDICAID NON-EMERG TRANSPORTATION,EDI,Yes,No
+01018,Beacon Health Strategies *,EDI,Yes,No
+01344,Beacon Value Options,EDI,Yes,No
+BO00145,Beacon Value Options-BO,NON EDI,Yes,No
+BO008,Beechstreet-BO,NON EDI,Yes,No
+01019,"Behavioral Health Systems, Inc.",EDI,Yes,No
+00478,Benefit Management Inc,EDI,Yes,No
+BO10056,BERKSHIRE HATHAWAY INSURANCE CO,NON EDI,Yes,No
+00419,Best Choice Health Plan,EDI,Yes,No
+00054,Best Life and Health,EDI,Yes,No
+00055,Better Health Plans (Unison Health Plan),EDI,Yes,No
+01020,Better Health Plans of Florida,EDI,Yes,No
+01378,BIND,EDI,Yes,No
+01021,Blue Benefit Administrators of Mass,EDI,Yes,No
+DE0126,Blue Cross Blue Sheild Delaware Fully - Insured Dental Group Business,Dental,Yes,No
+00207,Blue Cross Blue Shield Alabama (Commercial),EDI,Yes,Yes
+00208,Blue Cross Blue Shield Alabama (Medicare Part B),EDI,Yes,No
+00209,Blue Cross Blue Shield Alaska (Premera),EDI,Yes,No
+00210,Blue Cross Blue Shield Colorado,EDI,Yes,Yes
+00282,Blue Cross Blue Shield Delaware (Carefirst),EDI,Yes,No
+00288,Blue Cross Blue Shield District of Columbia (Carefirst),EDI,Yes,No
+00211,Blue Cross Blue Shield Florida,EDI,Yes,Yes
+00212,Blue Cross Blue Shield Iowa (Wellmark),EDI,Yes,No
+00213,Blue Cross Blue Shield Kansas,EDI,Yes,Yes
+00306,Blue Cross Blue Shield Kansas City,EDI,Yes,Yes
+00289,Blue Cross Blue Shield Maryland (Carefirst),EDI,Yes,No
+00214,Blue Cross Blue Shield Massachusetts,EDI,Yes,Yes
+00215,Blue Cross Blue Shield Nebraska,EDI,Yes,No
+00216,Blue Cross Blue Shield North Carolina,EDI,Yes,Yes
+DE0057,Blue Cross Blue Shield of Kansas City MO Dental,Dental,Yes,No
+DE0058,Blue Cross Blue Shield of Massachusetts Dental,Dental,Yes,No
+DE0180,Blue Cross Blue Shield of Montana,Dental,Yes,No
+DE0059,Blue Cross Blue Shield of South Carolina Dental,Dental,Yes,No
+00217,Blue Cross Blue Shield South Carolina,EDI,Yes,Yes
+00218,Blue Cross Blue Shield South Dakota (Wellmark),EDI,Yes,No
+00219,Blue Cross Blue Shield Tennessee,EDI,Yes,Yes
+00220,Blue Cross Blue Shield Texas,EDI,Yes,Yes
+01355,BLUE CROSS COMMUNITY CENTENNIAL,EDI,Yes,No
+01356,BLUE CROSS COMMUNITY HEALTH PLANS,EDI,Yes,No
+01022,Blue Cross Community Options,EDI,Yes,No
+DE0060,Blue Cross of Arkansas Dental,Dental,Yes,No
+00002,Blue Cross of California,EDI,Yes,Yes
+00056,Blue Cross of Idaho,EDI,Yes,Yes
+00479,Blue Cross of Idaho,EDI,Yes,No
+00057,Blue Cross of Northeastern Pennsylvania,EDI,Yes,No
+01023,Blue Cross of Utah (Regence),EDI,Yes,No
+00221,Blue Cross Washington (Premera),EDI,Yes,No
+S001,Blue Exchange,EDI,Yes,Yes
+BO00002,Blue Shield of CA - Pending Eligibility,NON EDI,Yes,No
+01405,Blue Shield of CA Promise - All Numeric Member ID,EDI,Yes,No
+00003,Blue Shield of California,EDI,Yes,No
+01322,Blue Shield of Idaho,EDI,Yes,No
+00480,Blue Shield of North Eastern New York,EDI,Yes,No
+DE0127,Blue Shield of Pennsylvania Dental Plus,Dental,Yes,No
+00058,Blue Shield of Washington (Regence),EDI,Yes,Yes
+00284,BlueChoice HealthPlan South Carolina Medicaid,EDI,Yes,No
+DE0061,BlueCross BlueShield of National Capital Area (CareFirst) Dental,Dental,Yes,No
+01357,BLUECROSS BLUESHIELD OF WESTERN NEW YORK MEDICAID,EDI,Yes,No
+01024,BlueCross Medicare Advantage,EDI,Yes,No
+00290,Bluegrass Family Health,EDI,Yes,No
+00399,BMC HealthNet Plan,EDI,Yes,No
+01025,Boon Group,EDI,Yes,No
+00420,Boon-Chapman Benefit Admin,EDI,Yes,No
+01399,BOSTON MEDICAL CENTER HEALTHNET PLAN,EDI,Yes,No
+BO0093,BRAND NEW DAY,NON EDI,Yes,No
+BO10021,BRAND NEW DAY HMO BO,NON EDI,Yes,No
+00222,"Bravo Health, Inc.",EDI,Yes,No
+000952,BRIDGESPAN,EDI,Yes,Yes
+00353,Bridgeway Arizona,EDI,Yes,No
+01026,Bright Health,EDI,Yes,No
+01338,Bright Health Medicare Advantage,EDI,Yes,No
+BO00027,BRIGHT HEALTH PHYSICIANS/-BO,NON EDI,Yes,No
+00354,Buckeye Community Health,EDI,Yes,No
+01027,C and O Employees’ Hospital Association Plan,EDI,Yes,No
+BO000154,Cal optima (BO),NON EDI,Yes,No
+BO10026,CALCARE,NON EDI,Yes,No
+01028,California Children Services *,EDI,Yes,No
+DE0071,California Medicaid - Medi-Cal Dental,Dental,Yes,No
+00059,California Medicaid (Medi-Cal),EDI,Yes,No
+01029,CalOptima,EDI,Yes,No
+BO00601,CalOptima Pending Eligibility,NON EDI,Yes,No
+01030,Cal-Viva,EDI,Yes,No
+00060,Capital Blue Cross (Pennsylvania),EDI,Yes,No
+00328,Capital District Physicians Health Plan (CDPHP),EDI,Yes,No
+01406,Capital Health Plan,EDI,Yes,No
+BO10062,CAPITOL ADMINISTRATORS,NON EDI,Yes,No
+01031,Capitol Administrators - EDI,EDI,Yes,No
+BO00023,CAPMN-BO,NON EDI,Yes,No
+00482,CAPROCK,EDI,Yes,No
+BO000469,Care First Health Plan-BO,NON EDI,Yes,No
+00891,Care Improvement Plus,EDI,Yes,Yes
+BO00098,Care Improvement plus (BO)-BO,NON EDI,Yes,No
+BO000547,"CARE N CARE INSURANCE COMPANY, INC._ADV_BO",NON EDI,Yes,No
+00638,Care1st Health Plan Arizona,EDI,Yes,No
+00639,Care1st of California,EDI,Yes,No
+BO000144,Care1st of California - BO,NON EDI,Yes,No
+01402,Carefirst Administrators,EDI,Yes,No
+01032,Carefirst BCBS - DC,EDI,Yes,No
+DE0062,Carefirst of Maryland Inc. Dental,Dental,Yes,No
+00671,CareMore Health Plan,EDI,Yes,No
+00223,CarePlus Health Plan,EDI,Yes,No
+DE0072,CareSource Dental,Dental,Yes,No
+00224,CareSource Health,EDI,Yes,No
+01358,CARESOURCE INDIANA,EDI,Yes,No
+01371,CARESOURCE KENTUCKY,EDI,Yes,Yes
+01372,CARESOURCE MEDICAID KENTUCKY,EDI,Yes,Yes
+01373,CARESOURCE MEDICARE ADVANTAGE KENTUCKY,EDI,Yes,Yes
+01359,CARESOURCE OF GEORGIA,EDI,Yes,No
+01360,CARESOURCE OHIO,EDI,Yes,No
+01361,CARESOURCE WEST VIRGINIA,EDI,Yes,No
+00061,Cariten Healthcare,EDI,Yes,No
+00062,Cariten Senior Health,EDI,Yes,No
+BO00025,CARMO-BO,NON EDI,Yes,No
+00483,"Carolina Care Plan, Inc. (CCP)",EDI,Yes,No
+01033,Carpenters Health and Welfare Trust Fund of St Louis,EDI,Yes,No
+00355,Carpenters' Health and Welfare Trust Fund of St. Louis,EDI,Yes,No
+BO00121,Carson Smith Scholarship Fund,NON EDI,Yes,No
+BO00036,CBCA Administrators-BO,NON EDI,Yes,No
+01034,CDS Group Health,EDI,Yes,No
+01035,Celtic Insurance,EDI,Yes,No
+00414,CeltiCare,EDI,Yes,No
+01036,CenCal,EDI,Yes,No
+00356,Cenpatico - Arizona,EDI,Yes,No
+00357,Cenpatico - Florida,EDI,Yes,No
+00358,Cenpatico - Georgia,EDI,Yes,No
+01037,Cenpatico - Illinois,EDI,Yes,No
+00359,Cenpatico - Indiana,EDI,Yes,No
+00360,Cenpatico - Kansas,EDI,Yes,No
+01038,Cenpatico - Kentucky,EDI,Yes,No
+00415,Cenpatico - Massachusetts,EDI,Yes,No
+01039,Cenpatico - Mississippi,EDI,Yes,No
+00640,Cenpatico - Missouri,EDI,Yes,No
+01040,Cenpatico - New Hampshire,EDI,Yes,No
+00361,Cenpatico - Ohio,EDI,Yes,No
+00362,Cenpatico - South Carolina,EDI,Yes,No
+01041,Cenpatico - Texas,EDI,Yes,No
+01042,Cenpatico - Wisconsin,EDI,Yes,No
+01043,Cenpatico Behavioral Health,EDI,Yes,No
+01044,Cenpatico Behavioral Health Texas,EDI,Yes,No
+01045,Centene - Advantage by Peach State,EDI,Yes,No
+01046,Centene - Advantage by Sunshine State,EDI,Yes,No
+01047,Centene - Ambetter Sunshine Health,EDI,Yes,No
+01048,Centene - California Health & Wellness,EDI,Yes,No
+01049,Centene - Coordinated Care,EDI,Yes,No
+01050,Centene - Granite State Health Plan,EDI,Yes,No
+01051,Centene - Home State Health Plan,EDI,Yes,No
+01052,Centene - Kentucky Spirit Health Plan,EDI,Yes,No
+01053,Centene - Magnolia Health Plan,EDI,Yes,No
+01054,Centene - Michigan Fidelis Secure Care ,EDI,Yes,No
+01055,Centene - New Hampshire Healthy Families,EDI,Yes,No
+00385,Centene - Peach State Health Plan,EDI,Yes,Yes
+01056,Centene Advantage Plans,EDI,Yes,No
+BO10034,CENTER IPA,NON EDI,Yes,No
+01057,Central California Alliance for Health,EDI,Yes,No
+BO00193,CENTRAL HEALTH,NON EDI,Yes,No
+BO10019,Central Health Plan,NON EDI,Yes,No
+BO00134,Central Health Plan BO,NON EDI,Yes,No
+00225,Central Reserve Insurance Company,EDI,Yes,No
+00363,Central Reserve Life Insurance Company Medicare Supplement,EDI,Yes,No
+01058,Central Senior Care,EDI,Yes,No
+00315,Central States Fund,EDI,Yes,No
+01059,Central States Indemnity,EDI,Yes,No
+01060,Cerner Health Plan,EDI,Yes,No
+B00023,CHA HMO IN-ADV-BO,NON EDI ADV PAYER,Yes,No
+00063,CHAMPVA/Spina Bifida/Children of Women Vietnam Vets,EDI,Yes,Yes
+BO10077,CHARTIS,NON EDI,Yes,No
+00313,CHC - Coventry Health Care Federal,EDI,Yes,No
+01061,CHC - COVENTRYCARES OF KENTUCKY,EDI,Yes,No
+0009110,CHC - Illinois,EDI,Yes,No
+00314,"CHC - Vista (MCD, FHK, LTC)",EDI,Yes,No
+00366,CHC FLORIDA/VISTA/SUMMIT,EDI,Yes,No
+00014,CHC Nevada Altius Health Plans,EDI,Yes,No
+000958,CHC of Carolinas,EDI,Yes,No
+00064,CHC of Delaware,EDI,Yes,No
+00065,CHC of Georgia,EDI,Yes,No
+00066,CHC of Iowa,EDI,Yes,No
+00067,CHC of Kansas,EDI,Yes,No
+00068,CHC of Louisiana,EDI,Yes,No
+00069,CHC of Nebraska,EDI,Yes,No
+000907,CHC OmniCare (Michigan),EDI,Yes,No
+00228,CHCCARES-SOUTH CAROLINA,EDI,Yes,No
+01062,Childrens Mercy PCN,EDI,Yes,No
+01063,CHP Direct,EDI,Yes,No
+00653,Christian Brothers Service,EDI,Yes,No
+01064,Christie Student Health Plans,EDI,Yes,No
+01065,CHRISTUS Health Plan Medicaid,EDI,Yes,No
+01066,CHRISTUS Health Plan New Mexico,EDI,Yes,No
+01067,CHRISTUS Health Plan NM Medicare Advantage,EDI,Yes,No
+01342,CHRISTUS Health Plan TX HIX,EDI,Yes,No
+BO10086,CHURCH MUTUAL INSURANCE CO,NON EDI,Yes,No
+00004,Cigna,EDI,Yes,Yes
+DE005,CIGNA Dental,Dental,Yes,No
+03565,CIGNA SUPPLEMENTAL,EDI,Yes,No
+01068,Claims Management Service Inc,EDI,Yes,No
+01403,Clear Health Alliance,EDI,Yes,No
+01069,Clover Health - CarePoint Medicare Advantage,EDI,Yes,No
+01070,CMFG Life Insurance,EDI,Yes,No
+BO00037,CNIC-BO,NON EDI,Yes,No
+BO10067,COASTAL COMMUNITIES PHYSICIAN NTWRK,NON EDI,Yes,No
+BO018,Colonial Penn Insurance-BO,NON EDI,Yes,No
+000910,Colonial Penn Life,EDI,Yes,No
+00894,Colonial Penn Life,EDI,Yes,No
+00070,Colorado Access,EDI,Yes,No
+01362,COLORADO COMMUNITY HEALTH ALLIANCE,EDI,Yes,No
+00071,Colorado Medicaid,EDI,Yes,No
+DE0073,Colorado Medicaid Dental,Dental,Yes,No
+00421,Columbia United Providers,EDI,Yes,No
+00961,COMMERCE BENEFITS GROUP,EDI,Yes,No
+BO00140,Commercial Paper Generic,NON EDI,Yes,No
+BO22231,COMMUNITY CARE BHO,NON EDI,Yes,No
+00072,Community Care of Oklahoma,EDI,Yes,No
+01390,Community First Health Plans,EDI,Yes,No
+01071,Community Health Choice,EDI,Yes,No
+00641,Community Health Group,EDI,Yes,No
+BO00602,Community Health Group Pending,NON EDI,Yes,No
+00291,Community Health Plan of Washington,EDI,Yes,No
+BO000994,Community Health Plan-BO,NON EDI,Yes,No
+00422,Community HealthFirst Medicare (CHF Medicare Advantage),EDI,Yes,No
+DE006,CompBenefits Dental,Dental,Yes,No
+BO00144,ComPsych Employee Assistance Program,NON EDI,Yes,No
+BO10063,COMPWEST,NON EDI,Yes,No
+01072,Concentrix Insurance Solutions,EDI,Yes,No
+00423,ConnectiCare,EDI,Yes,No
+01073,ConnectiCare - Medicare,EDI,Yes,No
+00073,Connecticut Medicaid,EDI,Yes,No
+DE0074,Connecticut Medicaid Dental,Dental,Yes,No
+01074,Constellation Health (INMEDIATA HEALTH GROUP),EDI,Yes,No
+01075,Consumers Life,EDI,Yes,No
+01076,Consumers Mutual Insurance of Michigan,EDI,Yes,No
+00226,Continental General Insurance Company,EDI,Yes,No
+00364,Continental General Insurance Company Medicare Supplement,EDI,Yes,Yes
+01077,Cook Children’s Health Plan,EDI,Yes,No
+00074,Cooperative Benefit Administrators (CBA),EDI,Yes,No
+DE007,Cooperative Benefit Administrators Dental,Dental,Yes,No
+00075,CoreSource (AZ MN),EDI,Yes,No
+00076,CoreSource (FMH),EDI,Yes,Yes
+00077,CoreSource (Little Rock),EDI,Yes,Yes
+00078,"CoreSource (MD, PA, IL)",EDI,Yes,Yes
+00079,CoreSource (NC IN),EDI,Yes,No
+00080,CoreSource (OH),EDI,Yes,No
+DE008,Coresource Little Rock Dental,Dental,Yes,No
+00424,Corporate Benefit Service,EDI,Yes,No
+BO10087,CORVEL CORPORATION,NON EDI,Yes,No
+MD001,Country Life Insurance Company,EDI,Yes,No
+BO10050,COUNTY OF KERN POS PLAN,NON EDI,Yes,No
+01078,CountyCare,EDI,Yes,No
+01079,Covenant Administrators (TPA),EDI,Yes,No
+00081,Covenant Health (TennCare),EDI,Yes,No
+00082,Coventry Advantra Freedom - CHC Texas,EDI,Yes,No
+00229,COVENTRY ADVANTRA SAVINGS,EDI,Yes,No
+00083,Coventry Health and Life (Oklahoma),EDI,Yes,No
+00293,COVENTRY HEALTH AND LIFE-NEVADA,EDI,Yes,No
+00084,Coventry Health Care Carelink (Advantra),EDI,Yes,No
+00085,Coventry Health Care Carelink Medicaid,EDI,Yes,No
+00086,Coventry Health Care Carenet,EDI,Yes,No
+000933,COVENTRY HEALTH CARE CAROLINAS WELLPATH,EDI,Yes,No
+01337,COVENTRY HEALTH CARE VIRGINIA,EDI,Yes,No
+00227,COVENTRY HEALTH LIFE-TN ONLY,EDI,Yes,No
+00087,Coventry Healthcare National Network,EDI,Yes,No
+00294,COVENTRY MISSOURI,EDI,Yes,No
+00365,Coventry Nebraska Medicaid,EDI,Yes,No
+00367,COVENTRYCARES,EDI,Yes,No
+000904,CoventryCares of Michigan,EDI,Yes,No
+00295,COVENTRYONE,EDI,Yes,No
+01080,Cox Health Plan,EDI,Yes,No
+01081,Crystal Run Health Plans*,EDI,Yes,No
+00368,CSA Fraternal Live Medicare Supplement,EDI,Yes,No
+01082,CSI Life Insurance Company,EDI,Yes,No
+01083,Culinary Health Fund,EDI,Yes,No
+BO003,Culinary Health Fund -BO,NON EDI,Yes,No
+00425,DakotaCare,EDI,Yes,No
+BO001801,Dakotacare BO-BO,NON EDI,Yes,No
+BOR00215,Davis Vision - Real time,EDI,Yes,No
+BO000215,Davis Vision Delayed BO,EDI delayed,Yes,No
+BO0059631,Davis Vision_BO,NON EDI,Yes,No
+DE009,DBP - Americhoice (NJ/PA) / UHC (MS) Dental,Dental,Yes,No
+01084,Dean Health Plan,EDI,Yes,No
+DE0120,DeCare Dental Health Insurance,Dental,Yes,No
+01085,Definity Health,EDI,Yes,No
+BO077,Delaware MAP-BO,NON EDI,Yes,No
+BO00077,Delaware MAP-BO,NON EDI,Yes,No
+00455,Delaware Medicaid,EDI,Yes,No
+000920,Dell Childrens Health Plan,EDI,Yes,No
+DE0130,Delta Dental (Northeast) (ME NH VT),Dental,Yes,No
+DE0131,Delta Dental CA FedVIP,Dental,Yes,No
+DE0132,Delta Dental District of Columbia,Dental,Yes,No
+DE0133,Delta Dental Insurance Co. (DDIC),Dental,Yes,No
+DE0134,Delta Dental Massachusetts,Dental,Yes,No
+DE0136,Delta Dental of Alabama (DDIC),Dental,Yes,No
+DE0138,Delta Dental of Arizona,Dental,Yes,No
+DE0139,Delta Dental of Arkansas,Dental,Yes,No
+DE0140,Delta Dental of California,Dental,Yes,No
+DE0141,Delta Dental of Delaware,Dental,Yes,No
+DE0142,Delta Dental of Florida (DDIC),Dental,Yes,No
+DE0143,Delta Dental of Georgia (DDIC),Dental,Yes,No
+DE0144,Delta Dental of Idaho,Dental,Yes,No
+DE0145,Delta Dental of Illinois Group Plans,Dental,Yes,No
+DE0146,Delta Dental of Indiana,Dental,Yes,No
+DE0147,Delta Dental of Iowa,Dental,Yes,No
+DE0175,Delta Dental of Iowa - Dental Wellness Plan,Dental,Yes,No
+DE0148,Delta Dental of Kansas,Dental,Yes,No
+DE0149,Delta Dental of Kentucky,Dental,Yes,No
+DE0150,Delta Dental of Louisiana (DDIC),Dental,Yes,No
+DE0151,Delta Dental of Maryland and Pennsylvania,Dental,Yes,No
+DE0152,Delta Dental of Michigan,Dental,Yes,No
+DE0153,Delta Dental of Minnesota,Dental,Yes,No
+DE0154,Delta Dental of Mississippi (DDIC),Dental,Yes,No
+DE0155,Delta Dental of Missouri,Dental,Yes,No
+DE0156,Delta Dental of Montana (DDIC),Dental,Yes,No
+DE0157,Delta Dental of Nebraska,Dental,Yes,No
+DE0158,Delta Dental of Nevada (DDIC),Dental,Yes,No
+DE0159,Delta Dental of New Jersey,Dental,Yes,No
+DE0160,Delta Dental of New Mexico,Dental,Yes,No
+DE0161,Delta Dental of New York,Dental,Yes,No
+DE0162,Delta Dental of North Carolina,Dental,Yes,No
+DE0163,Delta Dental of North Dakota,Dental,Yes,No
+DE0164,Delta Dental of Ohio,Dental,Yes,No
+DE0165,Delta Dental of Oklahoma,Dental,Yes,No
+DE0166,Delta Dental of Rhode Island,Dental,Yes,No
+DE0167,Delta Dental of South Carolina,Dental,Yes,No
+DE0168,Delta Dental of Tennessee,Dental,Yes,No
+DE0169,Delta Dental of Texas (DDIC),Dental,Yes,No
+DE0170,Delta Dental of Utah (DDIC),Dental,Yes,No
+DE0178,Delta Dental Of Virginia,Dental,Yes,Yes
+DE0171,Delta Dental of Washington,Dental,Yes,No
+DE0172,Delta Dental of Washington DC,Dental,Yes,No
+DE0173,Delta Dental of West Virginia,Dental,Yes,No
+DE0174,Delta Dental of Wisconsin,Dental,Yes,No
+DE0135,Delta Dental Puerto Rico,Dental,Yes,No
+BO10027,DELTA HEALTH SYSTEMS,NON EDI,Yes,No
+01086,DeltaCare USA - Claims,EDI,Yes,No
+01087,DeltaCare USA - Encounters,EDI,Yes,No
+DE0067,DeltaCare USA Claims Dental,Dental,Yes,No
+DE0010,DeltaCare USA Dental,Dental,Yes,No
+PL003,Delware Medical Assistance Program,EDI,Yes,No
+DE0078,DentaQuest ,Dental,Yes,No
+DE0177,DentaQuest - Government Plans,Dental,Yes,Yes
+DE0076,DentaQuest Illinois Dental,Dental,Yes,No
+DE0075,DentaQuest Maryland Dental,Dental,Yes,No
+DE0077,DentaQuest Virginia Dental,Dental,Yes,No
+DE0011,Dentist Direct LLC Dental,Dental,Yes,No
+00426,Denver Health Medical Plan,EDI,Yes,No
+00427,Deseret Mutual (DMBA),EDI,Yes,No
+000701,Desert Mutual,EDI,Yes,No
+01363,DEVOTED HEALTH,EDI,Yes,No
+BO010,Dialysis Verification-BO,NON EDI,Yes,No
+00088,Diamond Plan (Maryland Medicaid),EDI,Yes,No
+00089,Director's Guild,EDI,Yes,No
+01088,"District No. 9, I. A. of M. A. W. Welfare Trust",EDI,Yes,No
+00231,District of Columbia Medicaid,EDI,Yes,No
+DE0079,District of Columbia Medicaid Dental,Dental,Yes,No
+01089,Diversified Administration Corp,EDI,Yes,No
+01090,Driscoll Health Plan,EDI,Yes,No
+BO00137,Easy Choice Health Plan-BO,NON EDI,Yes,No
+BO10043,EBA&M,NON EDI,Yes,No
+00643,EBMS,EDI,Yes,No
+00090,Ecom PPO (Consolidated Railroad),EDI,Yes,No
+01091,Educators Mutual Insurance (EMI),EDI,Yes,No
+BO10005,EHS MEDICAL GROUP IPA,NON EDI,Yes,No
+00642,Elderplan Inc,EDI,Yes,No
+BO00038,ELDERPLAN-BO,NON EDI,Yes,No
+DE0012,Emblem Health Dental,Dental,Yes,No
+BO019,Emblem Health Plan-BO,NON EDI,Yes,No
+BO00053,EMBLEM HEALTH-BO,NON EDI,Yes,No
+000101,EMBLEM HEALTH-EDI,EDI,Yes,Yes
+REV03,EMBLEM HEALTH-EDI-REV,EDI,Yes,No
+01364,EMPIRE BC NEW YORK,EDI,Yes,No
+DE0064,Empire Blue Cross and Blue Shield Dental,Dental,Yes,No
+DE0063,Empire Blue Cross Blue Shield Dental,Dental,Yes,No
+000954,EMPLOYEE BENEFIT MANAGEMENT SYSTEM (EBMS),EDI,Yes,No
+DE0013,Employers Health Insurance Dental,Dental,Yes,No
+BO00596,Envolve BO,NON EDI,Yes,No
+01092,EPIC Life Insurance,EDI,Yes,No
+01093,"EPSI, Inc.",EDI,Yes,No
+00675,Equitable Life Casualty Ins Co,EDI,Yes,No
+BO10038,ESIS,NON EDI,Yes,No
+BO10078,ESIS CENTRAL WC CLAIMS,NON EDI,Yes,No
+00403,Essence Healthcare,EDI,Yes,No
+01094,Evercare,EDI,Yes,No
+DE0014,Everence Dental,Dental,Yes,No
+01095,Everence Financial,EDI,Yes,No
+01096,Evergreen Health,EDI,Yes,No
+01097,Evergreen Health Co-Op,EDI,Yes,No
+BO00605,Exclusive Care Health Plan BO,NON EDI,Yes,No
+01098,Expert Benefit Solutions,EDI,Yes,No
+BO00124,Eye Quest-BO,NON EDI,Yes,No
+BO9001,Eyefinity-BO,NON EDI,Yes,No
+BO10004,EYEMED CLAIMS Delayed BO,EDI Delayed,Yes,No
+BOR0004,EYEMED CLAIMS -Real time,EDI,Yes,No
+00092,Fallon Community Health Plan,EDI,Yes,Yes
+01099,Fallon Community Health Plan (Exception),EDI,Yes,No
+00428,FamilyCare,EDI,Yes,No
+00682,Farm Bureau Health Plans,EDI,Yes,Yes
+BO10088,FARMERS,NON EDI,Yes,No
+00644,FCE Benefit Administrators,EDI,Yes,No
+BO00020,FCS01-BO,NON EDI,Yes,No
+00093,Federated Insurance Company,EDI,Yes,No
+BO00125,FHHS-BO,NON EDI,Yes,No
+00329,Fidelis Care New York,EDI,Yes,No
+DE0015,First Ameritas Life Insurance Corporation of New York Dental,Dental,Yes,No
+00094,First Ameritas of New York,EDI,Yes,No
+01100,First Carolina Care,EDI,Yes,No
+BO000995,First Choice Health-BO,NON EDI,Yes,No
+01101,First Community Health Plan,EDI,Yes,No
+000917,First Community Health Plans,EDI,Yes,No
+BO10068,FIRST COMP INSURANCE,NON EDI,Yes,No
+000932,First Health,EDI,Yes,No
+BO006,First Health (various plans)-BO,NON EDI,Yes,No
+09001,First Health Life,EDI,Yes,No
+01102,First Health Network (Coventry National),EDI,Yes,No
+01103,First Medical Network,EDI,Yes,No
+BO00059,First Priority Hlth-BO,NON EDI,Yes,No
+00096,First Reliance Standard Life,EDI,Yes,No
+DE0016,First Reliance Standard Life Ins. Co. (NY Business) Dental,Dental,Yes,No
+01104,First United American Ins.Co,EDI,Yes,No
+BO00039,First United American Life-BO,NON EDI,Yes,No
+01105,FirstCare,EDI,Yes,No
+PL002,Fiserv Health,EDI,Yes,No
+01106,FISERV WAUSAU,EDI,Yes,No
+00645,Florida Health Care Plans,EDI,Yes,Yes
+00429,Florida Hospital Healthcare System,EDI,Yes,No
+00098,Florida Medicaid,EDI,Yes,No
+DE0080,Florida Medicaid Dental,Dental,Yes,No
+BO00126,FMH-BO,NON EDI,Yes,No
+01107,Food Employers Bakery,EDI,Yes,No
+01108,Fox/Everett *,EDI,Yes,No
+00319,Freedom Blue,EDI,Yes,No
+01408,Freedom Health Medicare Advantage,EDI,Yes,No
+BO10079,FREEDOM LIFE INS COMPANY OF AMERICA,NON EDI,Yes,No
+01109,Fresenius Health Partners,EDI,Yes,No
+00404,Fresenius Medical Care,EDI,Yes,No
+01110,Fringe Benefits,EDI,Yes,No
+01111,FSL Admin by KBA,EDI,Yes,No
+BO10089,FUTURE CARE MEDICAL ASSOCIATES IPA,NON EDI,Yes,No
+01112,G.M.P. Employers Retiree Trust,EDI,Yes,No
+BO10041,GALLAGHER BASSETT,NON EDI,Yes,No
+000919,Gateway Health Plan,EDI,Yes,No
+00099,GBA,EDI,Yes,No
+00458,Geisinger Health Plan,EDI,Yes,No
+01113,Geisinger Health Plan Gold,EDI,Yes,No
+BO00076,Geisinger Health Plan-BO,NON EDI,Yes,No
+01114,GEMCare,EDI,Yes,No
+BO10046,GEMCARE HEALTH PLAN,NON EDI,Yes,No
+00405,Generations Healthcare,EDI,Yes,No
+00100,Georgia Medicaid,EDI,Yes,No
+DE0081,Georgia Medicaid Dental,Dental,Yes,No
+01115,GHI,EDI,Yes,No
+BO00040,GHI/Emblem-BO,NON EDI,Yes,No
+00430,Gilsbar,EDI,Yes,No
+BO10090,GLOBAL CARE MEDICAL GROUP,NON EDI,Yes,No
+01116,Global Health*,EDI,Yes,No
+01117,Globe Life Accident Ins.Co.,EDI,Yes,No
+00646,Gold Coast Health Plan,EDI,Yes,No
+BO10064,GOLDEN EMPIRE MANAGED CARE,NON EDI,Yes,No
+00647,Golden Rule Insurance,EDI,Yes,Yes
+B000035,GOOD SAMARITAN INSURANCE PLAN OF NORTH DAKOTA-ADV-BO,NON EDI ADV PAYER,Yes,No
+00101,Government Employees Health Association (GEHA),EDI,Yes,Yes
+DE0017,Government Employees Health Association (GEHA) Dental,Dental,Yes,No
+DE0019,Government Employees Hospital Association (GEHA) Dental,Dental,Yes,No
+DE0018,Government Employees Hospital Association Dental,Dental,Yes,No
+00369,Great American Life Assurance Company Medicare Supplement,EDI,Yes,No
+00370,Great American Life Insurance Company Medicare Supplement,EDI,Yes,No
+00102,Great West Healthcare,EDI,Yes,Yes
+DE0020,Great-West Healthcare Dental,Dental,Yes,No
+01118,Greek Catholic Union of the USA,EDI,Yes,No
+00264,GROUP & PENSION ADMINISTRATORS,EDI,Yes,No
+DE0121,Group Dental Services,Dental,Yes,No
+00486,Group Health Co-Operative,EDI,Yes,No
+01119,Group Health Northwest,EDI,Yes,No
+00103,Group Health Plan (GHP),EDI,Yes,No
+BO000992,Group Health Plan-BO,NON EDI,Yes,No
+01120,Group Hospitalization and Medical Services ,EDI,Yes,No
+00371,Group Practice Affiliates,EDI,Yes,No
+BO00041,Group Resources-BO,NON EDI,Yes,No
+DE0021,Guardian Individual Plan Dental,Dental,Yes,No
+DE0022,Guardian Life Insurance Company of America Dental,Dental,Yes,No
+BO00042,Guardian-BO,NON EDI,Yes,No
+BO10029,HANKOOK IPA,NON EDI,Yes,No
+00909,Harken Health,EDI,Yes,No
+00372,Harmony Health Plan (WellCare of Florida),EDI,Yes,No
+BO10057,HARTFORD INSURANCE CO,NON EDI,Yes,No
+00104,Harvard Pilgrim Health Care,EDI,Yes,Yes
+00232,Hawaii Medicaid,EDI,Yes,No
+00600,Hawaii Medical Assurance Assoc (HMAA),EDI,Yes,No
+00484,Hawaii Medical Service Assoc (HMSA),EDI,Yes,No
+BO10069,HCC MEDICAL INSURANCE SERVICES,NON EDI,Yes,No
+00105,Health Alliance Medical Plan (HAP),EDI,Yes,No
+00648,Health Alliance Medical Plan (IL),EDI,Yes,No
+BO00093,Health Alliance-BO,NON EDI,Yes,No
+BO00065,Health America Advantra-BO,NON EDI,Yes,No
+000901,Health America Of Pennsylvania,EDI,Yes,No
+BO00058,Health America Of Pennsylvania-BO,NON EDI,Yes,No
+BO10006,HEALTH CARE LA IPA,NON EDI,Yes,No
+B0000125,HEALTH CARE SERVICE CORPORATION_adv_BO,NON EDI ADV PAYER,Yes,No
+00233,Health Choice Arizona,EDI,Yes,No
+DE0023,Health Choice of Arizona Dental,Dental,Yes,No
+01326,Health Choice of Utah,EDI,Yes,No
+00649,Health Choice Oklahoma,EDI,Yes,No
+01121,Health Cost Solutions,EDI,Yes,No
+000924,HEALTH FIRST HEALTH PLAN,EDI,Yes,No
+000925,HEALTH FIRST INSURANCE,EDI,Yes,No
+00431,Health Net Medi-Cal,EDI,Yes,No
+01369,Health Net Medicare Advantage,EDI,Yes,No
+00005,Health Net National,EDI,Yes,No
+00006,Health Net of Northeast,EDI,Yes,No
+00006,Health Net of Northeast,EDI,Yes,No
+00601,Health New England Eligibility Standard,EDI,Yes,No
+BO10080,HEALTH ONE,NON EDI,Yes,No
+00317,Health Partners (Minnesota),EDI,Yes,No
+00106,Health Partners of Philadelphia,EDI,Yes,No
+DE0024,Health Plan of Nevada / Sierra Health Dental,Dental,Yes,No
+00432,Health Plan of San Mateo,EDI,Yes,No
+01124,Health Plan of Upper Ohio Valley,EDI,Yes,No
+BO00084,Health Plans Inc.-BO,NON EDI,Yes,No
+01125,HEALTH SERVICES CHILDREN SPECIAL NEEDS,EDI,Yes,No
+01126,Health Share / Care Oregon,EDI,Yes,No
+00107,HealthAmerica And HealthAssurance,EDI,Yes,No
+01370,HEALTHCARE HIGHWAYS,EDI,Yes,No
+00108,HealthCare Inc. (Promina),EDI,Yes,No
+000955,HEALTHCARE MANAGEMENT ADMIN,EDI,Yes,No
+01127,Healthcare Management Administrators,EDI,Yes,No
+BO10070,HEALTHCARE PARTNERS/HERITAGE,NON EDI,Yes,No
+BO00054,HEALTHCARE PARTNERS/HERITAGE-BO,NON EDI,Yes,No
+BO00043,Healthcare Partners-BO,NON EDI,Yes,No
+00332,Healthcare Solutions Group,EDI,Yes,No
+00109,HealthCare USA (HCUSA),EDI,Yes,No
+01367,HEALTHCHOICE,EDI,Yes,No
+01368,HEALTHCHOICE SELECT,EDI,Yes,No
+BO10044,HEALTHCOMP,NON EDI,Yes,No
+01128,HealthComp Administrators,EDI,Yes,No
+00373,HEALTHe Exchange,EDI,Yes,No
+00374,HealthEase (WellCare of Florida),EDI,Yes,No
+00375,HealthEase Kids (WellCare of Florida),EDI,Yes,No
+BO10051,HEALTHEDGE ADMINISTRATORS,NON EDI,Yes,No
+01129,HealthEZ,EDI,Yes,No
+00110,Healthfirst New York,EDI,Yes,Yes
+00234,Healthfirst of New Jersey,EDI,Yes,No
+01130,Healthgram (Primary PhysiciansCare),EDI,Yes,No
+B000053,HEALTHKEEPERS_Adv_BO,NON EDI ADV PAYER,Yes,No
+00137,HealthMarkets: Chesapeake National Life Insurance,EDI,Yes,No
+00136,HealthMarkets: Mega Life and Health,EDI,Yes,No
+00138,HealthMarkets: Mid West National Life Insurance,EDI,Yes,No
+00140,HealthMarkets: Transamerica Life Insurance,EDI,Yes,No
+00326,Healthnow,EDI,Yes,No
+DE0025,HealthPartners MN Dental,Dental,Yes,No
+00651,HealthPlan of Nevada,EDI,Yes,No
+01131,Healthplan Services - Celtic Insurance Company,EDI,Yes,No
+000957,HEALTHPLANS INC,EDI,Yes,No
+DE0026,Healthplex Inc. Dental,Dental,Yes,No
+00111,HealthPlus of Michigan,EDI,Yes,No
+BO00044,HealthPlus-BO,NON EDI,Yes,No
+00652,HealthScope,EDI,Yes,No
+01132,HealthSmart Benefit Solutions,EDI,Yes,No
+00342,HealthSpring,EDI,Yes,No
+00333,HealthSpring DO NOT USE,EDI,Yes,No
+00338,HealthSpring of Alabama DO NOT USE,EDI,Yes,No
+00341,HealthSpring of Florida DO NOT USE,EDI,Yes,No
+00340,HealthSpring of Illinois DO NOT USE,EDI,Yes,No
+00339,HealthSpring of Tennessee DO NOT USE,EDI,Yes,No
+01134,HealthTeam Advantage,EDI,Yes,No
+01375,HEALTHY BLUE LOUISIANA,EDI,Yes,No
+00684,Heartland National Life Ins Co,EDI,Yes,No
+01135,Heritage Physician Network (Houston),EDI,Yes,No
+01136,Highmark Senior Solutions,EDI,Yes,No
+00965,HIP NEW YORK,EDI,Yes,No
+00235,HIPNY,EDI,Yes,No
+01138,HM Care Advantage Admin by KBA,EDI,Yes,No
+01139,HMA (Hawaii Mainland Administrators),EDI,Yes,No
+B0000154,HMO COLORADO_Adv_BO,NON EDI ADV PAYER,Yes,No
+00433,Hometown Health,EDI,Yes,Yes
+BO00060,HOP-BO,NON EDI,Yes,No
+DE0128,Horizon Healthcare Dental Services,Dental,Yes,No
+00297,Horizon New Jersey Health,EDI,Yes,Yes
+BO00120,HSA Health Plan,NON EDI,Yes,No
+01140,HSBS Oklahoma City,EDI,Yes,No
+01141,Hudson Health Plan,EDI,Yes,No
+00112,Humana,EDI,Yes,Yes
+01142,Humana CareSource (KY),EDI,Yes,Yes
+DE0027,Humana Dental,Dental,Yes,No
+01327,HUMANA LONG TERM CARE,EDI,Yes,No
+00434,Humana of Florida,EDI,Yes,No
+00678,IBEW Local 508 Health Plan,EDI,Yes,No
+01143,iCare (Independent Care Health Plan),EDI,Yes,No
+00113,Idaho Medicaid,EDI,Yes,No
+DE0082,Idaho Medicaid Dental,Dental,Yes,No
+01144,Ideal Life Insurance,EDI,Yes,No
+000632,IEHP Direct,EDI,Yes,No
+BO00092,IEHP Direct Health Plan-BO,NON EDI,Yes,No
+01145,IHC Health Solutions,EDI,Yes,No
+00690,Illinicare Health Plan,EDI,Yes,Yes
+00114,Illinois Medicaid,EDI,Yes,Yes
+DE0083,Illinois Medicaid Dental,Dental,Yes,No
+BO10071,IMG,NON EDI,Yes,No
+BO10022,IMMIGRATION HEALTH SERVICES,NON EDI,Yes,No
+BO10039,IMPERIAL HEALTH,NON EDI,Yes,No
+B0000145,IMPERIAL INSURANCE COMPANIES_adv_BO,NON EDI ADV PAYER,Yes,No
+00435,Independence Administrators,EDI,Yes,No
+00115,Independence Blue Cross (Pennsylvania),EDI,Yes,No
+00436,Independent Health,EDI,Yes,No
+00116,Indiana Medicaid,EDI,Yes,No
+DE0084,Indiana Medicaid Dental,Dental,Yes,No
+000916,Indiana University Health Plan,EDI,Yes,No
+00236,Inland Empire Health,EDI,Yes,No
+BO00603,Inland Empire Health Plan Pending Eligibility,NON EDI,Yes,No
+BO013,Innovante-BO,NON EDI,Yes,No
+01146,Insurers Administrative Corporation (IAC),EDI,Yes,No
+01147,INTEGRA Administrative Group,EDI,Yes,No
+00376,Integrated Mental Health Services,EDI,Yes,No
+01148,International Medical Card Inc ,EDI,Yes,No
+BO00045,International Services-BO,NON EDI,Yes,No
+00117,InterValley Health Plan,EDI,Yes,No
+01149,Intracorp,EDI,Yes,No
+00118,Iowa Medicaid,EDI,Yes,No
+DE0085,Iowa Medicaid Dental,Dental,Yes,No
+01374,IOWA TOTAL CARE,EDI,Yes,No
+BO10052,IPM TRUST FUND,NON EDI,Yes,No
+01150,Island Home Insurance,EDI,Yes,No
+B00021,ITASCA MEDICAL CARE-ADV-BO,NON EDI ADV PAYER,Yes,No
+BO000321,IU Health Plans,NON EDI,Yes,No
+00237,Jackson Memorial Hospital Health Plan,EDI,Yes,No
+01151,Jai Medical Systems,EDI,Yes,No
+00119,Jefferson Pilot,EDI,Yes,No
+00437,John Hopkins Health Plan,EDI,Yes,No
+01409,John Hopkins US Family Health Plan,EDI,Yes,No
+01152,Johns Hopkins HealthCare LLC,EDI,Yes,No
+00265,JP FARLEY CORPORATION,EDI,Yes,No
+00121,Kaiser Foundation Health Plan of Colorado,EDI,Yes,No
+00122,Kaiser Foundation Health Plan of Hawaii,EDI,Yes,No
+01153,Kaiser Foundation Health Plan of Hawaii (DHMO Choice),EDI,Yes,No
+00123,Kaiser Foundation Health Plan of Ohio,EDI,Yes,No
+00124,Kaiser Foundation Health Plan of the Mid-Atlantic,EDI,Yes,No
+00125,Kaiser Foundation Health Plan of the Northwest,EDI,Yes,No
+01340,KAISER FOUNDATION HEALTH PLAN WASHINGTON,EDI,Yes,No
+01341,KAISER FOUNDATION HEALTH PLAN WASHINGTON OPTIONS,EDI,Yes,No
+DE0028,Kaiser NW Dental,Dental,Yes,No
+00126,Kaiser Permanente of Georgia,EDI,Yes,No
+01154,Kaiser Permanente of Northern CA,EDI,Yes,No
+00127,Kaiser Permanente of Northern California,EDI,Yes,No
+01155,Kaiser Permanente of Southern CA,EDI,Yes,No
+00488,Kaiser Permanente of Southern California,EDI,Yes,No
+00128,Kansas Medicaid,EDI,Yes,No
+DE0086,Kansas Medicaid Dental,Dental,Yes,No
+01156,Katy Medical Group,EDI,Yes,No
+BO10025,KEENAN & ASSOCIATES BO,NON EDI,Yes,No
+01157,Kemper Benefits,EDI,Yes,No
+00129,Kentucky Medicaid,EDI,Yes,Yes
+DE0087,Kentucky Medicaid Dental,Dental,Yes,No
+BO00194,Kern Health System,NON EDI,Yes,No
+BO10003,KERN HEALTH SYSTEMS BO,NON EDI,Yes,No
+00654,Key Benefit Administrators (KBA),EDI,Yes,No
+BO000015,Key Benefits Administrator,NON EDI,Yes,No
+01158,Key Benefits Administrators (IN),EDI,Yes,No
+01159,Key Healthy Partners ,EDI,Yes,No
+01160,KeySolution,EDI,Yes,No
+01404,Keystone First Community Health Plan,EDI,Yes,No
+00377,Keystone Mercy Health Plan,EDI,Yes,No
+01161,Keystone VIP Choice,EDI,Yes,No
+00438,Kitsap Physician Services,EDI,Yes,No
+01162,KSKJ Life,EDI,Yes,No
+0009650,LA Care Health Plan,EDI,Yes,Yes
+BO00604,LA Care Health Plan Pending,NON EDI,Yes,No
+BO00031,LAMC IPA-BO,NON EDI,Yes,No
+01163,Leggett Platt,EDI,Yes,No
+01164,Leon Medical Centers Health Plan,EDI,Yes,No
+BO10058,LIBERTY MUTUAL,NON EDI,Yes,No
+01165,Liberty National Life Ins.Co.,EDI,Yes,No
+01166,LifeCare Assurance Company,EDI,Yes,No
+01167,Lifetime Benefit Solutions (RMSCO),EDI,Yes,No
+01168,Lifewise Arizona,EDI,Yes,No
+00655,Lifewise Health Plan of Oregon,EDI,Yes,No
+01169,Lifewise Health Plan of Washington,EDI,Yes,No
+BO000993,Lifewise-BO,NON EDI,Yes,No
+01170,Lincoln Financial,EDI,Yes,No
+DE0030,Lincoln Financial Group Dental,Dental,Yes,No
+DE0029,Lincoln FINANCIAL INSURANCE COMPANY Dental,Dental,Yes,No
+01171,Lincoln Heritage,EDI,Yes,No
+00634,LOCAL 1199,EDI,Yes,No
+BO00234,LOCAL 1199-BO,NON EDI,Yes,No
+BO00046,Local 272 welfare Fund-BO,NON EDI,Yes,No
+01172,LoneStar TPA,EDI,Yes,No
+BO005,Loomis-BO,NON EDI,Yes,No
+BO10059,LOS ANGELES MEDICAL CENTER LAMC,NON EDI,Yes,No
+00474,Louisiana Health Exchange,EDI,Yes,No
+01173,Louisiana Healthcare Connections,EDI,Yes,No
+10756,Louisiana Healthcare Connections - Centene,EDI,Yes,No
+00130,Louisiana Medicaid,EDI,Yes,No
+00238,Lovelace Health Plan,EDI,Yes,No
+00378,Loyal American Life Insurance Company Medicare Supplement,EDI,Yes,No
+01174,Loyal Christian Benefit Association,EDI,Yes,No
+00131,Lumenos,EDI,Yes,No
+01175,Lumico Life Insurance,EDI,Yes,No
+00676,Magellan Behavioral Health,EDI,Yes,No
+12260,Magellan Complete Care of VA,EDI,Yes,No
+01418,MAGELLAN HEALTH SERVICES,EDI,Yes,No
+00879,Magnacare,EDI,Yes,Yes
+BO00056,MAGNACARE-BO,NON EDI,Yes,No
+00095,MAIL HANDLERS BENEFIT PLAN,EDI,Yes,No
+00656,Maine Community Health Options,EDI,Yes,No
+00239,Maine Medicaid,EDI,Yes,Yes
+DE0088,Maine Medicaid Dental,Dental,Yes,No
+01176,Managed Care of America,EDI,Yes,No
+01177,Managed Health Network (MHN),EDI,Yes,No
+00379,Managed Health Services Indiana,EDI,Yes,Yes
+00380,Managed Health Services Wisconsin,EDI,Yes,Yes
+BO001820,Manhattan Life-BO,NON EDI,Yes,No
+DE0031,MAPFRE Dental,Dental,Yes,No
+01178,MAPFRE Life Puerto Rico,EDI,Yes,No
+BO10008,MARCH VISION CARE Delayed BO,EDI Delayed,Yes,No
+BOR0008,MARCH VISION CARE -Real time,EDI,Yes,No
+01420,MARCH VISION EDI,EDI,Yes,No
+00298,Maricopa Care Advantage (Arizona),EDI,Yes,No
+00299,Maricopa Health Plan (Arizona),EDI,Yes,No
+00241,Maricopa Integrated Health System Payer Programs,EDI,Yes,No
+01179,Martins Point Health Care *,EDI,Yes,No
+00132,Maryland Medicaid,EDI,Yes,No
+DE0089,Maryland Medicaid Dental,Dental,Yes,No
+00133,Massachusetts Medicaid,EDI,Yes,No
+DE0090,Massachusetts Medicaid Dental,Dental,Yes,No
+01398,MASSHEALTH,EDI,Yes,No
+BO00082,MASSHEALTH-BO,NON EDI,Yes,No
+01421,MASSHEALTH-EDI,EDI,Yes,No
+BO10081,MATRIX ABSENCE MANAGEMENT INC,NON EDI,Yes,No
+BO00201,MBA BENEFIT ADMINISTRATORS INC (slc),NON EDI,Yes,No
+04561,MBI LOOKUP ELIGIBILITY,EDI,Yes,No
+03561,McLaren Health Plan,EDI,Yes,No
+BO000051,McLaren Health Plan Commercial-BO,NON EDI,Yes,No
+01180,MDWise Exchange,EDI,Yes,No
+00381,MDWise Hoosier Alliance,EDI,Yes,No
+000923,MDWISE Medicaid Health Plans,EDI,Yes,No
+00657,MedBen,EDI,Yes,No
+00439,MedCost Benefit Services,EDI,Yes,No
+00134,Medica,EDI,Yes,Yes
+01450,Medica - Medicare Supplement,EDI,Yes,No
+01182,Medica Health Plans,EDI,Yes,No
+DE0033,Medica of Minnesota Dental,Dental,Yes,No
+01183,Medica2,EDI,Yes,No
+DE0091,Medicaid of Nevada Dental,Dental,Yes,No
+DE0176,Medicaid of New York (Dental Clinics Only),Dental,Yes,No
+01324,MEDICAID UTAH,EDI,Yes,No
+01184,Medical Associates Health Plan/Health Choices,EDI,Yes,No
+01185,Medical Card System,EDI,Yes,No
+DE0034,Medical Card System (MCS) Dental,Dental,Yes,No
+00135,Medical Mutual of Ohio,EDI,Yes,Yes
+DE0035,Medical Mutual of Ohio Dental,Dental,Yes,No
+01186,Medicare Advantage - Pennsylvania,EDI,Yes,No
+00007,Medicare Part A and B,EDI,Yes,No
+01187,Medicare y Mucho Mas (INMEDIATA HEALTH GRP CORP),EDI,Yes,No
+00679,Medico Insurance Company,EDI,Yes,No
+000959,MEDIGOLD HEALTH PLANS,EDI,Yes,No
+01188,Med-Pay Inc,EDI,Yes,No
+BO00047,Medsolutions-BO,NON EDI,Yes,No
+01189,MedStar Family Choice ,EDI,Yes,No
+00658,MedStar Health Plan,EDI,Yes,No
+00139,Mega Life (Oklahoma City),EDI,Yes,No
+00242,Memorial Care TPA,EDI,Yes,No
+00243,Mercy Care Plan (Arizona),EDI,Yes,No
+00334,Mercy Health Care Plan,EDI,Yes,No
+01190,MercyCare Health Plan (WI),EDI,Yes,No
+00902,Meridian Health Plan of Illinois,EDI,Yes,No
+00893,Meritain Health,EDI,Yes,Yes
+BO00048,Meritian-BO,NON EDI,Yes,No
+01191,Meritus Health Partners,EDI,Yes,No
+BO10013,MESVISION Delayed BO,EDI Delayed,Yes,No
+BOR0013,MesVisoin- Real time,EDI,Yes,No
+DE0036,MetLife Dental,Dental,Yes,No
+00244,MetLife Dental Family,EDI,Yes,No
+00659,MetroPlus Health Plan,EDI,Yes,No
+BO00049,Metroplus-BO,NON EDI,Yes,No
+00141,Metropolitan Health Plan (MHP),EDI,Yes,No
+01192,MHNET Behavioral Health,EDI,Yes,No
+00245,Michigan Medicaid,EDI,Yes,No
+DE0092,Michigan Medicaid Dental,Dental,Yes,No
+00440,Michigan Medicaid Pending Eligibility,EDI,Yes,No
+00246,Michigan MIChild,EDI,Yes,No
+BO00057,Michigan Mutual-BO,NON EDI,Yes,No
+00240,"Mid Atlantic Medical Services, LLC (MAMSI)",EDI,Yes,No
+00142,Minnesota Medicaid,EDI,Yes,No
+DE0093,Minnesota Medicaid Dental,Dental,Yes,No
+00267,"MISSISSIPPI ADMIN SERVICES, INC",EDI,Yes,No
+01193,Mississippi Children's Health Insurance Program,EDI,Yes,No
+00143,Mississippi Children's Health Insurance Program (CHIP),EDI,Yes,No
+00144,Mississippi Medicaid,EDI,Yes,Yes
+DE0094,Mississippi Medicaid Dental,Dental,Yes,No
+00145,Mississippi State Employees and Teachers Health Plan,EDI,Yes,No
+01194,Missouri Care,EDI,Yes,No
+00146,Missouri Medicaid,EDI,Yes,No
+DE0095,Missouri Medicaid Dental,Dental,Yes,No
+00147,MMSI (Mayo Health),EDI,Yes,No
+01195,Moda Health,EDI,Yes,No
+BO000991,MODA Health Plan-BO,NON EDI,Yes,No
+00148,Molina Healthcare of California,EDI,Yes,No
+00300,MOLINA HEALTHCARE OF FLORIDA,EDI,Yes,No
+00485,Molina Healthcare of Illinois,EDI,Yes,No
+00149,Molina Healthcare of Indiana,EDI,Yes,No
+00150,Molina Healthcare of Michigan,EDI,Yes,No
+00382,MOLINA HEALTHCARE OF MISSOURI,EDI,Yes,No
+00247,Molina Healthcare of New Mexico,EDI,Yes,No
+00151,Molina Healthcare of Ohio,EDI,Yes,Yes
+01196,Molina Healthcare of Puerto Rico,EDI,Yes,No
+01197,Molina Healthcare of South Carolina,EDI,Yes,No
+00152,Molina Healthcare of Texas,EDI,Yes,Yes
+00153,Molina Healthcare of Utah,EDI,Yes,No
+00154,Molina Healthcare of Washington,EDI,Yes,Yes
+01198,Molina Healthcare of Wisconsin,EDI,Yes,No
+01334,MOLINA HEALTHCARE SOUTH CAROLINA,EDI,Yes,No
+BO00148,Molina of CA (Exclusive Usage) BO,NON EDI,Yes,No
+00248,Montana Medicaid,EDI,Yes,No
+DE0097,Montana Medicaid - DPHHS/Health Policy Services Division Dental,Dental,Yes,No
+DE0096,Montana Medicaid Dental,Dental,Yes,No
+01199,Montefiore CMO,EDI,Yes,No
+BO00064,Monumental Life Insurance Co-BO,NON EDI,Yes,No
+01365,MORECARE,EDI,Yes,Yes
+BO009,Motion Picture Industries-BO,NON EDI,Yes,No
+00320,Mountain State,EDI,Yes,No
+BO00016,MPM10-BO,NON EDI,Yes,No
+01200,Municipal Health Benefit Fund,EDI,Yes,No
+01201,Mutual Health Services,EDI,Yes,No
+00155,Mutual of Omaha,EDI,Yes,Yes
+00156,MVP Health Care (New York),EDI,Yes,No
+DE0032,MVP Health Plan of New York Dental,Dental,Yes,No
+01202,"NaphCare,Inc.",EDI,Yes,No
+00157,National Association of Letter Carriers (NALC),EDI,Yes,No
+01203,National Telecommunications Cooperative Association (NTCA),EDI,Yes,No
+00158,Nationwide Health Plan,EDI,Yes,No
+BO00073,Nationwide Mutual Insurance-BO,NON EDI,Yes,No
+01204,Nebraska Medicaid ,EDI,Yes,No
+01205,Nebraska Total Care,EDI,Yes,No
+00500,NEHEN - Neighborhood Health Plans,EDI,Yes,No
+00249,Neighborhood Health Partnership,EDI,Yes,No
+00502,Neighborhood Health Plan RI,EDI,Yes,No
+BO00083,NETWORK HEALTH -BO-BO,NON EDI,Yes,No
+009012,Network Health Insurance Corp,EDI,Yes,No
+00466,Network Health Plan of WI,EDI,Yes,No
+00159,Nevada Medicaid,EDI,Yes,No
+DE0098,Nevada Medicaid - First Health Services Corp Dental,Dental,Yes,No
+000902,New Era Insurance Company,EDI,Yes,No
+01339,New Era Insurance Company -EDU,EDI,Yes,No
+BO00074,New Era Insurance Company-BO,NON EDI,Yes,No
+00160,New Hampshire Medicaid,EDI,Yes,No
+DE0099,New Hampshire Medicaid Dental,Dental,Yes,No
+00161,New Jersey Medicaid,EDI,Yes,No
+DE0100,New Jersey Medicaid Dental,Dental,Yes,No
+01207,New Mexico Health Connections,EDI,Yes,No
+00162,New Mexico Medicaid,EDI,Yes,Yes
+DE0101,New Mexico Medicaid Dental,Dental,Yes,No
+BO00146,New Reflections,NON EDI,Yes,No
+00163,New York Medicaid,EDI,Yes,No
+DE0102,New York Medicaid Dental,Dental,Yes,No
+BO00030,NMM01-BO,NON EDI,Yes,No
+00000,No Advantage Payer,EDI,Yes,No
+00164,North Carolina Medicaid,EDI,Yes,No
+DE0103,North Carolina Medicaid Dental,Dental,Yes,No
+00250,North Dakota Medicaid,EDI,Yes,No
+DE0104,North Dakota Medicaid Dental,Dental,Yes,No
+BO0019,NORTHLAND PACE PROGRAM,NON EDI,Yes,No
+B000024,NORTHLAND PACE PROGRAM_adv_BO,NON EDI ADV PAYER,Yes,No
+01208,Northwest Administrators,EDI,Yes,Yes
+BONONEDI,not supported yet-BO,NON EDI,Yes,No
+00441,Nova Healthcare Administrators,EDI,Yes,No
+00335,NovaSys Health,EDI,Yes,No
+BO00597,NVA BO,NON EDI,Yes,No
+DE0122,OH Dental / UHC Dental Government Programs,Dental,Yes,No
+00383,Ohana Health Plan (WellCare of Hawaii),EDI,Yes,No
+00165,Ohio Medicaid,EDI,Yes,Yes
+DE0105,Ohio Medicaid Dental,Dental,Yes,No
+01209,Oklahoma Employees Group Insurance Division,EDI,Yes,No
+00166,Oklahoma Medicaid,EDI,Yes,No
+DE0106,Oklahoma Medicaid Dental,Dental,Yes,No
+01323,Old Surety Life Insurance Co,EDI,Yes,No
+00167,OmniCare (Michigan),EDI,Yes,No
+BO000218,ONE CARE BO,NON EDI,Yes,No
+000956,OPERATING ENGINEERS LOCAL 428,EDI,Yes,No
+01210,Operating Engineers Local No.428,EDI,Yes,No
+BO015,operating engineers welfare fund-BO,NON EDI,Yes,No
+BOR0009,Opticare - Real time,EDI,Yes,No
+BO10009,Opticare BO,NON EDI,Yes,No
+BO10009,Opticare Delayed BO,EDI Delayed,Yes,No
+BO000190,Opticare-BO,NON EDI,Yes,No
+00310,Optima/Sentara,EDI,Yes,No
+BO10047,ORANGE COUNTY ADVANTAGE MEDICAL GRP,NON EDI,Yes,No
+01211,Orange County Fire Authority,EDI,Yes,No
+00168,Oregon Medicaid,EDI,Yes,No
+DE0107,Oregon Medicaid Dental,Dental,Yes,No
+01212,Oregon’s Health CO-OP,EDI,Yes,No
+01213,Oscar Health EDI,EDI,Yes,No
+BO10055,OSCAR HEALTH NON-EDI BO,NON EDI,Yes,No
+DC002,Oxford DC,EDI,Yes,No
+00169,Oxford Health Plans,EDI,Yes,Yes
+BO00015,PA513-BO,NON EDI,Yes,No
+BO10082,PACIFIC COMPENSATION,NON EDI,Yes,No
+BO10016,PACIFIC HEALTHCARE IPA,NON EDI,Yes,No
+BO10011,PACIFIC IPA,NON EDI,Yes,No
+00442,Pacific Source Health Plan,EDI,Yes,No
+00304,PacifiCare (PPO),EDI,Yes,No
+DE0123,Pacificare Dental and Vision HMO,Dental,Yes,No
+DE0124,Pacificare Dental and Vision PPO,Dental,Yes,No
+00254,PacifiCare of Arizona (HMO),EDI,Yes,No
+00008,PacifiCare Of California,EDI,Yes,No
+00255,PacifiCare of Colorado (HMO),EDI,Yes,No
+00443,PacifiCare of Nevada (HMO),EDI,Yes,No
+BO001,Pacificare of Nevada -BO,NON EDI,Yes,No
+00170,PacifiCare Of Oklahoma,EDI,Yes,No
+00251,PACIFICARE OF OREGON,EDI,Yes,No
+00252,PACIFICARE OF TEXAS,EDI,Yes,No
+00253,PACIFICARE OF WASHINGTON,EDI,Yes,No
+00977,PacificSource Administrators,EDI,Yes,Yes
+01214,PacificSource Community Solutions (Medicaid),EDI,Yes,No
+01215,PacificSource Medicare,EDI,Yes,No
+00660,Pan-American Life Insurance,EDI,Yes,No
+01216,Panamerican Life Puerto Rico (PALIC),EDI,Yes,No
+BO00014,PAPER-BO,NON EDI,Yes,No
+BO10065,PARADIGM MANAGEMENT SERVICES,NON EDI,Yes,No
+01217,Paramount Health,EDI,Yes,No
+000921,Paramount Health Care,EDI,Yes,No
+00444,Partners National Health Plans of NC,EDI,Yes,No
+00256,Partnership Health Plan of California,EDI,Yes,No
+00384,Passport Advantage,EDI,Yes,No
+00257,Passport Health Plan,EDI,Yes,No
+BO000216,Peak Pace Solution LLC BO,NON EDI,Yes,No
+01218,Pekin Life Insurance,EDI,Yes,No
+01219,Penn Treaty Network America Ins Medicare Supp,EDI,Yes,No
+DE0065,Pennsylvania Blue Shield (Camp Hill) Dental,Dental,Yes,No
+01220,Pennsylvania Health and Wellness ,EDI,Yes,No
+00171,Pennsylvania Medicaid,EDI,Yes,No
+DE0108,Pennsylvania Medicaid Dental,Dental,Yes,No
+DE0109,Pennsylvania Medicaid Dental,Dental,Yes,No
+01221,People First,EDI,Yes,No
+01222,Peoples Health,EDI,Yes,No
+000922,PerformCare,EDI,Yes,No
+00322,Personal Insurance Administrators,EDI,Yes,No
+00322,Personal Insurance Administrators,EDI,Yes,No
+00230,PERSONALCARE,EDI,Yes,No
+00307,PHCS Savility Payers,EDI,Yes,No
+BO007,PHCS-BO,NON EDI,Yes,No
+00258,Phoenix Health Plan,EDI,Yes,No
+00259,PHP TennCare,EDI,Yes,No
+BO00019,PHYSICIANS CARE-BO,NON EDI,Yes,No
+BO00095,Physicians health choice-BO,NON EDI,Yes,No
+01223,Physicians Health Plan Northern IN,EDI,Yes,No
+01224,Physicians Health Plan of Mid-Michigan,EDI,Yes,No
+00172,Physicians Mutual Insurance Company,EDI,Yes,No
+01225,Physicians Plus Insurance,EDI,Yes,No
+BO10036,PIA,NON EDI,Yes,No
+01226,Piedmont,EDI,Yes,No
+01227,Piedmont Wellstar HealthPlans,EDI,Yes,No
+01228,Pinnacle Claims Management ,EDI,Yes,No
+BO10023,PINNACLE CLAIMS MANAGEMENT INC BO,NON EDI,Yes,No
+01229,Pinnacle Physician Management Org,EDI,Yes,No
+BO10072,PIONEER MEDICAL GROUP,NON EDI,Yes,No
+00260,Pittman and Associates,EDI,Yes,No
+01230,Plan de Salud Hospital Menonita,EDI,Yes,No
+BO00143,PLANNED ADMIN INC,NON EDI,Yes,No
+01231,Planned Administrator Inc,EDI,Yes,No
+00681,Plumbers Pipefitters Local Union 525 Health Welfare Trust,EDI,Yes,No
+B000036,"PORT HOLDINGS, INC-ADV-BO",NON EDI ADV PAYER,Yes,No
+01232,Prairie States ,EDI,Yes,No
+01233,Preferred Care Partners,EDI,Yes,Yes
+01234,Preferred Health System of Kansas,EDI,Yes,No
+00173,Preferred Health Systems,EDI,Yes,No
+BO00022,PREFERRED IPA OF CA-BO,NON EDI,Yes,No
+BO00032,Preferred IPA-BO,NON EDI,Yes,No
+01235,Preferred Medicare Choice(PMC)(INMEDIATA HEALTH GRP),EDI,Yes,No
+00261,PreferredOne,EDI,Yes,No
+DE0066,Premera Blue Cross Dental,Dental,Yes,No
+BO10012,Premier Eye Care,NON EDI,Yes,No
+BO00011,Premier Eye Care Delayed BO,EDI Delayed,Yes,No
+BOR0011,Premier Eye Care- Real time,EDI,Yes,No
+00661,Premier Health,EDI,Yes,No
+01236,Presbyterian Health Plan *,EDI,Yes,No
+00662,Prestige Health Choice,EDI,Yes,Yes
+BO10020,PRIMARY CARE ASSOCIATES OF CA,NON EDI,Yes,No
+BO10083,PRIME HEALTH SERVICES,NON EDI,Yes,No
+BO10060,PRIMECARE OF COACHELLA VALLEY,NON EDI,Yes,No
+00321,PrimeWest Health,EDI,Yes,No
+00174,Principal Financial Group (Nippon Life),EDI,Yes,No
+00175,Principal Financial Group (Principal Life),EDI,Yes,No
+DE0037,Principal Financial Group Dental,Dental,Yes,No
+DE0038,Principal Life Insurance Co. Dental,Dental,Yes,No
+00324,Priority Health,EDI,Yes,No
+00268,PROFESSIONAL BENEFITS ADMIN (IL),EDI,Yes,No
+01237,Prominence Health Plan (PPO  HMO),EDI,Yes,No
+01238,Prominence Health Plan of Nevada (Medicare Advantage),EDI,Yes,No
+01239,Prominence Health Plan of Texas (Medicare Advantage),EDI,Yes,No
+BO10018,PROSPECT AMVI,NON EDI,Yes,No
+BO10024,PROSPECT LACARE,NON EDI,Yes,No
+00262,Providence Health Plan,EDI,Yes,No
+00386,Provident American Life Health Insurance Company Medicare Supplement,EDI,Yes,No
+01240,Public Employee Benefit Authority ,EDI,Yes,No
+00445,Public Employees Health Plan (PEHP),EDI,Yes,Yes
+01241,Public Employees Health Program - CHIP,EDI,Yes,No
+01242,Public Employees Health Program - Medicare,EDI,Yes,No
+00263,Puerto Rico Medicaid (ODSI),EDI,Yes,No
+01243,Puritan Life Insurance,EDI,Yes,No
+00663,QualCare,EDI,Yes,No
+00402,Qualchoice,EDI,Yes,No
+01343,Quartz ASO,EDI,Yes,No
+BO0020,QUARTZ HEALTH PLAN MN CORPORATION- ADV-BO,NON EDI,Yes,No
+00387,QuikTrip Corporation,EDI,Yes,Yes
+BO00021,REGAL-BO,NON EDI,Yes,No
+01244,Regence Group Administration,EDI,Yes,No
+00176,Reliance Standard Life,EDI,Yes,No
+DE0039,Reliance Standard Life Insurance Company Dental,Dental,Yes,No
+01245,Reserve National Insurance Company,EDI,Yes,No
+000960,Rhode Island Medicaid,EDI,Yes,No
+01246,RightCare from Scott and White Health Plan,EDI,Yes,No
+01247,Riverlink Health*,EDI,Yes,No
+00270,Rocky Mountain Health Plan,EDI,Yes,No
+01248,Royal Neighbors of America,EDI,Yes,No
+01249,S and S Healthcare Strategies,EDI,Yes,No
+01250,"S. USA Life Insurance Company, Inc. ",EDI,Yes,No
+00271,San Francisco Health Plan - CA,EDI,Yes,No
+00272,San Joaquin Health Plan,EDI,Yes,No
+BO001789,Sanford Health BO-BO,NON EDI,Yes,No
+00400,Sanford Health Plan,EDI,Yes,Yes
+01252,Santa Clara Family Health Plan,EDI,Yes,No
+00446,Santa Clara Valley Health and Hospital,EDI,Yes,No
+01253,"SBLI USA Life Insurance Company, Inc.",EDI,Yes,No
+00177,SCAN HMO,EDI,Yes,No
+BO00600,SCAN HMO Pending Eligibility,NON EDI,Yes,No
+01254,Schaller Anderson Aetna Better Health of New York,EDI,Yes,No
+01255,Schaller Anderson Aetna Better Health OH,EDI,Yes,No
+01256,"Schaller Anderson Delaware Physicians, Inc",EDI,Yes,No
+01257,Schaller Anderson Maryland Physicians Care,EDI,Yes,No
+01258,Schaller Anderson Mercy Care,EDI,Yes,No
+01259,Schaller Anderson Mercy Maricopa,EDI,Yes,No
+01260,Schaller Anderson Missouri Care,EDI,Yes,No
+01261,Schaller Anderson Parkland Community Health Plan,EDI,Yes,No
+00305,Scott White Health Plan,EDI,Yes,No
+00664,Secure Health Plans of GA,EDI,Yes,No
+DE0040,Securian Dental,Dental,Yes,No
+BO00068,Security Blue-BO,NON EDI,Yes,No
+01262,Security Health Plan,EDI,Yes,No
+BO10048,SEDGWICK,NON EDI,Yes,No
+00388,Select Health of South Carolina,EDI,Yes,No
+00447,Select Health Utah,EDI,Yes,No
+01263,Select Senior Clinic,EDI,Yes,No
+01264,SelectCare of Texas (Beaumont),EDI,Yes,No
+01265,SelectCare of Texas (Golden Triangle),EDI,Yes,No
+01266,SelectCare of Texas (Houston),EDI,Yes,No
+01267,SelectCare of Texas (Integranet),EDI,Yes,No
+01268,SelectCare of Texas (Kelsey-Seybold),EDI,Yes,No
+01269,SelectCare of Texas (Memorial Clinical Assoc),EDI,Yes,No
+01270,SelectCare of Texas (Northwest Diagnostic),EDI,Yes,No
+BO002,Self Pay-BO,NON EDI,Yes,No
+01271,Selman Company,EDI,Yes,Yes
+01272,Senior Dimensions,EDI,Yes,No
+01273,Senior Health Services Center-Univ American Family Co.,EDI,Yes,No
+01274,Senior Whole Health,EDI,Yes,No
+BO10017,SEOUL MEDICAL GROUP,NON EDI,Yes,No
+BO00097,Seton Health-BO,NON EDI,Yes,No
+000777,Sharp Health Plan,EDI,Yes,No
+BO10073,SHEET METAL WORKERS HEALTH PLAN,NON EDI,Yes,No
+01275,Shenandoah Life Insurance,EDI,Yes,No
+00473,Sierra Health Service,EDI,Yes,No
+PL001,Sierra Health Service Dont Use,EDI,Yes,No
+00091,Significa Benefit Services,EDI,Yes,No
+01276,Silver Summit Health Plan,EDI,Yes,No
+00665,Simply Healthcare Plans,EDI,Yes,No
+01277,SisCo Benefits,EDI,Yes,No
+00666,Soundpath Health,EDI,Yes,No
+BO000996,Soundpath Health-BO,NON EDI,Yes,No
+BO10035,SOUTH ATLANTIC MED GRP,NON EDI,Yes,No
+BO00029,SOUTH ATLANTIC MED. GRP.-BO,NON EDI,Yes,No
+00273,South Carolina Medicaid,EDI,Yes,No
+DE0110,South Carolina Medicaid Dental,Dental,Yes,No
+B00022,SOUTH COUNTRY HEALTH ALLIANCE-ADV-BO,NON EDI ADV PAYER,Yes,No
+00179,South Dakota Medicaid,EDI,Yes,No
+01278,Southeastern Indiana Health Organization,EDI,Yes,No
+00180,Southern Health Services (SHS),EDI,Yes,No
+BO00122,SOUTHWEST MULTI-CRAFT HEALTH WELFARE TRUST FUND,NON EDI,Yes,No
+BO000521,Southwest Service Administrator,NON EDI,Yes,No
+00389,Special Agents Mutual Benefit Association,EDI,Yes,No
+BO10007,SPECTERA CLAIMS DEPARTMENT Delayed BO,EDI Delayed,Yes,No
+BOR0007,SPECTERA CLAIMS DEPARTMENT-Real time,EDI,Yes,No
+01419,SPECTERA VISION EDI,EDI,Yes,No
+01279,Spectrum Health,EDI,Yes,No
+00390,SPJST Medicare Supplement,EDI,Yes,No
+00266,"SRT ADMINISTRATORS, INC.",EDI,Yes,No
+BO000156,St Joseph IPA,NON EDI,Yes,No
+DE0041,Standard Ins. Co. (OR Business) Dental,Dental,Yes,No
+00181,Standard Insurance,EDI,Yes,No
+00182,Standard Insurance of New York,EDI,Yes,No
+MD003,Standard Life and Accident Insurance,EDI,Yes,No
+00416,Standard Life and Accident Insurance Company,EDI,Yes,No
+DE0042,Standard Life Insurance Company of New York Dental,Dental,Yes,No
+00274,Stanislaus County MIA Program,EDI,Yes,No
+00183,Star HRG,EDI,Yes,No
+BO10030,STATE COMPENSATION INSURANCE FUND,NON EDI,Yes,No
+BO00070,State Farm Health Ins-BO,NON EDI,Yes,No
+00897,State Farm Ins,EDI,Yes,No
+001908,State Mutual (Lincoln Novation),EDI,Yes,No
+01280,State Mutual Med Supp,EDI,Yes,No
+00391,StayWell (WellCare of Florida),EDI,Yes,No
+00392,StayWell Kids (WellCare of Florida),EDI,Yes,No
+BO00072,Sterling Life Insurance-BO,NON EDI,Yes,No
+01281,Stewart C Miller and Co,EDI,Yes,No
+BO10084,STEWART MEDICAL GROUP,NON EDI,Yes,No
+BO00001,Stirling Benefits Inc-BO,NON EDI,Yes,No
+009201,Stonebridge Life Insurance Company,EDI,Yes,No
+BO011,STTEC-Secure Horizons-BO,NON EDI,Yes,No
+00184,StudentResources,EDI,Yes,No
+00448,SummaCare Health Plan,EDI,Yes,No
+01284,Summit America Insurance Service,EDI,Yes,No
+01285,Sunflower State Health (Kansas),EDI,Yes,No
+00327,Sunshine State Health Plan,EDI,Yes,No
+DE0181,Superior Dental Care,Dental,Yes,No
+00393,Superior HealthPlan Texas,EDI,Yes,Yes
+BO10031,Superior Vision,NON EDI,Yes,No
+BO00096,Superior Vision BO,NON EDI,Yes,No
+0356,SUTTER HEALTH AETNA,EDI,Yes,No
+01286,Sutter Select,EDI,Yes,No
+BO00142,Tall Tree Administrators,NON EDI,Yes,No
+BO004,Teachers Health Trust -BO,NON EDI,Yes,No
+BO000217,TEAMSTERS & FOOD EMPLOYERS SECURITY BO,NON EDI,Yes,No
+01287,TennDent,EDI,Yes,No
+DE0111,Tennessee Medicaid - Tenncare Dental,Dental,Yes,No
+00185,Tennessee Medicaid (TennCare),EDI,Yes,No
+00406,TexanPlus - North Texas Area,EDI,Yes,No
+00407,TexanPlus - Southeast Texas Area,EDI,Yes,No
+01288,TexanPlus (Integranet),EDI,Yes,No
+01289,TexanPlus (Kelsey-Seybold),EDI,Yes,No
+00275,Texas CHIP,EDI,Yes,No
+00343,Texas HealthSpring,EDI,Yes,No
+00186,Texas Medicaid,EDI,Yes,No
+00323,Texas Medicaid (Name/DOB),EDI,Yes,No
+BO00111,Texas Medicaid BO-BO,NON EDI,Yes,No
+DE0112,Texas Medicaid Dental,Dental,Yes,No
+01290,The Kempton Company,EDI,Yes,No
+00667,The Loomis Company,EDI,Yes,No
+01291,The ULLICO Family of Companies,EDI,Yes,No
+00187,Three Rivers Health Plans (Unison Health Plan),EDI,Yes,No
+00683,Thrivent,EDI,Yes,No
+00276,TLC Family Care Health Plan (Memphis Managed Care),EDI,Yes,No
+00408,Today's Health,EDI,Yes,No
+00409,Today's Options,EDI,Yes,No
+00901,Total Carolina Care,EDI,Yes,No
+BO000050,Total Health Care Commercial BO,NON EDI,Yes,No
+01292,TransactRX Infusion and Specialty,EDI,Yes,No
+01293,TransactRX Part D,EDI,Yes,No
+01294,Transamerica Life Insurance (KBA),EDI,Yes,No
+01295,Transamerica Life Insurance Company,EDI,Yes,Yes
+000953,TRANSAMERICA LIFE INSURANCE HEALTHMARKETS,EDI,Yes,No
+01296,Transamerica Premier Life Insurance Co. ,EDI,Yes,No
+BO10045,TRANSWESTERN,NON EDI,Yes,No
+BO10032,Travelers Insurance Company,NON EDI,Yes,No
+BO00067,Travelers Insurance Company-BO,NON EDI,Yes,No
+BO10028,TRI VALLEY MEDICAL GROUP,NON EDI,Yes,No
+01297,"Triad Healthcare, Inc",EDI,Yes,No
+BO10074,TRIBAL HEALTH PARTNERS,NON EDI,Yes,No
+00410,Tribute / SelectCare of Oklahoma,EDI,Yes,No
+00975,Tricare East,EDI,Yes,Yes
+009502,TRICARE for Life,EDI,Yes,No
+REV01,TRICARE for Life-REV,EDI,Yes,No
+01298,TRICARE Overseas,EDI,Yes,Yes
+00009,Tricare West,EDI,Yes,Yes
+BO10010,TRICARE WEST Back-Office,NON EDI,Yes,No
+009401,Tricare West -DC,EDI,Yes,No
+BO00112,Tricare-Pending-BO,NON EDI,Yes,No
+01299,Trillium Community Health Plan,EDI,Yes,No
+01407,Triple S Advantage,EDI,Yes,No
+DE0113,Triple-S Medicare Advantage Dental,Dental,Yes,No
+DE0043,Triple-S Salud Dental,Dental,Yes,No
+BO10066,TRISTAR RISK MANAGEMENT,NON EDI,Yes,No
+01379,True Health New Mexico,EDI,Yes,No
+DE0044,Trustmark Dental,Dental,Yes,No
+00189,Trustmark Insurance aka HOP,EDI,Yes,No
+00190,Tufts Health Plan,EDI,Yes,No
+BO016,UAW retirees medical benefits-BO,NON EDI,Yes,No
+00449,Ucare of Minnesota,EDI,Yes,No
+BO000049,UHA,NON EDI,Yes,No
+01301,Ultimate Health Plans,EDI,Yes,No
+DE0045,UMR - Cincinnati Dental,Dental,Yes,No
+DE0046,UMR - Harrington/Columbus Dental,Dental,Yes,No
+DE0047,UMR - Lexington Dental,Dental,Yes,No
+DE0048,UMR - Onalaska Dental,Dental,Yes,No
+DE0049,UMR - Sant Antonio Dental,Dental,Yes,No
+DE0050,UMR - Wausau/UHIS Dental,Dental,Yes,No
+00417,UMR Wausau,EDI,Yes,Yes
+BO00050,UMR-BO,NON EDI,Yes,No
+01302,UMWA Health and Retirements Funds,EDI,Yes,No
+00269,UNDERWRITERS SAFETY CLAIMS,EDI,Yes,No
+00303,Unicare,EDI,Yes,Yes
+BO10085,UNIFIED LIFE INSURANCE CO,NON EDI,Yes,No
+01303,Union Pacific Railroad Employees Health Systems,EDI,Yes,No
+00394,Union Pacific Railroad Employes Health Systems,EDI,Yes,No
+BO00069,Unison Administrative Services-BO,NON EDI,Yes,No
+PL004,UNISON MEDICAID,EDI,Yes,No
+00673,United American Ins Co,EDI,Yes,No
+DE0051,United Concordia - Fee for Service Dental,Dental,Yes,No
+DE0125,United Concordia Dental Plus,Dental,Yes,No
+BO10037,UNITED FOOD & COMMERCIAL WORKERS TR,NON EDI,Yes,No
+00192,United Healthcare,EDI,Yes,Yes
+UHG007,United Healthcare - Optum Behavioral Solutions,EDI,Yes,No
+UHC01,United Healthcare Alternate,EDI,Yes,No
+UHG002,United Healthcare Community Plan Kansas,EDI,Yes,No
+UHG003,United Healthcare Community Plan Tennessee,EDI,Yes,No
+BO00075,United Healthcare Community Plan-BO,NON EDI,Yes,No
+UHG004,United Healthcare Facets Detroit Community and State,EDI,Yes,No
+UGH005,United Healthcare Facets Pittsburgh Community and State,EDI,Yes,No
+UHG006,United Healthcare Nevada Market,EDI,Yes,No
+UHG008,United Healthcare SecureHorizons,EDI,Yes,No
+UHG009,United Healthcare Student Resources,EDI,Yes,No
+UHG0010,United Healthcare- West,EDI,Yes,No
+00395,United Teacher Associates Insurance Company Medicare Supplement,EDI,Yes,No
+UHG001,UnitedHealth Group - Community Plan,EDI,Yes,No
+DE0052,UnitedHealthcare Community Plan TN Dental,Dental,Yes,No
+DE0053,UnitedHealthcare Dental,Dental,Yes,No
+00277,UnitedHealthcare Plan of the River Valley,EDI,Yes,No
+DE0054,UnitedHealthcare StudentResources Dental,Dental,Yes,No
+00450,Unity Health Plans,EDI,Yes,No
+00451,Univera,EDI,Yes,No
+01304,Universal American,EDI,Yes,No
+01305,Universal Benefit Corp,EDI,Yes,No
+00193,Universal Care of CA,EDI,Yes,No
+01306,University Care Advantage Arizona,EDI,Yes,No
+00668,University Care Advantage AZ,EDI,Yes,No
+00278,University Family Care,EDI,Yes,No
+01307,University of Arizona Health Plans - UHM,EDI,Yes,No
+00296,UNIVERSITY OF MISSOURI,EDI,Yes,No
+01308,University of Utah Health Plans,EDI,Yes,No
+00301,University Physicians Care Advantage (Arizona),EDI,Yes,No
+00302,University Physicians Healthcare Group (Arizona),EDI,Yes,No
+01451,UPMC Health Plan,EDI,Yes,No
+00452,UPMC Health Plan (Tristate),EDI,Yes,No
+BO00051,US Family Health Plan-BO,NON EDI,Yes,No
+00194,USAA Life Insurance Company,EDI,Yes,Yes
+00672,Utah Medicaid,EDI,Yes,No
+BO00200,Utah Pipe Trades Welfare Trust,NON EDI,Yes,No
+BO00141,UT-ID Teamsters Security Fund,NON EDI,Yes,No
+00195,VA Fee Basis Program,EDI,Yes,No
+01309,VA Health Administration Center,EDI,Yes,No
+01310,Valley Care Program,EDI,Yes,No
+01311,Valley Health Plan,EDI,Yes,No
+BO00066,Valley Preferred-BO,NON EDI,Yes,No
+01312,Value Options *,EDI,Yes,No
+00396,Vantage Health,EDI,Yes,No
+01313,"Vantage Health Plan,Inc",EDI,Yes,No
+BO00598,VBA BO,NON EDI,Yes,No
+00196,Vermont Medicaid,EDI,Yes,No
+DE0114,Vermont Medicaid Dental,Dental,Yes,No
+00680,Veteran Administrators (VA) Healthcare,EDI,Yes,No
+00955,VETERANS AFFAIRS FEE BASIS PROGRAM,EDI,Yes,No
+01314,Village Family Practice,EDI,Yes,No
+BO10075,VILLAGE HEALTH HCP,NON EDI,Yes,No
+00197,Virginia Medicaid,EDI,Yes,No
+DE0115,Virginia Medicaid Dental,Dental,Yes,No
+00674,Virginia Premier Health Plan,EDI,Yes,No
+BO10015,VISION CARE PROCESSING UNIT BO,NON EDI,Yes,No
+BOR0001,Vision Service Plan - Real time,EDI,Yes,No
+BO10001,Vision Service Plan Delayed BO,EDI Delayed,Yes,No
+00337,"Vista (MCD, FHK, LTC)",EDI,Yes,No
+00336,VIVA Health,EDI,Yes,No
+00397,VNS CHOICE,EDI,Yes,No
+00279,Vytra,EDI,Yes,No
+00198,Washington Medicaid,EDI,Yes,No
+00453,Washington Medicaid (ProviderOne),EDI,Yes,No
+DE0116,Washington Medicaid Dental,Dental,Yes,No
+01315,Washington National,EDI,Yes,No
+00401,WEA Trust,EDI,Yes,No
+00398,"WEB-TPA, Inc.",EDI,Yes,Yes
+01335,WELL SENSE,EDI,Yes,No
+00418,WellCare Health Plans,EDI,Yes,Yes
+BO00052,Wellcare-BO,NON EDI,Yes,No
+BO012,WellMed-BO,NON EDI,Yes,No
+00199,Wellpath Select (Carolinas),EDI,Yes,No
+00280,"Wells Fargo Third Party Administrators, Inc. (CHIP and PEIA)",EDI,Yes,No
+01316,Wellsense,EDI,Yes,No
+01317,West Virginia Family Health Plan,EDI,Yes,No
+00200,West Virginia Medicaid,EDI,Yes,No
+DE0117,West Virginia Medicaid Dental,Dental,Yes,No
+BO10033,WESTERN GROWERS ASSURANCE TRUST,NON EDI,Yes,No
+00281,Western Health Advantage,EDI,Yes,No
+00669,Western Southern Financial Group,EDI,Yes,No
+01318,Windsor Medicare Extra,EDI,Yes,No
+01319,WINhealth Partners *,EDI,Yes,No
+00201,Wisconsin Medicaid,EDI,Yes,No
+00286,Wisconsin Medicaid Chronic Disease Program,EDI,Yes,No
+DE0118,Wisconsin Medicaid Dental,Dental,Yes,No
+00287,Wisconsin Medicaid Well Woman Program,EDI,Yes,No
+00202,World Insurance (ARIC),EDI,Yes,No
+01320,WPS Health Insurance,EDI,Yes,No
+00203,Writers Guild,EDI,Yes,No
+00204,Wyoming Medicaid,EDI,Yes,No
+DE0119,Wyoming Medicaid Dental,Dental,Yes,No
+BO10053,YORK RISK SERVICES GROUP,NON EDI,Yes,No
+01321,YourCare Health Plan,EDI,Yes,No
+BO10054,ZENITH INSURANCE CO,NON EDI,Yes,No
+BO00071,Zurich American Ins. Co.-BO,NON EDI,Yes,No
+BO00055,ZURICH-BO,NON EDI,Yes,No

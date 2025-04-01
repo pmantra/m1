@@ -1,0 +1,267 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "body": "How did you hear about Maven?",
+            "widget": {
+                "type": "multiselect",
+                "options": [
+                    "Email",
+                    "Human Resources",
+                    "Co-worker",
+                    "Spouse",
+                    "Health Fair"
+                ],
+                "other": true
+            }
+        },
+        {
+            "id": 2,
+            "body": "Have you downloaded the Maven app?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "no"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "body": "How many times in your life have you been pregnant?",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 4,
+            "body": "Number of full term deliveries:",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 5,
+            "body": "Number of pre-term deliveries:",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 6,
+            "body": "Number of miscarriages:",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 7,
+            "body": "Number of abortions:",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 8,
+            "body": "If you've given birth, how many c-sections have you had?",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 9,
+            "body": "How many vaginal births?",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 10,
+            "body": "How many VBACs?",
+            "widget": {
+                "type": "freetextfield"
+            }
+		},
+		{
+			"id": 11,
+			"body": "How many babies are you carrying?",
+			"widget": {
+				"type": "freetextfield"
+			}
+		},
+        {
+            "id": 12,
+            "body": "What kind of birth are you planning for this pregnancy?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "vaginal",
+                        "label": "Vaginal"
+                    },
+                    {
+                        "value": "csection",
+                        "label": "C-Section"
+                    },
+                    {
+                        "value": "vbac",
+                        "label": "VBAC"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 13,
+            "body": "What is the name of your ob/gyn or midwife?",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 14,
+            "body": "How would you like this pregnancy or delivery to be different than your  previous experience(s)?",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 15,
+            "body": "Going into the pregnancy, did you have any pre-existing medical conditions (diabetes, hypertension, etc.)?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "no"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 16,
+            "body": "What conditions?",
+            "widget": {
+                "type": "freetextfield"
+            },
+            "parent": {
+                "id": 15,
+                "requiredValue": "yes"
+            }
+        },
+        {
+            "id": 17,
+            "body": "During your pregnancy, have any conditions developed?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "no"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 18,
+            "body": "What conditions?",
+            "widget": {
+                "type": "freetextfield"
+            },
+            "parent": {
+                "id": 17,
+                "requiredValue": "yes"
+            }
+        },
+        {
+            "id": 19,
+            "body": "Are you currently taking any medications?",
+            "widget": {
+                "type": "radio",
+                "options": [
+                    {
+                        "value": "yes",
+                        "label": "yes"
+                    },
+                    {
+                        "value": "no",
+                        "label": "no"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 20,
+            "body": "What medications?",
+            "widget": {
+                "type": "freetextfield"
+            },
+            "parent": {
+                "id": 19,
+                "requiredValue": "yes"
+            }
+        },
+        {
+            "id": 21,
+            "body": "In the past, have you sought mental health support for any of the following?",
+            "widget": {
+                "type": "multiselect",
+                "options": [
+                    "Depression",
+                    "Anxiety",
+                    "Substance Abuse"
+                ],
+                "other": true
+            }
+        },
+        {
+            "id": 22,
+            "body": "How recently?",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 23,
+            "body": "Did you use fertility treatments to get pregnant?",
+            "widget": {
+                "type": "multiselect",
+                "options": [
+                    "IUI",
+                    "IVF"
+                ],
+                "other": true
+            }
+        },
+        {
+            "id": 24,
+            "body": "What areas, if any, do you think your partner would be most interested in receiving support in?",
+            "widget": {
+                "type": "freetextfield"
+            }
+        },
+        {
+            "id": 25,
+            "body": "Anything else you’d like to share?",
+            "widget": {
+                "type": "freetextfield"
+            }
+        }
+    ],
+    "meta": {
+        "version": "2"
+    }
+}

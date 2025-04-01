@@ -1,0 +1,2 @@
+class RepositoryNotFoundException(Exception):
+    pass

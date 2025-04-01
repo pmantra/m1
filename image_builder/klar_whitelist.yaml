@@ -1,0 +1,28 @@
+general:
+  # USB
+  - CVE-2019-15505
+  # kernel-cifs
+  - CVE-2019-10220
+  # kernel-btrfs
+  - CVE-2019-19813
+  - CVE-2019-19816
+  # kernel-f2fs
+  - CVE-2019-19814
+  # kernel-marvellwifi
+  - CVE-2019-14901
+  - CVE-2019-14896
+  # git-visualstudio
+  - CVE-2019-1352
+  - CVE-2019-1349
+  # kernel-input.c
+  - CVE-2019-20636
+  # libssh
+  - CVE-2019-14889
+  # mariadb
+  - CVE-2021-27928
+  # python mailcap
+  - CVE-2015-20107
+  # openssl c_rehash (temporaray whitelist, waiting on upstream fix)
+  - CVE-2022-1292
+  # openssl c_rehash (temporaray whitelist, waiting on upstream fix)
+  - CVE-2022-2068

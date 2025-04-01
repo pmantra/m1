@@ -1,0 +1,13 @@
+dag_id: wallet_e9y_changes_dag
+schedule: "0 0 * * *"
+task_id: wallet_e9y_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.benefits_experience.wallet_e9y_change import wallet_e9y_job; wallet_e9y_job()"
+team_namespace: benefits_experience
+service_namespace: wallet_e9y
+catchup: "False"
+start_year: 2024
+start_month: 11
+start_day: 10

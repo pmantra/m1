@@ -1,0 +1,65 @@
+[
+    {
+        "type": "ca_members",
+        "role": "practitioner",
+        "is_cx": true,
+        "vertical": "Care Advocate",
+        "email_prefix": "mvnqa-ca_with_members",
+        "password": "simpleisawesome1*",
+        "anonymous_allowed": true,
+        "members": [
+            {
+                "type": "user",
+                "track": "general_wellness",
+                "email_prefix": "gen",
+                "password": "simpleisawesome1*"
+            },
+            {
+                "type": "user",
+                "track": "general_wellness",
+                "email_prefix": "gen",
+                "password": "simpleisawesome1*"
+            },
+            {
+                "type": "user",
+                "track": "general_wellness",
+                "email_prefix": "gen",
+                "password": "simpleisawesome1*"
+            },
+            {
+                "type": "user",
+                "track": "general_wellness",
+                "email_prefix": "gen",
+                "password": "simpleisawesome1*"
+            },
+            {
+                "type": "user",
+                "track": "general_wellness",
+                "email_prefix": "gen",
+                "password": "simpleisawesome1*"
+            }
+        ],
+        "schedule_events": [
+            {
+                "type": "schedule_event",
+                "starts_in": "in 1 hour",
+                "minutes": 480
+            },
+            {
+                "type": "schedule_event",
+                "starts_in": "in 25 hours",
+                "minutes": 480
+            },
+            {
+                "type": "schedule_event",
+                "starts_in": "in 49 hours",
+                "minutes": 480
+            },
+            {
+                "type": "schedule_event",
+                "starts_in": "in 73 hours",
+                "minutes": 480
+            }
+        ]
+    }    
+]

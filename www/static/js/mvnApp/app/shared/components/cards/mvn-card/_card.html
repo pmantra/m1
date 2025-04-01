@@ -1,0 +1,32 @@
+<next-appt-card
+	ng-if="$ctrl.data.actions[0].type === 'view-appointment'"
+	class="card-wrapper"
+	data="$ctrl.data"
+	user="$ctrl.user"
+></next-appt-card>
+
+<div
+	ng-if="$ctrl.data.actions[0].type !== 'view-appointment'"
+	class="card-wrapper"
+	ng-class="{ 'has-icon': !!$ctrl.data.icon.url}"
+>
+	<div ng-if="$ctrl.data.icon.url" class="card-icon">
+		<img ng-if="$ctrl.data.icon.url" src="{{ $ctrl.data.icon.url }}" alt="{{ $ctrl.data.icon.alt }}" />
+	</div>
+	<img
+		ng-if="$ctrl.data.image.url"
+		class="card-image"
+		src="{{ $ctrl.data.image.url }}"
+		alt="{{ $ctrl.data.image.alt }}"
+	/>
+	<div class="card-content">
+		<div ng-if="$ctrl.data.tag" class="card-tags">{{ $ctrl.data.tag }}</div>
+		<p class="lg">{{ $ctrl.data.title }}</p>
+		<p ng-repeat="p in $ctrl.data.body">{{ p }}</p>
+	</div>
+	<div class="card-actions">
+		<div ng-repeat="action in $ctrl.data.actions">
+			<mvn-dynamic-cta opts="action" user="$ctrl.user" event-name="action.type"></mvn-dynamic-cta>
+		</div>
+	</div>
+</div>

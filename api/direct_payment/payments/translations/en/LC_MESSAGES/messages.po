@@ -1,0 +1,136 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-08-20 14:13-0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: direct_payment/payments/constants.py:16
+msgid "payments_mmb_estimated_initial"
+msgstr ""
+"This estimate is based on your current deductible and coinsurance or "
+"copays, and may change if you make insurance claims after this estimation"
+" took place."
+
+#: direct_payment/payments/constants.py:20
+msgid "payments_mmb_estimated_bill"
+msgstr "Estimated Bill"
+
+#: direct_payment/payments/constants.py:22
+msgid "payments_mmb_estimated_len_obj"
+msgstr "Estimated total ({number_of_estimated_objects})"
+
+#: direct_payment/payments/constants.py:26
+msgid "payments_mmb_estimated_total_cost"
+msgstr "Estimated total upcoming cost to you"
+
+#: direct_payment/payments/constants.py:28
+msgid "payments_mmb_fully_covered"
+msgstr "Cost fully covered by your employer. Tap for service details."
+
+#: direct_payment/payments/constants.py:33
+msgid "payments_mmb_coinsurance"
+msgstr "Coinsurance"
+
+#: direct_payment/payments/constants.py:34
+msgid "payments_mmb_copay"
+msgstr "Copay"
+
+#: direct_payment/payments/constants.py:35
+msgid "payments_mmb_deductible"
+msgstr "Deductible"
+
+#: direct_payment/payments/constants.py:36
+msgid "payments_mmb_fees"
+msgstr "Fees"
+
+#: direct_payment/payments/constants.py:35
+msgid "payments_mmb_hra_applied"
+msgstr "HRA Applied"
+
+#: direct_payment/payments/constants.py:36
+msgid "payments_mmb_hra_credit"
+msgstr "HRA Credit"
+
+#: direct_payment/payments/constants.py:37
+msgid "payments_mmb_not_covered"
+msgstr "Not Covered"
+
+#: direct_payment/payments/constants.py:38
+msgid "payments_mmb_maven_benefit"
+msgstr "Maven Benefit"
+
+#: direct_payment/payments/constants.py:39
+msgid "payments_mmb_medical_plan"
+msgstr "Medical Plan"
+
+#: direct_payment/payments/constants.py:40
+msgid "payments_mmb_total_member_responsibility"
+msgstr "Total Member Responsibility"
+
+#: direct_payment/payments/constants.py:43
+msgid "payments_mmb_previous_charges"
+msgstr "Previous Charge(s)"
+
+#: direct_payment/payments/constants.py:44
+msgid "payments_mmb_estimate_adjustment"
+msgstr "Estimate Adjustment"
+
+#: direct_payment/payments/constants.py:48
+msgid "payments_mmb_estimate_responsibility"
+msgstr "Your estimated responsibility"
+
+#: direct_payment/payments/constants.py:49
+msgid "payments_mmb_covered_amount"
+msgstr "Covered amount"
+
+#: direct_payment/payments/constants.py:53
+msgid "payments_mmb_full_cost_covered"
+msgstr "Full cost covered by Maven"
+
+#: direct_payment/payments/constants.py:54
+msgid "payments_mmb_remaining_cost_covered"
+msgstr "Remaining cost covered by Maven"
+
+#: direct_payment/payments/constants.py:58
+msgid "payments_mmb_due_billed_date"
+msgstr "Due {computed_display_date} | Bill to ***{payment_method_display_label}"
+
+#: direct_payment/payments/constants.py:59
+#: direct_payment/payments/constants.py:61
+msgid "payments_mmb_computed_billed_date"
+msgstr "{computed_display_date} | Billed to ***{payment_method_display_label}"
+
+#: direct_payment/payments/constants.py:60
+msgid "payments_mmb_calculating_date"
+msgstr "Calculating, please check back later."
+
+#: direct_payment/payments/constants.py:63
+#: direct_payment/payments/constants.py:66
+msgid "payments_mmb_computed_date"
+msgstr "{computed_display_date}"
+
+#: direct_payment/payments/constants.py:64
+msgid "payments_mmb_due_date"
+msgstr "Due {computed_display_date}"
+
+#: direct_payment/payments/constants.py:65
+msgid "payments_mmb_returned_date"
+msgstr "{computed_display_date} | Returned to ***{payment_method_display_label}"
+
+#: direct_payment/payments/constants.py:67
+msgid "payments_mmb_voided_date"
+msgstr "Voided on {computed_display_date}"
+

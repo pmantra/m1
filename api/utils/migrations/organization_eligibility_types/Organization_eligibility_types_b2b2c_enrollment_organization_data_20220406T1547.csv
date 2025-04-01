@@ -1,0 +1,295 @@
+id,name,eligibility_type
+298,Fake SISC,ALTERNATE
+128,Microsoft,CLIENT_SPECIFIC
+197,Goldbelly,FILELESS
+291,Baebies Inc,FILELESS
+265,ORIX Corporation USA,FILELESS
+195,Intersect Power,FILELESS
+124,Harvest,FILELESS
+283,Ironclad  Inc,FILELESS
+282,Ritual,FILELESS
+165,Foursquare,FILELESS
+163,Mailgun,FILELESS
+177,Front,FILELESS
+93,Kazoo,FILELESS
+48,Supercell,FILELESS
+279,Clayton Dubilier & Rice,FILELESS
+56,Index Ventures,FILELESS
+14,TransRe,FILELESS
+264,Lone Pine Capital,FILELESS
+116,LendingTree,FILELESS
+272,Everly Health,FILELESS
+74,Birdco,FILELESS
+192,Labcorp,HEALTHPLAN
+277,Self-Insured Schools of California (SISC),HEALTHPLAN
+297,Fake BSC,HEALTHPLAN
+242,Blue Shield of California,HEALTHPLAN
+206,Arkansas Blue Cross Blue Shield,HEALTHPLAN
+213,Farm Bureau,HEALTHPLAN
+290,Maven Healthplan,HEALTHPLAN
+275,Western Health Advantage,HEALTHPLAN
+193,Hearst,HEALTHPLAN
+154,Maven Clinic MSFT test org,CLIENT_SPECIFIC
+147,Maven Microsoft testing,CLIENT_SPECIFIC
+127,Zwift Inc,FILELESS
+212,VMG Partners,FILELESS
+226,Bill com,FILELESS
+255,Boulevard,FILELESS
+246,Ridecell,FILELESS
+257,MyCase,FILELESS
+223,Atkinson  Andelson  Loya  Ruud & Romo,FILELESS
+234,Zurich North America,FILELESS
+227,Business For Social Responsibility  Inc,FILELESS
+261,WorldQuant,FILELESS
+89,Sun River Health ( Formerly HRHCare ),FILELESS
+224,ACA Compliance Group,FILELESS
+253,Spear Education,FILELESS
+8,BTS USA Inc,FILELESS
+207,James Beard Foundation,FILELESS
+186,BBR Partners,FILELESS
+65,Eldridge Industries,FILELESS
+158,Medix Staffing Solutions,FILELESS
+43,Keystone Real Estate Group,FILELESS
+225,Accuity,FILELESS
+15,Bumble,STANDARD
+54,Maven CBRE Demo,STANDARD
+294,CVC Capital,STANDARD
+202,Test Google Matonly,STANDARD
+199,N26,STANDARD
+17,White & Case LLP,STANDARD
+295,N/A Duplicate,STANDARD
+111,Jacobs,STANDARD
+251,IVP,STANDARD
+262,Saks Fifth Avenue OFF 5TH,STANDARD
+164,Desmarais,STANDARD
+240,Advocate Aurora Health,STANDARD
+215,Redesign Health,STANDARD
+247,Innocence Project,STANDARD
+162,The Western Union Company,STANDARD
+123,TESTCSdemo,STANDARD
+30,Zynga Inc,STANDARD
+121,MassHealth,STANDARD
+214,[Test] MaFo Inc,STANDARD
+20,Lululemon Canada,STANDARD
+178,VIP Test Accounts Wallet,STANDARD
+18,Glossier,STANDARD
+292,Jacobs Technology,STANDARD
+248,Saks com,STANDARD
+299,CACI International,STANDARD
+47,Bank of America,STANDARD
+166,Milk Only Test Org,STANDARD
+1,Clinton Foundation,STANDARD
+118,Ferrero,STANDARD
+32,Moss Adams,STANDARD
+196,Forge Group LLC,STANDARD
+76,Great Place to Work Institute Inc,STANDARD
+222,Vytalogy Wellness ( FKA Jarrow ),STANDARD
+57,Maven ProdDesign Testing,STANDARD
+276,Kohler,STANDARD
+293,Maven4Maven Providers,STANDARD
+108,Progenity,STANDARD
+287,Treeline Biosciences,STANDARD
+191,Google,STANDARD
+16,Lululemon Athletica,STANDARD
+122,MassHealth Self Reported,STANDARD
+117,Havenly,STANDARD
+205,Test2 Google Matonly,STANDARD
+167,Maven Google Demo,STANDARD
+180,Aritzia,STANDARD
+168,Chime,STANDARD
+171,Tile Inc,STANDARD
+219,Goodbaby (Evenflo Company Inc ),STANDARD
+201,Test Google FertMat,STANDARD
+232,Genmab,STANDARD
+204,Test2 Google FertMat,STANDARD
+40,Factual - Acquired by Foursquare,STANDARD
+67,VIP Test Accounts Primary,STANDARD
+75,Medallia,STANDARD
+79,Noble Network of Charter Schools,STANDARD
+230,Ferrara Candy Company,STANDARD
+183,ALKU,STANDARD
+152,Curology Inc,STANDARD
+149,Varde Partners,STANDARD
+125,Jam City,STANDARD
+252,Remitly Inc,STANDARD
+34,Maven Clinic Users,STANDARD
+217,Checkr Inc,STANDARD
+3,Charlotte Mechanical,STANDARD
+174,GXO,STANDARD
+250,Fremont Group L L C,STANDARD
+235,Polen Capital Management,STANDARD
+233,Nitro Software Inc,STANDARD
+241,Riviera Partners,STANDARD
+150,2ndMD,STANDARD
+220,VICI Properties,STANDARD
+140,Mailchimp,STANDARD
+229,In-Q-Tel,STANDARD
+39,Sequoia Capital,STANDARD
+82,Vinson and Elkins,STANDARD
+126,Lightspeed Venture Partners,STANDARD
+218,Checkr Inc - International,STANDARD
+41,Ocean Spray Cranberries,STANDARD
+256,Fossil Group ( Not Medical Plan Enrolled ),STANDARD
+24,Intuitive Surgical,STANDARD
+189,AmerisourceBergen,STANDARD
+231,General Atlantic,STANDARD
+46,Riot Games Inc,STANDARD
+151,accesso,STANDARD
+52,Maven ATT Demo,STANDARD
+144,BNSF Railway,STANDARD
+38,HireVue,STANDARD
+239,Scotts Miracle-Gro,STANDARD
+141,VMware,STANDARD
+61,Workday,STANDARD
+187,Centerbridge Partners,STANDARD
+210,Fortune Brands Home & Security,STANDARD
+73,LOreal,STANDARD
+102,Early Warning Services,STANDARD
+2,Maven Clinic,STANDARD
+91,Major League Baseball,STANDARD
+236,Gunderson Dettmer,STANDARD
+96,Ziff Davis (Formally j2 Global),STANDARD
+238,Wieden + Kennedy,STANDARD
+160,Schindler Group,STANDARD
+259,Natera,STANDARD
+258,Udemy,STANDARD
+36,FONA International,STANDARD
+244,Fossil Group ( Medical Plan Enrolled ),STANDARD
+136,Riot Games Singapore,STANDARD
+92,Bolton & Company,STANDARD
+172,Democratic Legislative Campaign Cmte,STANDARD
+106,TEST BMS Only,STANDARD
+80,DUMMY,STANDARD
+5,Protective Life,STANDARD
+302,Abry,STANDARD
+221,Biomarin Pharmaceutical Inc,STANDARD
+263,Contentful,STANDARD
+173,Premera Demo,STANDARD
+19,Maven Clinic2,STANDARD
+87,Kennedy Wilson Holdings,STANDARD
+31,Veritas,STANDARD
+49,Basis Technologies (fka Centro),STANDARD
+114,Insider Inc,STANDARD
+4,GLG,STANDARD
+68,The Hartford,STANDARD
+70,Datadog,STANDARD
+129,Sanofi,STANDARD
+137,Harrys,STANDARD
+12,Compass Group,STANDARD
+271,Gwinnett County Government,STANDARD
+211,Affinity,STANDARD
+273,Alector   Inc,STANDARD
+266,GoFundMe Inc,STANDARD
+267,This American Life,STANDARD
+260,Prysm Capital,STANDARD
+115,Indeed,STANDARD
+249,Automattic,STANDARD
+270,WCAS,STANDARD
+84,Wondr Health ( formerly Naturally Slim ),STANDARD
+142,Horizon Therapeutics,STANDARD
+50,Softbank Investment Advisers,STANDARD
+85,Appen,STANDARD
+100,Rothman Institute,STANDARD
+228,Clari Inc,STANDARD
+88,Storable,STANDARD
+69,Booz Allen Hamilton,STANDARD
+97,Boston Scientific,STANDARD
+94,Paycom,STANDARD
+95,Evercore Partners,STANDARD
+105,Farmers Insurance Group of Companies,STANDARD
+78,Universal Music Group,STANDARD
+77,Cornerstone OnDemand,STANDARD
+81,Carvana,STANDARD
+86,West Monroe Partners,STANDARD
+181,1WorldSync,STANDARD
+175,ValueAct Capital,STANDARD
+179,100 Thieves LLC,STANDARD
+62,SoFi,STANDARD
+153,Lombard International,STANDARD
+243,Advocate Aurora Health (PTE),STANDARD
+29,Saks / HBC,STANDARD
+146,Navient,STANDARD
+101,Imagine Learning ( FKA WeldNorth ),STANDARD
+71,Cozen OConnor,STANDARD
+119,Prosper Marketplace,STANDARD
+22,Buzzfeed,STANDARD
+28,Sunrun,STANDARD
+53,Tory Burch,STANDARD
+110,ServiceTitan,STANDARD
+245,Sisu Data Inc,STANDARD
+274,Avita Pharmacy,STANDARD
+278,Holmusk,STANDARD
+37,XPO Logistics,STANDARD
+27,Assurance,STANDARD
+139,Vontier Business Services,STANDARD
+26,Fortive Corp,STANDARD
+254,Rambus - India,STANDARD
+83,AvalonBay Communities,STANDARD
+99,TrueBlue,STANDARD
+184,Golden Hippo Group LLC,STANDARD
+176,Huntington Ingalls Industries TSD,STANDARD
+182,Synnex,STANDARD
+169,Huntington Ingalls Industries,STANDARD
+280,Dimensional Fund Advisors,STANDARD
+10,CGSH,STANDARD
+7,Verisign Inc,STANDARD
+156,Kong Inc,STANDARD
+13,United Talent Agency,STANDARD
+11,Carters,STANDARD
+9,ELOQUII,STANDARD
+208,Beacon Capital Partners,STANDARD
+203,PerkinElmer,STANDARD
+237,Rambus,STANDARD
+155,Hinge Health,STANDARD
+285,GHD Inc  - US,STANDARD
+288,L Catterton,STANDARD
+281,Engine No 1 LLP,STANDARD
+198,Google Dependents,STANDARD
+286,GHD Inc,STANDARD
+58,Geosyntec Consultants,STANDARD
+59,Hulu,STANDARD
+161,UrbanStems,STANDARD
+103,EZ Texting (CallFire),STANDARD
+113,Edwards Lifesciences,STANDARD
+109,Paycor,STANDARD
+148,Respira Technologies Inc,STANDARD
+289,Lovitt & Touche,STANDARD
+21,Away,STANDARD
+60,Planned Parenthood of Illinois,STANDARD
+185,Emergence Capital Partners,STANDARD
+296,Honeycomb,STANDARD
+300,Pimco,STANDARD
+284,Tradeweb,STANDARD
+23,Weitz and Luxenberg PC,STANDARD
+112,Danaher,STANDARD
+107,Wilson Sonsini Goodrich & Rosati,STANDARD
+190,Alo Yoga,STANDARD
+188,Locust Street Group,STANDARD
+194,DocuSign,STANDARD
+159,Sartorius Stedim Biotech,STANDARD
+143,Snowflake,STANDARD
+138,AT&T Inc,STANDARD
+209,Coterie,STANDARD
+216,LeapYear,STANDARD
+268,Contentful International,STANDARD
+170,Dentsu,STANDARD
+35,MC Friends and Family,STANDARD
+25,AXIS Capital,STANDARD
+301,Apax Partners LLP,STANDARD
+145,Affirm Inc,STANDARD
+157,QUIDEL,STANDARD
+6,Snap Inc,STANDARD
+51,Maven External Demo,STANDARD
+33,Maven Bank of America testing,ALTERNATE
+104,Onboarding Test,ALTERNATE
+45,Maven Clinic internal boa test2,ALTERNATE
+44,Maven Clinic boa testing internal,ALTERNATE
+66,Fast Retailing,ALTERNATE
+98,Elbit Systems of America,ALTERNATE
+72,Southern Glazers Wine & Spirits,ALTERNATE
+90,Standard Motor,ALTERNATE
+55,JCPenney,ALTERNATE
+64,Sana Benefits,ALTERNATE
+63,Precor,ALTERNATE
+120,Kindred Healthcare,ALTERNATE
+42,VIP Test Accounts Secondary,ALTERNATE

@@ -1,0 +1,28 @@
+<div class="post-detail">
+	<div class="post content">
+		<div class="post-meta-author">
+			<span ng-if="$ctrl.post"
+				><post-author class="post-author" author="$ctrl.post.author" datetime="$ctrl.post.created_at"></post-author
+			></span>
+		</div>
+		<div class="post-content">
+			<h2 class="post-title h3">{{ $ctrl.post.title }}</h2>
+			<div class="post-body">{{ $ctrl.post.body }}</div>
+		</div>
+		<div class="post-meta clearfix">
+			<span class="post-action">
+				<a href="" ng-click="$ctrl.goToReply()" tabindex="0">
+					Reply
+				</a>
+			</span>
+			<span ng-if="$ctrl.post" class="post-action">
+				<mvn-bookmark-post class="follow-post" post="$ctrl.post" user="$ctrl.user"></mvn-bookmark-post>
+			</span>
+			<span ng-if="$ctrl.post.author.role !== 'practitioner'" class="post-action">
+				<a ng-click="$ctrl.getHref()" href="{{'mailto:support@mavenclinic.com?subject=Reported Forum Post&body=Post url: ' + $ctrl.postUrl}}" tabindex="0">
+					Report
+				</a>
+			</span>
+		</div>
+	</div>
+</div>

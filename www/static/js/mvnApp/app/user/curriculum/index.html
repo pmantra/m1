@@ -1,0 +1,76 @@
+<section ng-if="$ctrl.curriculumData" class="curriculum">
+	<div class="curriculum-carousel" ng-if="!$ctrl.loading">
+		<div class="title-section">
+			<h2 class="h4 title serif">{{ $ctrl.curriculumData.title }}</h2>
+			<div class="p subhead">{{ $ctrl.curriculumData.subhead }}</div>
+		</div>
+
+		<slick
+			accessibility="false"
+			ng-if="$ctrl.curriculumData"
+			slide="div"
+			dots="false"
+			lazy-load="ondemand"
+			initial-slide="{{ $ctrl.curriculumData.steps.length - 1 }}"
+			responsive="$ctrl.carouselBreakpoints"
+			slides-to-show="1"
+			slides-to-scroll="1"
+			center-mode="true"
+			center-padding="0px"
+			mobileFirst="true"
+			draggable="false"
+			arrows="true"
+			infinite="false"
+			custom-paging="$ctrl.slickDots(slick, index)"
+			prev-arrow=".prev"
+			next-arrow=".next"
+			ng-attr-style="display: {{ $ctrl.needsSpecialStyles ? 'block' : 'flex' }}"
+		>
+			<div ng-repeat="step in $ctrl.curriculumData.steps" class="curriculum-step">
+				<div class="curriculum-card" ng-attr-style="background-color: {{ step.background_color }}">
+					<div class="card-image" ng-style="{'background-image':'url({{ step.image.original }})'}"></div>
+					<div class="card-content">
+						<h4 class="serif card-title mobile-only">{{ step.title }}</h4>
+						<h2 class="serif card-title mobile-none">{{ step.title }}</h2>
+						<p class="subhead">{{ step.subhead }}</p>
+						<div class="card-actions">
+							<a
+								tabindex="0"
+								role="button"
+								class="btn btn-secondary-cta"
+								href="{{ step.action.cta.url }}"
+								target="_blank"
+								ng-click="$ctrl.viewCurriculumStep($event, step.id)"
+								>{{ step.action.cta.text }}</a
+							>
+							<div class="step-status" ng-class="{ 'completed': step.completed_at }">
+								<svg class="checkmark" width="11" height="9" xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M3.558 8.727L.07 5.18a.246.246 0 0 1 0-.344l1.336-1.358a.236.236 0 0 1 .338 0l1.983 2.017L9.058.071a.236.236 0 0 1 .338 0l1.336 1.36a.246.246 0 0 1 0 .343L3.896 8.727a.236.236 0 0 1-.338 0z"
+										fill="#263633"
+										fill-rule="nonzero"
+									/>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</slick>
+		<span class="prev" tabindex="0">
+			<svg width="12" height="17" xmlns="http://www.w3.org/2000/svg">
+				<g stroke="#FFF" stroke-width="3.5" fill="none" fill-rule="evenodd" stroke-linecap="round">
+					<path d="M2.028 8.524L9.4 14.976M9.401 2.024L2.028 8.476" />
+				</g>
+			</svg>
+		</span>
+
+		<span class="next" tabindex="0">
+			<svg width="12" height="17" xmlns="http://www.w3.org/2000/svg">
+				<g stroke="#FFF" stroke-width="3.5" fill="none" fill-rule="evenodd" stroke-linecap="round">
+					<path d="M9.972 8.524L2.6 14.976M2.599 2.024l7.373 6.452" />
+				</g>
+			</svg>
+		</span>
+	</div>
+</section>

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while true
+do
+  aglio --server --host 0.0.0.0 --input "$1" &
+  echo 'Polling for change in time of last data modification of api blueprint.'
+  watch --no-title --chgexit --interval 1 --exec stat --printf='%Y' "$1"
+  echo 'Change detected, restarting preview server.'
+  kill $!
+done

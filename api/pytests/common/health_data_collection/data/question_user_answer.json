@@ -1,0 +1,50 @@
+{
+  "body": "What is Maven missing that could have made an impact for you?",
+  "contentful_entry_id": "35YAQPR3GN8aKaXy6QYvgF",
+  "display_condition": {
+    "contentful_entry_id": "mMQGPPdWuq2WLCIRNcOtK",
+    "entry_status": "Published",
+    "note": "Display if no Maven impact",
+    "show_if_any_answer": [
+      {
+        "contentful_answer_id": "1096460313591843186",
+        "contentful_entry_id": "1lrnCNWhrhFYHrR7ibeGgf",
+        "entry_status": "Published",
+        "export_flags": null,
+        "label": "No",
+        "score_value": null,
+        "value": "no",
+        "version": 1
+      }
+    ],
+    "version": 1
+  },
+  "entry_status": "Published",
+  "mpractice_display": false,
+  "mpractice_label": null,
+  "id": "1096460327071755820",
+  "microcopy": null,
+  "options": [],
+  "required": false,
+  "slug": "maven_missing_impact",
+  "export_flags": [],
+  "user_answers": [
+    {
+      "contentful_answer_id": null,
+      "datatype": "string",
+      "export_flags": null,
+      "id": "1096524039208424087",
+      "label": null,
+      "mono_needs_assessment_id": null,
+      "question_id": "1096460327071755820",
+      "question_slug": "maven_missing_impact",
+      "export_flag_label_override": null,
+      "question_version": 1,
+      "user_assessment_status_id": "1096523039233519013",
+      "user_id": "167443",
+      "value": "2020-01-01T00:00:00Z"
+    }
+  ],
+  "version": 1,
+  "widget_type": "textarea"
+}

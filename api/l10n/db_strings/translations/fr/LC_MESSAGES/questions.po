@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: fr\n"
+
+msgid "question_cancellation_survey_cancellation_survey_question_set_cancellation_reason_question_label"
+msgstr "Veuillez sélectionner toutes les réponses qui s'appliquent :"
+
+msgid "question_member_ca_rating_member_ca_rating_set_zero_audio_video_quality_label"
+msgstr "Comment était la qualité vidéo et audio du rendez-vous ?"
+
+msgid "question_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_free_text_label"
+msgstr "N'hésitez pas à partager d'autres commentaires"
+
+msgid "question_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_intend_label"
+msgstr "J'ai l'intention d'avoir recours aux professionnels ou aux ressources Maven dans les 30 prochains jours"
+
+msgid "question_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_satisfied_ca_label"
+msgstr "J'ai été satisfait(e) de mon expérience avec mon Care Advocate"
+
+msgid "question_member_rating_followup_placeholder_oid_5_problems_label"
+msgstr "Qu'est-ce qui aurait pu être mieux ?"
+
+msgid "question_member_rating_followup_placeholder_oid_5_rating_followup_additional_notes_label"
+msgstr "Veuillez décrire :"
+
+msgid "question_member_rating_followup_v2_second_screen_question_survey_follow_up_v2_additional_notes_label"
+msgstr "Veuillez décrire :"
+
+msgid "question_member_rating_followup_v2_second_screen_question_survey_follow_up_v2_label"
+msgstr "Veuillez sélectionner toutes les réponses applicables."
+
+msgid "question_member_rating_placeholder_oid_4_care_received_label"
+msgstr "Soins reçus du professionnel"
+
+msgid "question_member_rating_placeholder_oid_4_overall_experience_label"
+msgstr "Expérience globale"
+
+msgid "question_member_rating_placeholder_oid_4_provider_preparedness_label"
+msgstr "Préparation du professionnel pour mon rendez-vous"
+
+msgid "question_member_rating_placeholder_oid_4_rating_additional_notes_label"
+msgstr "Y a-t-il autre chose que vous aimeriez que nous sachions ?"
+
+msgid "question_member_rating_v2_first_screen_question_audio_video_quality_label"
+msgstr "Comment était la qualité vidéo et audio du rendez-vous ?"
+
+msgid "question_member_rating_v2_first_screen_question_first_touch_resolution_label"
+msgstr "Ce rendez-vous a-t-il dissipé vos inquiétudes ?"
+
+msgid "question_member_rating_v2_first_screen_question_satisfaction_label"
+msgstr "J'ai été satisfait(e) de mon rendez-vous"
+
+msgid "question_member_rating_v2_first_screen_question_survey_v2_additional_info_label"
+msgstr "Y a-t-il autre chose que vous aimeriez que nous sachions ?"
+
+msgid "question_member_rating_v2_first_screen_question_would_meet_provider_again_label"
+msgstr "Je souhaiterais à nouveau solliciter ce prestataire"

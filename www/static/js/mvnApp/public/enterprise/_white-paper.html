@@ -1,0 +1,124 @@
+<div ng-if="!canDownload" class="center enterprise-form">
+	<h3>Enter your details to download Maven's executive briefings</h3>
+	<form class="primary-app" name="wpForm">
+		<div class="form-group col2 clearfix">
+			<div class="form-item">
+				<input
+					type="text"
+					class="first-name"
+					name="first_name"
+					ng-model="entForm.first_name"
+					required="required"
+					placeholder="First name"
+				/>
+			</div>
+			<div class="form-item">
+				<input
+					type="text"
+					class="last-name"
+					name="last_name"
+					ng-model="entForm.last_name"
+					required="required"
+					placeholder="Last name"
+				/>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="form-item">
+				<input
+					type="email"
+					class="email"
+					name="email"
+					ng-model="entForm.email"
+					required="required"
+					placeholder="Your email address"
+				/>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="form-item">
+				<input
+					type="text"
+					class="orgname"
+					name="company"
+					ng-model="entForm.company_name"
+					required="required"
+					placeholder="Organization name"
+				/>
+			</div>
+		</div>
+
+		<div class="form-group col2 clearfix">
+			<div class="form-item">
+				<input
+					type="text"
+					class="first-name"
+					name="text"
+					ng-model="entForm.position"
+					required="required"
+					placeholder="Position"
+				/>
+			</div>
+			<div class="form-item employees mvn-select-search">
+				<ui-select
+					ng-model="entForm.company_size"
+					theme="select2"
+					ng-disabled="ctrl.disabled"
+					title="Employees"
+					required="required"
+				>
+					<ui-select-match placeholder="Company size">{{ entForm.company_size }} </ui-select-match>
+					<ui-select-choices repeat="c in companySize | filter: $select.search">
+						<span role="option" ng-bind-html="c | highlight: $select.search"></span> <span>employees</span>
+					</ui-select-choices>
+				</ui-select>
+			</div>
+		</div>
+
+		<input
+			type="hidden"
+			ng-model="entForm.lead_source"
+			value="enterprise_whitepaper_download"
+			ng-model="entForm.lead_source"
+			ng-init="entForm.lead_source='enterprise_whitepaper_download' "
+			ng-value="enterprise_whitepaper_download"
+		/>
+
+		<a
+			class="btn btn-cta"
+			ng-model="entForm.leadSource"
+			ng-click="submitWhitePaperForm(entForm)"
+			ng-class="{'disabled' : wpForm.$invalid || wpLoading }"
+			><span ng-if="!wpLoading">Download</span><span ng-if="wpLoading">Please wait...</span></a
+		>
+	</form>
+</div>
+<div ng-if="canDownload" class="center">
+	<h2>Thank you</h2>
+	<p>Click the download button to start your download. Alternatively right-click and choose "Save as..."</p>
+	<p>
+		Questions? Get in touch at <a href="mailto:mavenforbusiness@mavenclinic.com">mavenforbusiness@mavenclinic.com</a>.
+	</p>
+	<p class="lg">
+		The shifting paradigm for maternity benefits:<br />
+		<a
+			class="btn btn-cta"
+			target="_self"
+			href="/resources/The_Shifting_Paradigm_for_Maternity_Benefits-MavenClinic.com.pdf"
+			download="The_Shifting_Paradigm_for_Maternity_Benefits-MavenClinic.com.pdf"
+			>Download</a
+		>
+	</p>
+	<br />
+	<p class="lg">
+		Back-to-work: the billion-dollar opportunity for companies:<br />
+		<a
+			class="btn btn-cta"
+			target="_self"
+			href="/resources/Maven_Back-to-Work_Whitepaper_2017-MavenClinic.com.pdf"
+			download="Maven_Back-to-Work_Whitepaper_2017-MavenClinic.com.pdf"
+			>Download</a
+		>
+	</p>
+</div>

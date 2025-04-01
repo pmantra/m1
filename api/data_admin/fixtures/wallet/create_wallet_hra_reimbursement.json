@@ -1,0 +1,63 @@
+[
+  {
+    "type": "organization",
+    "name": "Wayne Enterprises LAP",
+    "allowed_track_names": [
+        "adoption",
+        "breast_milk_shipping",
+        "egg_freezing",
+        "fertility",
+        "parenting_and_pediatrics",
+        "partner_fertility",
+        "surrogacy"
+    ],
+    "activated_at": "2021-01-01 00:00:00"
+  },
+  {
+    "type": "user",
+    "organization_name": "Wayne Enterprises LAP",
+    "first_name": "Vivian",
+    "last_name": "Banks",
+    "track": "fertility",
+    "phase": "week-1",
+    "password": "simpleisawesome1*",
+    "email": "test+mvnqa-email452@mavenclinic.com",
+    "date_of_birth": "2000-01-01",
+    "company_email": "test.email452@gmail.com",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  },
+  {
+    "type": "reimbursement_organization_settings",
+    "started_at": "1 days ago",
+    "organization": "Wayne Enterprises LAP",
+    "categories": [
+      {
+        "type": "reimbursement_category",
+        "organization": "Wayne Enterprises LAP",
+        "label": "Fertility, Egg Freezing, Adoption & Surrogacy"
+      }
+    ]
+  },
+  {
+    "type": "reimbursement_wallet",
+    "organization": "Wayne Enterprises LAP",
+    "member": "test+mvnqa-email452@mavenclinic.com",
+    "state": "QUALIFIED",
+    "reimbursement_requests": [
+      {
+        "type": "reimbursement_request",
+        "organization": "Wayne Enterprises LAP",
+        "member": "test+mvnqa-email452@mavenclinic.com",
+        "label": "IUI Treatment",
+        "service_provider": "Dr. Hyde",
+        "description": "First fertility treatment",
+        "amount": 20000,
+        "category": "Fertility, Egg Freezing, Adoption & Surrogacy",
+        "state": "REIMBURSED",
+        "service_start_date": "3 hours ago"
+      }
+    ]
+  }
+]

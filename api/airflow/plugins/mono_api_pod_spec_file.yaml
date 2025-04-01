@@ -1,0 +1,183 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: mvn-airflow-job
+spec:
+  automountServiceAccountToken: false
+  containers:
+  - env:
+    - name: CONTAINER_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    - name: DD_AGENT_HOST
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: status.hostIP
+    - name: DD_ENTITY_ID
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.uid
+    - name: DD_ENV
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.labels['tags.datadoghq.com/env']
+    - name: DD_SERVICE
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.labels['tags.datadoghq.com/service']
+    - name: DD_TAGS
+      value: team_ns:None,service_ns:maven
+    - name: restartPolicy
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.labels['tags.datadoghq.com/version']
+    - name: LOG_FORMAT
+      value: json
+    - name: NAMESPACE
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.namespace
+    - name: SERVER_HOST
+      value: 0.0.0.0
+    - name: SERVER_PATH_PREFIX
+      value: /api/v1/maven
+    - name: SERVER_PATH_PREFIX_V2
+      value: /api/v2/maven
+    - name: SERVER_PORT
+      value: "8888"
+    - name: TELEMETRY_ENABLED
+      value: "true"
+    envFrom:
+    - secretRef:
+        name: feature-flags
+    - secretRef:
+        name: datadog-rum
+    - secretRef:
+        name: api-config
+    - secretRef:
+        name: alegeus
+    - configMapRef:
+        name: api-config
+    imagePullPolicy: Always
+    lifecycle:
+      preStop:
+        exec:
+          command:
+          - /bin/sh
+          - -c
+          - sleep 5
+    name: primary
+    ports:
+    - containerPort: 8888
+      name: http
+      protocol: TCP
+    resources:
+      limits:
+        cpu: 1250m
+        memory: 1Gi
+      requests:
+        cpu: 1250m
+        memory: 1Gi
+    securityContext:
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+        - NET_RAW
+        - ALL
+      privileged: false
+      readOnlyRootFilesystem: true
+      runAsGroup: 1000
+      runAsNonRoot: true
+      runAsUser: 10000
+      seccompProfile:
+        type: RuntimeDefault
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /tmp
+      name: tmp
+    - mountPath: /alegeus-certs
+      name: alegeus-certs-volume
+    - mountPath: /api/secrets
+      name: apns-certs
+    - mountPath: /fhir-svc-account
+      name: fhir-svc-account
+    - mountPath: /google-saml-svc-accounts
+      name: google-saml-svc-accounts
+    - mountPath: /google-svc-accounts
+      name: google-svc-accounts
+    - mountPath: /learn-cms/certs
+      name: learn-cms-certs-volume
+    - mountPath: /mvn-memorystore
+      name: mvn-memorystore
+    - mountPath: /alegeus
+      name: alegeus-volume
+    - mountPath: /alegeus/config
+      name: alegeus-volume
+  restartPolicy: Always
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 10000
+    seccompProfile:
+      type: RuntimeDefault
+  serviceAccount: worker
+  serviceAccountName: worker
+  shareProcessNamespace: false
+  terminationGracePeriodSeconds: 30
+  volumes:
+  - emptyDir: {}
+    name: tmp
+  - name: alegeus-certs-volume
+    secret:
+      defaultMode: 420
+      items:
+      - key: client_certificate_chain
+        path: alegeus-client.crt
+      - key: client_certificate_private_key
+        path: alegeus-private-key.pem
+      optional: true
+      secretName: alegeus
+  - name: apns-certs
+    secret:
+      defaultMode: 420
+      secretName: apns-certs
+  - name: fhir-svc-account
+    secret:
+      defaultMode: 420
+      secretName: fhir-svc-account
+  - name: google-saml-svc-accounts
+    secret:
+      defaultMode: 420
+      secretName: google-saml-svc-accounts
+  - name: google-svc-accounts
+    secret:
+      defaultMode: 420
+      secretName: google-svc-accounts
+  - name: learn-cms-certs-volume
+    secret:
+      defaultMode: 420
+      items:
+      - key: memorystore-cert
+        path: memorystore_learn_cms_server_ca.pem
+      optional: true
+      secretName: api-config
+  - name: mvn-memorystore
+    secret:
+      defaultMode: 420
+      secretName: api-server-memorystore-secrets
+  - configMap:
+      defaultMode: 420
+      items:
+      - key: allow_list
+        path: wallet_user_allowlist.json
+      name: api-config
+      optional: true
+    name: alegeus-volume

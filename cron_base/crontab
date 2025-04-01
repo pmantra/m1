@@ -1,0 +1,10 @@
+# This is the base crontab. It will be concatenated atop of specific crontabs at image build time.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Minute   Hour     Day of Month   Month               Day of Week       USER    Command
+# (0-59)   (0-23)   (1-31)         (1-12 or Jan-Dec)   (0-6 or Sun-Sat)
+6 * * * * root { . /root/cron-env.sh; kubectl get pods > /dev/null && stackdriver-heartbeat; } >> /var/log/cron.log 2>&1
+
+

@@ -1,0 +1,38 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    <script>
+        'use strict';
+        window.onBulkMfaAction = function (e) {
+            try {
+                return confirm(`Has this action been approved by product and security?`);
+            } catch (e) {
+                alert(e);
+                return false;
+            }
+        };
+    </script>
+
+
+<h1>Practitioner MFA Bulk Actions </h1>
+
+    Enable or Disable MFA for all Maven Practitioners. This action should be approved by both product and security.
+    <form class="icon" method="POST" action="/admin/practitioner_management/enable_mfa" onsubmit="return window.onBulkMfaAction(event)">
+        <button type="submit" class="btn btn-primary btn-large" title="Enable"> Enable
+        </button>
+    </form>
+
+    <form class="icon" method="POST" action="/admin/practitioner_management/disable_mfa" onsubmit="return window.onBulkMfaAction(event)">
+        <button type="submit" class="btn btn-primary btn-large" title="Disable"> Disable
+        </button>
+    </form>
+
+
+{% endblock %}
+
+{% block tail %}
+{{ super() }}
+{{ lib.form_js() }}
+{% endblock %}
+
+

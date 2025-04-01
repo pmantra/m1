@@ -1,0 +1,64 @@
+/* ----- MAVEN PRACTITIONER EVALUATION ----- */
+
+.page-mpe {
+	.intro {
+		background: $charcoal-100;
+		h1 {
+			color: $macaroon-20;
+		}
+	}
+	.mpe-criteria {
+		padding-top: 33px;
+		@include susy-breakpoint($mobile-landscape) {
+			padding-top: 60px;
+		}
+		@include susy-breakpoint($tablet) {
+			padding-top: 80px;
+		}
+		.mpe-info {
+			@include susy-breakpoint($tablet) {
+				@include span(8 of 10);
+				margin-right: span(2 wide of 10);
+			}
+		}
+		p:first-child {
+			margin-top: 2.5rem;
+			@include susy-breakpoint($desktop) {
+				margin-top: 3.5rem;
+			}
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			@include susy-breakpoint($mobile-landscape) {
+				@include span(8 of 10);
+				margin-left: span(1 wide of 10);
+				p {
+					@include span(7 of 8 last);
+					margin-top: 10px;
+				}
+			}
+
+			li {
+				&:first-child {
+					margin-top: 50px;
+				}
+				list-style-type: none;
+				list-style-image: none;
+				margin-bottom: 50px;
+				@include susy-breakpoint($mobile-landscape) {
+					@include span(10 of 10);
+				}
+				@include susy-breakpoint($mobile-landscape) {
+					margin-bottom: 70px;
+				}
+				h2 {
+					color: $charcoal-100;
+					@include susy-breakpoint($mobile-landscape) {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+} 

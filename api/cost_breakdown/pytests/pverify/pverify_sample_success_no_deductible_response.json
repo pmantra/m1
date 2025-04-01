@@ -1,0 +1,4654 @@
+{
+    "RequestID": 101404589,
+    "APIResponseCode": "0",
+    "APIResponseMessage": "Processed",
+    "EDIErrorMessage": null,
+    "IsPayerBackOffice": false,
+    "ProcessedWithError": false,
+    "ErrorCode": null,
+    "ErrorDescription": null,
+    "PverifyPayerCode": "00004",
+    "PayerName": "Cigna",
+    "VerificationType": "Subscriber Verification",
+    "DOS": "08/28/2023 - 08/28/2023",
+    "ExceptionNotes": null,
+    "IsHMOPlan": false,
+    "AddtionalInfo": null,
+    "Location": "NY",
+    "ReferrenceId": null,
+    "InternalId": null,
+    "CustomerId": null,
+    "Notes": null,
+    "ResultPracticeType": "SpecialistConsultation",
+    "AreAllSTCsProcessed": true,
+    "STCsStatusMessage": "",
+    "IsProviderInNetwork": null,
+    "RecursiveType": null,
+    "RecursiveRequestId": 0,
+    "RecursiveAPIResponseCode": null,
+    "RecursiveAPIResponseMessage": null,
+    "RecursiveProcessedWithError": false,
+    "IsSkipped": false,
+    "DetailsURL": "https://premium.pverify.com/PremiumAccount/ViewSummaryDetails?elgID=5LoId-e1ZCIb_x_yd34ifQ%7e%7e",
+    "IsPriorAuthRequired": null,
+    "ProcessRealtime": false,
+    "DemographicInfo": {
+        "Subscriber": {
+            "Address1": "15 BLUE ST APT 1",
+            "Address2": null,
+            "City": "BOSTON",
+            "CommunicationNumber": null,
+            "Date": [
+                {
+                    "Date": "01/01/2023",
+                    "Type": "Eligibility Begin"
+                },
+                {
+                    "Date": "01/01/2023",
+                    "Type": "Plan Begin"
+                },
+                {
+                    "Date": "12/31/2023",
+                    "Type": "Plan End"
+                }
+            ],
+            "DOB_R": "01/29/1980",
+            "Firstname": "JIM",
+            "Gender_R": "Male",
+            "Identification": [
+                {
+                    "Code": "LANE",
+                    "Type": "Lastname_R",
+                    "Name": null
+                },
+                {
+                    "Code": "JIM",
+                    "Type": "Firstname",
+                    "Name": null
+                },
+                {
+                    "Code": "10647296000",
+                    "Type": "Member ID",
+                    "Name": null
+                },
+                {
+                    "Code": "00637359",
+                    "Type": "Group Number",
+                    "Name": null
+                },
+                {
+                    "Code": "MAVEN CLINIC CO.",
+                    "Type": "Group Name",
+                    "Name": null
+                }
+            ],
+            "Lastname_R": "LANE",
+            "Middlename": null,
+            "State": "IL",
+            "Suffix": null,
+            "Zip": "031131899",
+            "MilitaryPersonnelInfo": null,
+            "FullName": "JIM LANE"
+        },
+        "Dependent": null
+    },
+    "OtherPayerInfo": null,
+    "IPADetails": null,
+    "PlanCoverageSummary": {
+        "Status": "Active",
+        "EffectiveDate": "01/01/2023",
+        "ExpiryDate": "12/31/2023",
+        "PlanName": "OPEN ACCESS PLUS,PERFORMANCE PHARMACY",
+        "PolicyType": null,
+        "GroupNumber": "00637359",
+        "GroupName": "MAVEN CLINIC CO.",
+        "PlanNetworkID": null,
+        "PlanNetworkName": null,
+        "SubscriberRelationship": null,
+        "PlanNumber": null,
+        "HRAorHSALimitationsRemaining": null,
+        "LastUpdatedDateOfEDI": null,
+        "PatientGender": null,
+        "BenefitPlanCode": null
+    },
+    "PCPAuthInfoSummary": {
+        "PrimaryCareProviderName": null,
+        "PCPStartDate": null,
+        "PrimaryCareProviderPhoneNumber": null,
+        "InNetHBPCAuthorizationInfo": null,
+        "OutNetHBPCAuthorizationInfo": null,
+        "UtilizationManagementOrganizationName": null,
+        "UMOTelephone": null,
+        "CapitationFacilityName": null
+    },
+    "HBPC_Deductible_OOP_Summary": {
+        "IndividualDeductibleInNet": null,
+        "IndividualDeductibleOutNet": null,
+        "IndividualDeductibleRemainingInNet": null,
+        "IndividualDeductibleRemainingOutNet": null,
+        "FamilyDeductibleInNet": null,
+        "FamilyDeductibleOutNet": null,
+        "FamilyDeductibleRemainingInNet": null,
+        "FamilyDeductibleRemainingOutNet": null,
+        "IndividualOOP_InNet": {
+            "Value": "$3000.00",
+            "Notes": "COPAY DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM\r\nCOINSURANCE DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM\r\nACCUMULATORS ARE SHARED BETWEEN MEDICAL AND MENTAL HEALTH"
+        },
+        "IndividualOOP_OutNet": null,
+        "IndividualOOPRemainingInNet": {
+            "Value": "$2482.74",
+            "Notes": "COPAY DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM\r\nCOINSURANCE DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM\r\nACCUMULATORS ARE SHARED BETWEEN MEDICAL AND MENTAL HEALTH"
+        },
+        "IndividualOOPRemainingOutNet": null,
+        "FamilyOOPInNet": {
+            "Value": "$6000.00",
+            "Notes": "COPAY DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM\r\nCOINSURANCE DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM\r\nACCUMULATORS ARE SHARED BETWEEN MEDICAL AND MENTAL HEALTH"
+        },
+        "FamilyOOPOutNet": null,
+        "FamilyOOPRemainingInNet": {
+            "Value": "$5402.42",
+            "Notes": "COPAY DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM\r\nCOINSURANCE DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM\r\nACCUMULATORS ARE SHARED BETWEEN MEDICAL AND MENTAL HEALTH"
+        },
+        "FamilyOOPRemainingOutNet": null
+    },
+    "MedicareInfoSummary": null,
+    "MiscellaneousInfoSummary": {
+        "RemainingSpendDown": null,
+        "IsNPIInNetwork": "PROVIDER IS IN NETWORK BASED ON NPI ID PROVIDED IN REQUEST",
+        "MemberID": "10806596000"
+    },
+    "SpecialistOfficeSummary": {
+        "ServiceCoveredInNet": "YES",
+        "ServiceCoveredOutNet": null,
+        "CoPayInNet": {
+            "Value": "$40.00",
+            "Notes": "SPECIALIST"
+        },
+        "CoInsInNet": {
+            "Value": "0%",
+            "Notes": null
+        },
+        "CoPayOutNet": null,
+        "CoInsOutNet": null,
+        "UMOName": null,
+        "UMOTelephone": null,
+        "InNetServiceAuthorizationInfo": "NO (POS Office)",
+        "OutNetServiceAuthorizationInfo": null,
+        "IndividualDeductibleInNet": null,
+        "IndividualDeductibleOutNet": null,
+        "IndividualDeductibleRemainingInNet": null,
+        "IndividualDeductibleRemainingOutNet": null,
+        "FamilyDeductibleInNet": null,
+        "FamilyDeductibleOutNet": null,
+        "FamilyDeductibleRemainingInNet": null,
+        "FamilyDeductibleRemainingOutNet": null,
+        "IndividualOOP_InNet": null,
+        "IndividualOOP_OutNet": null,
+        "IndividualOOPRemainingInNet": null,
+        "IndividualOOPRemainingOutNet": null,
+        "FamilyOOPInNet": null,
+        "FamilyOOPOutNet": null,
+        "FamilyOOPRemainingInNet": null,
+        "FamilyOOPRemainingOutNet": null
+    },
+    "IsCptInfoUpdated": false,
+    "PreventiveServices": null,
+    "ServiceDetails": [
+        {
+            "ServiceName": "Abortion",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Allergy Testing",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Ambulatory Service Center Facility",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Deductible",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "BENEFIT DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM"
+                    ],
+                    "MonetaryAmount": "250.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Admisson",
+                    "Procedure": null,
+                    "PlaceOfService": "Outpatient Hospital",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Anesthesia",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Anesthesiologist",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Audiology Exam",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Walk-In Retail Health Clinic",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Brand Name Prescription Drug",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PREFERRED 30 DAY",
+                        "MAIL ORDER IS REQUIRED FOR SPECIALTY DRUGS",
+                        "WOMEN'S CONTRACEPTIVE MAIL ORDER PREFERRED 90 DAY",
+                        "PREFERRED 90 DAY",
+                        "NON PREFERRED 30 DAY",
+                        "WOMEN'S CONTRACEPTIVE PREFERRED 30 DAY",
+                        "WOMEN'S CONTRACEPTIVE PREFERRED 90 DAY",
+                        "NON PREFERRED MAIL ORDER 90 DAY",
+                        "NON PREFERRED 90 DAY",
+                        "PREFERRED MAIL ORDER 90 DAY"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "WOMEN'S CONTRACEPTIVE NON PREFERRED 30 DAY",
+                        "WOMEN'S CONTRACEPTIVE MAIL ORDER NON PREFERRED 90 DAY",
+                        "WOMEN'S CONTRACEPTIVE NON PREFERRED 90 DAY"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PREFERRED 30 DAY",
+                        "MAIL ORDER IS REQUIRED FOR SPECIALTY DRUGS",
+                        "WOMEN'S CONTRACEPTIVE PREFERRED 30 DAY"
+                    ],
+                    "MonetaryAmount": "20.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "34",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Limitations",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALTY MAIL ORDER",
+                        "SPECIALTY"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": "Days",
+                    "Quantity": "90",
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "WOMEN'S CONTRACEPTIVE MAIL ORDER PREFERRED 90 DAY",
+                        "REDUCED COST-SHARE MAY APPLY FOR A REDUCED DAY SUPPLY",
+                        "PREFERRED 90 DAY",
+                        "WOMEN'S CONTRACEPTIVE PREFERRED 90 DAY",
+                        "PREFERRED MAIL ORDER 90 DAY"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "90",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "NON PREFERRED 30 DAY",
+                        "MAIL ORDER IS REQUIRED FOR SPECIALTY DRUGS",
+                        "WOMEN'S CONTRACEPTIVE NON PREFERRED 30 DAY"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "34",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "NON PREFERRED MAIL ORDER 90 DAY",
+                        "REDUCED COST-SHARE MAY APPLY FOR A REDUCED DAY SUPPLY",
+                        "NON PREFERRED 90 DAY",
+                        "WOMEN'S CONTRACEPTIVE NON PREFERRED 90 DAY",
+                        "WOMEN'S CONTRACEPTIVE MAIL ORDER NON PREFERRED 90 DAY"
+                    ],
+                    "MonetaryAmount": "80.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "90",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "ServiceName": "Cardiac",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Cardiac Rehabilitation",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Chemotherapy",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Chiropractic",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "VIRTUAL CARE INCLUDED FOR SPECIFIC SERVICES"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Cognitive Therapy",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Consultation",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Walk-In Retail Health Clinic",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Diagnostic Lab",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "GENERAL"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "No",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": "Emergency Room - Hospital",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Both",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Diagnostic Medical",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Diagnostic X-Ray",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "No",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": "Emergency Room - Hospital",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Both",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Dialysis",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Durable Medical Equipment Purchase",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Durable Medical Equipment Rental",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Emergency Services",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "GENERAL",
+                        "PROFESSIONAL SERVICES",
+                        "X-RAY",
+                        "LAB"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "No",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": "Emergency Room - Hospital",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Both",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "GENERAL"
+                    ],
+                    "MonetaryAmount": "150.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Both",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Emergency Room - Hospital",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Eye",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Walk-In Retail Health Clinic",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Family Planning",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "CONTRACEPTIVE MANAGEMENT SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "CONTRACEPTIVE MANAGEMENT SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "CONTRACEPTIVE MANAGEMENT"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Walk-In Retail Health Clinic",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "CONTRACEPTIVE MANAGEMENT PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "CONTRACEPTIVE MANAGEMENT PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "CONTRACEPTIVE MANAGEMENT PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Outpatient Hospital",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Free Standing Prescription Drug",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Limitations",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALTY"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": "Days",
+                    "Quantity": "90",
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PREFERRED 30 DAY",
+                        "MAIL ORDER IS REQUIRED FOR SPECIALTY DRUGS",
+                        "WOMEN'S CONTRACEPTIVE PREFERRED 30 DAY"
+                    ],
+                    "MonetaryAmount": "20.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "34",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "NON PREFERRED 30 DAY",
+                        "MAIL ORDER IS REQUIRED FOR SPECIALTY DRUGS",
+                        "WOMEN'S CONTRACEPTIVE NON PREFERRED 30 DAY"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "34",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PREFERRED 30 DAY",
+                        "MAIL ORDER IS REQUIRED FOR SPECIALTY DRUGS",
+                        "GENERIC 30 DAY",
+                        "WOMEN'S CONTRACEPTIVE GENERIC 30 DAY",
+                        "WOMEN'S CONTRACEPTIVE GENERIC 90 DAY",
+                        "PREFERRED 90 DAY",
+                        "NON PREFERRED 30 DAY",
+                        "WOMEN'S CONTRACEPTIVE PREFERRED 30 DAY",
+                        "WOMEN'S CONTRACEPTIVE PREFERRED 90 DAY",
+                        "NON PREFERRED 90 DAY"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "GENERIC 90 DAY",
+                        "WOMEN'S CONTRACEPTIVE NON PREFERRED 30 DAY",
+                        "WOMEN'S CONTRACEPTIVE NON PREFERRED 90 DAY"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "GENERIC 30 DAY",
+                        "MAIL ORDER IS REQUIRED FOR SPECIALTY DRUGS"
+                    ],
+                    "MonetaryAmount": "10.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "34",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PREFERRED 90 DAY",
+                        "WOMEN'S CONTRACEPTIVE PREFERRED 90 DAY"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "90",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "NON PREFERRED 90 DAY",
+                        "WOMEN'S CONTRACEPTIVE NON PREFERRED 90 DAY"
+                    ],
+                    "MonetaryAmount": "80.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "90",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "GENERIC 90 DAY"
+                    ],
+                    "MonetaryAmount": "10.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "90",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "ServiceName": "Gastrointestinal",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Generic Prescription Drug",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Limitations",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALTY MAIL ORDER",
+                        "SPECIALTY"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": "Days",
+                    "Quantity": "90",
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "GENERAL 30 DAY",
+                        "MAIL ORDER IS REQUIRED FOR SPECIALTY DRUGS"
+                    ],
+                    "MonetaryAmount": "10.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "34",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "GENERAL 30 DAY",
+                        "MAIL ORDER IS REQUIRED FOR SPECIALTY DRUGS",
+                        "WOMEN'S CONTRACEPTIVE 30 DAY",
+                        "WOMEN'S CONTRACEPTIVE 90 DAY",
+                        "WOMEN'S CONTRACEPTIVE MAIL ORDER 90 DAY",
+                        "MAIL ORDER 90 DAY",
+                        "GENERAL 90 DAY"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "MAIL ORDER 90 DAY",
+                        "REDUCED COST-SHARE MAY APPLY FOR A REDUCED DAY SUPPLY",
+                        "GENERAL 90 DAY"
+                    ],
+                    "MonetaryAmount": "10.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "90",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "ServiceName": "Health Benefit Plan Coverage",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PROVIDER IS IN NETWORK BASED ON NPI ID PROVIDED IN REQUEST.",
+                        "COMPLETE CARE MANAGEMENT"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": "OPEN ACCESS PLUS",
+                    "PlanNetworkIndicator": null,
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Out of Pocket",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "COPAY DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM",
+                        "COINSURANCE DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM",
+                        "ACCUMULATORS ARE SHARED BETWEEN MEDICAL AND MENTAL HEALTH"
+                    ],
+                    "MonetaryAmount": "3000.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Calendar Year",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Out of Pocket",
+                    "CoverageLevel": "Family",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "COPAY DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM",
+                        "COINSURANCE DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM",
+                        "ACCUMULATORS ARE SHARED BETWEEN MEDICAL AND MENTAL HEALTH"
+                    ],
+                    "MonetaryAmount": "6000.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Calendar Year",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Hospital",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Both",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Hospital - Ambulatory Surgical",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Deductible",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "BENEFIT DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM"
+                    ],
+                    "MonetaryAmount": "250.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Admisson",
+                    "Procedure": null,
+                    "PlaceOfService": "Outpatient Hospital",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Hospital - Emergency Accident",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "No",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Both",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "150.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Both",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Hospital - Emergency Medical",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "No",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Both",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "150.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Both",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Hospital - Inpatient",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Deductible",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "BENEFIT DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM"
+                    ],
+                    "MonetaryAmount": "500.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Admisson",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Hospital - Outpatient",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Deductible",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "BENEFIT DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM"
+                    ],
+                    "MonetaryAmount": "250.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Admisson",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Immunizations",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Infertility",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "In-vitro Fertilization",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Mail Order Prescription Drug",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Limitations",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALTY"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": "Days",
+                    "Quantity": "90",
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "WOMEN'S CONTRACEPTIVE PREFERRED 90 DAY",
+                        "REDUCED COST-SHARE MAY APPLY FOR A REDUCED DAY SUPPLY",
+                        "PREFERRED 90 DAY"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "90",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "WOMEN'S CONTRACEPTIVE PREFERRED 90 DAY",
+                        "WOMEN'S CONTRACEPTIVE GENERIC 90 DAY",
+                        "GENERIC 90 DAY",
+                        "NON PREFERRED 90 DAY",
+                        "PREFERRED 90 DAY",
+                        "WOMEN'S CONTRACEPTIVE NON PREFERRED 90 DAY"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "GENERIC 90 DAY",
+                        "REDUCED COST-SHARE MAY APPLY FOR A REDUCED DAY SUPPLY"
+                    ],
+                    "MonetaryAmount": "10.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "90",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "NON PREFERRED 90 DAY",
+                        "REDUCED COST-SHARE MAY APPLY FOR A REDUCED DAY SUPPLY",
+                        "WOMEN'S CONTRACEPTIVE NON PREFERRED 90 DAY"
+                    ],
+                    "MonetaryAmount": "80.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": [
+                        {
+                            "QuantityQualifier": null,
+                            "TotalQuantity": null,
+                            "MeasurementUnit": null,
+                            "MeasurementPeriod": null,
+                            "TimePeriodQualifier": " Day",
+                            "TotalNumberOfPeriods": "90",
+                            "DeliveryFrequency": null,
+                            "DeliveryPatternTime": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "ServiceName": "Maternity",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Medical Care",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Both",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Medically Related Transportation",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Insurance",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": ".00",
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "No",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Both",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Mental Health",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": null,
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "MRI/CAT Scan",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "Yes",
+                    "EligibilityOrBenefit": "Coverage Basis",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "Yes",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PET SCAN SPECIALIST",
+                        "SPECIALIST",
+                        "PET SCAN PCP",
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "100.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "Yes",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "GENERAL",
+                        "PET SCAN"
+                    ],
+                    "MonetaryAmount": "100.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Outpatient Hospital",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Neurology",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Newborn Care",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Occupational Therapy",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Outpatient Hospital",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "INCLUDED FOR SPECIFIC SERVICES"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "AUTISM - VIRTUAL CARE INCLUDED FOR SPECIFIC SERVICES"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Orthopedic",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Other Medical",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Pediatric",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Pharmacy",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": "PERFORMANCE PHARMACY",
+                    "PlanNetworkIndicator": null,
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Out of Pocket",
+                    "CoverageLevel": "Family",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "COPAY DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM",
+                        "ACCUMULATORS ARE SHARED BETWEEN IN NETWORK MEDICAL AND MENTAL HEALTH"
+                    ],
+                    "MonetaryAmount": "6000.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Calendar Year",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Out of Pocket",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "COPAY DOES APPLY TO MEMBER'S OUT-OF-POCKET MAXIMUM",
+                        "ACCUMULATORS ARE SHARED BETWEEN IN NETWORK MEDICAL AND MENTAL HEALTH"
+                    ],
+                    "MonetaryAmount": "3000.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Calendar Year",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Physical Medicine",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Limitations",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": "Visits",
+                    "Quantity": "90",
+                    "TimePeriodQualifier": "Calendar Year",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Outpatient Hospital",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "INCLUDED FOR SPECIFIC SERVICES"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "AUTISM - VIRTUAL CARE INCLUDED FOR SPECIFIC SERVICES"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Pneumonia Vaccine",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Pre-Admission Testing",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Professional (Physician)",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Professional (Physician) Visit - Home",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Professional (Physician) Visit - Inpatient",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Professional (Physician) Visit - Nursing Home",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "Yes",
+                    "EligibilityOrBenefit": "Limitations",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "COMBINED HOME HEALTH CARE AND PROFESSIONAL (PHYSICIAN) VISIT (NURSING HOME)"
+                    ],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": "Visits",
+                    "Quantity": "100",
+                    "TimePeriodQualifier": "Calendar Year",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "Yes",
+                    "EligibilityOrBenefit": "Coverage Basis",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Professional (Physician) Visit - Office",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "TMJ SPECIALIST",
+                        "SPECIALIST"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Walk-In Retail Health Clinic",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "TMJ PCP",
+                        "PCP"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "TELEHEALTH THROUGH CONTRACTED VENDOR"
+                    ],
+                    "MonetaryAmount": "30.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Other Unlisted Facility",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Professional (Physician) Visit - Outpatient",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Prosthetic Device",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Pulmonary Rehabilitation",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Radiation Therapy",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Rehabilitation",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Rehabilitation - Inpatient",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Routine Physical",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Skilled Nursing Care",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "Yes",
+                    "EligibilityOrBenefit": "Coverage Basis",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "Yes",
+                    "EligibilityOrBenefit": "Limitations",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": "Days",
+                    "Quantity": "100",
+                    "TimePeriodQualifier": "Calendar Year",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Speech Therapy",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "Yes",
+                    "EligibilityOrBenefit": "Coverage Basis",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "Yes",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Office",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "Yes",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "Outpatient Hospital",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "Yes",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "INCLUDED FOR SPECIFIC SERVICES"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": "02",
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "Yes",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [
+                        "AUTISM"
+                    ],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Surgical",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Surgical Assistance",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Transplants",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        },
+        {
+            "ServiceName": "Urgent Care",
+            "EligibilityDetails": [
+                {
+                    "AuthorizationOrCertificationRequired": null,
+                    "EligibilityOrBenefit": "Active Coverage",
+                    "CoverageLevel": null,
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": null,
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": null,
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                },
+                {
+                    "AuthorizationOrCertificationRequired": "No",
+                    "EligibilityOrBenefit": "Co-Payment",
+                    "CoverageLevel": "Individual",
+                    "Date": [],
+                    "Identifications": [],
+                    "InsuranceType": null,
+                    "Message": [],
+                    "MonetaryAmount": "40.00",
+                    "Percent": null,
+                    "PlanCoverageDescription": null,
+                    "PlanNetworkIndicator": "Yes",
+                    "QuantityQualifier": null,
+                    "Quantity": null,
+                    "TimePeriodQualifier": "Visit",
+                    "Procedure": null,
+                    "PlaceOfService": null,
+                    "BenefitEntities": [],
+                    "HealthCareServiceDeliveries": []
+                }
+            ]
+        }
+    ],
+    "DisclaimerMessage": "Summary Objects information is parsed information from the payer and is not guaranteed.Look at the ServiceDetails object for the details from the payer.",
+    "EligibilityResult": null,
+    "NonEDIResultPath": null,
+    "DentalInfo": null
+}

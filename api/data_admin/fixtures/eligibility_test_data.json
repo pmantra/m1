@@ -1,0 +1,120 @@
+[
+  {
+    "type": "organization",
+    "name": "Test Organization 1"
+  },
+  {
+    "type": "organization",
+    "name": "Test Organization 2",
+    "employee_only": true
+  },
+  {
+    "type": "organization",
+    "name": "Test Organization 3",
+    "medical_plan_only": true,
+    "alternate_verification": true
+  },
+  {
+    "type": "organization",
+    "name": "Test Organization 4",
+    "employee_only": true,
+    "alternate_verification": true
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Test Organization 1",
+    "company_email": "testcase1@mavenclinic.com",
+    "date_of_birth": "2018-01-01",
+    "beneficiaries_enabled": true,
+    "wallet_enabled": true
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Test Organization 1",
+    "company_email": "testcase2@mavenclinic.com",
+    "date_of_birth": "2018-02-01",
+    "beneficiaries_enabled": true,
+    "wallet_enabled": true
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Test Organization 1",
+    "company_email": "testcase3@mavenclinic.com",
+    "date_of_birth": "2018-02-02",
+    "beneficiaries_enabled": true,
+    "wallet_enabled": true
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Test Organization 1",
+    "company_email": "testedge1@mavenclinic.com",
+    "date_of_birth": "2018-02-04",
+    "beneficiaries_enabled": false,
+    "wallet_enabled": false
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Test Organization 2",
+    "company_email": "testcase4@mavenclinic.com",
+    "date_of_birth": "2018-03-01",
+    "unique_corp_id": "1",
+    "dependent_id": "1"
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Test Organization 2",
+    "company_email": "testcase5@mavenclinic.com",
+    "date_of_birth": "2018-04-01",
+    "unique_corp_id": "1"
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Test Organization 2",
+    "company_email": "testcase6@mavenclinic.com",
+    "date_of_birth": "2018-05-01",
+    "unique_corp_id": "2",
+    "first_name": "J",
+    "last_name": "J",
+    "work_state": "NY"
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Test Organization 2",
+    "company_email": "testedge2@mavenclinic.com",
+    "date_of_birth": "2018-02-05"
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Test Organization 3",
+    "company_email": "testcase7@mavenclinic.com",
+    "date_of_birth": "2018-06-01"
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Test Organization 4",
+    "company_email": "testcase9@mavenclinic.com",
+    "date_of_birth": "2018-09-01"
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Test Organization 4",
+    "company_email": "testcase11@mavenclinic.com",
+    "date_of_birth": "2018-11-01",
+    "beneficiaries_enabled": true,
+    "wallet_enabled": true
+  },
+  {
+    "type": "organization_employee",
+    "organization_name": "Test Organization 4",
+    "company_email": "testcase12@mavenclinic.com",
+    "date_of_birth": "2018-12-01",
+    "beneficiaries_enabled": true,
+    "wallet_enabled": true
+  },
+  {
+  	"type": "user",
+   	"role": "staff",
+   	"otp_secret": null,
+   	"email": "mohammad.hasanqa@mavenclinic.com"
+  }
+]

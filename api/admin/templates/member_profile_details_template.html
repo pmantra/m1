@@ -1,0 +1,94 @@
+{% extends 'admin/model/details.html' %}
+
+{% block body %}
+
+    <style type="text/css">
+        .control-group:last-child .controls {
+            margin-left: 10px;
+        }
+    </style>
+
+    {% if track_modifiers_banner %}
+    <div class="alert alert-warning" style="background-color: yellow; padding: 10px; text-align: center; color: red;">
+        {{ track_modifiers_banner }}
+    </div>
+    {% endif %}
+
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <span style="color:gray;font-weight:normal;font-size:20px;color:green">Member Profile</span>
+                <h2>{{ model.user.full_name }}</h2>
+                <h2>Date of Birth: {{ model.user.date_of_birth or "Not on File" }}</h2>
+                <h2>Benefit Id: {{ benefit_ids or "None" }}</h2>
+                <h3 style="font-weight:normal;margin-bottom:0">
+                    Email: {{ model.user.email }}
+
+                    <span style="font-size:15px;margin-left:10px;">
+                        <a href="#" onClick="copyEmail()">Copy Email</a>
+                        <span id="copy_email_success" style="margin-left:10px;color:green"></span>
+                    </span>
+                </h3>
+                <h3 style="font-weight:normal;margin-top:0">
+                    ID: {{ model.user.id }}
+
+                    <span style="font-size:15px;margin-left:10px;">
+                        <a href="#" onClick="copyId()">Copy ID</a>
+                        <span id="copy_id_success" style="margin-left:10px;color:green"></span>
+                    </span>
+                </h3>
+            </div>
+        </div>
+
+        {% block navlinks %}{{ super() }}{% endblock %}
+
+        <div class="row">
+            <div class="span7" style="margin-top:10px">
+                {% block details_table %}
+                    <table class="table table-hover table-bordered searchable">
+                        <tr>
+                            <td>
+                                <b>Preferred language</b>
+                            </td>
+                            <td>{{ preferred_language }}</td>
+                        </tr>
+                        {% for c, name in details_columns %}
+                            <tr>
+                                <td>
+                                    <b>{{ name }}</b>
+                                </td>
+                                <td>
+                                    {{ get_value(model, c) }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% endblock %}
+            </div>
+
+
+            <div class="span5" style="margin-top:10px">
+
+                <h3>Assessments</h3>
+                <ul>
+                    {%  for assessment in user_assessments %}
+                    <li><b>{{ assessment.title + " [ ID " + assessment.id + " ]" }}</b>: {{ assessment.status }}</li>
+                    {% else %}
+                        <li>No Associated Assessments</li>
+                    {% endfor %}
+                </ul>
+                <hr>
+
+                <h3>Health Data Collection Assessments</h3>
+                <ul>
+                    {%  for assessment in user_assessments_hdc %}
+                    <li><b>{{ assessment.title }}</b>: {{ assessment.status }}</li>
+                    {% else %}
+                        <li>No Associated Assessments</li>
+                    {% endfor %}
+                </ul>
+                <hr>
+            </div>
+        </div>
+    </div>
+{% endblock %}

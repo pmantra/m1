@@ -1,0 +1,5 @@
+# Data Admin
+
+This is a QA-only tool from the early days of Maven. It creates database rows from json data. There is one 'maker' class per spec type accepted. The maker/spec names are configured in the `FixtureSpecs` class. There are a number of premade json fixtures in the `fixtures` directory which may be used as references. If there's a bit of data you need to generate on a regular basis or if you want to make it easy for the QA team to test a piece of code with pre-exsisting data, it's always good to add more json fixtures.
+
+Data Admin is nominally owned by the Core Services pod. It has very poor logging and monitoring and error reporting. If you are encountering a problem with this code and it is not displaying an exception, check the kubernetes pod logs in k8s or in datadog. In many cases, the issue will need to be debugged by the pod associated with the data model and not by Core Services. 

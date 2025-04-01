@@ -1,0 +1,1210 @@
+.page-landing {
+	&.landing-content {
+		footer {
+			display: none !important;
+		}
+		.primary-nav .top-nav,
+		.nav-actions .btn-action {
+			visibility: hidden !important;
+		}
+	}
+
+	.lp-reg-form {
+		color: $charcoal-100;
+		form {
+			max-width: 520px;
+			margin: 40px auto 0 auto;
+			.btn,
+			button {
+				max-width: 230px;
+			}
+			label {
+				left: 0;
+				color: $charcoal-100;
+				letter-spacing: 1px;
+			}
+			.paper-input {
+				input {
+					border: none;
+					border-bottom: 2px solid $charcoal-40;
+					letter-spacing: 1px;
+					margin-bottom: 0;
+					padding-left: 0;
+				}
+			}
+
+			.group {
+				text-align: left;
+			}
+		}
+
+		.reg-terms {
+			font-size: 12px;
+			margin-top: 30px;
+		}
+	}
+
+	.landing-header {
+		background: $charcoal-20;
+		.landing-title {
+			text-align: center;
+			margin-bottom: 2rem;
+			@include susy-breakpoint($desktop) {
+				@include span(8 of 10);
+				margin-left: span(1 wide of 10);
+			}
+			h1 {
+				margin-top: 0;
+				@include susy-breakpoint($desktop) {
+					text-align: center;
+					line-height: 1.5;
+				}
+			}
+			p {
+				max-width: 650px;
+				margin: 1rem auto;
+				@include susy-breakpoint($desktop) {
+					font-size: 18px;
+				}
+			}
+		}
+
+		> div {
+			@include susy-breakpoint($desktop-hd) {
+				@include span(10 of 12);
+				margin-left: span(1 wide of 12);
+				margin-right: span(1 wide of 12);
+			}
+		}
+	}
+
+	.landing-description {
+		text-align: center;
+		@include susy-breakpoint($desktop) {
+			@include span(6 of 10);
+			text-align: left;
+			ul {
+				padding-left: 35px;
+			}
+			li {
+				font-size: 16px;
+			}
+		}
+
+		.landing-phone {
+			@include susy-breakpoint($desktop) {
+				@include span(3 of 6);
+			}
+			@include susy-breakpoint($desktop-hd) {
+				@include span(2 of 6);
+			}
+		}
+		.ad-bullets {
+			.landing-icon {
+				svg {
+					width: 25px;
+					height: 25px;
+					margin-right: 6px;
+					margin-top: -2px;
+				}
+			}
+			@include susy-breakpoint($desktop) {
+				@include span(3 of 6 last);
+			}
+			@include susy-breakpoint($desktop-hd) {
+				@include span(4 of 6 last);
+			}
+		}
+
+		img {
+			max-width: 100%;
+
+			@include susy-breakpoint($tablet) {
+				max-width: 100%;
+				padding-right: 15px;
+				padding-top: 15px;
+				max-height: 500px;
+			}
+		}
+	}
+
+	.ad-cta-container {
+		text-align: center;
+		@include susy-breakpoint($desktop) {
+			@include span(4 of 10 last);
+		}
+		.ad-cta {
+			text-align: center;
+			margin: 2rem 0;
+		}
+	}
+}
+
+.landing-header.uti {
+	.landing-description {
+		.landing-phone {
+			@include susy-breakpoint($desktop-hd) {
+				@include span(3 of 6);
+			}
+		}
+		.ad-bullets {
+			@include susy-breakpoint($desktop-hd) {
+				@include span(3 of 6 last);
+			}
+		}
+	}
+}
+
+/* Generic landing page */
+.page-landing {
+	.generic-landing {
+		background-color: $charcoal-100;
+		background-image: url("../img/home/panel1.jpg");
+		background-size: cover;
+		background-position: center center;
+		@include susy-breakpoint($tablet) {
+			background-position: 30% center;
+			padding-bottom: 30px;
+			padding-top: 140px;
+		}
+		@include susy-breakpoint($desktop) {
+			padding-bottom: 60px;
+		}
+
+		@include susy-breakpoint($desktop-md) {
+			padding-bottom: 100px;
+		}
+		@include susy-breakpoint($desktop-hd) {
+			background-position: left center;
+		}
+
+		.landing-generic-title {
+			h1 {
+				color: white;
+				font-size: 30px;
+				margin-top: 60px;
+				@include susy-breakpoint($tablet) {
+					font-size: 65px;
+					line-height: 1;
+					margin-top: 0;
+					margin-bottom: 20px;
+				}
+				@include susy-breakpoint($desktop) {
+					p {
+						font-size: 32px;
+						line-height: 1;
+					}
+				}
+			}
+		}
+		.landing-container {
+			@include span(12);
+			margin-top: 5%;
+			@include susy-breakpoint($tablet) {
+				margin-top: 3%;
+			}
+		}
+		.landing-phone {
+			margin-bottom: 8%;
+			img {
+				max-width: 100%;
+				max-height: 500px;
+			}
+
+			.phone-wrap {
+				background: url("../img/home/phone.png") no-repeat center 0;
+				background-size: contain;
+				height: 430px;
+				background-size: 212px;
+
+				@include susy-breakpoint($tablet) {
+					background-size: 247px;
+					height: 501px;
+				}
+
+				.video {
+					position: relative;
+					top: 53px;
+					left: 0;
+					video,
+					.novideo img {
+						width: 183px;
+					}
+
+					@include susy-breakpoint($tablet) {
+						top: 62px;
+						//left: 17px;
+						video,
+						.novideo img {
+							width: 213px;
+						}
+					}
+				}
+			}
+		}
+		.landing-action {
+			background: white;
+			background: rgba(255, 255, 255, 0.9);
+			padding: 20px 18px;
+			margin-bottom: 5%;
+			h3 {
+			}
+		}
+		@include susy-breakpoint($tablet) {
+			.landing-phone {
+				@include span(6 of 12);
+			}
+			.landing-action {
+				@include span(6 of 12 last);
+
+				padding: 20px 30px;
+			}
+		}
+		@include susy-breakpoint(0 $mobile-landscape-max) {
+			.landing-action {
+				h3 {
+					font-size: 1.5rem;
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+.page-landing {
+	&.landing-nutrition {
+		.landing-nutrition-intro {
+			background-image: url("../img/landing/nutrition.jpg");
+			@include susy-breakpoint($desktop-md) {
+				padding-bottom: 0;
+			}
+			.landing-generic-title {
+				p {
+					font-size: 24px;
+					line-height: 1.5;
+					text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.9);
+					color: white;
+				}
+				h1 {
+					text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.4);
+				}
+			}
+		}
+
+		.press-banner {
+			padding-top: 0;
+			padding-bottom: 0;
+			background: white;
+
+			border-bottom: 1px solid $macaroon-20;
+			h1,
+			h5 {
+				@include span(12);
+				text-align: center;
+			}
+			h5 {
+				margin-top: 20px;
+				margin-bottom: 0;
+			}
+			ul {
+				@include span(12);
+				li {
+					margin: 1rem auto;
+					@include susy-breakpoint($desktop) {
+						width: 50%;
+						float: left;
+					}
+					img {
+						width: 100%;
+						max-width: 100%;
+					}
+				}
+			}
+		}
+
+		.three-steps {
+			text-align: center;
+			padding-top: 30px;
+			> div {
+				@include span(12);
+				padding: 0 15px;
+			}
+			.three-steps-headline {
+				@include span(12);
+			}
+			ul {
+				@include span(12);
+				margin-top: 40px;
+				margin-bottom: 40px;
+				li {
+					.step-img {
+						position: relative;
+						margin-bottom: 20px;
+
+						@include susy-breakpoint($desktop) {
+							height: 200px;
+						}
+						@include susy-breakpoint($desktop-md) {
+							height: 300px;
+						}
+						.step-img-wrap {
+							@include susy-breakpoint($desktop) {
+								position: absolute;
+								bottom: 0;
+								right: 0;
+								left: 0;
+							}
+							img {
+								max-width: 100%;
+								max-height: 300px;
+							}
+						}
+					}
+
+					@include susy-breakpoint(0 $tablet-max) {
+						.step-3 {
+							.step-img-wrap {
+								height: 220px;
+								overflow: hidden;
+								position: relative;
+								text-align: center;
+								img {
+									position: relative;
+									top: -84px;
+								}
+							}
+						}
+					}
+
+					@include susy-breakpoint($desktop) {
+						@include gallery(4);
+						.step-1 {
+							.step-img {
+								img {
+									max-height: 220px;
+									width: auto;
+								}
+							}
+						}
+						.step-2 {
+							.step-img {
+								img {
+									//		width: 100%;
+									padding-bottom: 12px;
+								}
+							}
+						}
+						.step-3 {
+						}
+					}
+					@include susy-breakpoint($desktop-md) {
+						.step-1 {
+							.step-img {
+								img {
+									max-height: 300px;
+									width: auto;
+								}
+							}
+						}
+
+						.step-3 {
+							.step-img {
+								img {
+									//					max-height: 250px;
+									width: auto;
+								}
+							}
+						}
+					}
+					> div {
+						padding: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.page-landing {
+	.meet-practitioners {
+		background: $charcoal-20;
+		ul {
+			li {
+				width: 50%;
+				float: left;
+				padding: 20px;
+				text-align: center;
+				img {
+					max-width: 100%;
+					width: 100%;
+				}
+				@include susy-breakpoint($tablet) {
+					width: 25%;
+					float: left;
+				}
+			}
+		}
+	}
+}
+
+.page-landing {
+	&.landing-instabc {
+		.landing-instabc-intro {
+			background-image: url("../img/landing/instabc/bc_640px.jpg");
+			background-position: initial;
+			padding-top: 40%;
+			padding-bottom: 50%;
+
+			@include susy-breakpoint($tablet) {
+				background-image: url("../img/landing/instabc/bc_2048px.jpg");
+				background-position: initial;
+				padding-top: -20%;
+				padding-bottom: 30%;
+			}
+
+			@include susy-breakpoint($desktop) {
+				background-position: initial;
+			}
+		}
+		.landing-instabc-title {
+			h1 {
+				color: $charcoal-100;
+				font-size: 36px;
+				line-height: 50px;
+				font-weight: 600;
+				margin-bottom: 30px;
+			}
+			p {
+				color: $charcoal-100;
+				font-size: 16px;
+				margin-top: 0px;
+				margin-bottom: 30px;
+			}
+
+			@include susy-breakpoint($tablet) {
+				h1 {
+					font-size: 60px;
+					line-height: 78px;
+					margin-bottom: 48px;
+				}
+				p {
+					font-size: 24px;
+					line-height: 36px;
+					margin-bottom: 48px;
+				}
+			}
+
+			@include susy-breakpoint($desktop) {
+				h1 {
+					font-size: 72px;
+					line-height: 100px;
+					margin-bottom: 60px;
+				}
+				p {
+					font-size: 36px;
+					line-height: 54px;
+					margin-bottom: 60px;
+				}
+			}
+		}
+
+		.instabc-action {
+			margin-top: 0px;
+			h3 {
+				font: $font3;
+				color: $charcoal-100;
+				font-size: 16px;
+				font-style: bold;
+				margin-bottom: 30px;
+				margin-top: 0px;
+			}
+			@include susy-breakpoint($tablet) {
+				h3 {
+					font-size: 24px;
+					line-height: 36px;
+					margin-bottom: 48px;
+				}
+			}
+
+			@include susy-breakpoint($desktop) {
+				h3 {
+					font-size: 36px;
+					line-height: 54px;
+					margin-bottom: 60px;
+				}
+			}
+
+			.btn.btn-cta {
+				background-color: $charcoal-100;
+				border: 2px solid;
+				border-radius: 30px;
+				border-color: $charcoal-100;
+				font-size: 16px;
+
+				@include susy-breakpoint($tablet) {
+					font-size: 24px;
+					width: 70%;
+					height: 100%;
+					padding: 20px 10px;
+					border-radius: 40px;
+				}
+
+				@include susy-breakpoint($desktop) {
+					font-size: 36px;
+					width: 70%;
+					height: 100%;
+					padding: 30px 15px;
+					border-radius: 50px;
+				}
+			}
+		}
+	}
+}
+
+.page-landing {
+	&.landing-top-bottom-icons {
+		.landing-header {
+			background-color: $blush-20;
+			height: 100vh;
+			padding: 0px;
+			@include flexbox(column, center, space-between);
+		}
+
+		.top-icons-desktop {
+			margin-top: 80px;
+		}
+
+		.top-icons-mobile {
+			margin-top: 40px;
+		}
+
+		.icons-width {
+			max-width: 100%;
+		}
+
+		.landing-logo {
+			width: 10.9%;
+			height: 9%;
+			margin: 0 auto;
+
+			@include susy-breakpoint($tablet) {
+				width: 8.1%;
+			}
+
+			@include susy-breakpoint($desktop) {
+				width: 5.2%;
+			}
+		}
+		.landing-instabc-title {
+			h1 {
+				margin-top: 25.5px;
+				margin-bottom: 24.5px;
+			}
+			p {
+				line-height: 2.5;
+			}
+
+			@include susy-breakpoint($tablet) {
+				h1 {
+					line-height: 1.23;
+				}
+				p {
+					line-height: 2.5;
+				}
+			}
+		}
+
+		.instabc-action {
+			margin-top: 0px;
+
+			.btn {
+				background-color: #111111;
+			}
+		}
+
+		.bottom-icons-desktop {
+			margin-bottom: 80px;
+		}
+
+		.bottom-icons-mobile {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+.page-landing {
+	&.landing-mob-ped {
+		.landing-logo {
+			width: 10.9%;
+			height: 9%;
+			margin: 0 auto;
+
+			@include susy-breakpoint($tablet) {
+				width: 8.1%;
+			}
+
+			@include susy-breakpoint($desktop) {
+				width: 5.2%;
+			}
+		}
+		.landing-instabc-intro {
+			background-image: url("../img/landing/mobile-pediatrician/640_top_icons.jpg");
+			background-position: center 40px;
+			background-size: 85%;
+			background-repeat: no-repeat;
+			background-color: $mint-20;
+			height: 100vh;
+			padding: 0px;
+
+			@include flexbox;
+
+			> div {
+				align-self: center;
+			}
+
+			@include susy-breakpoint($tablet) {
+				background-image: url("../img/landing/mobile-pediatrician/2048_top_icons.jpg");
+				background-position: center 50px;
+			}
+
+			@include susy-breakpoint($desktop) {
+				background-size: 75%;
+				background-position: center 60px;
+			}
+		}
+		.landing-instabc-title {
+			h1 {
+				margin-top: 25.5px;
+				margin-bottom: 24.5px;
+			}
+			p {
+				line-height: 2.5;
+			}
+
+			@include susy-breakpoint($tablet) {
+				h1 {
+					line-height: 1.23;
+				}
+				p {
+					line-height: 2.5;
+				}
+			}
+		}
+
+		.instabc-action {
+			margin-top: 0px;
+		}
+	}
+}
+.mob-ped-bottomIcons {
+	height: 43px;
+	background-image: url("../img/landing/mobile-pediatrician/640_bottom_icons.jpg");
+	background-position: center;
+	background-size: 85%;
+	background-repeat: no-repeat;
+	width: 100%;
+	margin-left: 0%;
+	margin-right: 0%;
+	position: absolute;
+	bottom: 40px;
+
+	@include susy-breakpoint($tablet) {
+		height: 95px;
+		background-image: url("../img/landing/mobile-pediatrician/2048_bottom_icons.jpg");
+		bottom: 50px;
+	}
+
+	@include susy-breakpoint($desktop) {
+		background-size: 75%;
+		bottom: 60px;
+	}
+}
+
+.page-landing {
+	&.mvn-info-a {
+		p.blue {
+			color: $charcoal-100;
+		}
+		.intro {
+			background: url("/img/home/home-hero.jpg") center top no-repeat;
+			@include background-cover();
+			@include susy-breakpoint($mobile-landscape) {
+				background-position: center 55px;
+			}
+			@include susy-breakpoint($desktop-hd) {
+				padding: 200px 0;
+			}
+			@include susy-breakpoint($desktop-uber) {
+				padding: 245px 0;
+			}
+			@include susy-breakpoint($desktop-xl) {
+				padding: 280px 0;
+			}
+			h1,
+			p {
+				color: $charcoal-100;
+			}
+			h1 {
+				line-height: 1.1;
+				margin-bottom: 20px;
+				margin-top: 30px;
+			}
+			.intro-desc {
+				max-width: 450px;
+				margin-bottom: 30px;
+			}
+			.headline {
+				text-align: center;
+				svg {
+					width: 50px;
+					height: 50px;
+				}
+				@include susy-breakpoint($mobile-landscape) {
+					padding-top: 80px;
+					text-align: left;
+					@include span(5 of 10);
+					margin-left: span(5 wide of 10);
+				}
+				@include susy-breakpoint($desktop) {
+					@include span(6 of 10);
+					margin-left: span(4 wide of 10);
+					padding-left: 60px;
+					svg {
+						width: 80px;
+						height: 80px;
+					}
+				}
+			}
+			.home-top-cta {
+				position: relative;
+				z-index: 1;
+			}
+		}
+
+		.home-press {
+			background: $macaroon-20;
+			h5 {
+				color: $charcoal-40;
+				margin: 0;
+			}
+			.home-press-mobile {
+				img {
+					max-width: 100%;
+					margin: 0 auto;
+					&.bi {
+						max-width: 120px;
+					}
+				}
+
+				@include susy-breakpoint($tablet) {
+					display: none;
+				}
+			}
+			@include susy-breakpoint(0 $mobile-landscape-max) {
+				h3 {
+					margin: 0;
+				}
+			}
+			ul {
+				display: none;
+				@include susy-breakpoint($tablet) {
+					display: block;
+				}
+				li {
+					float: left;
+					width: 20%;
+					padding: 20px;
+					img {
+						max-width: 100%;
+					}
+					&.press-hl {
+					}
+				}
+			}
+		}
+
+		.three-steps {
+			.nutr-solution {
+				@include susy-breakpoint(0 $mobile-landscape-max) {
+					h1,
+					p {
+					}
+				}
+				.nutr-solution-list {
+					h3 {
+						//border-bottom: 2px solid $charcoal-100;
+					}
+					li {
+						margin: 40px 0;
+					}
+				}
+				.nutr-solution-visual {
+					text-align: center;
+					img {
+						max-width: 100%;
+						max-height: 460px;
+						margin-top: 40px;
+					}
+				}
+				@include susy-breakpoint($tablet) {
+					h1 + p {
+						text-align: center;
+						max-width: 650px;
+						margin-bottom: 40px;
+						margin-left: auto;
+						margin-right: auto;
+					}
+					.nutr-solution-visual {
+						text-align: right;
+						float: right;
+						width: 40%;
+						img {
+							max-height: 540px;
+						}
+					}
+					.nutr-solution-list {
+						width: 60%;
+						float: left;
+						padding-right: 40px;
+						li {
+							margin: 40px 0;
+						}
+					}
+					.nutr-solution-visual {
+						img {
+							margin-top: 30px;
+						}
+					}
+				}
+				@include susy-breakpoint($desktop) {
+					.nutr-solution-list {
+						width: 60%;
+
+						li {
+							margin: 60px 0;
+						}
+					}
+					.nutr-solution-visual {
+						width: 40%;
+						img {
+							margin-top: 0;
+							max-height: 640px;
+						}
+					}
+				}
+
+				@include susy-breakpoint($desktop-md) {
+					.nutr-solution-list {
+					}
+					.nutr-solution-visual {
+						img {
+							max-height: 740px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.image-carousel {
+	.image-carousel-wrap {
+		.carousel {
+			border: 2px solid $charcoal-100;
+			width: 230px;
+			margin: 0 auto;
+			padding: 20px 20px 40px 20px;
+			text-align: left;
+			@include susy-breakpoint($desktop-md) {
+				width: 300px;
+				padding: 20px 20px 30px 20px;
+				h3 {
+					font-size: 36px;
+					line-height: 1.3;
+					width: 245px;
+				}
+			}
+		}
+
+		.image-size {
+			width: 200px;
+			height: 200px;
+			margin: 0 auto;
+		}
+
+		.slick-dots {
+			position: absolute;
+			bottom: -60px;
+			left: 31%;
+			@include susy-breakpoint($desktop) {
+				left: 34%;
+			}
+			@include susy-breakpoint($desktop-md) {
+				left: 38%;
+			}
+		}
+		@include susy-breakpoint($tablet) {
+			@include span(4 of 10);
+			left: auto;
+		}
+	}
+	.carousel-image-info {
+		text-align: center;
+		h1 {
+			margin-top: 70px;
+		}
+		@include susy-breakpoint($tablet) {
+			text-align: left;
+			@include span(6 of 10 last);
+			padding-left: 30px;
+			h1 {
+				text-align: left;
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+#articleHeader {
+	h1 {
+		text-align: left;
+	}
+	h3 {
+		text-align: left;
+	}
+	.big-bottom-margin {
+		margin-bottom: 60px;
+	}
+	.bottom-margin {
+		margin-bottom: 40px;
+	}
+	.small-bottom-margin {
+		margin-bottom: 10px;
+	}
+}
+
+.page-landing {
+	.intro {
+		.enterprise-form {
+			@include susy-breakpoint($mobile-landscape) {
+				@include span(9 of 12);
+				margin-left: span(3 wide of 12);
+			}
+			@include susy-breakpoint($tablet) {
+				@include span(8 of 12);
+				margin-left: span(4 wide of 12);
+			}
+			@include susy-breakpoint($desktop) {
+				@include span(6 of 12);
+				margin-left: span(6 wide of 12);
+			}
+			h2 {
+				text-align: center;
+			}
+			p {
+				text-align: center;
+				margin: 0px 0px 40px;
+				max-width: none;
+			}
+		}
+		p {
+			margin: 0 auto;
+		}
+	}
+
+	.landing-contact {
+		.enterprise-form {
+			input
+			// .ui-select-match
+			 {
+				background-color: white;
+			}
+			.btn.disabled {
+				background-color: $emerald-40;
+			}
+		}
+	}
+
+	&.landing-business-a {
+		.primary-nav .top-nav,
+		.nav-actions .btn-action,
+		.nav-cta,
+		.nav-toggle {
+			display: none !important;
+		}
+
+		.primary-nav {
+			max-width: 50px;
+			margin: 0 auto;
+			float: none;
+		}
+
+		.logo {
+			margin-left: 0px;
+			margin-right: 0px;
+		}
+
+		footer {
+			.footer-nav {
+				display: none;
+			}
+			.footer-copyright {
+				padding-top: 30px;
+				padding-bottom: 30px;
+
+				img {
+					display: none;
+				}
+				#social {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.page-landing {
+	.intro-2-panel {
+		padding-bottom: 0;
+		position: relative;
+		> div {
+			width: 100%;
+			@include susy-breakpoint($desktop) {
+				width: 50%;
+				float: right;
+			}
+		}
+		.panel-l {
+			@include background-cover();
+			height: 100%;
+			top: 0;
+			position: absolute;
+		}
+		.panel-r {
+			padding: 30px 15px;
+			background: $macaroon-20;
+			@include susy-breakpoint(0 $tablet-max) {
+				position: relative;
+				background: rgba(255, 252, 258, 0.7);
+				h2 {
+					font-size: 32px;
+					line-height: 42px;
+				}
+			}
+			@include susy-breakpoint($tablet) {
+				padding: 80px;
+			}
+			@include susy-breakpoint($desktop-hd) {
+				padding: 80px;
+			}
+			.panel-content .enterprise-form {
+				margin: 0 auto;
+
+				form {
+					margin: 0 auto;
+				}
+
+				@include susy-breakpoint($tablet) {
+					max-width: 500px;
+				}
+			}
+		}
+	}
+}
+
+.page-landing {
+	.panel-r {
+		form {
+			max-width: 380px;
+		}
+	}
+
+	&.back-to-work-landing {
+		.panel-l {
+			background-image: url("../img/landing/back-to-work.jpg");
+		}
+	}
+
+	&.shifting-paradigm-landing {
+		.panel-l {
+			background-image: url("../img/landing/shifting-paradigm.jpg");
+		}
+	}
+}
+
+// Thank you page
+.thank-you-icon {
+	background: url("/img/icons/thank-you.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	height: 100px;
+	margin: 0 auto;
+	width: 100px;
+}
+
+.mvn-landing {
+	.ghost-header {
+		display: block;
+		height: $mobileHeaderHeight;
+
+		@include susy-breakpoint($tablet) {
+			height: $tabletHeaderHeight;
+		}
+		@include susy-breakpoint($desktop) {
+			height: $desktopHeaderHeight;
+		}
+	}
+
+	section {
+		padding: 8% 10%;
+	}
+
+	.primary-nav .top-nav,
+	.nav-actions .btn-action,
+	.nav-cta,
+	.nav-toggle {
+		display: none !important;
+	}
+
+	.primary-nav {
+		max-width: 50px;
+		margin: 0 auto;
+		float: none;
+	}
+
+	.logo {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	section.mint {
+		background-color: $mint-20;
+	}
+
+	.icon,
+	.btn {
+		margin: 15px;
+	}
+}
+
+.page-landing {
+	&.landing-nutrition {
+		.landing-header {
+			@include susy-breakpoint($desktop-md) {
+				padding-bottom: 0;
+			}
+			.landing-generic-title {
+				p {
+					font-size: 24px;
+					line-height: 1.5;
+					text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.9);
+					color: white;
+				}
+				h1 {
+					text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.4);
+				}
+			}
+		}
+	}
+}

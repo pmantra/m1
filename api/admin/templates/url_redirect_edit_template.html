@@ -1,0 +1,47 @@
+{% extends 'admin/model/edit.html' %} {% block tail %} {{ super() }}
+<script type="text/javascript">
+  $(document).ready(function () {
+    function updateURLPreview() {
+      let url = "https://mavenclinic.com/join/" + $("#path").val(),
+        destURLArgsPrefix = "dest_url_args-",
+        args = {};
+      $("input[name^='" + destURLArgsPrefix + "']").each(function (_, input) {
+        if (input.value) {
+          args[input.name.slice(destURLArgsPrefix.length)] = input.value;
+        }
+      });
+      $("#url-preview-link").attr("href", url).text(url);
+
+      let orgRawName = $("#organization option:selected").text();
+      let orgModelName = orgRawName.substr(1, orgRawName.indexOf(" ") - 1);
+      let orgId = orgModelName
+        .substr(orgModelName.indexOf("[") + 1)
+        .slice(0, -1);
+
+      let destUrlRedirectPathRaw = $(
+        "#dest_url_redirect_path option:selected"
+      ).text();
+      let destUrlRedirectPath = destUrlRedirectPathRaw
+        .substr(destUrlRedirectPathRaw.indexOf("=") + 1)
+        .slice(0, -1);
+      if (orgId !== "") {
+        $("#url-preview").text(
+          " -> https://mavenclinic.com/maven-enrollment/" +
+            destUrlRedirectPath +
+            "?organization_id=" +
+            orgId +
+            (Object.keys(args).length ? "&" + $.param(args) : "")
+        );
+      } else {
+        $("#url-preview").text(
+          " -> https://mavenclinic.com/maven-enrollment/" +
+            destUrlRedirectPath +
+            (Object.keys(args).length ? "?" + $.param(args) : "")
+        );
+      }
+    }
+    $("input[type=text], select").bind("change paste keyup", updateURLPreview);
+    updateURLPreview();
+  });
+</script>
+{% endblock %}

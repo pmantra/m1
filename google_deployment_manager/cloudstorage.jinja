@@ -1,0 +1,29 @@
+resources:
+
+{% if properties['analytics_pixel_bucket'] %}
+- name: {{ properties['analytics_pixel_bucket'] }}
+  type: storage.v1.bucket
+  properties:
+    name: {{ properties['analytics_pixel_bucket'] }}
+{% endif %}
+
+{% if properties['analytics_log_bucket'] %}
+- name: {{ properties['analytics_log_bucket'] }}
+  type: storage.v1.bucket
+  properties:
+    name: {{ properties['analytics_log_bucket'] }}
+{% endif %}
+
+{% if properties['analytics_archive_bucket'] %}
+- name: {{ properties['analytics_archive_bucket'] }}
+  type: storage.v1.bucket
+  properties:
+    name: {{ properties['analytics_archive_bucket'] }}
+{% endif %}
+
+{% if properties['daily_syslog_bucket'] %}
+- name: {{ properties['daily_syslog_bucket'] }}
+  type: storage.v1.bucket
+  properties:
+    name: {{ properties['daily_syslog_bucket'] }}
+{% endif %}

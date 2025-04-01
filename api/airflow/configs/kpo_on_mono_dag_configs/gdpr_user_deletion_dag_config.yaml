@@ -1,0 +1,13 @@
+dag_id: gdpr_user_deletion_dag
+schedule: "0 5 * * *"
+task_id: gdpr_user_deletion_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.core_service_team.gdpr_user_deletion import gdpr_user_deletion_job; gdpr_user_deletion_job()"
+team_namespace: core_services
+service_namespace: gdpr_deletion
+catchup: "False"
+start_year: 2024
+start_month: 3
+start_day: 31

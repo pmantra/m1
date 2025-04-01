@@ -1,0 +1,15 @@
+<div class="mvn-toast toast-timed">
+	<div class="toast-container" ng-style="{ animationDuration : opts.duration + 'ms' }">
+		<mvn-progress-bar bar-class="slim" progress-class="primary" timed="{{ opts.duration - 500 }}"></mvn-progress-bar>
+		<span>
+			<div class="toast-content">
+				<h3 class="serif">{{ opts.title }}</h3>
+				<p>{{ opts.content }}</p>
+			</div>
+			<div ng-if="opts.iconClass" class="toast-icon {{ opts.iconClass }}">
+			</div>
+		</span>
+	</div>
+	<div class="toast-overlay" ng-style="{ animationDuration : opts.duration + 'ms' }">
+	</div>
+</div>

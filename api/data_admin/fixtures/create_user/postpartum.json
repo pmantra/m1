@@ -1,0 +1,13 @@
+[
+  {
+    "type": "user",
+    "organization_name": "Test Organization X",
+    "track": "postpartum",
+    "email_prefix": "mvnqa-pp",
+    "password": "simpleisawesome1*",
+    "phase": "week-45",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

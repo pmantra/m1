@@ -1,0 +1,95 @@
+/* Shared list item style -- practitioners, appointments */
+.mvn-list-container {
+	@include container;
+	.mvn-list-header {
+		background: white;
+		padding: 19px;
+		border-bottom: 1px solid $charcoal-40;
+		font-family: $font1;
+		paper-checkbox {
+			float: left;
+		}
+		.edu-info {
+			padding: 10px;
+		}
+	}
+
+	ul.mvn-list {
+		padding: $basepadding;
+		li {
+			@include span(12);
+			@include mvn-container;
+			background: white;
+			margin-top: $basepadding;
+			text-align: center;
+			// max-height: 200px;
+			> div {
+			}
+			&:first-child {
+				margin-top: 0;
+			}
+			&.active {
+				transition: all 0.3s ease;
+				border-color: ($primary);
+				border-width: 2px;
+				> div {
+					border-color: transparent;
+				}
+			}
+
+			@include susy-breakpoint(0 $tablet-max) {
+				margin-left: auto;
+				margin-right: auto;
+				float: none;
+				overflow: auto;
+			}
+			h3,
+			.h3 {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+			.mvn-list-info {
+				padding: 20px;
+				padding-top: 0;
+				position: relative;
+				.btn {
+					margin: 0 auto;
+				}
+			}
+
+			.list-cta {
+				margin-top: 12px;
+			}
+			@include susy-breakpoint($desktop) {
+				text-align: left;
+				> div {
+					padding: 20px;
+				}
+				.mvn-list-info {
+					padding: 0;
+				}
+				.practitioner-photo {
+					@include span(2 of 12);
+				}
+
+				.mvn-list-actions {
+					@include span(9 of 12 last);
+					text-align: right;
+					h3,
+					.h3 {
+						margin-top: 100px;
+						text-align: right;
+						line-height: 1;
+						@include susy-breakpoint($desktop) {
+							margin-bottom: 12px;
+						}
+					}
+					.btn {
+						text-align: center;
+						margin: 0 0 0 auto;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,53 @@
+msgid "question_member_rating_placeholder_oid_4_provider_preparedness_label"
+msgstr "Provider's preparedness for my appointment"
+
+msgid "question_member_rating_placeholder_oid_4_care_received_label"
+msgstr "Care received from provider"
+
+msgid "question_member_rating_placeholder_oid_4_overall_experience_label"
+msgstr "Overall experience"
+
+msgid "question_member_rating_placeholder_oid_4_rating_additional_notes_label"
+msgstr "Anything else you'd like us to know?"
+
+msgid "question_member_rating_followup_placeholder_oid_5_problems_label"
+msgstr "What could have been better?"
+
+msgid "question_member_rating_followup_placeholder_oid_5_rating_followup_additional_notes_label"
+msgstr "Please describe:"
+
+msgid "question_member_rating_v2_first_screen_question_would_meet_provider_again_label"
+msgstr "I would meet with this provider again"
+
+msgid "question_member_rating_v2_first_screen_question_survey_v2_additional_info_label"
+msgstr "Anything else you’d like us to know?"
+
+msgid "question_member_rating_v2_first_screen_question_satisfaction_label"
+msgstr "I was satisfied with my appointment"
+
+msgid "question_member_rating_v2_first_screen_question_first_touch_resolution_label"
+msgstr "Did this appointment resolve your concerns?"
+
+msgid "question_member_rating_v2_first_screen_question_audio_video_quality_label"
+msgstr "How was the video and audio quality for the appointment?"
+
+msgid "question_member_rating_followup_v2_second_screen_question_survey_follow_up_v2_label"
+msgstr "Please select all that apply."
+
+msgid "question_member_rating_followup_v2_second_screen_question_survey_follow_up_v2_additional_notes_label"
+msgstr "Please describe:"
+
+msgid "question_cancellation_survey_cancellation_survey_question_set_cancellation_reason_question_label"
+msgstr "Please select all that apply:"
+
+msgid "question_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_satisfied_ca_label"
+msgstr "I was satisfied with my experience with my Care Advocate"
+
+msgid "question_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_free_text_label"
+msgstr "Please share any other feedback"
+
+msgid "question_member_ca_rating_member_ca_rating_set_zero_member_ca_rating_intend_label"
+msgstr "I intend to use Maven providers or resources within the next 30 days"
+
+msgid "question_member_ca_rating_member_ca_rating_set_zero_audio_video_quality_label"
+msgstr "How was the video and audio quality for the appointment?"

@@ -1,0 +1,50 @@
+.progress-bar {
+	margin-top: 0;
+	.bar-full, .bar-progress {
+		height: 16px;
+	}
+	&.slim {
+		.bar-full, .bar-progress {
+			height: 4px;
+		}
+	}
+	&.med {
+		.bar-full, .bar-progress {
+			height: 8px;
+		}
+	}
+	.bar-full {
+		width: 100%;
+		background: $charcoal-20;
+		position: relative;
+
+	}
+	.bar-progress {
+		background: $terracotta-80;
+		width: 0;
+		transition: all 1s ease;
+		background-image:
+			linear-gradient(
+			to right,
+			$blush-40, $blush-80
+			);
+		&.primary {
+			background: $primary;
+			background-image: none;
+		}
+	}
+	.prog-bar-animate {
+		animation: progbar linear; // duration is set programatically
+		width: 100%;
+	}
+}
+
+@keyframes progbar {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+

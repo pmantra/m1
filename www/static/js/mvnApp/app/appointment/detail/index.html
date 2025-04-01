@@ -1,0 +1,230 @@
+<section class="appointment-detail">
+	<div>
+		<alert-compatibility ng-if="canLaunch && !hasEnded && notCompatible"></alert-compatibility>
+
+		<div class="practitioner-header" ng-if="appointment">
+			<div class="h5">{{ appointment.product.practitioner.profiles.practitioner.verticals[0] }}</div>
+			<h1 class="h3">{{ appointment.product.practitioner.name }}</h1>
+
+			<div class="practitioner-actions">
+				<div class="practitioner-photo photo-90">
+					<img
+						ng-if="appointment.product.practitioner.image_url"
+						class="profile-photo"
+						ng-src="{{ appointment.product.practitioner.image_url }}"
+						alt="{{ appointment.product.practitioner.first_name }} {{ appointment.product.practitioner.last_name }}"
+					/>
+					<div ng-if="!appointment.product.practitioner.image_url" class="practitioner-noimg">
+						<svg
+							width="50"
+							height="50"
+							viewBox="0 0 80 80"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							role="img"
+						>
+							<path d="M40 80c22.091 0 40-17.909 40-40S62.091 0 40 0 0 17.909 0 40s17.909 40 40 40z" fill="#DCE9E1" />
+							<path
+								d="M53.664 17.265a5.634 5.634 0 00-1.976.352 8.31 8.31 0 00-15.116-1.78 5.89 5.89 0 00-8.686 5.16c.002.53.077 1.056.222 1.566a6.463 6.463 0 00-2.313 11.392 5.43 5.43 0 002.337 9.884A2.894 2.894 0 1033.25 45.7a2.886 2.886 0 00-1.64-2.583 5.43 5.43 0 001.033-8.53 6.472 6.472 0 003.535-5.741c0-.792-.147-1.576-.435-2.313a5.74 5.74 0 001.715-.993 8.3 8.3 0 0011.482.952 5.781 5.781 0 104.659-9.203l.065-.024z"
+								fill="#0E8671"
+							/>
+							<path
+								d="M46.996 55.346c-4.757-.55-4.01-7.3-1.69-8.62 1.206-.69 4.102 1.468 6.907-.214 1.64-.984-.05-3.674.508-4.732a24.03 24.03 0 002.74-15.698c-2.15-14.116-20.817-13.345-25.049-3.716-3.715 8.432 2.608 18.495-2.255 32.176a11.244 11.244 0 01-1.64 3.059l12.606 6.504s8.931-8.637 7.873-8.76z"
+								fill="#70B2A6"
+							/>
+							<path d="M55.46 29.469a42.422 42.422 0 001.436 6.947c-.608.307-1.302.4-1.969.262" fill="#70B2A6" />
+							<path
+								d="M55.46 29.469a42.422 42.422 0 001.436 6.947c-.608.307-1.302.4-1.969.262"
+								stroke="#0E8671"
+								strokeWidth="1.18"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+							/>
+							<path d="M54.394 39.656a30.338 30.338 0 01-3.674-1.386h-.5a5.87 5.87 0 003.444 2.92l.73-1.534z" fill="#DCE9E1" />
+							<path
+								d="M50.088 38.105a.23.23 0 01.27-.098c1.056.297 2.145.455 3.24.467.878 0 1.206 0 1.42.304a.64.64 0 01-.558.951 8.045 8.045 0 01-4.323-1.32.238.238 0 01-.049-.304z"
+								fill="#70B2A6"
+							/>
+							<path
+								d="M50.088 38.278a8.875 8.875 0 001.764 3.026c1 1.124 1.87 1.165 2.214.615.344-.55-.156-.82-1.198-1.37a11.426 11.426 0 01-2.78-2.271z"
+								fill="#70B2A6"
+							/>
+							<path
+								d="M45.15 22.793a8.448 8.448 0 01-4.847 6.98c-.96.41-1.935.287-2.854.77-.918.484.115.96.05 1.928-.099 1.402-4.922 16.15-7.825 16.059 0 0-4.995-16.502-1.73-25.425.877-2.404 3.543-3.93 5.544-5.643 1.73-1.477 5.577-1.83 8.054-1.96 2.747-.124 3.699 5.06 3.609 7.29z"
+								fill="#0E8671"
+							/>
+							<path
+								d="M40.722 19.16c.566.483-.107 4.83.205 5.51.311.681-2.338 5.496-1.64 5.315 5.946-1.46 7.594-8.045 8.94-8.447 1.574-.468 2.337 1.246 2.41 1.861.075.616 0 1.23.075 1.846a4.24 4.24 0 002.698 3.338 3.78 3.78 0 003.92-1.074c-1.722-4.208-3.28-8.128-7.029-10.81-1.46-1.042-1.845-1.747-3.633-1.747-1.19 0-6.791-.763-7.53.155-1.254 1.6.747 3.347 1.584 4.052z"
+								fill="#0E8671"
+							/>
+							<path d="M39.368 29.526a2.296 2.296 0 10-1 4.101" fill="#70B2A6" />
+							<path
+								d="M39.368 29.526a2.296 2.296 0 10-1 4.101"
+								stroke="#0E8671"
+								strokeWidth="1.18"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+							/>
+							<path
+								d="M56.297 57.257a56.468 56.468 0 00-9.219-1.583l-7.956 8.431-12.59-6.504a39 39 0 00-8.554 2.395"
+								stroke="#70B2A6"
+								strokeWidth="1.16"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+							/>
+							<path
+								d="M26.533 57.6l1.829 7.276a3.421 3.421 0 004.872 2.214l5.888-2.985 4.79 1.386a3.28 3.28 0 004.216-3.428l-.558-6.234M39.122 64.105l.402 3.592"
+								stroke="#70B2A6"
+								strokeWidth="1.16"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+							/>
+						</svg>
+					</div>
+				</div>
+
+				<div class="appt-mins h5">{{ appointment.product.minutes }} minute appointment</div>
+				<div class="h4">
+					{{ appointment.scheduled_start | amUtc | amLocal | amDateFormat:'dddd, MMM D' }}<br />{{
+					appointment.scheduled_start | amUtc | amLocal | amDateFormat:'h:mm' }} - {{ appointment.scheduled_end | amUtc
+					| amLocal | amDateFormat:' h:mma' }}
+				</div>
+
+				<div class="appointment-cta">
+					<div ng-if="canLaunch && !hasEnded && (!notCompatible || mobileMaybe )" class="launch-appointment">
+						<p>
+							<button
+								class="btn btn-cta"
+								id="launch-video-app"
+								tabindex="0"
+								ng-click="initAppt()"
+								ng-class="{'disabled disabled-clickable' : !canLaunchVideo}"
+							>
+								Launch video appointment
+							</button>
+						</p>
+					</div>
+
+					<div ng-if="(!canLaunch || hasEnded) && !appointment.cancelled_at " class="book-follow-up">
+						<div ng-if="appointment.purpose === 'birth_planning' ">
+							<view-birth-plan uid="appointment.member.id" atype="BIRTH_PLAN" apptid="appointment.id"></view-birth-plan>
+						</div>
+
+						<p>
+							<a
+								class="btn btn-cta"
+								id="book-again"
+								ui-sref="app.practitioner-list.view.practitioner-profile({ practitioner_id : appointment.product.practitioner.id })"
+								>Book again</a
+							>
+						</p>
+
+						<p ng-if="appointment.product.practitioner.profiles.practitioner.messaging_enabled">
+							<a class="btn btn-action" href="" ng-click="initMessage()">Send a message</a>
+						</p>
+					</div>
+
+					<div ng-if="appointment.cancelled_at">
+						<p>
+							<a
+								class="btn btn-cta"
+								ui-sref="app.practitioner-list.view.practitioner-profile({ practitioner_id : appointment.product.practitioner.id })"
+								>Reschedule appointment</a
+							>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div ng-if="rxEnabled && appointment.privacy !== 'anonymous'" class="pharmacy-info">
+				<div ng-if="appointment.product.practitioner.profiles.practitioner.can_prescribe">
+					<div ng-if="!appointment.prescription_info.enabled">
+						<div class="h5">Need a prescription?</div>
+						<p><a class="btn btn-action" href="" ng-click="prescriptionInfo()">Add pharmacy info</a></p>
+					</div>
+
+					<div ng-if="appointment.prescription_info.enabled && appointment.prescription_info.pharmacy_id === 0">
+						<h5>Need a prescription?</h5>
+						<p><a class="btn btn-action" href="" ng-click="prescriptionInfo()">Select a pharmacy</a></p>
+					</div>
+
+					<div ng-if="appointment.prescription_info.enabled && appointment.prescription_info.pharmacy_id > 0">
+						<h5>Need a prescription?</h5>
+						<p>
+							<strong>Your selected pharmacy:</strong> {{ appointment.prescription_info.pharmacy_info.StoreName }}, {{
+							appointment.prescription_info.pharmacy_info.Address1 }} {{
+							appointment.prescription_info.pharmacy_info.Address2 }}
+						</p>
+						<br />
+						<p><a class="btn btn-action" href="" ng-click="prescriptionInfo()">Change pharmacy</a></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="appointment-info">
+				<div ng-if="canLaunch && !hasEnded">
+					<div class="h5">What do you want to talk about?</div>
+					<form name="form.editNoteForm" class="mvn-form">
+						<mvn-text-area label="I want to talk about..." value="appointment.pre_session.notes" required="required" />
+
+						<a
+							class="btn btn-cta"
+							href=""
+							ng-click="updateNote(appointment.pre_session.notes)"
+							ng-disabled="form.editNoteForm.$pristine"
+							ng-class="{disabled: form.editNoteForm.$pristine  || form.editNoteForm.$invalid }"
+							><span ng-if="appointment.pre_session.notes">Update note</span
+							><span ng-if="!appointment.pre_session.notes">Save note</span></a
+						>
+					</form>
+
+					<br />
+					<p ng-if="!appointment.cancelled_at">
+						<a class="btn btn-tertiary" href="#" ng-click="cancelConfirm()">Cancel or reschedule appointment</a>
+					</p>
+				</div>
+
+				<div ng-if="!canLaunch || hasEnded">
+					<div ng-if="appointment.post_session.notes">
+						<h5>Note from your practitioner</h5>
+						<div class="appointment-complete-note">
+							<p ng-bind-html="appointment.post_session.notes | linky:'_blank':{rel: 'noopener nofollow'}"></p>
+						</div>
+					</div>
+
+					<div ng-if="appointment.pre_session.notes">
+						<div class="h5">Your note</div>
+						<div class="appointment-complete-note">
+							<p>{{ appointment.pre_session.notes }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script type="text/ng-template" id="confirmCancelDialog">
+	<div class="center">
+		<h3 ng-if="isEnterprise">Are you sure you want to cancel this appointment?</h3>
+		<h3 ng-if="!isEnterprise">You might still be charged!</h3>
+		<p ng-if="!isEnterprise">Since our practitioners have reserved time for you, all appointments cancelled or rescheduled <strong>within 24 hours</strong> of the start time will be charged in full.</p>
+		<div class="two-button-wrap">
+			<a href="#" class="btn btn-cta action-confirm" ng-click="cancelAppt()">Yes, cancel it.</a>
+			<a href="#" class="btn btn-action action-cancel" ng-click="closeThisDialog()">No, take me back!</a>
+		</div>
+	</div>
+</script>
+
+<script type="text/ng-template" id="launchEarly">
+	<div class="center">
+		<h3>Your appointment hasn't started yet</h3>
+		<p>Come back to this page on <strong>{{ appointment.scheduled_start | amUtc | amLocal  | amDateFormat:'dddd, MMM D' }} at {{ appointment.scheduled_start | amUtc | amLocal | amDateFormat:'h:mm' }}</strong> and click <strong>"Launch video appointment"</strong>.</p>
+		<p>Make sure you are using the <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Mozilla Firefox</a> browser on a desktop or laptop computer with a working camera and microphone.</p>
+		<p>Have an iPhone or iPad? You can <a href="http://m.onelink.me/2bf86f89" target="_blank">download the Maven app</a>.</p>
+		<p>Questions? Email <a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a>.</p>
+		<div class="two-button-wrap">
+			<a href="#" class="btn btn-cta" ng-click="closeThisDialog()">Ok got it</a>
+		</div>
+	</div>
+</script>

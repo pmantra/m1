@@ -1,0 +1,139 @@
+[
+    {
+        "type": "user",
+        "email": "test+wallet_care_advocate@mavenclinic.com",
+        "role": "practitioner",
+        "vertical": "Care Advocate",
+        "is_cx": true,
+        "messaging_enabled": true
+    },
+    {
+        "type": "organization",
+        "name": "Wallet Test Organization",
+        "vertical_group_version": "v2",
+        "associated_care_coordinator": "test+wallet_care_advocate@mavenclinic.com",
+        "allowed_track_names": ["generic"]
+    },
+    {
+        "type": "user",
+        "email": "test+wallet_pending@mavenclinic.com",
+        "password": "passpass",
+        "organization_name": "Wallet Test Organization",
+        "module_name": "generic",
+        "credit": {
+            "amount": 100,
+            "activated_at": "now",
+            "expires_at": "in 1 month"
+        }
+    },
+    {
+        "type": "user",
+        "email": "test+wallet_qualified@mavenclinic.com",
+        "password": "passpass",
+        "organization_name": "Wallet Test Organization",
+        "module_name": "generic",
+        "credit": {
+            "amount": 100,
+            "activated_at": "now",
+            "expires_at": "in 1 month"
+        }
+    },
+    {
+        "type": "user",
+        "email": "test+wallet_eligible@mavenclinic.com",
+        "password": "passpass",
+        "organization_name": "Wallet Test Organization",
+        "module_name": "generic"
+    },
+    {
+        "type": "reimbursement_organization_settings",
+        "organization": "Wallet Test Organization",
+        "started_at": "31 days ago",
+        "ended_at": null
+    },
+    {
+        "type": "reimbursement_category",
+        "organization": "Wallet Test Organization",
+        "reimbursement_request_category_maximum": 1000000,
+        "label": "Lab Tests"
+    },
+    {
+        "type": "reimbursement_category",
+        "organization": "Wallet Test Organization",
+        "reimbursement_request_category_maximum": 500000,
+        "label": "RX"
+    },
+    {
+        "type": "reimbursement_category",
+        "organization": "Wallet Test Organization",
+        "reimbursement_request_category_maximum": 500000,
+        "label": "Other"
+    },
+    {
+        "type": "reimbursement_wallet",
+        "organization": "Wallet Test Organization",
+        "member": "test+wallet_pending@mavenclinic.com",
+        "state": "PENDING"
+    },
+    {
+        "type": "reimbursement_wallet",
+        "organization": "Wallet Test Organization",
+        "member": "test+wallet_qualified@mavenclinic.com",
+        "state": "QUALIFIED"
+    },
+    {
+        "type": "reimbursement_request",
+        "organization": "Wallet Test Organization",
+        "member": "test+wallet_qualified@mavenclinic.com",
+        "label": "A Pending Prescription",
+        "service_provider": "A Pharmacy",
+        "description": "Test Prescription 1",
+        "category": "RX",
+        "amount": "3780",
+        "state": "PENDING",
+        "service_start_date": "3 hours ago",
+        "service_end_date": null
+    },
+    {
+        "type": "reimbursement_request",
+        "organization": "Wallet Test Organization",
+        "member": "test+wallet_qualified@mavenclinic.com",
+        "label": "An Approved Lab Test",
+        "service_provider": "A Lab",
+        "person_receiving_service": "Some Other Person",
+        "description": "Test Lab Exam 1",
+        "category": "Lab Tests",
+        "amount": "100000",
+        "state": "APPROVED",
+        "service_start_date": "4 days ago",
+        "service_end_date": "3 days ago"
+    },
+    {
+        "type": "reimbursement_request",
+        "organization": "Wallet Test Organization",
+        "member": "test+wallet_qualified@mavenclinic.com",
+        "label": "A Reimbursed Prescription",
+        "service_provider": "A Pharmacy",
+        "description": "Test Prescription 2",
+        "category": "RX",
+        "amount": "2400",
+        "state": "REIMBURSED",
+        "service_start_date": "10 days ago",
+        "service_end_date": null,
+        "reimbursement_transfer_date": "1 day ago",
+        "reimbursement_payout_date": "1 day ago"
+    },
+    {
+        "type": "reimbursement_request",
+        "organization": "Wallet Test Organization",
+        "member": "test+wallet_qualified@mavenclinic.com",
+        "label": "A Denied Prescription",
+        "service_provider": "A Pharmacy",
+        "description": "Test Prescription 3",
+        "category": "RX",
+        "amount": "8624",
+        "state": "DENIED",
+        "service_start_date": "10 days ago",
+        "service_end_date": null
+    }
+]

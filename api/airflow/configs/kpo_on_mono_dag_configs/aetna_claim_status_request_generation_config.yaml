@@ -1,0 +1,13 @@
+dag_id: aetna_claim_status_request_generation_dag
+schedule: "0 17 * * *"
+task_id: aetna_claim_status_request_generation_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.payments_platform.aetna_claim_status_request_generation import aetna_claim_status_request_generation_job; aetna_claim_status_request_generation_job()"
+team_namespace: payments_platform
+service_namespace: payer_accumulation
+catchup: "False"
+start_year: 2024
+start_month: 11
+start_day: 6

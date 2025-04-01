@@ -1,0 +1,27 @@
+/* ----- DOWNLOAD PAGE ----- */
+
+.page-download {
+	background: $charcoal-20;
+	
+	.get-the-app {
+		@include susy-breakpoint(0 $mobile-landscape) {
+			text-align: center;
+		}	
+	}
+	
+	.android {
+		padding-top: 0;
+		
+		.content-wrapper {
+			border-top: 1px solid $charcoal-40;
+			padding-top: 50px;
+			
+			.content {
+				background-color: $mint-40;
+				padding: 50px;
+				text-align: center;
+				width: 100%;
+			}
+		}
+	}
+}

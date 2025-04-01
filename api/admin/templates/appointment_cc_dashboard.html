@@ -1,0 +1,241 @@
+{% extends 'admin/base.html' %}
+{% import 'admin/lib.html' as lib with context %}
+
+{% block head %}
+{{ super() }}
+{{ lib.form_css() }}
+{% endblock %}
+
+{% block body %}
+
+<style>
+    .feature-table td {
+        padding: 0 5px;
+    }
+    .feature-table .feature-row {
+        border-top: 1px solid;
+    }
+    .feature-table thead {
+        font-weight: bold;
+    }
+    .feature-table .feature-row:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .feature-table .feature-row:nth-child(odd) {
+        background-color: #d7d7d7;
+    }
+</style>
+
+<div id="kaitlyns-ombre" style="background: linear-gradient(to bottom,#fff9f8,#ffb8ac); position: fixed; right: 0; top: 0; bottom: 0; left: 0; z-index: -1; width: 100%;"></div>
+
+<main style="padding-bottom: 4rem;">
+    <section style="background-color: rgba(255, 255, 255, 0.5); margin-bottom: 1.5rem; padding: 1rem 2rem; text-align: center; .button {}">
+        <h4>Appointment Details</h4>
+        <div style="display: inline-block; margin-right: 2rem;">
+            <ul style="text-align: left; list-style: none;">
+                <li>Scheduled start time: <strong>{{ appointment.scheduled_start }}</strong></li>
+                <li>Scheduled end time: <strong>{{ appointment.scheduled_end }}</strong></li>
+            </ul>
+        </div>
+        <div style="display: inline-block; margin-right: 2rem;">
+            <ul style="text-align: left; list-style: none;">
+                <li>Member started at: {{ appointment.member_started_at }}</li>
+                <li>Member ended at: {{ appointment.member_ended_at }}</li>
+            </ul>
+        </div>
+        <div style="display: inline-block; margin-right: 2rem;">
+            <ul style="text-align: left; list-style: none;">
+                <li>Practitioner started at: {{ appointment.practitioner_started_at }}</li>
+                <li>Practitioner ended at: {{ appointment.practitioner_ended_at }}</li>
+            </ul>
+        </div>
+        <div style="display: inline-block;">
+            <ul style="text-align: left; list-style: none;">
+                <li>Appointment status: {{ appointment.state }}</li>
+                <li>Anonymous: {{ appointment.privacy }}</li>
+            </ul>
+        </div>
+    </section>
+
+    <section style="background-color: rgba(255, 255, 255, 0.5); margin-bottom: 1.5rem; padding: 1rem 2rem 2rem 2rem;">
+        <h3>Member info</h3>
+        <div style="display: inline-block; vertical-align: top; width: 33%;">
+            <div style="padding: 0.25rem 1rem;">
+                <h4>{{ member.full_name }}</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li><a href="{{ user_url }}">User Info</a>, <a href="{{ member_profile_url }}">Member Profile</a>
+                        {% if employee_url %}, <a href="{{ employee_url }}">User Verifications</a>{% endif %}</li>
+                {% for track in active_tracks %}
+                    <li><a href="{{ track.edit_url }}">Member Track ({{ track.name }}/{{ track.phase_name }})</a>
+                    {% if track.extended %}<span>(extended)</span>{% endif %}
+                    </li>
+                {% endfor %}
+                    <li>User ID: {{ member.id }}</li>
+                    <li>Email: {{ member.email }}</li>
+                    <li>Risk Flags: {{ user_flags }}</li>
+                {% if country_metadata and country_metadata.country_code != 'US' %}
+                    <li>
+                        Country Info:
+                        <ul>
+                            <li>{{ member.country.name }} {{ country_metadata.emoji }}</li>
+                            <li>Summary: {{ country_metadata.summary }}</li>
+                            <li>More info: <a href="{{ country_metadata.ext_info_link }}">{{ country_metadata.ext_info_link }}</a></li>
+                        </ul>
+                    </li>
+                {% endif %}
+                    <li>Phone: {{ member.member_profile.phone_number }}</li>
+                    <li>Member Reported State: {{ member.member_profile.state and member.member_profile.state.abbreviation }}</li>
+                {% if member.member_profile.address %}
+                    <li>City / Zip: {{ member.member_profile.address.city }}, {{ member.member_profile.address.state }} {{ member.member_profile.address.zip_code }}</li>
+                {% else %}
+                    <li><span style="color: #666; font-style: italic;">City / Zip unknown</span></li>
+                {% endif %}
+                </ul>
+                {% if member.is_enterprise and ca_mapped_fields.items() %}
+                <h5>Organization Provided Values</h5>
+                <table class="feature-table">
+                    <thead>
+                        <th>Field</th>
+                        <th>Value</th>
+                    </thead>
+                    <tbody>
+                        {% for field, value in ca_mapped_fields.items() %}
+                        <tr class="feature-row">
+                            <td>{{ field }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+
+                {% if health_profile %}
+                <div style="display: inline-block;">
+                    <span>-</span>
+                    <ul style="list-style: none; margin: 0; padding: 0;">
+                        <li>Due date: {{ health_profile.due_date }}</li>
+                        <li>Age: {{ health_profile.age }}</li>
+                        <li>BMI: {{ health_profile.bmi }}</li>
+                    {% for c in health_profile.children_with_age %}
+                        <li>{% if c.name == c.id %}Child{% else %}{{ c.name }}{% endif %} ({{ c.age }})</li>
+                    {% else %}
+                        <li><span style="color: #666; font-style: italic;">No children</span></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div style="display: inline-block; vertical-align: top; width: 33%;">
+            <h4>Care Team</h4>
+            <div style="padding: 0.25rem 1rem;">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                {% for p in care_team %}
+                    <li><a href="{{ p.url }}">{{ p.full_name }} ({{ p.verticals }})</a></li>
+                {% else %}
+                    <li>No Care Team Assigned</li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div style="display: inline-block; vertical-align: top; width: 33%;">
+            <div style="padding: 0.25rem 1rem;">
+                <h4>Organization: {{ organization.name }}</h4>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                {% if organization %}
+                    <li>
+                    {% if organization.org_folder_link %}
+                        <a style="display: inline; color: #00856f;" href="{{ organization.org_folder_link }}" target="_blank">Google Drive Folder</a>
+                    {% else %}
+                        <span style="color: #666; font-style: italic;">No Google Drive folder available</span>
+                    {% endif %}
+                    </li>
+
+                    <li>
+                        {% if organization.org_script_link %}
+                            <a style="display: inline; color: #00856f;" href="{{ organization.org_script_link }}" target="_blank">Script</a>
+                        {% else %}
+                            <span style="color: #666; font-style: italic;">No script available</span>
+                        {% endif %}
+                    </li>
+
+                    <li>
+                        {% if organization.medical_plan_only %}
+                        Medical plan only
+                        {% else %}
+                        Not medical plan only
+                        {% endif %}
+                    </li>
+
+                    <li>
+                        {% if organization.employee_only %}
+                        Employee only
+                        {% else %}
+                        Not employee only
+                        {% endif %}
+                    </li>
+
+                    <li>
+                        {% if organization.bms_enabled %}
+                        BMS available
+                        {% else %}
+                        BMS not available
+                        {% endif %}
+                    </li>
+
+                    <li>{{ "Rx Enabled" if organization.rx_enabled else "Rx Disabled" }}</li>
+                    <li>
+                        {% if not organization.US_restricted %}
+                        Not
+                        {% endif %}
+                        US Restricted
+                    </li>
+
+                    <li>
+                        Internal Summary: {{ organization.internal_summary }}
+                    </li>
+                {% else %}
+                    <li><span style="color: #666; font-style: italic;">No organization available</span></li>
+                {% endif %}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: rgba(255, 255, 255, 0.5); margin-bottom: 1.5rem; padding: 1rem 2rem 2rem 2rem;">
+        <div style="display: inline-block; vertical-align: top; width: 99%;">
+            <h3>Internal notes</h3>
+            <form method="POST" action="/admin/actions/appointment_followup_info">
+                <input id="user_id" name="user_id" type="hidden" value="{{ member.id }}" >
+                <label for="member_profile_note">Member profile note:</label>
+                <textarea id="member_profile_note" name="member_profile_note" placeholder="Add notes" style="width: 100%; min-height: 100px;">{% if member.member_profile.note %}{{ member.member_profile.note }}{% endif %}</textarea>
+                <br />
+                <br />
+                <label for="follow_up_reminder_send_time">Follow Up Reminder Send Time</label>
+                <input data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimepicker" id="follow_up_reminder_send_time" name="follow_up_reminder_send_time" type="text" value="{% if member.member_profile.follow_up_reminder_send_time %}{{ member.member_profile.follow_up_reminder_send_time }}{% endif %}" class="active">
+                <br />
+                <br />
+                <input type="submit" class="btn btn-primary btn-large" value="Save" style="background-image: linear-gradient(to bottom,#6cceaa,#00856f)">
+            </form>
+        </div>
+    </section>
+
+    <section style="background-color: rgba(255, 255, 255, 0.5); padding: 1rem 2rem;">
+        <div style="width: 45%; padding: 1%; display: inline-block; vertical-align: top; margin-right: 3%;">
+            {% include 'cx_message.html' %}
+        </div>
+        <div style="width: 45%; padding: 1%; display: inline-block; vertical-align: top;">
+            {% include 'proactive_booking.html' %}
+        </div>
+    </section>
+</main>
+
+{% endblock %}
+
+
+{% block tail %}
+{{ super() }}
+{{ lib.form_js() }}
+{% endblock %}

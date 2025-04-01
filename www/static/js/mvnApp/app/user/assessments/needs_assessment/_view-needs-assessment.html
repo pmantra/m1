@@ -1,0 +1,17 @@
+<div class="na-completed">
+	<h3>Completed Needs Assessment</h3>
+
+	<ul>
+		<li ng-repeat="na in needsAssessment | orderBy: $index track by $index"  ng-class="{ 'child-answer' : na.parent }" ng-hide="!na.answer || na.answer.length == 0 ">
+			<h5>{{ na.question }}</h5>
+
+			<p ng-if="na.answertype !== 'multiselect' ">{{ na.answer.body }}</p>
+
+			<ul ng-if="na.answertype === 'multiselect' ">
+				<li ng-repeat="ans in na.answer.body track by $index" ng-hide="ans == null" >{{ ans }}</li>
+			</ul>
+
+		</li>
+	</ul>
+</div>
+

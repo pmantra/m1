@@ -1,0 +1,37 @@
+{% extends 'admin/model/details.html' %}
+{% block body %}
+
+    <style type="text/css">
+        .control-group:last-child .controls {
+            margin-left: 10px;
+        }
+    </style>
+
+    <div class="row">
+        <div class="span6">
+            {{ super() }}
+        </div>
+        <div class="span6"/>
+            <h4>Non-Appointment Encounter Answers:</h4>
+            <ul>
+                {% for async_answer in model.async_encounter_summary_answers %}
+                    <li>
+                        <p><strong>{{ async_answer.question.label }}</strong><br>
+                        {% if async_answer.text is not none %}
+                            {{async_answer.text}}
+                        {% elif async_answer.date is not none %}
+                            {{async_answer.date}}
+                        {% else %}
+                            {% if async_answer.answer.text is not none %}
+                                {{async_answer.answer.text}}
+                                <br>
+                                (Answer ID {{async_answer.answer.id}})
+                            {% endif %}
+                        {% endif %}<br>(Async Encounter Summary Answer ID {{async_answer.id}})</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}

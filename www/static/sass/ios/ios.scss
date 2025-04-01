@@ -1,0 +1,83 @@
+/* --------------- STATIC PAGES FOR APP ------------------- */
+
+.app-static {
+	#header {
+		display: none !important;
+	}
+	footer {
+		display: none !important;
+	}
+	.page-inner {
+		padding-top: 60px !important;
+		section {
+			padding-top: 0;
+		}
+	}
+
+	#webview-wrapper {
+		h1 {
+			text-align: left;
+			font-size: 2rem;
+			font-family: $font3;
+		}
+	}
+
+	.app {
+		ul {
+			li {
+				font-size: 18px;
+				margin-bottom: 10px;
+			}
+		}
+	}
+	&.page-app-available-plans {
+		background: $charcoal-20;
+		.page-inner {
+			padding: 0 !important;
+		}
+		#page-content {
+			background: $charcoal-20;
+		}
+		.best-value-callout {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.available-plans-wrap {
+			padding: 14px 18px;
+			position: relative;
+			.available-plans-info {
+				border: 1px solid $charcoal-40;
+				padding: 10px 20px;
+				.available-plan {
+					h5 {
+						margin: 15px 0;
+						color: $charcoal-100;
+						font-size: 12px;
+						line-height: 1.5;
+						letter-spacing: 2px;
+					}
+					&:first-child {
+						h5 {
+							margin-top: 5px;
+						}
+					}
+					&:last-child {
+						h5 {
+							margin-bottom: 5px;
+						}
+					}
+					&.annual-plan {
+						p,
+						.p {
+							margin: 0 0 5px 0;
+						}
+						h5 {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

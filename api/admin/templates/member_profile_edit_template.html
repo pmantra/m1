@@ -1,0 +1,486 @@
+{% extends 'admin/model/edit.html' %}
+{% from 'wallet_balance_macro.html' import render_wallet_balance with context %}
+{% block body %}
+
+    <script type="text/javascript">
+        function copyToClipboard(str) {
+            var el = document.createElement('textarea');
+            el.value = str;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        };
+
+        function copyId() {
+            copyToClipboard("{{ model.user.id }}")
+            document.getElementById('copy_id_success').innerHTML = 'Copied ID!'
+            setTimeout(function () {
+                document.getElementById('copy_id_success').innerHTML = ''
+            }, 2000)
+        }
+
+        function copyEmail() {
+            copyToClipboard("{{ model.user.email }}")
+            document.getElementById('copy_email_success').innerHTML = 'Copied email!'
+            setTimeout(function () {
+                document.getElementById('copy_email_success').innerHTML = ''
+            }, 2000)
+        }
+
+        function copyText(string, success_elem_id) {
+            copyToClipboard(string)
+            document.getElementById(success_elem_id).innerHTML = 'Copied!'
+            setTimeout(function () {
+                document.getElementById(success_elem_id).innerHTML = ''
+            }, 2000)
+            return false;
+        }
+    </script>
+
+
+    <style type="text/css">
+        .control-group:last-child .controls {
+            margin-left: 10px;
+        }
+
+        .maven-green {
+            color: #00856F
+        }
+
+        .maven-gold {
+            color: #BE8119
+        }
+
+        .maven-access {
+            color: #005985
+        }
+
+        .marketplace {
+            color: #64726f
+        }
+    </style>
+
+    {% if track_modifiers_banner %}
+    <div class="alert alert-warning" style="background-color: yellow; padding: 10px; text-align: center; color: red;">
+        {{ track_modifiers_banner }}
+    </div>
+    {% endif %}
+
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <span style="color:gray;font-weight:normal;font-size:20px;color:green">Member Profile</span>
+                <h2>{{ model.user.full_name }}</h2>
+                <h3 style="font-weight:normal;margin-bottom:0">
+                    Email: {{ model.user.email }}
+
+                    <span style="font-size:15px;margin-left:10px;">
+                        <a href="#" onClick="copyEmail()">Copy Email</a>
+                        <span id="copy_email_success" style="margin-left:10px;color:green"></span>
+                    </span>
+                </h3>
+                <h3 style="font-weight:normal;margin-top:0">
+                    ID: {{ model.user.id }}
+
+                    <span style="font-size:15px;margin-left:10px;">
+                        <a href="#" onClick="copyId()">Copy ID</a>
+                        <span id="copy_id_success" style="margin-left:10px;color:green"></span>
+                    </span>
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span7" style="margin-top:10px">
+                <div>
+                    {{ super() }}
+
+                    <div style="margin-top:20px;padding-top:20px">
+                        {% include 'proactive_booking.html' %}
+                    </div>
+
+                    <div style="margin-top:20px;padding-top:20px">
+                        {% include 'member_profile_edit_risk_flags.html' %}
+                    </div>
+
+                    <div style="margin-top:20px;padding-top:20px">
+                        {% include 'member_bulk_messaging_settings.html' %}
+                    </div>
+
+                    <div style="margin-top:20px;padding-top:20px">
+                        <h3 style="border-bottom: 1px solid #ccc;">For developers: member.json</h3>
+                        <pre>{{ model.json }}</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="span5">
+                <h3>Member Type</h3>
+                <h5>Benefit ID: {{ benefit_id }}</h5>
+                {% if member_type_details.member_type == MemberType.MAVEN_GOLD %}
+                    <p><strong class="maven-gold">Maven Gold</strong></p>
+                    <p>Maven Gold
+                        RX: {{ "Enabled" if member_type_details.active_wallet.reimbursement_organization_settings.rx_direct_payment_enabled else "Disabled" }} </p>
+                    <p>Payment Method:
+                        {% if payments_customer == None %}
+                            <em>(No Payments Record)</em>
+                        {% elif payments_customer == False %}
+                            <em>Payments Error</em>
+                        {% elif payments_customer.payment_methods|length == 0 %}
+                            <strong>None</strong>
+                        {% else %}
+                            {{ payments_customer.payment_methods[0].payment_method_type }}
+                        {% endif %}
+                    </p>
+                {% elif member_type_details.member_type == MemberType.MAVEN_GREEN %}
+                    <p><strong class="maven-green">Maven Green</strong>
+                        (
+                        {% if member_type_details.flags.wallet_organization and member_type_details.flags.direct_payment %}
+                            Potentially{% else %}Not{% endif %} Gold Eligible)
+                    </p>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td title="The member is able to apply for Maven Wallet (or has an active wallet).">Wallet
+                                Eligible?
+                            </td>
+                            <td>{{ member_type_details.flags.wallet_organization }}</td>
+                        </tr>
+                        {% if member_type_details.flags.wallet_organization %}
+                            <tr>
+                                <td title="The member's eligible or active wallet is MMB-enabled.">MMB Enabled Org?</td>
+                                <td>{{ member_type_details.flags.direct_payment }}</td>
+                            </tr>
+                            {% if member_type_details.flags.direct_payment %}
+                                <tr>
+                                    <td title="The member is actively linked to a qualified or runout wallet.">Qualified Wallet?
+                                    </td>
+                                    <td>{{ member_type_details.flags.wallet_active }}</td>
+                                </tr>
+                                <tr>
+                                    <td title="The member's wallet has a fertility-related primary expense type.">Wallet
+                                        Expense Type?
+                                    </td>
+                                    <td>{{ member_type_details.flags.wallet_expense_type }}</td>
+                                </tr>
+                                <tr>
+                                    <td title="The member's profile has their country as the US.">Member Country?</td>
+                                    <td>{{ member_type_details.flags.member_country }}</td>
+                                </tr>
+                                <tr>
+                                    <td title="The member is in a fertility-related track.">Member Track?</td>
+                                    <td>{{ member_type_details.flags.wallet_organization }}</td>
+                                </tr>
+                            {% endif %}
+                        {% endif %}
+                    </table>
+                {% elif member_type_details.member_type == MemberType.MAVEN_ACCESS %}
+                    <p><strong class="maven-access">Maven Access</strong>
+                        (
+                        {% if member_type_details.flags.wallet_organization and member_type_details.flags.direct_payment %}
+                            Potentially Gold Eligible
+                        {% elif member_type_details.flags.wallet_organization %}
+                            Potentially Green Eligible
+                        {% else %}
+                            Not Green or Gold Eligible
+                        {% endif %}
+                        )
+                    </p>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td title="The member is able to apply for Maven Wallet (or has an active wallet).">Wallet
+                                Eligible?
+                            </td>
+                            <td>{{ member_type_details.flags.wallet_organization }}</td>
+                        </tr>
+                        {% if member_type_details.flags.wallet_organization %}
+                            <tr>
+                                <td title="The member's eligible or active wallet is MMB-enabled.">MMB Enabled Org?</td>
+                                <td>{{ member_type_details.flags.direct_payment }}</td>
+                            </tr>
+                            {% if member_type_details.flags.direct_payment %}
+                                <tr>
+                                    <td title="The member is actively linked to a qualified wallet.">Qualified Wallet?
+                                    </td>
+                                    <td>{{ member_type_details.flags.wallet_active }}</td>
+                                </tr>
+                                <tr>
+                                    <td title="The member's wallet has a fertility-related primary expense type.">Wallet
+                                        Expense Type?
+                                    </td>
+                                    <td>{{ member_type_details.flags.wallet_expense_type }}</td>
+                                </tr>
+                                <tr>
+                                    <td title="The member's profile has their country as the US.">Member Country?</td>
+                                    <td>{{ member_type_details.flags.member_country }}</td>
+                                </tr>
+                                <tr>
+                                    <td title="The member is in a fertility-related track.">Member Track?</td>
+                                    <td>{{ member_type_details.flags.wallet_organization }}</td>
+                                </tr>
+                            {% endif %}
+                        {% endif %}
+                    </table>
+                {% else %}
+                    <p class="marketplace">Marketplace</p>
+                {% endif %}
+
+                <h3>Enterprise</h3>
+                <p><b>Currently Enrolled:</b>{% if model.user.is_enterprise %} Yes {% else %} No {% endif %}</p>
+                {% if model.user.active_tracks %}
+                    <p><b>Active Org:</b> <a
+                            href="/admin/organization/edit/?id={{ model.user.active_tracks[0].organization.id }}"> {{ model.user.active_tracks[0].organization.name }}</a>
+                    </p>
+                    <p><b>Rx:</b> {{ "Enabled" if model.user.active_tracks[0].organization.rx_enabled else "Disabled" }}
+                    </p>
+                    <p><b>Employee:</b><a
+                            href="/admin/organizationemployee/?flt0_35={{ model.user.id }}"> View </a></p>
+                    <p><b>Employee Verification:</b><a
+                            href="/eligibility-admin/user-verification/{{ model.user.id }}?id={{ model.user.id }}"> View
+                        <i class="icon-edit"></i></a></p>
+
+                {% else %}
+                    <p><b>Active Org:</b> None</p>
+                    {% if model.user.inactive_tracks %}
+                        <p><b>Inactive Org:</b>
+                            <a href="/admin/organization/edit/?id={{ model.user.inactive_tracks[0].organization.id }}">
+                                {{ model.user.inactive_tracks[0].organization.name }}
+                            </a>
+                        </p>
+                    {% endif %}
+                    <p><b>Rx:</b> None</p>
+                    <p><b>Employee:</b> None</p>
+                    <p><b>Employee Verification:</b><a
+                            href="/eligibility-admin/user-verification/{{ model.user.id }}?id={{ model.user.id }}"> View
+                        <i class="icon-edit"></i></a></p>
+                {% endif %}
+
+                <p><b>Employee Fields:</b></p>
+                {% if verification_data %}
+                    <table class="table table-bordered">
+
+                        <thead>
+                        <th>Field</th>
+                        <th>Value</th>
+                        </thead>
+                        <tbody>
+                        {% for field, value in verification_data.items() %}
+                            <tr>
+                                <td>{{ field }}</td>
+                                <td>{{ value }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>No Employee Fields</p>
+                {% endif %}
+
+                <p><b>Employer Health Plan:</b></p>
+                {% if employer_health_plan %}
+                    <table class="table table-bordered">
+                        <thead>
+                        <th>Field</th>
+                        <th>Value</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Employer Health Plan Name</td>
+                                <td>
+                                    <a href="/admin/employerhealthplan/edit/?id={{ employer_health_plan.id }}"> {{ employer_health_plan.name }}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Start Date</td>
+                                <td>
+                                    {{ employer_health_plan.start_date }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>End Date</td>
+                                <td>
+                                    {{ employer_health_plan.end_date }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>No Employer Health Plan</p>
+                {% endif %}
+                {{ render_wallet_balance(wallets_balances) }}
+                <h4>Tracks:</h4>
+                {% if model.user.active_tracks %}
+                    <table class="table table-bordered">
+                        <thead>
+                        <th>Name</th>
+                        <th>Phase</th>
+                        <th>Scheduled End</th>
+                        <th style="width:32px"></th> <!-- empty for cta button(s)-->
+                        </thead>
+                        <tbody>
+                        {% for track in model.user.active_tracks %}
+                            <tr>
+                                <td>{{ track.display_name }}</td>
+                                <td>{{ track.current_phase.display_name }}</td>
+                                <td>{{ track.get_scheduled_end_date() }}</td>
+                                <td><a href="/admin/membertrack/edit/?id={{ track.id }}"><i class="icon-edit"></i></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>No Active Tracks</p>
+                {% endif %}
+                <h4>Inactive Tracks:</h4>
+                {% if model.user.inactive_tracks %}
+                    <table class="table table-bordered">
+                        <thead>
+                        <th>Name</th>
+                        <th>Created At</th>
+                        <th>Ended At</th>
+                        <th style="width:32px"></th> <!-- empty for cta button(s)-->
+                        </thead>
+                        <tbody>
+                        {% for track in model.user.inactive_tracks %}
+                            <tr>
+                                <td>{{ track.display_name }}</td>
+                                <td>{{ track.created_at }}</td>
+                                <td>{{ track.ended_at }}</td>
+                                <td><a href="/admin/membertrack/edit/?id={{ track.id }}"><i style="color:green"
+                                                                                            class="icon-edit"></i></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>No Inactive Tracks</p>
+                {% endif %}
+                <h4>Scheduled Tracks:</h4>
+                {% if model.user.scheduled_tracks %}
+                    <table class="table table-bordered">
+                        <thead>
+                        <th>Name</th>
+                        <th>Created At</th>
+                        <th>Start Date</th>
+                        <th style="width:32px"></th> <!-- empty for cta button(s)-->
+                        </thead>
+                        <tbody>
+                        {% for track in model.user.scheduled_tracks %}
+                            <tr>
+                                <td>{{ track.display_name }}</td>
+                                <td>{{ track.created_at }}</td>
+                                <td>{{ track.start_date }}</td>
+                                <td><a href="/admin/membertrack/edit/?id={{ track.id }}"><i style="color:green"
+                                                                                            class="icon-edit"></i></a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>No Scheduled Tracks</p>
+                {% endif %}
+                <hr>
+
+                <h3>Care Team</h3>
+                <ul>
+                    {% for p in care_team %}
+                        <li><a href="{{ p.url }}">{{ p.full_name }} ({{ p.verticals }})</a></li>
+                    {% else %}
+                        <li>No Care Team Assigned</li>
+                    {% endfor %}
+                </ul>
+
+                <hr>
+
+
+            <hr>
+
+            <h3>Address</h3>
+            {% if model.address %}
+                <p>Street Address: {{ model.address.street_address }}</p>
+                <p>City: {{ model.address.city }}</p>
+                <p>Zip Code: {{ model.address.zip_code }}</p>
+                <p>State: {{ model.address.state }}</p>
+                <p>Country: {{ model.address.country }}</p>
+                <a href="{{ url_for('address.edit_view', id=model.address.id, url=url_for('.edit_view', id=model.user_id)) }}">[Edit]</a>
+            {% else %}
+                <p>No Address</p>
+            {% endif %}
+
+            <hr>
+
+            <h3>RX Info</h3>
+            {% for practitioner_string, rx_info in model.dosespot.items() %}
+                <h4>For Practitioner ID: {{ practitioner_string.split(':')[1] }}</h4>
+                <p>Patient ID: {{ rx_info.get('patient_id') }}</p>
+                <p>Pharmacy Info: {{ rx_info.get('pharmacy_info') }}</p>
+            {% endfor %}
+
+            <hr>
+
+            <h3>Payment Info</h3>
+
+            <h4>Saved Credit Cards</h4>
+            {% for card in cards %}
+                - ({{ card['brand'] }}) - last4 are {{ card['last4'] }} - stripe ID is: {{ card['id'] }}
+            {% endfor %}
+
+            <h4>Credits</h4>
+            <p>Total credits available: {{ total_credits }}</p>
+
+            <h4>Used Referral Codes</h4>
+            {% for use in used_codes %}
+                <p>- {{ use.code.code }}</p>
+            {% endfor %}
+
+            <hr>
+
+            {% if model.user.last_care_advocate_appointment() %}
+                <h3>CA Dashboard (Pink Page)</h3>
+                <p><a href="/admin/appointment/cc_dashboard/{{ model.user.last_care_advocate_appointment().id }}">Most
+                    recent CA appointment</a></p>
+            {% endif %}
+
+            <div id="member-appointments"></div>
+            <script type="text/javascript">
+                // pass appointments
+                document.addEventListener("DOMContentLoaded", function () {
+                    AdminTool(
+                        "MemberProfile",
+                        document.getElementById("member-appointments"),
+                        {
+                            appointments: [
+                                {% for appt in appointments %} {
+                                    id: {{ appt.id }},
+                                    state: "{{ appt.state }}",
+                                    scheduled_start: "{{ appt.scheduled_start }}",
+                                    scheduled_end: "{{ appt.scheduled_end }}",
+                                    cancelled_at: "{{ appt.cancelled_at }}",
+                                    practitioner: {
+                                        full_name: "{{ appt.practitioner.full_name }}",
+                                        id: {{ appt.practitioner.id }}
+                                    },
+                                    product: {
+                                        name: "{{ appt.product.vertical.name }}"
+                                    }
+                                },
+                                {% endfor %}
+                            ],
+                            lastRescheduleRecordDic: {
+                    {% for pair in last_reschedule_record_dic.items() %}
+                        {{pair[0]}} : "{{pair[1]}}",
+                    {% endfor %}
+                },
+                })
+                    ;
+                })
+            </script>
+
+            <hr>
+
+            {% include 'cx_message.html' %}
+        </div>
+    </div>
+    </div>
+{% endblock %}

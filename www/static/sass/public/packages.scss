@@ -1,0 +1,262 @@
+.page-packages {
+	.packages {
+		background: $charcoal-20;
+	}
+
+	.packages-headline {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.packages-steps {
+		background: white;
+		padding: $basepadding * 2;
+		text-align: center;
+		border: 1px solid $charcoal-20;
+		@include span(12);
+		@include susy-breakpoint($tablet) {
+			text-align: left;
+		}
+		@include susy-breakpoint($desktop) {
+			padding: 40px;
+		}
+	}
+
+	.packages-wrap {
+		h3 {
+			margin-top: 0;
+			margin-bottom: 1rem;
+			& + p,
+			& + .p {
+				margin-top: 5px;
+			}
+			&.pkg-name {
+				font-weight: 600;
+				strike {
+					font-weight: 200;
+				}
+			}
+		}
+		ul {
+			overflow: auto;
+		}
+		li {
+			width: 100%;
+			list-style-type: none;
+			list-style-image: none;
+			margin: 2rem 0;
+			cursor: pointer;
+			text-align: center;
+			@include susy-breakpoint($mobile-landscape) {
+				width: 80%;
+				margin: 2rem auto;
+			}
+			@include susy-breakpoint($desktop) {
+				text-align: left;
+				@include gallery(4);
+				margin: 1rem auto;
+			}
+		}
+		h5 {
+			font-weight: 600;
+			color: $charcoal-100;
+		}
+
+		a.btn {
+			@include susy-breakpoint($desktop) {
+				float: right;
+			}
+		}
+	}
+
+	.packages-package-img {
+		width: 100%;
+		margin-bottom: 1rem;
+		img {
+			max-width: 100%;
+		}
+		@include susy-breakpoint($mobile-landscape) {
+			width: 80%;
+			margin: 1rem auto;
+		}
+		@include susy-breakpoint($desktop) {
+			width: 100%;
+		}
+	}
+
+	/* Step1 */
+	.step1 {
+		.packages-package {
+			p,
+			h5 {
+				padding-right: 10px;
+			}
+			p,
+			.p {
+				font-family: $font2;
+				color: $charcoal-100;
+				margin-top: 5px;
+				line-height: 1.6rem;
+			}
+		}
+	}
+	/* Step2 */
+	.step-2 {
+	}
+	.packages-form,
+	.packages-form .form-row {
+		@include susy-breakpoint($desktop) {
+			overflow: auto;
+			position: relative;
+		}
+	}
+	.packages-recipient-info,
+	.packages-gifter-info {
+		@include susy-breakpoint($desktop) {
+			width: 48%;
+		}
+	}
+	.packages-recipient-info {
+		@include susy-breakpoint($desktop) {
+			float: left;
+		}
+	}
+	.packages-gifter-info {
+		@include susy-breakpoint($desktop) {
+			float: right;
+		}
+	}
+	.btn-step-2 {
+		@include susy-breakpoint($desktop) {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	}
+	/* STEP 3 */
+
+	.package-review {
+		text-align: center;
+		.packages-package-img {
+			width: 100%;
+			margin-bottom: 1rem;
+			img {
+				@include susy-breakpoint($mobile-landscape) {
+					max-width: 60%;
+				}
+				@include susy-breakpoint($tablet) {
+					max-width: 40%;
+				}
+				@include susy-breakpoint($desktop) {
+					max-width: 100%;
+				}
+			}
+		}
+
+		@include susy-breakpoint($desktop) {
+			@include span(4 of 12);
+		}
+	}
+
+	.package-payment-forms {
+		@include susy-breakpoint($desktop) {
+			@include span(8 of 12 last);
+			padding-top: 30px;
+		}
+	}
+
+	.gifter-review,
+	.recipient-review {
+		text-align: left;
+		p,
+		.p {
+			font-family: $font2;
+			span {
+				font-weight: 600;
+				display: block;
+			}
+		}
+		h5 {
+			border-bottom: 1px solid $charcoal-20;
+			padding-bottom: 5px;
+			span {
+				float: right;
+				color: $charcoal-100;
+				cursor: pointer;
+			}
+		}
+	}
+	@include susy-breakpoint($desktop) {
+		.package-review,
+		.gifter-review,
+		.recipient-review {
+			float: left;
+			padding: $basepadding;
+		}
+		.package-review {
+			max-width: 300px;
+		}
+		.gifter-review,
+		.recipient-review {
+			width: 40%;
+			p,
+			h5 {
+				font-size: 14px;
+			}
+			p,
+			.p {
+				margin-top: 20px;
+			}
+			h5 {
+				span {
+					display: inline;
+				}
+			}
+		}
+		.price-review {
+			clear: both;
+			h3 {
+				text-align: right;
+			}
+		}
+	}
+	/* STEP 4 */
+	.packages-payment-form {
+		@include susy-breakpoint($mobile-landscape) {
+			text-align: left;
+			.card-info {
+				overflow: auto;
+			}
+			.card-expiry {
+				width: 48%;
+				float: left;
+			}
+			.card-cvc {
+				width: 48%;
+				float: right;
+			}
+		}
+		@include susy-breakpoint($tablet) {
+			width: 60%;
+			margin: 0 auto;
+		}
+
+		@include susy-breakpoint($desktop) {
+			width: 100%;
+			margin: auto;
+			padding-left: 50px;
+			margin-bottom: 30px;
+		}
+	}
+	/* GIFT SENT */
+	.packages-complete {
+		img {
+			max-width: 300px;
+		}
+		@include susy-breakpoint($tablet) {
+			.packages-package-img {
+				margin: 0;
+			}
+		}
+	}
+}

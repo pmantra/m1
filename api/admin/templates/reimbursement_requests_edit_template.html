@@ -1,0 +1,445 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .select2-container, .select2-drop, .select2-search, .select2-search input {
+            width: auto !important;
+        }
+
+        textarea#description {
+            width: 80%;
+            height: 8em;
+        }
+
+        #extra_data h3 {
+            margin-top: 0px;
+        }
+
+        #custom_rate_form, #transaction_amount_form, #converted_amounts_form label {
+            text-align: left;
+        }
+        .validation-note {
+            margin: 0;
+            color: #666;
+            font-weight: 400;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        button.run-validation-btn,
+        .validation-actions button.run-validation-btn,
+        div.validation-actions button.run-validation-btn,
+        .field-validation .validation-actions button.run-validation-btn {
+            display: inline-block !important;
+            background-color: #4285F4 !important;
+            color: white !important;
+            padding: 8px 12px !important;
+            border: none !important;
+            border-radius: 4px !important;
+            cursor: pointer !important;
+            font-weight: 500 !important;
+            transition: background-color 0.2s !important;
+            text-shadow: none !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+        }
+
+        button.run-validation-btn:hover,
+        .validation-actions button.run-validation-btn:hover,
+        div.validation-actions button.run-validation-btn:hover,
+        .field-validation .validation-actions button.run-validation-btn:hover {
+            background-color: #3367D6 !important;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    {% block navlinks %}{{ super() }}{% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="span">
+                <h3>Wallet Data</h3>
+            </div>
+        </div>
+        {% if form.wallet.data %}
+            {% with wallet=form.wallet.data, calculator=True %}{% include '_reimbursment_request_wallet_data.html' %}{% endwith %}
+        {% else %}
+            (No Wallet Pre-provided.)
+        {% endif %}
+        <hr>
+        <div class="row">
+            <div class="span">
+                <h3>Reimbursement Request</h3>
+                <! -- main form -->
+                {% call lib.form_tag(form) %}
+                    {{ lib.render_form_fields(form, form_opts=form_opts) }}
+                    <div id="cost-breakdown-inline-calculator"></div>
+                    <script type="text/javascript">
+                        document.addEventListener("DOMContentLoaded", function() {
+                            AdminTool(
+                                "InlineReimbursementCostBreakdownCalculator",
+                                document.getElementById("cost-breakdown-inline-calculator"),
+                                {reimbursement_request_id: "{{(model.id)}}"}
+                            );
+                        })
+                      </script>
+                    {{ lib.render_form_buttons(return_url, extra()) }}
+                {% endcall %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="span"><h3 style="margin-top: -30px">Associated Data</h3></div>
+        </div>
+        <div class="row">
+            {% if cost_breakdowns %}
+            <div class="{{ "span6" if cost_breakdowns and mappings else "span" }}">
+                <h4>Cost Breakdowns</h4>
+                <table class="table table-bordered">
+                    <thead><tr>
+                        <td>Id</td>
+                        <td>Total Member Responsibility</td>
+                        <td>Total Employer Responsibility</td>
+                        <td>Created At</td>
+                    </tr></thead>
+                    {% for c_b in cost_breakdowns %}
+                        <tr>
+                            <td><a href="{{ url_for('costbreakdown.details_view', id=c_b.id) }}">{{ c_b.id }}</a></td>
+                            <td>${{ c_b.total_member_responsibility/100 if c_b.total_member_responsibility else c_b.total_member_responsibility }}</td>
+                            <td>${{ c_b.total_employer_responsibility/100 if c_b.total_employer_responsibility else c_b.total_employer_responsibility}}</td>
+                            <td>{{ c_b.created_at }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% endif %}
+            {% if mappings %}
+            <div class="{{ "span6" if cost_breakdowns and mappings else "span" }}">
+                <h4>Accumulation Mappings</h4>
+                <table class="table table-bordered">
+                    <thead><tr><td>Id</td><td>Status</td><td>Created At</td></tr></thead>
+                    {% for mapping in mappings %}
+                        <tr>
+                            <td><a href="{{ url_for('accumulationtreatmentmapping.edit_view', id=mapping.id) }}">{{ mapping.id }}</a></td>
+                            <td>{{ mapping.treatment_accumulation_status.value }}</td>
+                            <td>{{ mapping.created_at }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% endif %}
+            {% if pharmacy_prescriptions %}
+            <div class="{{ "span12" if cost_breakdowns and mappings and pharmacy_prescriptions else "span" }}">
+                <h4>Pharmacy Prescription</h4>
+                <table class="table table-bordered">
+                    <thead><tr>
+                        <td>Id</td>
+                        <td>Rx Unique ID</td>
+                        <td>Order ID</td>
+                        <td>RX Invoice Amount</td>
+                        <td>User Benefit ID</td>
+                        <td>Filled Date</td>
+                        <td>Actual Shipped Date</td>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                    </tr></thead>
+                    {% for rx in pharmacy_prescriptions %}
+                        <tr>
+                            <td><a href="{{ url_for('pharmacyprescription.details_view', id=rx.id) }}">{{ rx.id }}</a></td>
+                            <td>{{ rx.rx_unique_id }}</td>
+                            <td>{{ rx.rx_order_id }}</td>
+                            <td>${{ rx.amount_owed/100 }}</td>
+                            <td>{{ rx.user_benefit_id }}</td>
+                            <td>{{ rx.rx_filled_date }}</td>
+                            <td>{{ rx.actual_ship_date }}</td>
+                            <td>{{ rx.rx_first_name }}</td>
+                            <td>{{ rx.rx_last_name }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            {% endif %}
+            {% if reimbursement_claims %}
+                <div class="{{ "span6" if reimbursement_claims and mappings and cost_breakdowns else "span" }}">
+                <h4>Reimbursement Claims</h4>
+                <table class="table table-bordered">
+                    <thead><tr>
+                        <td>ID</td>
+                        <td>Alegeus Claim ID</td>
+                        <td>Alegeus Claim Key</td>
+                        <td>Amount</td>
+                        <td>Status</td>
+                        <td>Created At</td>
+                    </tr></thead>
+                    {% for claim in reimbursement_claims %}
+                    <tr>
+                        <td><a href="{{ url_for('reimbursementclaim.details_view', id=claim.id) }}">{{ claim.id }}</a></td>
+                        <td>{{ claim.alegeus_claim_id }}</td>
+                        <td>{{ claim.alegeus_claim_key }}</td>
+                        <td>${{ claim.amount }}</td>
+                        <td>{{ claim.status }}</td>
+                        <td>{{ claim.created_at }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                </div>
+            {% endif %}
+            {% if not cost_breakdowns and not mappings and not pharmacy_prescriptions and not reimbursement_claims %}
+                <div class="span">N/A</div><br/>
+            {%  endif %}
+            {% if model.reimbursement_type.name == "DIRECT_BILLING" %}
+                <div class="span">
+                <legend id="resubmit_alegeus_claim">Resubmit Reimbursement to Alegeus</legend>
+                    <form method="POST" action="/admin/wallet_tools/resubmit_alegeus_reimbursement">
+                        <p>Resubmit a reimbursement request to Alegeus. Ensure there is no associated reimbursement claim </p>
+                        <input type="hidden" value="{{model.id}}" name="reimbursement_request_id" id="resubmit_reimbursement_id">
+                        <input type="submit" class="btn btn-primary btn-medium" onclick="return confirm('Are you sure you want to resubmit this reimbursement to Alegeus?');" value="Resubmit Reimbursement">
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block tail %}
+    {{ super() }}
+    <style>
+        .field-validation {
+            margin-top: 8px;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-left: 225px;
+            max-width: 644px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .ai-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #4a90e2, #7c4dff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .validation-content {
+            flex-grow: 1;
+        }
+
+        .validation-feedback {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .validation-note {
+            margin: 0;
+            color: #666;
+            font-weight: 400;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        .validation-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .validation-actions button {
+            font-size: 16px;
+            padding: 2px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            border: 1px solid currentColor;
+            background: transparent;
+            color: inherit;
+            opacity: 0.8;
+            transition: all 0.2s ease;
+        }
+
+        .validation-actions button:hover {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .validation-actions button.selected {
+            background: rgba(0, 0, 0, 0.25);
+            border-width: 1.5px;
+            opacity: 1;
+            font-weight: 500;
+            transform: scale(1.05);
+        }
+
+        .validation-actions button.unselected {
+            opacity: 0.4;
+        }
+
+        .field-validation.warning {
+            background-color: #fff3e0;
+            border: 1px solid #ffb74d;
+            color: #ef6c00;
+        }
+
+        .field-validation.error {
+            background-color: #ffebee;
+            border: 1px solid #ef5350;
+            color: #c62828;
+        }
+
+        .field-validation.info {
+            background-color: #e3f2fd;
+            border: 1px solid #64b5f6;
+            color: #1976d2;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            {% if reimbursement_field_validations %}
+                const fieldValidations = {{ reimbursement_field_validations|tojson|safe if reimbursement_field_validations else '{"fields":{}}' }};
+                const modelId = '{{ model.id }}';
+
+                async function runDocumentMapping(requestId) {
+                    try {
+                        await fetch(`/admin/reimbursementrequest/document_mapping?id=${requestId}`, {
+                            method: 'POST'
+                        });
+
+                        window.location.href = `/admin/reimbursementrequest/edit/?id=${requestId}`;
+                    } catch (error) {
+                        console.error('Error running document mapping:', error);
+                        alert('Error running document mapping: ' + error.message);
+                    }
+                }
+                async function sendFeedback(fieldName, isCorrect, fieldValue) {
+                    try {
+                        const response = await fetch('/admin/reimbursementrequest/document_mapper_feedback', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                document_mapping_uuid: fieldValidations.document_mapping_uuid,
+                                field_name: fieldName,
+                                is_correct: isCorrect,
+                                field_value: fieldValue
+                            })
+                        });
+                        
+                        if (!response.ok) {
+                            throw new Error(await response.text());
+                        }
+                        
+                        return true;
+                    } catch (error) {
+                        console.error('Error sending feedback:', error);
+                        return false;
+                    }
+                }
+
+                function addValidationToField(fieldName, validation) {
+                    const field = document.querySelector(`#${fieldName}`) ||
+                                document.querySelector(`input[name="${fieldName}"]`) ||
+                                document.querySelector(`input[id="${fieldName}"]`);
+
+                    if (!field) return;
+                    const validationDiv = document.createElement('div');
+                    validationDiv.className = `field-validation ${validation.status}`;
+
+                    // Check if this is one of our special error cases that needs the run validation button
+                    const needsValidationButton = validation.message && (
+                        validation.message.includes('No AI validation exists') || 
+                        validation.message.includes('AI Validations are stale')
+                    );
+
+                    validationDiv.innerHTML = `
+                        <div class="ai-icon">AI</div>
+                        <div class="validation-content">
+                            <div class="validation-message"></div>
+                            ${needsValidationButton ? `
+                                <div class="validation-actions">
+                                    <button type="button" class="run-validation-btn">
+                                        Run AI Validation
+                                    </button>
+                                </div>
+                                <div class="validation-note">
+                                    Warning: Page will refresh after validation is triggered
+                                </div>
+                            ` : `
+                                <div class="validation-feedback">
+                                    <div class="validation-note">${validation.prior_feedback != null ? "Thank you for your feedback! 🙏" : "Your feedback is highly appreciated, is this AI-detection correct?"}</div>
+                                    <div class="validation-actions">
+                                        <button type="button" class="accept ${validation.prior_feedback === true ? 'selected' : ''} ${validation.prior_feedback === false ? 'unselected' : ''}">👍</button>
+                                        <button type="button" class="dismiss ${validation.prior_feedback === false ? 'selected' : ''} ${validation.prior_feedback === true ? 'unselected' : ''}">👎</button>
+                                    </div>
+                                </div>
+                            `}
+                        </div>
+                    `;
+                    if (validation.html_message) {
+                        validationDiv.querySelector('.validation-message').innerHTML = validation.message;
+                    } else {
+                        validationDiv.querySelector('.validation-message').textContent = validation.message;
+                    }
+
+                    const formGroup = field.closest('.control-group') ||
+                                     field.closest('.form-group') ||
+                                     field.parentElement;
+
+                    if (formGroup) {
+                        formGroup.appendChild(validationDiv);
+
+                        // Add click handlers for buttons
+                        const validationNote = validationDiv.querySelector('.validation-note');
+                        const acceptBtn = validationDiv.querySelector('.accept');
+                        const dismissBtn = validationDiv.querySelector('.dismiss');
+                        const validateBtn = validationDiv.querySelector('.run-validation-btn');
+
+                        if (acceptBtn && dismissBtn) {
+                            function updateButtonStates(selectedBtn, otherBtn) {
+                                // Remove previous states
+                                acceptBtn.classList.remove('selected', 'unselected');
+                                dismissBtn.classList.remove('selected', 'unselected');
+                                // Add new states
+                                selectedBtn.classList.add('selected');
+                                otherBtn.classList.add('unselected');
+                            }
+
+                            acceptBtn.addEventListener('click', async () => {
+                                await sendFeedback(fieldName, true, fieldValidations.fields[fieldName].field_value);
+                                validationNote.textContent = "Thank you for your feedback! 🙏";
+                                updateButtonStates(acceptBtn, dismissBtn);
+                            });
+
+                            dismissBtn.addEventListener('click', async () => {
+                                await sendFeedback(fieldName, false, fieldValidations.fields[fieldName].field_value);
+                                validationNote.textContent = "Thank you for your feedback! 🙏";
+                                updateButtonStates(dismissBtn, acceptBtn);
+                            });
+                        }
+
+                        if (validateBtn) {
+                            validateBtn.addEventListener('click', async () => {
+                                await runDocumentMapping(modelId);
+                            });
+                        }
+                    }
+                }
+
+                // Add validation messages for all fields
+                Object.entries(fieldValidations.fields).forEach(([fieldName, validation]) => {
+                    addValidationToField(fieldName, validation);
+                });
+            {% endif %}
+        });
+    </script>
+{% endblock %}

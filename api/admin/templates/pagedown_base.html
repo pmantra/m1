@@ -1,0 +1,22 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block head %}
+{{ super() }}
+{{ pagedown.html_head() }}
+<script type="text/javascript">
+(function() {
+    // Using the base Converter instead of the one from the sanitizer because of this bug... https://github.com/StackExchange/pagedown/issues/58
+    flask_pagedown_converter = new Markdown.Converter().makeHtml
+
+    // TODO: import the editor script and incorporate the editor toolbar buttons (src="//cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Editor.min.js)
+})()
+</script>
+<style>
+input, textarea, .flask-pagedown-preview {
+    width: 400px;
+}
+.flask-pagedown-preview {
+    margin-top: 10px;
+}
+</style>
+{% endblock %}

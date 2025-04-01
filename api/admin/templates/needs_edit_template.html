@@ -1,0 +1,17 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+{{ super() }}
+
+<script type="text/javascript">
+    function removeRequired() {
+        document.querySelectorAll(".queryselect_required").forEach(ele => {
+            if (ele.hasAttribute("required")) {
+                ele.removeAttribute("required");
+            }
+        })
+    }
+    requestAnimationFrame(() => removeRequired());
+</script>
+
+{% endblock %}

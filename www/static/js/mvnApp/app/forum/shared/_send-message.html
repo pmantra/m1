@@ -1,0 +1,11 @@
+<div ng-if="author.role === 'practitioner' && author.profiles.practitioner.messaging_enabled" class="private-message">
+	<div class="private-message-container">
+		<p class="cta">{{ cta }}</p>
+		<p class="btn-container">
+			<a class="btn {{ btnType }}" href="" ng-click="goMessagePrac(author.profiles.practitioner.user_id)">{{
+				btnCta
+			}}</a>
+		</p>
+		<span>Get a response within 24hrs</span>
+	</div>
+</div>

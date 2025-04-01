@@ -1,0 +1,183 @@
+openapi: 3.0.3
+info:
+  title: Maven Clinic Ovulation Tracker API
+  version: 1.0.0
+  description: API endpoints related to ovulation tracking.
+servers:
+  - url: https://www.mavenclinic.com
+  - url: https://www.qa1.mvnapp.net
+  - url: https://www.qa2.mvnapp.net
+  - url: https://www.staging.mvnapp.net
+paths:
+  /api/v1/tracker/ovulation/symptoms:
+    put:
+      summary: Submit log sheet data
+      description: Submit data for entry log sheet when user interacts with client-side CTA
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TrackerSymptomsPUTRequest"
+      responses:
+        "204":
+          description: No Content
+        "400":
+          description: Invalid request body or error serializing response
+        "500":
+          description: Internal error
+    get:
+      summary: Get log sheet data
+      description: Fetches data for the authenticated user's entry log sheet. Enum values may be subject to change based on new product insights.
+      parameters:
+        - name: date
+          in: query
+          description: Date to retrieve entry components for (YYYY-MM-DD)
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TrackerSymptomsGETResponse"
+
+components:
+  schemas:
+    SymptomsEnum:
+      type: string
+      enum:
+        - bloating
+        - breast_tenderness
+        - constipation
+        - cramps
+        - diarrhea
+        - increased_appetite
+        - insomnia
+        - headache
+        - fatigue
+        - low_libido
+        - mood_changes
+        - pelvic_pain
+    FlowEnum:
+      type: string
+      enum:
+        - light
+        - medium
+        - heavy
+        - blood_clots
+        - spotting
+    CervicalFluidEnum:
+      type: string
+      enum:
+        - dry
+        - sticky
+        - creamy
+        - egg_white
+        - watery
+    SexEnum:
+      type: string
+      enum:
+        - unprotected
+        - protected
+    OvulationTestEnum:
+      type: string
+      enum:
+        - positive
+        - negative
+        - unsure
+    TrackerSymptomsPUTRequest:
+      type: object
+      properties:
+        date:
+          description: Date to retrieve entry components for (YYYY-MM-DD)
+          type: string
+          format: date
+        flow:
+          type: string
+          nullable: true
+        basal_body_temperature:
+          type: object
+          nullable: true
+          properties:
+            value:
+              type: number
+              format: double
+            unit:
+              type: string
+              enum:
+                - c  # celsius
+                - f  # fahrenheit
+            disturbed:
+              type: boolean
+        cervical_fluid:
+          type: array
+          nullable: true
+          items:
+            $ref: "#/components/schemas/CervicalFluidEnum"
+        ovulation_test:
+          type: array
+          nullable: true
+          items:
+            $ref: "#/components/schemas/OvulationTestEnum"
+        sex:
+          type: array
+          nullable: true
+          items:
+            $ref: "#/components/schemas/SexEnum"
+        symptoms:
+          type: array
+          items:
+            $ref: "#/components/schemas/SymptomsEnum"
+          nullable: true
+        pregnancy_test:
+          type: boolean
+          nullable: true
+      required:
+        - date
+    TrackerSymptomsGETResponse:
+      type: object
+      properties:
+        flow:
+          type: string
+          nullable: true
+        basal_body_temperature:
+          type: object
+          nullable: true
+          properties:
+            value:
+              type: number
+              format: double
+            unit:
+              type: string
+              enum:
+                - c  # celsius
+                - f  # fahrenheit
+            disturbed:
+              type: boolean
+        cervical_fluid:
+          type: array
+          nullable: true
+          items:
+            $ref: "#/components/schemas/CervicalFluidEnum"
+        ovulation_test:
+          type: array
+          nullable: true
+          items:
+            $ref: "#/components/schemas/OvulationTestEnum"
+        sex:
+          type: array
+          nullable: true
+          items:
+            $ref: "#/components/schemas/SexEnum"
+        symptoms:
+          type: array
+          items:
+            $ref: "#/components/schemas/SymptomsEnum"
+          nullable: true
+        pregnancy_test:
+          type: boolean
+          nullable: true

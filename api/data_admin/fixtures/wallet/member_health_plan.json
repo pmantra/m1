@@ -1,0 +1,17 @@
+[
+  {
+    "type": "member_health_plan",
+    "employer_health_plan_id": 1316154899226304179,
+    "user_email": "test+staff@mavenclinic.com",
+    "subscriber_insurance_id":  12345,
+    "member_id": 87654,
+    "subscriber_first_name": "Josefina",
+    "subscriber_last_name": "Perez",
+    "subscriber_date_of_birth":  "1980-12-01",
+    "patient_first_name": "Josefina",
+    "patient_last_name": "Perez",
+    "patient_date_of_birth": "1980-12-01",
+    "patient_sex": "female",
+    "patient_relationship": "cardholder"
+  }
+]

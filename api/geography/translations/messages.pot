@@ -1,0 +1,4 @@
+#: geography/repository.py:180 geography/repository.py:214
+msgid "geography_state_other"
+msgstr ""
+

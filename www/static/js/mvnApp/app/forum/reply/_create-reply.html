@@ -1,0 +1,74 @@
+<div class="create-reply" ng-if="!$ctrl.hideReplyForm">
+	<div ng-show="errorMsg">{{ err }}</div>
+
+	<form role="form" name="createReplyForm" id="write-reply">
+		<div ng-cloak ng-hide="loading">
+			<div ng-if="$ctrl.user.role !== 'practitioner' " class="reply-anon-wrap">
+				<div class="post-author-container">
+					<div ng-if="$ctrl.replyForm.anonymous">
+						<post-author class="post-author" author="anon"></post-author>
+					</div>
+					<div ng-if="!$ctrl.replyForm.anonymous">
+						<post-author ng-if="$ctrl.user.username" class="post-author" author="$ctrl.user"></post-author>
+						<div ng-if="!$ctrl.user.username" class="no-username">
+							<a ng-click="$ctrl.addUsername()" href="">Add username</a>
+						</div>
+					</div>
+
+					<div class="mvn-checkbox-group post-anon-checkbox">
+						<div class="checkbox-container swap-alignment">
+							<input
+								id="post-anon"
+								name="post-anon"
+								class="checkmark"
+								type="checkbox"
+								ng-model="$ctrl.replyForm.anonymous"
+								ng-checked="$ctrl.replyForm.anonymous"
+								ng-disabled="$ctrl.replyForm.isDisabled"
+							/>
+							<label class="label-text" for="post-anon" id="post-anon-checkmark"
+								>Post anonymously</label
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<textarea
+				rows="10"
+				name="body"
+				ng-model="$ctrl.replyForm.body"
+				required="required"
+				class="form-control write-reply-textarea"
+				placeholder="Write your reply..."
+				aria-label="Write your reply"
+				ng-disabled="$ctrl.replyForm.isDisabled"
+			></textarea>
+			<input
+				type="hidden"
+				name="parent_id"
+				ng-model="$ctrl.replyForm.parent_id"
+				required="required"
+				ng-value="{{ $ctrl.post.id }}"
+				ng-disabled="$ctrl.replyForm.isDisabled"
+			/>
+		</div>
+
+		<div id="g-recaptcha" class="g-recaptcha-replies"></div>
+		<div class="center submit-reply">
+			<button
+				ng-click="$ctrl.reply($ctrl.replyForm)"
+				class="btn btn-cta reply-submit"
+				ng-class="{'disabled' : !$ctrl.replyForm.body, 'disabledRecaptcha': !recaptchaStatus.clicked}"
+				ng-disabled="(!$ctrl.replyForm.body && recaptchaStatus.clicked === false) || $ctrl.replyForm.isDisabled"
+				>Reply to this post</button>
+		</div>
+	</form>
+</div>
+
+<div ng-if="$ctrl.hideReplyForm" class="center">
+	<h3>Join the conversation – add your reply</h3>
+	<p><a ui-sref="auth.login" class="btn btn-cta">Register or sign in</a></p>
+</div>

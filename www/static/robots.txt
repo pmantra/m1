@@ -1,0 +1,9 @@
+# robotstxt.org/
+
+User-agent: *
+Allow: /app/privacy
+Allow: /app/terms
+Disallow: /app/
+Disallow: /resources/
+
+Sitemap: https://www.mavenclinic.com/sitemap.xml

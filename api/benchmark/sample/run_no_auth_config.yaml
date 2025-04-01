@@ -1,0 +1,8 @@
+Tests:
+  QA:
+    locustfile: "sample_no_auth_tests.py"
+    host: "https://www.qa2.mvnapp.net"
+    users: 1000
+    spawn_rate: 50
+    run_time: 300
+    stop_timeout: 5

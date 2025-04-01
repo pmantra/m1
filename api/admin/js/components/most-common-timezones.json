@@ -1,0 +1,10 @@
+{
+  "(GMT-05:00) Eastern Time": "America/New_York",
+  "(GMT-06:00) Central Time": "America/Chicago",
+  "(GMT-08:00) Pacific Time": "America/Los_Angeles",
+  "(GMT-07:00) Mountain Time": "America/Denver",
+  "(GMT+00:00) London": "Europe/London",
+  "(GMT+05:30) Indian Standard Time": "Asia/Kolkata",
+  "(GMT+09:00) Tokyo": "Asia/Tokyo",
+  "UTC": "UTC"
+}

@@ -1,0 +1,18 @@
+/* --------------- USER ------------------- */
+.confirm-email, .forgot-password, .reset-password {
+	padding-top: 10%;
+	background: $charcoal-100;
+	color: #ffffff;
+	text-align: center;
+	min-height: 600px;
+	label {
+		display: none;
+	}
+	form input, form textarea {
+		background: $macaroon-20;
+		color: $charcoal-100;
+	}
+	form input:focus, form textarea:focus {
+		background: #ffffff;
+	}
+}

@@ -1,0 +1,20 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+cd $(dirname "$0")/..
+
+if [ -z "${CI}" ];
+then
+    LOCKFILE_CHANGED=`git diff HEAD@{1} --stat -- ./package-lock.json | wc -l`
+    if [ $LOCKFILE_CHANGED -gt 0 ];
+    then
+        echo "Detected changes to api/admin/js/package-lock.json. Updating node_modules directory..."
+        npm install --no-save --prefer-offline --no-audit --no-fund
+    fi
+    JS_CHANGED=`git diff HEAD@{1} --stat -- . | wc -l`
+    if [ $JS_CHANGED -gt 0 ];
+    then
+        echo "Detected changes to api/admin/js/. Removing stale app-dev.js output..."
+        rm -rf ../static/js-dev
+    fi
+fi
+

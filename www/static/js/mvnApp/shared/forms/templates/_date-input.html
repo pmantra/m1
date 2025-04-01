@@ -1,0 +1,56 @@
+<mvn-merged-input form-ref="$ctrl.formRef" label="{{ $ctrl.label }}" update-fn="$ctrl.updateInput()">
+	<mvn-merge-field
+		name="month"
+		type="text"
+		pattern="^(0*[1-9]|1[0-2])$"
+		minlength="1"
+		maxlength="2"
+		placeholder="MM"
+		value="$ctrl.parsedDate.month"
+		arialabel="Month"
+	></mvn-merge-field>
+	<span class="divider">/</span>
+	<mvn-merge-field
+		name="day"
+		type="text"
+		pattern="^(0*[1-9]|[1-2][0-9]|3[0-1])$"
+		minlength="1"
+		maxlength="2"
+		placeholder="DD"
+		value="$ctrl.parsedDate.day"
+		arialabel="Day"
+	></mvn-merge-field>
+	<span class="divider">/</span>
+	<mvn-merge-field
+		name="year"
+		type="text"
+		minlength="4"
+		maxlength="4"
+		placeholder="YYYY"
+		value="$ctrl.parsedDate.year"
+		arialabel="Year"
+	></mvn-merge-field>
+
+	<div class="mvn-form-error">
+		<div ng-messages="$ctrl.formRef.month.$error">
+			<div ng-message="missing">Please enter a month (1 - 12).</div>
+			<div ng-if="$ctrl.formRef.month.$touched">
+				<div ng-message="pattern">Please enter a valid month (1 - 12).</div>
+				<div ng-message="minlength | maxlength">May must be 2 numbers (1 - 12).</div>
+			</div>
+		</div>
+		<div ng-messages="$ctrl.formRef.day.$error">
+			<div ng-message="missing">Please enter a day (1 - 31).</div>
+			<div ng-if="$ctrl.formRef.day.$touched">
+				<div ng-message="pattern">Please enter a valid day (1 - 31).</div>
+				<div ng-message="minlength | maxlength">Day must be 2 numbers (1 - 31).</div>
+			</div>
+		</div>
+		<div ng-messages="$ctrl.formRef.year.$error">
+			<div ng-message="missing">Please enter a year (YYYY).</div>
+			<div ng-if="$ctrl.formRef.year.$touched">
+				<div ng-message="minlength | maxlength">Year must be 4 numbers (YYYY).</div>
+			</div>
+		</div>
+	</div>
+</mvn-merged-input>

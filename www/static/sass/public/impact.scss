@@ -1,0 +1,112 @@
+
+#impact-stats {
+	h1 {
+		color: $blush-100;
+		font-size: 60px;
+		@include susy-breakpoint($desktop) {
+			font-size: 80px;
+		}
+	}
+	.grid-item {
+		padding: 0 45px;
+	}
+}
+.impact-support {
+	background: $macaroon-40;
+	text-align: center;
+	
+	@include susy-breakpoint($tablet) {
+		text-align: left;
+	}
+	
+	.feature-img {
+		background: url('/img/enterprise/impact/panel-2.jpg') center center no-repeat;
+		height: 320px;
+		background-size: contain;
+		@include susy-breakpoint($tablet) {
+			height: auto;
+			background-position: left center;
+		}
+	}
+}
+
+.impact-case-study {
+	.grid-container .text-container {
+		align-self: center;
+		
+		h5 {
+			color: $blush-100;
+		}
+	}
+	
+	.callout {
+		background-color: $blush-50;
+		padding: 15% 10%;
+		text-align: center;
+		
+		@include susy-breakpoint($tablet) {
+			padding: 70px;
+		}
+	}
+}
+
+.impact-testimonials {
+	background: $macaroon-50;
+	.testimonial {
+		background: white;
+	}
+	
+	.prev,
+	.next {
+		@include susy-breakpoint($desktop) {
+			display: none !important;
+		}
+	}
+	
+	ul.slick-dots {
+		margin-top: 3%;
+		text-align: center;
+		
+		li span:before {
+			color: $blush-100;
+		}
+		
+		@include susy-breakpoint($mobile-landscape) {
+			margin-top: 3%;
+		}
+		
+		@include susy-breakpoint($desktop) {
+			display: none !important; // important to override inline styles
+		}
+	}
+}
+
+.impact-whitepapers {
+	.wp-image {
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 100px;
+		margin-bottom: 50px;
+		img {
+			position: relative;
+			top: 20px;
+			left: 20px;
+			width: 100px;
+			height: 130px;
+			transition: all 0.2s ease-in-out;
+			&:hover {
+				transform: scale(1.06)
+			}
+		}
+		&.wp-millennial {
+			background-image: url('/img/enterprise/impact/wp-millennial-bg.png')
+		}
+		&.wp-paradigm {
+			background-image: url('/img/enterprise/impact/wp-paradigm-bg.png')
+		}
+		&.wp-btw {
+			background-image: url('/img/enterprise/impact/wp-btw-bg.png')
+		}
+
+	}
+}

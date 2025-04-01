@@ -1,0 +1,622 @@
+.resource {
+	$bottomMargin: 90px;
+	background-color: white;
+	position: relative;
+	min-height: 100vh;
+	margin-bottom: calc(#{$bottomMargin} + #{$mobileHeaderHeight}); // offset top
+	top: $mobileHeaderHeight;
+	transition-duration: 0.3s;
+
+	@include susy-breakpoint($tablet) {
+		margin-bottom: calc(#{$bottomMargin} + #{$tabletHeaderHeight});
+		top: $tabletHeaderHeight;
+	}
+
+	@include susy-breakpoint($desktop) {
+		margin-bottom: calc(#{$bottomMargin} + #{$desktopHeaderHeight});
+		top: $desktopHeaderHeight;
+	}
+
+	&.nav-open {
+		transform: translateX(-80%) translateY(0);
+	}
+
+	&.in-app {
+		top: 0;
+	}
+
+	.resource-content {
+		margin: 0 auto;
+		max-width: 760px;
+	}
+
+	&.webflow {
+		// Webflow styles being overidden by Maven
+		.resource-content {
+			max-width: 728px;
+		}
+		a.maven-cta {
+			color: white;
+			font-family: $font1-semibold;
+			line-height: 14px;
+			&:hover,
+			&:active {
+				background-color: $primary-dk;
+			}
+		}
+		// Loading above the fold Webflow styles to fix FOUC
+		h1 {
+			font-family: $font2 !important;
+		}
+
+		.main-header--img {
+			min-height: 150px;
+			@include susy-breakpoint($tablet) {
+				min-height: 400px;
+			}
+		}
+		.main-header--title {
+			background-color: #fff;
+			font-family: $font2;
+			color: #263633;
+			@include susy-breakpoint($tablet) {
+				margin: -48px 54px 8px;
+				padding: 48px 63px 48px 48px;
+				font-size: 40px;
+				line-height: 1.2;
+				font-weight: 400;
+				text-align: center;
+			}
+		}
+		.main-header--title.with-subhead {
+			overflow: visible;
+			padding-bottom: 48px;
+		}
+		.main-header--subhead {
+			max-width: 570px;
+			margin: 0px auto 15px;
+			font-family: $font1;
+			color: $gray;
+			font-size: 16px;
+			line-height: 1.5;
+			font-weight: 400;
+			text-align: left;
+			letter-spacing: 0px;
+			text-indent: 0px;
+		}
+
+		.related-articles,
+		.sources,
+		.checklist,
+		.paragraph-link,
+		.drop-down-list {
+			margin: 30px 0px;
+		}
+
+		.single-provider-section.two-providers,
+		.talk-to-provider-block {
+			margin: 70px 0px 30px;
+		}
+
+		.no-top-margin {
+			margin-top: 0px;
+		}
+
+		.play-btn,
+		#single-play-btn {
+			position: absolute;
+			margin-top: 24%;
+		}
+
+		#single-play-btn {
+			margin-left: 43%;
+		}
+
+		.body-link {
+			text-decoration: none;
+		}
+
+		.rich-text-block-2 {
+			h6 {
+				@include font-size(16);
+			}
+			p,
+			ol,
+			ul {
+				color: $gray;
+				@include font-size(16);
+				line-height: 24px;
+				font-family: $font1;
+			}
+			ul {
+				padding-left: 15px;
+			}
+			ol {
+				padding-left: 17px;
+			}
+			li {
+				a {
+					@include font-size(14);
+					color: $primary;
+					text-decoration: none;
+					display: block;
+					line-height: 24px;
+					&:hover {
+						color: $emerald-100;
+					}
+				}
+			}
+		}
+
+		.w-embed {
+			.related-item {
+				@include flexbox(row, end, space-between);
+				text-decoration: none;
+				.related-hdr {
+					@include flexbox(column, start, center);
+				}
+				.topic {
+					margin-bottom: 6px;
+					color: $gray;
+					@include font-size(12);
+					font-weight: 600;
+					letter-spacing: 0.75px;
+				}
+				.article-title {
+					color: $gray-dk;
+					@include font-size(16);
+					font-weight: 600;
+				}
+				.related-article-img {
+					width: 100px;
+					height: 100px;
+					max-width: 100px;
+				}
+			}
+		}
+
+		.single-provider-img {
+			.clip-element {
+				clip-path: circle(50% at 50% 50%);
+				img {
+					min-height: 65px;
+					min-width: 65px;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+
+	&:not(.webflow) {
+		.resource-content {
+			h1,
+			.h1,
+			h2,
+			.h2,
+			h3,
+			h4,
+			h5,
+			.h5 {
+				margin-bottom: 0.5rem;
+				//font-family: $font1-semibold;
+			}
+
+			.resource-title {
+				font-family: $font2;
+				line-height: 1.3;
+				text-align: center;
+				padding: 0 11px;
+			}
+
+			.banner-image,
+			.resource-title {
+				position: relative;
+			}
+
+			.real-talk-intro {
+				border-bottom: 1px solid $gray-xlt;
+				border-top: 1px solid $gray-xlt;
+				padding: 1rem 0;
+				text-align: center;
+				line-height: 1.5;
+				margin: 1rem 0;
+			}
+
+			@include susy-breakpoint($mobile-landscape-max) {
+				.title-section {
+					margin-top: 4rem;
+					min-height: 1px; // for IE (gets rid of the huge gap between the title section and the first paragraph)
+
+					img ~ .resource-title {
+						background-color: white;
+						border-radius: 2px;
+						margin: 0 auto;
+						padding: 3rem;
+						top: -4rem;
+						margin-bottom: -5rem; // negate the effect top has on the parent's height
+						width: 85%;
+					}
+				}
+			}
+
+			mvn-resource-body {
+				@include flexbox(column, center, center);
+
+				@include susy-breakpoint(0, $mobile-landscape-max) {
+					padding: 0 1rem;
+				}
+
+				> * {
+					max-width: 570px;
+					width: 100%;
+				}
+
+				.title-section {
+					max-width: 100%;
+
+					* {
+						width: 100%;
+					}
+				}
+
+				img {
+					margin: 15px auto;
+					width: 100%;
+				}
+
+				.full-bleed {
+					margin-left: calc(-50vw + 50%);
+					width: 100vw;
+					@include susy-breakpoint($tablet) {
+						margin: 15px auto;
+						width: 100%;
+					}
+				}
+
+				hr {
+					border: 0.5px solid $gray-xlt;
+					width: 100%;
+				}
+
+				blockquote {
+					@include font-size(24);
+					font-family: $font2;
+					margin: 40px auto 0 auto; // top margin offsets p spacing at the bottom of the blockquote
+					text-align: center;
+
+					p,
+					.p {
+						line-height: 1.3;
+						margin: 0 auto;
+						padding: 15px 0;
+					}
+
+					&::before,
+					&::after {
+						@include font-size(60);
+						color: $gray-lt;
+						font-family: $font3;
+						display: block;
+					}
+
+					&::before {
+						content: "“";
+					}
+
+					&::after {
+						content: "”";
+						line-height: 2.2;
+					}
+				} // end blockquote
+
+				.practitioner-approved {
+					background-image: url("../img/resources/provider-approved-badge-sm.png");
+					background-size: contain;
+					background-repeat: no-repeat;
+					display: block;
+					margin: 35px auto 80px auto;
+					position: relative;
+					width: 200px;
+					height: 200px;
+					&:before,
+					&:after {
+						font-size: 11px;
+						left: -35px;
+						line-height: 1.4;
+						position: absolute;
+						text-align: center;
+						width: 270px;
+						background-color: white;
+						border-radius: 3px;
+						padding: 4px;
+					}
+
+					&:before {
+						content: "Read on and rest assured.";
+						font-family: $font1-bold;
+						height: 20px;
+						padding-bottom: 0;
+						bottom: -30px;
+					}
+
+					&:after {
+						content: "Our resources are written or approved by licensed medical professionals.";
+						padding-top: 0;
+						bottom: -65px;
+					}
+				}
+			} // end resource-body
+
+			.legal {
+				font-family: $font1-it;
+				font-size: 12px;
+				margin: 0 auto;
+				max-width: 570px;
+				@include susy-breakpoint(0, $mobile-landscape-max) {
+					padding: 0 1rem;
+				}
+			}
+
+			@include susy-breakpoint($desktop) {
+				.resource-body {
+					blockquote {
+						@include font-size(32);
+					}
+				}
+			}
+		} // end resource-content
+
+		.empty-content .btn {
+			margin-top: 0;
+		}
+
+		// Curriculum extra credit panel
+		.extra-credit {
+			margin: 1rem auto;
+			padding-top: 2rem;
+			border-top: 1px solid $gray-xlt;
+			h5,
+			p,
+			.p {
+				font-style: italic;
+			}
+			p,
+			.p {
+				background: $ui-yellow-lt;
+				padding: 1rem;
+				margin: 1rem 0 0 0;
+				font-size: 1.125rem;
+			}
+		}
+
+		// Resource subhead
+		.resource-subhead {
+			text-align: center;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 46px;
+			z-index: 1;
+			@include susy-breakpoint($tablet) {
+				margin-top: -15px;
+			}
+		}
+
+		/* Stuff for preg resource */
+		.resource-preg-checklist {
+			.lt {
+				font-family: $font1;
+			}
+			.gray {
+				color: $gray-dk;
+			}
+			.sm {
+				font-size: 0.875rem;
+			}
+			hr {
+				margin-top: 1.5rem;
+				margin-bottom: 3rem;
+			}
+			li {
+				p {
+					margin-bottom: 0.25rem;
+				}
+			}
+			.low-blurb {
+				margin-top: 2.5rem;
+			}
+			.have-questions,
+			.bumpers {
+				margin-top: 4rem;
+				img {
+					width: 272px;
+				}
+				.h2,
+				.p {
+					text-align: center;
+				}
+				ul {
+					text-align: left;
+					li {
+						font-size: 18px;
+						margin-bottom: 0.5rem;
+					}
+				}
+				.q-cta {
+					margin: 3rem 0;
+					text-align: center;
+				}
+			}
+		}
+
+		/* Enhancement design refresh */
+		.enhancement {
+			padding: 0 8px;
+			h2 {
+				margin-bottom: 2.5rem;
+				&.subhead {
+					font-size: 14px;
+					letter-spacing: 0.666667px;
+					margin: 5px 0 30px;
+					text-transform: uppercase;
+					@include susy-breakpoint($desktop) {
+						margin-top: 15px;
+					}
+				}
+			}
+			h4 {
+				margin-top: 2.5rem;
+			}
+			a {
+				text-decoration: none;
+			}
+			p {
+				color: $gray;
+			}
+			ul {
+				padding-left: 15px;
+				color: $gray;
+				li {
+					list-style-type: disc;
+				}
+			}
+			ol {
+				padding: 0;
+				counter-reset: item;
+				> li {
+					display: inline-block;
+					&::before {
+						content: counter(item) ". ";
+						counter-increment: item;
+						font-weight: bold;
+						margin-right: 5px;
+					}
+					> * {
+						display: inline-block;
+					}
+					ul {
+						color: $gray;
+						padding-left: 17px;
+					}
+				}
+			}
+			.q-cta {
+				margin: 2.5rem 0;
+				width: 100%;
+			}
+
+			p.btn {
+				margin: 35px 0 60px;
+				width: 100%;
+				&.extra {
+					margin-bottom: 70px;
+				}
+			}
+
+			//INLINE IMAGES
+			.inline-img {
+				display: block;
+				margin: 68px auto 42px;
+				width: 120px;
+				@include susy-breakpoint($tablet) {
+					margin: 80px auto 60px;
+					width: 200px;
+				}
+				&.md {
+					margin: 35px auto 20px;
+					width: 150px;
+					@include susy-breakpoint($tablet) {
+						width: 250px;
+					}
+				}
+				&.lg {
+					margin: 35px auto 20px;
+					width: 200px;
+					@include susy-breakpoint($tablet) {
+						width: 300px;
+					}
+				}
+				&.info {
+					width: 150px;
+				}
+			}
+
+			// BUMPERS
+			.bumpers {
+				background-color: $gray-xxlt;
+				margin-bottom: 4rem;
+				margin-left: calc(-50vw + 50%);
+				margin-top: 2.5rem;
+				padding: 48px;
+				width: 100vw;
+				@include susy-breakpoint($tablet) {
+					margin-left: auto;
+					width: auto;
+				}
+				.p {
+					color: $gray;
+					margin: 6px 0;
+				}
+				.h3 {
+					padding: 0 45px;
+				}
+				img {
+					margin: 18px auto 5px;
+					width: auto;
+				}
+				.q-cta {
+					margin: 2rem 0;
+				}
+			}
+
+			// CHECKLIST
+			.checklist {
+				background-color: #f1f7f6;
+				padding: 1.5rem;
+				margin-top: 2.5rem;
+				span {
+					color: $ui-green;
+					font-size: 14px;
+					font-weight: 600;
+					letter-spacing: 0.75px;
+					text-transform: uppercase;
+					&::before {
+						content: "";
+						background-image: url(/img/maven-icon.svg);
+						background-size: 18px 30px;
+						background-repeat: no-repeat;
+						display: inline-block;
+						width: 18px;
+						height: 20px;
+						margin-right: 10px;
+					}
+				}
+				p {
+					margin: 0;
+				}
+				h4 {
+					margin-top: 30px;
+				}
+				h5 {
+					margin-bottom: 5px;
+				}
+				> ul {
+					color: $gray-dk;
+					padding-left: 70px;
+					padding: 0;
+					> li {
+						list-style-type: none;
+						padding: 0px 0 3px 53px;
+						background: url("/img/icons/check-circle-white.svg") no-repeat left top;
+						p {
+							color: $gray-dk;
+						}
+					}
+					ul {
+						color: $gray-dk;
+						padding-left: 68px;
+					}
+				}
+			}
+		}
+	}
+} // end resource

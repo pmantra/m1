@@ -1,0 +1,39 @@
+<div class="filtered-page-header">
+	<div>
+		<a class="mobile-back" ui-sref="app.library.home">
+			<div class="h5 mobile-none">Library</div>
+		</a>
+		<div class="h4 page-title serif">{{ $ctrl.pageTitle }}</div>
+	</div>
+</div>
+<main
+	mvn-inf-scroll
+	scroll-container="scroll-container"
+	scroll-action="$ctrl.loadMore()"
+	is-loading="false"
+	class="single-panel"
+>
+	<section class="featured">
+		<library-card ng-if="$ctrl.featuredCard" card-data="$ctrl.featuredCard" featured="true"></library-card>
+	</section>
+
+	<section>
+		<div class="card-container">
+			<library-card
+				ng-if="$ctrl.resources"
+				ng-repeat="resource in $ctrl.resources track by $index"
+				position="$index"
+				class="list-item"
+				card-data="resource"
+			></library-card>
+		</div>
+	</section>
+
+	<div ng-show="$ctrl.loadingMore" class="list-loader">
+		<inline-loader
+			ng-show="$ctrl.loadingMore"
+			loading="$ctrl.loadingMore"
+			label="Getting more resources..."
+		></inline-loader>
+	</div>
+</main>

@@ -1,0 +1,69 @@
+[
+  {
+    "type": "organization",
+    "name": "Wayne Enterprises LAP",
+    "allowed_track_names": [
+        "adoption",
+        "breast_milk_shipping",
+        "egg_freezing",
+        "fertility",
+        "parenting_and_pediatrics",
+        "partner_fertility",
+        "surrogacy"
+    ],
+    "activated_at": "2021-01-01 00:00:00"
+  },
+  {
+    "type": "user",
+    "organization_name": "Wayne Enterprises LAP",
+    "first_name": "Holly",
+    "last_name": "Farmer",
+    "track": "adoption",
+    "password": "simpleisawesome1*",
+    "email": "test+mvnqa-email453@mavenclinic.com",
+    "date_of_birth": "2000-01-01",
+    "company_email": "test.email453@gmail.com",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  },
+  {
+    "type": "reimbursement_organization_settings",
+    "started_at": "1 days ago",
+    "organization": "Wayne Enterprises LAP",
+    "survey_url": "www.survey.com",
+    "categories": [
+      {
+        "type": "reimbursement_category",
+        "organization": "Wayne Enterprises LAP",
+        "label": "Fertility, Egg Freezing, Adoption & Surrogacy"
+      }
+    ]
+  },
+  {
+    "type": "reimbursement_wallet",
+    "organization": "Wayne Enterprises LAP",
+    "member": "test+mvnqa-email453@mavenclinic.com",
+    "state": "QUALIFIED",
+    "reimbursement_wallet_hdhp_plan": {
+        "type": "reimbursement_wallet_hdhp_plan",
+        "organization": "Wayne Enterprises LAP",
+        "member": "test+mvnqa-email453@mavenclinic.com",
+        "alegeus_plan_id": "WYNLAPHDHP2022"
+    },
+    "reimbursement_requests": [
+      {
+        "type": "reimbursement_request",
+        "organization": "Wayne Enterprises LAP",
+        "member": "test+mvnqa-email453@mavenclinic.com",
+        "label": "Adoption Meeting",
+        "service_provider": "Dr. Hope",
+        "description": "First adoption meeting",
+        "amount": 11000,
+        "category": "Fertility, Egg Freezing, Adoption & Surrogacy",
+        "state": "REIMBURSED",
+        "service_start_date": "3 hours ago"
+      }
+    ]
+  }
+]

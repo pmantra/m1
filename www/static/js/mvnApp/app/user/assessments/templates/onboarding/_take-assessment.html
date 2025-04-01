@@ -1,0 +1,10 @@
+<div ng-if="!$ctrl.isLoading">
+  <div ng-include="$ctrl.questionTemplateUrl"></div>
+  <p class="center" ng-if="$ctrl.showTermsAndPolicyLinks">
+    <a href="https://www.mavenclinic.com/app/terms" rel="noopener nofollow noreferrer" target="_blank">Terms of Use</a>
+    &nbsp; &nbsp;
+    <a href="https://www.mavenclinic.com/app/privacy" rel="noopener nofollow noreferrer" target="_blank">Privacy Policy</a>
+    &nbsp; &nbsp;
+    <a href="https://www.mavenclinic.com/app/sitemap" rel="noopener nofollow noreferrer" target="_blank">Sitemap</a>
+  </p>
+</div>

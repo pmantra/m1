@@ -1,0 +1,332 @@
+$base_padding: 30px 10%;
+
+.mvn-card {
+	@include flexbox(column, flex-start, space-between);
+	background-color: white;
+	margin: 15px 0;
+
+	.card-wrapper {
+		display: inherit;
+		flex-direction: inherit;
+		flex-wrap: inherit;
+		align-items: inherit;
+		justify-content: inherit;
+		height: inherit;
+		max-height: 100%;
+		width: 100%;
+	}
+
+	.mvn-icon {
+		margin-bottom: 20px;
+	}
+
+	.card-icon {
+		display: inherit;
+
+		img {
+			margin: 0 auto;
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	.date-icon {
+		text-align: center;
+
+		.day {
+			color: #00413e;
+			font-family: $font4;
+			font-size: 36px;
+		}
+
+		.month {
+			color: $charcoal-50;
+			font-family: $font1-bold;
+			font-size: 16px;
+			text-transform: uppercase;
+		}
+	}
+
+	h5 {
+		font-family: $font2;
+		font-size: 18px;
+		margin: 0;
+		text-align: center;
+		text-transform: none;
+	}
+
+	.card-content {
+		* {
+			text-align: left;
+		}
+
+		p,
+		.p {
+			margin: 0.5rem 0;
+		}
+	}
+
+	sup {
+		padding: 0 2px; // a little bit of breathing room
+	}
+
+	.grey {
+		color: $charcoal-50;
+	}
+
+	.card-actions {
+		@include flexbox(column, flex-start, center);
+		width: 100%;
+
+		> .btn:not(:first-child) {
+			margin: 15px 0 0 0;
+		}
+
+		.btn-action,
+		.btn-cta {
+			min-width: 240px;
+			width: auto;
+		}
+	}
+
+	&.centered {
+		@include flexbox(column, center, center);
+
+		* {
+			text-align: center;
+		}
+	}
+
+	&.padded {
+		padding: $base_padding;
+	}
+
+	@include susy-breakpoint($tablet) {
+		width: 100%;
+
+		.card-actions {
+			@include flexbox(row, center, flex-start);
+
+			> .btn:not(:first-child) {
+				margin: 0 0 0 15px;
+			}
+		}
+	}
+} // end mvn-card
+
+// visual content, direct action, announcement
+.portrait-card {
+	@extend .mvn-card;
+	width: 100%;
+
+	.card-content,
+	.card-actions {
+		padding: $base-padding;
+		width: 100%;
+	}
+}
+
+// single action, list item
+.landscape-card {
+	@extend .mvn-card;
+	@include flexbox(column, flex-start, center);
+	padding: $base_padding;
+	width: 100%;
+
+	@include susy-breakpoint($desktop) {
+		@include flexbox(row, center, space-between);
+		width: 100%;
+
+		.card-content,
+		.card-actions {
+			padding: 0;
+			width: auto;
+		}
+	}
+}
+
+.single-action {
+	@extend .landscape-card;
+
+	.card-icon {
+		display: inline-block;
+		height: 60px;
+		width: 60px;
+
+		img {
+			border-radius: 50%;
+		}
+	}
+
+	.mobile-only {
+		display: inline-block;
+	}
+
+	.card-content {
+		margin: 20px 0;
+	}
+
+	@include susy-breakpoint($desktop) {
+		@include flexbox(row, center, space-between);
+		width: 100%;
+
+		.mobile-only {
+			display: none;
+		}
+
+		.card-content {
+			max-width: 50%;
+		}
+
+		.card-content,
+		.card-actions {
+			padding: 0;
+			margin: 0;
+			width: auto;
+		}
+	}
+}
+
+.single-action-card {
+	@extend .landscape-card;
+
+	.card-icon {
+		display: inline-block;
+		height: 49px;
+		width: 49px;
+
+		img {
+			border-radius: 50%;
+		}
+	}
+
+	.card-content {
+		h5,
+		p,
+		.p {
+			margin: 0;
+		}
+
+		h4 + p,
+		.h4 + p,
+		.h4 + .p,
+		h4 + .p {
+			margin-top: 18px;
+		}
+
+		p ~ p,
+		.p ~ .p {
+			margin-top: 4px;
+		}
+	} // end card-content
+
+	.mobile-only {
+		display: inline-block;
+	}
+
+	@include susy-breakpoint($desktop) {
+		.mobile-only {
+			display: none;
+		}
+	}
+} // end single-action-card
+
+.visual-content {
+	@extend .portrait-card;
+	justify-content: flex-start;
+
+	.card-image {
+		background-color: $charcoal-40;
+		min-height: 120px;
+		width: 100%;
+	}
+
+	.card-content {
+		flex-grow: 1;
+		padding-bottom: 10px;
+		position: relative;
+
+		.card-tags {
+			@include flexbox;
+			background-color: $emerald-20;
+			position: absolute;
+			height: 30px;
+			top: -30px;
+			left: 0;
+			padding: 10px 20px;
+			font-family: $font1-it;
+			font-size: 12px;
+
+			&.inset {
+				top: 0;
+			}
+		}
+	}
+
+	.card-actions {
+		padding-top: 10px;
+	}
+
+	@include susy-breakpoint($tablet) {
+		margin: 1% 0;
+		width: 49%;
+	}
+}
+
+.form-card {
+	@extend .mvn-card;
+	width: 100%;
+
+	h5,
+	.h5,
+	p,
+	.p {
+		margin: 0;
+	}
+
+	.card-header {
+		h4 + p,
+		.h4 + p,
+		.h4 + .p,
+		h4 + .p {
+			margin-top: 12px;
+		}
+	}
+
+	.card-header,
+	.card-body,
+	.card-actions {
+		margin: 10px 0;
+	}
+
+	.card-body {
+		@include flexbox(column, stretch, center);
+		width: 100%;
+
+		> * {
+			margin: 0;
+		}
+	}
+
+	.label {
+		font-family: $font1-bold;
+	}
+
+	@include susy-breakpoint($desktop) {
+		.card-header,
+		.card-body,
+		.card-actions {
+			margin: 20px 0;
+		}
+
+		.card-body {
+			@include flexbox(row, flex-start, stretch);
+			flex-wrap: wrap;
+
+			p,
+			.p {
+				width: 50%;
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+dag_id: backfill_chronic_diabetes_dag
+task_id: backfill_chronic_diabetes_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.mpractice_core.backfill_chronic_diabetes import backfill_chronic_diabetes_job; backfill_chronic_diabetes_job()"
+team_namespace: mpractice_core
+service_namespace: health
+catchup: "False"
+start_year: 2024
+start_month: 12
+start_day: 10

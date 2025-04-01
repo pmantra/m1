@@ -1,0 +1,20 @@
+{% extends 'admin/model/list.html' %}
+
+{% block model_menu_bar_after_filters %}
+    {{ super() }}
+    <li>
+        <form method="POST" action="/admin/actions/process_bms_orders/">
+        <p>
+          <input type="submit" class="btn btn-primary" value="Process BMS Orders">
+        </p>
+      </form>
+    </li>
+    <li>
+</li>
+{% endblock %}
+
+{% block model_menu_bar %}
+    <H2> BMS Orders </H2>
+{{ super() }}
+{% endblock %}
+

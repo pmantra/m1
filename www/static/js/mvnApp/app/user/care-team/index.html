@@ -1,0 +1,16 @@
+<main class="care-team single-panel">
+	<div> 
+		<div ng-if="$ctrl.user.organization">
+			<h1 class="serif">My Care Team</h1>
+			<care-team-type user="$ctrl.user" team-type="QUIZ,CARE_COORDINATOR"></care-team-type>
+			<h2 class="care-team-connected-header serif">Practitioners you've connected with</h2>
+			<care-team-type user="$ctrl.user" team-type="APPOINTMENT,MESSAGE,FREE_FOREVER_CODE"></care-team-type>
+			<p class="explore-more center"><a class="btn btn-tertiary" ui-sref="app.appointment.book">Explore more practitioners</a></p>
+		</div>
+
+		<div ng-if="!$ctrl.user.organization">
+			<care-team-type heading="Your Care Team" user="$ctrl.user" team-type="APPOINTMENT,MESSAGE,FREE_FOREVER_CODE,QUIZ,CARE_COORDINATOR"></care-team-type>
+			<p class="explore-more center"><a class="btn btn-tertiary" ui-sref="app.appointment.book">Explore more practitioners</a></p>
+		</div>
+	</div>
+</main>

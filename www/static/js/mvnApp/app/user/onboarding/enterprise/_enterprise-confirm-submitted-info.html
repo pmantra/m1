@@ -1,0 +1,11 @@
+<div class="center">
+	<h2 class="serif h3">Please confirm your information before submitting</h2>
+
+	<div class="p"><strong>Work email</strong>: {{ data.company_email }}</div>
+	<div class="p"><strong>Employee date of birth</strong>: {{ data.date_of_birth }}</div>
+
+	<div class="p">
+		<a class="btn btn-cta" href="" ng-click="closeThisDialog(0); onComplete()">Submit and continue</a><br />
+		<a class="btn btn-action" href="" ng-click="closeThisDialog(0)">Edit</a>
+	</div>
+</div>

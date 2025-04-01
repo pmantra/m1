@@ -1,0 +1,115 @@
+[
+  {
+    "type": "organization",
+    "name": "Fertility Corp 2",
+    "allowed_track_names": [
+      "adoption",
+      "breast_milk_shipping",
+      "egg_freezing",
+      "fertility",
+      "general_wellness",
+      "generic",
+      "parenting_and_pediatrics",
+      "partner_fertility",
+      "partner_newparent",
+      "partner_pregnant",
+      "postpartum",
+      "pregnancy",
+      "pregnancyloss",
+      "sponsored",
+      "surrogacy",
+      "trying_to_conceive"
+    ],
+    "activated_at": "2021-01-01 00:00:00"
+  },
+  {
+    "type": "user",
+    "email": "test+mvnqa-treatment_plan@mavenclinic.com",
+    "organization_name": "Fertility Corp 2",
+    "track": "fertility",
+    "phase": "week-1",
+    "password": "abc",
+    "first_name": "Mason",
+    "last_name": "Cliniche"
+  },
+  {
+    "type": "reimbursement_organization_settings",
+    "started_at": "1 days ago",
+    "organization": "Fertility Corp 2",
+    "survey_url": "survey.example.com",
+    "categories": [
+      {
+        "type": "reimbursement_category",
+        "organization": "Wayne Enterprises LAP",
+        "label": "Fertility, Egg Freezing, Adoption & Surrogacy"
+      }
+    ]
+  },
+  {
+    "type": "reimbursement_wallet",
+    "organization": "Fertility Corp 2",
+    "member": "test+treatment_plan@mavenclinic.com",
+    "state": "QUALIFIED",
+    "reimbursement_requests": [
+      {
+        "type": "reimbursement_request",
+        "organization": "Fertility Corp 2",
+        "member": "test+treatment_plan@mavenclinic.com",
+        "label": "Adoption Meeting",
+        "service_provider": "Dr. Hope",
+        "description": "First adoption meeting",
+        "amount": 11000,
+        "category": "Fertility, Egg Freezing, Adoption & Surrogacy",
+        "state": "PENDING",
+        "service_start_date": "3 hours ago"
+      }
+    ]
+  },
+  {
+    "type": "treatment_procedure",
+    "user": "test+treatment_plan@mavenclinic.com",
+    "fee_schedule": {
+      "name": "test fee schedule for treatment procedure",
+      "fee_schedule_global_procedures": [
+        {
+          "name": "test global procedure 1",
+          "credits": 9,
+          "annual_limit": 4,
+          "cost": 20000
+        },
+        {
+          "name": "test global procedure 2",
+          "credits": 3,
+          "cost": 5000
+        }
+      ]
+    },
+    "fertility_clinic": {
+      "name": "Test Fertility Clinic",
+      "affiliated_network": "Test Network",
+      "notes": null,
+      "locations": [
+        {
+          "name": "Main",
+          "address_1": "123 Main St",
+          "city": "New York City",
+          "subdivision_code": "US-NY",
+          "postal_code": 10001,
+          "country_code": "US",
+          "phone_number": "5555555555",
+          "email": "test-clinic@maven.com"
+        }
+      ],
+      "allowed_domains": [
+        {
+          "domain": "mavenclinic.com"
+        }
+      ]
+    },
+    "start_date": "2023-01-16",
+    "end_date": "2023-03-02",
+    "procedure_name": "testing procedure",
+    "cost": 25000,
+    "status": "SCHEDULED"
+  }
+]

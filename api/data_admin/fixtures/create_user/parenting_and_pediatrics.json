@@ -1,0 +1,13 @@
+[
+  {
+    "type": "user",
+    "organization_name": "Test Organization X",
+    "track": "parenting_and_pediatrics",
+    "email_prefix": "mvnqa-pnp",
+    "password": "simpleisawesome1*",
+    "had_child_days_ago": 350,
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

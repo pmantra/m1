@@ -1,0 +1,18 @@
+ <div ng-if="!hasUploaded">
+	 <form name="uploadForm">
+		<fieldset>
+
+			<input type="file" ngf-select ng-model="toUpload" name="file" ngf-max-size="20MB" required ngf-model-invalid="errorFile"><a href="" ng-click="toUpload = null" ng-show="toUpload">Remove</a>
+
+			<p ng-show="uploadForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 20M </p>
+			
+			<a class="btn btn-cta" ng-class="{'disabled' : !uploadForm.$valid} " ng-click="uploadFile(toUpload)">Upload</a>
+
+
+		</fieldset>
+	</form>
+</div>
+
+<div ng-if="hasUploaded">
+	<h3>Upload complete!</h3>
+</div>

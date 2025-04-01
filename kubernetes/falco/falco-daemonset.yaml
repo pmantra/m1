@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: falco
+  labels:
+    name: falco
+spec:
+  selector:
+    matchLabels:
+      name: monitored-nodes
+  template:
+    metadata:
+      labels:
+        name: monitored-nodes
+        app: maven-falco
+        role: security
+    spec:
+      hostNetwork: true
+      serviceAccountName: falco-service-account
+      # https://mavenclinic.atlassian.net/browse/CPFR-1528
+      # Temporarily scaling daemonset down while falco deployment is investigated
+      nodeSelector:
+        non-existing: "true"
+      containers:
+        - name: falco
+          image: falcosecurity/falco:0.32.2
+          securityContext:
+            privileged: true
+            procMount: Default
+          resources:
+            requests:
+              cpu: 20m
+              memory: 160M
+          args:
+            - /usr/bin/falco
+            - -K
+            - /var/run/secrets/kubernetes.io/serviceaccount/token
+            - -k
+            - https://kubernetes.default
+            - -pk
+            - -A
+          volumeMounts:
+            - mountPath: /host/var/run/docker.sock
+              name: docker-socket
+            - mountPath: /host/dev
+              name: dev-fs
+            - mountPath: /host/proc
+              name: proc-fs
+              readOnly: true
+            - mountPath: /host/boot
+              name: boot-fs
+              readOnly: true
+            - mountPath: /host/lib/modules
+              name: lib-modules
+              readOnly: true
+            - mountPath: /host/usr
+              name: usr-fs
+              readOnly: true
+            - mountPath: /host/etc
+              name: etc-fs
+              readOnly: true
+            - mountPath: /etc/falco
+              name: falco-config
+          env:
+            - name: SYSDIG_BPF_PROBE
+              value: "/root/.falco/falco-probe-bpf.o"
+            - name: FALCO_BPF_PROBE
+              value: ""
+      volumes:
+        - name: docker-socket
+          hostPath:
+            path: /var/run/docker.sock
+        - name: dev-fs
+          hostPath:
+            path: /dev
+        - name: proc-fs
+          hostPath:
+            path: /proc
+        - name: boot-fs
+          hostPath:
+            path: /boot
+        - name: lib-modules
+          hostPath:
+            path: /lib/modules
+        - name: usr-fs
+          hostPath:
+            path: /usr
+        - name: etc-fs
+          hostPath:
+            path: /etc
+        - name: falco-config
+          configMap:
+            name: falco-config

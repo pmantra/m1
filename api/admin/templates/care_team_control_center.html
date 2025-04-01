@@ -1,0 +1,32 @@
+{% extends 'admin/base.html' %}
+{% import 'admin/lib.html' as lib with context %}
+
+{% block head %}
+{{ super() }}
+{{ lib.form_css() }}
+{% endblock %}
+
+{% block body %}
+
+<div id="content"></div>
+
+
+{% endblock %}
+
+{% block tail %}
+{{ super() }}
+{{ lib.form_js() }}
+
+<script type="text/javascript">
+  function renderBuilder() {
+    AdminTool("CareTeamControlCenter", document.getElementById("content"), {
+      all_assignable_cx: {{ all_assignable_cx|safe }},
+      GLOBAL_BOOKING_BUFFER_MAX: {{GLOBAL_BOOKING_BUFFER_MAX}},
+      GLOBAL_MAX_CAPACITY_MAX: {{GLOBAL_MAX_CAPACITY_MAX}},
+      GLOBAL_PREP_BUFFER_MAX: {{GLOBAL_PREP_BUFFER_MAX}},
+    });
+  }
+  renderBuilder();
+</script>
+
+{% endblock %}

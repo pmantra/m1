@@ -1,0 +1,29 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+
+    <legend>Organization Employee (ID: {{ model.id }})</legend>
+    <h2>🛑<span style="color:#c0392b"><u><strong>Organization Employee is Going Away</strong></u></span>🛑</h2>
+    <p>We are in the process of deprecating organization employee, to be replaced by 'Eligibility Verifications' to
+        capture the information that was used to verify a user</p>
+    <p>To search for a verification for a user, please follow <a href="/eligibility-admin/user-verification/"<b>this link</b></a></p>
+<p>Hit up #help-eligibility-service on slack for any assistance or questions</p>
+    {% block navlinks %}{{ super() }}{% endblock %}
+
+    {% for user in model.users %}
+        <p>Click <a href="/admin/user/edit/?id={{ user.id }}">here</a> to edit user {{ user.id }}</p>
+    {% endfor %}
+
+    {% block edit_form %}{{ super() }}{% endblock %}
+
+    {% block tail %}{{ super() }}{% endblock %}
+
+    <h1>Miscellaneous</h1>
+    <ul>
+        <li>Spouse Name: {{ model.json.get('spouse_name') }}</li>
+        <li>Spouse Email: {{ model.json.get('spouse_email') }}</li>
+        <li>Original Email: {{ model.json.get('original_email') }}</li>
+    </ul>
+
+{% endblock %}
+

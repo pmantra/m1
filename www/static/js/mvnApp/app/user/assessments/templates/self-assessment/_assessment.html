@@ -1,0 +1,30 @@
+<div class="assessment-tools">
+	<div class="prev-question">
+		<p ng-if="!$ctrl.questionState.firstQ" class="p-xs">
+			<a href="" ng-click="$ctrl.triggerBack()">
+				<svg width="10" height="16" viewBox="0 0 24 44" xmlns="http://www.w3.org/2000/svg">
+					<title>Go back</title>
+					<g stroke="#002d2a" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="round">
+						<path d="M2.148 22L22.052 2.096M2.148 22l19.904 19.904" />
+					</g>
+				</svg>Back</a>
+		</p>
+	</div>
+
+	<div class="exit-assessment">
+		<a ng-click="$ctrl.triggerExit()">
+			<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<title>Close</title>
+				<g stroke-width="2" stroke="#002d2a" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M1 1l21.684 21.685M1 22.685L22.684 1" />
+				</g>
+			</svg>
+		</a>
+	</div>
+
+	<mvn-progress-bar progress="$ctrl.progress"></mvn-progress-bar>
+
+</div>
+
+
+<ui-view />

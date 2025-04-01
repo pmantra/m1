@@ -1,0 +1,13 @@
+[
+  {
+    "type": "user",
+    "role": "practitioner",
+    "email_prefix": "mvnqa-np",
+    "vertical": "Nurse Practitioner",
+    "certified_subdivision_codes": "US-NY",
+    "can_prescribe": true,
+    "anonymous_allowed": true,
+    "show_when_unavailable": true,
+    "messaging_enabled": true
+  }
+]

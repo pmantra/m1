@@ -1,0 +1,115 @@
+#: messaging/resources/messaging.py:817
+msgid "available_credits_error"
+msgstr ""
+
+#: messaging/resources/messaging.py:539
+msgid "cannot_attach_asset_belonging_to_another_user"
+msgstr ""
+
+#: messaging/resources/messaging.py:558
+msgid "cannot_attach_asset_to_message_asset_state_is_not_complete"
+msgstr ""
+
+#: messaging/resources/messaging.py:579
+msgid "cannot_attach_asset_to_multiple_messages_at_once"
+msgstr ""
+
+#: messaging/resources/messaging.py:787
+msgid "cannot_charge_customer_error"
+msgstr ""
+
+#: messaging/resources/messaging.py:789
+msgid "cannot_charge_customer_stripe_error"
+msgstr ""
+
+#: messaging/resources/messaging.py:197
+msgid "cant_open_a_channel_with_only_yourself"
+msgstr ""
+
+#: messaging/resources/messaging.py:212
+msgid "channel_can_only_be_opened_between_a_member_and_a_practitioner"
+msgstr ""
+
+#: messaging/resources/messaging.py:518
+msgid "could_not_find_asset_matching_requested_identifier"
+msgstr ""
+
+#: messaging/resources/messaging.py:620
+msgid "exception_allocating_message_credits_enterprise_user"
+msgstr ""
+
+#: messaging/resources/messaging.py:628
+msgid "exception_allocating_message_credits_marketplace_user"
+msgstr ""
+
+#: messaging/resources/messaging.py:666
+msgid "general_exception_allocating_message_credits"
+msgstr ""
+
+#: messaging/resources/messaging.py:128
+msgid "input_error_getting_channels"
+msgstr ""
+
+#: messaging/resources/messaging.py:487
+msgid "message_is_too_long"
+msgstr ""
+
+#: messaging/schemas/messaging.py:34
+msgid "message_reply_sla_user_message_ca_default"
+msgstr ""
+
+#: messaging/schemas/messaging.py:37
+msgid "message_reply_sla_user_message_provider_default"
+msgstr ""
+
+#: messaging/schemas/messaging.py:40
+msgid "message_reply_sla_user_message_wallet"
+msgstr ""
+
+#: messaging/schemas/messaging.py:44
+msgid "message_reply_sla_user_message_wallet_with_inbound_phone_number"
+msgstr ""
+
+#: messaging/resources/messaging.py:782
+msgid "no_card_on_file_error"
+msgstr ""
+
+#: messaging/resources/messaging.py:205
+msgid "one_or_more_users_not_found"
+msgstr ""
+
+#: messaging/resources/messaging.py:601
+msgid "only_image_and_pdf_file_types_are_supported"
+msgstr ""
+
+#: messaging/resources/messaging.py:177
+msgid "serializing_error_getting_channels"
+msgstr ""
+
+#: messaging/resources/messaging.py:422
+msgid "unable_to_post_message_in_channel_inactive_or_messaging_disabled_practitioner"
+msgstr ""
+
+#: messaging/resources/messaging.py:456
+msgid "unable_to_post_message_in_channel_member_cannot_message_practitioner"
+msgstr ""
+
+#: messaging/resources/messaging.py:364
+msgid "unable_to_post_message_in_channel_no_participants_found"
+msgstr ""
+
+#: messaging/resources/messaging.py:385
+msgid "unable_to_post_message_in_channel_user_is_not_a_participant"
+msgstr ""
+
+#: messaging/resources/messaging.py:201
+msgid "we_dont_support_multi_party_messaging"
+msgstr ""
+
+#: messaging/resources/messaging.py:199
+msgid "you_are_already_included_in_the_channel"
+msgstr ""
+
+#: messaging/resources/sms.py:123
+msgid "generic_maven_message_body"
+msgstr ""

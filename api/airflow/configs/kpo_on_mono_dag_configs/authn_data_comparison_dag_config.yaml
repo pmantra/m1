@@ -1,0 +1,12 @@
+dag_id: authn_data_comparison_dag
+task_id: authn_data_comparison_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.core_service_team.authn_data_comparison import database_compare_job; database_compare_job()"
+team_namespace: core_services
+service_namespace: authentication
+catchup: "False"
+start_year: 2024
+start_month: 7
+start_day: 15

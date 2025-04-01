@@ -1,0 +1,25 @@
+<form method="POST" action="/admin/actions/reimbursement_wallet/qle">
+    <label for="plan_id">
+        <b>Reimbursement Plan ID:</b>
+    </label>
+    <input
+        id="plan_id"
+        name="plan_id"
+        value="{{model.id}}"
+        readonly
+    />
+
+    <input id="amount" name="amount" type="hidden" placeholder="amount" />
+    <input id="effective_date" name="effective_date" type="hidden" placeholder="effective_date" />
+    <div id="qle-form-content"></div>
+
+    <p>
+        <input type="submit" class="btn btn-primary" value="Add" />
+    </p>
+</form>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function() {
+        AdminTool("QualifiedLifeEvent", document.getElementById("qle-form-content"), {
+        });
+    })
+</script>

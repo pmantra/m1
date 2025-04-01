@@ -1,0 +1,12 @@
+#: tasks/notifications.py:523
+msgid "cta_message_link"
+msgstr ""
+
+#: tasks/notifications.py:519
+msgid "generic_message_body"
+msgstr ""
+
+#: tasks/notifications.py:516
+msgid "wallet_message_body"
+msgstr ""
+

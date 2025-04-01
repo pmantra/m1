@@ -1,0 +1,908 @@
+@import "./forum-header";
+@import "./forum-landing";
+@import "./forum-replies";
+@import "./forum-search";
+@import "./forum-write-post";
+@import "./explore-practitioner";
+@import "./post-author-container";
+
+/* SHARED */
+
+forum {
+	height: 100%;
+	display: block;
+}
+
+.forum {
+	.main-view {
+		min-height: 100vh;
+		padding-bottom: 50px;
+	}
+	.content {
+		padding: 24px 16px;
+		@include susy-breakpoint($desktop) {
+			padding: 0;
+		}
+	}
+	.post {
+		@include susy-breakpoint($desktop) {
+			padding: 30px 0;
+		}
+	}
+	.content-container {
+		max-width: $containerWidth;
+		margin: 0 auto;
+	}
+	.footer-container {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
+}
+
+#forum-main {
+	margin-top: $mobileHeaderHeight;
+
+	@include susy-breakpoint($tablet) {
+		margin-top: 81px;
+	}
+	@include susy-breakpoint($desktop) {
+		margin: $desktopHeaderHeight 0;
+	}
+}
+
+.forum-loading {
+	height: 100vh;
+	padding-top: 8%;
+	svg {
+		position: relative;
+		top: -4px;
+	}
+}
+/* ----- avatars ----- */
+
+.avatar-wrap,
+.avatar {
+	width: 54px;
+	height: 54px;
+	display: block;
+}
+.avatar {
+	border-radius: 50%;
+	display: block;
+	float: left;
+}
+
+/* No image */
+.avatar-wrap,
+.avatar-icon {
+	width: 2.5rem;
+	height: 2.5rem;
+	font-size: 1.125rem;
+	// was at tablet so it worked on and after tablet
+	@include susy-breakpoint($tablet) {
+		font-size: 1.6rem;
+		width: 3rem;
+		height: 3rem;
+	}
+}
+
+.avatar-icon {
+	border-radius: 50%;
+	display: inline-block;
+	vertical-align: bottom;
+	background-color: $primary;
+	color: white;
+	font-weight: 900;
+	line-height: 43px;
+	text-align: center;
+	text-transform: uppercase;
+
+	@include susy-breakpoint($tablet) {
+		font-family: $font2 !important;
+		line-height: 45px;
+		margin-bottom: 20px;
+		padding-bottom: 30px;
+	}
+	&.noimg {
+		&.practitioner {
+			svg {
+				width: 28px;
+				position: relative;
+				top: -2px;
+			}
+		}
+	}
+}
+
+/* POST LIST VIEW :: SHARED */
+.post-list-view {
+	border-bottom: 1px solid $charcoal-40;
+	margin-bottom: 30px;
+	@include susy-breakpoint($tablet) {
+		padding-bottom: 2rem;
+		padding-top: 2rem;
+		margin-bottom: 0;
+	}
+
+	h5,
+	.h5 {
+		font-weight: bold;
+		margin-bottom: 0;
+		max-width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		a {
+			color: $gray-xdk;
+			text-decoration: none;
+		}
+	}
+	.post-list-body {
+		color: $gray;
+		margin-top: 4px;
+	}
+	.post-reply-count {
+		padding-top: 14px;
+		p {
+			color: $ui-green;
+			font-size: 13px;
+			line-height: 1.3;
+			margin: 0;
+		}
+		a {
+			text-decoration: none;
+			&:hover {
+				color: $ui-green;
+			}
+		}
+	}
+	.btn-container {
+		// paragraph containing buttons
+		font-size: 14px;
+		margin-bottom: 25px;
+
+		@include susy-breakpoint($desktop) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+/* COMMUNITY LIST VIEW */
+.forum-community {
+	.forum-header-search {
+		top: 10px;
+	}
+	.forum-post-cta {
+		@include susy-breakpoint(0 $tablet-max) {
+			display: none;
+		}
+	}
+	&.subcategory {
+		.forum-post-cta {
+			background-color: white;
+			border-bottom: 1px solid $charcoal-40;
+			display: block;
+			height: auto;
+			margin-bottom: 0;
+			padding: 0;
+			p {
+				font-weight: 700;
+			}
+			@include susy-breakpoint(0 $tablet-max) {
+				font-size: 16px;
+				.cta-container {
+					display: flex;
+					justify-content: space-evenly;
+					padding: 20px 0;
+					align-items: center;
+					p {
+						display: block;
+						font-size: 16px;
+					}
+					a {
+						font-size: 14px;
+						padding: 12px;
+						justify-self: center;
+					}
+				}
+			}
+			@include susy-breakpoint($desktop) {
+				padding-bottom: 24px;
+			}
+		}
+		.forum-list-posts {
+			padding-top: 0;
+			.recent-posts {
+				display: none;
+			}
+		}
+	}
+
+	position: relative;
+	display: block;
+
+	@include susy-breakpoint($desktop) {
+		.forum-post-cta {
+			margin-bottom: 40px;
+		}
+	}
+
+	li {
+		.forum-subcategories-title {
+			border-bottom: 1px solid #e7e7e7;
+		}
+
+		@include susy-breakpoint(0 $tablet-max) {
+			&:last-child {
+				.forum-subcategories-title {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+
+	.forum-communities-subcategories {
+		padding-bottom: 0;
+		padding-top: 0;
+		.p {
+			background: url("/img/icons/caret-right-grn.svg") 98% center no-repeat;
+		}
+		a {
+			display: block;
+			color: $gray-dk;
+			text-decoration: none;
+		}
+
+		@include susy-breakpoint($desktop) {
+			border-top: 1px solid $charcoal-40;
+			margin-top: 45px;
+		}
+	}
+}
+.forum-list-posts {
+	.recent-posts {
+		background: $gray-xxlt;
+		font-size: 22px;
+		margin-bottom: 0;
+	}
+
+	@include susy-breakpoint($desktop) {
+		padding-top: 50px;
+
+		.recent-posts {
+			background: white;
+			border-bottom: 1px solid $gray-xlt;
+			padding-bottom: 24px;
+		}
+	}
+}
+
+/* POST DETAIL PAGE */
+// Standalone post detail page that's child of a community.
+.forum-detail {
+	.forum-community.content-container {
+		display: none;
+	}
+}
+.post-detail-modal {
+	@include susy-breakpoint(0 $tablet-max) {
+		top: 60px;
+	}
+}
+@include susy-breakpoint(0 $tablet-max) {
+	.show-menu {
+		.post-detail-modal {
+			-webkit-transform: translateX(70%);
+			transform: translateX(70%);
+		}
+	}
+}
+.dialog-full .ngdialog-content > div.forum-detail-modal {
+	padding: 0;
+}
+.post-detail-modal,
+.forum-detail .post-community-standalone {
+	@include susy-breakpoint(0 $tablet-max) {
+		//top: 60px;
+		background: white;
+	}
+}
+.forum-detail {
+	.post-community-standalone {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		z-index: 1;
+		background: white;
+		overflow-x: scroll;
+		height: 100%;
+		height: 100vh;
+
+		.forum-post-cta {
+			display: block;
+		}
+
+		.footer-container {
+			position: relative;
+		}
+	}
+	.forum-header-search {
+		top: 10px;
+	}
+}
+
+.post-detail {
+	@include susy-breakpoint($desktop) {
+		margin-top: 52px;
+	}
+}
+
+.post-title {
+	&:first-letter {
+		text-transform: capitalize;
+	}
+}
+.post-body {
+	color: $gray;
+	white-space: pre-wrap;
+	font-family: $font1;
+}
+
+.post-author {
+	.user-name {
+		margin: 0;
+
+		.name {
+			color: $gray-dk;
+			font-weight: bold;
+		}
+
+		.post-date {
+			color: $gray;
+			font-size: 14px;
+		}
+	}
+}
+
+.post-action {
+	a {
+		color: $primary;
+		font-weight: bold;
+		text-decoration: none;
+		letter-spacing: 1px;
+		font-size: 14px;
+		cursor: pointer;
+		svg {
+			margin-right: 10px;
+			@include susy-breakpoint($mobile-landscape) {
+				margin-right: 15px;
+			}
+		}
+		@include susy-breakpoint($desktop) {
+			font-size: 16px;
+		}
+	}
+}
+
+.post-list,
+.post-detail .post-author,
+.popular-posts-list {
+	.post-action {
+		// don't show book/message buttons on a practitioner's top level questions
+		display: none;
+	}
+}
+
+/* Forum Profile */
+
+.my-replies {
+	.h5 {
+		margin-bottom: 20px;
+	}
+}
+
+/* Recommended posts */
+
+.forum-recommended-posts {
+	.forum-list-header {
+		border-bottom: 1px solid $charcoal-40;
+		font-size: 22px;
+		margin: 0 16px;
+		padding-bottom: 24px;
+	}
+	.post-list-view {
+		margin-bottom: 0;
+	}
+	@include susy-breakpoint($desktop) {
+		border-bottom: 1px solid $charcoal-40;
+		margin: 65px 0 50px;
+		.forum-list-header {
+			margin: 0;
+		}
+		li {
+			position: relative;
+			width: 45%;
+			float: left;
+			&:nth-child(2n) {
+				float: right;
+			}
+			&:nth-last-child(-n + 2) {
+				.post-list-view {
+					border: none;
+				}
+			}
+			> div {
+				height: 215px;
+				margin-right: 15px;
+				h2 {
+					margin-top: 24px;
+				}
+				h3 {
+					max-width: 100%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					margin-top: 15px;
+					&:first-letter {
+						text-transform: capitalize;
+					}
+				}
+				.post-list-body {
+					height: 100px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+			&:last-child {
+				> div {
+					margin-right: 0;
+				}
+			}
+			.continue-read {
+				bottom: 0;
+				position: absolute;
+			}
+		}
+	}
+}
+
+/* shared between create post and create reply */
+.forum-anon-toggle,
+.choose-post-category {
+	margin-bottom: 40px;
+}
+
+.forum-radio-list {
+	> div {
+		padding: 20px 0;
+		margin: 0 1rem;
+		border-bottom: 1px solid $charcoal-40;
+		font-family: $font1;
+		font-size: 1rem;
+		white-space: nowrap;
+		position: relative;
+		&:last-child {
+			border-bottom: none;
+		}
+		@include susy-breakpoint($tablet) {
+			border-bottom: none;
+		}
+	}
+}
+
+.forum-anon-toggle {
+	em {
+		font-style: normal;
+	}
+	> div {
+		@include susy-breakpoint($tablet) {
+			width: 50%;
+		}
+	}
+}
+
+/* Search results page */
+.page-forum-search {
+	.forum-create-post {
+		h1 {
+			display: none;
+		}
+	}
+
+	.search-create-post {
+		forum-header {
+			display: none;
+		}
+	}
+}
+
+/* Hide search bar on create post screens */
+.page-forum-search .search-create-post,
+.forum-create {
+	.forum-header-search {
+		display: none;
+	}
+}
+
+/* USER PROFILE */
+.page-user-profile {
+	.empty-icon {
+		margin-top: 40px;
+	}
+}
+
+.user-profile-header {
+	background: $gray-xxlt;
+	margin-top: $mobileHeaderHeight;
+	@include susy-breakpoint($desktop) {
+		margin-top: $desktopHeaderHeight;
+	}
+	.user-manage-username {
+		margin-bottom: 40px;
+
+		a {
+			color: $ui-green-mid;
+		}
+	}
+	.user-username {
+		margin: 0 0 0 20px;
+	}
+	.edit-username {
+		font-size: 14px;
+		font-family: $font1;
+		color: $charcoal-80;
+	}
+}
+
+.profile-edit-image {
+	padding-top: 60px;
+	@include susy-breakpoint($desktop) {
+		padding-top: 40px;
+	}
+}
+.profile-image {
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
+	background: $charcoal-40;
+	margin: 20px auto;
+	background-size: cover;
+	.edit-cta {
+		display: block;
+		padding: 40px 35px;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		svg {
+			transition: all 0.4s ease;
+		}
+	}
+	&.has-image {
+		.edit-cta {
+			svg {
+				opacity: 0;
+			}
+			&:hover {
+				svg {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&.has-color {
+		.edit-cta {
+			&:hover {
+				svg {
+					opacity: 0.6;
+				}
+			}
+		}
+	}
+}
+
+.user-profile-tabs {
+	li {
+		width: 33.3%;
+		float: left;
+		p,
+		.p {
+			margin: 0;
+		}
+		a {
+			color: $ui-green-mid;
+			text-decoration: none;
+			display: block;
+			padding: 10px 5px;
+			text-align: center;
+			&.active {
+				border-bottom: 6px solid $mint-50;
+				color: $charcoal-100;
+			}
+		}
+		@include susy-breakpoint($mobile-landscape) {
+			br {
+				display: none;
+			}
+			a {
+				padding: 15px;
+			}
+		}
+	}
+}
+
+/* Edit profile image modal */
+.profile-image-dialog.dialog-full .ngdialog-content > div {
+	padding: 60px 0;
+}
+.profile-image-dialog {
+	h1 {
+		font-size: 36px;
+	}
+	h2 {
+		font-size: 24px;
+	}
+	.legal {
+		a {
+			color: $charcoal-80;
+			font-family: $font1;
+		}
+	}
+}
+.close-profile-dialog {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	@include susy-breakpoint($desktop) {
+		top: 30px;
+		right: 30px;
+	}
+}
+
+.file-upload-button {
+	overflow: hidden;
+	position: relative;
+	background: $emerald-50;
+	width: 230px;
+	max-width: 100%;
+	text-align: center;
+	margin: 15px auto 5px auto;
+	text-transform: uppercase;
+	color: white;
+	font-size: 14px;
+	letter-spacing: 1px;
+	height: 55px;
+	display: block;
+	font-family: $font1-bold;
+	border-radius: 30px;
+	[type="file"] {
+		opacity: 0;
+
+		cursor: pointer;
+	}
+	&:focus-within {
+		outline: 0.125rem solid $primary;
+		transition: all 0.3s linear;
+	}
+	.btn-cta {
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+}
+.file-upload-restrictions {
+	font-style: italic;
+}
+
+/* Avatar color selection */
+.profile-select-avatar-color {
+	ul {
+		width: 296px;
+		margin: 0 auto;
+		@include susy-breakpoint($mobile-landscape) {
+			width: 444px;
+		}
+		@include susy-breakpoint($desktop-md) {
+			width: 873px;
+		}
+		li {
+			width: 118px;
+			height: 118px;
+			border-radius: 50%;
+			cursor: pointer;
+			float: left;
+			margin: 15px;
+			position: relative;
+			padding: 42px;
+			text-align: center;
+			&:last-child {
+				margin-right: 0;
+			}
+			.loader-spin {
+				display: none;
+				left: 45px;
+			}
+			&.saving {
+				&.selected {
+					.loader-spin {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+	.avatar-letter {
+		color: white;
+		text-align: center;
+		font-size: 36px;
+		line-height: 30px;
+		text-transform: uppercase;
+		display: block;
+		font-family: $font4;
+	}
+	.is-selected,
+	.loader-spin {
+		position: absolute;
+		bottom: 10px;
+	}
+	.is-selected {
+		left: 51px;
+	}
+}
+
+.your-reply-header {
+	border-bottom: 1px solid $gray-xlt;
+	padding-bottom: 1rem;
+}
+
+/* SHARED */
+
+.post-author {
+	.avatar-wrap,
+	.user-detail {
+		float: left;
+	}
+	.avatar-wrap {
+		margin-right: 15px;
+	}
+	.user-detail {
+		p,
+		.p {
+			margin: 0;
+			line-height: 1.5;
+		}
+	}
+}
+
+.forum-header-actions {
+	transition: all 0.4s ease-in-out;
+	z-index: 0;
+	.mobile-forum-search-input {
+		position: relative;
+		input {
+			padding-right: 2.125rem;
+		}
+	}
+	.mobile-search-go {
+		font-size: 0.75rem;
+		width: auto;
+		padding: 8px 5px;
+		height: auto;
+		min-width: 0;
+		border-radius: 50%;
+		position: absolute;
+		right: 8px;
+		top: 20px;
+		@include susy-breakpoint($desktop) {
+			top: -2px;
+		}
+	}
+}
+
+/* Loading more posts */
+.list-loader {
+	width: 100%;
+	position: relative;
+	overflow: visible;
+	height: 65px;
+	.loader-inline {
+		top: auto;
+		.loader-inline-content {
+			padding: 0;
+		}
+	}
+}
+
+/* Write a Post CTA */
+.forum-post-cta {
+	background: $gray-xxlt;
+	border-radius: 4px;
+	padding: 40px;
+
+	span {
+		color: $gray-dk;
+		display: inline-block;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 24px;
+		margin-bottom: 20px;
+		@include susy-breakpoint($mobile-landscape) {
+			margin-bottom: 0px;
+		}
+	}
+
+	.cta-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+		@include susy-breakpoint($mobile-landscape) {
+			flex-direction: row;
+		}
+	}
+
+	@include susy-breakpoint($tablet) {
+		height: 88px;
+		padding: 24px;
+
+		.btn {
+			margin-top: 0;
+		}
+	}
+}
+.inline-post-cta {
+	.forum-post-cta {
+		display: block;
+		margin: -31px -16px 30px;
+	}
+}
+
+.forum {
+	height: 100vh;
+	.authdialog {
+		.ngdialog-content {
+			background-color: white;
+			max-width: 535px;
+			padding: 3rem;
+			> p {
+				color: $gray;
+			}
+			input {
+				border-color: $gray-xlt;
+				margin: 7.5px 0;
+				&::placeholder {
+					color: $gray-lt;
+				}
+			}
+			.form-item.email {
+				clear: both;
+			}
+			.mvn-checkbox-group {
+				clear: both;
+				display: block;
+				font-size: 0.75rem;
+				line-height: 1rem;
+				padding-top: 18px;
+				text-align: left;
+				.checkbox-container {
+					width: 100%;
+				}
+				.label-text {
+					&::before {
+						top: 7px;
+					}
+				}
+				.label-copy {
+					display: block;
+					margin-left: 25px;
+					margin-top: -16px;
+				}
+			}
+			.btn-cta {
+				margin-bottom: 10px;
+				width: 100%;
+			}
+		}
+	}
+}

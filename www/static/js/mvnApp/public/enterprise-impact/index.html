@@ -1,0 +1,204 @@
+<section class="">
+	<div class="content-wrapper">
+		<div class="headline center">
+			<h1>Raising expectations for women’s and family healthcare</h1>
+			<p class="lg">
+				We drive member satisfaction through personalized, human-centric care that supports each employee’s unique
+				health journey, driving positive outcomes and industry-leading engagement.
+			</p>
+		</div>
+	</div>
+
+	<div id="impact-stats" class="content-wrapper">
+		<div class="grid-container three-column center">
+			<div class="grid-item">
+				<h1>75%+</h1>
+				<h3>Enrollment</h3>
+				<p>75%+ program enrollment in year 1</p>
+			</div>
+			<div class="grid-item">
+				<h1>100+</h1>
+				<h3>Engagement</h3>
+				<p>100+ average in-app touchpoints per member</p>
+			</div>
+			<div class="grid-item">
+				<h1>70</h1>
+				<h3>NPS</h3>
+				<p>Maven’s Net Promoter Score</p>
+			</div>
+		</div>
+
+		<p>
+			<a class="btn btn-cta" href="" ng-click="openEntContact()">Get a demo</a>
+		</p>
+	</div>
+</section>
+
+<section class="impact-support">
+	<div class="content-wrapper">
+		<h3>How we support companies</h3>
+		<div class="grid-container two-column">
+			<div class="feature-img grid-item"></div>
+			<div class="grid-item">
+				<ul class="clear">
+					<li>
+						<h3>Reduce costs</h3>
+						<p>
+							Pays for itself by reducing high-risk pregnancies, C-sections, and unnecessary ER and pediatric visits.
+						</p>
+					</li>
+					<li>
+						<h3>Increase productivity and engagement</h3>
+						<p>On-demand care reduces absenteeism and stage-specific resources keeps members engaged.</p>
+					</li>
+					<li>
+						<h3>Attract and retain talent</h3>
+						<p>
+							Our personalized and mobile-first program helps you offer a competitive benefits package to millennials.
+						</p>
+					</li>
+					<li>
+						<h3>Support management</h3>
+						<p>We provide customizable management training for learning how to better support working parents.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="impact-case-study">
+	<div class="content-wrapper">
+		<div class="grid-container two-column">
+			<div class="grid-item text-container">
+				<h5>Case study</h5>
+				<h3>Leading law firm raises the bar on family benefits</h3>
+				<p>
+					In just six months, Cleary has received overwhelmingly positive feedback and significant Maven utilization
+					without incentive—74% percent of pregnant employees are participating and have found Maven via the company
+					intranet or through direct emails from Cleary’s HR team. Maven anticipates 95% participation in Year 1.
+				</p>
+				<p><a ui-sref="public.case-studies.cleary" class="btn btn-tertiary">Learn more</a></p>
+			</div>
+			<div class="grid-item text-container">
+				<h5>Case study</h5>
+				<h3>Tech trailblazer seeks patient-first support for millennial parents</h3>
+				<p>
+					Maven Maternity helped Snap Inc. reinforce their family-friendly values and truly support working parents.
+					Employees actively engage with Maven for Maternity and Maven for Fertility, utilizing the full platform and
+					accessing all the digital health programs, including pregnancy, surrogacy, adoption, infertility, egg
+					freezing, and partner tracks.
+				</p>
+				<p><a ui-sref="public.case-studies.snap" class="btn btn-tertiary">Learn more</a></p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="impact-testimonials">
+	<div class="content-wrapper carousel-wrapper-panels">
+		<p class="lg center">What clients and members are saying</p>
+		<slick
+			class="carousel"
+			slide="div"
+			dots="true"
+			lazy-load="ondemand"
+			responsive="impactCarouselBreakpoints"
+			slides-to-show="3"
+			arrows="true"
+			mobileFirst="true"
+			custom-paging="slickDots(slick, index)"
+			prev-arrow=".prev"
+			next-arrow=".next"
+		>
+			<div ng-repeat="testimonial in impactQuotes">
+				<div class="testimonial {{ ::testimonial.category }}">
+					<span class="quot">&ldquo;</span>
+					<p class="lg">&ldquo;{{ ::testimonial.quote }}&rdquo;</p>
+					<h5>{{ ::testimonial.by }}</h5>
+				</div>
+			</div>
+		</slick>
+		<span class="prev">
+			<svg width="16" height="29" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M2.092 14.5l12.44-12.44M2.093 14.5l12.44 12.44"
+					stroke="#F9A89A"
+					stroke-width="2"
+					fill="none"
+					fill-rule="evenodd"
+					stroke-linecap="square"
+				/>
+			</svg>
+		</span>
+		<span class="next">
+			<svg width="16" height="29" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M14.533 14.5L2.093 2.06m12.44 12.44L2.093 26.94"
+					stroke="#F9A89A"
+					stroke-width="2"
+					fill="none"
+					fill-rule="evenodd"
+					stroke-linecap="square"
+				/>
+			</svg>
+		</span>
+	</div>
+</section>
+
+<section class="impact-whitepapers">
+	<div class="content-wrapper">
+		<h3>Read all about it</h3>
+		<p>Check out our whitepapers to stay on top of the latest benefits trends.</p>
+		<div class="grid-container three-column">
+			<div class="grid-item">
+				<div class="wp-image wp-millennial">
+					<a
+						href="https://resources.mavenclinic.com/reports/family-benefits-for-a-millennial-workforce"
+						title="Millennial workforce"
+						><img src="/img/enterprise/impact/wp-millennial.png" alt="Millennial workforce"
+					/></a>
+				</div>
+				<p class="heavy">In a millennial workforce, family-friendly benefits are the best way to attract top talent</p>
+				<p>The top five trends you need to know to attract millennial talent without breaking the bank.</p>
+				<a
+					class="btn btn-tertiary"
+					href="https://resources.mavenclinic.com/reports/family-benefits-for-a-millennial-workforce"
+					>Read more</a
+				>
+			</div>
+
+			<div class="grid-item">
+				<div class="wp-image wp-paradigm">
+					<a ui-sref="public.shifting-paradigm-landing" title="The Shifting Paradigm for Maternity Benefits"
+						><img src="/img/enterprise/impact/wp-paradigm.png" alt="The Shifting Paradigm for Maternity Benefits"
+					/></a>
+				</div>
+				<p class="heavy">The shifting paradigm for maternity benefits</p>
+				<p>Employees want more from their maternity benefits, see what companies are doing about it.</p>
+				<a class="btn btn-tertiary" ui-sref="public.shifting-paradigm-landing" title="Read the whitepaper">Read more</a>
+			</div>
+
+			<div class="grid-item">
+				<div class="wp-image wp-btw">
+					<a ui-sref="public.back-to-work-landing" title="Back to work whitepaper"
+						><img src="/img/enterprise/impact/wp-btw.png" alt="Back-to-work"
+					/></a>
+				</div>
+				<p class="heavy">Back-to-work: The billion-dollar opportunity for companies</p>
+				<p>Find out the real monetary impact of investing in back-to-work benefits for working mothers.</p>
+				<a class="btn btn-tertiary" ui-sref="public.back-to-work-landing" title="Read the whitepaper">Read more</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="enterprise-demo-form">
+	<div class="content-wrapper">
+		<div class="headline center">
+			<h3>Want to know more?</h3>
+			<p>Drop us a line and we’ll reach out to set up an introductory chat.</p>
+		</div>
+		<enterprise-lead-form></enterprise-lead-form>
+	</div>
+</section>

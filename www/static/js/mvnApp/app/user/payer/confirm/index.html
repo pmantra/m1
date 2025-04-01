@@ -1,0 +1,19 @@
+<div ng-show="emailConfirmed">
+	<h1>Email confirmed</h1>
+	<h3>Thank you! Your email has now been confirmed</h3>
+</div>
+
+<div ng-show="emailError && !alreadyConfirmed">
+	<h2>Oh no...</h2>
+	<p>There seems to have been a problem <span ng-if="emailErrorMsg">({{ emailErrorMsg }})</span></p>
+	<p>Please get in touch at <a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a> if you need any help!</p>
+	</div>
+</div>
+
+<div ng-show="alreadyConfirmed">
+	<h2>Your email is already confirmed</h2>
+	<p>Please get in touch at <a href="mailto:support@mavenclinic.com">support@mavenclinic.com</a> if you need any help!</p>
+	</div>
+</div>
+
+

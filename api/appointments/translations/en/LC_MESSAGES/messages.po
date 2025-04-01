@@ -1,0 +1,212 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-09-13 14:03-0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: appointments/resources/appointment.py:90
+msgid "anonymous_appointment_pharmacy_error_message"
+msgstr "Cannot set pharmacy on anonymous appointment!"
+
+#: appointments/resources/appointment.py:75
+msgid "appointment_cancelled_edit_error_message"
+msgstr "Cannot edit a cancelled appointment!"
+
+#: appointments/resources/appointment.py:78
+msgid "appointment_cannot_cancel_error_message"
+msgstr "Appointment could not be cancelled"
+
+#: appointments/resources/appointment.py:81
+msgid "appointment_disconnected_at_processing_error_message"
+msgstr "Error processing disconnected data"
+
+#: appointments/resources/appointment.py:84
+msgid "appointment_servey_disconnected_at_processing_error_message"
+msgstr "Error processing disconnected data member survey results"
+
+#: appointments/schemas/provider.py:257
+msgid "cancellation_policy_explanation_conservative"
+msgstr "50% refund if canceled at least 2 hours ahead of time"
+
+#: appointments/schemas/provider.py:261
+msgid "cancellation_policy_explanation_flexible"
+msgstr "Full refund if canceled at least 24 hours ahead of time"
+
+#: appointments/schemas/provider.py:265
+msgid "cancellation_policy_explanation_moderate"
+msgstr "50% refund if canceled at least 24 hours ahead of time"
+
+#: appointments/schemas/provider.py:269
+msgid "cancellation_policy_explanation_strict"
+msgstr "No refund"
+
+#: appointments/tasks/appointment_notifications.py:1968
+msgid "how_to_launch_notif_old_path"
+msgstr ""
+"Your Maven appointment begins in 1 hour! When it's time to start, launch "
+"your appointment from the Maven app."
+
+#: appointments/tasks/appointment_notifications.py:1829
+msgid "how_to_launch_notif_new_path"
+msgstr ""
+"Your Maven appointment begins in {start_time}! When it's time to start, launch "
+"your appointment from the Maven app."
+
+#: appointments/tasks/appointment_notifications.py:726
+msgid "member_24_hour_reminder_sms"
+msgstr ""
+"This is a reminder for your Maven appointment scheduled in 24 hours. "
+"If you can’t make your appointment, we ask that you reschedule or cancel "
+"at least 3 hours in advance to make this time available for someone else. "
+
+#: appointments/tasks/appointment_notifications.py:1111
+msgid "member_cancellation_note"
+msgstr ""
+"{name} had to cancel your upcoming appointment. We’re so sorry! Please "
+"open Maven to rebook."
+
+#: appointments/services/acknowledgement.py:117
+msgid "member_confirm_invalid_response"
+msgstr ""
+"This is an automated message. For help with rebooking or other questions,"
+" message us in the Maven app."
+
+#: appointments/services/acknowledgement.py:115
+msgid "member_confirm_response"
+msgstr "Thank you! We'll see you soon."
+
+#: appointments/resources/appointment.py:959
+#: appointments/tasks/appointments.py:75
+msgid "member_post_appointment_note_message"
+msgstr ""
+"Hi {member_first_name},\n"
+"\n"
+" I've left notes from our video session in your Appointments section:\n"
+"\n"
+"'{post_session_content}'\n"
+"\n"
+"You can always review notes from our sessions under Me > Appointments.  "
+"Please let me know if you have any follow up questions.\n"
+"\n"
+"Appointments: {base_url}/my-appointments "
+
+#: appointments/tasks/availability_notifications.py:148
+msgid "notify_member_about_new_prac_availability_url_disabled"
+msgstr ""
+"Great news! {practitioner_name} has added new availability for "
+"appointments on Maven! To view available times and book, please head to "
+"the Maven application."
+
+#: appointments/tasks/availability_notifications.py:156
+msgid "notify_member_about_new_prac_availability_url_enabled"
+msgstr ""
+"Great news! {practitioner_name} has added new availability for "
+"appointments on Maven! To view available times and book, please head "
+"here: {url}/practitioner/{practitioner_id}"
+
+#: appointments/tasks/appointment_rx_notifications.py:128
+msgid "notify_member_about_written_rx"
+msgstr ""
+"Your practitioner has sent your prescription to {pharmacy_name}. Please "
+"contact the pharmacy at {pharmacy_phone} with any questions."
+
+#: appointments/tasks/appointment_notifications.py:585
+msgid "notify_member_upcoming_appointment"
+msgstr ""
+"Your next Maven appointment starts in {appointment_start_time_remaining} "
+"minutes! For the best experience, make sure you have strong Wifi."
+
+#: appointments/resources/appointment.py:93
+msgid "practitioner_not_enabled_error_message"
+msgstr "Practitioner not enabled!"
+
+#: appointments/resources/appointment.py:87
+msgid "prescription_missing_data_error_message"
+msgstr "Member needs to complete prescription info!"
+
+#: appointments/services/acknowledgement.py:62
+msgid "provider_confirm_invalid_response"
+msgstr ""
+"For help rebooking or other questions, please email "
+"providersupport@mavenclinic.com."
+
+#: appointments/services/acknowledgement.py:82
+msgid "provider_confirm_response"
+msgstr ""
+"Thank you for confirming this appointment. If you have any questions, "
+"email providersupport@mavenclinic.com."
+
+#: appointments/schemas/provider.py:177
+msgid "provider_dynamic_subtext_last_met"
+msgstr "Last met with on"
+
+#: appointments/schemas/provider.py:184
+msgid "provider_dynamic_subtext_speaks"
+msgstr "Speaks"
+
+#: appointments/resources/report_problem.py:33
+msgid "report_problem_app_missing"
+msgstr "Appointment ID is missing or incorrect"
+
+#: appointments/resources/report_problem.py:32
+msgid "report_problem_header"
+msgstr ""
+"If you encountered an issue on your video appointment, please report it "
+"here to let us know."
+
+#: appointments/resources/report_problem.py:17
+msgid "report_problem_q1_o1"
+msgstr "I could not hear the other participant"
+
+#: appointments/resources/report_problem.py:18
+msgid "report_problem_q1_o2"
+msgstr "The other participant could not hear me"
+
+#: appointments/resources/report_problem.py:19
+msgid "report_problem_q1_o3"
+msgstr "I could not see the other participant"
+
+#: appointments/resources/report_problem.py:20
+msgid "report_problem_q1_o4"
+msgstr "The other participant could not see me"
+
+#: appointments/resources/report_problem.py:23
+msgid "report_problem_q1_text"
+msgstr "What issue did you experience? Please check what applies."
+
+#: appointments/resources/report_problem.py:31
+msgid "report_problem_title"
+msgstr "Report a problem"
+
+#: appointments/tasks/appointment_notifications.py:1825
+msgid "cta_how_to_launch_link"
+msgstr "or visit {url}"
+
+#: appointments/tasks/appointment_notifications.py:735
+msgid "cta_notify_member_upcoming_appointment_link"
+msgstr "Launch here {url}"
+
+#: appointments/tasks/appointment_notifications.py:893
+msgid "sms_notify_member_about_new_appointment"
+msgstr "Good news: Your Maven appointment is confirmed! If you can’t make your appointment, we ask that you reschedule or cancel at least 3 hours in advance to make this time available for someone else. "
+
+#: appointments/tasks/appointment_notifications.py:219
+msgid "cta_sms_notify_member_about_new_appointment_link_url"
+msgstr "Manage your appointments anytime here: {url}"
+
+#: appointments/tasks/appointment_notifications.py:224
+msgid "cta_sms_notify_member_about_new_appointment_no_url"
+msgstr "Manage your appointments in the Maven app."

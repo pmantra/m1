@@ -1,0 +1,22 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="span8">
+        {{ super() }}
+    </div>
+
+    <div class="span4" style="margin-top:15px">
+      <h3>Resend Invite</h3>
+      <p>
+        To manually resend a fileless invite email click the button below. If you updated the email remember to click the Save button before attempting to resend.
+      </p>
+      <form method="POST" action="/admin/actions/resend_invite">
+        <input id="invite_id" name="invite_id" type="hidden" value={{model.id}}>
+        <p>
+          <input type="submit" class="btn btn-primary" value="Resend Invite">
+        </p>
+      </form>
+    </div>
+</div>
+{% endblock %}

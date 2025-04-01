@@ -1,0 +1,15 @@
+dag_id: update_member_risk_flags_odd
+schedule: "0 7 * * *"
+task_id: member_risk_flags_odd_task
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.mpractice_core.update_member_risk_flags import update_member_risk_flags_odd_job; update_member_risk_flags_odd_job()"
+team_namespace: mpractice_core
+service_namespace: health
+start_year: 2025
+start_month: 3
+start_day: 19
+task_retries: 3
+catchup: "False"
+

@@ -1,0 +1,1 @@
+SELECT a.id FROM appointment WHERE appointment.id = :appointment_id;

@@ -1,0 +1,335 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: es\n"
+
+#: wallet/models/constants.py:147
+#, fuzzy
+msgid "payments_wallet_account_deactivated_deductible"
+msgstr "No se alcanzó tu deducible. Tu cuenta se activará una vez que esto ocurra."
+
+#: wallet/models/constants.py:157
+#, fuzzy
+msgid "payments_wallet_account_deactivated_employment_change"
+msgstr "Tu cuenta se cerró debido a un cambio de empleo."
+
+#: wallet/models/constants.py:144
+#, fuzzy
+msgid "payments_wallet_account_deactivated_fraud"
+msgstr "Tu cuenta se desactivó temporalmente debido a un posible fraude detectado."
+
+#: wallet/models/constants.py:141
+#, fuzzy
+msgid "payments_wallet_account_deactivated_ineligible"
+msgstr "Tu tarjeta se desactivó temporalmente debido a un gasto no elegible."
+
+#: wallet/models/constants.py:151
+#, fuzzy
+msgid "payments_wallet_account_deactivated_lost"
+msgstr "Se denunció la tarjeta como perdida o robada. Activa la nueva tarjeta para desbloquear tu cuenta."
+
+#: wallet/models/constants.py:138
+#, fuzzy
+msgid "payments_wallet_account_deactivated_past_due"
+msgstr "Tu cuenta se desactivó temporalmente debido a un recibo vencido."
+
+#: wallet/models/constants.py:154
+#, fuzzy
+msgid "payments_wallet_account_deactivated_plan_change"
+msgstr "Tu cuenta se cerró debido a un cambio en el plan de salud."
+
+#: wallet/models/constants.py:105
+msgid "payments_wallet_infertility_expense"
+msgstr "¿Este gasto o cuidado se relaciona con un diagnóstico médico de infertilidad de un profesional médico? (Necesitamos esta información para determinar si tu reembolso es tributable)"
+
+#: wallet/models/constants.py:221
+#, fuzzy
+msgid "payments_wallet_invite_accepted"
+msgstr "La invitación se aceptó."
+
+#: wallet/models/constants.py:222
+#, fuzzy
+msgid "payments_wallet_invite_accepted_failure"
+msgstr "No se puede aceptar la invitación."
+
+#: wallet/models/constants.py:227
+#, fuzzy
+msgid "payments_wallet_invite_already_active"
+msgstr "Parece que ya tienes una Wallet activa."
+
+#: wallet/models/constants.py:225
+#, fuzzy
+msgid "payments_wallet_invite_already_expired"
+msgstr "La invitación ya expiró."
+
+#: wallet/models/constants.py:226
+#, fuzzy
+msgid "payments_wallet_invite_already_used"
+msgstr "Ya se usó la invitación."
+
+#: wallet/models/constants.py:219
+#, fuzzy
+msgid "payments_wallet_invite_canceled"
+msgstr "Se canceló la invitación."
+
+#: wallet/models/constants.py:220
+#, fuzzy
+msgid "payments_wallet_invite_canceled_failure"
+msgstr "No se pudo cancelar la invitación."
+
+#: wallet/models/constants.py:228
+#, fuzzy
+msgid "payments_wallet_invite_declined"
+msgstr "La invitación se rechazó."
+
+#: wallet/models/constants.py:224
+#, fuzzy
+msgid "payments_wallet_invite_expired"
+msgstr "La invitación expiró."
+
+#: wallet/models/constants.py:217
+#, fuzzy
+msgid "payments_wallet_invite_found"
+msgstr "Se encontró la invitación."
+
+#: wallet/models/constants.py:230
+#, fuzzy
+msgid "payments_wallet_invite_help_needed"
+msgstr "Envía un mensaje al equipo de Wallet para unirte a la Wallet."
+
+#: wallet/models/constants.py:223
+#, fuzzy
+msgid "payments_wallet_invite_info_does_not_match"
+msgstr "Tus datos no coinciden con la invitación."
+
+#: wallet/models/constants.py:218
+#, fuzzy
+msgid "payments_wallet_invite_not_found"
+msgstr "No se puede encontrar la invitación."
+
+#: wallet/models/constants.py:229
+#, fuzzy
+msgid "payments_wallet_invite_unsharable"
+msgstr "Esta Wallet no se puede compartir."
+
+#: wallet/models/constants.py:173
+#, fuzzy
+msgid "payments_wallet_request_state_approved"
+msgstr "Tu reclamación recibió la aprobación preliminar de nuestro equipo de cuidado según los criterios de elegibilidad de tu empresa y se envió a esta para la revisión final."
+
+#: wallet/models/constants.py:165
+#, fuzzy
+msgid "payments_wallet_request_state_approved_debit_card"
+msgstr "¡Tu transacción se aprobó! No se necesita ninguna acción adicional."
+
+#: wallet/models/constants.py:179
+#, fuzzy
+msgid "payments_wallet_request_state_denied"
+msgstr "Lo siento; tu reclamación no es elegible. Ve a Mensajes para contactar al equipo de Maven Wallet si tienes alguna pregunta o revisa los Detalles de cobertura para ver qué servicios son elegibles."
+
+#: wallet/models/constants.py:182
+#, fuzzy
+msgid "payments_wallet_request_state_failed"
+msgstr "¡Estamos trabajando en tu reembolso! Es posible que nos pongamos en contacto para confirmar la información de tu cuenta bancaria."
+
+#: wallet/models/constants.py:194
+#, fuzzy
+msgid "payments_wallet_request_state_ineligible"
+msgstr "Tu transacción reciente se consideró no elegible. Ve a Mensajes para contactar al equipo de Maven Wallet y obtener ayuda."
+
+#: wallet/models/constants.py:191
+#, fuzzy
+msgid "payments_wallet_request_state_insufficient"
+msgstr "Lo siento; los documentos presentados son insuficientes. Proporciona documentación adicional para la aprobación."
+
+#: wallet/models/constants.py:185
+#, fuzzy
+msgid "payments_wallet_request_state_needs_receipt"
+msgstr "La aprobación está pendiente. Sube los documentos requeridos para la aprobación."
+
+#: wallet/models/constants.py:166
+#, fuzzy
+msgid "payments_wallet_request_state_new"
+msgstr "Tu reclamación se creó con éxito."
+
+#: wallet/models/constants.py:170
+#, fuzzy
+msgid "payments_wallet_request_state_pending_input"
+msgstr "Estamos esperando información adicional de tu parte."
+
+#: wallet/models/constants.py:167
+#, fuzzy
+msgid "payments_wallet_request_state_pending_review"
+msgstr "Recibimos tu reclamación y está pendiente de revisión."
+
+#: wallet/models/constants.py:211
+#, fuzzy
+msgid "payments_wallet_request_state_refunded"
+msgstr "Tu transacción se reembolsó."
+
+#: wallet/models/constants.py:176
+#, fuzzy
+msgid "payments_wallet_request_state_reimbursed"
+msgstr "¡Tu reembolso está en camino! Búscalo en tu cuenta (10 días hábiles para depósito directo; 1-2 ciclos de pago para la nómina)."
+
+#: wallet/models/constants.py:208
+#, fuzzy
+msgid "payments_wallet_request_state_resolved"
+msgstr "Tu transacción se resolvió. No se necesita ninguna acción adicional."
+
+#: wallet/models/constants.py:188
+#, fuzzy
+msgid "payments_wallet_request_state_submitted"
+msgstr "Tus documentos se recibieron y están pendientes de revisión."
+
+#: wallet/models/constants.py:211
+#, fuzzy
+msgid "payments_wallet_share_already_a_member"
+msgstr "La persona que estás tratando de agregar ya es parte de tu Wallet."
+
+#: wallet/models/constants.py:212
+#, fuzzy
+msgid "payments_wallet_share_already_pending"
+msgstr "La persona que intentas agregar ya tiene una invitación pendiente."
+
+#: wallet/models/constants.py:210
+#, fuzzy
+msgid "payments_wallet_share_help_needed"
+msgstr "Envía un mensaje al equipo de Wallet para agregar más socios."
+
+#: wallet/models/constants.py:209
+#, fuzzy
+msgid "payments_wallet_share_invalid_age"
+msgstr "El destinatario debe tener al menos 13 años."
+
+#: wallet/models/constants.py:208
+#, fuzzy
+msgid "payments_wallet_share_invalid_email"
+msgstr "La dirección de correo electrónico no es válida."
+
+#: wallet/models/constants.py:207
+#, fuzzy
+msgid "payments_wallet_share_no_access"
+msgstr "No se puede acceder a la Maven Wallet"
+
+#: wallet/models/constants.py:213
+#, fuzzy
+msgid "payments_wallet_share_sent"
+msgstr "Tu invitación se envió."
+
+#: wallet/resources/reimbursement_wallet.py:673
+#, fuzzy
+msgid "reimbursement_request_claims_processing"
+msgstr "procesamiento de reclamos"
+
+#: wallet/services/reimbursement_request.py:450
+#, fuzzy
+msgid "reimbursement_request_cost_share_details_reimbursement_expected_message"
+msgstr "Recibimos tus gastos. Los servicios de formación familiar pueden estar sujetos a coseguros, copagos y deducibles. Si debes pagar algo por esta reclamación, nuestro equipo de cuidado lo calculará cuando la revisen. Se deducirá del monto reembolsado a ti."
+
+#: wallet/services/reimbursement_request.py:619
+#, fuzzy
+msgid "reimbursement_request_details_credits_details_singular_text"
+msgstr "crédito"
+
+#: wallet/services/reimbursement_request.py:622
+#, fuzzy
+msgid "reimbursement_request_details_member_credits_details_plural_text"
+msgstr "créditos"
+
+#: wallet/services/reimbursement_request.py:577
+#, fuzzy
+msgid "reimbursement_request_details_member_responsibility_breakdown_coinsurance"
+msgstr "Coseguro"
+
+#: wallet/services/reimbursement_request.py:586
+#, fuzzy
+msgid "reimbursement_request_details_member_responsibility_breakdown_copay"
+msgstr "Copago"
+
+#: wallet/services/reimbursement_request.py:568
+#, fuzzy
+msgid "reimbursement_request_details_member_responsibility_breakdown_deductible"
+msgstr "Deducible"
+
+#: wallet/services/reimbursement_request.py:835
+msgid "reimbursement_request_details_member_responsibility_breakdown_hra_applied"
+msgstr "HRA aplicada"
+
+#: wallet/services/reimbursement_request.py:595
+#, fuzzy
+msgid "reimbursement_request_details_member_responsibility_breakdown_not_covered"
+msgstr "No cubierto"
+
+#: wallet/services/reimbursement_request.py:559
+#, fuzzy
+msgid "reimbursement_request_details_member_responsibility_breakdown_your_responsibility"
+msgstr "Lo que debes"
+
+#: wallet/services/reimbursement_request.py:646
+#, fuzzy
+msgid "reimbursement_request_details_refund_explanation_content_0"
+msgstr "Al igual que cualquier visita a un profesional en persona, los servicios de planificación familiar están sujetos a copagos y deducibles."
+
+#: wallet/services/reimbursement_request.py:649
+#, fuzzy
+msgid "reimbursement_request_details_refund_explanation_content_1"
+msgstr "Tu beneficio de planificación familiar tiene un monto máximo de cobertura. Después de que se agregue ese máximo a tu costo total, aplicamos tu cobertura adicional a través de tu plan de salud. Deberás pagar cualquier cosa que no esté cubierta de tu bolsillo."
+
+#: wallet/services/reimbursement_request.py:638
+#, fuzzy
+msgid "reimbursement_request_details_refund_explanation_label"
+msgstr "¿Por qué solo recibo un reembolso parcial?"
+
+#: wallet/services/reimbursement_request.py:785
+msgid "reimbursement_request_details_reimbursement_breakdown_hra_credit"
+msgstr "Crédito de la HRA"
+
+#: wallet/services/reimbursement_request.py:504
+#, fuzzy
+msgid "reimbursement_request_details_reimbursement_breakdown_maven_benefit"
+msgstr "Beneficio de Maven"
+
+#: wallet/services/reimbursement_request.py:501
+#, fuzzy
+msgid "reimbursement_request_details_reimbursement_breakdown_reimbursement"
+msgstr "Reembolso"
+
+#: wallet/services/reimbursement_request.py:542
+msgid "reimbursement_request_details_reimbursement_breakdown_reimbursement_expected"
+msgstr "Reembolso previsto"
+
+#: wallet/resources/reimbursement_wallet.py:651
+msgid "reimbursement_request_estimated_return"
+msgstr "Devolución calculada para ti."
+
+#: wallet/resources/reimbursement_wallet.py:640
+msgid "reimbursement_request_expected_total_reimbursement"
+msgstr "Cálculo aproximado de tu devolución."
+
+#: wallet/resources/reimbursement_wallet.py:668
+msgid "reimbursement_request_member_responsibility_will_be_deducted_message"
+msgstr "Si tienes algo que pagar, se deducirá de tu reembolso de la reclamación."
+
+#: wallet/resources/reimbursement_wallet.py:668
+msgid "reimbursement_request_member_responsibility_will_deducted_message"
+msgstr "Si tienes responsabilidad financiera, se deducirá del monto que se te reembolsó."
+
+#: wallet/resources/reimbursement_wallet.py:621
+#, fuzzy
+msgid "reimbursement_request_original_claim"
+msgstr "Reclamo original:"
+
+#: wallet/resources/reimbursement_wallet.py:666
+msgid "reimbursement_request_original_claims_total"
+msgstr "Total original de reclamos:"
+
+#: wallet/resources/reimbursement_wallet.py:682
+msgid "reimbursement_request_view_all_claims_details_message"
+msgstr "Estamos calculando tu devolución aproximada. Toca para ver los detalles de la reclamación."

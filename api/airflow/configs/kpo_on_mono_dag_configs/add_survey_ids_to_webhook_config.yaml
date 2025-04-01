@@ -1,0 +1,13 @@
+dag_id: add_survey_ids_to_webhook
+schedule: "0 19 * * *"
+task_id: add_survey_ids_to_webhook_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.benefits_experience.add_survey_ids_to_webhook import add_survey_ids_to_webhook_job; add_survey_ids_to_webhook_job()"
+team_namespace: benefits_experience
+service_namespace: clinic_management
+catchup: "False"
+start_year: 2024
+start_month: 10
+start_day: 11

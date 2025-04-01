@@ -1,0 +1,16 @@
+[
+  {
+    "type": "employer_health_plan",
+    "user_email": "test+staff@mavenclinic.com",
+    "start_date":"2023-01-01",
+    "end_date": "2023-12-30",
+    "payer": "UHC",
+    "ind_deductible_limit": 100000,
+    "ind_oop_max_limit": 200000,
+    "fam_deductible_limit":  200000,
+    "fam_oop_max_limit": 500000,
+    "carrier_number": "12345",
+    "is_deductible_embedded": true,
+    "is_oop_embedded": false
+  }
+]

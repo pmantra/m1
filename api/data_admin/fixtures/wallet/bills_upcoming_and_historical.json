@@ -1,0 +1,60 @@
+[
+  {
+    "type": "member_bill",
+    "amount": 0,
+    "user": "test+treatment_plan@mavenclinic.com",
+    "status": "PAID",
+    "cost_responsibility_type": "employer_only",
+    "treatment_procedure_id": 1
+  },
+  {
+    "type": "member_bill",
+    "amount": 10000,
+    "user": "test+treatment_plan@mavenclinic.com",
+    "status": "NEW",
+    "cost_responsibility_type": "member_only",
+    "treatment_procedure_id": 1
+  },
+  {
+    "type": "member_bill",
+    "amount": 20000,
+    "user": "test+treatment_plan@mavenclinic.com",
+    "status": "PROCESSING",
+    "cost_responsibility_type": "shared",
+    "treatment_procedure_id": 1
+  },
+  {
+    "type": "member_bill",
+    "amount": 1000,
+    "user": "test+treatment_plan@mavenclinic.com",
+    "status": "FAILED",
+    "cost_responsibility_type": "member_only",
+    "error_type": "OTHER_MAVEN",
+    "treatment_procedure_id": 1
+  },
+  {
+    "type": "member_bill",
+    "amount": 1000,
+    "user": "test+treatment_plan@mavenclinic.com",
+    "status": "FAILED",
+    "cost_responsibility_type": "member_only",
+    "error_type": "REQUIRES_UPDATE_PAYMENT",
+    "treatment_procedure_id": 1
+  },
+  {
+    "type": "member_bill",
+    "amount": -5000,
+    "user": "test+treatment_plan@mavenclinic.com",
+    "status": "PROCESSING",
+    "cost_responsibility_type": "employer_only",
+    "treatment_procedure_id": 1
+  },
+  {
+    "type": "member_bill",
+    "amount": -5000,
+    "user": "test+treatment_plan@mavenclinic.com",
+    "status": "REFUNDED",
+    "cost_responsibility_type": "employer_only",
+    "treatment_procedure_id": 1
+  }
+]

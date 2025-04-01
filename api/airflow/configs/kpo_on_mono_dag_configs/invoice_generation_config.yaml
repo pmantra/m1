@@ -1,0 +1,13 @@
+dag_id: invoice_generation_dag
+schedule: "0 16 * * *"
+task_id: invoice_generation_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.benefits_experience.invoice_generation import invoice_generation_job; invoice_generation_job()"
+team_namespace: benefits_experience
+service_namespace: invoice
+catchup: "False"
+start_year: 2024
+start_month: 10
+start_day: 1

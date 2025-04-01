@@ -1,0 +1,18 @@
+{% extends 'admin/model/details.html' %}
+
+{% block body %}
+    <div class="row">
+        <div class="span12 style=" margin-top:15px">
+
+        <h2>🛑<span style="color:#c0392b"><u><strong>Organization Employee is Going Away</strong></u></span>🛑</h2>
+        <p>We are in the process of deprecating organization employee, to be replaced by 'Eligibility Verifications' to
+            capture the information that was used to verify a user</p>
+        </p>
+        <p>To search for a verification for a user, please follow <a href="/eligibility-admin/user-verification/"<b>this
+            link</b></a></p>
+        <p>Hit up #help-eligibility-service on slack for any assistance or questions</p>
+        <br><br>
+    </div>
+    </div>
+    {{ super() }}
+{% endblock %}

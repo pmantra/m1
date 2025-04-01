@@ -1,0 +1,83 @@
+/* PROMPTS */
+.prompt {
+	.dismiss-wrap {
+		position: absolute;
+		width: 100%;
+		height: 50px;
+		top: 0;
+		left: 0;
+	}
+	.prompt-card .prompt-transition .img-wrapper.prompt-img {
+		background-position: center;
+	}
+	.prompt-transition {
+		width: 100%;
+	}
+}
+.dismiss-prompt {
+	position: absolute;
+	top: 1rem;
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+	&.close-prompt {
+		right: 1rem;
+	}
+	&.back-prompt {
+		left: 1rem;
+	}
+}
+.prompt-fullscreen {
+	z-index: 9;
+	background: white;
+	.ngdialog-content {
+		background: white;
+		.prompt {
+			padding: 60px 0;
+		}
+	}
+	.prompt {
+		.dismiss-wrap {
+			top: $mobileHeaderHeight;
+		}
+	}
+	.prompt-card {
+		@include flexbox;
+		padding: 1rem;
+		max-width: 550px;
+		margin: 0 auto;
+		h3 {
+			text-align: center;
+			margin: 2rem 0;
+			@include susy-breakpoint($desktop) {
+				margin: 3rem 0;
+			}
+		}
+		.card-img {
+			text-align: center;
+			img {
+				border-radius: 50%;
+				max-width: 200px;
+				@include susy-breakpoint($tablet) {
+					max-width: 300px;
+				}
+			}
+		}
+		@include susy-breakpoint($tablet) {
+			padding: 2rem 1rem;
+		}
+		mvn-onboarding-bottom-nav {
+			&.bottom-nav-1 {
+				ng-transclude {
+					justify-content: flex-end;
+				}
+			}
+			&.bottom-nav-2 {
+				ng-transclude {
+					justify-content: space-between;
+				}
+			}
+		}
+	}
+}

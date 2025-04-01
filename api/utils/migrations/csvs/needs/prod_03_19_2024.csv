@@ -1,0 +1,32 @@
+id,name,slug
+1,Nutrition,fert-nutrition
+2,Emotional support,emotional-support
+4,Treatment options and steps,treatment-options-steps
+11,Having trouble with conceiving,trouble-conceiving
+20,Preparing for labor and delivery,prep-labor-delivery
+23,General questions about pregnancy,preg-general-questions
+24,Explore a second opinion,preg-second-opinion
+34,"Breastfeeding, pumping, and formula feeding",breastfeeding-pump-formula
+37,Your baby's sleep,baby-sleep
+44,"Stress, anxiety, or depression",stress-anxiety-depression
+50,Coping with loss and miscarriage,coping-with-loss
+52,Tracking ovulation and your menstrual cycle,tracking-cycle
+60,General health advice,general-health-advice
+68,Medication options for menopause,men-med-options
+71,Managing symptoms,men-managing-symptoms
+83,Nutrition and weight management,men-nutrition
+97,Your child's sleep,child-sleep
+99,"Your child's cold, flu, and other illnesses",child-cold-flu-illness
+108,Egg freezing process and options,ef-process-options
+109,Preparing for egg freezing,preparing-for-ef
+112,Nutrition,nutrition
+116,Adoption process and options,adoption-process-options
+117,Preparing for adoption,preparing-for-adoption
+122,Starting your conception journey,starting-conception
+125,Surrogacy process and options,surrogacy-process-options
+127,Preparing for surrogacy,preparing-for-surrogacy
+132,Conception after loss,conception-after-loss
+137,Miscarriage treatment and recovery,miscarriage-treatment-recovery
+151,Abortion care and recovery,abortion-care-recovery
+152,Pregnancy options counseling,pregnancy-options-counseling
+168,"Your baby's cold, flu, and other illnesses",baby-cold-flu

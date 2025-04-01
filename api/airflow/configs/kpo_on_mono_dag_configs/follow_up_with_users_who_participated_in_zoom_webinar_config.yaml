@@ -1,0 +1,13 @@
+dag_id: follow_up_with_users_who_participated_in_zoom_webinar_dag
+schedule: "30 4 * * *"
+task_id: follow_up_with_users_who_participated_in_zoom_webinar_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.content_and_community.follow_up_with_users_who_participated_in_zoom_webinar import follow_up_with_users_who_participated_in_zoom_webinar_job; follow_up_with_users_who_participated_in_zoom_webinar_job()"
+team_namespace: content_and_community
+service_namespace: content_campaigns
+catchup: "False"
+start_year: 2024
+start_month: 3
+start_day: 31

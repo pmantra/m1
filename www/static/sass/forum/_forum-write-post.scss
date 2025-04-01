@@ -1,0 +1,148 @@
+/* Write a post */
+
+forum-create-post,
+.forum-create-post {
+	.forum-header {
+		background-color: white;
+	}
+
+	.w-100 {
+		width: 100%;
+	}
+
+	@include susy-breakpoint($desktop) {
+		padding-top: 5rem;
+	}
+
+	@include susy-breakpoint(0 $mobile-landscape-max) {
+		h1,
+		.h1 {
+			font-size: 24px;
+		}
+		h5,
+		.h5 {
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	.create-post-form {
+		clear: both;
+
+		textarea {
+			padding: 15px;
+			margin-top: 0;
+			&:focus {
+				border: 1px solid $charcoal-40;
+				outline: none;
+			}
+		}
+
+		h2 {
+			margin-bottom: 16px;
+		}
+
+		.post-form-input {
+			&:first-child {
+				margin-bottom: 56px;
+			}
+
+			.subhed {
+				color: $gray;
+				display: block;
+				font-size: 12px;
+				margin-top: 8px;
+			}
+		}
+	}
+
+	.write-post-info {
+		@include susy-breakpoint($tablet) {
+			padding: 1rem 0;
+		}
+
+		.forum-radio,
+		.forum-checkbox {
+			background: white;
+			border: 1px solid $gray-xlt;
+			margin: 0;
+			padding: 20px 16px;
+			width: 100%;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		input[type="checkbox"] {
+			width: 20px;
+		}
+
+		.choose-post-category {
+			@include flexbox(row, stretch, space-between);
+			@supports (display: grid) {
+				display: grid;
+			}
+			background: none;
+
+			.app-grid-item {
+				border-radius: 4px;
+				@include susy-breakpoint($tablet) {
+					margin: 5px 0;
+					flex-basis: 45%;
+				}
+			}
+
+			input {
+				margin: 0;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+
+			.label-text {
+				&::before {
+					margin-right: 10px;
+				}
+			}
+		}
+
+		#subcategory-container {
+			h2 {
+				margin-bottom: 0;
+			}
+
+			.subhed {
+				margin: 8px 0 16px;
+			}
+		}
+	}
+
+	.submit-post {
+		margin-bottom: 40px;
+		text-align: center;
+
+		.create-post-submit {
+			border-radius: 30px;
+			height: 48px;
+			margin: 10px auto;
+			width: 187px;
+		}
+	}
+
+	.terms {
+		text-align: center;
+		p {
+			color: $gray;
+			font-size: 0.75rem;
+			line-height: 1rem;
+		}
+	}
+}
+
+/* Re-captcha designs */
+.g-recaptcha-post {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+}

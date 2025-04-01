@@ -1,0 +1,187 @@
+{% extends 'admin/base.html' %}
+
+{% block body %}
+    {% include 'user_registration.html' %}
+    {% include 'track_enrollment.html' %}
+    {% include 'msft_setup.html' %}
+    <div class="inline-field well well-medium">
+        <legend>Manually Enable User for Enterprise</legend>
+        <p class="lead">
+            Use this form to manually link a user to an Eligibility Service Member record.
+            This will enable the user to access enterprise content.
+        </p>
+        <div class="inline-form-field">
+            <form method="post" action="/admin/enterprise_setup_confirm">
+                <div class="control-group">
+                    <label class="control-label" for="user_id">User ID</label>
+                    <div class="controls">
+                        <input
+                                type="number"
+                                id="user_id"
+                                name="user_id"
+                                aria-describedby="user_id_help"
+                                placeholder="Enter a user ID."
+                                required
+                        >
+                    </div>
+                    <small id="user_id_help" class="form-text text-muted">
+                        Provide the ID for a valid user which should be enabled for
+                        enterprise.
+                    </small>
+                </div>
+                <div class="form-inline">
+                    <div class="control-group">
+                        <label class="control-label" for="member_id">Associate To</label>
+                        <div class="controls">
+
+                            <input
+                                    type="number"
+                                    id="member_id"
+                                    name="member_id"
+                                    aria-describedby="member_id_help"
+                                    placeholder="Enter a Member Versioned ID."
+                                    required
+                            >
+                            <small id="member_id_help" class="help-block text-muted">
+                                Provide the ID for an Eligibility Service member record.
+                            </small>
+                            <div class="alert alert-danger">
+                                <strong>
+                                    🛑
+                                    <p>For the Eligibility member ID to use, please utilize our new `member_versioned` table, rather than the `member` table. </p>
+                                    <p>This can be reached via: `Enterprise -> Eligibility Admin (new) -> BETA -> Member_versioned` </p>
+                                    <a href="/eligibility-admin/member-versioned">HERE</a>
+                                    <p>Search this page and utilize the most recent record (the one with the highest ID) for a user. </p>
+                                    <p>Please ping #help-eligibility-service for assistance if needed </p>
+                                    🛑
+                                </strong>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input
+                                    id="is_employee"
+                                    name="is_employee"
+                                    type="checkbox"
+                                    class="checkbox"
+                                    aria-describedby="is_employee_help"
+                            >
+                            <label class="control-label checkbox" for="is_employee">Is
+                                Employee.</label>
+                            <small id="is_employee_help" class="help-block text-muted">
+                                Is this user an employee of this organization? If this user
+                                is a dependent, leave this box unchecked.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="track_name">Track</label>
+                    <div class="controls">
+                        <select
+                                id="track_name"
+                                name="track_name"
+                                aria-describedby="track_name_help"
+                        >
+                            <option value=""></option>
+                            {% for name, display in tracks %}
+                                <option value="{{ name }}">{{ display }}</option>
+                            {% endfor %}
+                        </select>
+                        <small id="track_name_help" class="help-block text-muted">
+                            Select the track to enroll the user into.
+                            <div class="alert alert-info">
+                                ☝️ This is no longer required to associate a user to an
+                                organization and may be left blank.
+                                The user will be prompted to select a
+                                track when they next log into their account. ☝️
+                            </div>
+                        </small>
+                    </div>
+                </div>
+                <div id="life_event" class="inline-field well well-small"
+                     aria-describedby="life_event_help">
+                    <button type="button" data-toggle="collapse" class="btn btn-block"
+                            data-target="#life_event_collapse" aria-expanded="false"
+                            aria-controls="life_event_collapse"
+                    >
+                        <i class="icon-plus"></i>
+                        Add a Life Event
+                    </button>
+                    <div id="life_event_help" class="help-block alert alert-info">
+                        ☝️This is only needed if the user does not already have a
+                        qualifying life event date set for their targeted track.
+                    </div>
+                    <div class="collapse" id="life_event_collapse">
+                        <div class="form-inline">
+                            <div class="control-group">
+                                <label class="control-label" for="life_event_type">Life
+                                    Event</label>
+                                <div class="controls">
+                                    <select
+                                            id="life_event_type"
+                                            name="life_event_type"
+                                            aria-describedby="life_event_help"
+                                            required
+                                    >
+                                        <option value="due_date" selected>Child Due Date
+                                        </option>
+                                        <option value="child_birthday">Child Birthday
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="life_event_date">Life
+                                    Date</label>
+                                <div class="controls">
+                                    <input
+                                            type="date"
+                                            id="life_event_date"
+                                            name="life_event_date"
+                                            aria-describedby="life_event_date_help"
+                                            placeholder="Enter the event date."
+                                            style="height:auto"
+                                            {# for unsupported browsers we'll use a regex sanity check with #}
+                                            pattern="\d{4}-\d{2}-\d{2}"
+                                    >
+                                    <small id="life_event_date_help"
+                                           class="help-block text-muted">
+                                        Provide the date of the life event, if any. This
+                                        should be in the future for a Child Due Date and
+                                        in the past for a Child Birthday.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="form-inline">
+                    <div class="control-group">
+                        <label class="control-label" for="zendesk_id">(Optional) Zendesk ID</label>
+                        <div class="controls">
+                            <input
+                                    type="text"
+                                    id="zendesk_id"
+                                    name="zendesk_id"
+                                    aria-describedby="zendesk_id_help"
+                                    optional
+                            >
+                            <small id="zendesk_id_help" class="help-block text-muted">
+                                (Optional) Enter the zendesk ID associated with this manual onboarding.
+                            </small>
+                        </div>
+
+                    </div>
+                <input type="submit" class="btn btn-primary btn-medium"
+                       value="Enable User"
+                       style="background-image: linear-gradient(to bottom,#6cceaa,#00856f)"
+                >
+            </form>
+        </div>
+    </div>
+
+    {% include 'cx_message.html' %}
+{% endblock %}

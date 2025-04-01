@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: Maven Clinic Member API
+  version: 1.0.0
+  description: API endpoints related to members.
+servers:
+  - url: https://www.mavenclinic.com
+  - url: https://www.qa1.mvnapp.net
+  - url: https://www.qa2.mvnapp.net
+  - url: https://www.staging.mvnapp.net
+paths:
+  /members/:member_id/async_encounter_summaries:
+    post:
+      description: |
+        To create and update clinical notes not tied to appointments for a member.
+      operationId: MemberNotes.post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MemberNoteRequest"
+            examples:
+              success:
+                $ref: "#/components/schemas/MemberNoteRequest"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MemberNoteResponse"
+              examples:
+                success:
+                  $ref: "#/components/schemas/MemberNoteResponse"
+        "400":
+          description: Invalid request body. Answers must include answer_id, text or date
+        "401":
+          description: User is not authorized to perform this action
+        "403":
+          description: You do not have access to that target user's information
+        "404":
+          description: >-
+            Member not found
+        "500":
+          description: Internal error
+
+components:
+  schemas:
+    MemberNoteRequest:
+      type: object
+      required: [ async_encounter_summary ]
+      properties:
+        async_encounter_summary:
+          description: Async encounter notes request not related to appointments
+          type: object
+          required: [ async_encounter_summary_answers, questionnaire_id, encounter_date ]
+          properties:
+            async_encounter_summary_answers:
+              description: Set of async encounter summaries
+              type: array
+              items:
+                $ref: "#/components/schemas/AsyncEncounterSummaryAnswers"
+            questionnaire_id:
+              description: Associated questionnaire_id
+              type: string
+            encounter_date:
+              description: When the encounter took place
+              type: string
+              format: date-time
+    MemberNoteResponse:
+      type: object
+      required: [ async_encounters ]
+      properties:
+        async_encounters:
+          description: Async encounter notes response not related to appointments
+          type: object
+          required: [ async_encounter_summaries ]
+          properties:
+            async_encounter_summaries:
+              description: Set of async encounter summaries
+              type: array
+              items:
+                $ref: "#/components/schemas/AsyncEncounterSummaryAnswers"
+    AsyncEncounterSummaryAnswers:
+      type: object
+      required: [ question_id ]
+      anyOf:
+        - required: [ answer_id ]
+        - required: [ text ]
+        - required: [ date ]
+      properties:
+        answer_id:
+          type: string
+          format: uuid
+        question_id:
+          type: string
+          format: uuid
+        text:
+          type: string
+        date:
+          type: string
+          format: date-time

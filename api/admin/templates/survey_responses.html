@@ -1,0 +1,51 @@
+{% extends 'admin/base.html' %}
+
+{% block body %}
+
+<h1>Survey Responses</h1>
+
+<table class="table table-striped table-bordered table-hover model-list cf">
+    <thead class="cf">
+        <tr>
+            <th class="column-header col-member-id-hash">
+                Member ID Hash
+            </th>
+            <th class="column-header col-submission-time">
+                Submitted At
+            </th>
+            <th class="column-header col-answers">
+                Answers
+            </th>
+            <th class="column-header col-user-id">
+                User ID
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for response in survey_responses %}
+            <tr>
+                <td>
+                    {% if response.member_id_hash %}
+                        <a target="_blank" href="/admin/reimbursementwallet/?flt2_21={{ response.member_id_hash }}">{{ response.member_id_hash }}</a>
+                    {% endif %}
+                </td>
+                <td>
+                    {{ response.submitted_at }}
+                </td>
+                <td>
+                    {% for answer in response.answers %}
+                        <span>{{ answer.question }}:</span><span style="font-weight: bold;">{{ answer.answer }}</span>
+                        <br />
+                    {% endfor %}
+                </td>
+                <td>
+                    {% if response.user %}
+                        <a target="_blank" href="/admin/user/?flt1_0={{ response.user.id }}">User ID: {{ response.user.id }}</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

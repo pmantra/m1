@@ -1,0 +1,39 @@
+
+
+/* VIDEO PLAYER */
+
+videogular, [videogular] {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: #000000;
+	display: block;
+	flex-direction: column;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: moz-none;
+	-ms-user-select: none;
+	user-select: none;
+}
+videogular button, [videogular] button {
+	cursor: pointer; 
+}
+videogular.fullscreen, [videogular].fullscreen {
+	position: fixed;
+	left: 0;
+	top: 0; 
+}
+videogular vg-media, [videogular] vg-media {
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+}
+videogular vg-media video, [videogular] vg-media video {
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+}

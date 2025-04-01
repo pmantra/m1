@@ -1,0 +1,11 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+{{ super() }}
+<form method="POST" action="/admin/duplicate_curriculum">
+<input type="hidden" name="curriculum_id" value="{{ model.id }}">
+<p>WARNING the button below will create a duplicate of this curriculum and all steps.</p>
+<p>The newly created curriculum be the latest version for this lifecycle but the 'active' flag will not be set.</p>
+<input type="submit" class="btn btn-primary btn-large" value="Duplicate Curriculum">
+</form>
+{% endblock %}

@@ -1,0 +1,39 @@
+<section ng-if="$ctrl.user.role !== 'practitioner'" class="forum-explore-practitioners">
+	<article>
+		<img class="care-team" src="/img/app/forum/explore-practioners/care-team.png" alt="Five headshots of 5 women" />
+		<h2 class="h4 serif">Need an expert's advice, stat?</h2>
+		<p class="private-msg lg">
+			Send a private message or video chat with a variety of specialists 24/7 on your own time.
+		</p>
+		<a role="button" ui-sref="app.appointment.book" class="btn btn-cta talk-practitioner">Find a provider</a>
+		<p class="not-sure" ng-if="$ctrl.user.care_coordinators[0]">
+			<img
+				width="24"
+				height="24"
+				src="{{
+					$ctrl.user.care_coordinators[0]['image_url']
+						? $ctrl.user.care_coordinators[0]['image_url']
+						: '/img/app/user/onboarding/meet-kaitlyn.jpg'
+				}}"
+				alt="Headshot of care advocate {{ $ctrl.user.care_coordinators[0]['name'] }}"
+			/>
+			Not sure which specialist to talk to?
+			<send-message
+				btn-type="btn-tertiary"
+				author="$ctrl.user.care_coordinators[0]"
+				btn-cta="Ask {{ $ctrl.user.care_coordinators[0]['first_name'] }}"
+				id="ask-coordinator"
+			>
+			</send-message>
+		</p>
+		<div class="need-help" ng-if="!$ctrl.user.care_coordinators[0]">
+			Need help? <a class="btn btn-tertiary" href="https://support.mavenclinic.com/hc/en-us">Visit the FAQ</a>
+		</div>
+		<p class="private-msg sm">
+			The information available on the community forums is intended for educational purposes only, and is not intended to be
+			used as medical advice, treatment, or diagnosis. If you have any questions or concerns about the information found
+			herein, please speak to a professional. Maven is not a replacement for your doctor or emergency services. If you think
+			you are having an emergency, immediately contact 911 (in the US) or your country's emergency services number.
+		</p>
+	</article>
+</section>

@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: fr_CA\n"
+
+msgid "ca_member_transition_template_ecpfarewell_message_body"
+msgstr "Bonjour $MEMBER_FIRST_NAME,\n\nJe suis $OLD_CX_FIRST_NAME. Je vous écris pour prendre de vos nouvelles. Comment allez-vous? Comment se passent vos rendez-vous sur et en dehors de Maven?\nJe vous écris également pour vous informer que je vais changer de poste chez Maven et que je ne pourrai plus prendre de rendez-vous. J'ai grandement apprécié le fait de pouvoir vous accompagner dans votre parcours de grossesse et d'avoir pu vous aider jusqu'à présent.\n\nDans cet optique, votre nouveau Care Advocate sera ajouté à votre Équipe de soins et vous contactera sous peu!\n\nDans l'attente d'avoir de vos nouvelles,\n$OLD_CX_FIRST_NAME\nÉquipe de soins Maven"
+
+#. ca member transition
+msgid "ca_member_transition_template_farewell_message_body"
+msgstr "Bonjour $MEMBER_FIRST_NAME,\n\nJ'espère que vous allez bien! Je voulais vous informer que je quitte Maven. Avoir le privilège d'être votre Care Advocate a été un plaisir pour moi et je suis triste de partir mais je vous laisse entre de bonnes mains! $NEW_CX_FIRST_NAME prendra mon relais, c'est un formidable Care Advocate qui pourra vous aider au mieux à trouver des réponses à toutes les questions que vous pourriez vous poser.\n\nJe vous souhaite le meilleur,\n$OLD_CX_FIRST_NAME"
+
+msgid "ca_member_transition_template_followup_ecpintro_message_body"
+msgstr "Bonjour $MEMBER_FIRST_NAME,\n\nJ'espère que vous allez bien. Je m'appelle $NEW_CX_FIRST_NAME et je suis membre de l'Équipe de soins. Suite au changement de poste de $OLD_CX_FIRST_NAME, j'ai le plaisir d'être votre nouveau Care Advocate.\n\nJ'ai hâte de travailler avec vous! Si vous avez des questions, n'hésitez pas à me contacter.\nDans l'attente de vous lire!\n\nCordialement,\n$NEW_CX_FIRST_NAME"
+
+msgid "ca_member_transition_template_followup_intro_message_body"
+msgstr "Bonjour $MEMBER_FIRST_NAME,\n\nJ'espère que vous allez bien! Je m'appelle $NEW_CX_FIRST_NAME et je serai votre nouveau Care Advocate sur Maven. Je suis très enthousiaste à l'idée de travailler avec vous!\n\nFaites-moi savoir si vous avez besoin de soutien en ce moment, je me ferai un plaisir de pouvoir vous orienter vers les bonnes ressources pour vous aider!\n\nJ'ai hâte d'avoir de vos nouvelles!\n\nCordialement,\n$NEW_CX_FIRST_NAME"
+
+msgid "ca_member_transition_template_followup_ucpintro_message_body"
+msgstr "Bonjour $MEMBER_FIRST_NAME,\n\nJ'espère que vous allez bien. Je m'appelle $NEW_CX_FIRST_NAME et je suis membre de l'Équipe de soins. Je suis très enthousiaste à l'idée de devenir votre Care Advocate.\n\nJ'ai hâte de travailler avec vous! Si vous avez des questions, n'hésitez pas à me contacter.\nDans l'attente de vous lire!\n\nCordialement,\n$NEW_CX_FIRST_NAME"
+
+msgid "ca_member_transition_template_hard_intro_message_body"
+msgstr "Bonjour $MEMBER_FIRST_NAME,\n\nJ'espère que vous allez bien! Je m'appelle $NEW_CX_FIRST_NAME et je serai votre nouveau Care Advocate sur Maven! $OLD_CX_FIRST_NAME a quitté Maven, donc je travaillerai avec vous pour le reste de votre temps chez Maven.\n\nFaites-moi savoir si vous avez besoin de soutien en ce moment, je me ferai un plaisir de vous orienter vers les bonnes ressources pour vous aider!\n\nJ'ai hâte d'avoir de vos nouvelles!\n\nCordialement,\n$NEW_CX_FIRST_NAME"
+
+msgid "ca_member_transition_template_soft_intro_message_body"
+msgstr "Bonjour $MEMBER_FIRST_NAME,\n\nJ'espère que vous allez bien! Je m'appelle $NEW_CX_FIRST_NAME et je suis votre Care Advocate sur Maven!\n\nFaites-moi savoir si vous avez besoin de soutien en ce moment, j'aurai le plaisir de pouvoir vous orienter vers les bonnes ressources pour vous aider!\n\nJ'ai hâte d'avoir de vos nouvelles!\n\nCordialement,\n$NEW_CX_FIRST_NAME"
+
+msgid "ca_member_transition_template_ucpfarewell_message_body"
+msgstr "Bonjour $MEMBER_FIRST_NAME,\n\nJe suis $OLD_CX_FIRST_NAME. Je vous écris pour prendre de vos nouvelles. Comment allez-vous? Comment se passent vos rendez-vous sur et en dehors de Maven?\n\nJe vous écris également pour vous informer que je vais changer de poste. J'ai grandement apprécié le fait de pouvoir vous accompagner dans votre parcours de grossesse et partager des ressources avec vous. Je voulais aussi vous faire savoir qu'un autre Care Advocate expérimenté sera ajouté à votre équipe de soins. Il deviendra à son tour votre nouveau soutien pour atteindre les objectifs que vous vous êtes fixés dans votre régime de soins!\n\nBien cordialement,\n$OLD_CX_FIRST_NAME\nÉquipe de soins Maven"
+
+msgid "cancellation_policy_conservative_name"
+msgstr "conservateur"
+
+msgid "cancellation_policy_flexible_name"
+msgstr "flexible"
+
+msgid "cancellation_policy_moderate_name"
+msgstr "modéré"
+
+#. cancellation policy
+msgid "cancellation_policy_strict_name"
+msgstr "strict"

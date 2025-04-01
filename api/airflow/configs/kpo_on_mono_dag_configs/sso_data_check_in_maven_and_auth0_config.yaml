@@ -1,0 +1,12 @@
+dag_id: sso_data_check_in_maven_and_auth0_dag
+task_id: sso_data_check_in_maven_and_auth0_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.core_service_team.sso_data_check_in_maven_and_auth0 import data_compare_job; data_compare_job()"
+team_namespace: core_services
+service_namespace: authentication
+catchup: "False"
+start_year: 2025
+start_month: 3
+start_day: 3

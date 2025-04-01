@@ -1,0 +1,252 @@
+/* ----- HOME PAGE ----- */
+.page-home {
+	.page-inner {
+		@include flexbox(column, stretch, center);
+	}
+
+	.word-wrap-container {
+		width: 100%;
+		margin: 10px;
+		p {
+			color: $charcoal-80;
+		}
+	}
+
+	.home-banner {
+		background-color: $mint-50;
+		padding: 20px;
+		order: -1;
+		width: 100%;
+		z-index: 1;
+		.banner-content {
+			@include flexbox(column, flex-start, center);
+
+			> * {
+				margin: 5px 0;
+			}
+
+			@include susy-breakpoint($tablet) {
+				@include flexbox(row, center, center);
+
+				> * {
+					margin: 0 10px;
+				}
+			}
+		}
+	}
+	section.hero {
+		@include flexbox(column, center, space-between);
+		background: url("/img/home/hero-0918-mobile.jpg") center center no-repeat;
+		background-size: 100%;
+		padding: 1.25rem 8%;
+		min-height: 500px;
+		position: relative;
+		text-align: center;
+
+		div {
+			margin-bottom: 180px;
+			@include susy-breakpoint(370px) {
+				margin-bottom: 200px;
+			}
+			@include susy-breakpoint(400px) {
+				margin-bottom: 210px;
+			}
+			@include susy-breakpoint(440px) {
+				margin-bottom: 240px;
+			}
+			@include susy-breakpoint(500px) {
+				margin-bottom: 270px;
+			}
+			@include susy-breakpoint(550px) {
+				margin-bottom: 300px;
+			}
+			@include susy-breakpoint(600px) {
+				margin-bottom: 340px;
+			}
+			@include susy-breakpoint(670px) {
+				margin-bottom: 400px;
+			}
+			@include susy-breakpoint(768px) {
+				margin-bottom: 290px;
+			}
+			@include susy-breakpoint(800px) {
+				margin-bottom: 300px;
+			}
+			@include susy-breakpoint(850px) {
+				margin-bottom: 280px;
+			}
+			@include susy-breakpoint(890px) {
+				margin-bottom: 300px;
+			}
+			@include susy-breakpoint(975px) {
+				margin-bottom: 320px;
+			}
+			@include susy-breakpoint($desktop) {
+				margin-bottom: 340px;
+			}
+			@include susy-breakpoint(1090px) {
+				margin-bottom: 360px;
+			}
+			@include susy-breakpoint(1100px) {
+				margin-bottom: 370px;
+			}
+			@include susy-breakpoint(1439px) {
+				margin-bottom: 420px;
+			}
+		}
+
+		h1 {
+			@include font-size(28);
+			font-family: $font2;
+			margin-bottom: 0.5rem;
+			margin-top: 0;
+			padding: 10px;
+		}
+
+		p,
+		.p {
+			margin: 0 auto;
+			// padding-bottom: 5px;
+		}
+
+		button {
+			margin: 15px;
+			margin-top: 20px;
+		}
+
+		@include susy-breakpoint(0 $mobile-landscape-max) {
+			background-color: #dbdad8;
+			background-position-y: bottom;
+
+			h1 {
+				margin-top: 0.5rem;
+				margin-bottom: 0.5rem;
+			}
+
+			p,
+			.p {
+				margin-bottom: 0.5rem;
+				max-width: 90%;
+			}
+		}
+
+		@include susy-breakpoint($tablet) {
+			background-image: url("/img/home/hero-0918.jpg");
+			background-size: 100%;
+			background-position: bottom;
+			background-color: #ededeb;
+
+			h1 {
+				@include font-size(44);
+			}
+		}
+
+		@include susy-breakpoint(840px) {
+			background-size: 85%;
+		}
+	}
+
+	.what-we-offer {
+		.grid-item {
+			@include flexbox(column, center, space-between);
+			padding: 0 4rem;
+			text-align: center;
+		}
+		img {
+			max-height: 355px;
+		}
+	}
+
+	.sign-up-panel {
+		h2 {
+			font-family: $font2;
+			margin-bottom: 1rem;
+		}
+
+		p,
+		.p {
+			margin: 0 auto;
+			max-width: 350px;
+		}
+
+		.cta-container {
+			@include flexbox(column, stretch, center);
+			margin-top: 1rem;
+			width: auto;
+
+			a {
+				margin-top: 1rem;
+			}
+
+			@include susy-breakpoint($tablet) {
+				@include flexbox(row, center, space-between);
+				max-width: 550px;
+				width: 100%;
+			}
+		}
+
+		@include susy-breakpoint($desktop) {
+			position: relative;
+			padding: 4rem 8%;
+			margin-top: 20px;
+			.illustration-left,
+			.illustration-right {
+				position: absolute;
+				width: 160px;
+				margin: 0 -20px;
+			}
+
+			.illustration-left {
+				left: 0;
+			}
+
+			.illustration-right {
+				right: 0;
+			}
+		}
+
+		@include susy-breakpoint(1250px) {
+			.illustration-left,
+			.illustration-right {
+				width: 200px;
+				margin: 30px 20px;
+			}
+		}
+		@include susy-breakpoint(1400px) {
+			.illustration-left,
+			.illustration-right {
+				margin: 10px 80px;
+			}
+		}
+	}
+
+	ul.slick-dots {
+		margin-top: 3%;
+		text-align: center;
+
+		li span:before {
+			color: $blush-100;
+		}
+
+		@include susy-breakpoint($mobile-landscape) {
+			margin-top: 3%;
+		}
+
+		@include susy-breakpoint($desktop) {
+			display: none !important; // important to override inline styles
+		}
+	}
+}
+
+.page-home,
+.page-impact {
+	.press-image {
+		height: auto;
+		width: 100%;
+		background-color: $charcoal-40;
+
+		.remove-top-margin {
+			margin-top: -7px;
+		}
+	}
+}

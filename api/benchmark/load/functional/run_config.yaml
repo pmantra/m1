@@ -1,0 +1,8 @@
+Tests:
+  SinglefileTest:
+    locustfile: "benchmark/load/functional/with_auth/test_appointment_notes.py"
+    host: "https://www.qa1.mvnapp.net"
+    users: 20
+    spawn_rate: 2
+    run_time: 60
+    stop_timeout: 5

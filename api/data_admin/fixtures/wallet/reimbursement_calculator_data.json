@@ -1,0 +1,93 @@
+[
+  {
+    "type": "country_currency_code",
+    "country_alpha_2": "US",
+    "currency_code": "USD",
+    "minor_unit": 2
+  },
+  {
+    "type": "organization",
+    "name": "Reimbursement Calculator Test Org",
+    "activated_at": "2021-01-01 00:00:00"
+  },
+  {
+    "type": "reimbursement_wallet_hdhp_plan",
+    "alegeus_plan_id": "WYNLAPHDHP2022"
+  },
+  {
+    "type": "reimbursement_organization_settings",
+    "direct_payment_enabled": true,
+    "deductible_accumulation_enabled": false,
+    "started_at": "2 months ago",
+    "organization": "Reimbursement Calculator Test Org",
+    "categories": [
+        {
+          "type": "reimbursement_category",
+          "label": "Reimbursement Calculator Fertility",
+          "reimbursement_request_category_maximum": 100000,
+          "currency_code": "USD"
+        }
+    ]
+  },
+  {
+    "type": "payer",
+    "name": "uhc"
+  },
+  {
+    "type": "employer_health_plan",
+    "organization": "Reimbursement Calculator Test Org",
+    "start_date":"2024-01-01",
+    "end_date": "2025-12-30",
+    "payer": "uhc",
+    "ind_deductible_limit": 10000,
+    "ind_oop_max_limit": 20000,
+    "fam_deductible_limit":  20000,
+    "fam_oop_max_limit": 50000,
+    "carrier_number": "11111",
+    "is_deductible_embedded": false,
+    "is_oop_embedded": false
+  },
+  {
+    "type": "user",
+    "organization_name": "Reimbursement Calculator Test Org",
+    "first_name": "Test User",
+    "last_name": "McTest",
+    "email": "test+mvnqa-calculator_test@mavenclinic.com",
+    "password": "simpleisawesome1*",
+    "date_of_birth": "1992-05-04"
+  },
+  {
+    "type": "reimbursement_wallet",
+    "member": "test+mvnqa-calculator_test@mavenclinic.com",
+    "organization": "Reimbursement Calculator Test Org",
+    "state": "QUALIFIED",
+    "reimbursement_requests": [
+      {
+        "type": "reimbursement_request",
+        "organization": "Reimbursement Calculator Test Org",
+        "member": "test+mvnqa-calculator_test@mavenclinic.com",
+        "label": "Calculator Test Request",
+        "service_provider": "Dr. Test",
+        "amount": 10000,
+        "category": "Reimbursement Calculator Fertility",
+        "state": "NEW",
+        "service_start_date": "2 days ago",
+        "cost_sharing_category": "MEDICAL_CARE",
+        "procedure_type": "MEDICAL"
+      }
+    ]
+  },
+  {
+    "type": "member_health_plan",
+    "user_email": "test+mvnqa-calculator_test@mavenclinic.com",
+    "subscriber_insurance_id": 12345,
+    "subscriber_first_name": "Test User",
+    "subscriber_last_name": "McTest",
+    "subscriber_date_of_birth": "1980-12-01",
+    "patient_first_name": "Test",
+    "patient_last_name": "McTest",
+    "patient_date_of_birth": "1980-12-01",
+    "patient_sex": "female",
+    "patient_relationship": "cardholder"
+  }
+]

@@ -1,0 +1,34 @@
+{% extends 'admin/model/list.html' %}
+
+{% block model_menu_bar %}
+    <H2> {{admin_view.name }} </H2>
+{{ super() }}
+{% endblock %}
+
+{% block tail %}
+    {{ lib.form_js() }}
+    {{ super() }}
+    <div id="list"></div>
+    <script type="text/javascript">
+      AdminTool("List", document.getElementById("list"), {
+        dataUrl: "/admin/practitionerprofile/list_view_practitioners",
+        columnsConf: {{ columns_conf | safe }},
+        pageSize: {{ view_args.page_size }},
+        page: {{ view_args.page }},
+        filters: {{ view_args.filters | safe }},
+        deleteConf: {{ delete_conf | safe }},
+        canDelete: {{ "true" if can_delete else "false" }},
+        hasActions: {{ "true" if has_actions else "false" }},
+        search: "{{ view_args.search if view_args.search else '' }}",
+        sort: "{{ view_args.sort }}",
+        desc: "{{ view_args.desc }}",
+        tz: "{{ view_args.time_zone_value }}"
+      })
+
+   document.getElementById("filter_form").setAttribute('autocomplete','off');
+
+    </script>
+{% endblock tail %}
+
+{% block model_list_table %}
+{% endblock model_list_table %}

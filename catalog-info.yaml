@@ -1,0 +1,103 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: maven
+  description: The flask app backend API for the monolith.
+  short_name: maven
+spec:
+  type: service
+  lifecycle: production
+  owner: svc-maven-owner
+  providesApis:
+    - booking-flow
+    - organizations
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: maven-admin
+  description: The flask app backend + frontend for the mono admin.
+  short_name: maven-admin
+spec:
+  type: service
+  lifecycle: production
+  owner: svc-maven-admin-owner
+  providesApis:
+    - assignableadvocate
+    - category
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: booking-flow
+  description: Maven's booking-flow API
+  pod: care discovery
+spec:
+  type: openapi
+  lifecycle: production
+  owner: svc-mono-booking-flow-api-owner
+  definition: |
+    openapi: "3.0.3"
+    paths:
+      /search
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: organizations
+  description: Maven's organizations API
+  pod: enrollment
+spec:
+  type: openapi
+  lifecycle: production
+  owner: svc-mono-organizations-api-owner
+  definition: |
+    openapi: "3.0.3"
+    paths:
+      /(.+?)
+      /search
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: assignableadvocate
+  description: Maven admin's assignableadvocate API
+  pod: care kickoff
+spec:
+  type: openapi
+  lifecycle: production
+  owner: svc-mono-assignableadvocate-api-owner
+  definition: |
+    openapi: "3.0.3"
+    paths:
+      /edit
+      /new
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: category
+  description: Maven admin's category API
+  pod: content & community
+spec:
+  type: openapi
+  lifecycle: production
+  owner: svc-mono-category-api-owner
+  definition: |
+    openapi: "3.0.3"
+    paths:
+      /clear_cache
+      /edit
+      /new
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: all
+  description: All OpenAPI specs in mono
+spec:
+  type: openapi
+  lifecycle: production
+  owner: svc-mvn-owner
+  definition: 
+    $text: ./api/spec/openapi.yaml

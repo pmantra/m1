@@ -1,0 +1,3978 @@
+openapi: 3.0.3
+info:
+  title: Maven Clinic Direct Payment API
+  version: 1.0.0
+  description: API endpoints related to direct payment.
+servers:
+  - url: https://www.mavenclinic.com
+  - url: https://www.qa1.mvnapp.net
+  - url: https://www.qa2.mvnapp.net
+  - url: https://www.staging.mvnapp.net
+paths:
+  # Frontend codegen requires the '/api/v1' prefix on each endpoint path
+  /api/v1/direct_payment/clinic/member-lookup:
+    post:
+      summary: Find a member
+      operationId: lookupMember
+      description: >-
+        Used to look up a member from clinic portal
+      tags:
+        - Member Look Up
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MemberLookupRequest"
+            examples:
+              complete:
+                $ref: "#/components/examples/MemberLookupRequest"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MemberLookupResponse"
+              examples:
+                current-access-access-eligible:
+                  $ref: "#/components/examples/MemberLookupResponseCurrentAccessAccessEligible"
+                current-access-green-eligible:
+                  $ref: "#/components/examples/MemberLookupResponseCurrentAccessGreenEligible"
+                current-access-gold-eligible:
+                  $ref: "#/components/examples/MemberLookupResponseCurrentAccessGoldEligible"
+                current-green-green-eligible:
+                  $ref: "#/components/examples/MemberLookupResponseCurrentGreenGreenEligible"
+                current-gold-gold-eligible-payment-method-on-file:
+                  $ref: "#/components/examples/MemberLookupResponseCurrentGoldGoldEligiblePaymentMethodOnFile"
+                gold-member-unlimited-benefits:
+                  $ref: "#/components/examples/MemberLookupResponseGoldMemberUnlimitedBenefits"
+                current-gold-gold-eligible-no-payment-method-on-file:
+                  $ref: "#/components/examples/MemberLookupResponseCurrentGoldGoldEligibleNoPaymentMethodOnFile"
+                current-gold-gold-eligible-no-access-to-dp-category-toc:
+                  $ref: "#/components/examples/MemberLookupResponseCurrentGoldGoldEligibleNoAccessToDpCategoryTOC"
+        "400":
+          description: Error in input.
+        "401":
+          description: User is not authorized to perform this action.
+        "404":
+          description: >-
+            Not found: a member could not be found for the given information.
+        "500":
+          description: Internal error
+  /api/v1/direct_payment/clinic/fertility_clinics/{clinic_id}:
+    get:
+      summary: Get a FertilityClinic.
+      operationId: FertilityClinicView.get
+      description: >-
+        Used to get a FertilityClinic by id
+      tags:
+        - Fertility Clinics
+      parameters:
+        - $ref: "#/components/parameters/ClinicId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FertilityClinic"
+              examples:
+                complete:
+                  $ref: "#/components/examples/FertilityClinicResponse"
+        "400":
+          description: Error in input.
+        "404":
+          description: >-
+            Not found: a clinic could not be found for the given information.
+        "500":
+          description: Internal error
+    put:
+      summary: Update a FertilityClinic.
+      operationId: FertilityClinicView.put
+      description: >-
+        Used to update a FertilityClinic
+      tags:
+        - Fertility Clinics
+      parameters:
+        - $ref: "#/components/parameters/ClinicId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FertilityClinicRequest"
+            examples:
+              complete:
+                $ref: "#/components/examples/FertilityClinicResponse"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FertilityClinic"
+              examples:
+                partial:
+                  $ref: "#/components/examples/FertilityClinicResponse"
+        "400":
+          description: Error in input.
+        "403":
+          description: >-
+            Forbidden: the logged in user does not have access to the requested FertilityClinic.
+        "404":
+          description: >-
+            Not found: a Fertility Clinic could not be found for the given information.
+        "500":
+          description: Internal error
+  /api/v1/direct_payment/clinic/fertility_clinics/{clinic_id}/procedures:
+    get:
+      summary: Get a list of GlobalProcedures for a FertilityClinic.
+      operationId: FertilityClinicGlobalProcedureView.get
+      description: >-
+        Used to get GlobalProcedures for FertilityClinic by id. The Procedures are associated with the Clinic via FeeSchedule
+      tags:
+        - Fertility Clinics
+        - Global Procedures
+      parameters:
+        - $ref: "#/components/parameters/ClinicId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FertilityClinicGlobalProcedures"
+              examples:
+                complete:
+                  $ref: "#/components/examples/FertilityClinicGlobalProcedureResponse"
+        "400":
+          description: Error in input.
+        "404":
+          description: >-
+            Global Procedures not found.
+        "500":
+          description: Internal error
+  /api/v1/direct_payment/clinic/treatment_procedures:
+      get:
+        summary: Get Treatment Procedures for associated clinics
+        parameters:
+          - $ref: "#/components/parameters/Limit"
+          - $ref: "#/components/parameters/Offset"
+          - $ref: "#/components/parameters/OptionalSortBy"
+          - $ref: "#/components/parameters/OptionalOrderDirection"
+          - $ref: "#/components/parameters/OptionalStatus"
+          - $ref: "#/components/parameters/OptionalClinicId"
+          - $ref: "#/components/parameters/OptionalClinicLocationId"
+        tags:
+         - Fertility Clinics
+        responses:
+          200:
+            $ref: "#/components/responses/ClinicAggregateTreatmentProceduresResponse"
+          500:
+            description: Internal error
+  /api/v1/direct_payment/clinic/me:
+    get:
+      summary: Get data for logged in Clinic user 
+      tags:
+        - Fertility Clinic Users
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FertilityClinicUserProfile"
+        "500":
+          description: Internal error
+  /api/v1/direct_payment/clinic/fertility_clinic_users/{clinic_user_id}:
+    get:
+      summary: Get a FertilityClinicUser.
+      operationId: FertilityClinicUserView.get
+      description: >-
+        Used to get a FertilityClinicUser by id
+      tags:
+       - Fertility Clinic Users
+      parameters:
+        - $ref: "#/components/parameters/ClinicUserId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FertilityClinicUser"
+        "400":
+          description: Error in input.
+        "404":
+          description: >-
+            Not found: a Fertility Clinic User could not be found for the given information.
+        "500":
+          description: Internal error
+    put:
+      summary: Update a FertilityClinicUser.
+      operationId: FertilityClinicUserView.put
+      description: >-
+        Used to update a FertilityClinicUser
+      tags:
+       - Fertility Clinic Users
+      parameters:
+        - $ref: "#/components/parameters/ClinicUserId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FertilityClinicUserRequest"
+            examples:
+              complete:
+                $ref: "#/components/examples/FertilityClinicUserResponse"
+
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FertilityClinicUser"
+              examples:
+                partial:
+                  $ref: "#/components/examples/FertilityClinicUserResponse"
+        "400":
+          description: Error in input.
+        "403":
+          description: >-
+            Forbidden: the logged in user does not have access to the requested FertilityClinicUser.
+        "404":
+          description: >-
+            Not found: a Fertility Clinic User could not be found for the given information.
+        "500":
+          description: Internal error
+  /api/v1/direct_payment/treatment_procedure/{treatment_procedure_id}:
+    get:
+      summary: Get a TreatmentProcedure
+      description: >-
+        Used to get a TreatmentProcedure by id
+      tags:
+        - Treatment Procedure
+      parameters:
+        - $ref: "#/components/parameters/TreatmentProcedureId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TreatmentProcedure"
+              examples:
+                complete:
+                  $ref: "#/components/examples/TreatmentProcedureResponse"
+        "400":
+          description: <Validation error message>
+        "404":
+          description: >-
+            Treatment Procedure not found
+        "500":
+          description: Internal error
+    put:
+      summary: Update a TreatmentProcedure
+      description: >-
+        Used to update a TreatmentProcedure
+      tags:
+        - Treatment Procedure
+      parameters:
+        - $ref: "#/components/parameters/TreatmentProcedureId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TreatmentProcedurePUTRequest"
+            examples:
+              complete:
+                $ref: "#/components/schemas/TreatmentProcedurePUTRequest"
+
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TreatmentProcedure"
+              examples:
+                partial:
+                  $ref: "#/components/examples/TreatmentProcedureResponse"
+        "400":
+          description: ~Validation error message~
+        "403":
+          description: >-
+            Fertility Clinic User does not have permission to add these procedures.
+        "404":
+          description: >-
+            Treatment Procedure not found
+        "500":
+          description: Internal error
+  /api/v1/direct_payment/treatment_procedure/member/{member_id}:
+    get:
+      summary: Get all TreatmentProcedures of member
+      description: >-
+        Used to get all TreatmentProcedure for a given member by member id
+      tags:
+        - Treatment Procedure
+      parameters:
+        - $ref: "#/components/parameters/MemberId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TreatmentProcedures"
+              examples:
+                partial:
+                  $ref: "#/components/examples/TreatmentProceduresResponse"
+        "400":
+          description: ~Validation error message~
+        "404":
+          description: >-
+            A member could not be found for the given information.
+        "500":
+          description: Internal error
+  /api/v1/direct_payment/treatment_procedure:
+    post:
+      summary: Create new treatment procedures for member
+      description: >-
+        Used to create treatment procedures for a given member from clinic portal
+      tags:
+        - Treatment Procedure
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TreatmentProceduresRequest"
+            examples:
+              complete:
+                $ref: "#/components/schemas/TreatmentProceduresRequest"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TreatmentProcedures"
+              examples:
+                complete:
+                  $ref: "#/components/examples/TreatmentProceduresResponse"
+        "400":
+          description: ~Validation error message~
+        "404":
+          description: >-
+            A member could not be found for the given information.
+        "500":
+          description: Internal error
+  /api/v1/direct_payment/treatment_procedure_questionnaires:
+    get:
+      summary: Get all TreatmentProcedureQuestionnaires
+      description: >-
+        Used to show questionnaires on treatment procedure complete in clinic portal
+      tags:
+        - Treatment Procedure Questionnaire
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TreatmentProcedureQuestionnaires"
+              examples:
+                complete:
+                  $ref: "#/components/examples/TreatmentProcedureQuestionnairesResponse"
+        "401":
+          description: >-
+            User does not have Fertility Clinic Portal permissions.
+        "404":
+          description: >-
+            No questionnaires could be found.
+        "500":
+          description: Internal error
+    post:
+      tags:
+        - Treatment Procedure Questionnaire
+      description: "Records questionnaire answers after procedure completion"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TreatmentProcedureQuestionnairesRequest"
+            examples:
+              partial:
+                $ref: "#/components/examples/TreatmentProcedureQuestionnairesRequest"
+      responses:
+        "200":
+          description: Successfully posted
+        "400":
+          description: Error in input
+        "500":
+          description: Internal error
+  /api/v1/direct_payment/payments/reimbursement_wallet/{wallet_id}:
+    get:
+      tags: ["Payments"]
+      description: "A list of upcoming and historic cost breakdowns, bills, and other details the member might want to know about."
+      parameters:
+        - $ref: "#/components/parameters/WalletId"
+      responses:
+        200:
+          $ref: "#/components/responses/MemberPaymentHistory"
+  /api/v1/direct_payment/payments/reimbursement_wallet/estimates/{wallet_id}:
+    get:
+      tags: ["Payments"]
+      description: "A list of upcoming billing estimates the member might want to know about."
+      parameters:
+        - $ref: "#/components/parameters/WalletId"
+      responses:
+        200:
+          $ref: "#/components/responses/WalletEstimates"
+  /api/v1/direct_payment/payments/bill/{bill_uuid}/detail:
+    get:
+      tags: ["Payments"]
+      description: "A description of the cost breakdown and other details specific to this bill. One procedure may have many bills."
+      parameters:
+        - $ref: "#/components/parameters/BillUUID"
+      responses:
+        200:
+          $ref: "#/components/responses/ProcedurePaymentDetail"
+  /api/v1/direct_payment/payments/estimate/{bill_uuid}/detail:
+    get:
+      tags: [ "Payments" ]
+      description: "A description of the cost breakdown and other details specific to this bill estimate. One procedure may have many bill estimates."
+      parameters:
+        - $ref: "#/components/parameters/BillUUID"
+      responses:
+        200:
+          $ref: "#/components/responses/ProcedureEstimateDetail"
+  /api/v1/direct_payment/billing/bill/{bill_uuid}:
+    put:
+      tags: ["Payments"]
+      description: "Modify a bill. Attempting to move a bill from the FAILED to PROCESSING state will trigger an asynchronous retry"
+      parameters:
+        - $ref: "#/components/parameters/BillUUID"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum:
+                    - "PROCESSING"
+      responses:
+        200:
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Bill"
+              examples:
+                success:
+                  $ref: "#/components/examples/ProcessingBill"
+        400:
+          description: "Bad request."
+        404:
+          description: "Bill not found."
+        422:
+          description: "Invalid status change requested."
+        429:
+          description: "Too many retries requested."
+  /api/v1/direct_payment/billing/ingest_payment_gateway_event:
+    post:
+      tags: [ "Payments" ]
+      description: "Ingests events from the payment gateway"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PaymentGatewayEvent"
+      responses:
+        "202":
+          description: Message ingested - this does not imply successful processing.
+
+  /api/v1/direct_payment/billing_consent/reimbursement_wallet/{wallet_id}:
+    get:
+      tags: ["Billing Consent"]
+      description: "Used to get billing consent for a wallet by wallet ID"
+      parameters:
+        - $ref: "#/components/parameters/WalletId"
+      responses:
+        200:
+          $ref: "#/components/responses/WalletBillingConsentStatus"
+        "400":
+          description: Error in input.
+        "404":
+          description: >-
+            Not found: a wallet could not be found for the input ID.
+        "500":
+          description: Internal error
+    post:
+      tags: ["Billing Consent"]
+      description: "Used to save billing consent for wallet ID"
+      parameters:
+          - $ref: "#/components/parameters/WalletId"
+      responses:
+          200:
+            $ref: "#/components/responses/WalletBillingConsent"
+          "400":
+            description: Error in input.
+          "404":
+            description: >-
+              Not found: a wallet could not be found for the input ID.
+          "500":
+            description: Internal error
+  /api/v1/direct_payment/notification/send_email:
+    post:
+      tags: ["Notification"]
+      description: Used to send an email
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NotificationPayload"
+            examples:
+              complete:
+                $ref: "#/components/examples/NotificationPayload"
+      responses:
+        "202":
+          description: Notification payload ingested - this does not imply successful processing.
+        "400":
+          description: Error in input payload.
+        "500":
+          description: Internal error - valid payload, braze timeout or error.
+  /api/v1/direct_payment/benefits_experience_help/articles:
+    get:
+      tags: ["Benefits Experience Help"]
+      description: Gets all help articles published for Benefits Experience in Contentful
+      responses:
+        "200":
+          $ref: "#/components/responses/HelpArticles"
+        "404":
+          description: Topics not found.
+        "500":
+          description: Internal error
+  /api/v1/direct_payment/benefits_experience_help/articles/{article_slug}:
+    get:
+      tags: ["Benefits Experience Help"]
+      description: Gets details for a Contentful article entry by slug
+      parameters:
+        - $ref: "#/components/parameters/ArticleSlug"
+      responses:
+        "200":
+          $ref: "#/components/responses/HelpArticle"  
+        "404":
+          description: Article not found.
+        "500":
+          description: Internal error
+  /api/v1/direct_payment/fertility_clinic_portal_help/articles:
+    get:
+      tags: ["Fertility Clinic Portal Help"]
+      description: Gets all help articles published for Fertility Clinic Portal in Contentful
+      responses:
+        "200":
+          $ref: "#/components/responses/HelpArticles"
+        "404":
+          description: Topics not found.
+        "500":
+          description: Internal error
+  /api/v1/direct_payment/fertility_clinic_portal_help/articles/{article_slug}:
+    get:
+        tags: ["Fertility Clinic Portal Help"]
+        description: Gets details for a Contentful article entry by slug
+        parameters:
+          - $ref: "#/components/parameters/ArticleSlug"
+        responses:
+          "200":
+            $ref: "#/components/responses/HelpArticle"  
+          "404":
+            description: Article not found.
+          "500":
+            description: Internal error
+
+  /api/v1/direct_payment/notification/ingest_payment_gateway_event:
+    post:
+      tags: [ "Notification" ]
+      description: "Ingests payment attach and detach events from the payment gateway"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PaymentGatewayEvent"
+      responses:
+        "202":
+          description: Message ingested - this does not imply successful processing.
+        "400":
+          description: Error in input payload/payload rejected.
+        "500":
+          description: Unexpected error, failed to process payment gateway payload.
+
+
+components:
+  parameters:
+    MemberId:
+      in: path
+      name: member_id
+      schema:
+        type: integer
+      required: true
+      description: Numeric ID of the Member's ID
+    WalletId:
+      in: path
+      name: wallet_id
+      schema:
+        type: integer
+      required: true
+      description: Numeric ID of a shared wallet, that may belong to one or two members. Payments are shared across the wallet.
+    TreatmentProcedureId:
+      in: path
+      name: treatment_procedure_id
+      schema:
+        type: integer
+      required: true
+      description: Numeric ID of the TreatmentProcedure.
+    BillUUID:
+      in: path
+      name: bill_uuid
+      schema:
+        type: string
+        format: uuid
+      required: true
+      description: UUID of the Bill.
+    ClinicUserId:
+      in: path
+      name: clinic_user_id
+      schema:
+        type: integer
+      required: true
+      description: Numeric ID of the FertilityClinicUser
+    ClinicId:
+      in: path
+      name: clinic_id
+      schema:
+        type: integer
+      required: true
+      description: Numeric ID of the FertilityClinic
+    ArticleSlug:
+      in: path
+      name: article_slug
+      schema:
+        type: string
+      required: true
+      description: Slug for an article configured in Contentful.
+    Limit:
+      in: query
+      name: limit
+      description: Number of items to return per page
+      required: false
+      schema:
+        type: integer
+        default: 10
+    Offset:
+      in: query
+      name: offset
+      description: Number of items to skip 
+      required: false
+      schema:
+        type: integer
+        default: 0
+    OptionalSortBy:
+      in: query
+      name: sort_by
+      description: Specify type by which to sort results, allowing sorting by user name, clinic name, date, amount, or status.
+      required: false
+      schema:
+        type: string
+        enum:
+          - member_last_name
+          - clinic_name
+          - date
+          - cost
+          - status
+    OptionalOrderDirection:
+      in: query
+      name: order_direction
+      description: Specify sort order direction for results, ascending or descending.
+      required: false
+      schema:
+        type: string
+        enum:
+          - asc
+          - desc
+    OptionalStatus:
+      in: query
+      name: status
+      description: Treatment procedure status by which to filter 
+      schema:
+        type: array
+        items:
+            type: string
+            enum: 
+              - SCHEDULED
+              - COMPLETED
+              - PARTIALLY_COMPLETED
+              - CANCELLED
+      required: false
+    OptionalClinicLocationId:
+      in: query
+      name: clinic_location_id
+      schema:
+        type: integer
+      required: false
+      description: Numeric ID of the FertilityClinicLocation, if filtering by specific clinic
+    OptionalClinicId:
+      in: query
+      name: clinic_id
+      required: false
+      schema:
+        type: integer
+      description: Numeric ID of the Fertility Clinic, if filtering by specific clinic
+  examples:
+    ValidWalletBillingConsent:
+      summary: wallet billing consent save response object
+      value:
+        consent_granted: true
+    MemberLookupRequest:
+      summary: member lookup request object
+      value:
+        benefit_id: "M2DGGDS3G"
+        last_name: "smith"
+        date_of_birth: "2000-01-01"
+
+    MemberLookupResponseCurrentAccessAccessEligible:
+      summary: response for a access member, org doesn't offer green/gold
+      value:
+        {
+          "member": {
+            "user_id": 42,
+            "first_name": "John",
+            "last_name": "Smith",
+            "date_of_birth": "2000-01-01",
+            "phone": "123456789",
+            "benefit_id": "M9SF8FGSG",
+            "current_type": "MAVEN_ACCESS",
+            "eligible_type": "MAVEN_ACCESS",
+            "eligibility_start_date": null,
+            "eligibility_end_date": null
+          },
+          "benefit": {
+            "organization": {
+              "name": "Maven Clinic",
+              "fertility_program": null
+            },
+            "wallet": null
+          },
+          "content": null
+        }
+    MemberLookupResponseCurrentAccessGreenEligible:
+      summary: response for a access member, org offers green
+      value:
+        {
+          "member": {
+            "user_id": 42,
+            "first_name": "John",
+            "last_name": "Smith",
+            "date_of_birth": "2000-01-01",
+            "phone": "123456789",
+            "benefit_id": "M9SF8FGSG",
+            "current_type": "MAVEN_ACCESS",
+            "eligible_type": "MAVEN_GREEN",
+            "eligibility_start_date": null,
+            "eligibility_end_date": null
+          },
+          "benefit": {
+            "organization": {
+              "name": "Maven Clinic",
+              "fertility_program": null
+            },
+            "wallet": null
+          },
+          "content": null
+        }
+
+    MemberLookupResponseCurrentAccessGoldEligible:
+      summary: response for a access member, org offers gold
+      value:
+        {
+          "member": {
+            "user_id": 42,
+            "first_name": "John",
+            "last_name": "Smith",
+            "date_of_birth": "2000-01-01",
+            "phone": "123456789",
+            "benefit_id": "M9SF8FGSG",
+            "current_type": "MAVEN_ACCESS",
+            "eligible_type": "MAVEN_GOLD",
+            "eligibility_start_date": null,
+            "eligibility_end_date": null
+          },
+          "benefit": {
+            "organization": {
+              "name": "Maven Clinic",
+              "fertility_program": null
+            },
+            "wallet": null
+          },
+          "content": null
+        }
+
+    MemberLookupResponseCurrentGreenGreenEligible:
+      summary: response for a green member
+      value:
+        {
+          "member": {
+            "user_id": 42,
+            "first_name": "John",
+            "last_name": "Smith",
+            "date_of_birth": "2000-01-01",
+            "phone": "123456789",
+            "benefit_id": "M9SF8FGSG",
+            "current_type": "MAVEN_GREEN",
+            "eligible_type": "MAVEN_GREEN",
+            "eligibility_start_date": null,
+            "eligibility_end_date": null
+          },
+          "benefit": {
+            "organization": {
+              "name": "Maven Clinic",
+              "fertility_program": {
+                "direct_payment_enabled": false,
+                "allows_taxable": false,
+                "program_type": "WRAP_AROUND",
+                "dx_required_procedures": [
+                  "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                ],
+                "excluded_procedures": [
+                  {
+                    procedure_id: "1234",
+                    procedure_name: "Egg Freezing"
+                  }
+                ]
+              }
+            },
+            "wallet": {
+              "wallet_id": "1349579352420083423",
+              "benefit_type": "CURRENCY",
+              "state": "QUALIFIED",
+              "balance": {
+                "is_unlimited": false,
+                "total": 1000000,
+                "available": 180000
+              },
+              "payment_method_on_file": false,
+              "allow_treatment_scheduling": false
+            }
+          },
+          "content": null
+        }
+
+    MemberLookupResponseCurrentGoldGoldEligiblePaymentMethodOnFile:
+      summary: response for a gold member, payment method on file
+      value:
+        {
+          "member": {
+            "user_id": 42,
+            "first_name": "John",
+            "last_name": "Smith",
+            "date_of_birth": "2000-01-01",
+            "phone": "123456789",
+            "benefit_id": "M9SF8FGSG",
+            "current_type": "MAVEN_GOLD",
+            "eligible_type": "MAVEN_GOLD",
+            "eligibility_start_date": "2024-06-07",
+            "eligibility_end_date": null
+          },
+          "benefit": {
+            "organization": {
+              "name": "Maven Clinic",
+              "fertility_program": {
+                "direct_payment_enabled": true,
+                "allows_taxable": false,
+                "program_type": "WRAP_AROUND",
+                "dx_required_procedures": [
+                  "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                ],
+                "excluded_procedures": [
+                  {
+                    procedure_id: "1234",
+                    procedure_name: "Egg Freezing"
+                  }
+                ]
+              }
+            },
+            "wallet": {
+              "wallet_id": "1349579352420083423",
+              "benefit_type": "CURRENCY",
+              "state": "QUALIFIED",
+              "balance": {
+                "is_unlimited": false,
+                "total": 1000000,
+                "available": 180000
+              },
+              "payment_method_on_file": true,
+              "allow_treatment_scheduling": true
+            }
+          },
+          "content": null
+        }
+
+    MemberLookupResponseGoldMemberUnlimitedBenefits:
+      summary: response for a gold member, unlimited benefits
+      value:
+        {
+          "member": {
+            "user_id": 42,
+            "first_name": "John",
+            "last_name": "Smith",
+            "date_of_birth": "2000-01-01",
+            "phone": "123456789",
+            "benefit_id": "M9SF8FGSG",
+            "current_type": "MAVEN_GOLD",
+            "eligible_type": "MAVEN_GOLD",
+            "eligibility_start_date": "2024-06-07",
+            "eligibility_end_date": null
+          },
+          "benefit": {
+            "organization": {
+              "name": "Maven Clinic",
+              "fertility_program": {
+                "direct_payment_enabled": true,
+                "allows_taxable": false,
+                "program_type": "WRAP_AROUND",
+                "dx_required_procedures": [
+                  "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                ],
+                "excluded_procedures": [
+                  {
+                    procedure_id: "1234",
+                    procedure_name: "Egg Freezing"
+                  }
+                ]
+              }
+            },
+            "wallet": {
+              "wallet_id": "1349579352420083423",
+              "benefit_type": "CURRENCY",
+              "state": "QUALIFIED",
+              "balance": {
+                "is_unlimited": true,
+                "total": null,
+                "available": null
+              },
+              "payment_method_on_file": true,
+              "allow_treatment_scheduling": true
+            }
+          },
+          "content": null
+        }
+
+    MemberLookupResponseCurrentGoldGoldEligibleNoPaymentMethodOnFile:
+      summary: response for a gold member, no payment method on file
+      value:
+        {
+          "member": {
+            "user_id": 42,
+            "first_name": "John",
+            "last_name": "Smith",
+            "date_of_birth": "2000-01-01",
+            "phone": "123456789",
+            "benefit_id": "M9SF8FGSG",
+            "current_type": "MAVEN_GOLD",
+            "eligible_type": "MAVEN_GOLD",
+            "eligibility_start_date": "2024-06-07",
+            "eligibility_end_date": null
+          },
+          "benefit": {
+            "organization": {
+              "name": "Maven Clinic",
+              "fertility_program": {
+                "direct_payment_enabled": true,
+                "allows_taxable": false,
+                "program_type": "WRAP_AROUND",
+                "dx_required_procedures": [
+                  "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                ],
+                "excluded_procedures": [
+                  {
+                    procedure_id: "1234",
+                    procedure_name: "Egg Freezing"
+                  }
+                ]
+              }
+            },
+            "wallet": {
+              "wallet_id": "1349579352420083423",
+              "benefit_type": "CURRENCY",
+              "state": "QUALIFIED",
+              "balance": {
+                "is_unlimited": false,
+                "total": 1000000,
+                "available": 180000
+              },
+              "payment_method_on_file": false,
+              "allow_treatment_scheduling": false
+            }
+          },
+          "content": null
+        }
+
+    MemberLookupResponseCurrentGoldGoldEligibleNoAccessToDpCategoryTOC:
+      summary: response for a gold member, without access to direct payment category (under TOC)
+      value:
+        {
+          "member": {
+            "user_id": 42,
+            "first_name": "John",
+            "last_name": "Smith",
+            "date_of_birth": "2000-01-01",
+            "phone": "123456789",
+            "benefit_id": "M9SF8FGSG",
+            "current_type": "MAVEN_GOLD",
+            "eligible_type": "MAVEN_GOLD",
+            "eligibility_start_date": "2024-06-07",
+            "eligibility_end_date": null
+          },
+          "benefit": {
+            "organization": {
+              "name": "Maven Clinic",
+              "fertility_program": {
+                "direct_payment_enabled": true,
+                "allows_taxable": false,
+                "program_type": "WRAP_AROUND",
+                "dx_required_procedures": [
+                  "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                ],
+                "excluded_procedures": [
+                  {
+                    procedure_id: "1234",
+                    procedure_name: "Egg Freezing"
+                  }
+                ]
+              }
+            },
+            "wallet": {
+              "wallet_id": "1349579352420083423",
+              "benefit_type": null,
+              "state": "QUALIFIED",
+              "balance": {
+                "is_unlimited": false,
+                "total": 0,
+                "available": 0
+              },
+              "payment_method_on_file": false,
+              "allow_treatment_scheduling": false
+            }
+          },
+          "content": {
+            "messages": [
+              {
+                "level": "attention",
+                "text": "Please submit authorizations for this member to Progyny through 4/30/2025."
+              }
+            ],
+            "body_variant": "PROGYNY_TOC"
+          }
+        }
+
+    FertilityClinicUserRequest:
+      summary: request body for FertilityClinicUser put
+      value:
+        first_name: "john"
+        last_name: "smith"
+    FertilityClinicResponse:
+      value:
+        id: 1
+        uuid: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+        name: "Fertility Clinic Name"
+        affiliated_network: "Partner Network"
+        fee_schedule:
+          {
+            id: "c9616fc8-45bb-42ae-b82e-0e2945cf0117",
+            name: "Fee Schedule Test",
+            fee_schedule_global_procedures: [
+              {
+                id: 0,
+                reimbursement_wallet_global_procedures_id: 0,
+                cost: 5,
+              }
+            ],
+          }
+        notes: "Test notes here"
+        locations: [
+          {
+            id: 0,
+            uuid: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            name: "New York Location",
+            address_1: "160 Varick St",
+            address_2: "6th Floor",
+            city: "New York",
+            subdivision_code: "123",
+            postal_code: "10013",
+            country_code: "1",
+            phone_number: "111-111-1111",
+            email: "newyorkclinic@example.com"
+          }
+        ]
+    FertilityClinicGlobalProcedureResponse:
+      value:
+        id: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        name: "Global Procedure Name"
+        cost: 1000
+        credits: 10
+        annual_limit: 20
+        is_partial: false
+        is_diagnostic: true
+        partial_procedures:
+          [
+            {
+              id: "ecdbcf32-9054-4477-a7c3-9063604bc883",
+              name: "Partial Global Procedure Name",
+              credits: 1,
+              annual_limit: 3,
+              is_partial: true,
+              is_diagnostic: false,
+              parent_procedure_ids: ["3fa85f64-5717-4562-b3fc-2c963f66afa6"]
+            }
+          ]
+    FertilityClinicUserResponse:
+      value:
+        id: 32
+        uuid: "c9616fc8-45bb-42ae-b82e-0e2945cf0117"
+        first_name: "john"
+        last_name: "smith"
+    TreatmentProcedureResponse:
+      summary: response for TreatmentProcedure
+      value:
+        id: 4
+        uuid: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+        member_id: 23
+        infertility_diagnosis: "NOT_SURE"
+        global_procedure_id: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+        fertility_clinic_id: 534
+        fertility_clinic_location_id: 12
+        start_date: "2023-02-15"
+        end_date: "2023-02-17"
+        procedure_name: "Diagnosis"
+        cost: 5
+        currency: 10
+        status: "COMPLETED"
+        global_procedure:
+          id: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+          name: "Global Procedure Name"
+          credits: 10
+          annual_limit: 20
+          is_partial: false
+          is_diagnostic: true
+          partial_procedures:
+            [
+              {
+                id: "ecdbcf32-9054-4477-a7c3-9063604bc883",
+                name: "Partial Global Procedure Name",
+                credits: 1,
+                annual_limit: 3,
+                is_partial: true,
+                is_diagnostic: false,
+                parent_procedure_ids: ["3fa85f64-5717-4562-b3fc-2c963f66afa6"]
+              }
+            ]
+    TreatmentProceduresResponse:
+      summary: response for TreatmentProcedures for member
+      value:
+        procedures:
+          [
+            {
+              id: 4,
+              uuid: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+              member_id: 23,
+              infertility_diagnosis: "MEDICALLY_INFERTILE",
+              global_procedure_id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+              fertility_clinic_id: 534,
+              fertility_clinic_location_id: 12,
+              start_date: "2023-02-15",
+              end_date: "2023-02-17",
+              procedure_name: "Diagnosis",
+              cost: 5,
+              cost_credit: 10,
+              status: "COMPLETED",
+              global_procedure: {
+                id: 3fa85f64-5717-4562-b3fc-2c963f66afa6,
+                name: "Global Procedure Name",
+                credits: 10,
+                annual_limit: 20,
+                is_partial: false,
+                is_diagnostic: true,
+                partial_procedures:
+                  [
+                    {
+                      id: "ecdbcf32-9054-4477-a7c3-9063604bc883",
+                      name: "Partial Global Procedure Name",
+                      credits: 1,
+                      annual_limit: 3,
+                      is_partial: true,
+                      is_diagnostic: false,
+                      parent_procedure_ids: ["3fa85f64-5717-4562-b3fc-2c963f66afa6"]
+                    }
+                  ]
+              },
+              partial_procedure: {
+                id: 5,
+                uuid: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                member_id: 23,
+                infertility_diagnosis: "MEDICALLY_INFERTILE",
+                global_procedure_id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                fertility_clinic_id: 534,
+                fertility_clinic_location_id: 12,
+                start_date: "2023-02-15",
+                end_date: "2023-02-17",
+                procedure_name: "Diagnosis Cancelled After Diagnosis",
+                cost: 3,
+                currency: 10,
+                status: "PARTIALLY_COMPLETED",
+                global_procedure: {
+                  id: 3fa85f64-5717-4562-b3fc-2c963f66afa6,
+                  name: "Partial Global Procedure Name",
+                  credits: 3,
+                  annual_limit: 20,
+                  is_partial: false,
+                  is_diagnostic: true,
+                  partial_procedures: []
+                },
+              }
+            }
+          ]
+    TreatmentProcedureQuestionnairesResponse:
+      summary: response for TreatmentProceduresQuestionnaires
+      value:
+        questionnaires:
+          [
+            {
+              id: "1294758907394007990",
+              description_text: null,
+              oid: "embryo_data_collection",
+              sort_order: 0,
+              trigger_answer_ids: [],
+              title_text: null,
+              soft_deleted_at: null,
+              global_procedure_ids: [
+                "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+              ],
+              question_sets: [
+                {
+                  id: "1",
+                  prerequisite_answer_id: null,
+                  oid: "embryo_data_collection_question_set",
+                  sort_order: 0,
+                  soft_deleted_at: null,
+                  questions: [
+                    {
+                      label: "What type of embryos were transferred?",
+                      id: "1",
+                      oid: "embryo_type",
+                      required: false,
+                      sort_order: 0,
+                      non_db_answer_options_json: null,
+                      type: "RADIO",
+                      soft_deleted_at: null,
+                      answers: [
+                        {
+                          id: "1294758907694764389",
+                          oid: "day_3_embryos_type",
+                          soft_deleted_at: null,
+                          sort_order: 0,
+                          text: "Day 3 embryos",
+                        },
+                        {
+                          id: "1294758907694764389",
+                          oid: "day_5_embryos_type",
+                          soft_deleted_at: null,
+                          sort_order: 1,
+                          text: "Day 5 embryos (blastocyts)",
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+    TreatmentProcedureQuestionnairesRequest:
+      summary: request body for TreatmentProceduresQuestionnaires
+      value:
+        {
+          treatment_procedure_id: 4,
+          questionnaires: [
+            {
+              questionnaire_id: "1294758907394007990",
+              questions: [
+                {
+                  question_id: "1",
+                  answer_id: "1294758907694764389",
+                }
+              ]
+            }
+          ]
+        }
+    MemberPaymentHistoryResponse:
+      summary: Different types of payment records.
+      value:
+        {
+          "upcoming": [
+              {
+                "label": "IVF Fresh",
+                "treatment_procedure_id": 123,
+                "bill_uuid": "7c1fd5b3-3e4e-46e3-92f5-d0b61f7ac3df",
+                "payment_status": "FAILED",
+                "payment_method_type": "DIRECT_PAYMENT",
+                "payment_method_display_label": "4242",
+                "member_responsibility": 25340,
+                "total_cost": 300000,
+                "cost_responsibility_type": "shared",
+                "created_at": "2023-07-01T18:28:29.541Z",
+                "due_at": "2023-07-04T18:28:29.541Z",
+                "completed_at": "2023-07-04T18:28:29.541Z",
+                "display_date": "due_at"
+              },
+              {
+                "label": "IVF Fresh",
+                "treatment_procedure_id": 123,
+                "bill_uuid": "7c1fd5b3-3e4e-46e3-92f5-d0b61f7ac3df",
+                "payment_status": "NEW",
+                "payment_method_type": "DIRECT_PAYMENT",
+                "payment_method_display_label": "4242",
+                "member_responsibility": 25340,
+                "total_cost": 300000,
+                "cost_responsibility_type": "shared",
+                "created_at": "2023-07-10T18:28:29.541Z",
+                "due_at": "2023-07-13T18:28:29.541Z",
+                "completed_at": null,
+                "display_date": "due_at"
+              }
+          ],
+          "history": {
+            "links": {
+              "next": "/api/v1/direct_payment/payments/member/1000123?next=2",
+              "prev": null
+            },
+            "count": 3,
+            "num_pages": 2,
+            "results": [
+              {
+                "label": "Egg Freezing",
+                "treatment_procedure_id": 456,
+                "bill_uuid": "7c1fd5b3-3e4e-46e3-92f5-d0b61f7ac3df",
+                "payment_status": "PAID",
+                "payment_method_type": "DIRECT_PAYMENT",
+                "payment_method_display_label": "4242",
+                "member_responsibility": 178000,
+                "total_cost": 178000,
+                "cost_responsibility_type": "member_only",
+                "error_type": null,
+                "created_at": "2023-07-02T18:28:29.541Z",
+                "due_at": "2023-07-05T18:28:29.541Z",
+                "completed_at": "2023-07-10T18:28:29.541Z",
+                "display_date": "completed_at",
+                "subtitle_label": "July 10, 2023 | Billed to ***4242",
+                "caption_label": null,
+                "badge_label": null,
+              },
+              {
+                "label": "RX",
+                "treatment_procedure_id": 456,
+                "bill_uuid": "7c1fd5b3-3e4e-46e3-92f5-d0b61f7ac3df",
+                "payment_status": "PAID",
+                "payment_method_type": "DIRECT_PAYMENT",
+                "payment_method_display_label": "4242",
+                "member_responsibility": 1000,
+                "total_cost": 5000,
+                "cost_responsibility_type": "shared",
+                "error_type": null,
+                "created_at": "2023-07-02T18:28:29.541Z",
+                "due_at": "2023-07-05T18:28:29.541Z",
+                "completed_at": "2023-07-10T18:28:29.541Z",
+                "display_date": "due_at",
+                "subtitle_label": "",
+                "badge_label": "Cancelled",
+                "caption_label": "Remaining cost covered by Maven",
+
+              }
+            ]
+          }
+        }
+    ProcedurePaymentDetailResponse:
+      summary: A single procedure's payment details.
+      value:
+        {
+          "label": "IVF Fresh",
+          "treatment_procedure_id": 123,
+          "treatment_procedure_clinic": "Shady Grove Fertility Clinic",
+          "treatment_procedure_location": "Boston",
+          "treatment_procedure_started_at": "2023-07-11T18:28:29.541Z",
+          "payment_status": "NEW",
+          "member_responsibility": 25340,
+          "total_cost": 300000,
+          "cost_responsibility_type": "shared",
+          "error_type": null,
+          "responsibility_breakdown": [
+            {
+              "label": "Deductible",
+              "cost": 100000,
+              "original": 300000
+            },
+            {
+              "label": "Coinsurance",
+              "cost": 78000,
+              "original": 300000
+            },
+            {
+              "label": "Fees",
+              "cost": 5340,
+              "original": 300000
+            },
+            {
+              "label": "Not covered",
+              "cost": 20000,
+              "original": 300000
+            },
+          ],
+          "benefit_breakdown": [
+            {
+              "label": "Maven benefit",
+              "cost": 1020000,
+              "original": 300000
+            }
+          ],
+          "covered_amount_total": 1020000,
+          "credits_used": 0,
+          "created_at": "2023-07-10T18:28:29.541Z",
+          "due_at": "2023-07-13T18:28:29.541Z",
+          "completed_at": null,
+          "alert_label": "This procedure was cancelled.",
+        }
+    ProcedureEstimateDetailResponse:
+      summary: A single bill estimate
+      value:
+        procedure_id: 11112
+        bill_uuid: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+        procedure_title: "Fresh IVF"
+        clinic: "Sherbert Fertility"
+        clinic_location: "Miami, FL"
+        estimate_creation_date: "Sep 16, 2023"
+        estimate_creation_date_raw: "2023-09-16T18:28:29.541Z"
+        estimated_member_responsibility: "$300.00"
+        estimated_total_cost: "$800.00"
+        estimated_boilerplate: "This estimate is based on your current deductible and co-pays, and may change if you make insurance claims after this estimation took place."
+        credits_used: "1 credits"
+        responsibility_breakdown:
+          title: "Your estimated responsibility"
+          total_cost: "$300.00"
+          items:
+            - label: "Deductible"
+              cost: "$300.00"
+            - label: "Coinsurance"
+              cost: "$0.00"
+            - label: "Copay"
+              cost: "$40.00"
+            - label: "Member Responsibility"
+              cost: "$300.00"
+        covered_breakdown:
+          title: "Covered amount"
+          total_cost: "$500.00"
+          items:
+            - label: "Maven Benefit"
+              cost: "$500.00"
+    WalletEstimatesResponse:
+      value:
+        estimates_details:
+          - procedure_id: 11112
+            bill_uuid: "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+            procedure_title: "Fresh IVF"
+            clinic: "Sherbert Fertility"
+            clinic_location: "Miami, FL"
+            estimate_creation_date: "Sep 16, 2023"
+            estimate_creation_date_raw: "2023-09-16T18:28:29.541Z"
+            estimated_member_responsibility: "$300.00"
+            estimated_total_cost: "$800.00"
+            estimated_boilerplate: "This estimate is based on your current deductible and co-pays, and may change if you make insurance claims after this estimation took place."
+            credits_used: "1 credits"
+            responsibility_breakdown:
+              title: "Your estimated responsibility"
+              total_cost: "$300.00"
+              items:
+                - label: "Deductible"
+                  cost: "$300.00"
+                - label: "Coinsurance"
+                  cost: "$0.00"
+                - label: "Copay"
+                  cost: "$40.00"
+                - label: "Member Responsibility"
+                  cost: "$300.00"
+            covered_breakdown:
+              title: "Covered amount"
+              total_cost: "$500.00"
+              items:
+                - label: "Maven Benefit"
+                  cost: "$500.00"
+          - procedure_id: 11113
+            bill_uuid: "3fa85f64-5717-4562-b3fc-2c963f66afa7"
+            procedure_title: "Frozen IVF"
+            clinic: "Sherbert Fertility"
+            clinic_location: "Miami, FL"
+            estimate_creation_date: "Sep 16, 2023"
+            estimate_creation_date_raw: "2023-09-16T18:28:29.541Z"
+            estimated_member_responsibility: "$300.00"
+            estimated_total_cost: "$1000.00"
+            estimated_boilerplate: "This estimate is based on your current deductible and co-pays, and may change if you make insurance claims after this estimation took place."
+            credits_used: "0 credits"
+            responsibility_breakdown:
+              title: "Your estimated responsibility"
+              total_cost: "$300.00"
+              items:
+                - label: "Deductible"
+                  cost: "$300.00"
+                - label: "Coinsurance"
+                  cost: "$0.00"
+                - label: "Copay"
+                  cost: "$40.00"
+                - label: "Member Responsibility"
+                  cost: "$300.00"
+            covered_breakdown:
+              title: "Covered amount"
+              total_cost: "$500.00"
+              items:
+                - label: "Maven Benefit"
+                  cost: "$500.00"
+    ProcessingBill:
+      summary: a bill, moved from FAILED to PROCESSING
+      value:
+        id: 123456789
+        amount: 25340
+        last_calculated_fee: 250
+        label: "IVF Fresh"
+        payor_id: 12345678
+        payor_type: "MEMBER"
+        treatment_procedure_id: 123
+        cost_breakdown_id: 456
+        status: "PROCESSING"
+        error_type: None
+        reimbursement_request_created_at: None
+        created_at: "2023-07-01T18:28:29.541Z"
+        modified_at: "2023-07-04T18:28:29.541Z"
+        processing_at: "2023-07-04T18:28:29.541Z"
+        paid_at: None
+        refunded_at: None
+        failed_at: "2023-07-03T18:28:29.541Z"
+        cancelled_at: None
+    NotificationPayload:
+      summary: a notification for payment Adjusted - refund
+      value:
+        user_id: "553"
+        user_id_type: "PAYOR_ID"
+        user_type: "MEMBER"
+        event_source_system: "BILLING"
+        notification_event_payload:
+          event_name: "mmb_payment_adjusted_refund"
+          event_properties:
+            benefit_id: "1234"
+            original_payment_amount: "$300.99"
+            payment_amount: "$250.95"
+            refund_amount: "$50.04"
+            refund_date: "2024-01-01"
+            payment_method_type: "card"
+            payment_method_last4: "4321"
+            credit_amount:
+    HelpArticlesResponse:
+      summary: Details for all articles
+      value:
+        data:
+          - id: "4c02b4f05f4e"
+            title: "Getting started"
+            slug: "getting-started"
+          - id: "4677a8e84b6956"
+            title: "How it works"
+            slug: "how-it-works"
+    HelpArticleResponse:
+      summary: Details for a single article
+      value: 
+        title: At the clinic
+        rich_text_includes:
+          - items:
+              - title: Using your Maven Benefit ID
+                rich_text:
+                  nodeType: document
+                  data: {}
+                  content:
+                    - nodeType: paragraph
+                      data: {}
+                      content:
+                        - nodeType: text
+                          value: "Your Maven Benefit ID is your unique Wallet identifier that the clinic will use to look you up and determine your coverage (similar to your subscriber ID with your health plan). Your Benefit ID will only work at an in-network Maven clinic and Maven Rx, and is how Maven can seamlessly connect with the clinic to handle the billing and usage of your Maven funds.\_"
+                          marks: []
+                          data: {}
+                    - nodeType: paragraph
+                      data: {}
+                      content:
+                        - nodeType: text
+                          value: To find your Benefit ID, tap on the pink “View Benefit ID” button under the “Your employee benefits” section on your Maven Wallet dashboard. Your card will show your Benefit ID number, name, and anyone else you have invited to join your Wallet.
+                          marks: []
+                          data: {}
+                    - nodeType: paragraph
+                      data: {}
+                      content:
+                        - nodeType: text
+                          value: Directions on how to use the ID are also listed on the card. If your employer has opted in to use our partner pharmacy, instructions on how providers should input prescription information is also included on the card.
+                          marks: []
+                          data: {}
+                    - nodeType: paragraph
+                      data: {}
+                      content:
+                        - nodeType: text
+                          value: |+
+        
+                          marks: []
+                          data: {}
+              - title: Prescriptions
+                rich_text:
+                  nodeType: document
+                  data: {}
+                  content:
+                    - nodeType: paragraph
+                      data: {}
+                      content:
+                        - nodeType: text
+                          value: "Maven Rx provides members with critical support to manage the cost and complexity of fertility medications. We’ve partnered with a leading specialty fertility pharmacy — SMP Pharmacy — to offer best-in-class support for ordering, paying, receiving and administering your covered fertility medications.\_"
+                          marks: []
+                          data: {}
+                    - nodeType: paragraph
+                      data: {}
+                      content:
+                        - nodeType: text
+                          value: Through MavenRx for Maven Gold Members, the cost of your covered fertility medications will be paid directly through Maven’s integrated system with SMP Pharmacy.
+                          marks:
+                            - type: bold
+                          data: {}
+                        - nodeType: text
+                          value: "\_"
+                          marks: []
+                          data: {}
+                    - nodeType: paragraph
+                      data: {}
+                      content:
+                        - nodeType: text
+                          value: "To take advantage of MavenRx, please instruct your clinic to send your prescriptions directly to SMP Pharmacy using the instructions below. This information can also be found on the backside of your Maven Benefit ID card.\_"
+                          marks: []
+                          data: {}
+                    - nodeType: unordered-list
+                      data: {}
+                      content:
+                        - nodeType: list-item
+                          data: {}
+                          content:
+                            - nodeType: paragraph
+                              data: {}
+                              content:
+                                - nodeType: text
+                                  value: 'Pharmacy Name: SMP Pharmacy #2 (Fertility/Compounding)'
+                                  marks: []
+                                  data: {}
+                        - nodeType: list-item
+                          data: {}
+                          content:
+                            - nodeType: paragraph
+                              data: {}
+                              content:
+                                - nodeType: text
+                                  value: 'Address: 7500 NW 26 Street Suite 102, Miami, FL 33122'
+                                  marks: []
+                                  data: {}
+                        - nodeType: list-item
+                          data: {}
+                          content:
+                            - nodeType: paragraph
+                              data: {}
+                              content:
+                                - nodeType: text
+                                  value: 'NABP/NCPDP#: 1054573 (for electronic/SureScripts orders)'
+                                  marks: []
+                                  data: {}
+                        - nodeType: list-item
+                          data: {}
+                          content:
+                            - nodeType: paragraph
+                              data: {}
+                              content:
+                                - nodeType: text
+                                  value: Include “Maven” in the prescription notes
+                                  marks: []
+                                  data: {}
+                    - nodeType: paragraph
+                      data: {}
+                      content:
+                        - nodeType: text
+                          value: 'Note: You are not required to use Maven’s pharmacy partner, SMP Pharmacy. If you choose to obtain covered fertility medications from another pharmacy (outside of SMP Pharmacy) you will need to submit for reimbursement via the Maven app.'
+                          marks:
+                            - type: italic
+                          data: {}
+                    - nodeType: paragraph
+                      data: {}
+                      content:
+                        - nodeType: text
+                          value: |+
+        
+                          marks: []
+                          data: {}
+            id: no0PWPSfexN8HC10enmqp
+            heading_level: h3
+            entry_type: accordion
+        rich_text:
+          nodeType: document
+          data: {}
+          content:
+            - nodeType: embedded-entry-block
+              data:
+                target:
+                  sys:
+                    id: no0PWPSfexN8HC10enmqp
+                    type: Link
+                    linkType: Entry
+              content: []
+            - nodeType: paragraph
+              data: {}
+              content:
+                - nodeType: text
+                  value: ''
+                  marks: []
+                  data: {}
+        id: 6MIFK1VkVYSbU8eJJqSyx3
+        type: rich_text
+    ClinicAggregateTreatmentProceduresResponse:
+      description: "Total count and treatment procedures for clinic aggregate view"
+      value: 
+        total_count: 2
+        procedures:
+          - id: 4
+            uuid: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+            member_first_name: "Eleanor"
+            member_last_name: "Roosevelt"
+            member_date_of_birth: "1999-02-25"
+            benefit_type: "CYCLE"
+            benefit_start_date: "2024-01-01"
+            benefit_expires_date: "2025-02-01"
+            wallet_state: "QUALIFIED"
+            member_id: 23
+            benefit_id: "545166"
+            global_procedure_id: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+            infertility_diagnosis: "MEDICALLY_INFERTILE"
+            fertility_clinic_id: 534
+            fertility_clinic_location_id: 12
+            fertility_clinic_name: CCRM
+            fertility_clinic_location_name: Chicago
+            fertility_clinic_location_address: 1313 S Michigan Ave
+            start_date: '2023-02-15'
+            end_date: '2023-02-17'
+            procedure_name: Procedure Name
+            cost: 5
+            cost_credit: 10
+            status: COMPLETED
+            global_procedure:
+              id: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+              name: Procedure Name
+              credits: 10
+              annual_limit: 2
+              is_partial: false
+              is_diagnostic: true
+              partial_procedures:
+                - id: ecdbcf32-9054-4477-a7c3-9063604bc883
+                  name: Partial Global Procedure Name
+                  credits: 1
+                  annual_limit: 3
+                  is_partial: true
+                  is_diagnostic: false
+                  parent_procedure_ids:
+                    - 3fa85f64-5717-4562-b3fc-2c963f66afa6
+            partial_procedure:
+              id: 5
+              uuid: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+              member_id: 23
+              infertility_diagnosis: MEDICALLY_INFERTILE
+              global_procedure_id: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+              fertility_clinic_id: 534
+              fertility_clinic_location_id: 12
+              start_date: '2023-02-15'
+              end_date: '2023-02-17'
+              procedure_name: Diagnosis Cancelled After Diagnosis
+              cost: 3
+              currency: 10
+              status: PARTIALLY_COMPLETED
+              global_procedure:
+                id: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+                name: Partial Global Procedure Name
+                credits: 3
+                annual_limit: 20
+                is_partial: false
+                is_diagnostic: true
+                partial_procedures: []
+        
+  responses:
+    WalletBillingConsent:
+      description: "Billing consent was successfully saved for wallet ID"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/WalletBillingConsent"
+          examples:
+            success:
+              $ref: "#/components/examples/ValidWalletBillingConsent"
+    WalletBillingConsentStatus:
+      description: "Whether a wallet has granted or not granted billing consent"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/WalletBillingConsent"
+          examples:
+            success:
+              $ref: "#/components/examples/ValidWalletBillingConsent"
+    ProcedurePaymentDetail:
+      description: "A successful description of the cost breakdown and other details for this specific procedure."
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/PaymentDetail"
+          examples:
+            success:
+              $ref: "#/components/examples/ProcedurePaymentDetailResponse"
+    ProcedureEstimateDetail:
+      description: "A successful description of the cost breakdown and other details for this specific procedure."
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/EstimateDetail"
+          examples:
+            success:
+              $ref: "#/components/examples/ProcedureEstimateDetailResponse"
+    WalletEstimates:
+      description: "Successful return of the list of upcoming billing estimates for the wallet"
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/WalletEstimates'
+          examples:
+            success:
+              $ref: '#/components/examples/WalletEstimatesResponse'
+    MemberPaymentHistory:
+      description: "Successful return of the lists of upcoming and historic cost breakdowns, bills, and other payment details specific to a member."
+      content:
+        application/json:
+          schema:
+            properties:
+              upcoming:
+                description: "Payment Records with an upcoming due date (New, Pending, Processing, Failed)."
+                type: array
+                items:
+                 $ref: "#/components/schemas/PaymentRecord"
+              history:
+                description: "Payment Records in any completed state (Paid, Refunded, Failed with a past due date.)"
+                allOf:
+                  - $ref: "#/components/schemas/PaginationFields"
+                  - type: object
+                    properties:
+                      results:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/PaymentRecord"
+          examples:
+            success:
+              $ref: "#/components/examples/MemberPaymentHistoryResponse"
+    HelpArticles:
+      description: "Details for all articles configured for a given Help section"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/HelpArticlesResponse"
+          examples:
+            success:
+              $ref: "#/components/examples/HelpArticlesResponse"
+    HelpArticle:
+      description: "Details for a help article"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/HelpArticleResponse"
+          examples:
+            success:
+              $ref: "#/components/examples/HelpArticleResponse"
+    ClinicAggregateTreatmentProceduresResponse:
+      description: "Total count and treatment procedures for clinic aggregate view"
+      content: 
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ClinicAggregateTreatmentProceduresResponse"
+          examples:
+            success:
+              $ref: "#/components/examples/ClinicAggregateTreatmentProceduresResponse"
+              
+  schemas:
+    # region: Billing Consent
+    WalletBillingConsent:
+      type: object
+      required: [ consent_granted ]
+      properties:
+        consent_granted:
+          description: whether or not wallet has granted billing consent
+          type: boolean
+    # endregion
+
+    # region: Member Lookup
+    MemberLookupRequest:
+      type: object
+      required: [ benefit_id, last_name, date_of_birth]
+      properties:
+        benefit_id:
+          description: Benefit ID of the member
+          type: string
+        last_name:
+          description: last name of the patient to look up
+          type: string
+        date_of_birth:
+          description: date birth of the patient to look up
+          type: string
+          format: date
+
+    MemberLookupResponse:
+      type: object
+      properties:
+        member:
+          $ref: "#/components/schemas/Member"
+        benefit:
+          $ref: "#/components/schemas/Benefit"
+        content:
+          $ref: "#/components/schemas/Content"
+
+    Patient:
+      description: info related to the patient
+      type: object
+      required: [member_id, first_name, last_name, date_of_birth]
+      properties:
+        member_id:
+          type: integer
+        first_name:
+          type: string
+          minLength: 0
+          maxLength: 40
+        last_name:
+          type: string
+          minLength: 0
+          maxLength: 40
+        date_of_birth:
+          type: string
+          format: date
+          minLength: 10
+          maxLength: 10
+        phone:
+          type: string
+          minLength: 0
+          maxLength: 15
+        email:
+          type: string
+          format: email
+          minLength: 0
+          maxLength: 64
+
+    Member:
+      description: Data about the member
+      type: object
+      required: [user_id, first_name, last_name, date_of_birth, email, phone, benefit_id, current_type, eligible_type, eligibility_start_date, eligibility_end_date]
+      properties:
+        user_id:
+          type: integer
+          nullable: false
+        first_name:
+          type: string
+          nullable: false
+          minLength: 0
+          maxLength: 40
+        last_name:
+          type: string
+          nullable: false
+          minLength: 0
+          maxLength: 40
+        date_of_birth:
+          type: string
+          nullable: false
+          format: date
+          minLength: 10
+          maxLength: 10
+        email:
+          type: string
+          nullable: false
+          format: email
+          minLength: 0
+          maxLength: 64
+        phone:
+          type: string
+          nullable: false
+          minLength: 0
+          maxLength: 15
+        benefit_id:
+          type: string
+          nullable: false
+          minLength: 0
+          maxLength: 9
+        current_type:
+          type: string
+          enum:
+            - MAVEN_ACCESS
+            - MAVEN_GREEN
+            - MAVEN_GOLD
+        eligible_type:
+          type: string
+          enum:
+            - MAVEN_ACCESS
+            - MAVEN_GREEN
+            - MAVEN_GOLD
+        eligibility_start_date:
+          type: string
+          nullable: true
+        eligibility_end_date:
+          type: string
+          nullable: true
+
+    Benefit:
+      description: Data about the member's benefit
+      type: object
+      nullable: false
+      required: [organization, wallet]
+      properties:
+        organization:
+          type: object
+          nullable: true
+          required: [name, fertility_program]
+          properties:
+            name:
+              type: string
+              nullable: false
+            fertility_program:
+              $ref: "#/components/schemas/FertilityProgram"
+        wallet:
+          $ref: "#/components/schemas/Wallet"
+
+    PortalMessage:
+      description: object describing an instance of a portal message
+      type: object
+      required: [text, level]
+      properties:
+        text:
+          type: string
+          nullable: false
+        level:
+          type: string
+          nullable: false
+          enum:
+            - attention
+            - warning
+            - error
+            - success
+
+    Content:
+      description: object containing the messages and page content to be displayed
+      type: object
+      nullable: true
+      required: [messages, body_variant]
+      properties:
+        messages:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/PortalMessage"
+        body_variant:
+          type: string
+          nullable: false
+          enum:
+            - "PROGYNY_TOC"
+
+    ExcludedProcedure:
+      type: object
+      required: [procedure_id, procedure_name]
+      properties:
+        procedure_id:
+          type: string
+        procedure_name:
+          type: string
+
+    FertilityProgram:
+      type: object
+      nullable: true
+      required: [ direct_payment_enabled, program_type, dx_required_procedures, excluded_procedures, allows_taxable ]
+      properties:
+        direct_payment_enabled:
+          type: boolean
+          nullable: false
+        program_type:
+          type: string
+          nullable: false
+          enum:
+            - CARVE_OUT
+            - WRAP_AROUND
+        dx_required_procedures:
+          type: array
+          nullable: false
+          items:
+            type: string
+            format: uuid
+        excluded_procedures:
+          type: array
+          nullable: false
+          items:
+            $ref: "#/components/schemas/ExcludedProcedure"
+        allows_taxable:
+          type: boolean
+          nullable: false
+    # endregion
+
+    # region: Wallet
+    Wallet:
+      type: object
+      nullable: true
+      required: [wallet_id, benefit_type, state, balance, payment_method_on_file]
+      properties:
+        wallet_id:
+          type: string
+          nullable: false
+        benefit_type:
+          type: string
+          nullable: true
+          enum:
+            - CURRENCY
+            - CYCLE
+        state:
+          type: string
+          nullable: false
+          enum:
+            - PENDING
+            - QUALIFIED
+            - DISQUALIFIED
+            - EXPIRED
+            - RUNOUT
+        balance:
+          type: object
+          nullable: false
+          required: [is_unlimited, total, available]
+          properties:
+            is_unlimited:
+              type: boolean
+              nullable: false
+            total:
+              type: integer
+              nullable: true
+            available:
+              type: integer
+              nullable: true
+        payment_method_on_file:
+          type: boolean
+          nullable: false
+          deprecated: true
+        allow_treatment_scheduling:
+          type: boolean
+          nullable: false
+    # endregion
+
+    # region: Clinic
+    FertilityClinic:
+      type: object
+      required: [id, uuid, name, fee_schedule_id, payments_recipient_id, locations]
+      properties:
+        id:
+          type: integer
+        uuid:
+          type: string
+          format: uuid
+          maxLength: 36
+        name:
+          type: string
+          maxLength: 50
+        affiliated_network:
+          type: string
+          maxLength: 50
+        fee_schedule:
+          $ref: "#/components/schemas/FeeSchedule"
+        notes:
+          type: string
+        payments_recipient_id:
+          type: string
+          format: uuid
+          maxLength: 36
+        locations:
+          type: array
+          items:
+            $ref: "#/components/schemas/FertilityClinicLocation"
+    FertilityClinicLocation:
+      type: object
+      required: [id, uuid, name, address_1, city, subdivision_code, country_code, postal_code]
+      properties:
+        id:
+          type: integer
+        uuid:
+          type: string
+          format: uuid
+          maxLength: 36
+        name:
+          type: string
+          maxLength: 50
+        address_1:
+          type: string
+          maxLength: 200
+        address_2:
+          type: string
+          maxLength: 200
+        city:
+          type: string
+          maxLength: 40
+        subdivision_code:
+          type: string
+          maxLength: 6
+        country_code:
+          type: string
+          maxLength: 3
+        postal_code:
+          type: string
+          maxLength: 20
+        phone_number:
+          type: string
+          maxLength: 50
+        email:
+          type: string
+          format: email
+          maxLength: 120
+    FertilityClinicRequest:
+      type: object
+      required: [name, fee_schedule_id, payments_recipient_id, locations]
+      properties:
+        name:
+          type: string
+          maxLength: 50
+        fee_schedule:
+          $ref: "#/components/schemas/FeeSchedule"
+        payments_recipient_id:
+          type: string
+          format: uuid
+          maxLength: 36
+        locations:
+          type: array
+          items:
+            $ref: "#/components/schemas/FertilityClinicLocation"
+    FeeSchedule:
+      type: object
+      required: [id, name, fee_schedule_global_procedures]
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+          maxLength: 190
+        fee_schedule_global_procedures:
+          type: array
+          items:
+            $ref: "#/components/schemas/FeeScheduleGlobalProcedures"
+    FeeScheduleGlobalProcedures:
+      type: object
+      required: [id, reimbursement_wallet_global_procedures_id, cost]
+      properties:
+        id:
+          type: integer
+        reimbursement_wallet_global_procedures_id:
+          type: integer
+        cost:
+          type: integer
+          description: Cost of the GlobalProcedure for this FeeSchedule represented USD cents.
+    FertilityClinicUserProfile:
+      type: object
+      required: [id, first_name, last_name, email, role, clinics]
+      properties:
+        user_id:
+          type: integer
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        role:
+          type: string
+        clinics:
+          type: array
+          items:
+            $ref: "#/components/schemas/FertilityClinic"
+    FertilityClinicUser:
+      type: object
+      required: [id, uuid, first_name, last_name]
+      properties:
+        id:
+          type: integer
+        uuid:
+          type: string
+          format: uuid
+          maxLength: 36
+        first_name:
+          type: string
+        last_name:
+          type: string
+        clinics:
+          type: array
+          items:
+            $ref: "#/components/schemas/FertilityClinic"
+    FertilityClinicUserRequest:
+      type: object
+      required: [first_name, last_name]
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+    FertilityClinicGlobalProcedures:
+      type: array
+      items:
+        $ref: "#/components/schemas/FertilityClinicGlobalProcedure"
+    FertilityClinicPartialProcedure:
+      type: object
+      required: [id, name, credits, cost, is_partial, is_diagnostic]
+      properties:
+        id:
+            type: string
+            format: uuid
+            maxLength: 36
+        name:
+          type: string
+        cost:
+          type: integer
+        credits:
+          type: integer
+        annual_limit:
+          type: integer
+          nullable: true
+          description: Annual Limit for the GlobalProcedure, represented USD cents.
+        is_partial:
+          type: boolean
+        is_diagnostic:
+          type: boolean
+        parent_procedure_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+            maxLength: 36
+    FertilityClinicGlobalProcedure:
+      type: object
+      required: [id, name, credits, cost, is_partial, is_diagnostic]
+      properties:
+        id:
+            type: string
+            format: uuid
+            maxLength: 36
+        name:
+          type: string
+        cost:
+          type: integer
+        credits:
+          type: integer
+        annual_limit:
+          type: integer
+          nullable: true
+          description: Annual Limit for the GlobalProcedure, represented USD cents.
+        is_partial:
+          type: boolean
+        is_diagnostic:
+          type: boolean
+        parent_procedure_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+            maxLength: 36
+        partial_procedures:
+          type: array
+          items:
+            $ref: "#/components/schemas/FertilityClinicPartialProcedure"
+    ClinicAggregateTreatmentProceduresResponse:
+      type: object
+      required:
+        - total_count
+        - procedures
+      properties:
+          total_count:
+            type: integer
+            nullable: false
+          procedures:
+            type: array
+            nullable: false
+            items:
+              $ref: "#/components/schemas/ClinicAggregateTreatmentProcedure"
+    ClinicAggregateTreatmentProcedure:
+      type: object
+      description: A single treatment procedure for clinic aggregate view
+      required:  [
+          id,
+          uuid,
+          global_procedure_id,
+          fertility_clinic_id,
+          fertility_clinic_location_id,
+          start_date,
+          status,
+          benefit_id,
+          procedure_name,
+          infertility_diagnosis,
+          member_first_name,
+          member_last_name,
+          member_date_of_birth,
+          member_id,
+          cost,
+          fertility_clinic_name,
+          fertility_clinic_location_name,
+          fertility_clinic_location_address,
+          benefit_type,
+          benefit_start_date,
+          benefit_expires_date,
+          wallet_state
+        ]
+      properties: 
+        id: 
+          type: integer
+        uuid:
+          type: string
+          format: uuid
+          maxLength: 36
+        procedure_name:
+          type: string
+          minLength: 0
+          maxLength: 191
+        member_first_name:
+          type: string
+        member_last_name:
+          type: string
+        member_date_of_birth:
+          type: string
+          format: date
+        member_id:
+          type: integer
+        benefit_id:
+          type: string
+        benefit_type:
+          type: string
+          enum:
+            - CYCLE
+            - CURRENCY
+        benefit_start_date:
+          type: string
+          format: date
+          nullable: true
+        benefit_expires_date:
+          type: string
+          format: date
+          nullable: true
+        wallet_state:
+          type: string
+          enum:
+            - PENDING
+            - QUALIFIED
+            - DISQUALIFIED
+            - EXPIRED
+            - RUNOUT
+        global_procedure_id:
+          type: string
+          format: uuid
+        infertility_diagnosis:
+          type: string
+          nullable: true
+          enum:
+            - MEDICALLY_FERTILE
+            - MEDICALLY_INFERTILE
+            - NOT_SURE
+        fertility_clinic_id:
+          type: integer
+        fertility_clinic_location_id:
+          type: integer
+        fertility_clinic_name:
+          type: string
+        fertility_clinic_location_name:
+          type: string
+        fertility_clinic_location_address:
+          type: string
+        start_date:
+          type: string
+          format: date
+        end_date:
+          type: string
+          format: date
+        cost:
+          type: number
+        cost_credit:
+          type: number
+        status:
+          type: string
+          enum:
+            - SCHEDULED
+            - COMPLETED
+            - PARTIALLY_COMPLETED
+            - CANCELLED
+        global_procedure:
+         $ref: "#/components/schemas/FertilityClinicGlobalProcedure"
+        partial_procedure: 
+          $ref: "#/components/schemas/TreatmentProcedurePartialProcedure"
+    # endregion
+
+    # region: TreatmentProcedures
+    TreatmentProcedurePUTRequest:
+      type: object
+      properties:
+        start_date:
+          type: string
+          format: date
+          minLength: 0
+          maxLength: 15
+        end_date:
+          type: string
+          format: date
+          minLength: 0
+          maxLength: 15
+        status:
+          type: string
+          enum:
+            - SCHEDULED
+            - COMPLETED
+            - PARTIALLY_COMPLETED
+            - CANCELLED
+        partial_global_procedure_id:
+          type: string
+          format: uuid
+      example: {
+        "start_date": "2023-02-15",
+        "end_date": "2023-02-17",
+        "status": "COMPLETED",
+        "partial_global_procedure_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      }
+    TreatmentProcedureRequest:
+      allOf:
+        - $ref: "#/components/schemas/TreatmentProcedurePUTRequest"
+        - type: object
+          required: [
+              member_id, infertility_diagnosis, global_procedure_id, fertility_clinic_id,
+              fertility_clinic_location_id, start_date, status
+          ]
+          properties:
+            member_id:
+              type: integer
+            global_procedure_id:
+              type: string
+              format: uuid
+              maxLength: 36
+            infertility_diagnosis:
+              type: string
+              nullable: true
+              enum:
+                - MEDICALLY_FERTILE
+                - MEDICALLY_INFERTILE
+                - NOT_SURE
+            fertility_clinic_id:
+              type: integer
+            fertility_clinic_location_id:
+              type: integer
+            # start_date is inherited from TreatmentProcedurePUTRequest, but it's optional there and required here -
+            # needs to be re-included for it to register with FE codegen
+            start_date:
+              type: string
+          example: {
+            "member_id": 123,
+            "infertility_diagnosis": "MEDICALLY_INFERTILE",
+            "global_procedure_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "fertility_clinic_id": 534,
+            "fertility_clinic_location_id": 12,
+            "start_date": "2023-02-15",
+            "end_date": "2023-02-17",
+            "status": "COMPLETED",
+          }
+    TreatmentProceduresRequest:
+      type: object
+      properties:
+        procedures:
+          type: array
+          items:
+            $ref: "#/components/schemas/TreatmentProcedureRequest"
+      example:
+        procedures:
+          [
+            {
+              member_id: 123,
+              infertility_diagnosis: "MEDICALLY_INFERTILE",
+              global_procedure_id: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+              fertility_clinic_id: 534,
+              fertility_clinic_location_id: 12,
+              start_date: "2023-02-15",
+              end_date: "2023-02-17",
+            }
+          ]
+    TreatmentProcedure:
+      allOf:
+        - $ref: "#/components/schemas/TreatmentProcedureRequest"
+        - type: object
+          required: [
+              id, uuid, member_id, infertility_diagnosis, global_procedure_id, fertility_clinic_id,
+              fertility_clinic_location_id, procedure_name, cost, status
+          ]
+          properties:
+            id:
+              type: integer
+            uuid:
+              type: string
+              format: uuid
+              maxLength: 36
+            procedure_name:
+              type: string
+              minLength: 0
+              maxLength: 191
+            # status is inherited from TreatmentProcedurePUTRequest, but it's optional there and required here -
+            # needs to be re-included for it to register with FE codegen
+            status:
+              type: string
+              enum:
+                - SCHEDULED
+                - COMPLETED
+                - PARTIALLY_COMPLETED
+                - CANCELLED
+            cost:
+              type: integer
+              description: "Cost in currency. Will always be returned for both cycle based and currency wallets. Currency represented as cents."
+            cost_credit:
+              type: integer
+              description: "Cost in credits of procedure only when member is cycle based benefit"
+            global_procedure:
+              $ref: "#/components/schemas/FertilityClinicGlobalProcedure"
+            partial_procedure: 
+              $ref: "#/components/schemas/TreatmentProcedurePartialProcedure"
+    TreatmentProcedures:
+       type: object
+       properties:
+        procedures:
+          type: array
+          items:
+            $ref: "#/components/schemas/TreatmentProcedure"
+    TreatmentProcedurePartialProcedure:
+        allOf:
+        - $ref: "#/components/schemas/TreatmentProcedureRequest"
+        - type: object
+          required: [
+              id, uuid, member_id, infertility_diagnosis, global_procedure_id, fertility_clinic_id,
+              fertility_clinic_location_id, procedure_name, cost, status
+          ]
+          properties:
+            id:
+              type: integer
+            uuid:
+              type: string
+              format: uuid
+              maxLength: 36
+            procedure_name:
+              type: string
+              minLength: 0
+              maxLength: 191
+            # status & start_date is inherited from TreatmentProcedurePUTRequest, but it's optional there and required here -
+            # needs to be re-included for it to register with FE codegen
+            start_date:
+              type: string
+            status:
+              type: string
+              enum:
+                - SCHEDULED
+                - COMPLETED
+                - PARTIALLY_COMPLETED
+                - CANCELLED
+            cost:
+              type: integer
+              description: "Cost in currency. Will always be returned for both cycle based and currency wallets. Currency represented as cents."
+            cost_credit:
+              type: integer
+              description: "Cost in credits of procedure only when member is cycle based benefit"
+            global_procedure:
+              $ref: "#/components/schemas/FertilityClinicGlobalProcedure"
+
+    # endregion
+
+    # region: TreatmentProcedureQuestionnaires
+    TreatmentProcedureQuestionnaires:
+      type: object
+      properties:
+        questionnaires:
+          type: array
+          items:
+            $ref: "#/components/schemas/TreatmentProcedureQuestionnaire"
+    TreatmentProcedureQuestionnaire:
+      type: object
+      required: [id, oid, global_procedure_ids, question_sets]
+      properties:
+        id:
+            type: string
+            maxLength: 20
+        description_text:
+          type: string
+        oid:
+          type: string
+        sort_order:
+          type: integer
+        trigger_answer_ids:
+          type: array
+          items:
+            type: string
+            maxLength: 20
+        title_text:
+          type: string
+        soft_deleted_at:
+          type: string
+          format: date-time
+        global_procedure_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+        question_sets:
+          type: array
+          items:
+            $ref: "#/components/schemas/TreatmentProcedureQuestionSet"
+    TreatmentProcedureQuestionSet:
+      type: object
+      required: [id, sort_order, questions]
+      properties:
+        id:
+          type: string
+          maxLength: 20
+        prerequisite_answer_id:
+          type: string
+          maxLength: 20
+        oid:
+          type: string
+        sort_order:
+          type: integer
+        soft_deleted_at:
+          type: string
+          format: date-time
+        questions:
+          type: array
+          items:
+            $ref: "#/components/schemas/TreatmentProcedureQuestion"
+    TreatmentProcedureQuestion:
+      type: object
+      required: [label, id, oid, sort_order, type]
+      properties:
+        label:
+          type: string
+        id:
+          type: string
+          maxLength: 20
+        oid:
+          type: string
+        required:
+          type: boolean
+        sort_order:
+          type: integer
+        non_db_answer_options_json:
+          type: string
+        type:
+          type: string
+          enum:
+            - "RADIO"
+            - "CHECKBOX"
+            - "TEXT"
+            - "STAR"
+            - "MEDICATION"
+            - "ALLERGY_INTOLERANCE"
+            - "CONDITION"
+            - "DATE"
+            - "MULTISELECT"
+            - "SINGLE_SELECT"
+        soft_deleted_at:
+          type: string
+          format: date-time
+        answers:
+          type: array
+          items:
+            $ref: "#/components/schemas/TreatmentProcedureQuestionnaireAnswer"
+    TreatmentProcedureQuestionnaireAnswer:
+      type: object
+      required: [text, id, oid, sort_order]
+      properties:
+        text:
+          type: string
+        id:
+          type: string
+          maxLength: 20
+        oid:
+          type: string
+        sort_order:
+          type: integer
+        soft_deleted_at:
+          type: string
+          format: date-time
+    TreatmentProcedureQuestionnairesRequest:
+      type: object
+      required: [treatment_procedure_id, questionnaires]
+      properties:
+        treatment_procedure_id:
+          type: integer
+        questionnaires:
+          type: array
+          items:
+            $ref: "#/components/schemas/TreatmentProcedureQuestionnaireRequest"
+    TreatmentProcedureQuestionnaireRequest:
+      type: object
+      required: [questionnaire_id, questions]
+      properties:
+        questionnaire_id:
+          type: string
+        questions:
+          type: array
+          items:
+            $ref: "#/components/schemas/TreatmentProcedureQuestionRequest"
+    TreatmentProcedureQuestionRequest:
+      type: object
+      required: [question_id, answer_id]
+      properties:
+        question_id:
+          type: string
+        answer_id:
+          type: string
+    
+    # endregion
+
+    # region: Payments History & Detail
+    PaymentRecord:
+      type: object
+      description: "A combination of cost breakdown, billing, and payment gateway transaction details specific to a single wallet."
+      required:
+        - label
+        - treatment_procedure_id
+        - payment_status
+        - member_responsibility
+      properties:
+        label:
+          description: "Name of the relevant global procedure or another detail of the payment record."
+        treatment_procedure_id:
+          description: "Associated Treatment Procedure ID."
+          type: integer  # Treatment plans have numerical primary keys and uuids -- using the numeric id here for consistency with existing endpoint params, but should it be the uuid instead?
+        bill_uuid:
+          description: "Associated Bill UUID, used to open a detail if present. Will not be present for PENDING payment records."
+          type: string
+          format: uuid
+          nullable: true
+        payment_status:
+          $ref: "#/components/schemas/PaymentStatusField"
+        payment_method_type:
+          $ref: "#/components/schemas/PaymentMethodTypeField"
+        payment_method_display_label:
+          description: "last 4 of a card or bank account, any needed similar identifiers for other methods. Null for write-off, offline."
+          type: string
+          nullable: true
+        member_responsibility:
+          allOf:
+            - description: "An amount of currency in integer format (e.g. $10.00 is 1000) indicating the money a member must pay towards this procedure. May be zero or be null if waiting on RTE (pending state)."
+            - $ref: "#/components/schemas/CurrencyAmount"
+        total_cost:
+          allOf:
+            - description: "An amount of currency in integer format (e.g. $10.00 is 1000) indicating the total cost of this procedure. Derived from the fee schedule."
+            - $ref: "#/components/schemas/CurrencyAmount"
+        cost_responsibility_type:
+          $ref: "#/components/schemas/CostResponsibilityType"
+        created_at:
+          description: "When the record was created."
+          type: string
+          format: date-time
+        due_at:
+          description: "When the payment will attempt to reach a completed state, usually 'new' changing to 'processing'. This field will be deprecated in V2."
+          type: string
+          format: date-time
+          nullable: true
+        completed_at:
+          description: "When the payment reached its final state, be that paid, failed, or refunded. This field will be deprecated in V2."
+          type: string
+          format: date-time
+          nullable: true
+        display_date:
+          $ref: "#/components/schemas/PaymentDisplayDate"
+        subtitle_label:
+          description: "Comprehensive string based on the payment status and date to display."
+          type: string
+          nullable: false
+        badge_label:
+          description: "Prominent label displayed next to the name of procedure."
+          type: string
+          nullable: true
+        caption_label:
+          description: "Label that controls the caption on the payment page below the subtitle. Not shown when the value is null."
+          type: string
+          nullable: true
+    PaymentDetail:
+      type: object
+      description: "A combination of cost breakdown, billing, and payment gateway transaction details specific to a single bill."
+      required:
+        - label
+        - treatment_procedure_id
+        - treatment_procedure_clinic
+        - treatment_procedure_location
+        - treatment_procedure_started_at
+        - payment_status
+        - member_responsibility
+        - cost_responsibility_type
+        - responsibility_breakdown
+        - benefit_breakdown
+        - covered_amount_total
+        - alert_label
+      properties:
+        label:
+          description: "Name of the relevant global procedure or another detail of the payment record."
+          type: string
+        treatment_procedure_id:
+          description: "Associated Treatment Procedure ID."
+          type: integer  # Treatment plans have numerical primary keys and uuids -- using the numeric id here for consistency with existing endpoint params, but should it be the uuid instead?
+        treatment_procedure_clinic:
+          type: string
+        treatment_procedure_location:
+          type: string
+        treatment_procedure_started_at:
+          type: string
+          format: date-time
+          nullable: true
+        payment_status:
+          $ref: "#/components/schemas/PaymentStatusField"
+        member_responsibility:
+          allOf:
+            - description: "An amount of currency in integer format (e.g. $10.00 is 1000) indicating the money a member must pay towards this procedure. May be zero or be null if waiting on RTE (pending state)."
+            - $ref: "#/components/schemas/CurrencyAmount"
+        total_cost:
+          allOf:
+            - description: "An amount of currency in integer format (e.g. $10.00 is 1000) indicating the total cost of a procedure. Derived from the fee schedule."
+            - $ref: "#/components/schemas/CurrencyAmount"
+        cost_responsibility_type:
+          $ref: "#/components/schemas/CostResponsibilityType"
+        error_type:
+          $ref: "#/components/schemas/PaymentErrorType"
+        responsibility_breakdown:
+          type: array
+          items:
+            properties:
+              label:
+                type: string
+                enum:
+                  - "Deductible"
+                  - "Coinsurance"
+                  - "Fees"
+                  - "Not covered"
+              cost:
+                $ref: "#/components/schemas/CurrencyAmount"
+              original:
+                $ref: "#/components/schemas/CurrencyAmount"
+        benefit_breakdown:
+          type: array
+          items:
+            properties:
+              label:
+                type: string
+                enum:
+                  - "Maven benefit"
+                  - "Medical plan"
+              cost:
+                $ref: "#/components/schemas/CurrencyAmount"
+              original:
+                $ref: "#/components/schemas/CurrencyAmount"
+        covered_amount_total:
+          type: integer
+          description: "Total amount covered by the Maven benefit and medical plan. For the time being, the medical plan covers 0."
+          nullable: false
+        alert_label:
+          description: "Field controlling text/inline alerts shown on the client."
+          type: string
+          enum:
+            - "This procedure was cancelled."
+            - "If applicable, your full payment will be refunded to your original payment method."
+          nullable: true
+        credits_used:
+          type: integer
+          nullable: true
+        created_at:
+          description: "When the record was created"
+          type: string
+          format: date-time
+        due_at:
+          description: "When the payment will attempt to reach a completed state, usually 'new' changing to 'processing'."
+          type: string
+          format: date-time
+          nullable: true
+        completed_at:
+          description: "When the payment reached its final state, be that paid, failed, or refunded."
+          type: string
+          format: date-time
+          nullable: true
+        display_date:
+          $ref: "#/components/schemas/PaymentDisplayDate"
+    EstimateDetail:
+      type: object
+      description: "A combination of cost breakdown, billing, and treatment procedure details specific to a single bill estimate."
+      required:
+        - procedure_id
+        - bill_uuid
+        - procedure_title
+        - clinic
+        - clinic_location
+        - estimate_creation_date
+        - estimate_creation_date_raw
+        - estimated_member_responsibility
+        - estimated_total_cost
+        - estimated_boilerplate
+        - credits_used
+        - responsibility_breakdown
+        - covered_breakdown
+      properties:
+        procedure_id:
+          description: "Associated Treatment Procedure ID."
+          type: integer
+          nullable: false
+        bill_uuid:
+          description: "UUID of Associated Bill"
+          type: string
+          nullable: false
+        procedure_title:
+          description: "Associated Treatment Procedure Title."
+          type: string
+          minLength: 0
+          maxLength: 191
+          nullable: false
+        clinic:
+          description: "Clinic associated with the relevant Treatment Procedure."
+          type: string
+          minLength: 0
+          maxLength: 153
+          nullable: false
+        clinic_location:
+          description: "Clinic Location associated with the relevant Treatment Procedure."
+          type: string
+          minLength: 0
+          maxLength: 50
+          nullable: false
+        estimate_creation_date:
+          description: "Date the billing estimate was created."
+          type: string
+          format: date
+          nullable: false
+        estimate_creation_date_raw:
+          description: "Date the billing estimate was created, in the iso format."
+          type: string
+          format: date-time
+          nullable: false
+        estimated_member_responsibility:
+          $ref: "#/components/schemas/CurrencyFormatted"
+        estimated_total_cost:
+          $ref: "#/components/schemas/CurrencyFormatted"
+        estimated_boilerplate:
+          description: "A string description explaining estimate expectations."
+          type: string
+          nullable: false
+        credits_used:
+          type: string
+          nullable: true
+        responsibility_breakdown:
+          type: object
+          required: [title, total_cost, items]
+          properties:
+            title:
+              type: string
+              nullable: false
+            total_cost:
+              $ref: "#/components/schemas/CurrencyFormatted"
+            items:
+              type: array
+              items:
+                properties:
+                  label:
+                    enum:
+                      - "Deductible"
+                      - "Coinsurance"
+                      - "Copay"
+                      - "Member Responsibility"
+                  cost:
+                    $ref: "#/components/schemas/CurrencyFormatted"
+        covered_breakdown:
+          type: object
+          required: [title, total_cost, items]
+          properties:
+            title:
+              type: string
+              nullable: false
+            total_cost:
+              $ref: "#/components/schemas/CurrencyFormatted"
+            items:
+              type: array
+              items:
+                properties:
+                  label:
+                    enum:
+                      - "Maven Benefit"
+                  cost:
+                    $ref: "#/components/schemas/CurrencyFormatted"
+    WalletEstimates:
+      type: object
+      required:
+        - estimates_details
+      properties:
+        estimates_details:
+          type: array
+          minItems: 0
+          items:
+            $ref: "#/components/schemas/EstimateDetail"
+    Bill:
+      type: object
+      description: "A single raw billing record, without the additional details of cost breakdown and treatment procedure."
+      required:
+        - id
+        - amount
+        - last_calculated_fee
+        - label
+        - payor_id
+        - payor_type
+        - treatment_procedure_id
+        - cost_breakdown_id
+        - status
+      properties:
+        uuid:
+          description: "Bill uuid. May be used to open a billing detail view."
+          type: string
+          format: uuid
+        amount:
+          type: integer
+        last_calculated_fee:
+          type: integer
+          nullable: true
+        label:
+          description: "Name of the relevant global procedure or another detail of the payment record."
+          type: string
+        payor_id:
+          type: integer
+        payor_type:
+          type: string
+          enum:
+            - "MEMBER"
+            - "EMPLOYER"
+            - "CLINIC"
+        treatment_procedure_id:
+          description: "Associated Treatment Procedure ID."
+          type: integer
+        cost_breakdown_id:
+          description: "Associated Cost Breakdown ID."
+          type: integer
+          nullable: true
+        status:
+          $ref: "#/components/schemas/BillStatusField"
+        error_type:
+          $ref: "#/components/schemas/PaymentErrorType"
+        reimbursement_request_created_at:
+          type: string
+          format: date-time
+          nullable: false
+        created_at:
+          type: string
+          format: date-time
+          nullable: false
+        modified_at:
+          type: string
+          format: date-time
+          nullable: true
+        processing_at:
+          type: string
+          format: date-time
+          nullable: true
+        paid_at:
+          type: string
+          format: date-time
+          nullable: true
+        refunded_at:
+          type: string
+          format: date-time
+          nullable: true
+        failed_at:
+          type: string
+          format: date-time
+          nullable: true
+        cancelled_at:
+          type: string
+          format: date-time
+          nullable: true
+
+    # endregion
+
+    # region: Field Components
+    PaginationFields:
+      type: object
+      properties:
+        links:
+          type: object
+          properties:
+            next:
+              type: string
+              nullable: true
+            prev:
+              type: string
+              nullable: true
+        count:
+          type: integer
+          minimum: 0
+        num_pages:
+          type: integer
+    PaymentStatusField:
+      description: "The current state of a visible record in the payment history based on procedure data, RTE, and billing input. Cancelled records are excluded from this endpoint."
+      type: string
+      enum:
+        - "NEW"  # Displayed as Upcoming.
+        - "PENDING"  # 'new', but waiting on RTE calculations. Does not correspond to a bill state.
+        - "PROCESSING"
+        - "PAID"
+        - "FAILED"  # Displayed as Payment Error, but not the only state that might include an error.
+        - "REFUNDED"
+        # "CANCELLED" is a valid billing state, but is filtered out of this endpoint. FR 3.5 A member will not see a canceled procedure if it was canceled prior to debiting the member
+        # VOIDED is only available in clients versioned after 2024.04.01 
+        - "VOIDED"
+    BillStatusField:
+      description: "The raw state of a bill. Not equivalent to a payment_status as it may contain CANCELLED and may not contain PENDING. Not for FE display."
+      type: string
+      enum:
+        - "NEW"
+        - "PROCESSING"
+        - "PAID"
+        - "FAILED"
+        - "REFUNDED"
+        - "CANCELLED"
+        # VOIDED is only available in clients versioned after 2024.04.01 
+        - "VOIDED"
+      example: "PROCESSING"
+    PaymentMethodTypeField:
+      description: "How the bill was paid -- Direct_payment indicating a card or bank, write-off meaning Maven ate the cost, and offline indicating a check or other unexpected payment method"
+      type: string
+      enum:
+        - "PAYMENT_GATEWAY"
+        - "WRITE_OFF"
+        - "OFFLINE"
+    CostResponsibilityType:
+      description: "FE-facing transaction explanation detail. Not relevant for pending or refund type payments."
+      type: string
+      enum:
+        - "shared"
+        - "no_member"
+        - "member_only"
+        - null
+      nullable: true
+    PaymentErrorType:
+      nullable: true
+      description: "Indication of the reason for failure to pay or inability to transition to a pending state. May come from transaction OR setup status. May be present with any status, not just failed. FE-facing combination of multiple possible failure sources."
+      type: string
+      enum:
+        - "REQUIRES_UPDATE_PAYMENT"
+        - "REQUIRES_AUTHENTICATE_PAYMENT"
+        - "PAYMENT_METHOD_HAS_EXPIRED"
+        - "INSUFFICIENT_FUNDS"
+        - "CONTACT_CARD_ISSUER"
+        - "OTHER_MAVEN"
+        - null
+    PaymentDisplayDate:
+      description: "FE-facing clarification of which date field is considered most relevant for the payment. This field will be deprecated in V2."
+      type: string
+      enum:
+        - "created_at"
+        - "due_at"
+        - "completed_at"
+        - null
+    CurrencyAmount:
+      # description: An amount of currency in integer format (e.g. $10.00 is 1000) indicating the money that should be a part of a payment.
+      type: integer
+      format: int64
+      minimum: 0
+      nullable: true
+    CurrencyFormatted:
+      # description: An amount of currency formatted as a string (e.g. $10.00 for 1000 cents)
+      type: string
+      nullable: false
+    # endregion
+
+    # region: Payment Gateway Events
+    PaymentGatewayEvent:
+      type: object
+      required: [event_type, message_payload]
+      properties:
+        event_type:
+          description: the type of payment gateway event
+          type: string
+          enum:
+            - billing_event
+            - payment_method_attach_event
+            - payment_method_detach_event
+        message_payload:
+          oneOf:
+            - $ref: "#/components/schemas/BillingEventMessagePayload"
+            - $ref: "#/components/schemas/PaymentMethodChangeMessagePayload"
+        error_payload:
+          $ref: "#/components/schemas/PaymentGatewayEventErrorPayload"
+
+    BillingEventMessagePayload:
+      description: The message payload
+      type: object
+      required: [ transaction_id, status, metadata, transaction_data ]
+      properties:
+        transaction_id:
+          description: the transaction UUID - used by billing service to infer the bill.
+          type: string
+          example: "a047db1a-13f5-41e3-8d3d-9fb3a7e10580"
+        transaction_data:
+          description: the transaction data linked to this transaction
+          type: object
+        status:
+          description: the stripe payment status
+          type: string
+          enum:
+            - completed
+            - failed
+            - pending
+            - processing
+        metadata:
+          $ref: "#/components/schemas/PaymentGatewayEventMessagePayloadMetadata"
+
+    PaymentGatewayEventMessagePayloadMetadata:
+        description: Metadata that will be attached to the message payload. Used for fallback lookups.
+        type: object
+        required: [attempt, bill_uuid, initiated_by, maven_copay_passthrough, maven_recouped_fee, source_type, source_id]
+        properties:
+          attempt:
+            description: Attempt no. for this packet.
+            type: integer
+            example: 1
+          bill_uuid:
+            description: uuid of the bill this that originated this transaction.
+            type: string
+            example: "66e39b54-8eb6-4261-b9f3-953e0787ae71"
+          initiated_by:
+            description: component that originated this transaction.
+            type: string
+            example: "direct_payment.billing.billing_service"
+          maven_copay_passthrough:
+            description: the amount of money being transferred (+ve or -ve) in dollars
+            type: string
+            example: 100.25
+          maven_recouped_fee:
+            description: The fee charged by maven (non -ve) in dollars
+            type: string
+            example: 11.01
+          source_type:
+            description: The source of the costs i.e. treatment procedure.
+            type: string
+            example: "TreatmentProcedure"
+          source_id:
+            description: The procedure id linked to the bill that initiated this transaction
+            type: integer
+            example: 1001
+
+    PaymentGatewayEventErrorPayload:
+      description: The (optional) error payload
+      type: object
+      required: [ decline_code, error_detail ]
+      properties:
+        decline_code:
+          description: >-
+            One of the Stripe Error Codes (https://stripe.com/docs/declines/codes) or unknown, an unknown stripe or  
+            other_maven a catch all for all payments gateway errors.
+          type: string
+          example: "unknown"
+        error_detail:
+          description: The details of this error, will have a message string and possibly additional data.
+          type: object
+          required: [ message ]
+          properties:
+            message:
+              description: A message describing the error.
+              type: string
+              example: "Your card was declined."
+
+    PaymentMethodChangeMessagePayload:
+      description: >- 
+        The message payload for a payment method change (attach or detach)
+      type: object
+      required: [customer_id, payment_method]
+      properties:
+        customer_id:
+          description: The uuid of the customer, for a member - payments_customer_id
+          type: string
+          maxLength: 36
+          example: '77415d57-31e5-4645-a700-13465c3b790c'
+        payment_method:
+          $ref: "#/components/schemas/PaymentGatewayPaymentMethodPayload"
+
+    PaymentGatewayPaymentMethodPayload:
+      description: >-
+        The payload for a payment method change(attach or detach) containing the details of the new payment method
+      type: object
+      required: [payment_method_type, payment_method_id, last4]
+      properties:
+        payment_method_type:
+          description: The type of payment method.
+          type: string
+          example: 'card'
+        payment_method_id:
+          description: The id of payment method.
+          type: string
+          maxLength: 30
+          example: 'pm_1NxXqaKA296nhejwgDnw46Wf'
+        last4:
+          description: The last 4 characters of the payment ID
+          type: string
+          maxLength: 4
+          example: '1234'
+        brand:
+          description: The brand of the payment type. Not used by the backend at the moment.
+          type: string
+          example: 'Visa'
+
+    NotificationPayload:
+      description: >-
+        The payload for the notification
+      type: object
+      required: [ user_id, user_id_type, user_type, event_source_system, notification_event_payload ]
+      properties:
+        user_id:
+          description: The id of the user in the event_source_system
+          type: string
+          maxLength: 36
+          example: '12345100239'
+        user_id_type:
+          description: The id type, such as payor_id, wallet_id.
+          type: string
+          enum:
+            - "PAYOR_ID"
+            - "WALLET_ID"
+        user_type:
+          description: Member, employer or clinic. Only member is currently supported.
+          type: string
+          enum:
+            - "MEMBER"
+            - "EMPLOYER"
+            - "CLINIC"
+        event_source_system:
+          description: The system that generated the notification
+          type: string
+          enum:
+            - "WALLET"
+            - "BILLING"
+        notification_event_payload:
+          allOf:
+            - $ref: "#/components/schemas/NotificationEventPayload"
+          anyOf:
+            - $ref: "#/components/schemas/MmbUpcomingPaymentReminderPayload"
+            - $ref: "#/components/schemas/MmbPaymentConfirmedPayload"
+            - $ref: "#/components/schemas/MmbRefundConfirmationPayload"
+            - $ref: "#/components/schemas/MmbPaymentProcessingErrorPayload"
+            - $ref: "#/components/schemas/MmbPaymentAdjustedAddlChargePayload"
+            - $ref: "#/components/schemas/MmbPaymentAdjustedRefundPayload"
+            - $ref: "#/components/schemas/MmbWalletQualifiedPayload"
+            - $ref: "#/components/schemas/MmbPaymentMethodAddedPayload"
+            - $ref: "#/components/schemas/MmbPaymentMethodRemovedPayload"
+            - $ref: "#/components/schemas/MmbPaymentMethodRequiredPayload"
+            - $ref: "#/components/schemas/MmbBillingEstimatePayload"
+            - $ref: "#/components/schemas/MmbClinicPortalMissingInfoPayload"
+
+    NotificationEventPayload:
+      description: >-
+        The event payload used to create the notification, consists of a name and properties.
+      type: object
+      required: [event_name, event_properties]
+      properties:
+        event_name:
+          description: The name of the event (as known to braze)
+          type: string
+          enum:
+            - "mmb_upcoming_payment_reminder"
+            - "mmb_payment_confirmed"
+            - "mmb_refund_confirmation"
+            - "mmb_payment_processing_error"
+            - "mmb_payment_adjusted_addl_charge"
+            - "mmb_payment_adjusted_refund"
+            - "mmb_wallet_qualified"
+            - "mmb_payment_method_added"
+            - "mmb_payment_method_removed"
+            - "mmb_payment_method_required"
+            - "mmb_billing_estimate"
+            - "mmb_clinic_portal_missing_info"
+        event_properties:
+          description: Dict of the properties used by the event
+          type: object
+
+    MmbUpcomingPaymentReminderPayload:
+      description: Upcoming Payment Reminder, when a procedure has been created and a payment is scheduled
+      type: object
+      required: [event_name, event_properties]
+      properties:
+        event_name:
+          type: string
+          enum:
+            - "mmb_upcoming_payment_reminder"
+        event_properties:
+          type: object
+          required: [benefit_id, payment_method_type, payment_method_last4, payment_amount, payment_date, clinic_name, clinic_location]
+          properties:
+            benefit_id:
+              description: Benefit ID of the reimbursement wallet
+              type: string
+              example: "123"
+            payment_method_type:
+              description: The type of payment method.
+              type: string
+              example: "card"
+            payment_method_last4:
+              description: The last 4 characters of the payment ID
+              type: string
+              maxLength: 4
+              example: '1234'
+            payment_amount:
+              description: The cash amount owed with the currency
+              type: string
+              example: '$200.54'
+            payment_date:
+              description: The date the payment will be attempted.
+              type: string
+              format: date
+            clinic_name:
+              description: The name of the clinic
+              type: string
+              example: "IVF Fertility Clinic"
+            clinic_location:
+              description: The city and state of the clinic location
+              type: string
+              example: "Miami, FL"
+
+    MmbBillingEstimatePayload:
+      description: Billing Estimate, when a procedure has been created and a payment is estimated
+      type: object
+      required: [ event_name, event_properties ]
+      properties:
+        event_name:
+          type: string
+          enum:
+            - "mmb_billing_estimate"
+        event_properties:
+          type: object
+          required: [ benefit_id, payment_method_type, payment_method_last4, payment_amount, payment_date, clinic_name, clinic_location ]
+          properties:
+            bill_uuid:
+              description: UUID of the bill estimate
+              type: string
+              example: "f049f7e4-61d2-44dc-a2f2-bc0abc965d3e"
+            benefit_id:
+              description: Benefit ID of the reimbursement wallet
+              type: string
+              example: "123"
+            total_cost:
+              description: The estimated cash amount owed total for the procedure
+              type: string
+              example: '$200.54'
+            member_responsibility:
+              description: The estimated cash amount owed by the member for the procedure
+              type: string
+              example: "$100.54"
+            maven_benefit:
+              description: The estimated cash amount covered by member's maven benefit
+              type: string
+              example: "$100.00"
+            credits_used:
+              description: The estimated maven credits used for the procedure
+              type: string
+              example: "1 credit"
+            procedure_name:
+              description: The name of the treatment procedure
+              type: string
+              example: "IVF Freeze All"
+            clinic_name:
+              description: The name of the clinic
+              type: string
+              example: "IVF Fertility Clinic"
+            clinic_location:
+              description: The city and state of the clinic location
+              type: string
+              example: "Miami, FL"
+
+    MmbPaymentConfirmedPayload:
+      description: Payment Confirmation, when a member's payment is successfully processed.
+      type: object
+      required: [ event_name, event_properties ]
+      properties:
+        event_name:
+          type: string
+          enum:
+            - "mmb_payment_confirmed"
+        event_properties:
+          type: object
+          required: [ benefit_id, payment_method_type, payment_method_last4, payment_amount, payment_date, payment_details_link ]
+          properties:
+            benefit_id:
+              description: Benefit ID of the reimbursement wallet
+              type: string
+              example: "123"
+            payment_method_type:
+              description: The type of payment method.
+              type: string
+              example: "card"
+            payment_method_last4:
+              description: The last 4 characters of the payment ID
+              type: string
+              maxLength: 4
+              example: '1234'
+            payment_amount:
+              description: The cash amount owed with the currency
+              type: string
+              example: '$200.54'
+            payment_date:
+              description: The date the payment happened.
+              type: string
+              format: date
+            payment_details_link:
+              description: a link to the payment
+              type: string
+
+    MmbRefundConfirmationPayload:
+      description: Refund Confirmation, when a member's refund is successfully processed.
+      type: object
+      required: [ event_name, event_properties ]
+      properties:
+        event_name:
+          type: string
+          enum:
+            - "mmb_refund_confirmation"
+        event_properties:
+          type: object
+          required: [refund_date, refund_amount, payment_method_type, payment_method_last4, payment_details_link]
+          properties:
+            refund_date:
+              description: The date the refund happened.
+              type: string
+              format: date
+            refund_amount:
+              description: The cash amount owed with the currency
+              type: string
+              example: '$200.54'
+            payment_method_type:
+              description: The type of payment method.
+              type: string
+              example: "card"
+            payment_method_last4:
+              description: The last 4 characters of the payment ID
+              type: string
+              maxLength: 4
+              example: '1234'
+            payment_details_link:
+              description: a link to the payment
+              type: string
+
+    MmbPaymentProcessingErrorPayload:
+      description: Payment Processing Error.
+      type: object
+      required: [ event_name, event_properties ]
+      properties:
+        event_name:
+          type: string
+          enum:
+            - "mmb_payment_processing_error"
+        event_properties:
+          type: object
+          required: [payment_amount, payment_method_type, payment_method_last4, payment_date]
+          properties:
+            payment_amount:
+              description: The cash amount owed with the currency
+              type: string
+              example: '$200.54'
+            payment_method_type:
+              description: The type of payment method.
+              type: string
+              example: "card"
+            payment_method_last4:
+              description: The last 4 characters of the payment ID
+              type: string
+              maxLength: 4
+              example: '1234'
+            payment_date:
+              description: The date the payment happened.
+              type: string
+              format: date
+
+    MmbPaymentAdjustedAddlChargePayload:
+      description: >-
+        Payment Adjusted - additional charge, When a procedure has been completed that results in a different member 
+        responsibility from the initial cost breakdown calculation, which requires member to pay an additional charge.
+      type: object
+      required: [ event_name, event_properties ]
+      properties:
+        event_name:
+          type: string
+          enum:
+            - "mmb_payment_adjusted_addl_charge"
+        event_properties:
+          type: object
+          required: [ benefit_id, original_payment_amount, payment_amount, additional_charge_amount, payment_date,
+                      payment_method_type, payment_method_last4 ]
+          properties:
+            benefit_id:
+              description: Benefit ID of the reimbursement wallet
+              type: string
+              example: "123"
+            original_payment_amount:
+              description: The original cash amount owed with the currency
+              type: string
+              example: '$200.54'
+            payment_amount:
+              description: The new cash amount owed with the currency
+              type: string
+              example: '$250.55'
+            additional_charge_amount:
+              description: delta between original_payment_amount and payment_amount
+              type: string
+              example: '$50.01'
+            payment_date:
+              description: The date the additional payment will be attempted.
+              type: string
+              format: date
+              example: "2024-01-01"
+            payment_method_type:
+              description: The type of payment method.
+              type: string
+              example: "card"
+            payment_method_last4:
+              description: The last 4 characters of the payment ID
+              type: string
+              maxLength: 4
+              example: '1234'
+
+    MmbPaymentAdjustedRefundPayload:
+      description: >-
+        Payment Adjusted - additional charge, When a procedure has been completed that results in a different member 
+        responsibility from the initial cost breakdown calculation, where members will be receiving a refund
+      type: object
+      required: [ event_name, event_properties ]
+      properties:
+        event_name:
+          type: string
+          enum:
+            - "mmb_payment_adjusted_refund"
+        event_properties:
+          type: object
+          required: [ benefit_id, original_payment_amount, payment_amount, refund_amount, payment_date,
+                      payment_method_type, payment_method_last4 ]
+          properties:
+            benefit_id:
+              description: Benefit ID of the reimbursement wallet
+              type: string
+              example: "123"
+            original_payment_amount:
+              description: The original cash amount owed with the currency
+              type: string
+              example: '$300.56'
+            payment_amount:
+              description: The new cash amount owed with the currency
+              type: string
+              example: '$250.55'
+            refund_amount:
+              description: delta between original_payment_amount and payment_amount
+              type: string
+              example: '$50.01'
+            refund_date:
+              description: The date the refund will be credited.
+              type: string
+              format: date
+            payment_method_type:
+              description: The type of payment method.
+              type: string
+              example: "card"
+            payment_method_last4:
+              description: The last 4 characters of the payment ID
+              type: string
+              maxLength: 4
+              example: '1234'
+
+    MmbWalletQualifiedPayload:
+      description: Wallet Qualified, once Wallet is approved to be used for MMB.
+      type: object
+      required: [ event_name, event_properties ]
+      properties:
+        event_name:
+          type: string
+          enum:
+            - "mmb_wallet_qualified"
+        event_properties:
+          type: object
+          required: [program_overview_link]
+          properties:
+            program_overview_link:
+              type: string
+
+    MmbPaymentMethodAddedPayload:
+      description: Payment Method Added, when member has successfully added a new payment method on file.
+      type: object
+      required: [ event_name, event_properties ]
+      properties:
+        event_name:
+          type: string
+          enum:
+            - "mmb_payment_method_added"
+        event_properties:
+          type: object
+          required: [ payment_method_type, payment_method_last4, program_overview_link ]
+          properties:
+            payment_method_type:
+              description: The type of payment method.
+              type: string
+              example: "card"
+            payment_method_last4:
+              description: The last 4 characters of the payment ID
+              type: string
+              maxLength: 4
+              example: '1234'
+            program_overview_link:
+              type: string
+            card_funding:
+              type: string
+
+    MmbPaymentMethodRemovedPayload:
+      description: Payment Method Removed, When member has successfully removed a payment method on file.
+      type: object
+      required: [ event_name, event_properties ]
+      properties:
+        event_name:
+          type: string
+          enum:
+            - "mmb_payment_method_removed"
+        event_properties:
+          type: object
+          required: [benefit_id, payment_method_type, payment_method_last4]
+          properties:
+            benefit_id:
+              description: Benefit ID of the reimbursement wallet
+              type: string
+              example: "123"
+            payment_method_type:
+              description: The type of payment method.
+              type: string
+              example: "card"
+            payment_method_last4:
+              description: The last 4 characters of the payment ID
+              type: string
+              maxLength: 4
+              example: '1234'
+
+    MmbPaymentMethodRequiredPayload:
+      description: Payment Method Required, When member has outstanding balance and removed all payment method on file.
+      type: object
+      required: [ event_name, event_properties ]
+      properties:
+        event_name:
+          type: string
+          enum:
+            - "mmb_payment_method_required"
+        event_properties:
+          type: object
+          required: [benefit_id]
+          properties:
+            benefit_id:
+              description: Benefit ID of the reimbursement wallet
+              type: string
+              example: "123"
+
+    MmbClinicPortalMissingInfoPayload:
+      description: Member missing information when looked up in clinic portanl.
+      type: object
+      required: [ event_name, event_properties ]
+      properties:
+        event_name:
+          type: string
+          enum:
+            - "mmb_clinic_portal_missing_info"
+        event_properties:
+          type: object
+          required: [ benefit_id ]
+          properties:
+            benefit_id:
+              description: Benefit ID of the reimbursement wallet
+              type: string
+              example: "123"
+            missing_health_plan_information:
+              description: True if health plan info is missing, false otherwise
+              type: boolean
+              example: false
+            missing_payment_information:
+              description: True if payment info is missing, false otherwise
+              type: boolean
+              example: true
+
+
+    # endregion
+    
+    # region: Help Articles
+    HelpArticlesResponse:
+      type: object
+      required: [data]
+      properties:
+        data:
+          type: array
+          items: 
+              $ref: '#/components/schemas/HelpArticlesItem'
+    HelpArticlesItem:
+      description: Details for all articles configured in Contentful for the help section
+      type: object
+      required: [id, title, slug]
+      properties:
+        id: 
+          type: string
+          format: uuid
+        title:
+          type: string
+        slug: 
+          type: string
+    HelpArticleResponse: 
+      type: object
+      description: Details for a single article
+      required: [title, rich_text, rich_text_includes, type]
+      properties:
+        title:
+          type: string
+        rich_text_includes:
+          type: array
+          description: Array of items included in the rich text, properties on each item depend on how the content is configured in Contentful.
+          items:
+            type: object
+            additionalProperties: true
+        rich_text:
+          type: object
+          required: [nodeType]
+          properties:
+            nodeType: 
+              type: string
+              enum: ["document"]
+            data: 
+              type: object
+            content:
+              type: array
+              items: 
+                type: object
+                additionalProperties: true
+        id:
+          type: string
+          format: uuid
+        type:
+          type: string
+          enum: ["rich_text"]
+        
+    # endregion

@@ -1,0 +1,6 @@
+<div class="assessment-{{ ::$ctrl.atype }}">
+
+	<div ng-if="!$ctrl.isLoading">
+		<div ng-include="$ctrl.questionTemplateUrl"></div>
+	</div>
+</div>

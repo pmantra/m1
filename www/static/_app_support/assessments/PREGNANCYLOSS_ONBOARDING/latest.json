@@ -1,0 +1,261 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "body": "Let's get personal for a minute",
+      "next": 2,
+      "required": true,
+      "widget": {
+        "type": "freetextmulti",
+        "options": [
+          {
+            "value": "weight",
+            "label": "Pre-pregnancy weight (lbs)",
+            "placeholder": "Pre-pregnancy weight (lbs)",
+            "fieldtype": "number",
+            "required": true,
+            "healthbinder": {
+              "name": "weight"
+            }
+          },
+          {
+            "value": "height",
+            "label": "Pre-pregnancy height (ft)",
+            "placeholder": "Pre-pregnancy height (ft)",
+            "fieldtype": "height",
+            "required": true,
+            "healthbinder": {
+              "name": "height"
+            }
+          }
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "id": 2,
+      "body": "When did your loss occur?",
+      "required": true,
+      "next": 3,
+      "widget": {
+        "type": "panel-single-choice",
+        "options": [
+          {
+            "value": "first-trimester",
+            "label": "During my first trimester",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/2-1.svg"
+          },
+          {
+            "value": "second-trimester",
+            "label": "During my second trimester",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/2-2.svg"
+          },
+          {
+            "value": "third-trimester",
+            "label": "During my third trimester",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/2-3.svg"
+          },
+          {
+            "value": "other",
+            "label": "Other",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/2-4.svg"
+          }
+        ]
+      },
+      "other": true,
+      "meta": {}
+    },
+    {
+     "id": 3,
+     "body": "Was this your first loss?",
+     "required": true,
+     "widget": {
+       "type": "panel-single-choice",
+       "options": [
+         {
+           "value": "first-loss",
+           "label": "Yes",
+           "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/yes.svg",
+           "next": 5
+         },
+         {
+           "value": "multiple-losses",
+           "label": "No",
+           "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/no.svg",
+           "next": 4
+         }
+       ]
+     },
+     "meta": {}
+   },
+   {
+       "id": 4,
+       "body": "How many losses have you had?",
+       "next": 5,
+       "required": false,
+       "widget": {
+         "type": "freetextmulti",
+         "options": [
+           {
+             "value": "number-of-losses",
+             "label": "Number of losses",
+             "placeholder": "Number of losses (optional)",
+             "fieldtype": "number",
+             "required": false
+           }
+         ]
+       },
+       "meta": {}
+     },
+    {
+      "id": 5,
+      "body": "Where do you need the most support?",
+      "required": true,
+      "next": 6,
+      "widget": {
+        "type": "panel-multi-choice-sectioned",
+        "sections":[
+          {
+            "title": "",
+            "items": [
+              "why-this-happened",
+              "emotional-support",
+              "trying-again",
+              "communication",
+              "telling-people",
+              "telling-work",
+              "physical-pain",
+              "need-to-talk"
+            ]
+          }
+        ],
+        "options": [
+          {
+            "id": 0,
+            "value": "why-this-happened",
+            "label": "I want to know why this happened to me",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/5-1.svg"
+          },
+          {
+            "id": 1,
+            "value": "emotional-support",
+            "label": "I need emotional support to get through this",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/5-2.svg"
+          },
+          {
+            "id": 2,
+            "value": "trying-again",
+            "label": "I’m trying to get pregnant and want to know the risks",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/5-3.svg"
+          },
+          {
+            "id": 3,
+            "value": "communication",
+            "label": "My partner and I need help communicating about the loss",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/5-4.svg"
+          },
+          {
+            "id": 4,
+            "value": "telling-people",
+            "label": "I need help telling my family and friends",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/5-5.svg"
+          },
+          {
+            "id": 5,
+            "value": "telling-work",
+            "label": "I don’t know how to tell my boss and coworkers",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/5-6.svg"
+          },
+          {
+            "id": 6,
+            "value": "physical-pain",
+            "label": "I’m suffering from physical pain — when will it stop?",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/5-7.svg"
+          },
+          {
+            "id": 7,
+            "value": "need-to-talk",
+            "label": "I feel like it's my fault and want someone to talk to about this",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/5-8.svg"
+          }
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "id": 6,
+      "body": "Last question! Do any of these apply to you?",
+      "required": false,
+      "next": "end",
+      "widget": {
+        "type": "panel-multi-choice-sectioned",
+        "sections": [
+          {
+            "title": "Existing health conditions",
+            "items": [
+              "diabetes",
+              "sti",
+              "hormonal",
+              "uterus-cervix",
+              "thyroid-disease"
+            ]
+          },
+          {
+            "title": "Lifestyle factors",
+            "items": [
+              "alcohol-use",
+              "tobacco-use"
+            ]
+          }
+        ],
+        "options": [
+          {
+            "id": 0,
+            "value": "diabetes",
+            "label": "Uncontrolled diabetes",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/6-1.svg"
+          },
+          {
+            "id": 1,
+            "value": "sti",
+            "label": "Sexually transmitted infections",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/6-2.svg"
+          },
+          {
+            "id": 2,
+            "value": "hormonal",
+            "label": "Hormonal problems",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/6-3.svg"
+          },
+          {
+            "id": 3,
+            "value": "uterus-cervix",
+            "label": "Uterus or cervix problems",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/6-4.svg"
+          },
+          {
+            "id": 4,
+            "value": "thyroid-disease",
+            "label": "Thyroid disease",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/6-5.svg"
+          },
+          {
+            "id": 5,
+            "value": "alcohol-use",
+            "label": "Alcohol use",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/6-6.svg"
+          },
+          {
+            "id": 6,
+            "value": "tobacco-use",
+            "label": "Tobacco use",
+            "icon": "https://storage.googleapis.com/maven-prod-svg/assessments/loss-onboarding/6-7.svg"
+          }
+        ]
+      },
+      "other": true,
+      "meta": {}
+    }
+  ]
+}
+

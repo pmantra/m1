@@ -1,0 +1,13 @@
+dag_id: resolve_appointment_pending_payments
+schedule: "0 1 * * *"
+task_id: resolve_appointment_pending_payments
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.care_discovery.resolve_appointment_pending_payments import resolve_appointment_pending_payments_job; resolve_appointment_pending_payments_job()"
+team_namespace: care_discovery
+service_namespace: appointments
+catchup: "False"
+start_year: 2024
+start_month: 10
+start_day: 8

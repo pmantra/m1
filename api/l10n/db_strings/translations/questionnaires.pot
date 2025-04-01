@@ -1,0 +1,23 @@
+msgid "questionnaire_cancellation_survey_description_text"
+msgstr ""
+
+msgid "questionnaire_cancellation_survey_title_text"
+msgstr ""
+
+msgid "questionnaire_member_ca_rating_description_text"
+msgstr ""
+
+msgid "questionnaire_member_ca_rating_title_text"
+msgstr ""
+
+msgid "questionnaire_member_rating_v2_description_text"
+msgstr ""
+
+msgid "questionnaire_member_rating_v2_title_text"
+msgstr ""
+
+msgid "questionnaire_member_rating_followup_v2_description_text"
+msgstr ""
+
+msgid "questionnaire_member_rating_followup_v2_title_text"
+msgstr ""

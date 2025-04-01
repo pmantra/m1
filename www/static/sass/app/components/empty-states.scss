@@ -1,0 +1,85 @@
+/* Left panel empty states */
+.empty-state {
+	text-align: center;
+}
+
+/* large empty state icons */
+.empty-icon {
+	svg {
+		margin: 0 auto;
+		width: 108px;
+		height: 108px;
+		@include susy-breakpoint($desktop) {
+			width: 150px;
+			height: 150px;
+		}
+	}
+}
+
+.empty-content {
+	padding-left: 15px;
+	padding-right: 15px;
+	max-width: 480px;
+	margin: 2rem auto;
+	.btn {
+		margin-top: 2rem;
+	}
+}
+
+/* Right panel empty states */
+
+/* Empty panel content */
+.right-panel-empty {
+	height: 100%;
+	.empty-content {
+		margin-top: 30%;
+		@include span(6 of 12);
+		margin-left: span(3 wide of 12);
+	}
+}
+/* Right panel practitioner tips */
+.empty-tip {
+	border-top: 1px solid $charcoal-40;
+}
+.practitioner-tip-author-photo {
+	float: left;
+	height: 60px;
+	margin-right: 15px;
+	img {
+		width: 60px;
+		height: 60px;
+		border: 2px solid white;
+		border-radius: 30px;
+	}
+}
+.practitioner-tip-author-info {
+	h5,
+	.h5,
+	p,
+	.p {
+		margin: 0;
+	}
+	h5,
+	.h5 {
+		margin-left: 75px;
+	}
+}
+
+.forum-list,
+.forum-community {
+	.right-panel {
+		background: $charcoal-20;
+	}
+}
+.practitioner-list {
+	.right-panel-empty {
+		background: $charcoal-20;
+	}
+}
+.page-appointments,
+.messages-list,
+.book-vertical-specialties {
+	.right-panel-empty {
+		background: $charcoal-20;
+	}
+}

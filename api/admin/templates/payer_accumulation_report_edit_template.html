@@ -1,0 +1,145 @@
+<style>
+    #report_json {
+        width: 100%;
+    }
+</style>
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    {{ super() }}
+    {% if model %}
+        <form action="/admin/payeraccumulationreports/download" method="post">
+            <input type="hidden" value={{model.id}} name="payer_accumulation_report_id">
+            <button type="submit">Download Report</button>
+        </form>
+        <form action="/admin/payeraccumulationreports/submit" method="post">
+            <input type="hidden" value={{model.id}} name="payer_accumulation_report_id">
+            <button type="submit" id="report_submit-button">Submit Report To Payer</button>
+        </form>
+        <form action="/admin/payeraccumulationreports/overwrite" method="post" id="overwrite_form" name="overwrite_form">
+            <input type="hidden" value={{model.id}} name="payer_accumulation_report_id">
+            <label for="report_json">Report:</label><br>
+            <textarea id="report_json" name="report_json" cols=40 rows=25 form="overwrite_form">{{ report_json }}</textarea><br/>
+            <div class="report_diff" style="white-space: pre-line;"></div>
+            <button type="button" onclick="diff()">View Diff</button>
+            <button type="submit" id="json_submit-button" onclick="return confirm('Are you sure you want to overwrite this report file with your changes?');">Update Report (Can't be undone!)</button>
+        </form>
+
+        <script type="application/javascript">
+            function diff() {
+                res = $.ajax({
+                    url: '/admin/payeraccumulationreports/diff',
+                    method: 'POST',
+                    data: $("#overwrite_form").serialize(),
+                    success: function (data) {
+                        $('.report_diff').text(data)
+                    }
+                })
+            }
+        </script>
+        {% if model.status.value == "SUBMITTED" %}
+            <script type="application/javascript">
+                // Disable editing on payer form when our report has been submitted.
+                window.onload = function() {
+                    // Disable Report Update button
+                    report_json_submit_button = document.getElementById("json_submit-button");
+                    report_json_submit_button.setAttribute("disabled", "true");
+
+                    // Disable Report Submit button
+                    report_submit_button = document.getElementById("report_submit-button");
+                    report_submit_button.setAttribute("disabled", "true");
+
+                    // Disable add treatment plan button
+                    treatment_submit_button = document.getElementById("treatment_mappings-button");
+                    treatment_submit_button.setAttribute("disabled", "true");
+                    treatment_submit_button.setAttribute("onClick", "");
+
+                    treatment_rows = document.getElementById("treatment_mappings").getElementsByClassName("inline-field")
+                    for (let i = 0; i < treatment_rows.length; i++) {
+                        // Disable all input fields in treatment row
+                        inputs = treatment_rows[i].getElementsByTagName("input")
+                        for (let j = 0; j < inputs.length; j++) {
+                            inputs[j].setAttribute("disabled", "true")
+                        }
+                        // Disable select field in treatment row
+                        selects = treatment_rows[i].getElementsByTagName("select")
+                        for (let k = 0; k < selects.length; k++) {
+                            selects[k].setAttribute("disabled", "true")
+                        }
+                    }
+                }
+            </script>
+        {% endif %}
+
+        <h3>Payer Accumulation Treatment Procedures</h3>
+        <table class="table table-bordered">
+            <thead>
+                <th>UUID</th>
+                <th>Member ID</th>
+                <th>Reimbursement Wallet ID</th>
+                <th>Procedure Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Status</th>
+                <th>Cost</th>
+                <th>Fee Schedule ID</th>
+                <th>Cost Breakdown ID</th>
+                <th>Fertility Clinic ID</th>
+                <th style="width:32px"></th> <!-- empty for cta button(s)-->
+            </thead>
+            <tbody>
+                {% for tp in model.treatment_procedures() %}
+                    <tr>
+                        <td>{{ tp.uuid }}</td>
+                        <td>{{ tp.member_id }}</td>
+                        <td>{{ tp.reimbursement_wallet_id }}</td>
+                        <td>{{ tp.procedure_name }}</td>
+                        <td>{{ tp.start_date }}</td>
+                        <td>{{ tp.end_date }}</td>
+                        <td>{{ tp.status }}</td>
+                        <td>{{ tp.cost }}</td>
+                        <td>{{ tp.fee_schedule_id }}</td>
+                        <td>{{ tp.cost_breakdown_id }}</td>
+                        <td>{{ tp.fertility_clinic_id }}</td>
+                        <td><a href="{{ url_for('treatmentprocedure.edit_view', id=tp.id) }}"><span class="icon-edit"></span></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3>Payer Accumulation Reimbursement Requests</h3>
+        <table class="table table-bordered">
+            <thead>
+                <th>ID</th>
+                <th>Person Receiving Service ID & Type</th>
+                <th>Reimbursement Wallet ID</th>
+                <th>Label</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Amount (USD)</th>
+                <th style="width:32px"></th> <!-- empty for cta button(s)-->
+            </thead>
+            <tbody>
+                {% for r_r in model.reimbursement_requests() %}
+                    <tr>
+                        <td>{{ r_r.id }}</td>
+                        <td>{{ r_r.person_receiving_service_id }} ({{ r_r.person_receiving_service_member_status.value }})</td>
+                        <td>{{ r_r.reimbursement_wallet_id }}</td>
+                        <td>{{ r_r.label }}</td>
+                        <td>{{ r_r.service_start_date }}</td>
+                        <td>{{ r_r.service_end_date }}</td>
+                        <td>
+                            {% if r_r.usd_amount %}
+                                ${{  r_r.usd_amount/100 }}
+                            {% else %}
+                                {{  None }}
+                            {% endif %}
+                        </td>
+                        <td><a href="{{ url_for('reimbursementrequest.edit_view', id=r_r.id) }}"><span class="icon-edit"></span></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+{% endblock %}
+

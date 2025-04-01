@@ -1,0 +1,16 @@
+[
+    {
+        "type": "cas_with_availability",
+        "restrict_to_new_organization": false,
+        "count": 10,
+        "role": "practitioner",
+        "is_cx": true,
+        "vertical": "Care Advocate",
+        "email_prefix": "mvnqa-ca_with_availability",
+        "password": "simpleisawesome1*",
+        "anonymous_allowed": true,
+        "featured_practitioner": true,
+        "messaging_enabled": true
+    }
+]
+        

@@ -1,0 +1,31 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+
+    <h1>Get Affected Appointments</h1>
+    This tool is used to pull appointment metadata for affected appointments during an incident that happen during the follow time spans. <br>
+    Select the date times below via the date time picker. Reminder, times are in UTC time.<br>
+    Clicking generate csv will download a csv with the data.
+    <br>
+    <br>
+    <form class="icon" method="POST" action="/admin/actions/get_affected_appointments">
+        <input name="url" type="hidden" value="{{ request.url }}">
+            <label> Start date time of incident <br/>
+                <input id="start_datetime" name="start_datetime" type="text" required="required"
+                       data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimepicker" placeholder="start date">
+            </label>
+            <label> End date time of incident <br/>
+                <input id="end_datetime" name="end_datetime" type="text" required="required"
+                       data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimepicker" placeholder="end date">
+            </label>
+        <button type="submit" title="Download data">
+            Generate csv
+        </button>
+    </form>
+
+{% endblock %}
+
+{% block tail %}
+    {{ super() }}
+    {{ lib.form_js() }}
+{% endblock %}

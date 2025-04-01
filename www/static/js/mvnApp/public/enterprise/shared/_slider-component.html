@@ -1,0 +1,22 @@
+<span class="description">
+	<h2>The Hidden Cost of Poor Maternity Care</h2>
+	<p class="subhead">More than 40% of new moms leave the workforce in the first year after having a child. Move the slider to see how this issue impacts your company, and how much companies stand to lose per new mom who quits.</p>
+</span>
+<span class="interactive">
+	<p>With <strong>{{$ctrl.sliderValue}}</strong> pregnancies</p>
+	<div class="slider-container">
+	  <div class="label">{{$ctrl.sliderMin}}</div>
+	  <input
+	  	class="slider"
+	    type="range"
+	    min="{{$ctrl.sliderMin}}"
+	    max="{{$ctrl.sliderMax}}"
+	    step="1"
+	    ng-model="$ctrl.sliderValue" ng-change="$ctrl.updateValue($ctrl.sliderValue)"
+	  >
+	  <div class="label">{{$ctrl.sliderMax}}</div>
+	</div>
+	<p>You could lose</p>
+	<h3 class="savings" style="font-size: {{$ctrl.fontSize}}em">${{$ctrl.calculatedValue}}</h3>
+	<p>per year</p>
+</span>

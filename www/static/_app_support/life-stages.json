@@ -1,0 +1,116 @@
+[
+  {
+    "name": "first-pregnancy",
+    "title": "I'm pregnant–first time mama",
+    "stage": {
+      "id": 1,
+      "name": "pregnant"
+    },
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/first-pregnancy.svg"
+  },
+  {
+    "name": "subsequent-pregnancy",
+    "title": "I'm pregnant again",
+    "stage": {
+      "id": 1,
+      "name": "pregnant"
+    },
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/subsequent-pregnancy.svg"
+  },
+  {
+    "name": "new-mom",
+    "title": "Just had my first baby",
+    "stage": {
+      "id": 2,
+      "name": "new-mom"
+    },
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/new-mom.svg"
+  },
+  {
+    "name": "mom",
+    "title": "Just had another baby",
+    "stage": {
+      "id": 2,
+      "name": "new-mom"
+    },
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/mom.svg"
+  },
+  {
+    "name": "partner-pregnant",
+    "title": "My partner is pregnant",
+    "stage": {
+      "id": 1,
+      "name": "partner-pregnant"
+    },
+    "ispartner": true,
+    "reason": "partner_pregnant",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/partner-pregnant.svg"
+  },
+  {
+    "name": "partner-new-mom",
+    "title": "My partner is a new mom",
+    "stage": {
+      "id": 2,
+      "name": "new-parent"
+    },
+    "ispartner": true,
+    "reason": "partner_newparent",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/partner-new-mom.svg"
+  },
+  {
+    "name": "fertility",
+    "title": "I'm undergoing or considering IUI/IVF",
+    "stage": {
+      "id": 3,
+      "name": "fertility"
+    },
+    "reason": "fertility",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/trying.svg"
+  },
+  {
+    "name": "pregnancyloss",
+    "title": "I've experienced a loss",
+    "reason": "pregnancyloss",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/experienced-loss.svg",
+    "stage": {
+      "id": 5,
+      "name": "pregnancyloss"
+    }
+  },
+  {
+    "name": "surrogacy",
+    "title": "I'm using a surrogate",
+    "reason": "surrogacy",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/surrogacy.svg",
+    "stage": {
+      "id": 6,
+      "name": "surrogacy"
+    }
+  },
+  {
+    "name": "adopting",
+    "title": "I'm adopting",
+    "reason": "adoption",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/adopting.svg",
+    "stage": {
+      "id": 7,
+      "name": "adopting"
+    }
+  },
+  {
+    "name": "egg_freezing",
+    "title": "I want to freeze my eggs",
+    "stage": {
+      "id": 4,
+      "name": "egg_freezing"
+    },
+    "reason": "egg_freezing",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/egg-freezing.svg"
+  },
+  {
+    "name": "other",
+    "title": "None of these apply to me",
+    "reason": "other",
+    "icon": "https://storage.googleapis.com/maven-prod-svg/enterprise-onboarding-lifestages/other.svg"
+  }
+]

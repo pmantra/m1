@@ -1,0 +1,20 @@
+{% extends 'admin/base.html' %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block body %}
+        <div id="practitioner-replacement"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function() {
+                AdminTool(
+                    "PractitionerReplacement",
+                    document.getElementById("practitioner-replacement"),
+                );
+            })
+          </script>
+{% endblock %}
+
+{% block tail %}
+{{ super() }}
+{% endblock %}

@@ -1,0 +1,377 @@
+/* ----------------------------------- VARIABLES ------------------------------------ */
+
+/* FONTS */
+$font1: "proximanova-regular", "Helvetiva Neue", Arial, sans-serif;
+$font1-it: "proximanova-regularit", "Helvetiva Neue", Arial, sans-serif;
+$font1-semibold: "proximanova-semibold", "Helvetiva Neue", Arial, sans-serif;
+$font1-bold: "proximanova-bold", "Helvetiva Neue", Arial, sans-serif;
+
+$font2: "domaine-display-regular", "Helvetiva Neue", Arial, sans-serif;
+$font3: "domaine-display-semi-bold", "Helvetiva Neue", Arial, sans-serif;
+$font4: "domaine-display-extra-bold", "Helvetiva Neue", Arial, sans-serif;
+
+/* COLOR PALLETTE */
+$emerald-20: #ccd9d8;
+$emerald-40: #668d8b;
+$emerald-50: #00413e;
+$emerald-80: #002d2a;
+$emerald-100: #001411;
+
+$mint-20: #f5faf8;
+$mint-40: #e7f2ed;
+$mint-50: #cfe6dc;
+$mint-80: #afcdbf;
+$mint-100: #8ead9f;
+
+$blush-20: #fff4f3;
+$blush-40: #ffeae6;
+$blush-50: #ffcac1;
+$blush-80: #ffb8ac;
+$blush-100: #f9a89a;
+
+$charcoal-20: #f8f8f8;
+$charcoal-40: #e7e7e7;
+$charcoal-50: #a0a0a0;
+$charcoal-80: #585858;
+$charcoal-100: #111111;
+
+$macaroon-20: #fffcfb;
+$macaroon-40: #fef8f5;
+$macaroon-50: #fdf2eb;
+$macaroon-80: #ffe7d7;
+$macaroon-100: #f5d1ba;
+
+$terracotta-40: #e3c9c1;
+$terracotta-20: #f8f1ef;
+$terracotta-50: #b97965;
+$terracotta-80: #9f6250;
+$terracotta-100: #7a4737;
+
+/* NEW APP PALLETTE */
+
+$primary: #00856f;
+$primary-lt: #17a987;
+$primary-dk: #00413e;
+
+$secondary-1: #b97965;
+$secondary-1-lt: #fcf5f4;
+$secondary-1-dk: #7a4737;
+
+$secondary-2: #ffcac1;
+$secondary-2-lt: #fff9f8;
+$secondary-2-dk: #ffb8ac;
+$secondary-2-text: #e26b56;
+
+$secondary-3: #fef8f5;
+$secondary-3-lt: #fff9f6;
+$secondary-3-dk: #ffe6d7;
+$secondary-3-text: #da7c42;
+
+$secondary-4: #b8efd8;
+$secondary-4-lt: #edfdf6;
+$secondary-4-dk: #6cceaa;
+
+/* UI COLORS */
+$ui-green: #00856f;
+$ui-green-lt: #17a987;
+$ui-green-mid: #005C4D;
+$ui-green-dk: #00413e;
+
+$ui-red: #cb4c48;
+$ui-red-lt: #f69386;
+$ui-red-dk: #b44031;
+
+$ui-yellow: #ffb75b;
+$ui-yellow-lt: #ffdaac;
+$ui-yellow-dk: #e59b3c;
+
+/* UI GRAYS */
+$gray: #64726F;
+$gray-lt: #b7c0c0;
+$gray-xlt: #dee3e3;
+$gray-xxlt: #f6f6f6;
+$gray-dk: #263633;
+$gray-xdk: #172321;
+
+/* New brand colors for Sept 2018 marketing site redesign */
+$mktg-gray: #e9eceb;
+$mktg-pink-dk: #eec2b9;
+$mktg-green-dk: #0e6956;
+$mktg-green-lt: #dceae3;
+$mktg-max-width: 1288px;
+
+/* Breakpoints */
+$mobile: 320px;
+$mobile-md: 375px;
+$mobile-max: 539px;
+$mobile-landscape: 540px;
+$mobile-landscape-max: 767px;
+$desktop-max: 1219px;
+$tablet: 768px;
+$tablet-max: 1023px;
+$desktop: 1024px;
+$desktop-md: 1220px;
+$desktop-md-max: 1439px;
+$desktop-hd: 1440px;
+$desktop-hd-max: 1585px;
+$desktop-uber: 1586px;
+$desktop-xl: 1920px;
+
+/* ----- Layout ----- */
+
+$containerWidth: 768px;
+
+$basepadding: 15px;
+$basepaddingtablet: 30px;
+
+$sidemenuwidth: 235px;
+
+$mobileHeaderHeight: 56px;
+$tabletHeaderHeight: 72px;
+$desktopHeaderHeight: 80px;
+
+$marketingMobileHeaderHeight: 50px;
+
+/* ----------------------------------- MIXINS ------------------------------------ */
+@mixin flexbox($direction: column, $align: center, $justify: center) {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: $direction;
+	flex-direction: $direction;
+	-webkit-box-align: $align;
+	-ms-flex-align: $align;
+	align-items: $align;
+	-webkit-box-pack: $justify;
+	-ms-flex-pack: $justify;
+	justify-content: $justify;
+}
+
+@function strip-unit($number) {
+	@if type-of($number) == "number" and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+@mixin font-size($sizeRaw) {
+	$size: strip-unit($sizeRaw);
+
+	font-size: $size + px;
+	font-size: ($size / 16) + rem;
+	line-height: ($size * 1.3) + px;
+	line-height: ($size * 1.3) / 16 + rem;
+}
+
+@mixin background-cover() {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+@mixin center-fixed() {
+	left: 50%;
+	-ms-transform: translate(-50%, 0%);
+	-webkit-transform: translate(-50%, 0%);
+	transform: translate(-50%, 0%);
+}
+
+@mixin fade-in($secs) {
+	-webkit-animation: fadein $secs; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein $secs; /* Firefox < 16 */
+	-ms-animation: fadein $secs; /* Internet Explorer */
+	-o-animation: fadein $secs; /* Opera < 12.1 */
+	animation: fadein $secs;
+}
+
+@mixin card-shadow() {
+	box-shadow: 2px 2px 3px 1px rgba(231, 231, 231, 0.4);
+}
+
+%shadow-small {
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+%shadow-medium {
+	box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+%shadow-large {
+	box-shadow: 0 2px 32px 0 rgba(0, 0, 0, 0.1);
+}
+@mixin get-shadow($size) {
+	@extend %shadow-#{$size};
+}
+
+@mixin mvn-container($size: small) {
+	@include get-shadow($size);
+	border: 1px solid $gray-xlt;
+	border-radius: 4px;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@mixin ui-action() {
+	padding: 1rem 0;
+	@include flexbox(row, center, space-between);
+	cursor: pointer;
+	a {
+		font-family: $font1-semibold;
+		text-decoration: none;
+	}
+
+	.btn.btn-cta,
+	.btn.btn-action {
+		border: 0;
+		font-family: $font1-semibold;
+		width: auto;
+		height: auto;
+		background: none;
+		color: $ui-green;
+		padding: 0;
+		max-width: none;
+		min-width: 0;
+		text-align: left;
+	}
+
+	&:hover {
+		opacity: 0.8;
+		transition: 0.2 ease-out;
+
+		&:after {
+			margin-right: -0.3rem;
+			opacity: 0.8;
+		}
+	}
+
+	& ~ .ui-action {
+		border-top: 1px solid $gray-xlt;
+	}
+
+	&:last-child {
+		border-bottom: 0;
+	}
+
+	mvn-dynamic-cta,
+	.btn.btn-tertiary {
+		width: 100%;
+	}
+
+	&.primary,
+	&.secondary {
+		color: $ui-green;
+
+		* {
+			color: $ui-green;
+		}
+	}
+
+	&:after {
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		height: 10px;
+		margin-right: 0;
+		transition: 0.2s ease-in;
+		width: 10px;
+	}
+
+	&.primary {
+		&:after {
+			content: "";
+			background-image: url("/img/app/dashboard/ui-action/primary.png");
+		}
+	}
+
+	&.secondary {
+		&:after {
+			content: "";
+			background-image: url("/img/app/dashboard/ui-action/secondary.png");
+		}
+	}
+
+	&.cancel {
+		color: $ui-red;
+
+		* {
+			color: $ui-red;
+		}
+
+		&:after {
+			content: "";
+			background-image: url("/img/app/dashboard/ui-action/cancel.png");
+		}
+	}
+
+	&.dismiss {
+		color: $gray;
+
+		* {
+			color: $gray;
+		}
+
+		&:after {
+			content: "";
+			background-image: url("/img/app/dashboard/ui-action/dismiss.png");
+		}
+	}
+}
+
+/**
+ * Breakpoint mixin for 400% zoom on desktop, a requirement for a11y.
+ *
+ * At 400% zoom, the viewport width (queried by `width`) is decreased,
+ * but the device width will remain the same (queried by `device-width`).
+ */
+@mixin media-desktop-400-zoom {
+	@media screen and ( max-width: $mobile-max )
+	and ( min-device-width: $desktop ) { @content; }
+}

@@ -1,0 +1,58 @@
+.page-press {
+	.hero {
+		background-image: url("/img/press/press-banner.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: $charcoal-40;
+	}
+
+	.press-item {
+		h3 {
+			@include flexbox;
+			height: 49px;
+			margin: 0;
+		}
+
+		p,
+		.p {
+			max-width: 100%; // IE whyyy
+		}
+
+		.press-logo {
+			max-width: 100%;
+		}
+	}
+
+	section {
+		.grid-container {
+			.grid-item {
+				@include flexbox(column, flex-start, space-between);
+				margin: 30px 0;
+
+				h5 {
+					color: $charcoal-50;
+				}
+			}
+
+			@include susy-breakpoint($desktop) {
+				align-items: stretch;
+
+				&.three-column {
+					.grid-item {
+						margin: 40px 0;
+						width: 27%;
+					}
+
+					&:after {
+						width: 27%;
+					}
+				}
+			}
+		}
+	}
+
+	.announcements {
+		background-color: $mint-20;
+	}
+}

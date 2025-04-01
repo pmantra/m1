@@ -1,0 +1,28 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    {{ super() }}
+
+    <hr>
+
+    Verticals:
+    <ul>
+    {% for v in model.verticals %}
+        <li><a href="/admin/vertical/edit/?id={{ v.id }}">{{ v.name }}</a></li>
+    {% else %}
+        None
+    {% endfor %}
+    </ul>
+
+    Specialties:
+    <ul>
+    {% for s in model.specialties %}
+       <li><a href="/admin/specialty/edit/?id={{ s.id }}">{{ s.name }}</a></li>
+    {% else %}
+        None
+    {% endfor %}
+    </ul>
+
+
+    </ul>
+{% endblock %}

@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: lokalise.com\n"
+"Project-Id-Version: Backend, python - mono\n"
+"Last-Translator: lokalise.com\n"
+"Language-Team: lokalise.com\n\n"
+"Language: fr\n"
+
+#: direct_payment/payments/constants.py:60
+msgid "payments_mmb_calculating_date"
+msgstr "Calcul en cours, veuillez revenir plus tard."
+
+#: direct_payment/payments/constants.py:33
+msgid "payments_mmb_coinsurance"
+msgstr "Coassurance"
+
+#: direct_payment/payments/constants.py:59
+#: direct_payment/payments/constants.py:61
+msgid "payments_mmb_computed_billed_date"
+msgstr "{computed_display_date} | Facturé sur ***{payment_method_display_label}"
+
+#: direct_payment/payments/constants.py:63
+#: direct_payment/payments/constants.py:66
+msgid "payments_mmb_computed_date"
+msgstr "{computed_display_date}"
+
+#: direct_payment/payments/constants.py:34
+msgid "payments_mmb_copay"
+msgstr "Ticket modérateur"
+
+#: direct_payment/payments/constants.py:47
+msgid "payments_mmb_covered_amount"
+msgstr "Montant pris en charge"
+
+#: direct_payment/payments/constants.py:35
+msgid "payments_mmb_deductible"
+msgstr "Franchise"
+
+#: direct_payment/payments/constants.py:58
+msgid "payments_mmb_due_billed_date"
+msgstr "Échéance le {computed_display_date} | Facturer sur ***{payment_method_display_label}"
+
+#: direct_payment/payments/constants.py:64
+msgid "payments_mmb_due_date"
+msgstr "Échéance le {computed_display_date}"
+
+#: direct_payment/payments/constants.py:42
+msgid "payments_mmb_estimate_adjustment"
+msgstr "Ajustement de l'estimation"
+
+#: direct_payment/payments/constants.py:46
+msgid "payments_mmb_estimate_responsibility"
+msgstr "Votre reste à charge estimé"
+
+#: direct_payment/payments/constants.py:20
+msgid "payments_mmb_estimated_bill"
+msgstr "Facture estimée"
+
+#: direct_payment/payments/constants.py:16
+msgid "payments_mmb_estimated_initial"
+msgstr "Cette estimation est basée sur votre franchise et votre coassurance ou vos quotes-parts, et peut changer en cas de réclamations d'assurance effectuées après cette estimation."
+
+#: direct_payment/payments/constants.py:22
+msgid "payments_mmb_estimated_len_obj"
+msgstr "Estimation totale de ({number_of_estimated_objects})"
+
+#: direct_payment/payments/constants.py:26
+msgid "payments_mmb_estimated_total_cost"
+msgstr "Coût total estimé à venir pour vous"
+
+#: direct_payment/payments/constants.py:36
+msgid "payments_mmb_fees"
+msgstr "Frais"
+
+#: direct_payment/payments/constants.py:51
+msgid "payments_mmb_full_cost_covered"
+msgstr "Coût intégralement pris en charge par Maven"
+
+#: direct_payment/payments/constants.py:28
+msgid "payments_mmb_fully_covered"
+msgstr "Coût entièrement pris en charge par votre employeur. Appuyez pour voir les détails du service."
+
+#: direct_payment/payments/constants.py:35
+msgid "payments_mmb_hra_applied"
+msgstr "HRA appliqué"
+
+#: direct_payment/payments/constants.py:36
+msgid "payments_mmb_hra_credit"
+msgstr "Crédit HRA"
+
+#: direct_payment/payments/constants.py:38
+msgid "payments_mmb_maven_benefit"
+msgstr "Maven Benefit"
+
+#: direct_payment/payments/constants.py:39
+msgid "payments_mmb_medical_plan"
+msgstr "Plan médical"
+
+#: direct_payment/payments/constants.py:37
+msgid "payments_mmb_not_covered"
+msgstr "Non pris en charge"
+
+#: direct_payment/payments/constants.py:41
+msgid "payments_mmb_previous_charges"
+msgstr "Frais antérieur(s)"
+
+#: direct_payment/payments/constants.py:21
+msgid "payments_mmb_procedure_estimate"
+msgstr "Estimation de {procedure_name}"
+
+#: direct_payment/payments/constants.py:52
+msgid "payments_mmb_remaining_cost_covered"
+msgstr "Coût restant pris en charge par Maven"
+
+#: direct_payment/payments/constants.py:65
+msgid "payments_mmb_returned_date"
+msgstr "{computed_display_date} | Remboursé sur ***{payment_method_display_label}"
+
+#: direct_payment/payments/constants.py:40
+msgid "payments_mmb_total_member_responsibility"
+msgstr "Reste à charge total du membre"
+
+#: direct_payment/payments/constants.py:67
+msgid "payments_mmb_voided_date"
+msgstr "Annulé le {computed_display_date}"
+
+#: direct_payment/payments/constants.py:29
+msgid "payments_mmb_will_be_billed_to_specific"
+msgstr "Seront facturés sur ***{payment_method_label} après votre rendez-vous"
+
+#: direct_payment/payments/constants.py:27
+msgid "payments_mmb_will_be_charged_to_default"
+msgstr "Seront facturés sur votre moyen de paiement par défaut"

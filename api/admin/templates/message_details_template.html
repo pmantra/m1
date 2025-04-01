@@ -1,0 +1,24 @@
+{% extends 'admin/model/details.html' %}
+
+{% block details_table %}
+<table class="table table-hover table-bordered searchable">
+{% for c, name in details_columns %}
+  <tr>
+    <td>
+      <b>{{ name }}</b>
+    </td>
+    <td>
+        {%- if c == 'credit' and model.credit -%}
+            <a href="/admin/messagecredit/details/?id={{ model.credit.id }}" >{{ get_value(model, c) }}</a>
+        {%- elif c == 'member' and model.channel.member -%}
+            <a href="/admin/memberprofile/edit/?id={{ model.channel.member.id }}" >{{ get_value(model, c) }}</a>
+        {%- elif c == 'practitioner' and model.channel.practitioner -%}
+            <a href="/admin/practitionerprofile/edit/?id={{ model.channel.practitioner.id }}" >{{ get_value(model, c) }}</a>
+        {%- else -%}
+            {{ get_value(model, c) }}
+        {%- endif -%}
+    </td>
+  </tr>
+{% endfor %}
+</table>
+{% endblock %}

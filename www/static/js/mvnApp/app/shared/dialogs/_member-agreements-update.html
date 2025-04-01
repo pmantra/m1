@@ -1,0 +1,26 @@
+<div class="member-agreements-update-modal">
+	<div id="modal-title">
+		<h3 class="serif">We've updated our terms</h3>
+	</div>
+
+	<p>
+		We've updated our
+		<span ng-repeat="agreement in agreements"
+			><span ng-if="agreements.length > 2 && $index !== 0">, </span
+			><span ng-if="agreements.length > 1 && $index === agreements.length - 1"> and </span
+			><a
+				href="/app/{{agreement.name}}?version={{agreement.version}}"
+				target="_blank"
+				rel="noopener noreferrer nofollow"
+				>{{ agreement.display_name }}</a
+			></span
+		>. Please review and accept before continuing to your Maven account.
+	</p>
+
+	<div className="modalButtonWrapperFullWidth">
+		<button class="btn btn-cta" ng-click="agreeToAgreements()">
+			<span ng-if="isAgreeing" class="{'disabled' : isAgreeing}" ng-disabled="isAgreeing">Please wait...</span
+			><span ng-if="!isAgreeing">I accept</span>
+		</button>
+	</div>
+</div>

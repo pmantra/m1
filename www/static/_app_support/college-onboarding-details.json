@@ -1,0 +1,334 @@
+{
+   "items":[
+      {
+         "id":1,
+         "title":"NUTRITION",
+         "svg":"https://storage.googleapis.com/maven-prod-svg/donut.svg",
+         "image":"https://storage.googleapis.com/maven-prod-svg/college_nutrition@2x.png",
+         "sub_title":"NUTRITION",
+         "practitioners":[
+            {
+               "id":1,
+               "name":"Vanita Achar",
+               "title":"Registered Dietitian",
+               "image":"https://storage.googleapis.com/maven-prod-svg/vanita.png",
+               "details":"Specialities: Vegetarian and Vegan Diets, Healthy Eating, Diabetes",
+               "comments":"\"Vanita was a great nutritionist and knowledgeable on the subjects I had questions on, like superfoods, keto diet, and how to improve bad diet habits\""
+            },
+            {
+               "id":2,
+               "name":"Maya Friedman",
+               "title":"Registered Dietitian",
+               "image":"https://storage.googleapis.com/maven-prod-svg/maya.png",
+               "details":"Specialities: Meal Planning,  Eating Disorders, Weight Management",
+               "comments":"\"Maya is absolutely awesome! She provided me some great tips to clarify my diet and is incredibly personable. Highly recommended!\""
+            },
+            {
+               "id":3,
+               "name":"Randi Komisar",
+               "title":"Registered Dietitian ",
+               "image":"https://storage.googleapis.com/maven-prod-svg/randi.png",
+               "details":"Specialties: Healthy Dieting, Digestive Health, Gluten-Free",
+               "comments":"\"As someone who has seen therapists and nutrition specialists before, Randi quickly gave me a few tools that will help me manage emotional eating in the future. I’ll definitely book with her again!\""
+            }
+         ]
+      },
+      {
+         "id":2,
+         "title":"COLD & FLU",
+         "svg":"https://storage.googleapis.com/maven-prod-svg/coldflu.svg",
+         "image":"https://storage.googleapis.com/maven-prod-svg/college_cold_and_flu@2x.png",
+         "sub_title":"COLD & FLU",
+         "practitioners":[
+            {
+               "id":1,
+               "name":"Jean-Jeffrey Marcellus",
+               "title":"Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/jjm.png",
+               "details":"Specialties: Eczema, Preventative Health, Relaxation Techniques",
+               "comments":"\"Able to speak directly to the very specific questions I threw at him and offered some suggestions that were asides from health issues I wanted to discuss but were relevant. Very friendly and able to accommodate last minute booking.\""
+            },
+            {
+               "id":2,
+               "name":"Karen Doll",
+               "title":"Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/karenDoll.png",
+               "details":"Specialities: Sinus infections, High Blood Pressure, Sore Throat",
+               "comments":"\"Awesome appointment! She made me feel so much better, it felt like a conversation instead of a doctors appointment. Extremely understanding of what I was experiencing and knowledgeable of how to resolve the issues! Thank you soooo much.\""
+            },
+            {
+               "id":3,
+               "name":"Asefeh Faraz",
+               "title":"Doctor of Nursing",
+               "image":"https://storage.googleapis.com/maven-prod-svg/asefah.png",
+               "details":"Specialities: Acne, Preventative Health, Bacterial and Viral Infections",
+               "comments":"\"Asefah was lovely and took the time to listen to and address all of my concerns. Will definitely see her again!\""
+            }
+         ]
+      },
+      {
+         "id":3,
+         "title":"EMOTIONAL WELLNESS",
+         "svg":"https://storage.googleapis.com/maven-prod-svg/depression.svg",
+         "image":"https://storage.googleapis.com/maven-prod-svg/college_emotional_health@2x.png",
+         "sub_title":"EMOTIONAL WELLNESS",
+         "practitioners":[
+            {
+               "id":1,
+               "name":"Marianna Strongin",
+               "title":"Doctor of Psychology",
+               "image":"https://storage.googleapis.com/maven-prod-svg/marianna.png",
+               "details":"Specialities: Emotional Well-Being, Stress Management, Eating Disorders",
+               "comments":"\"Dr. Strongin was able to pull together so much and ask great questions that helped me think critically about everything I had spoken to her about and even the deeper issues I had told her about.\""
+            },
+            {
+               "id":2,
+               "name":"Elizabeth Chang",
+               "title":"Psychiatric Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/elizabeth.png",
+               "details":"Specializes in: Relaxation techniques, mood and anxiety disorders, and substance abuse",
+               "comments":"\"Elizabeth didn't just sit there, as I have experienced in other talk therapy visits. She engages in conversation, asks questions that make me dig a little deeper, and then offers feedback. I will definitely schedule with her again. She made me feel very comfortable and free of judgement.\""
+            },
+            {
+               "id":3,
+               "name":"Bridget Cross",
+               "title":"Licensed Clinical Social Worker",
+               "image":"https://storage.googleapis.com/maven-prod-svg/bridget.png",
+               "details":"Specialties: Couples/Relationships, Depression/Anxiety, Sexuality",
+               "comments":"\"This session was very helpful, and I felt very comfortable.  I am really pleased that we were able to come up with some concrete ideas and strategies.\""
+            }
+         ]
+      },
+      {
+         "id":4,
+         "title":"BIRTH CONTROL",
+         "svg":"https://storage.googleapis.com/maven-prod-svg/birthcontrol.svg",
+         "image":"https://storage.googleapis.com/maven-prod-svg/college_birth_control@2x.png",
+         "sub_title":"BIRTH CONTROL",
+         "practitioners":[
+            {
+               "id":1,
+               "name":"Rebecca Callahan",
+               "title":"Women’s Health Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/rebecca.png",
+               "details":"Specialties: Holistic Health, Birth control, STIs/HIV",
+               "comments":"\"I appreciated how she recommended holistic options (acupuncture/yoga) as well as traditional options. Very professional. Great experience.\""
+            },
+            {
+               "id":2,
+               "name":"Justine Groake",
+               "title":"Women’s Health Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/justine.png",
+               "details":"Specialties: Bladder issues, periods, pelvic pain\"",
+               "comments":"\"So easy and efficient. Heard what I needed in less than 10 mins. Would have hated to have gone out in the rain and waited for an hour at a clinic just to ask a question about my skin allergy.\""
+            },
+            {
+               "id":3,
+               "name":"Corinne Menn",
+               "title":"OB/GYN",
+               "image":"https://storage.googleapis.com/maven-prod-svg/corinne.png",
+               "details":"Specialties: Yeast infections, Acne, Irregular Periods",
+               "comments":"\"Dr. Menn was fantastic! She was easy to talk to, addressed my needs and questions, was kind, punctual, and exceeded all of my expectations. Thank you Dr. Menn!\""
+            }
+         ]
+      },
+      {
+         "id":5,
+         "title":"SKIN CONCERNS",
+         "svg":"https://storage.googleapis.com/maven-prod-svg/skin.svg",
+         "image":"https://storage.googleapis.com/maven-prod-svg/college_skin@2x.png",
+         "sub_title":"SKIN CONCERNS",
+         "practitioners":[
+            {
+               "id":1,
+               "name":"Jean-Jeffrey Marcellus",
+               "title":"Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/jjm.png",
+               "details":"Specialties: Eczema, Preventative Health, Relaxation Techniques",
+               "comments":"\"Able to speak directly to the very specific questions I threw at him and offered some suggestions that were asides from health issues I wanted to discuss but were relevant. Very friendly and able to accommodate last minute booking.\""
+            },
+            {
+               "id":2,
+               "name":"Karen Doll",
+               "title":"Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/karenDoll.png",
+               "details":"Specialities: Sinus infections, High Blood Pressure, Sore Throat",
+               "comments":"\"Karen was really great and helpful and informative. She answered all my questions in a concise manner and made the process of seeing a healthcare provider very easy! I would definitely see her again and feel comfortable in doing so.\""
+            },
+            {
+               "id":3,
+               "name":"Asefeh Faraz",
+               "title":"Doctor of Nursing",
+               "image":"https://storage.googleapis.com/maven-prod-svg/asefah.png",
+               "details":"Specialities: Acne, Preventative Health, Bacterial and Viral Infections",
+               "comments":"\"An awesome and insightful practitioner that helped eliminate my health concern. Highly recommended!\""
+            }
+         ]
+      },
+      {
+         "id":6,
+         "title":"STRESS RELIEF",
+         "svg":"https://storage.googleapis.com/maven-prod-svg/injury.svg",
+         "image":"https://storage.googleapis.com/maven-prod-svg/college_stress%402x.png",
+         "sub_title":"STRESS RELIEF",
+         "practitioners":[
+            {
+               "id":1,
+               "name":"Marianna Strongin",
+               "title":"Doctor of Psychology",
+               "image":"https://storage.googleapis.com/maven-prod-svg/marianna.png",
+               "details":"Specialities: Emotional Well-Being, Stress Management, Eating Disorders",
+               "comments":"\"Marianna was sharp, yet considerate and empathetic. She was quick to identify the problem areas and articulated them in such a way that gave me my aha! She challenged my excuses and had a considered viewpoint without being judgmental. She had the tools to help work through issues. Marianna is a game changer!\""
+            },
+            {
+               "id":2,
+               "name":"Elizabeth Chang",
+               "title":"Psychiatric Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/elizabeth.png",
+               "details":"Specializes in: Relaxation techniques, mood and anxiety disorders, and substance abuse",
+               "comments":"\"Elizabeth didn't just sit there, as I have experienced in other talk therapy visits. She engages in conversation, asks questions that make me dig a little deeper, and then offers feedback. I will definitely schedule with her again. She made me feel very comfortable and free of judgement.\""
+            },
+            {
+               "id":3,
+               "name":"Bridget Cross",
+               "title":"Licensed Clinical Social Worker",
+               "image":"https://storage.googleapis.com/maven-prod-svg/bridget.png",
+               "details":"Specialties: Couples/Relationships, Depression/Anxiety, Sexuality",
+               "comments":"\"This session was very helpful, and I felt very comfortable.  I am really pleased that we were able to come up with some concrete ideas and strategies.\""
+            }
+         ]
+      },
+      {
+         "id":7,
+         "title":"FITNESS",
+         "svg":"https://storage.googleapis.com/maven-prod-svg/fitness.svg",
+         "image":"https://storage.googleapis.com/maven-prod-svg/college_fitness@2x.png",
+         "sub_title":"FITNESS",
+         "practitioners":[
+            {
+               "id":1,
+               "name":"Karen Liberi",
+               "title":"Doctor of Physical Therapy",
+               "image":"https://storage.googleapis.com/maven-prod-svg/karenLib.png",
+               "details":"Specialties: Chronic Pain Management, Pelvic Health, Workout planning",
+               "comments":"\"Karen was so beyond helpful for the awkward questions I had about my health! She gave me a lot of helpful information and made me feel so much better about my situation.\""
+            },
+            {
+               "id":2,
+               "name":"Shannon Regner",
+               "title":"Doctor of Physical Therapy",
+               "image":"https://storage.googleapis.com/maven-prod-svg/shannon.png",
+               "details":"Specialties: Injury Recovery, Relaxation Techniques, Workout planning",
+               "comments":"\"Shannon is terrific and I would recommend her with no qualifications.  I have had two appointments with her and she has provided a thorough plan to address both issues. Smart, easy to talk to.\""
+            },
+            {
+               "id":3,
+               "name":"Adrienne Salvagni",
+               "title":"Doctor of Physical Therapy",
+               "image":"https://storage.googleapis.com/maven-prod-svg/adrienne.png",
+               "details":"Specialties: Exercise Coaching, Strength and Conditioning",
+               "comments":"\"IAdrienne was excellent at explaining the exercises and stretches I needed to implement into my daily activities in order to strengthen my injury. I feel so much better after talking with her.\""
+            }
+         ]
+      },
+      {
+         "id":8,
+         "title":"ALLERGIES",
+         "svg":"https://storage.googleapis.com/maven-prod-svg/allergies.svg",
+         "image":"https://storage.googleapis.com/maven-prod-svg/college_allergies@2x.png",
+         "sub_title":"ALLERGIES",
+         "practitioners":[
+            {
+               "id":1,
+               "name":"Jean-Jeffrey Marcellus",
+               "title":"Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/jjm.png",
+               "details":"Specialties: Eczema, Preventative Health, Relaxation Techniques",
+               "comments":"\"Able to speak directly to the very specific questions I threw at him and offered some suggestions that were asides from health issues I wanted to discuss but were relevant. Very friendly and able to accommodate last minute booking.\""
+            },
+            {
+               "id":2,
+               "name":"Karen Doll",
+               "title":"Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/karenDoll.png",
+               "details":"Specialities: Sinus infections, High Blood Pressure, Sore Throat",
+               "comments":"\"Karen was really great and helpful and informative. She answered all my questions in a concise manner and made the process of seeing a healthcare provider very easy! I would definitely see her again and feel comfortable in doing so.\""
+            },
+            {
+               "id":3,
+               "name":"Asefeh Faraz",
+               "title":"Doctor of Nursing",
+               "image":"https://storage.googleapis.com/maven-prod-svg/asefah.png",
+               "details":"Specialities: Acne, Preventative Health, Bacterial and Viral Infections",
+               "comments":"\"An awesome and insightful practitioner that helped eliminate my health concern. Highly recommended!\""
+            }
+         ]
+      },
+      {
+         "id":9,
+         "title":"SEXUAL HEALTH",
+         "svg":"https://storage.googleapis.com/maven-prod-svg/relationship.svg",
+         "image":"https://storage.googleapis.com/maven-prod-svg/college_sexual_health@2x.png",
+         "sub_title":"SEXUAL HEALTH",
+         "practitioners":[
+            {
+               "id":1,
+               "name":"Loryn Ashton",
+               "title":"Women’s Health Nurse Practitioner ",
+               "image":"https://storage.googleapis.com/maven-prod-svg/loryn.png",
+               "details":"Specialties: Birth control, STIs/HIV, Hormonal changes",
+               "comments":"\"She was great! Very helpful and attentive to my needs. Thank you!\""
+            },
+            {
+               "id":2,
+               "name":"Justine Groake",
+               "title":"Women’s Health Nurse Practitioner ",
+               "image":"https://storage.googleapis.com/maven-prod-svg/justine.png",
+               "details":"Specialties: Bladder issues, Periods, Pelvic pain",
+               "comments":"\"Lots of helpful information! Easy to talk to\""
+            },
+            {
+               "id":3,
+               "name":"Rebecca Callahan",
+               "title":"Psychiatric Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/rebecca.png",
+               "details":"Specialties: Holistic Health,  Birth control, STIs/HIV",
+               "comments":"\"She was very helpful and knowledgeable. I am so grateful to be able to have been seen by someone the same day I needed an appointment.."
+            }
+         ]
+      },
+      {
+         "id":10,
+         "title":"PERIOD CONCERNS",
+         "svg":"https://storage.googleapis.com/maven-prod-svg/periods.svg",
+         "image":"https://storage.googleapis.com/maven-prod-svg/college_periods@2x.png",
+         "sub_title":"PERIOD CONCERNS",
+         "practitioners":[
+            {
+               "id":1,
+               "name":"Corinne Menn",
+               "title":"OB/GYN",
+               "image":"https://storage.googleapis.com/maven-prod-svg/corinne.png",
+               "details":"Specialties: Yeast infections, Acne, Irregular Periods",
+               "comments":"\"Dr. Menn was fantastic! She was easy to talk to, addressed my needs and questions, was kind, punctual, and exceeded all of my expectations. Thank you Dr. Menn!\""
+            },
+            {
+               "id":2,
+               "name":"Loryn Ashton",
+               "title":"Women’s Health Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/loryn.png",
+               "details":"Specialties: Birth control, STIs/HIV, Hormonal changes",
+               "comments":"\"Loryn was great; I had considered my question a general health one, but she actually recommended that I speak directly with a nutritionist as my specific issue is one that could be easily managed via diet.\""
+            },
+            {
+               "id":3,
+               "name":"Jo Ann Woodward",
+               "title":"Women’s Health Nurse Practitioner",
+               "image":"https://storage.googleapis.com/maven-prod-svg/joann.png",
+               "details":"Specialties: UTIs, Irregular Periods, Birth control",
+               "comments":"\"Jo Ann was extremely kind and assured me everything was going to be okay. She is knowledgeable and reliable.\""
+            }
+         ]
+      }
+   ]
+}

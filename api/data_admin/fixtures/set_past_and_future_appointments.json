@@ -1,0 +1,21 @@
+[
+      {
+        "type": "appointment",
+        "scheduled_start": "2 hours ago",
+        "practitioner": "test+adoption-coach.23078@mavenclinic.com",
+        "member": "test+meow@mavenclinic.com",
+        "practitioner_started_at": "2 hours ago",
+        "member_started_at": "2 hours ago",
+        "practitioner_ended_at": "1 hour ago",
+        "member_ended_at": "1 hour ago",
+        "product_vertical": "Adoption coach"
+      },
+      {
+        "type": "appointment",
+        "scheduled_start": "in 2 hours",
+        "practitioner": "test+adoption-coach.23078@mavenclinic.com",
+        "member": "test+meow@mavenclinic.com",
+        "product_vertical": "Adoption coach"
+      }
+]
+

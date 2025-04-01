@@ -1,0 +1,262 @@
+/* ----------------------------------- PAGES ------------------------------------ */
+.page-inner {
+	@include container;
+}
+.public {
+	section {
+		padding: 50px 0;
+		@include span(12);
+		> div:not(.span-full):not(.bg-wrap) {
+			//max-width: 1170px;
+			@include span(10 of 12);
+			margin-left: span(1 wide of 12);
+			margin-right: span(1 wide of 12);
+			@include susy-breakpoint($desktop-hd) {
+				&:not(.span-wide) {
+					@include span(8 of 12);
+					margin-left: span(2 wide of 12);
+					margin-right: span(2 wide of 12);
+				}
+				.content-wrap {
+					max-width: 1440px;
+				}
+			}
+		}
+		&:not(.intro) {
+			h1:first-child,
+			h2:first-child {
+				text-align: center;
+			}
+		}
+		@include susy-breakpoint($tablet) {
+			padding: 60px 0;
+		}
+		@include susy-breakpoint($desktop) {
+			padding: 80px 0;
+		}
+	}
+
+	/* Makes sure we don't end up with uber wide content area on large screens */
+	.content-wrap {
+		margin: 0 auto;
+	}
+
+	/* Top intro panels */
+	.intro {
+		position: relative;
+		background: $macaroon-20;
+		padding: 60px 0;
+		> div {
+			position: relative;
+			z-index: 1;
+			&.mobile-headline-overlay {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background: rgba(255, 255, 255, 0.6);
+				z-index: 0;
+				&.overlay-dark {
+					background: rgba(122, 71, 55, 0.7);
+				}
+				&.overlay-xlight {
+					background: rgba(255, 255, 255, 0.8);
+				}
+				@include susy-breakpoint($mobile-landscape) {
+					display: none;
+				}
+			}
+		}
+		@include susy-breakpoint($mobile-landscape) {
+			padding: 95px 0;
+		}
+		@include susy-breakpoint($tablet) {
+			padding: 125px 0 100px 0;
+		}
+		@include susy-breakpoint($desktop) {
+			padding: 135px 0;
+		}
+		@include susy-breakpoint($desktop-md) {
+			padding: 145px 0;
+		}
+	}
+}
+
+.fixed-header {
+	@include susy-breakpoint($desktop) {
+		margin-bottom: 90px;
+	}
+}
+
+.hide-footer {
+	footer {
+		display: none;
+	}
+}
+
+.hide-public-nav {
+	header {
+		display: none;
+	}
+}
+
+.public-faqs {
+	padding-top: 0;
+	width: 100%;
+	h2 {
+		text-align: left;
+	}
+	.faqs {
+		margin-bottom: 40px;
+		@include susy-breakpoint($tablet) {
+			margin-bottom: 60px;
+		}
+	}
+	li {
+		list-style-type: none;
+		list-style-image: none;
+		cursor: pointer;
+		.faq-question {
+			border-bottom: 1px solid $charcoal-40;
+			font-family: $font3;
+			color: $charcoal-100;
+			padding-right: 30px;
+			position: relative;
+			line-height: 1.2;
+			padding: 15px 0;
+			margin: 0;
+			.q {
+				display: inline-block;
+				margin-right: 30px;
+			}
+			.expand {
+				position: absolute;
+				right: 0;
+				bottom: calc(50% - 9px);
+			}
+		}
+		.faq-answer {
+			display: none;
+			li {
+				list-style-type: disc;
+			}
+			a {
+				color: $charcoal-100;
+			}
+		}
+		&.active {
+			.faq-question {
+				.expand {
+					bottom: calc(50% - 12px);
+					transform: rotate(180deg);
+				}
+			}
+			.faq-answer {
+				display: block;
+			}
+		}
+	}
+
+	.grid-container.multi-faq {
+		.grid-item.faq-nav {
+			h3 {
+				margin-top: 0;
+			}
+
+			.nav {
+				margin: 0;
+				padding: 0;
+			}
+
+			.nav-item {
+				display: inline-block;
+				padding: 20px 0 5px 0;
+				margin-right: 20px;
+
+				h5 {
+					border-bottom: 4px solid transparent;
+					color: $charcoal-50;
+					display: inline-block;
+					margin: 0;
+				}
+
+				&.active {
+					h5 {
+						border-bottom: 4px solid $mint-50;
+						color: $charcoal-100;
+					}
+				}
+			}
+		}
+
+		@include susy-breakpoint($tablet) {
+			.grid-item.faq-nav {
+				width: 16%;
+				align-self: flex-start;
+
+				.nav-item {
+					display: block;
+					margin: 0;
+				}
+			}
+
+			.grid-item.faq-wrap {
+				width: 80%;
+				align-self: flex-start;
+			}
+		}
+	}
+	.no-faq-title {
+		.multi-faq .grid-item.faq-nav {
+			h3 {
+				display: none;
+			}
+		}
+	}
+}
+
+/* full bg image with white central box style */
+.page-info {
+	height: 100%;
+	padding-top: 0;
+	@include susy-breakpoint($tablet) {
+		background-position: left center;
+	}
+	.page-info-content {
+		height: 100%;
+		overflow: auto;
+		position: relative;
+		margin-top: 25%;
+		margin-bottom: 10%;
+		min-height: 800px;
+		@include susy-breakpoint($tablet) {
+			margin-top: 10%;
+		}
+		> div {
+			background: white;
+			background: rgba(255, 255, 255, 0.9);
+			text-align: center;
+			margin: 0 auto;
+			width: 95%;
+			padding: 7%;
+			position: relative;
+			top: 5%;
+			margin-bottom: 10%;
+			overflow: auto;
+		}
+		@include susy-breakpoint($tablet) {
+			> div {
+				width: 80%;
+				max-width: 600px;
+			}
+		}
+		@include susy-breakpoint($desktop) {
+			> div {
+				top: 10%;
+				width: 65%;
+				max-width: 800px;
+			}
+		}
+	}
+}

@@ -1,0 +1,52 @@
+<a class="close-profile-dialog" ng-click="doExit()" role="button" tabindex="0">
+	<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+		<title>Close</title>
+		<g stroke-width="2" stroke="#585858" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+			<path d="M1 1l21.684 21.685M1 22.685L22.684 1" />
+		</g>
+	</svg>
+</a>
+
+<div class="content-container center">
+	<h1>Your profile photo</h1>
+
+	<div
+		class="profile-image center"
+		ng-class="{ 'has-image' : imguser.image_url }"
+		ng-style="{ 'background-image' : (imguser.image_url ? 'url('+imguser.image_url+')' : 'url(/img/app/forum/no-avatar.svg)' ) }"
+	></div>
+	<p class="legal center" ng-if="imguser.image_id">
+		<a href="" class="legal" ng-click="removePhoto()">Remove photo</a>
+	</p>
+	<div ng-show="uploadingPhoto">
+		<p class="center"><em>Uploading...</em></p>
+	</div>
+
+	<form name="uploadImageForm">
+		<fieldset>
+			<div class="file-upload-button">
+				<p class="btn-cta">
+					<span ng-if="imguser.image_url">Change</span><span ng-if="!imguser.image_url">Choose</span> your photo
+				</p>
+				<input
+					type="file"
+					ngf-select
+					ng-model="toUpload"
+					name="image"
+					ngf-max-size="20MB"
+					required
+					ngf-model-invalid="errorFile"
+				/>
+			</div>
+			<p class="legal file-upload-restrictions center">(.jpg or .png, maximum file size 10mb)</p>
+			<p ng-show="uploadImageForm.file.$error.maxSize">
+				File too large {{errorFile.size / 1000000|number:1}}MB: max 10M
+			</p>
+		</fieldset>
+	</form>
+
+	<div class="profile-select-avatar-color" ng-show="!imguser.image_url">
+		<h2>Or choose your avatar background color:</h2>
+		<user-select-avatar-color user="user" on-complete="onComplete"></user-select-avatar-color>
+	</div>
+</div>

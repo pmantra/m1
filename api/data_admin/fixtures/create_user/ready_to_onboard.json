@@ -1,0 +1,12 @@
+[
+  {
+    "type": "user",
+    "organization_employee": {
+      "organization_name": "Multitrack Org",
+      "date_of_birth": "2017-01-01"
+    },
+    "email_prefix": "mvnqa-onb",
+    "password": "simpleisawesome1*",
+    "create_member_record": false
+  }
+]

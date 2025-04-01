@@ -1,0 +1,115 @@
+<section class="intro-2-panel landing-contact clearfix">
+	<div class="panel-l span-full">
+	</div>
+
+	<div class="panel-r span-full">
+		<div class="panel-content">
+			<div class="enterprise-form">
+				<h5>New research from Maven</h5>
+				<h2>Back-to-work: <br/>The billion-dollar opportunity for companies</h2>
+				<p>In the United States, more than <strong>75% of expecting mothers say they are excited to go back to work after giving birth. But in the end, 43% of them end up leaving their jobs</strong>. One aspect that is often underexplored is the direct role healthcare plays in this dynamic.</p>
+				<p>With approximately 1 out of 2 babies born on corporate health plans, <strong>companies, without many federal policies in place around parental leave or postpartum care, are inadvertently in the driver’s seat in defining maternity care in America</strong>.</p>
+				<p>Maven’s latest research examines the state of maternity care in the United States, and <strong>helps quantify why investing in maternity and return-to-work services</strong> isn’t just the right thing to do, but can improve a company’s bottom line.</p>
+
+				<h3>In this report, we’ll outline:</h3>
+				<ul>
+					<li>How the U.S. let employers design our country's maternity care</li>
+					<li>Where our current maternity care system breaks down</li>
+					<li>What companies can do to attract and retain top female talent</li>
+					<li>The surprising cost savings of better maternity care policies</li>
+				</ul>
+				
+				<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" name="enterpriseForm" class="mvn-form" style="max-width: 100%;">
+					<input type=hidden name="oid" value="00D36000000ZtJy">
+					<input type=hidden name="retURL" value="http://mavenclinic.com/thank-you/back-to-work">
+					<section class="form-section">
+						<div class="form-elements-container">
+							<div class="mvn-input" ng-class="{ 'has-content': entForm.first_name }">
+								<input id="first_name" type="text" class="mvn-form-input" name="first_name" ng-model="entForm.first_name" required="required" />
+								<label class="mvn-form-label" style="width: 60%;">First name</label>
+							</div>
+							<div id="last_name" class="mvn-input" ng-class="{ 'has-content': entForm.last_name  }">
+								<input type="text" class="mvn-form-input" name="last_name" ng-model="entForm.last_name" required="required" />
+								<label class="mvn-form-label" style="width: 60%;">Last name</label>
+							</div>
+						</div>
+						<div class="form-elements-container">
+							<div class="mvn-input full-width" ng-class="{ 'has-content': entForm.email  }">
+								<input id="email" type="text" class="mvn-form-input" name="email" ng-model="entForm.email" required="required" />
+								<label class="mvn-form-label">Your email address</label>
+							</div>
+						</div>
+
+						<div class="form-elements-container">
+							<div class="mvn-input full-width" ng-class="{ 'has-content': entForm.company_name  }">
+								<input id="company" type="text" class="mvn-form-input" name="company" ng-model="entForm.company_name" required="required" />
+								<label class="mvn-form-label">Organization name</label>
+							</div>
+						</div>
+						
+						<div class="form-elements-container">
+							<div class="mvn-input" ng-class="{ 'has-content': entForm.position  }">
+								<input id="title" type="text" class="mvn-form-input" name="title" ng-model="entForm.position" required="required" />
+								<label class="mvn-form-label" style="width: 60%;">Position</label>
+							</div>
+							
+							<div class="mvn-select" ng-class="">
+								<label for="00N3600000SLzzp">Company size</label>
+								<select id="00N3600000SLzzp" name="00N3600000SLzzp" title="Employee Range" required="required">
+								<option value="" selected="selected" disabled="disabled">–select one–</option>
+								<option value="1-100">1-100</option>
+								<option value="101-1,000">101-1,000</option>
+								<option value="1,001-20,000">1,001-20,000</option>
+								<option value="20,000+">20,000+</option>
+								</select><br>
+							</div>
+							
+						</div>
+						
+						<div class="form-elements-container hidden">
+							<input type="" id="00N3600000SNXrh" name="00N3600000SNXrh" ng-init="entForm.lead_source='back_to_work_whitepaper_download' "
+							ng-value="entForm.lead_source" />
+							 
+							 <input type="" id="00N3600000SNXrm" name="00N3600000SNXrm"
+								 ng-model="trackedParams.install_source" />
+							 
+							 <input type="" id="00N3600000SLsnp" name="00N3600000SLsnp"
+								 ng-model="trackedParams.install_content" />
+							 
+							 <input type="" id="00N3600000SLsoJ" name="00N3600000SLsoJ"
+								 ng-model="trackedParams.install_ad_unit" />
+							 
+							 <input type="" id="00N3600000SNXrc" name="00N3600000SNXrc"
+								 ng-model="trackedParams.http_page_referrer" />
+							
+							<input type="" id="00N3600000Sip2Z" name="00N3600000Sip2Z"
+							 ng-model="trackedParams.install_campaign" />
+							
+							<select id="00N3600000Rx1k2" name="00N3600000Rx1k2" title="Inbound/Outbound"><option value="">--None--</option><option value="Inbound" selected>Inbound</option><option value="Outbound">Outbound</option></select>
+							
+							<select id="00N3600000SipDw" name="00N3600000SipDw" title="From Web?"><option value="">--None--</option><option value="No">No</option><option value="Yes" selected>Yes</option>
+							</select>
+						</div>
+						<div class="form-actions centered">
+							<button type="submit" class="btn btn-cta" ng-class="{'disabled' : enterpriseForm.$invalid || entFormLoading }">
+								<span ng-if="!entFormLoading">Request whitepaper</span>
+								<span ng-if="entFormLoading">Please wait...</span>
+							</button>
+						</div>
+					</section>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="center">
+	<div>
+		<div class="content-wrap">
+			<h2>A modern maternity benefit that supports the whole family</h2>
+			<p>See how Maven is helping companies lower healthcare costs, increase retention, and boost engagement.</p>
+			<p><a class="btn btn-cta" href="" ng-click="openEntContact()">Schedule a demo</a></p>
+		</div>
+	</div>
+</section>

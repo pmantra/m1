@@ -1,0 +1,2 @@
+class RetrievePodSpecError(Exception):
+    pass

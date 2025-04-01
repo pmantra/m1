@@ -1,0 +1,268 @@
+[
+    {
+        "type": "organization",
+        "name": "MegaCorp",
+        "allowed_track_names": [
+            "adoption",
+            "breast_milk_shipping",
+            "egg_freezing",
+            "fertility",
+            "general_wellness",
+            "generic",
+            "parenting_and_pediatrics",
+            "partner_fertility",
+            "partner_newparent",
+            "partner_pregnant",
+            "postpartum",
+            "pregnancy",
+            "pregnancyloss",
+            "sponsored",
+            "surrogacy",
+            "trying_to_conceive"
+        ],
+        "activated_at": "2021-01-01 00:00:00"
+    },
+    {
+        "type": "organization",
+        "name": "Fertility Corp 2",
+        "allowed_track_names": [
+            "adoption",
+            "breast_milk_shipping",
+            "egg_freezing",
+            "fertility",
+            "general_wellness",
+            "generic",
+            "parenting_and_pediatrics",
+            "partner_fertility",
+            "partner_newparent",
+            "partner_pregnant",
+            "postpartum",
+            "pregnancy",
+            "pregnancyloss",
+            "sponsored",
+            "surrogacy",
+            "trying_to_conceive"
+        ],
+        "activated_at": "2021-01-01 00:00:00"
+    },
+    {
+        "type": "user",
+        "email": "test+mvnqa-mvnqa-fert.444330@mavenclinic.com",
+        "organization_name": "Fertility Corp 2",
+        "track": "fertility",
+        "phase": "week-1",
+        "password": "abc",
+        "first_name": "John5894",
+        "last_name": "Baker",
+        "work_state": "NY",
+        "country": "US",
+        "create_member_record": true
+    },
+    {
+        "type": "user",
+        "email": "test+mvnqa-fert.453769@mavenclinic.com",
+        "organization_name": "Fertility Corp 2",
+        "track": "fertility",
+        "phase": "week-1",
+        "password": "abc",
+        "first_name": "Thomas4270",
+        "last_name": "Berger",
+        "work_state": "NY",
+        "country": "US",
+        "create_member_record": true
+    },
+    {
+        "type": "user",
+        "email": "test+mvnqa-fert.386162@mavenclinic.com",
+        "organization_name": "Fertility Corp 2",
+        "track": "fertility",
+        "phase": "week-1",
+        "password": "abc",
+        "first_name": "Justin1201",
+        "last_name": "Cox",
+        "work_state": "NY",
+        "country": "US",
+        "create_member_record": true
+    },
+    {
+        "type": "user",
+        "email": "test+mvnqa-fert.748169@mavenclinic.com",
+        "organization_name": "Fertility Corp 2",
+        "track": "fertility",
+        "phase": "week-1",
+        "password": "abc",
+        "first_name": "Nicholas628",
+        "last_name": "Williams",
+        "work_state": "NY",
+        "country": "US",
+        "create_member_record": true
+    },
+    {
+        "type": "user",
+        "email": "test+mvnqa-fert.528981@mavenclinic.com",
+        "organization_name": "Fertility Corp 2",
+        "track": "fertility",
+        "phase": "week-1",
+        "password": "abc",
+        "first_name": "Joseph4479",
+        "last_name": "Booth",
+        "work_state": "NY",
+        "country": "US",
+        "create_member_record": true
+    },
+    {
+        "type": "user",
+        "email": "test+mvnqa-fert.616211@mavenclinic.com",
+        "organization_name": "Fertility Corp 2",
+        "track": "fertility",
+        "phase": "week-1",
+        "password": "abc",
+        "first_name": "Cody369",
+        "last_name": "Morgan",
+        "work_state": "NY",
+        "country": "US",
+        "create_member_record": true
+    },
+    {
+        "type": "user",
+        "email": "test+mvnqa-fert.102845@mavenclinic.com",
+        "organization_name": "MegaCorp",
+        "track": "fertility",
+        "phase": "week-1",
+        "password": "abc",
+        "first_name": "Cole3206",
+        "last_name": "Edwards",
+        "work_state": "NY",
+        "country": "US",
+        "create_member_record": true
+    },
+    {
+        "type": "user",
+        "email": "test+mvnqa-fert.938264@mavenclinic.com",
+        "organization_name": "MegaCorp",
+        "track": "fertility",
+        "phase": "week-1",
+        "password": "abc",
+        "first_name": "Test",
+        "last_name": "Test",
+        "work_state": "NY",
+        "country": "US",
+        "create_member_record": true
+    },
+    {
+        "type": "reimbursement_organization_settings",
+        "started_at": "1 days ago",
+        "organization": "Fertility Corp 2",
+        "survey_url": "survey.example.com"
+    },
+    {
+        "type": "reimbursement_organization_settings",
+        "started_at": "1 days ago",
+        "organization": "MegaCorp",
+        "survey_url": "survey.example.com"
+    },
+    {
+        "type": "reimbursement_wallet",
+        "organization": "Fertility Corp 2",
+        "member": "test+mvnqa-fert.444330@mavenclinic.com",
+        "state": "QUALIFIED"
+    },
+    {
+        "type": "reimbursement_wallet",
+        "organization": "Fertility Corp 2",
+        "member": "test+mvnqa-fert.453769@mavenclinic.com",
+        "state": "QUALIFIED"
+    },
+    {
+        "type": "reimbursement_wallet",
+        "organization": "Fertility Corp 2",
+        "member": "test+mvnqa-fert.386162@mavenclinic.com",
+        "state": "QUALIFIED"
+    },
+    {
+        "type": "reimbursement_wallet",
+        "organization": "Fertility Corp 2",
+        "member": "test+mvnqa-fert.748169@mavenclinic.com",
+        "state": "QUALIFIED"
+    },
+    {
+        "type": "reimbursement_wallet",
+        "organization": "Fertility Corp 2",
+        "member": "test+mvnqa-fert.528981@mavenclinic.com",
+        "state": "QUALIFIED"
+    },
+    {
+        "type": "reimbursement_wallet",
+        "organization": "Fertility Corp 2",
+        "member": "test+mvnqa-fert.616211@mavenclinic.com",
+        "state": "QUALIFIED"
+    },
+    {
+        "type": "reimbursement_wallet",
+        "organization": "MegaCorp",
+        "member": "test+mvnqa-fert.102845@mavenclinic.com",
+        "state": "QUALIFIED"
+    },
+    {
+        "type": "reimbursement_wallet",
+        "organization": "MegaCorp",
+        "member": "test+mvnqa-fert.938264@mavenclinic.com",
+        "state": "QUALIFIED"
+    },
+    {
+        "type": "organization_employee_dependent",
+        "member_email": "test+mvnqa-fert.444330@mavenclinic.com",
+        "first_name": "John5894",
+        "middle_name": "Dependent",
+        "last_name": "Baker"
+    },
+    {
+        "type": "organization_employee_dependent",
+        "member_email": "test+mvnqa-fert.453769@mavenclinic.com",
+        "first_name": "Thomas4270",
+        "middle_name": "Dependent",
+        "last_name": "Berger"
+    },
+    {
+        "type": "organization_employee_dependent",
+        "member_email": "test+mvnqa-fert.386162@mavenclinic.com",
+        "first_name": "Justin1201",
+        "middle_name": "Dependent",
+        "last_name": "Cox"
+    },
+    {
+        "type": "organization_employee_dependent",
+        "member_email": "test+mvnqa-fert.748169@mavenclinic.com",
+        "first_name": "Nicholas628",
+        "middle_name": "Dependent",
+        "last_name": "Williams"
+    },
+    {
+        "type": "organization_employee_dependent",
+        "member_email": "test+mvnqa-fert.528981@mavenclinic.com",
+        "first_name": "Joseph4479",
+        "middle_name": "Dependent",
+        "last_name": "Booth"
+    },
+    {
+        "type": "organization_employee_dependent",
+        "member_email": "test+mvnqa-fert.616211@mavenclinic.com",
+        "first_name": "Cody369",
+        "middle_name": "Dependent",
+        "last_name": "Morgan"
+    },
+    {
+        "type": "organization_employee_dependent",
+        "member_email": "test+mvnqa-fert.102845@mavenclinic.com",
+        "first_name": "Cole3206",
+        "middle_name": "Dependent",
+        "last_name": "Edwards"
+    },
+    {
+        "type": "organization_employee_dependent",
+        "member_email": "test+mvnqa-fert.938264@mavenclinic.com",
+        "first_name": "Test",
+        "middle_name": "Dependent",
+        "last_name": "Test"
+    }
+]

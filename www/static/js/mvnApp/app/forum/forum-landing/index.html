@@ -1,0 +1,22 @@
+<section class="forum-landing">
+	<div class="content-container">
+		<forum-header cats="$ctrl.cats" hide-communities="true" show-search-menu="$ctrl.showSearchMenu"></forum-header>
+
+		<forum-landing-communities cats="$ctrl.cats"></forum-landing-communities>
+
+		<write-post></write-post>
+
+		<div ng-repeat="cat in $ctrl.cats" class="forum-landing-community-popular">
+			<div class="center popular-header">
+				<h2 class="h3 serif">Popular in {{ cat.display_name }}</h2>
+				<img ng-src="{{ cat.image_url }}" alt="{{ cat.display_name }}" width="50px" height="50px" />
+			</div>
+			<forum-popular-posts cat="cat" show="$ctrl.show" cats="$ctrl.cats" user="$ctrl.user"></forum-popular-posts>
+			<p class="forum-landing-view-all">
+				<a class="btn btn-tertiary" ui-sref="app.forum.community({'community' : cat.name })">View all popular posts</a>
+			</p>
+		</div>
+	</div>
+
+	<explore-practitioners user="$ctrl.user"></explore-practitioners>
+</section>

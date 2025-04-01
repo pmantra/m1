@@ -1,0 +1,63 @@
+<h3>Risk Flags:</h3>
+<!-- 'member_risks' should be an instance of MemberRisksAdminModel -->
+
+{% if member_risks.allow_edit %}
+<form method="POST" action="/admin/risk_flags/member_risk_edit">
+    <p>
+        <strong>Add Or Remove a Risk Flag by Name</strong>
+    </p>
+    <input name="user_id" type="hidden" placeholder="user_id" value="{{ member_risks.user_id }}" readonly />
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="risk_name">Risk Name:</label></td>
+                <td><input name="risk_name" type="text" value="" list="risk_names" />
+                    <datalist id="risk_names">
+                        {% for name in member_risks.risk_names() %}
+                        <option value="{{ name }}" />
+                        {% endfor %}
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="risk_name">Value:</label></td>
+                <td><input name="risk_value" type="text" value=""
+                        placeholder="optional number, needed for some risks" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <input type="submit" name="set_risk" value="Add Risk" style="margin-left:20px">
+        <input type="submit" name="clear_risk" value="Remove Risk" style="margin-left:20px" />
+    </div>
+</form>
+{% endif %}
+
+{% if member_risks.any() %}
+
+<table class="table table-bordered">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Severity</th>
+        <th>Value</th>
+        <th>Start</th>
+        <th>End</th>
+    </thead>
+    <tbody>
+        {% for member_risk in member_risks.all() %}
+        <tr>
+            <td>{{ member_risk.id }}</td>
+            <td>{{ member_risk.risk_flag.name }}</td>
+            <td>{{ member_risk.risk_flag.severity.value }}</td>
+            <td>{{ member_risk.value }}</td>
+            <td>{{ member_risk.start }}</td>
+            <td>{{ member_risk.end }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Member Has no Risk Flags</p>
+{% endif %}

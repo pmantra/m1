@@ -1,0 +1,230 @@
+openapi: 3.0.3
+info:
+  title: Maven Clinic Messaging APIs
+  description: API endpoints related to messaging.
+  version: "1.0.0"
+servers:
+  - url: https://www.mavenclinic.com
+  - url: https://www.qa1.mvnapp.net
+  - url: https://www.qa2.mvnapp.net
+  - url: https://www.staging.mvnapp.net
+paths:
+  /api/v1/channels:
+    get:
+      summary: Get a list of channels
+      description: Returns list of channels for an authenticated user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChannelsGETArgsV3"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ChannelsSchemaV3"
+        "400":
+          description: Invalid request body or error serializing response
+        "500":
+          description: Internal error
+  /api/v1/message/notifications_consent:
+    post:
+      summary: Mark a member as having given consent for SMS notifications
+      description: Sets SMS message notification consent as true for a given member
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {}
+    get:
+      summary: Retrieve member SMS consent information
+      description: Identify whether or not a member has given consent for SMS notifications
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message_notifications_consent:
+                    type: boolean
+                    default: false
+components:
+  schemas:
+    ChannelSchemaV3:
+      properties:
+        can_accept_messages:
+          readOnly: true
+        id:
+          type: integer
+        internal:
+          type: boolean
+        last_message:
+          $ref: '#/components/schemas/MessageInChannelsSchemaV3'
+        name:
+          type: string
+        new_messages:
+          readOnly: true
+        participants:
+          items:
+            $ref: '#/components/schemas/ParticipantInChannelSchemaV3'
+          type: array
+        privilege_type:
+          type: string
+        reply_sla_user_message:
+          readOnly: true
+        total_messages:
+          readOnly: true
+        wallet_id:
+          readOnly: true
+      type: object
+    ChannelsGETArgsV3:
+      properties:
+        empty:
+          default: false
+          type: boolean
+        limit:
+          default: 10
+          maximum: 2000
+          minimum: 0
+          type: integer
+        offset:
+          default: 0
+          minimum: 0
+          type: integer
+        order_direction:
+          default: desc
+          type: string
+      type: object
+    ChannelsSchemaV3:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/ChannelSchemaV3'
+          type: array
+        message_notifications_consent:
+          type: boolean
+        meta: {}
+        pagination:
+          $ref: '#/components/schemas/PaginationInfoSchemaV3'
+      type: object
+    MemberTrackInChannelSchemaV3:
+      properties:
+        dashboard:
+          readOnly: true
+        display_name:
+          type: string
+        ended_at:
+          format: date-time
+          type: string
+        id:
+          type: integer
+        name:
+          type: string
+        scheduled_end:
+          readOnly: true
+        start_date:
+          readOnly: true
+        track_modifiers:
+          items:
+            enum:
+              - doula_only
+          type: array
+      type: object
+    MessageInChannelsSchemaV3:
+      properties:
+        author:
+          readOnly: true
+        body:
+          type: string
+        created_at:
+          format: date-time
+          type: string
+        id:
+          type: integer
+        meta:
+          items:
+            $ref: '#/components/schemas/MessageUsersSchemaV3'
+          type: array
+      type: object
+    MessageUsersSchemaV3:
+      properties:
+        is_acknowledged:
+          type: boolean
+        is_read:
+          type: boolean
+        user_id:
+          type: integer
+      type: object
+    PaginationInfoSchemaV3:
+      properties:
+        limit:
+          default: 10
+          maximum: 2000
+          minimum: 0
+          type: integer
+        offset:
+          default: 0
+          minimum: 0
+          type: integer
+        order_direction:
+          default: desc
+          type: string
+        total:
+          type: integer
+      type: object
+    ParticipantInChannelSchemaV3:
+      properties:
+        is_anonymous:
+          type: boolean
+        is_initiator:
+          type: boolean
+        max_chars:
+          type: integer
+        user:
+          $ref: '#/components/schemas/UserInChannelSchemaV3'
+      type: object
+    UserInChannelSchemaV3:
+      properties:
+        active_tracks:
+          items:
+            $ref: '#/components/schemas/MemberTrackInChannelSchemaV3'
+          type: array
+        avatar_url:
+          type: string
+        country:
+          readOnly: true
+        email:
+          readOnly: true
+        encoded_id:
+          readOnly: true
+        esp_id:
+          readOnly: true
+        first_name:
+          type: string
+        id:
+          type: integer
+        image_id:
+          type: integer
+        image_url:
+          readOnly: true
+        last_name:
+          type: string
+        middle_name:
+          type: string
+        name:
+          readOnly: true
+        profiles:
+          readOnly: true
+        role:
+          readOnly: true
+        username:
+          readOnly: true
+      type: object

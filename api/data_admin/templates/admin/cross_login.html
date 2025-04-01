@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logging Into Admin</title>
+</head>
+<body>
+    <form method="POST" action="{{ admin_host }}/admin/login/">
+        <input id="email" name="email" type="text" value="{{ email }}">
+        <input id="password" name="password" type="password" value="{{ password }}">
+        <input id="totp" name="totp" type="text" value="{{ totp }}">
+        <input type="submit" class="btn btn-primary btn-large" value="Login">
+    </form>
+    <script>document.getElementsByTagName('form')[0].submit();</script>
+</body>
+</html>

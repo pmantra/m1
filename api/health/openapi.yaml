@@ -1,0 +1,318 @@
+openapi: 3.0.3
+info:
+  title: Maven Clinic Health Profile API
+  version: 1.0.0
+  description: API endpoints for health profile
+servers:
+  - url: https://www.mavenclinic.com
+  - url: https://www.qa1.mvnapp.net
+  - url: https://www.qa2.mvnapp.net
+  - url: https://www.staging.mvnapp.net
+paths:
+  "/users/{user_id}/pregnancy_and_related_conditions":
+    get:
+      summary: "Get a member's pregnancies and their related conditions"
+      tags: [ "MPractice" ]
+      parameters:
+        - $ref: "#/components/parameters/UserId"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/PregnancyAndRelatedConditions"
+        "400":
+          description: "Bad request"
+        "500":
+          description: "Internal error"
+    put:
+      summary: "Update a pregnancy and its related conditions for a member"
+      tags: [ "MPractice" ]
+      parameters:
+        - $ref: "#/components/parameters/UserId"
+      requestBody:
+        $ref: "#/components/requestBodies/PUTPregnancyAndRelatedConditionsRequest"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PregnancyAndRelatedConditions"
+              examples:
+                PregnancyAndGestationalDiabetesCondition:
+                  summary: A pregnant member with gestational diabetes
+                  value:
+                    pregnancy:
+                      status: "active"
+                      estimated_date: "2025-01-15"
+                      modifier:
+                        id: 123
+                        name: "Test provider 123"
+                        role: "practitioner"
+                        verticals: [ "ob-gyn" ]
+                    related_conditions:
+                      gestational diabetes:
+                        status: "Has gestational diabetes"
+                        onset_date: "2024-10-17"
+                        modifier:
+                          id: 456
+                          name: "Test provider 456"
+                          role: "practitioner"
+                          verticals: [ "ob-gyn" ]
+                    alerts: { }
+
+        "400":
+          description: "Bad request"
+        "500":
+          description: "Internal error"
+
+  "/pregnancy_and_related_conditions/{pregnancy_id}":
+    patch:
+      summary: "Update a pregnancy and related conditions"
+      tags: [ "MPractice" ]
+      parameters:
+        - name: pregnancy_id
+          in: path
+          required: true
+          schema:
+            $ref: "#/components/schemas/UniqueIdentifier"
+        - name: x-maven-user-identities
+          in: header
+          required: false
+          schema:
+            type: string
+            default: practitioner
+      requestBody:
+        $ref: "#/components/requestBodies/PATCHPregnancyAndRelatedConditionsRequest"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PregnancyAndRelatedConditions"
+        "400":
+          description: "Bad request"
+
+components:
+  parameters:
+    UserId:
+      name: user_id
+      in: path
+      required: true
+      schema:
+        $ref: "#/components/schemas/PositiveInteger"
+      description: "Maven user id"
+
+  requestBodies:
+    PUTPregnancyAndRelatedConditionsRequest:
+      description: Create or update pregnancy and related conditions for a member
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/PregnancyAndRelatedConditions"
+
+    PATCHPregnancyAndRelatedConditionsRequest:
+      description: Update pregnancy and related conditions for a member
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/PregnancyAndRelatedConditionsForPatchRequest"
+
+  schemas:
+    Alert:
+      type: object
+      nullable: false
+      required: [ type, message ]
+      properties:
+        type:
+          $ref: "#/components/schemas/AlertType"
+        message:
+          $ref: "#/components/schemas/NonEmptyString"
+    Modifier:
+      type: object
+      nullable: true
+      properties:
+        id:
+          $ref: "#/components/schemas/NullOrPositiveInteger"
+        name:
+          $ref: "#/components/schemas/NullOrNonEmptyString"
+        role:
+          $ref: "#/components/schemas/NullOrNonEmptyString"
+        verticals:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/NonEmptyString'
+    ValueWithModifierAndUpdatedAt:
+      type: object
+      nullable: true
+      required: [value, modifier, updated_at]
+      properties:
+        value:
+          $ref: "#/components/schemas/NonEmptyString"
+        modifier:
+          $ref: "#/components/schemas/Modifier"
+        updated_at:
+          $ref: "#/components/schemas/DateTime"
+    MemberCondition:
+      type: object
+      nullable: false
+      required: [status]
+      properties:
+        id:
+          $ref: "#/components/schemas/NullOrUniqueIdentifier"
+        condition_type:
+          $ref: "#/components/schemas/ConditionType"
+        status:
+          $ref: "#/components/schemas/Status"
+        onset_date:
+          $ref: "#/components/schemas/NullOrDate"
+        abatement_date:
+          $ref: "#/components/schemas/NullOrDate"
+        estimated_date:
+          $ref: "#/components/schemas/NullOrDate"
+        is_first_occurrence:
+          type: boolean
+          nullable: true
+        method_of_conception:
+          $ref: "#/components/schemas/ValueWithModifierAndUpdatedAt"
+        outcome:
+          $ref: "#/components/schemas/ValueWithModifierAndUpdatedAt"
+        modifier:
+          $ref: "#/components/schemas/Modifier"
+    MemberConditionForPatchRequest:
+      type: object
+      nullable: false
+      properties:
+        status:
+          $ref: "#/components/schemas/NullOrNonEmptyString"
+        abatement_date:
+          $ref: "#/components/schemas/NullOrDate"
+        estimated_date:
+          $ref: "#/components/schemas/NullOrDate"
+        is_first_occurrence:
+          type: boolean
+          nullable: true
+        method_of_conception:
+          $ref: "#/components/schemas/ValueWithModifierAndUpdatedAt"
+        outcome:
+          $ref: "#/components/schemas/ValueWithModifierAndUpdatedAt"
+        modifier:
+          $ref: "#/components/schemas/Modifier"
+    PregnancyAndRelatedConditions:
+      type: object
+      required: [ pregnancy, related_conditions ]
+      properties:
+        pregnancy:
+          $ref: "#/components/schemas/MemberCondition"
+        related_conditions:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/MemberCondition"
+        alerts:
+          type: object
+          additionalProperties:
+            type: array
+            nullable: false
+            items:
+              $ref: "#/components/schemas/Alert"
+    PregnancyAndRelatedConditionsForPatchRequest:
+      type: object
+      required: [ pregnancy, related_conditions ]
+      properties:
+        pregnancy:
+          $ref: "#/components/schemas/MemberConditionForPatchRequest"
+        related_conditions:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/MemberConditionForPatchRequest"
+
+    # endregion
+
+    # region: field components
+    NonEmptyString:
+      type: "string"
+      minLength: 1
+    NullOrNonEmptyString:
+      type: "string"
+      minLength: 1
+      nullable: true
+    PositiveInteger:
+      type: "integer"
+      format: "int64"
+      minimum: 0
+      example: 234
+    NullOrPositiveInteger:
+      type: "integer"
+      format: "int64"
+      minimum: 0
+      example: 234
+      nullable: true
+    UniqueIdentifier:
+      type: "string"
+      format: "uuid"
+      minLength: 1
+    NullOrUniqueIdentifier:
+      type: "string"
+      format: "uuid"
+      minLength: 1
+      nullable: true
+    NullOrDate:
+      type: string
+      format: date
+      example: "1970-01-01"
+      description: |
+        The ISO 8601 date when this object was created, as defined by RFC 3339.
+      nullable: true
+    DateTime:
+      type: string
+      format: date-time
+      example: "1970-01-01T00:00:00Z"
+      description: |
+        The ISO 8601 timestamp when this object was created, as defined by RFC 3339.
+      nullable: false
+    AlertType:
+      type: string
+      nullable: false
+      enum:
+        - reminder
+    ConditionType:
+      type: string
+      nullable: false
+      enum:
+        - "pregnancy"
+        - "gestational diabetes"
+    Status:
+      type: string
+      nullable: false
+      enum:
+        - "active"
+        - "resolved"
+    NullOrMethodOfConception:
+      type: string
+      nullable: true
+      enum:
+        - "ivf"
+        - "iui"
+        - "other fertility treatment"
+        - "fertility treatment not specified"
+        - "no fertility treatment"
+        - "unknown"
+        - null
+    NullOrOutcome:
+      type: string
+      nullable: true
+      enum:
+        - "live birth - term"
+        - "live birth - preterm"
+        - "stillbirth"
+        - "miscarriage"
+        - "unknown"
+        - null
+
+    # endregion

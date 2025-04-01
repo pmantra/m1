@@ -1,0 +1,10 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+    {{ super() }}
+
+    <i class="icon-star-empty" aria-hidden="true"></i>
+    To view Wallet Client Report Reimbursement Requests, first Create a Report. <br/>
+    Creating a report will automatically import all Reimbursement Requests in Approved state (that haven't been attached to another report)
+
+{% endblock %}

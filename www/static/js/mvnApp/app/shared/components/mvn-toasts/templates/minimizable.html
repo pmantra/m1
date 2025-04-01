@@ -1,0 +1,36 @@
+<div class="mvn-toast toast-minimizable">
+	<div class="toast-container" ng-style="{ animationDuration : opts.duration + 'ms' }">
+		<span ng-if="!minimized">
+            <a class="toast-dismiss" ng-click="minimize()" href="">&times;</a>
+			<div class="toast-content">
+				<h3 class="serif">{{ opts.title }}</h3>
+
+				<p>{{ opts.content }}</p>
+
+				<div ng-if="opts.action.type" class="toast-action">
+					<mvn-dynamic-cta opts="opts.action"></mvn-dynamic-cta>
+				</div>
+			</div>
+			<div ng-if="opts.iconClass" class="toast-icon {{ opts.iconClass }}">
+			</div>
+		</span>
+
+
+        <span ng-if="minimized">
+			<a class="toast-dismiss" ng-click="dismiss()" href="">&times;</a>
+			<div class="toast-content">
+                <div ng-if="opts.iconClass" class="toast-icon mobile-none {{ opts.iconClass }}">
+                </div>
+                <h5 class="serif mobile-none">{{ opts.content }}</h5>
+                <p class="mobile-only">{{ opts.content }}</p>
+
+				<div ng-if="opts.action.type" class="toast-action">
+					<mvn-dynamic-cta opts="opts.action"></mvn-dynamic-cta>
+				</div>
+			</div>
+
+			</div>
+		</span>
+
+	</div>
+</div>

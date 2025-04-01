@@ -1,0 +1,231 @@
+# Minute   Hour   Day of Month       Month          Day of Week       USER    Command
+# (0-59)  (0-23)     (1-31)    (1-12 or Jan-Dec)  (0-6 or Sun-Sat)
+
+# APNS Pruning
+# 0 0 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tasks.notifications import prune_devices; prune_devices.delay('forum', team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+# 0 0 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tasks.notifications import prune_devices; prune_devices.delay('member', team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+# 0 0 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.notifications import prune_devices; prune_devices.delay('practitioner', team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+
+# Bad data checking
+*/30 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api  -- python3 -c "from utils import bad_data_checkers; from utils.constants import CronJobName;  bad_data_checkers.half_hourly.delay(team_ns='care_discovery', cron_job_name=CronJobName.DATA_CHECKER_HALF_HOURLY )"; } >> /var/log/cron.log 2>&1
+# 0 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from utils import bad_data_checkers; bad_data_checkers.hourly.delay(team_ns='care_discovery')"; } >> /var/log/cron.log 2>&1
+# 0 0 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from utils import bad_data_checkers; bad_data_checkers.daily.delay(team_ns='care_discovery')"; } >> /var/log/cron.log 2>&1
+# */20 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.infrastructure import check_queue_length; check_queue_length()"; } >> /var/log/cron.log 2>&1
+# 28 7 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.messaging import audit_cx_responses; audit_cx_responses.delay(team_ns='mpractice_core')"; } >> /var/log/cron.log 2>&1
+
+# Updating next availability for practitioners
+*/5 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.availability import update_practitioners_next_availability; update_practitioners_next_availability.delay(team_ns='care_discovery')"; } >> /var/log/cron.log 2>&1
+
+# Updating cache
+45 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.forum import invalidate_posts_cache; invalidate_posts_cache.delay(team_ns='content_and_community')"; } >> /var/log/cron.log 2>&1
+0 1 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.forum import update_personalized_caches; update_personalized_caches.delay(team_ns='content_and_community')"; } >> /var/log/cron.log 2>&1
+
+# Pre-appointment notifications to members & practitioners
+* * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointment_notifications import sms_notify_upcoming_appointments_member; from utils.constants import CronJobName; sms_notify_upcoming_appointments_member.delay(team_ns='virtual_care', cron_job_name=CronJobName.SMS_NOTIFY_UPCOMING_APPOINTMENTS_MEMBER_CRON_JOB)"; } >> /var/log/cron.log 2>&1
+* * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointment_notifications import sms_notify_upcoming_appointments_practitioner;  from utils.constants import CronJobName; sms_notify_upcoming_appointments_practitioner.delay(team_ns='virtual_care', cron_job_name=CronJobName.SMS_NOTIFY_UPCOMING_APPOINTMENTS_PRACTITIONER_CRON_JOB)"; } >> /var/log/cron.log 2>&1
+*/5 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointment_notifications import remind_members_about_advance_bookings; remind_members_about_advance_bookings.delay(team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+*/5 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointment_notifications import remind_booking_series; remind_booking_series.delay(team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+* * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointment_notifications import notify_about_upcoming_noshows; notify_about_upcoming_noshows.delay(team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+0 2 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointment_notifications import schedule_member_confirm_appointment_sms; schedule_member_confirm_appointment_sms.delay(team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+*/5 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointment_notifications import handle_push_notifications_for_1_hour_reminder; handle_push_notifications_for_1_hour_reminder.delay(team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+
+# Post-appointment notifications
+*/5 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointment_rx_notifications import notify_about_recently_written_rx; notify_about_recently_written_rx.delay(team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+
+# Slack automation
+*/10 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.availability_notifications import notify_about_upcoming_availability; notify_about_upcoming_availability.delay(team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+
+# CX automations
+*/15 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointments import complete_overdue_appointments; complete_overdue_appointments.delay(team_ns='care_discovery')"; } >> /var/log/cron.log 2>&1
+*/15 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointments import cancel_practitioner_no_shows; cancel_practitioner_no_shows.delay(team_ns='care_discovery')"; } >> /var/log/cron.log 2>&1
+*/15 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointments import cancel_member_no_shows; cancel_member_no_shows.delay(team_ns='care_discovery')"; } >> /var/log/cron.log 2>&1
+*/15 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointments import check_on_overflowing_appointments; check_on_overflowing_appointments.delay(team_ns='care_discovery')"; } >> /var/log/cron.log 2>&1
+
+# braze marketing automations
+7 8 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api  -- python3 -c "from tasks.marketing import find_users_to_tag; find_users_to_tag.delay(since_hours=48, team_ns='enrollments')"; } >> /var/log/cron.log 2>&1
+
+# Braze
+50 4 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api  -- python3 -c "from braze.tasks.active_users import fetch_maus; fetch_maus.delay(team_ns='enrollments')"; } >> /var/log/cron.log 2>&1
+50 4 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api  -- python3 -c "from braze.tasks.active_users import fetch_daus; fetch_daus.delay(team_ns='enrollments')"; } >> /var/log/cron.log 2>&1
+
+# marketing support
+12 12 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api  -- python3 -c "from tasks.marketing import check_expiring_codes; check_expiring_codes.delay(team_ns='enrollments')"; } >> /var/log/cron.log 2>&1
+
+# refund message credits
+10 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.messaging import refund_message_credits; refund_message_credits.delay(service_ns='messaging_system', team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+
+# practitioners fees of messaging purchases
+55 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.messaging import collect_fees_for_messaging_purchases; collect_fees_for_messaging_purchases.delay(job_timeout=60 * 60, service_ns='messaging_system', team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+
+# push notify practitioners to respond messages
+* * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.messaging import push_notify_practitioners_to_respond; push_notify_practitioners_to_respond.delay(team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+
+# daily summary for messages
+0 0 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.notifications import daily_messaging_summary; daily_messaging_summary.delay(team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+0 0 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.messaging import check_message_comment_id; check_message_comment_id.delay(team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+
+# daily Maven-Zendesk reconciliation jobs
+17 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from messaging.tasks.messaging_reconciliation import maven_to_zendesk_message_reconciliation; maven_to_zendesk_message_reconciliation.delay(team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+
+# Nightly Rewards Export To Castlight
+0 1 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.rewards import send_rewards_to_castlight; send_rewards_to_castlight.delay(team_ns='data')"; } >> /var/log/cron.log 2>&1
+
+# Proactive Messaging
+2 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.messaging import send_cx_intro_message_for_enterprise_users; from utils.constants import CronJobName; send_cx_intro_message_for_enterprise_users.delay(hours_ago=1, team_ns='care_discovery', cron_job_name=CronJobName.SEND_CX_INTRO_MESSAGE_FOR_ENTERPRISE_USERS)"; } >> /var/log/cron.log 2>&1
+
+# Enterprise
+# 59 17 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.enterprise import collect_all_pending_csv_files; collect_all_pending_csv_files.delay()"; } >> /var/log/cron.log 2>&1
+# 30 0 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.enterprise import delete_stale_organization_employees; delete_stale_organization_employees.delay()"; } >> /var/log/cron.log 2>&1
+
+# bms
+30 13,19 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from bms.tasks.bms import check_for_unfulfilled_orders; check_for_unfulfilled_orders.delay(team_ns='payments_platform')"; } >> /var/log/cron.log 2>&1
+
+21 5 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from bms.tasks.bms import notify_bms_travel_end_date; notify_bms_travel_end_date.delay(team_ns='payments_platform')"; } >> /var/log/cron.log 2>&1
+
+# staff cost calculations
+# 8 2 1 * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.availability import update_staff_practitioners_percent_booked; from utils.constants import CronJobName; update_staff_practitioners_percent_booked.delay(service_ns='provider_payments', team_ns='payments_platform', cron_job_name=CronJobName.UPDATE_STAFF_PRACTITIONERS_PERCENT_BOOKED)"; } >> /var/log/cron.log 2>&1
+
+# send follow up reminder emails
+0 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.notifications import send_member_profile_follow_up_emails; send_member_profile_follow_up_emails.delay(team_ns='enrollments')"; } >> /var/log/cron.log 2>&1
+
+# get fees, generate invoices
+5 0 1 * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.payments import generate_invoices_from_fees; generate_invoices_from_fees.delay(service_ns='provider_payments', team_ns='payments_platform', job_timeout=30 * 60)"; } >> /var/log/cron.log 2>&1
+
+# check invoices
+0 0 7 * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.payments import check_invoices; check_invoices.delay(service_ns='provider_payments', team_ns='payments_platform', job_timeout=30 * 60)"; } >> /var/log/cron.log 2>&1
+
+# check failed payments
+0 0 12 * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tasks.payments import check_failed_payments; check_failed_payments.delay(service_ns='provider_payments', team_ns='payments_platform', job_timeout=30 * 60)"; } >> /var/log/cron.log 2>&1
+
+# update organization_approved_modules from client tracks
+# 0 0 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tasks.programs import update_organization_approved_modules; from utils.constants import CronJobName; update_organization_approved_modules.delay(team_ns='enrollments', cron_job_name=CronJobName.UPDATE_ORGANIZATION_APPROVED_MODULES)"; } >> /var/log/cron.log 2>&1
+
+# auto-transition / terminate member tracks
+20 5 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tasks.tracks import auto_transition_or_terminate_member_tracks_coordinator; auto_transition_or_terminate_member_tracks_coordinator.delay(service_ns='tracks', team_ns='enrollments')"; } >> /var/log/cron.log 2>&1
+
+# ensure track states
+35 5 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tasks.tracks import ensure_track_state_coordinator; ensure_track_state_coordinator.delay(job_timeout=60 * 45, service_ns='tracks', team_ns='enrollments')"; } >> /var/log/cron.log 2>&1
+
+# update member track phase history reporting tables
+0 6 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tasks.tracks import update_member_track_phase_history_coordinator; update_member_track_phase_history_coordinator.delay(service_ns='tracks', team_ns='enrollments')"; } >> /var/log/cron.log 2>&1
+
+# set up opt-out renewals
+10 5 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tracks.tasks.opt_out_renewals import find_tracks_qualified_for_opt_out_renewals; find_tracks_qualified_for_opt_out_renewals.delay(service_ns='tracks', team_ns='enrollments')"; } >> /var/log/cron.log 2>&1
+
+# Index resource content into our search engine
+20 5 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tasks.marketing import index_resources_for_search; index_resources_for_search.delay(team_ns='content_and_community')"; } >> /var/log/cron.log 2>&1
+
+# Send zoom webinar follow-ups
+30 4 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tasks.zoom import follow_up_with_users_who_participated_in_zoom_webinar; from utils.constants import CronJobName; follow_up_with_users_who_participated_in_zoom_webinar.delay(team_ns='content_and_community', cron_job_name=CronJobName.FOLLOW_UP_WITH_USERS_WHO_PARTICIPATED_IN_ZOOM_WEBINAR)"; } >> /var/log/cron.log 2>&1
+30 4 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tasks.zoom import follow_up_with_users_who_missed_zoom_webinar; from utils.constants import CronJobName; follow_up_with_users_who_missed_zoom_webinar.delay(team_ns='content_and_community', cron_job_name=CronJobName.FOLLOW_UP_WITH_USERS_WHO_MISSED_ZOOM_WEBINAR)"; } >> /var/log/cron.log 2>&1
+
+# Update upcoming webinars
+30 5 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tasks.zoom import add_new_upcoming_webinars; add_new_upcoming_webinars.delay(team_ns='content_and_community')"; } >> /var/log/cron.log 2>&1
+
+# Sync pending reimbursement claim statuses from Alegeus API
+1 11 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from wallet.tasks.alegeus import sync_pending_claims; sync_pending_claims.delay(team_ns='payments_platform', job_timeout=1800)"; } >> /var/log/cron.log 2>&1
+
+# Smoke test Alegeus API
+58 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from wallet.tasks.alegeus import test_api_connection; test_api_connection.delay(team_ns='payments_platform')"; } >> /var/log/cron.log 2>&1
+
+# Update SurveyMonkey webhook with newly added surveys 1x a day
+# 0 19 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from wallet.tasks.survey_monkey import add_survey_ids_to_webhook; from utils.constants import CronJobName; add_survey_ids_to_webhook.delay(team_ns='benefits_experience', cron_job_name=CronJobName.ADD_SURVEY_IDS_TO_WEBHOOK)"; } >> /var/log/cron.log 2>&1
+
+# Upload BMS Order csv to Indicia 1x a day
+1 16 * * 1-5 root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from bms.tasks.bms import upload_bms_orders; upload_bms_orders.delay(team_ns='payments_platform')"; } >> /var/log/cron.log 2>&1
+
+# Download BMS Order csv to Indicia 1x a day
+30 20 * * 1-5 root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from bms.tasks.bms import process_bms_orders; process_bms_orders.delay(team_ns='payments_platform')"; } >> /var/log/cron.log 2>&1
+
+# Find availability requests that haven't been responded to every hour
+0 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.availability_requests import find_stale_request_availability_messages; from utils.constants import CronJobName; find_stale_request_availability_messages.delay(team_ns='care_discovery', cron_job_name=CronJobName.FIND_STALE_REQUEST_AVAILABILITY_MESSAGES_JOB)"; } >> /var/log/cron.log 2>&1
+
+# Find promoted messages that haven't been responded to every hour
+0 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from tasks.messaging import create_zd_ticket_for_unresponded_promoted_messages; from utils.constants import CronJobName; create_zd_ticket_for_unresponded_promoted_messages.delay(team_ns='care_discovery', cron_job_name=CronJobName.CREATE_ZD_TICKET_FOR_UNRESPONDED_PROMOTED_MESSAGE)"; } >> /var/log/cron.log 2>&1
+
+# Find overlapping appointments
+0 */2 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.appointment_monitors import find_overlapping_appointments; find_overlapping_appointments.delay(2, team_ns='care_discovery')"; } >> /var/log/cron.log 2>&1
+
+# EDI Alegeus Upload
+58 5 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from wallet.tasks.alegeus_edi import upload_transactions_request_to_alegeus; upload_transactions_request_to_alegeus.delay(team_ns='payments_platform')"; } >> /var/log/cron.log 2>&1
+
+# EDI Alegeus Download
+58 6 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from wallet.tasks.alegeus_edi import download_transactions_alegeus; download_transactions_alegeus.delay(team_ns='payments_platform')"; } >> /var/log/cron.log 2>&1
+
+# Perform scheduled CA member transitions
+*/50 * * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from care_advocates.tasks.transitions import perform_care_advocate_member_transitions; perform_care_advocate_member_transitions.delay(service_ns='admin_care_advocate_member_transitions', team_ns='care_discovery', job_timeout=40 * 60)"; } >> /var/log/cron.log 2>&1
+
+# Debit card terminated employee processing
+0 14 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from wallet.tasks.alegeus import handle_debit_card_terminated_employees; handle_debit_card_terminated_employees.delay(team_ns='payments_platform')"; } >> /var/log/cron.log 2>&1
+
+# Export and email practitioner contracts
+0 0 28 * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from payments.tasks.practitioner_contract import export_practitioner_contracts; export_practitioner_contracts.delay(service_ns='provider_payments', team_ns='payments_platform', job_timeout=30 * 60)"; } >> /var/log/cron.log 2>&1
+
+# Check for missing or expiring contracts
+0 8 * * 1-5 root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from payments.tasks.practitioner_contract import report_missing_or_expiring_contracts; report_missing_or_expiring_contracts.delay(service_ns='provider_payments', team_ns='payments_platform', job_timeout=30 * 60)"; } >> /var/log/cron.log 2>&1
+
+# sync-unsubscribe-emails / sync member preference with braze unsubscribe
+30 0 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from preferences.tasks.sync_email_preferences import sync_member_email_preference_with_braze; sync_member_email_preference_with_braze.delay(team_ns='enrollments')"; } >> /var/log/cron.log 2>&1
+
+# ESI ingestion pipeline
+# 8:00pm EST time
+0 1 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from direct_payment.pharmacy.tasks.esi_claim_ingestion_job import ingest; ingest.delay(team_ns='payments_platform')"; } >> /var/log/cron.log 2>&1
+
+# CCRM reconciliation
+# 0 * * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from direct_payment.reconciliation.tasks.job_generate_ccrm_reconciliation_report import generate_ccrm_reconciliation_report; generate_ccrm_reconciliation_report.delay(dry_run=True, team_ns='payments_platform')"; } >> /var/log/cron.log 2>&1
+
+# Payer accumulator
+# Data sourcing jobs run at 11am ET
+# File generation jobs run at 1pm ET
+# File transfer job runs at 7am ET except for ESI, which runs 4x a day at 3 hour intervals to ensure we only send one file at a time.
+# 0 16 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from payer_accumulator.tasks.rq_payer_accumulation_data_sourcing import cigna_data_sourcing; from utils.constants import CronJobName; cigna_data_sourcing.delay(team_ns='payments_platform', cron_job_name=CronJobName.CIGNA_ACCUMULATION_DATA_SOURCING)"; } >> /var/log/cron.log 2>&1
+# 0 16 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from payer_accumulator.tasks.rq_payer_accumulation_data_sourcing import esi_data_sourcing; from utils.constants import CronJobName; esi_data_sourcing.delay(team_ns='payments_platform', cron_job_name=CronJobName.ESI_ACCUMULATION_DATA_SOURCING)"; } >> /var/log/cron.log 2>&1
+# 0 16 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from payer_accumulator.tasks.rq_payer_accumulation_data_sourcing import uhc_data_sourcing; from utils.constants import CronJobName; uhc_data_sourcing.delay(team_ns='payments_platform', cron_job_name=CronJobName.UHC_ACCUMULATION_DATA_SOURCING)"; } >> /var/log/cron.log 2>&1
+# 0 18 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from payer_accumulator.tasks.rq_payer_accumulation_file_generation import cigna_accumulation_file_generation; from utils.constants import CronJobName; cigna_accumulation_file_generation.delay(team_ns='payments_platform', cron_job_name=CronJobName.CIGNA_ACCUMULATION_FILE_GENERATION)"; } >> /var/log/cron.log 2>&1
+# 0 18 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from payer_accumulator.tasks.rq_payer_accumulation_file_generation import esi_accumulation_file_generation; from utils.constants import CronJobName; esi_accumulation_file_generation.delay(team_ns='payments_platform', cron_job_name=CronJobName.ESI_ACCUMULATION_FILE_GENERATION)"; } >> /var/log/cron.log 2>&1
+# 0 18 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from payer_accumulator.tasks.rq_payer_accumulation_file_generation import uhc_accumulation_file_generation; from utils.constants import CronJobName; uhc_accumulation_file_generation.delay(team_ns='payments_platform', cron_job_name=CronJobName.UHC_ACCUMULATION_FILE_GENERATION)"; } >> /var/log/cron.log 2>&1
+# 0 12 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from payer_accumulator.tasks.rq_payer_accumulation_file_transfer import transfer_payer_accumulation_files_to_cigna_data_sender; from utils.constants import CronJobName; transfer_payer_accumulation_files_to_cigna_data_sender.delay(team_ns='payments_platform', cron_job_name=CronJobName.TRANSFER_PAYER_ACCUMULATION_FILE_TO_CIGNA_DATA_SENDER)"; } >> /var/log/cron.log 2>&1
+# 0 12 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from payer_accumulator.tasks.rq_payer_accumulation_file_transfer import transfer_payer_accumulation_files_to_uhc_data_sender; from utils.constants import CronJobName; transfer_payer_accumulation_files_to_uhc_data_sender.delay(team_ns='payments_platform', cron_job_name=CronJobName.TRANSFER_PAYER_ACCUMULATION_FILE_TO_UHC_DATA_SENDER)"; } >> /var/log/cron.log 2>&1
+# 0 12,15,18,21 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from payer_accumulator.tasks.rq_payer_accumulation_file_transfer import transfer_payer_accumulation_files_to_esi_data_sender; from utils.constants import CronJobName; transfer_payer_accumulation_files_to_esi_data_sender.delay(team_ns='payments_platform', cron_job_name=CronJobName.TRANSFER_PAYER_ACCUMULATION_FILE_TO_ESI_DATA_SENDER)"; } >> /var/log/cron.log 2>&1
+
+# Send post-appointment meet activity to CPS
+# this job will run every 4 hours.
+# 0 */4 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from appointments.tasks.appointments import send_appointment_completion_event; from utils.constants import CronJobName; send_appointment_completion_event.delay(team_ns='care_management', job_timeout=60 * 15, cron_job_name=CronJobName.SEND_APPOINTMENT_COMPLETION_EVENT)"; } >> /var/log/cron.log 2>&1
+
+# Update Member Risk Flags
+# this job will run at 1am ET
+0 6 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from health.tasks.member_risk_flag_update import update_member_risk_flags; from utils.constants import CronJobName; update_member_risk_flags.delay(team_ns='mpractice_core', job_timeout=90 * 60, cron_job_name=CronJobName.MEMBER_RISK_FLAGS)"; } >> /var/log/cron.log 2>&1
+
+# Update Member Risk Flags Part 1
+# this job will run at 11pm ET
+0 4 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from health.tasks.member_risk_flag_update import update_member_risk_flags_even; from utils.constants import CronJobName; update_member_risk_flags_even.delay(team_ns='mpractice_core', job_timeout=180 * 60, cron_job_name=CronJobName.MEMBER_RISK_FLAGS_EVEN)"; } >> /var/log/cron.log 2>&1
+
+# Update Member Risk Flags Part 2
+# this job will run at 2am ET
+0 7 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from health.tasks.member_risk_flag_update import update_member_risk_flags_odd; from utils.constants import CronJobName; update_member_risk_flags_odd.delay(team_ns='mpractice_core', job_timeout=180 * 60, cron_job_name=CronJobName.MEMBER_RISK_FLAGS_ODD)"; } >> /var/log/cron.log 2>&1
+
+# zendesk message reconciliation
+# every 15 mins
+*/15 * * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from tasks.zendesk_v2 import reconcile_zendesk_messages; reconcile_zendesk_messages.delay(team_ns='virtual_care')"; } >> /var/log/cron.log 2>&1
+
+# Cost breakdown
+# this job will run every Monday 9am ET
+# 0 14 * * 1 root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from cost_breakdown.tasks.monitoring import find_treatment_procedures_without_cost_breakdown_ids; from utils.constants import CronJobName; find_treatment_procedures_without_cost_breakdown_ids.delay(team_ns='payments_platform', cron_job_name=CronJobName.FIND_TREATMENT_PROCEDURES_WITHOUT_COST_BREAKDOWN_IDS)"; } >> /var/log/cron.log 2>&1
+
+# Wallet Report Generation
+# Runs everyday at 1/2am ET
+5 6 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from wallet.tasks.wallet_client_reports import generate_wallet_reports; generate_wallet_reports.delay(team_ns='payments_platform')"; } >> /var/log/cron.log 2>&1
+
+# Check Doula availability
+# Runs every day at 2 pm
+0 19 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.availability import report_doula_availability; report_doula_availability.delay(team_ns='care_discovery')"; } >> /var/log/cron.log 2>&1
+
+0 1 * * * root { . /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api --  python3 -c "from appointments.tasks.state import resolve_appointment_pending_payments; resolve_appointment_pending_payments.delay(team_ns='care_discovery', service_ns='appointments')"; } >> /var/log/cron.log 2>&1
+
+# Wallet Eligibility Sync Job
+# 8:00pm EST time
+0 1 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from wallet.tasks.wallet_e9y_sync import wallet_e9y_job; wallet_e9y_job.delay(job_timeout=45 * 60, team_ns='benefits_experience')"; } >> /var/log/cron.log 2>&1
+
+# Update practitioner_data table for global search
+# this job will run every day at 7:05 AM UTC
+5 7 * * * root { .  /root/cron-env.sh; kubectl exec $MY_POD_NAME -c api -- python3 -c "from global_search.provider_data import update_practitioners_data; update_practitioners_data.delay(team_ns='ai_platform', job_timeout=45 * 60)"; } >> /var/log/cron.log 2>&1

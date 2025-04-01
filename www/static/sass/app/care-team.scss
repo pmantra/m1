@@ -1,0 +1,176 @@
+/* CARE TEAM */
+.care-team {
+	> div {
+		width: 100%;
+	}
+	.care-team-connected-header,
+	.explore-more {
+		padding-top: 50px;
+		border-top: 2px solid $charcoal-20;
+	}
+
+	.care-team-list {
+		@include container;
+	}
+
+	.grid-practitioners {
+		margin-top: 50px;
+		@include span(12);
+		li {
+			margin: auto;
+			//@include card-shadow();
+			border: 1px solid $gray-xlt;
+			@include susy-breakpoint($tablet) {
+				@include gallery(6 of 12);
+			}
+			@include susy-breakpoint($desktop-md) {
+				@include gallery(4 of 12);
+			}
+			margin-bottom: 60px;
+		}
+		.practitioner-grid-item {
+			max-width: 300px;
+			height: 190px;
+			padding: 25px;
+			display: block;
+			position: relative;
+			background: white;
+			margin: 0 auto;
+			.practitioner-photo {
+				position: absolute;
+				top: -35px;
+				> div {
+					width: 60px;
+					height: 60px;
+					padding-top: 0;
+					padding-left: 0;
+					svg {
+						width: 60px;
+						height: 60px;
+					}
+				}
+				img {
+					width: 60px;
+					height: 60px;
+				}
+			}
+			.p {
+				margin-bottom: 0;
+				margin-top: 2rem;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+			h5,
+			.h5 {
+				margin: 10px 0;
+				font-size: 0.96rem;
+				svg {
+					width: 20px;
+				}
+			}
+		}
+		.consult-methods {
+			max-width: 250px;
+			> div {
+				width: 50%;
+				float: left;
+			}
+			svg {
+				margin-right: 5px;
+			}
+		}
+	}
+
+	/* Empty states */
+	.request-practitioner-cta {
+		p,
+		.p {
+			max-width: 32rem;
+		}
+	}
+}
+
+/* Incentive to book intro appt with gift card modal */
+.care-team-info-full {
+	text-align: center;
+	background: white;
+	.ngdialog-content {
+		background: white;
+	}
+	.care-team-book-incentive {
+		max-width: 420px;
+		margin: 0 auto;
+		@include susy-breakpoint($desktop-md) {
+			max-width: 520px;
+		}
+	}
+	.gc-incentive {
+		img {
+			width: 200px;
+			height: 200px;
+		}
+	}
+}
+
+.care-team-empty {
+	display: flex;
+	justify-content: space-between;
+	max-width: 768px;
+	margin: 0 auto;
+
+	.care-team-empty-cta {
+		width: 45%;
+	}
+
+	.care-team-empty-image {
+		padding-top: 25px;
+		width: 45%;
+
+		img {
+			width: 100%;
+			max-width: 377px;
+		}
+	}
+
+	.care-team-empty-description {
+		@include font-size(18);
+		color: $gray;
+		margin: 0;
+	}
+
+	.care-team-empty-btn {
+		margin: 1.6rem 0 2rem;
+	}
+
+	.care-team-empty-need-help {
+		color: $gray;
+	}
+
+	@include susy-breakpoint(0 $tablet) {
+		flex-direction: column-reverse;
+		text-align: center;
+		margin: 0 20px;
+
+		.care-team-empty-title {
+			@include font-size(26);
+			text-align: center;
+		}
+
+		.care-team-empty-cta {
+			margin: 0 auto;
+			max-width: 350px;
+			width: 100%;
+		}
+
+		.care-team-empty-image {
+			margin-bottom: 15px;
+			padding-top: 20px;
+			width: 100%;
+
+			img {
+				max-width: 206px;
+			}
+		}
+	}
+}

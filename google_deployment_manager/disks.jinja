@@ -1,0 +1,55 @@
+resources:
+
+{% if properties['events_etl_disk_gb'] %}
+- name: events-etl-data
+  type: compute.v1.disk
+  properties:
+    zone: {{ properties['zone'] }}
+    sizeGb: {{ properties['events_etl_disk_gb'] }}
+    type: zones/{{ properties['zone'] }}/diskTypes/pd-ssd
+{% endif %}
+
+{% if properties['syslog_storage_disk_gb'] %}
+- name: syslog-storage-data
+  type: compute.v1.disk
+  properties:
+    zone: {{ properties['zone'] }}
+    sizeGb: {{ properties['syslog_storage_disk_gb'] }}
+    type: zones/{{ properties['zone'] }}/diskTypes/pd-ssd
+{% endif %}
+
+{% if properties['syslog_es_disk_gb'] %}
+- name: syslog-es-data
+  type: compute.v1.disk
+  properties:
+    zone: {{ properties['zone'] }}
+    sizeGb: {{ properties['syslog_es_disk_gb'] }}
+    type: zones/{{ properties['zone'] }}/diskTypes/pd-ssd
+{% endif %}
+
+{% if properties['redis_disk_gb'] %}
+- name: redis-data
+  type: compute.v1.disk
+  properties:
+    zone: {{ properties['zone'] }}
+    sizeGb: {{ properties['redis_disk_gb'] }}
+    type: zones/{{ properties['zone'] }}/diskTypes/pd-ssd
+{% endif %}
+
+{% if properties['redis_sessions_disk_gb'] %}
+- name: redis-sessions-data
+  type: compute.v1.disk
+  properties:
+    zone: {{ properties['zone'] }}
+    sizeGb: {{ properties['redis_sessions_disk_gb'] }}
+    type: zones/{{ properties['zone'] }}/diskTypes/pd-ssd
+{% endif %}
+
+{% if properties['metabase_disk_gb'] %}
+- name: metabase-data
+  type: compute.v1.disk
+  properties:
+    zone: {{ properties['zone'] }}
+    sizeGb: {{ properties['metabase_disk_gb'] }}
+    type: zones/{{ properties['zone'] }}/diskTypes/pd-ssd
+{% endif %}

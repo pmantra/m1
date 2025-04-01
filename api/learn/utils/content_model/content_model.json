@@ -1,0 +1,2221 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "id": "accordion",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "name",
+      "name": "Accordion",
+      "description": "",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "headingLevel",
+          "name": "Heading level",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "in": [
+                "h2",
+                "h3",
+                "h4",
+                "h5",
+                "h6"
+              ]
+            }
+          ],
+          "defaultValue": {
+            "en": "h3"
+          },
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "items",
+          "name": "Items",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "min": 1,
+                "max": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "accordionItem"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "accordionItem",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "header",
+      "name": "Accordion item",
+      "description": "",
+      "fields": [
+        {
+          "id": "header",
+          "name": "Header",
+          "type": "Symbol",
+          "localized": true,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "body",
+          "name": "Body",
+          "type": "RichText",
+          "localized": true,
+          "required": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic"
+              ],
+              "message": "Only bold and italic marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "ordered-list",
+                "unordered-list",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "hyperlink"
+              ],
+              "message": "Only ordered list, unordered list, link to entry, link to asset, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {}
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "article",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "title",
+      "name": "Article",
+      "description": "",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": true,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "medicallyReviewed",
+          "name": "Medically reviewed by Maven",
+          "type": "Boolean",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "defaultValue": {
+            "en": true
+          },
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "reviewedBy",
+          "name": "Reviewed by",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "min": 0,
+                "max": 3
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "reviewer"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "heroImage",
+          "name": "Hero image",
+          "type": "Link",
+          "localized": true,
+          "required": true,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            },
+            {
+              "assetImageDimensions": {
+                "width": {
+                  "min": 728,
+                  "max": null
+                },
+                "height": {
+                  "min": 308,
+                  "max": null
+                }
+              },
+              "message": "The hero image must be at least 728 x 308 pixels in order to look good on desktop"
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "richText",
+          "name": "Body content",
+          "type": "RichText",
+          "localized": true,
+          "required": true,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic"
+              ],
+              "message": "Only bold and italic marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "unordered-list",
+                "hyperlink",
+                "embedded-asset-block",
+                "embedded-entry-block",
+                "ordered-list"
+              ],
+              "message": "Only heading 2, heading 3, heading 4, heading 5, unordered list, link to Url, asset, block entry, and ordered list nodes are allowed"
+            },
+            {
+              "nodes": {
+                "embedded-entry-block": [
+                  {
+                    "linkContentType": [
+                      "accordion",
+                      "callout",
+                      "embeddedImage",
+                      "embeddedVideo"
+                    ],
+                    "message": ""
+                  }
+                ]
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "relatedReads",
+          "name": "Related reads",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "article",
+                  "nonContentfulArticle"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "articleGlobal",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "title",
+      "name": "Article - Global",
+      "description": "Container for all translations of an article",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "article",
+          "name": "Article",
+          "type": "Link",
+          "localized": true,
+          "required": false,
+          "validations": [
+            {
+              "linkContentType": [
+                "article"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "banner",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "title",
+      "name": "Banner block",
+      "description": "Block used to drive members to other parts of the product",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "max": 140
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "body",
+          "name": "Body",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "max": 280
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "ctaText",
+          "name": "CTA text",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "max": 140
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "ctaUrl",
+          "name": "CTA url",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^[^\\s]+$"
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "regexp": {
+                "pattern": "^[a-z0-9\\-+]+$"
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "secondaryCtaText",
+          "name": "Secondary CTA text",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "max": 50
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "secondaryCtaUrl",
+          "name": "Secondary CTA url",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^[^\\s]+$",
+                "flags": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "callout",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "name",
+      "name": "Callout",
+      "description": "",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "richText",
+          "name": "Body",
+          "type": "RichText",
+          "localized": true,
+          "required": true,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic"
+              ],
+              "message": "Only bold and italic marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hyperlink"
+              ],
+              "message": "Only heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {}
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "course",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "title",
+      "name": "Course",
+      "description": "A series of content collected to educate a member on a topic",
+      "fields": [
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "min": null,
+                "max": 40
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "min": null,
+                "max": 150
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "chapters",
+          "name": "Chapters",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "min": 2,
+                "max": 12
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "courseChapter"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "courseCallout",
+          "name": "Course Callout",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkContentType": [
+                "courseCallout"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "related",
+          "name": "Related",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "min": null,
+                "max": 4
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "article",
+                  "course",
+                  "nonContentfulArticle"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "courseCallout",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "title",
+      "name": "Course Callout",
+      "description": "A callout, consisting of a title and a CTA, which is displayed on a course page.",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "min": null,
+                "max": 100
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "ctaText",
+          "name": "CTA Text",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "min": null,
+                "max": 99
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "ctaUrl",
+          "name": "CTA URL",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^[^\\s]+$",
+                "flags": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "courseChapter",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "title",
+      "name": "Course chapter",
+      "description": "A piece of content used in a course",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkContentType": [
+                "article"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "min": null,
+                "max": 80
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "embeddedImage",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "name",
+      "name": "Embedded image with caption",
+      "description": "",
+      "fields": [
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "caption",
+          "name": "Caption",
+          "type": "RichText",
+          "localized": true,
+          "required": true,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic"
+              ],
+              "message": "Only bold and italic marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "hyperlink"
+              ],
+              "message": "Only link to Url nodes are allowed"
+            },
+            {
+              "nodes": {}
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "embeddedVideo",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "name",
+      "name": "Embedded video",
+      "description": "",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "videoLink",
+          "name": "Vimeo video download link",
+          "type": "Text",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "min": 10,
+                "max": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "thumbnail",
+          "name": "Thumbnail",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "captions",
+          "name": "Captions file (VTT)",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "nonContentfulArticle",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "title",
+      "name": "Non-Contentful Article",
+      "description": "",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "reviewer",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "nameVertical",
+      "name": "Reviewer",
+      "description": "Maven providers who medically review article content",
+      "fields": [
+        {
+          "id": "nameVertical",
+          "name": "Vertical, Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "video",
+        "type": "ContentType",
+        "publishedVersion": 1
+      },
+      "displayField": "title",
+      "name": "Video",
+      "description": "",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "image",
+          "name": "Image (landscape)",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            },
+            {
+              "assetImageDimensions": {
+                "width": {
+                  "min": 728,
+                  "max": null
+                },
+                "height": {
+                  "min": 308,
+                  "max": null
+                }
+              },
+              "message": "The image must be at least 728 x 308 pixels in order to look good on desktop"
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "video",
+          "name": "Video",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkContentType": [
+                "embeddedVideo"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "related",
+          "name": "Related content",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "size": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "article",
+                  "course"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "sys": {
+        "id": "locale_en-US",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Locale: en-US"
+    },
+    {
+      "sys": {
+        "id": "locale_es",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Locale: es"
+    },
+    {
+      "sys": {
+        "id": "locale_fr",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Locale: fr"
+    },
+    {
+      "sys": {
+        "id": "adoption",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: adoption"
+    },
+    {
+      "sys": {
+        "id": "breast_milk_shipping",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: breast_milk_shipping"
+    },
+    {
+      "sys": {
+        "id": "egg_freezing",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: egg_freezing"
+    },
+    {
+      "sys": {
+        "id": "fertility",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: fertility"
+    },
+    {
+      "sys": {
+        "id": "general_wellness",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: general_wellness"
+    },
+    {
+      "sys": {
+        "id": "generic",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: generic"
+    },
+    {
+      "sys": {
+        "id": "menopause",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: menopause"
+    },
+    {
+      "sys": {
+        "id": "parenting_and_pediatrics",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: parenting_and_pediatrics"
+    },
+    {
+      "sys": {
+        "id": "partner_fertility",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: partner_fertility"
+    },
+    {
+      "sys": {
+        "id": "partner_newparent",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: partner_newparent"
+    },
+    {
+      "sys": {
+        "id": "partner_pregnant",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: partner_pregnant"
+    },
+    {
+      "sys": {
+        "id": "postpartum",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: postpartum"
+    },
+    {
+      "sys": {
+        "id": "pregnancy",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: pregnancy"
+    },
+    {
+      "sys": {
+        "id": "pregnancy_options",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: pregnancy_options"
+    },
+    {
+      "sys": {
+        "id": "pregnancyloss",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: pregnancyloss"
+    },
+    {
+      "sys": {
+        "id": "sponsored",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: sponsored"
+    },
+    {
+      "sys": {
+        "id": "surrogacy",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: surrogacy"
+    },
+    {
+      "sys": {
+        "id": "trying_to_conceive",
+        "type": "Tag",
+        "visibility": "public",
+        "publishedVersion": 1
+      },
+      "name": "Track: trying_to_conceive"
+    },
+    {
+      "sys": {
+        "id": "translation_status-needs_translation",
+        "type": "Tag",
+        "visibility": "private",
+        "publishedVersion": 1
+      },
+      "name": "Translation status: Needs translation"
+    },
+    {
+      "sys": {
+        "id": "translation_status-waiting_for_lokalise",
+        "type": "Tag",
+        "visibility": "private",
+        "publishedVersion": 1
+      },
+      "name": "Translation status: Waiting for lokalise"
+    }
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "accordion",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "name",
+          "settings": {
+            "helpText": "This field is used only in Contentful and does not impact the Maven app"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "headingLevel",
+          "settings": {
+            "helpText": "Heading level for accordion item titles, which depends on where in the article the accordion is.  For example, if the heading of the section containing this accordion is an h2, the accordion item titles should use h3"
+          },
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "items",
+          "settings": {
+            "bulkEditing": true,
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "entryCardsEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "accordionItem",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "header",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "body",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "article",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "settings": {},
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "70ssKop5SL98q1JOJy3AcA",
+          "widgetNamespace": "app"
+        },
+        {
+          "settings": {},
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "disabled": true,
+          "widgetId": "releases-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "settings": {
+            "trackingFieldId": "title"
+          },
+          "widgetId": "slugEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "medicallyReviewed",
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "reviewedBy",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "heroImage",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "richText",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "relatedReads",
+          "widgetId": "entryCardsEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "articleGlobal",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "settings": {
+            "trackingFieldId": "title"
+          },
+          "widgetId": "slugEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "article",
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "banner",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "body",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "ctaText",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "ctaUrl",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "image",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "secondaryCtaText",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "secondaryCtaUrl",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "callout",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "settings": {},
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "70ssKop5SL98q1JOJy3AcA",
+          "widgetNamespace": "app"
+        },
+        {
+          "settings": {},
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "disabled": true,
+          "widgetId": "releases-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "name",
+          "settings": {
+            "helpText": "This field is used only in Contentful and does not impact the Maven app"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "richText",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "course",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "slug",
+          "settings": {
+            "helpText": "Slugs are used for course registration data and should never be modified after initial publishing. Course slugs should be treated as completely unmodifiable."
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "image",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "widgetId": "multipleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "chapters",
+          "widgetId": "entryCardsEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "courseCallout",
+          "widgetId": "entryCardEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "related",
+          "widgetId": "entryCardsEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "courseCallout",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "ctaText",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "ctaUrl",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "courseChapter",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "settings": {
+            "helpText": "The title or shortened title of the piece of content"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "content",
+          "widgetId": "entryCardEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "widgetId": "multipleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "embeddedImage",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "settings": {},
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "image",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "caption",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "embeddedVideo",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "settings": {
+            "helpText": "This field is used only in Contentful and does not impact the Maven app"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "videoLink",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "thumbnail",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "captions",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "nonContentfulArticle",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "reviewer",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "nameVertical",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "video",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "sidebar": [
+        {
+          "settings": {},
+          "widgetId": "publication-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "70ssKop5SL98q1JOJy3AcA",
+          "widgetNamespace": "app"
+        },
+        {
+          "settings": {},
+          "widgetId": "content-preview-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "incoming-links-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "translation-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "settings": {},
+          "widgetId": "versions-widget",
+          "widgetNamespace": "sidebar-builtin"
+        },
+        {
+          "disabled": true,
+          "settings": {},
+          "widgetId": "releases-widget",
+          "widgetNamespace": "sidebar-builtin"
+        }
+      ],
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "settings": {
+            "trackingFieldId": "title"
+          },
+          "widgetId": "slugEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "image",
+          "settings": {
+            "helpText": "The image is used within the homepage dashboard featured block on web only",
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "video",
+          "widgetId": "entryCardEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "related",
+          "widgetId": "entryCardsEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "locales": [
+    {
+      "name": "German (Germany)",
+      "code": "de-DE",
+      "fallbackCode": "en",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "English",
+      "code": "en",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": "en",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "Spanish",
+      "code": "es",
+      "fallbackCode": "en",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "Spanish (Latin America)",
+      "code": "es-419",
+      "fallbackCode": "es",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "French",
+      "code": "fr",
+      "fallbackCode": "en",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "French (Canada)",
+      "code": "fr-CA",
+      "fallbackCode": "fr",
+      "default": false,
+      "contentManagementApi": false,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "French (France)",
+      "code": "fr-FR",
+      "fallbackCode": "fr",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "Hindi (India)",
+      "code": "hi-IN",
+      "fallbackCode": "en",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "Italian (Italy)",
+      "code": "it-IT",
+      "fallbackCode": "en",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "Japanese (Japan)",
+      "code": "ja-JP",
+      "fallbackCode": "en",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "Polish (Poland)",
+      "code": "pl-PL",
+      "fallbackCode": "en",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "Portuguese (Brazil)",
+      "code": "pt-BR",
+      "fallbackCode": "en",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    },
+    {
+      "name": "Chinese (Simplified)",
+      "code": "zh-Hans",
+      "fallbackCode": "en",
+      "default": false,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": true,
+      "sys": {
+        "type": "Locale",
+        "publishedVersion": 1
+      }
+    }
+  ]
+}

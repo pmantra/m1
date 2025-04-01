@@ -1,0 +1,155 @@
+[
+  {
+    "type": "user",
+    "role": "practitioner",
+    "is_cx": true,
+    "vertical": "Nurse Practitioner",
+    "email": "test+mvnqa-distributed_user@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "role": "practitioner",
+    "is_cx": false,
+    "vertical": "Nurse Practitioner",
+    "email": "test+mvnqa-non_distributed_user@mavenclinic.com"
+  },
+  {
+    "type": "user",
+    "email": "test+mvnqa-fee_target@mavenclinic.com"
+  },
+  {
+    "type": "invoice",
+    "recipient": "test+distributed_user@mavenclinic.com",
+    "started_at": "5 days ago",
+    "created_at": "6 days ago",
+    "completed_at": "3 days ago",
+    "fees": [
+      {
+        "type": "fee_accounting_entry",
+        "amount": "10.00",
+        "appointment": null,
+        "message": null,
+        "practitioner": "test+distributed_user@mavenclinic.com"
+      },
+      {
+        "type": "fee_accounting_entry",
+        "amount": "10.00",
+        "appointment": null,
+        "message": {
+          "type": "message",
+          "body": "Paid to message provider",
+          "author": "test+mvnqa-fee_target@mavenclinic.com",
+          "recipient": "test+distributed_user@mavenclinic.com"
+        },
+        "practitioner": null
+      },
+      {
+        "type": "fee_accounting_entry",
+        "amount": "10.00",
+        "appointment": {
+          "type": "appointment",
+          "scheduled_start": "2 hours ago",
+          "practitioner": "test+distributed_user@mavenclinic.com",
+          "member": "test+mvnqa-fee_target@mavenclinic.com",
+          "practitioner_started_at": "2 hours ago",
+          "member_started_at": "2 hours ago",
+          "practitioner_ended_at": "1 hour ago",
+          "member_ended_at": "1 hour ago"
+        },
+        "message": null,
+        "practitioner": null
+      }
+    ]
+  },
+  {
+    "type": "invoice",
+    "recipient": "test+non_distributed_user@mavenclinic.com",
+    "started_at": "2 hours ago",
+    "created_at": "3 hours ago",
+    "fees": [
+      {
+        "type": "fee_accounting_entry",
+        "amount": "100.00",
+        "appointment": null,
+        "message": null,
+        "practitioner": "test+non_distributed_user@mavenclinic.com"
+      },
+      {
+        "type": "fee_accounting_entry",
+        "amount": "5.00",
+        "appointment": null,
+        "message": {
+          "type": "message",
+          "body": "Paid to message provider",
+          "author": "test+mvnqa-fee_target@mavenclinic.com",
+          "recipient": "test+non_distributed_user@mavenclinic.com"
+        },
+        "practitioner": null
+      },
+      {
+        "type": "fee_accounting_entry",
+        "amount": "20.00",
+        "appointment": {
+          "type": "appointment",
+          "scheduled_start": "2 hours ago",
+          "practitioner": "test+non_distributed_user@mavenclinic.com",
+          "member": "test+mvnqa-fee_target@mavenclinic.com",
+          "practitioner_started_at": "2 hours ago",
+          "member_started_at": "2 hours ago",
+          "practitioner_ended_at": "1 hour ago",
+          "member_ended_at": "1 hour ago"
+        },
+        "message": null,
+        "practitioner": null
+      }
+    ]
+  },
+  {
+    "type": "invoice",
+    "recipient": "test+distributed_user@mavenclinic.com",
+    "fees": [
+      {
+        "type": "fee_accounting_entry",
+        "amount": "23.23",
+        "appointment": {
+          "type": "appointment",
+          "scheduled_start": "1 hour ago",
+          "practitioner": "test+non_distributed_user@mavenclinic.com",
+          "member": "test+mvnqa-fee_target@mavenclinic.com",
+          "practitioner_started_at": "1 hours ago",
+          "member_started_at": "1 hours ago",
+          "practitioner_ended_at": "1 hour ago",
+          "member_ended_at": "1 hour ago"
+        },
+        "message": null,
+        "practitioner": null
+      }
+    ]
+  },
+  {
+    "type": "fee_accounting_entry",
+    "amount": "23.00",
+    "appointment": {
+      "type": "appointment",
+      "scheduled_start": "5 hours ago",
+      "practitioner": "test+distributed_user@mavenclinic.com",
+      "member": "test+mvnqa-fee_target@mavenclinic.com",
+      "practitioner_started_at": "5 hours ago",
+      "member_started_at": "5 hours ago",
+      "practitioner_ended_at": "4 hour ago",
+      "member_ended_at": "4 hour ago"
+    }
+  },
+  {
+    "type": "fee_accounting_entry",
+    "amount": "12.50",
+    "appointment": null,
+    "message": {
+      "type": "message",
+      "body": "Paid to message provider",
+      "author": "test+mvnqa-fee_target@mavenclinic.com",
+      "recipient": "test+distributed_user@mavenclinic.com"
+    },
+    "practitioner": null
+  }
+]

@@ -1,0 +1,295 @@
+openapi: 3.0.3
+info:
+  title: Maven Clinic Appointment Notes API
+  version: 1.0.0
+  description: API endpoints related to appointment notes.
+servers:
+  - url: https://www.mavenclinic.com
+  - url: https://www.qa1.mvnapp.net
+  - url: https://www.qa2.mvnapp.net
+  - url: https://www.staging.mvnapp.net
+paths:
+  /appointments/:appointment_id/notes:
+    post:
+      description: |
+        To create and update appointment related clinical notes
+      operationId: AppointmentNotes.post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AppointmentNoteRequest"
+            examples:
+              success:
+                $ref: "#/components/schemas/AppointmentNoteRequest"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                example: { }
+        "400":
+          description: Invalid request body. Must include post_session_note or structured_internal_note
+        "401":
+          description: User is not authorized to perform this action.
+        "403":
+          description: Cannot view that appointment!
+        "404":
+          description: >-
+            Appointment not found
+        "500":
+          description: Internal error
+
+components:
+  schemas:
+    AppointmentNoteRequest:
+      type: object
+      anyOf:
+        - required: [ post_session ]
+        - required: [ structured_internal_note ]
+      properties:
+        post_session:
+          description: Appointment post session note
+          type: object
+          required: [ draft, notes ]
+          properties:
+            draft:
+              description: The draft state of the note
+              type: boolean
+            notes:
+              description: The content of the post session note
+              type: string
+        structured_internal_note:
+          description: Recorded answer sets and answers
+          type: object
+          anyOf:
+            - required: [ recorded_answers ]
+            - required: [ recorded_answer_set ]
+          properties:
+            recorded_answers:
+              description: Set of recorded answers for questions related to appointment
+              type: array
+              items:
+                $ref: "#/components/schemas/RecordedAnswers"
+            recorded_answer_set:
+              description: Set of recorded answers for questions and questionnaire info related to appointment
+              type: object
+              required: [ id, appointment_id, draft, questionnaire_id, recorded_answers, source_user_id, submitted_at ]
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                appointment_id:
+                  type: string
+                  format: uuid
+                draft:
+                  type: boolean
+                questionnaire_id:
+                  type: string
+                  format: uuid
+                recorded_answers:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/RecordedAnswers"
+                source_user_id:
+                  type: string
+                  format: uuid
+                submitted_at:
+                  type: string
+                  format: date-time
+    AppointmentNoteResponse:
+      type: object
+      anyOf:
+        - required: [ post_session ]
+        - required: [ structured_internal_note ]
+      properties:
+        post_session:
+          description: Appointment post session note
+          type: object
+          required: [ created_at, draft, modified_at, notes ]
+          properties:
+            created_at:
+              description: When the post session note was created
+              type: string
+              format: date-time
+            draft:
+              description: The draft state of the note
+              type: boolean
+            modified_at:
+              description: When the post session note was last modified
+              type: string
+              format: date-time
+            notes:
+              description: The content of the post session note
+              type: string
+        structured_internal_note:
+          description: Recorded answer sets and answers
+          type: object
+          required: [ question_sets, questionnaire, recorded_answers, recorded_answer_set ]
+          properties:
+            question_sets:
+              description: The set of questions linked to the appointment
+              type: array
+              items:
+                $ref: "#/components/schemas/QuestionSet"
+            questionnaire:
+              description: Set of questions plus the questionnaire linking them to the appointment
+              type: object
+              required: [ id, oid, description_text, question_sets, soft_deleted_at, sort_order, title_text, trigger_answer_ids ]
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                oid:
+                  type: string
+                description_text:
+                  type: string
+                question_sets:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/QuestionSet"
+                soft_deleted_at:
+                  type: string
+                  format: date-time
+                sort_order:
+                  type: integer
+                title_text:
+                  type: string
+                trigger_answer_ids:
+                  type: string
+                  format: uuid
+            recorded_answers:
+              description: Set of recorded answers for questions related to appointment
+              type: array
+              items:
+                $ref: "#/components/schemas/RecordedAnswers"
+            recorded_answer_set:
+              description: Set of recorded answers for questions and questionnaire info related to appointment
+              type: object
+              required: [ id, appointment_id, draft, questionnaire_id, recorded_answers, source_user_id, submitted_at ]
+              properties:
+                id:
+                  type: string
+                  format: uuid
+                appointment_id:
+                  type: string
+                  format: uuid
+                draft:
+                  type: boolean
+                questionnaire_id:
+                  type: string
+                  format: uuid
+                recorded_answers:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/RecordedAnswers"
+                source_user_id:
+                  type: string
+                  format: uuid
+                submitted_at:
+                  type: string
+                  format: date-time
+    QuestionSet:
+      type: object
+      required: [ id, oid, prerequisite_answer_id, questions, soft_deleted_at, sort_order ]
+      properties:
+        id:
+          type: string
+          format: uuid
+        oid:
+          type: string
+        prerequisite_answer_id:
+          type: string
+          format: uuid
+        questions:
+          type: array
+          items:
+            $ref: "#/components/schemas/Questions"
+        soft_deleted_at:
+          type: string
+          format: date-time
+        sort_order:
+          type: integer
+    Questions:
+      type: object
+      required: [ id, oid, answers, label, non_db_answer_options_json, required, soft_deleted_at, sort_order, text ]
+      properties:
+        answers:
+          type: array
+          items:
+            $ref: "#/components/schemas/Answers"
+        id:
+          type: string
+          format: uuid
+        oid:
+          type: string
+          format: uuid
+        label:
+          type: string
+        non_db_answer_options_json:
+          type: string
+          format: json
+        required:
+          type: boolean
+        soft_deleted_at:
+          type: string
+          format: date-time
+        sort_order:
+          type: integer
+        text:
+          type: string
+    Answers:
+      type: object
+      required: [ id, oid, soft_deleted_at, sort_order, text ]
+      properties:
+        id:
+          type: string
+          format: uuid
+        oid:
+          type: string
+        soft_deleted_at:
+          type: string
+          format: date-time
+        sort_order:
+          type: integer
+        text:
+          type: string
+    RecordedAnswers:
+      type: object
+      required: [ appointment_id, answer_id, date, payload, question_id, question_type, user_id, text ]
+      properties:
+        appointment_id:
+          type: string
+          format: uuid
+        answer_id:
+          type: string
+          format: uuid
+        date:
+          type: string
+          format: date-time
+        payload:
+          type: string
+        question_id:
+          type: string
+          format: uuid
+        question_type:
+          type: string
+          enum:
+            - ALLERGY_INTOLERANCE
+            - CHECKBOX
+            - CONDITION
+            - DATE
+            - MEDICATION
+            - MULTISELECT
+            - RADIO
+            - SINGLE_SELECT
+            - STAR
+            - TEXT
+        user_id:
+          type: string
+          format: uuid
+        text:
+          type: string

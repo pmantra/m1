@@ -1,0 +1,53 @@
+
+.page-team {
+
+	.intro-about {
+		background: $blush-40;
+	}
+	
+	.team-member {
+		cursor: pointer;
+		min-height: 165px;
+		p.lg {
+			margin-bottom: 5px;
+			line-height: 1.1;
+		}
+		h5 {
+			margin-top: 0;
+			color: $emerald-40;
+		}
+		
+		.person-img {
+			img {
+				width: 200px;
+			}
+		}
+	}
+
+
+	.advisors {
+		background: $macaroon-40;
+	}
+
+	.investors {
+		li {
+			padding: 20px;
+		}
+		svg {
+			max-width: 100%;
+			height: 80px;
+		}
+	}
+	/* Bio modals */
+	.ngdialog.mvndialog .ngdialog-content {
+		max-width: 570px;
+		h3 {
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+		p.lg {
+			margin-bottom: 30px;
+			margin-top: 0;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+
+<h1>Download the CSV template:</h1>
+<ul>
+    <li><a href="/admin/actions/download_dashboard_csv?template=true">CSV Template</a></li>
+</ul>
+
+<form>
+    <input type="hidden" name="dashboard_id" value="{{ model.id }}">
+    <input type="hidden" name="redirect" value="{{ request.full_path }}">
+    <h1>Download the CSV for version:</h1>
+    <ul>
+    {% if model.latest_version %}
+        <li><a href="/admin/actions/download_dashboard_csv?dashboard_version_ids={{ model.latest_version.id }}">LATEST</a></li>
+    {% endif %}
+    {% for version in model.versions %}
+        <li><a href="/admin/actions/download_dashboard_csv?dashboard_version_ids={{ version.id }}">{{ version.version }}</a></li>
+    {% endfor %}
+    </ul>
+    <h1>Upload Content</h1>
+    <p><input type="file" name="content"></p>
+    <p><button type="submit" formtarget="_self" formaction="/admin/actions/upload_dashboard_csv" formmethod="post" formenctype="multipart/form-data">Upload</button></p>
+</form>
+
+{{ super() }}
+
+<h1>Tagged resource blocks info:</h1>
+
+{% for resource_block in resource_blocks %}
+    <h4>current resources:</h4>
+    <ul>{% for resource in resource_block['resources'] %}<li>{{ resource['title'] }} - <a href="{{ resource['url'] }}">{{ resource['url'] }}</a></li>{% endfor %}</ul>
+{% endfor %}
+
+{% endblock %}

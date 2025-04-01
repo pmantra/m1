@@ -1,0 +1,153 @@
+<section class="hero bg-green-lt has-max-width">
+	<div class="grid-container two-column">
+		<div class="text-container grid-item">
+			<h5>MAVEN FOR INDIVIDUALS</h5>
+			<h1>
+				Women’s and family healthcare<br class="phone-only" />
+				on-demand
+			</h1>
+			<p>
+				Have a health question or need a prescription? With Maven, you can talk to the largest custom network of women’s
+				and family health providers 24/7 without ever leaving your couch.
+			</p>
+			<p><a class="btn btn-cta" ui-sref="auth.localregister">Join Maven today</a></p>
+		</div>
+		<div class="grid-item img-with-label">
+			<img src="/img/for-individuals/amira.jpg" alt="Amira" />
+			<div class="img-label">
+				<h4>Amira</h4>
+				<h5>Care Advocate</h5>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="has-max-width has-bottom-border how-it-works">
+	<div class="content-wrapper">
+		<div class="headline center">
+			<h3>How it works</h3>
+			<p>
+				Maven is easy to use on any smartphone or computer. Log in and message or video chat with a provider in minutes.
+			</p>
+		</div>
+		<div class="grid-container two-column">
+			<div class="grid-item">
+				<img src="/img/for-individuals/dual-phone-product.png" alt="Product screenshots" />
+			</div>
+			<div class="text-container right">
+				<h4>1. Sign up for free</h4>
+				<p>No contracts. No subscriptions. Just on-demand help anytime you need it.</p>
+
+				<br />
+
+				<h4>2. Browse highly-vetted providers</h4>
+				<p>1,700 women’s and family health providers across 20+ specialties.</p>
+
+				<br />
+
+				<h4>3. Book video chats or message</h4>
+				<p>Meet with providers on your terms. When, where, and how you want to.</p>
+
+				<br />
+
+				<h4>4. Pick up your prescriptions</h4>
+				<p>Birth control, UTI meds—you name it, we’ll send it to your local pharmacy.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="demo-promo" class="has-max-width">
+	<div class="text-container">
+		<h3>Ready to start using Maven today?</h3>
+		<p>Get judgment-free care for all your health needs at home or on the go.</p>
+	</div>
+	<a class="btn btn-cta" ui-sref="auth.localregister">Join Maven today</a>
+</section>
+
+<section class="has-max-width bg-pink-dk">
+	<div class="content-wrapper has-max-width">
+		<div class="headline center">
+			<h3>Every type of care in one convenient place</h3>
+			<p>Video chat or message with over 1,700 providers for every type of care, at every stage of your life.</p>
+		</div>
+		<div id="practitioner-carousel" class="content-wrapper carousel-wrapper-panels">
+			<slick
+				class="carousel"
+				slide="div"
+				dots="true"
+				lazy-load="ondemand"
+				responsive="carouselBreakpoints"
+				slides-to-show="3"
+				arrows="true"
+				mobileFirst="true"
+				custom-paging="slickDots(slick, index)"
+				prev-arrow=".prev"
+				next-arrow=".next"
+			>
+				<div ng-repeat="pracType in practitionerTypes">
+					<div class="carousel-item testimonial">
+						<img src="{{ ::pracType.url }}" alt="Photo of {{ ::pracType.title }}" />
+						<h5>{{ ::pracType.title }}</h5>
+					</div>
+				</div>
+			</slick>
+
+			<span class="prev">
+				<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+					<g transform="matrix(-1 0 0 1 32 0)" fill="none" fill-rule="evenodd">
+						<rect fill-opacity=".4" fill="#FFF" width="32" height="32" rx="16" />
+						<path
+							stroke="#FEFEFE"
+							stroke-width="2.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M14 11l5.4 5.4-5.4 5.4"
+						/>
+					</g>
+				</svg>
+			</span>
+			<span class="next">
+				<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+					<g transform="matrix(-1 0 0 1 32 0)" fill="none" fill-rule="evenodd">
+						<rect fill-opacity=".4" fill="#FFF" transform="matrix(-1 0 0 1 32 0)" width="32" height="32" rx="16" />
+						<path
+							stroke="#FEFEFE"
+							stroke-width="2.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M17.4 11L12 16.4l5.4 5.4"
+						/>
+					</g>
+				</svg>
+			</span>
+		</div>
+	</div>
+</section>
+
+<section id="user-testimonials" class="has-max-width bg-gray">
+	<div class="headline center">
+		<h3>What women are saying about Maven</h3>
+	</div>
+	<div class="content-wrapper carousel-wrapper-panels">
+		<slick
+			class="carousel"
+			slide="div"
+			dots="true"
+			lazy-load="ondemand"
+			responsive="carouselBreakpoints"
+			slides-to-show="3"
+			arrows="false"
+			mobileFirst="true"
+			custom-paging="slickDots(slick, index)"
+		>
+			<div ng-repeat="testimonial in userTestimonials">
+				<div class="testimonial">
+					<span class="quot">&ldquo;</span>
+					<p>&ldquo;{{ ::testimonial.quote }}&rdquo;</p>
+					<h5>{{ ::testimonial.by }}</h5>
+				</div>
+			</div>
+		</slick>
+	</div>
+</section>

@@ -1,0 +1,67 @@
+<div  class="content-pad" style="padding: 0 32px 43px 32px;" class="em_bottom">
+    <img src="https://storage.googleapis.com/maven-resource-assets/transactional/17755642-2152-4036-8013-a3afe335850e.jpg" width="79" height="64" alt="" style="display:block; max-width:79px;" border="0"/>
+</div>
+
+
+<div class="content-pad" style="padding: 0 32px">
+    <p style="font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:24px; color:#000000; padding-bottom:25px;" class="em_bottom">
+        Hi {{ practitioner.first_name }},
+        <br/>
+        <br/>
+    </p>
+    <p style="font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:24px; color:#000000; padding-bottom:25px;" class="em_bottom">
+        Thanks for being an awesome Maven Practitioner! We just transferred
+            <strong>{{ "$%.2f"|format(amount) }}</strong>
+           to your bank.
+        <br/>
+        <br/>
+    </p>
+
+    {% if show_entries %}
+        <p style="font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:24px; color:#000000; padding-bottom:25px;" class="em_bottom">
+            This payment is for the following appointments
+            <br/>(times are in UTC):
+            <br/>
+            <br/>
+        </p>
+
+        <ul>
+            {% for entry in entries %}
+                {% if entry.appointment %}
+                    <li style="margin-bottom: 10px">
+                        <p style="font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:24px; color:#000000; padding-bottom:25px;">
+                        {{ "$%.2f"|format(entry.amount) }} for Appointment [{{ entry.appointment.id }}] with
+                        {% if entry.appointment.privacy != 'anonymous' %}
+                            Member [{{ entry.appointment.member.id }}]
+                        {% else %}
+                            Anonymous member
+                        {% endif %}.
+                        Appointment was at {{ entry.appointment.scheduled_start.strftime('%c') }} UTC</p>
+                    </li>
+                {% elif entry.message and entry.message.channel %}
+                    <li style="margin-bottom: 10px">
+                        <p style="font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:24px; color:#000000; padding-bottom:25px;">${{ entry.amount }} for Message [{{ entry.message.id }}] with Member [{{ entry.message.user.id }}]</p>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p style="font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:24px; color:#000000; padding-bottom:25px;" class="em_bottom">
+            This payment is for appointments and messages completed during the month of {{ invoice_month }}.
+        </p>
+    {% endif %}
+
+    <p style="font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:24px; color:#000000; padding-bottom:25px;" class="em_bottom">
+        <br/>
+        Please get in touch with us at&nbsp;
+        <br/><a style="font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:22px; color:#0E6956;" href="mailto:providers@mavenclinic.com">providers@mavenclinic.com</a> if you have any questions.
+        <br/>
+        <br/>
+    </p>
+
+    <p style="font-family:Helvetica, Arial, sans-serif; font-size:18px; line-height:24px; color:#000000; padding-bottom:25px;" class="em_bottom">
+        Take care,
+        <br/> Team Maven
+
+    </p>
+</div>

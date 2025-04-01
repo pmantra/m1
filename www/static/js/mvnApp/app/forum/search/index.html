@@ -1,0 +1,59 @@
+<forum-header title="" cats="$ctrl.cats" show-search-menu="$ctrl.showSearchMenu"></forum-header>
+
+<section class="search-results">
+	<div ng-if="!$ctrl.loading" class="content-container">
+		<div ng-if="$ctrl.posts.length">
+			<p class="search-title content">
+				{{ $ctrl.totalPosts }} post<span ng-if="$ctrl.totalPosts >= 1">s</span> for
+				<span class="search-word">{{ $ctrl.q }}</span>
+			</p>
+			<ul
+				class="posts clear clearfix content"
+				mvn-inf-scroll
+				scroll-container="scroll-container"
+				is-loading="$ctrl.loadingMore"
+				scroll-action="$ctrl.loadMore()"
+			>
+				<li ng-repeat="post in $ctrl.posts">
+					<post-list-view post="post" cats="$ctrl.cats" user="$ctrl.user"></post-list-view>
+				</li>
+				<li ng-show="$ctrl.loadingMore" class="list-loader">
+					<inline-loader
+						ng-show="$ctrl.loadingMore"
+						loading="$ctrl.loadingMore"
+						label="Getting more posts..."
+					></inline-loader>
+				</li>
+			</ul>
+		</div>
+
+		<div class="no-search-results" ng-if="$ctrl.q && !$ctrl.posts.length">
+			<div class="results content">
+				<p class="search-title">
+					{{ $ctrl.totalPosts }} posts found for <span class="search-word">{{ $ctrl.q }}</span>
+				</p>
+
+				<write-post></write-post>
+			</div>
+
+			<explore-practitioners user="$ctrl.user"></explore-practitioners>
+		</div>
+
+		<div ng-if="!$ctrl.q">
+			<div class="forum-search-empty">
+				<p class="center search-title">Search the Maven forum</p>
+
+				<div class="forum-empty-search-search" forum-search-standalone q="" user="$ctrl.user"></div>
+			</div>
+		</div>
+
+		<div ng-if="!$ctrl.posts.length" class="forum-create-post-recommended-posts">
+			<h3 class="serif">Other popular posts</h3>
+			<forum-popular-posts show="3" cats="$ctrl.cats"></forum-popular-posts>
+		</div>
+	</div>
+
+	<div ng-if="$ctrl.loading" class="content-container">
+		<h3 class="center">Searching....</h3>
+	</div>
+</section>

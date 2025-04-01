@@ -1,0 +1,19 @@
+[
+  {
+    "type": "organization",
+    "name": "Maternity Foundation Org",
+    "activated_at": "1 year ago",
+    "client_tracks": [{ "track": "postpartum", "length_in_days": 90 }]
+  },
+  {
+    "type": "user",
+    "organization_name": "Maternity Foundation Org",
+    "track": "postpartum",
+    "email_prefix": "mvnqa-mafo.start",
+    "password": "simpleisawesome1*",
+    "phase": "week-40",
+    "work_state": "NY",
+    "country": "US",
+    "create_member_record": true
+  }
+]

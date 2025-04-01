@@ -1,0 +1,156 @@
+/* PRACTITIONER LIST */
+//.mvn-list-container ul.mvn-list li .mvn-list-actions
+.practitioners-list-container {
+	.practitioner-list-header {
+		height: 60px;
+		#check-animate {
+			label {
+				position: relative;
+			}
+		}
+	}
+	/* Messaging enabled */
+	.msg-icon {
+		svg {
+			path {
+				stroke: $charcoal-40;
+			}
+		}
+		&.enabled {
+			svg {
+				path {
+					stroke: $charcoal-100;
+				}
+			}
+		}
+	}
+
+	.rx-badge {
+		position: absolute;
+		bottom: 0;
+	}
+
+	ul.practitioners-list {
+		li.practitioner--list {
+			.practitioner-list-prac-info {
+				margin: 0 auto;
+				width: 140px;
+				overflow: auto;
+				h3 {
+					margin-top: 10px;
+				}
+			}
+			.practitioner-list-name {
+				margin-bottom: 20px;
+				padding-bottom: 20px;
+				h5,
+				.h5 {
+					margin: 0;
+				}
+				border-bottom: 1px solid $charcoal-40;
+			}
+			.practitioner-photo {
+				float: left;
+				position: relative;
+			}
+			.practitioner-consult-methods {
+				float: left;
+				margin-left: 10px;
+				margin-top: 15px;
+				.msg-icon {
+					margin-top: 10px;
+				}
+			}
+			.practitioner-list-actions {
+				clear: both;
+				h5,
+				.h5 {
+					margin-top: 10px;
+					@include susy-breakpoint($desktop $desktop-max) {
+						font-size: 0.875rem;
+					}
+				}
+			}
+
+			@include susy-breakpoint($desktop) {
+				.practitioner-photo,
+				.practitioner-consult-methods,
+				.mvn-list-actions {
+					width: auto;
+				}
+				.practitioner-list-prac-info {
+					float: left;
+					width: 90px;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+				}
+				.practitioner-photo {
+					margin-right: 0;
+				}
+				.practitioner-consult-methods {
+					margin-top: 0;
+					margin-left: 10px;
+					> div {
+						display: inline-block;
+						&.vid-icon {
+							margin-right: 5px;
+						}
+					}
+				}
+				.practitioner-list-actions {
+					clear: none;
+					float: right;
+					margin-top: 40px;
+				}
+			}
+			@include susy-breakpoint($desktop-md) {
+				.practitioner-list-prac-info {
+					width: auto;
+				}
+				.practitioner-consult-methods {
+					> div {
+						display: block;
+					}
+					margin-top: 16px;
+					margin-left: 10px;
+					float: left;
+				}
+				.practitioner-list-actions {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+	.practitioner-list--booking-req {
+		text-align: center;
+		padding: 1rem;
+		h2 {
+			color: white;
+		}
+		p,
+		.p {
+			max-width: 400px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	.request-practitioner-cta {
+		padding: $basepadding * 2;
+		margin-top: 3rem;
+	}
+}
+
+/* auto-applied credit modal */
+.ngdialog.mvndialog .ngdialog-content {
+	.dialog-credit-auto-applied {
+		h3 {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			padding: 0;
+		}
+		.btn {
+			margin-top: 0;
+		}
+	}
+}

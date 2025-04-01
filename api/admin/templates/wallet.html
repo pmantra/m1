@@ -1,0 +1,324 @@
+{% extends 'admin/base.html' %}
+{% import 'admin/lib.html' as lib with context %}
+{% block head %}
+{{ super() }}
+{{ lib.form_css() }}
+{% endblock %}
+
+{% block body %}
+    <h1>Wallet Tools</h1>
+    <br>
+        <legend id="generate_ccrm_report">Generate Clinic Reconciliation Report</legend>
+            <form method="POST" action="/admin/wallet_tools/reconciliation_report">
+                <p>Clinic, start date and end date are required.
+                </p>
+                <select
+                        id="clinic_name"
+                        name="clinic_name"
+                        required
+                >
+                    <option value=""></option>
+                    {% for name in reconciliation_report_clinics %}
+                    <option value="{{ name }}">{{ name }}</option>
+                    {% endfor %}
+                </select>
+                <input data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimepicker"
+                        id="start_date"  name="start_date" type="text" placeholder="Start Date"
+                        required>
+                <input data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimepicker"
+                        id="end_date"  name="end_date" type="text" placeholder="End Date"
+                        required>
+                <input type="submit" class="btn btn-primary btn-medium"  value="Generate Report">
+            </form>
+        <br>
+        <legend id="generate_us_fertility_report">Generate US Fertility Reconciliation Report</legend>
+            <form method="POST" action="/admin/wallet_tools/us_fertility_reconciliation_report">
+                <p>Start date and end date are required.
+                </p>
+                <input data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimepicker"
+                        id="start_date"  name="start_date" type="text" placeholder="Start Date"
+                        required>
+                <input data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimepicker"
+                        id="end_date"  name="end_date" type="text" placeholder="End Date"
+                        required>
+                <input type="submit" class="btn btn-primary btn-medium"  value="Generate Report">
+            </form>
+        <br>
+        <legend id="edi_request">Request EDI Transaction Import</legend>
+            <form method="POST" action="/admin/wallet_tools/retry_request_edi">
+                <p>Dates default to the last 24 hours if left empty.
+                    Otherwise, add filter by dates to request a specific timeframe of records to process.
+                </p>
+                <input data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimepicker"
+                        id="start_date"  name="start_date" type="text" placeholder="Filter From Date">
+                <input data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimepicker"
+                        id="end_date"  name="end_date" type="text" placeholder="Filter To Date">
+                <input type="submit" class="btn btn-primary btn-medium"  value="Submit">
+            </form>
+        <br>
+            <legend id="edi_process">Process EDI Transaction Download</legend>
+                <form method="POST" action="/admin/wallet_tools/retry_process_edi">
+                    <h4>Read before proceeding...</h4>
+                    <p>Only press submit if you received a successful message from Request EDI File Import and have waited at least 30
+                        minutes since that request.</p>
+                    <input type="submit" class="btn btn-primary btn-medium"  value="Submit">
+                </form>
+        <br>
+            <legend id="new_config">Process Alegeus New Employer Configuration</legend>
+                <div class="inline-form-field">
+                    <form method="POST" action="/admin/wallet_tools/create_employer_configurations">
+                        <div class="control-group">
+                            <label class="control-label" for="org_id">Organization</label>
+                            <div class="controls">
+                                <select
+                                        id="org_id"
+                                        name="org_id"
+                                        required
+                                >
+                                    <option value=""></option>
+                                    {% for id, name, _ in wallet_organizations_deduped %}
+                                        <option value="{{ id }}">{{ id }}: {{ name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">Bank Account Usage Code</label>
+                            <div class="controls">
+                                <select
+                                    id="bank_account_usage_code"
+                                    name="bank_account_usage_code"
+                                    aria-describedby="bank_account_usage_code_help"
+                                    required
+                                >
+                                    <option value="1">ACH Only</option>
+                                    <option value="2">Reimbursement Only</option>
+                                    <option value="3" selected>ACH and Reimbursement</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    <div class="control-group">
+                        <div class="controls">
+                             <label style="display: inline-block">
+                                 <input
+                                    id="payroll_only"
+                                    name="payroll_only"
+                                    type="checkbox"
+                                    class="checkbox"
+                                    aria-describedby="payroll_only_help"
+                                    onchange="toggleRequiredCheckbox()"
+                                >
+                                <span style="vertical-align: middle; padding-left: 5px">
+                                    Payroll Only
+                                </span>
+                            </label>
+                            <small id="payroll_only_help" class="help-block text-muted">
+                                Check this box if the organization offers payroll only
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="financial_institution">Financial Institution Name</label>
+                        <div class="controls">
+                            <input id="financial_institution" name="financial_institution" type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="account_number">Bank Account Number</label>
+                        <div class="controls">
+                            <input id="account_number" name="account_number" type="number" required>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="routing_number">Routing Number</label>
+                        <div class="controls">
+                            <input id="routing_number" name="routing_number" type="number" required>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-medium"  value="Submit">
+                </form>
+        <br>
+            <legend id="billing_account">Save Employer Direct Billing Account</legend>
+                <div class="inline-form-field">
+                    <form method="POST" action="/admin/wallet_tools/employer_direct_billing_account">
+
+                        <div class="control-group">
+                            <label class="control-label" for="org_id">Reimbursement Organization Settings</label>
+                            <div class="controls">
+                                <select
+                                        name="org_settings_id"
+                                        required
+                                >
+                                    <option value=""></option>
+                                    {% for id, name, org_settings_id in wallet_organizations %}
+                                        <option value="{{ org_settings_id }}">{{ name }} ({{org_settings_id}})</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">Bank Account Type</label>
+                            <div class="controls">
+                                <select
+                                    name="account_type"
+                                    required
+                                >
+                                    <option value="checking">Checking</option>
+                                    <option value="savings">Savings</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label">Bank Account Holder</label>
+                            <div class="controls">
+                                <select
+                                    name="account_holder_type"
+                                    required
+                                >
+                                    <option value="company">Company</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="account_number">Bank Account Number</label>
+                            <div class="controls">
+                                <input name="account_number" type="number" required>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="routing_number">Routing Number</label>
+                            <div class="controls">
+                                <input name="routing_number" type="number" required>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-primary btn-medium"  value="Submit">
+                    </form>
+                </div>
+        <br>
+            <legend id="download_config">Download Alegeus Organization Configuration Files</legend>
+                <div class="inline-form-field">
+                    <form method="POST" action="/admin/wallet_tools/download_org_config_zip">
+                        <h5 style="padding-bottom: 10px">Enter a single organization ID or a comma separated list of organization IDs below.</h5>
+                        <div class="control-group">
+                            <label class="control-label" for="org_string">Organization IDs</label>
+                            <div class="controls">
+                              <input id="org_string" name="org_string" type="text" placeholder="145, 3, 5, 77, 97" required>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-primary btn-medium"  value="Download Zip File">
+
+                    <p style="padding-top: 10px">A zip file will download with four configuration files inside: (IS, IV, IT, IU)</p>
+                    </form>
+                </div>
+        <br>
+            <legend id="download_ih_file">Download Alegeus non-USD Account Balance Update File (IH)</legend>
+                <div class="inline-form-field">
+                    <form method="POST" action="/admin/wallet_tools/download_ih_file">
+                        <h5 style="padding-bottom: 10px">Generate an IH file which will be used to update the Alegeus account balance for non-USD wallets</h5>
+                        <div class="control-group">
+                            <div class="controls">
+                                <label class="control-label">Year</label>
+                                <input id="year" name="year" type="number" placeholder="2024" required>
+                                <label class="control-label">ROS ID Filter (Optional)</label>
+                                <input id="ros_id" name="ros_id" type="text" placeholder="ROS ID">
+                                <label class="control-label">Wallet ID Filter (Optional)</label>
+                                <input id="wallet_id" name="wallet_id" type="text" placeholder="Wallet ID">
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-primary btn-medium"  value="Download IH File">
+                    </form>
+                </div>
+        <br>
+            <legend id="smp_files">Audit SMP RX File</legend>
+                <h5 style="padding-bottom: 10px">Finds all pharmacy prescriptions created in a 24-hour period of the date selected.
+                    If no date is provided, it defaults to today.</h5>
+                <form method="POST" action="/admin/wallet_tools/handle_smp_rx_file_audit">
+                    <div class="control-group">
+                        <label class="control-label">File Date</label>
+                        <input data-date-format="YYYY-MM-DD" data-role="datetimepicker"
+                                id="file_date"  name="file_date" type="text" placeholder="File Date">
+                    </div>
+                    <input type="submit" name="download_audit" class="btn btn-primary btn-medium" value="Download Audit File">
+                </form>
+        <br>
+            <legend id="smp_files">SMP RX Files</legend>
+                <h5 style="padding-bottom: 10px">Download or process a RX SMP File.</h5>
+                <h5 style="padding-bottom: 10px">If you're processing, please run all files in order. Scheduled, Shipped and Cancelled for the same date.</h5>
+                <form method="POST" action="/admin/wallet_tools/handle_smp_rx_file">
+                    <div class="control-group">
+                        <label class="control-label">File Date</label>
+                        <input data-date-format="YYYY-MM-DD" data-role="datetimepicker"
+                                id="file_date"  name="file_date" type="text" placeholder="File Date">
+                        <label class="control-label">File Type</label>
+                        <div class="controls">
+                            <select
+                                id="file_type"
+                                name="file_type"
+                                aria-describedby="file_type"
+                                required
+                            >
+                                <option value="SCHEDULED">SCHEDULED</option>
+                                <option value="SHIPPED">SHIPPED</option>
+                                <option value="CANCELLED">CANCELLED</option>
+                                <option value="REIMBURSEMENT">REIMBURSEMENT</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="submit" name="process_file" class="btn btn-primary btn-medium" value="Process File">
+                    <input type="submit" name="download_file" class="btn btn-primary btn-medium" value="Download File">
+                </form>
+        <br>
+            <legend id="copy_wallet">Copy Expired Wallet to new ROS</legend>
+            <h5 style="padding-bottom: 10px">Duplicate an existing wallet to another ROS within the same organization</h5>
+            <form method="POST" action="/admin/wallet_tools/copy_wallet">
+                <div class="control-group">
+                    <div class="controls">
+                        <label class="control-label">Source Wallet ID</label>
+                        <input id="source_wallet_id" name="source_wallet_id" type="text" placeholder="Wallet ID" required>
+                        <label class="control-label">Target Reimbursement Organization Settings ID</label>
+                        <input id="target_ros_id" name="target_ros_id" type="text" placeholder="ROS ID" required>
+                        <label class="control-label">Create "Prior Spend" Reimbursement Request</label>
+                        <input type="checkbox" id="create_prior_spend" name="create_prior_spend" value="True" checked>
+                    </div>
+                </div>
+                <input type="submit" name="copy_wallet" class="btn btn-primary btn-medium" value="Copy Wallet">
+            </form>
+        <script>
+            function toggleRequiredCheckbox(){
+                const payroll_check = document.getElementById("payroll_only")
+                const financial = document.getElementById("financial_institution")
+                const account = document.getElementById("account_number")
+                const routing = document.getElementById("routing_number")
+
+                if( payroll_check.checked ) {
+                    financial.removeAttribute('required');
+                    financial.value = "";
+                    account.removeAttribute('required');
+                    account.value = "";
+                    routing.removeAttribute('required');
+                    routing.value = "";
+                }
+                else{
+                    financial.setAttribute('required', 'required');
+                    account.setAttribute('required', 'required');
+                    routing.setAttribute('required', 'required');
+                }
+            }
+        </script>
+
+{% endblock %}
+
+{% block tail %}
+{{ super() }}
+{{ lib.form_js() }}
+{% endblock %}
+
+

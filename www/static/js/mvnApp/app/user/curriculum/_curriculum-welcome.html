@@ -1,0 +1,9 @@
+<div class="img-wrapper" ng-style="{'background-image': 'url({{ welcomeModal.image.original }})' }">
+</div>
+<div class="text-container">
+	<h4 class="serif">{{ welcomeModal.title }}</h4>
+	<p>{{ welcomeModal.body }}</p>
+</div>
+<div class="ui-action-container">
+	<a class="ui-action primary" ng-click="closeAndGo()">{{ welcomeModal.cta }}</a>
+</div>

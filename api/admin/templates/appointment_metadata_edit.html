@@ -1,0 +1,26 @@
+{% extends 'admin/model/edit.html' %}
+{% block body %}
+
+    <style type="text/css">
+        .control-group:last-child .controls {
+            margin-left: 10px;
+        }
+    </style>
+
+    <div class="row">
+        <div class="span6">
+            {{ super() }}
+        </div>
+        <div class="span6"/>
+            <div style="font-size:16px;padding-top:1em;">
+            <hr>
+                Appointment Id: {{model.appointment_id}}<br>
+                Related Structured Notes:
+                <a href="/admin/recordedanswerset/?flt2_14={{model.appointment_id}}">
+                    View Related Notes
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

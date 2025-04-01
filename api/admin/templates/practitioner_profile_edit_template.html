@@ -1,0 +1,198 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block body %}
+
+    <script type="text/javascript">
+    function copyToClipboard(str) {
+        var el = document.createElement('textarea');
+        el.value = str;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    };
+
+    function copyId() {
+        copyToClipboard("{{ model.user.id }}")
+        document.getElementById('copy_id_success').innerHTML = 'Copied ID!'
+        setTimeout(function() {
+            document.getElementById('copy_id_success').innerHTML = ''
+        }, 2000)
+    }
+
+    function copyEmail() {
+        copyToClipboard("{{ model.user.email }}")
+        document.getElementById('copy_email_success').innerHTML = 'Copied email!'
+        setTimeout(function() {
+            document.getElementById('copy_email_success').innerHTML = ''
+        }, 2000)
+    }
+
+
+    function copyProviderLink() {
+        copyToClipboard("https://www.mavenclinic.com/app/practitioner/{{ model.user.id }}")
+        document.getElementById('copy_provider_link_success').innerHTML = 'Copied Provider Link!'
+        setTimeout(function() {
+            document.getElementById('copy_provider_link_success').innerHTML = ''
+        }, 2000)
+    }
+
+    function copyText(string, success_elem_id) {
+        copyToClipboard(string)
+        document.getElementById(success_elem_id).innerHTML = 'Copied!'
+        setTimeout(function() {
+            document.getElementById(success_elem_id).innerHTML = ''
+        }, 2000)
+        return false;
+    }
+    </script>
+
+    <style type="text/css">
+        .control-group:last-child .controls {
+            margin-left: 10px;
+        }
+    </style>
+
+    <div class="row">
+        <div class="span12" style="margin-bottom:15px">
+            <span style="color:gray;font-weight:normal;font-size:20px;color:orange">Practitioner Profile</span>
+            <h2>{{ model.user.full_name }}</h2>
+            <h3 style="font-weight:normal;margin-bottom:0">
+                Email: {{ model.user.email }}
+
+                <span style="font-size:15px;margin-left:10px;">
+                    <a href="#" onClick="copyEmail()">Copy Email</a>
+                    <span id="copy_email_success" style="margin-left:10px;color:green"></span>
+                </span>
+            </h3>
+            <h3 style="font-weight:normal;margin:0">
+                ID: <a target="_new" href="/admin/user/edit/?id={{ model.user.id }}">{{ model.user.id }}</a>
+
+                <span style="font-size:15px;margin-left:10px;">
+                    <a href="#" onClick="copyId()">Copy ID</a>
+                    <span id="copy_id_success" style="margin-left:10px;color:green"></span>
+                </span>
+            </h3>
+            <h3 style="font-weight:normal;margin-top:0">
+                Provider Link: <a target="_new" href="https://www.mavenclinic.com/app/practitioner/{{ model.user.id }}">https://www.mavenclinic.com/app/practitioner/{{ model.user.id }}</a>
+
+                <span style="font-size:15px;margin-left:10px;">
+                    <a href="#" onClick="copyProviderLink()">Copy Provider Link</a>
+                    <span id="copy_provider_link_success" style="margin-left:10px;color:green"></span>
+                </span>
+            </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span6">
+            {{ super() }}
+        </div>
+        <div class="span6">
+            <h3>
+                Active Products
+
+                <a
+                    href="/admin/product/?flt1_0={{ model.user.id }}"
+                    style="font-size:16px;font-weight:normal;margin-left:10px"
+                >
+                    View All Products ({{ products_count }})
+                </a>
+            </h3>
+
+            <table cellPadding="8" border="1" width="100%">
+                <thead>
+                    <th>Product ID</th>
+                    <th>Minutes</th>
+                    <th>Price</th>
+                    <th>Is Active</th>
+                    <th>Is Promotion</th>
+                </thead>
+                <tbody>
+                    {% for product in active_products %}
+                        <tr>
+                            <td>
+                                {{ product.id }}
+                                <span style="margin-left:10px;">
+                                    <a href="#" onClick="return copyText('{{ product.id }}', 'copy_id_success_{{ product.id }}');">Copy</a>
+                                    <span id="copy_id_success_{{ product.id }}" style="margin-left:10px;color:green"></span>
+                                </span>
+                            </td>
+                            <td>{{ product.minutes }}</td>
+                            <td>{{ product.price }}</td>
+                            <td>{{ product.is_active }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <br/>
+            <br/>
+            <div id="form-content"></div>
+            <div id="practitioner-profile"></div>
+            <script type="text/javascript">
+                document.addEventListener("DOMContentLoaded", function() {
+                    AdminTool(
+                        "PractitionerProfile",
+                        document.getElementById("practitioner-profile"),
+                        {
+                            practitionerId: {{ model.user.id }},
+                            products: [
+                                {% for product in active_products %}
+                                {
+                                    id: {{ product.id }},
+                                    minutes: {{ product.minutes }}
+                                },
+                                {% endfor %}
+                            ],
+                            BOOKABLE_TIMES_MIN_DAYS: {{ BOOKABLE_TIMES_MIN_DAYS }},
+                            BOOKABLE_TIMES_MAX_DAYS: {{ BOOKABLE_TIMES_MAX_DAYS }}
+                        }
+                    );
+                })
+            </script>
+
+            <br/>
+            <br/>
+            <br /><br />
+
+            <h3>Prescriber Status</h3>
+            {% if show_dosespot_info %}
+                <p>
+                    If this prescriber reports issues or errors connecting to DoseSpot,
+                    check these values against the DoseSpot Clinic Admin interface to make sure they are correct:
+                </p>
+                <p>
+                    Clinic Key: {{ model.dosespot.clinic_key }} <br/>
+                    Clinic ID: {{ model.dosespot.clinic_id }} <br/>
+                    DoseSpot Prescriber ID: {{ model.dosespot.user_id }} <br/>
+                </p>
+            {% else %}
+                <p>Not enabled on DoseSpot</p>
+            {% endif %}
+
+            <h3>Service Agreement Status</h3>
+            {% for v in model.agreed_service_agreements %}
+                <p>{{ v.agreement.version }}: {{ v.created_at }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block tail %}
+    {{ super() }}
+    <script src="{{ admin_static.url(filename='admin/js/helpers.js', v='1.0.0') }}" type="text/javascript"></script>
+    <script>
+        (function ($) {
+            const is_staff_before = $('#is_staff').is(":checked")
+            $('form:first').on('submit', function(event) {
+                const is_staff_after = $('#is_staff').is(":checked")
+                if (is_staff_before !== is_staff_after) {
+                    return confirm('You changed the value of is_staff from ' + is_staff_before + ' to ' + is_staff_after
+                    + '. Are you sure you want to make this change?');
+                }
+            });
+        })(jQuery);
+    </script>
+{% endblock %}

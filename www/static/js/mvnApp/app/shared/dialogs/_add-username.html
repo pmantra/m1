@@ -1,0 +1,35 @@
+<div class="center">
+	<h3>Choose your username</h3>
+	<p>This is what will show next to anything you post (unless you choose to post or reply anonymously).</p>
+	<p>You can always change this later in your account settings.</p>
+
+	<div ng-show="err" class="notify error" ng-messages="errMsg">
+		<p class="error-title">
+			<span class="error-icon"
+				><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+					<path
+						fill="#FF7774"
+						d="M100.9 13c-47.5 0-86.3 38.8-86.3 86.3s38.9 86.3 86.3 86.3 86.3-38.9 86.3-86.3c.1-47.5-38.8-86.3-86.3-86.3zm2.2 139.4c-5.8 0-10.7-4.9-10.7-10.7 0-5.9 4.9-10.9 10.7-10.9 5.9 0 10.9 5 10.9 10.9-.1 5.8-5 10.7-10.9 10.7zm12.4-77.9l-6.8 39c-.1 1.1-1.4 2.2-2.6 2.2h-5.8c-1.2 0-2.5-1.1-2.6-2.2l-6.8-38.7V58.9v-.1c0-.1-.1-.2-.1-.3 0-6.8 5.5-12.3 12.3-12.3 6.8 0 12.3 5.5 12.3 12.3v.2c0 .1.1.1.1.2v15.6z"
+					/>
+				</svg>
+			</span>
+			Please correct the following errors:
+		</p>
+		<p>{{ errMsg }}</p>
+	</div>
+
+	<form class="primary-app" name="userNameUpdateForm">
+		<input id="username" type="text" ng-model="newUname" />
+		<p>
+			<button
+				class="btn btn-action"
+				ng-click="updateUsername(newUname)"
+				ng-class="{ disabled : !newUname || userNameUpdateForm.$pristine || (newUname == user.username) }"
+				ng-disabled="!newUname || userNameUpdateForm.$pristine || (newUname == user.username)"
+				>Save username</button
+			>
+		</p>
+	</form>
+
+	<p ng-if="canClose"><a class="btn btn-tertiary" href="" ng-click="closeThisDialog(0)">Close</a></p>
+</div>

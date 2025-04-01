@@ -1,0 +1,13 @@
+dag_id: find_stale_request_availability_messages
+schedule: "0 * * * *"
+task_id: find_stale_request_availability_messages_job
+commands:
+  - "python3"
+  - "-c"
+  - "from airflow.scripts.care_discovery.find_stale_request_availability_messages import find_stale_request_availability_messages_job; find_stale_request_availability_messages_job()"
+team_namespace: care_discovery
+service_namespace: appointments
+catchup: "False"
+start_year: 2025
+start_month: 3
+start_day: 25

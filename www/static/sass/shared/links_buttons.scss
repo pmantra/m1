@@ -1,0 +1,251 @@
+/* ------- Links & buttons ---------*/
+
+/* APP */
+
+a,
+a:link {
+	font-family: $font1;
+	color: $primary;
+	transition: all 0.3s;
+	line-height: $baseLineHeight;
+}
+a:hover,
+a:active {
+	color: $emerald-100;
+}
+button,
+a.btn,
+md-button.btn {
+	-webkit-font-smoothing: antialiased;
+	text-decoration: none;
+	letter-spacing: 0.5px;
+	white-space: nowrap;
+	cursor: pointer;
+	min-width: 112px;
+	max-width: 100%;
+	height: 40px;
+	padding: 12px 24px;
+	display: inline-block;
+	text-align: center;
+	line-height: 1;
+	border-radius: 20px;
+	font-family: $font1-semibold;
+	border: none;
+
+	&.btn-sm {
+		height: 2rem;
+		border-radius: 1rem;
+		padding: 10px;
+		font-size: 0.625rem;
+	}
+
+	&.btn-lg {
+		min-width: 270px;
+		height: 3rem;
+		border-radius: 1.5rem;
+		line-height: 1.4;
+	}
+
+	/* Main block filled buttons */
+	&.btn-cta {
+		outline: 2px solid transparent;
+		outline-offset: 2px;
+		background: $primary;
+		color: white;
+		border: none;
+		&:hover,
+		&:focus,
+		&:active {
+			background: $primary-dk;
+		}
+		&:focus,
+		&:active {
+			outline: 2px solid $primary-dk;
+			outline-offset: 2px;
+		}
+		&.disabled,
+		&.disabledRecaptcha {
+			background: #99cec5;
+			color: white;
+			pointer-events: none;
+			border-color: transparent;
+			&.disabled-clickable {
+				pointer-events: all;
+			}
+		}
+	}
+
+	/* White buttons */
+	&.btn-secondary-cta {
+		background: white;
+		color: $primary;
+		min-width: 180px;
+		border: 1px solid $gray-xxlt;
+		&:hover,
+		&:active {
+			background: $gray-xlt;
+			color: $emerald-80;
+			border-color: $gray-xlt;
+		}
+		&.disabled {
+			background: $charcoal-40;
+			color: white;
+			pointer-events: none;
+			border-color: transparent;
+			&.disabled-clickable {
+				pointer-events: all;
+			}
+		}
+	}
+
+	/* Bordered ghost buttons */
+
+	&.btn-action {
+		background: transparent;
+		border: 1px solid $primary-dk;
+		color: $primary-dk;
+		line-height: 0.875;
+		&.btn-lg {
+			line-height: 1.4;
+		}
+		&:hover,
+		&:active {
+			border-color: $emerald-80;
+			color: $emerald-80;
+		}
+
+		&.btn-warn {
+			border-color: $ui-red;
+			color: $ui-red;
+			&:hover,
+			&:active {
+				border-color: $ui-red-dk;
+				color: $ui-red-dk;
+			}
+		}
+		/*
+        &.btn-white {
+            border-color: white;
+            color: white;
+        }
+        &.btn-sm {
+            width: 120px;
+            min-width: 120px;
+            margin-right: 10px;
+            &.inline {
+                display: inline-block;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }*/
+		&.disabled {
+			border-color: $gray-lt;
+			color: $gray-lt;
+			pointer-events: none;
+		}
+	}
+	/* inline, no border buttons */
+
+	&.btn-tertiary {
+		font-family: $font1-semibold;
+		width: auto;
+		height: auto;
+		background: none;
+		color: $ui-green;
+		padding: 0;
+		max-width: none;
+		min-width: 0;
+		text-align: left;
+		border: none;
+		outline-offset: 4px;
+		&.disabled {
+			background: none;
+			color: $gray;
+		}
+		&.center {
+			text-align: center;
+		}
+	}
+
+	&.btn-bold {
+		font-weight: 600;
+	}
+
+	&.btn-next {
+		width: 62px;
+		height: 62px;
+		margin-left: auto;
+		margin-right: auto;
+		background: none;
+		padding: 0;
+		svg g {
+			transition: all 0.4s ease;
+		}
+		&.disabled,
+		:disabled {
+			pointer-events: none;
+			svg {
+				g {
+					stroke: #cccccc;
+				}
+			}
+			//background-position: center -69px;
+		}
+	}
+	&.ico {
+		background: white;
+		border: 2px solid $charcoal-100;
+		color: $charcoal-100;
+	}
+}
+
+/* Toggle style buttons */
+
+.btn-toggle {
+	border: 1px solid $gray;
+	clear: both;
+	height: 56px;
+	a,
+	label,
+	input {
+		@include flexbox;
+		cursor: pointer;
+		width: 50%;
+		float: left;
+		height: 100%;
+		padding: 20px 10px;
+		font-size: 18px;
+		color: $charcoal-80;
+		text-decoration: none;
+		&:first-child {
+			border-right: 1px solid $primary;
+		}
+		&.toggle-on {
+			color: white;
+			background: $primary;
+		}
+	}
+}
+.app {
+	.two-button-wrap {
+		a.btn {
+			display: block;
+			margin: 15px auto;
+			max-width: 230px;
+			width: 230px;
+		}
+		@include susy-breakpoint($tablet) {
+			overflow: auto;
+			.btn {
+				margin: auto;
+			}
+			.action-confirm {
+				float: right;
+			}
+			.action-cancel {
+				float: left;
+			}
+		}
+	}
+}

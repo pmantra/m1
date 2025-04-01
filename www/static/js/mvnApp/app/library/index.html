@@ -1,0 +1,46 @@
+<main class="single-panel">
+	<section class="featured">
+		<library-card ng-if="$ctrl.featuredCard" card-data="$ctrl.featuredCard" featured="true"></library-card>
+	</section>
+
+	<section>
+		<div class="title-card popular-now">
+			<h1 class="block-title serif h4">Popular right now</h1>
+		</div>
+		<div class="card-container">
+			<library-card
+				ng-if="$ctrl.resources"
+				ng-repeat="resource in $ctrl.resources track by $index"
+				position="$index"
+				class="list-item"
+				card-data="resource"
+			></library-card>
+		</div>
+	</section>
+
+	<section>
+		<div class="title-card explore-topics">
+			<h2 class="block-title serif h4">Explore by topic</h2>
+		</div>
+		<div class="action-container">
+			<div class="ui-action primary" ng-repeat="cat in $ctrl.categories">
+				<a ui-sref="app.library.topic({ topic: cat.name, displayName: cat.display_name })" class="btn btn-tertiary"
+					>{{ cat.display_name }}</a
+				>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="title-card explore-content">
+			<h2 class="block-title serif h4">Explore by type</h2>
+		</div>
+		<div class="action-container">
+			<div class="ui-action primary" ng-repeat="type in $ctrl.contentTypes">
+				<a ui-sref="app.library.content({ type: type.name, displayName: type.display_name })" class="btn btn-tertiary"
+					>{{ type.display_name }}</a
+				>
+			</div>
+		</div>
+	</section>
+</main>

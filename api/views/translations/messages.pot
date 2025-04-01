@@ -1,0 +1,60 @@
+#: views/referrals.py:64
+msgid "views_referrals_unknown"
+msgstr ""
+
+#: views/referrals.py:65
+msgid "views_referrals_missing_data"
+msgstr ""
+
+#: views/referrals.py:66
+msgid "views_referrals_does_not_exist"
+msgstr ""
+
+#: views/referrals.py:67
+msgid "views_referrals_already_applied"
+msgstr ""
+
+#: views/referrals.py:68
+msgid "views_referrals_expired"
+msgstr ""
+
+#: views/referrals.py:69
+msgid "views_referrals_too_late"
+msgstr ""
+
+#: views/referrals.py:70
+msgid "views_referrals_not_you"
+msgstr ""
+
+#: views/referrals.py:71
+msgid "views_referrals_no_code"
+msgstr ""
+
+#: views/referrals.py:72
+msgid "views_referrals_not_found"
+msgstr ""
+
+#: views/referrals.py:73
+msgid "views_referrals_invalid"
+msgstr ""
+
+#: views/referrals.py:76
+msgid "views_referrals_main_message"
+msgstr ""
+
+#: views/tracks.py:152
+msgid "views_tracks_scheduled_to_renew_on"
+msgstr ""
+
+#: views/tracks.py:157
+msgid "views_tracks_access_will_end_on"
+msgstr ""
+
+#: views/tracks.py:167
+msgid "views_tracks_cancel"
+msgstr ""
+
+#: views/tracks.py:177
+msgid "views_tracks_renew_program"
+msgstr ""
+

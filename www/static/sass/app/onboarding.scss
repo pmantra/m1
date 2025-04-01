@@ -1,0 +1,831 @@
+/* -------- New user onboarding ----------*/
+.page-onboarding {
+	@include susy-breakpoint(0 $tablet-max) {
+		.app-body {
+			height: 100vh;
+		}
+	}
+	@include media-desktop-400-zoom {
+		.app-body {
+			height: auto;
+		}
+	}
+	.max-w {
+		max-width: 470px;
+		margin: 4rem auto;
+	}
+}
+
+.onboarding-container {
+	overflow: auto;
+	height: 100%;
+	padding-bottom: 80px;
+	padding-top: $desktopHeaderHeight;
+	@include flexbox(column, center, flex-start);
+	@include susy-breakpoint($desktop) {
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-top: $desktopHeaderHeight;
+	}
+	@include media-desktop-400-zoom {
+		padding: 0 0 40px;
+		.assessment-body {
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+	}
+}
+
+.onboarding-panel {
+	width: 100%;
+	max-width: $containerWidth;
+	padding: 0 1rem;
+	margin: 3rem auto 0 auto;
+	@include susy-breakpoint($desktop) {
+		padding: 0;
+		margin: 2rem auto 0 auto;
+	}
+	@include media-desktop-400-zoom {
+		margin-top: 0;
+	}
+}
+
+.onboarding-header {
+	height: $desktopHeaderHeight;
+	padding: 1.5rem 1rem;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	background: white;
+	z-index: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.14);
+	backdrop-filter: blur(27.1828px);
+
+	@include susy-breakpoint($desktop) {
+		padding: 1.5rem 2rem;
+	}
+
+	@include media-desktop-400-zoom {
+		margin-bottom: 2rem;
+		position: relative;
+	}
+
+	.onboarding-header-icon {
+		display: none;
+		@include susy-breakpoint($desktop) {
+			display: block;
+			position: absolute;
+			left: 2.5rem;
+		}
+	}
+
+	.progress-bar {
+		position: absolute;
+		top: $desktopHeaderHeight;
+		left: 0;
+		width: 100%;
+	}
+}
+
+.hide-mobile-header {
+	@include susy-breakpoint(0 $mobile-landscape-max) {
+		display: none;
+		+ ui-view {
+			margin-top: -100px;
+			.assessment-body {
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
+.assessments-main-heading.referral-assessment {
+	text-align: center !important;
+}
+
+.onboarding-no-header {
+	.onboarding-header {
+		display: none;
+	}
+}
+
+.ob-hide-nav {
+	.onboarding-header {
+		display: none;
+	}
+}
+
+/* Life stage */
+
+.onboarding-life-stage {
+	@include susy-breakpoint($desktop) {
+		.onboarding-container {
+			background: url("/img/app/user/onboarding/life-stages.png") center right no-repeat;
+			background-size: 12%;
+		}
+		@include susy-breakpoint($desktop-hd) {
+			background-size: 10%;
+		}
+	}
+}
+
+.onboarding-life-stage-choices {
+	form {
+		margin: 4rem auto;
+	}
+}
+
+/* Verify Enterprise */
+
+.onboarding-verify-enterprise {
+	.verify-enterprise-form {
+		margin: 1rem auto 4rem auto;
+		p {
+			margin: 1rem auto;
+		}
+	}
+	.employer-form {
+		margin: 3rem 0 2rem;
+	}
+	.app-grid-item {
+		max-width: 480px;
+		margin: 0 auto !important;
+	}
+	.form-section {
+		padding-top: 0;
+		.form-item:first-child {
+			margin-top: 0;
+		}
+	}
+	h3 {
+		margin: 3rem auto 0 auto;
+	}
+	.your-info {
+		margin-bottom: 10px;
+	}
+	.form-tel-info {
+		margin: 0;
+		text-align: left;
+		font-size: 0.675rem;
+		color: $gray;
+	}
+}
+
+/* You're in */
+
+.onboarding-youre-in {
+	.onboarding-panel {
+		margin: auto;
+	}
+}
+
+.onboarding-youre-in .youre-in {
+	width: 100%;
+	background-color: #dceae3;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	z-index: 1;
+	display: block;
+	> div {
+		margin: auto;
+	}
+	h1,
+	p {
+		color: $gray-dk;
+	}
+	h1 {
+		margin: 0 0 2rem 0;
+	}
+	.center {
+		width: 100%;
+		max-width: 1288px;
+		margin: 0 auto;
+		@include flexbox(row, flex-start, flex-start);
+		align-self: flex-start;
+		position: relative;
+		height: 100vh;
+		padding: 0;
+		background-image: url("/img/app/onboarding/youarein_mommygroup_transparent_01.png");
+		background-repeat: no-repeat;
+		background-position: 48% 117%;
+		background-size: 85%;
+		@include susy-media(max-height 430px) {
+			background-image: none;
+		}
+		@include susy-breakpoint(375px) {
+			// iPhone 8
+			background-size: 100%;
+			background-position: center bottom;
+		}
+
+		@include susy-media(
+			(
+				min-height: 430px,
+				max-height: 550px
+			)
+		) {
+			@include susy-media(max-width $tablet) {
+				background-size: 50%;
+			}
+		}
+		@include susy-breakpoint($tablet) {
+			background-position: 52% 76%;
+			background-size: 600px;
+			padding: 0 8%;
+			@include susy-media(max-height 930px) {
+				background-position: 52% 137%;
+				background-size: 65%;
+			}
+			@include susy-media(
+				(
+					min-height: 431px,
+					max-height: 663px
+				)
+			) {
+				background-position: 48% 139%;
+				background-size: 42%;
+			}
+		}
+		@include susy-breakpoint($desktop) {
+			padding: 0 3%;
+			@include flexbox(row, center, flex-start);
+			align-self: center;
+			background-image: url("/img/app/onboarding/youarein_mommygroup_transparent_withtext.png");
+			background-size: 54%;
+			background-position: 90% 44%;
+		}
+	}
+	.welcome-left {
+		width: 95%;
+		margin: 10% auto 0 auto;
+		h1 {
+			@include font-size(30);
+		}
+		@include susy-breakpoint(414px) {
+			width: 90%;
+			margin-top: 20%;
+		}
+		@include susy-media(min-height 700px) {
+			margin-top: 25%;
+		}
+		@include susy-breakpoint($tablet) {
+			margin-top: 5%;
+			width: 100%;
+		}
+		@include susy-breakpoint($desktop) {
+			text-align: left;
+			width: 41%;
+			margin: 0;
+		}
+		@include susy-breakpoint($desktop-md) {
+			h1 {
+				@include font-size(46);
+			}
+		}
+	}
+}
+
+/* Onboarding assessment */
+
+.page-onboarding-assessment {
+	display: block;
+	.main-onboarding-header {
+		display: none; // gotta hide this as when we're in onboarding assessment world, we end up with double headers otherwise...
+	}
+	.onboarding-panel {
+		max-width: none;
+		padding: 0;
+		.take-assessment .parent-question {
+			margin-top: 0;
+			legend {
+				margin-bottom: 0;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 100%;
+				text-align: center;
+				@include susy-breakpoint($desktop) {
+					padding-top: 1.25rem;
+				}
+			}
+		}
+	}
+
+	.question-max-w {
+		max-width: 480px;
+		margin: 3rem auto;
+	}
+	.freetextmulti {
+		.mvn-input {
+			margin-bottom: 1rem;
+		}
+	}
+
+	.fertility-status-assessment {
+		max-width: none;
+		label {
+			font-size: 1rem !important;
+		}
+	}
+
+	.radio-color-callout {
+		&.one-column {
+			.mvn-input-item {
+				height: 90px;
+			}
+		}
+	}
+	.checkbox-color-callout.color-callout.mvn-checkbox-group {
+		label {
+			@include flexbox(row-reverse, center, flex-end);
+			text-align: left;
+			padding-left: 1.5rem;
+			padding-right: 1rem;
+			.checkmark {
+				flex-shrink: 0;
+				position: static;
+				top: auto;
+				left: auto;
+				right: 0;
+				left: 0;
+				margin-right: 0.5rem;
+				z-index: 0;
+				&:after {
+					position: relative;
+				}
+			}
+		}
+	}
+	.assessment-complete.center {
+		@include flexbox(row, center, flex-start);
+		padding: 0 1rem;
+		margin: 0;
+		height: 100vh;
+		position: relative;
+		top: -$desktopHeaderHeight;
+		h1 {
+			margin-top: 3.5rem;
+		}
+		.complete-cta {
+			margin-top: 1.5rem;
+			.btn {
+				opacity: 0;
+				transition: all 0.3s ease-in-out;
+				&.can-progress {
+					opacity: 1;
+				}
+			}
+		}
+		.complete-content {
+			z-index: 1;
+			margin: auto;
+			max-width: 650px;
+			h1 {
+				margin-top: 5.5rem;
+			}
+		}
+		.bg-full-counter {
+			z-index: 0;
+			margin: auto;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			span {
+				margin: auto;
+			}
+			.h1 {
+				text-align: left;
+				font-size: 7.25rem;
+				padding: 0 1rem;
+				line-height: 0;
+				color: rgba(0, 65, 62, 0.3);
+				@include susy-breakpoint($tablet) {
+					padding: 0;
+					font-size: 12rem;
+				}
+				@include susy-breakpoint($desktop) {
+					font-size: 18rem;
+				}
+				@include susy-breakpoint($desktop) {
+					font-size: 25rem;
+				}
+			}
+		}
+	}
+	.tooltip {
+		margin: 10px auto 0 auto;
+		max-width: 376px;
+	}
+
+	.one-column + .assessment-tooltip {
+		.tooltip {
+			max-width: 480px;
+			margin: -25px auto 0 auto;
+		}
+	}
+}
+
+/* Onboarding nav */
+
+.ob-nav-progress {
+	.nav-items {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+
+	ul {
+		display: flex;
+		justify-content: space-between;
+		padding: 0;
+
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		margin: 0;
+		align-items: center;
+		li {
+			padding: 0.5rem;
+			line-height: 1;
+			@media (min-width: $tablet) {
+				padding: 1rem;
+			}
+		}
+
+		@media (min-width: $tablet) {
+			width: 600px;
+		}
+	}
+
+	.nav-item {
+		color: $gray;
+		font-family: $font1-semibold;
+		font-size: 11px;
+		display: flex;
+		align-items: center;
+		transition: all 0.3s ease;
+
+		@media (min-width: $tablet) {
+			font-size: 14px;
+		}
+		&.is-active,
+		&.is-completed {
+			color: $primary;
+			.item-status {
+				border-color: $primary;
+			}
+		}
+
+		.item-status {
+			width: 20px;
+			height: 20px;
+			margin-right: 6px;
+			border: 1px solid $gray-lt;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 1.6;
+			padding: 1px 6px;
+			transition: all 0.3s ease;
+			@media (min-width: $tablet) {
+				padding: 0 7px;
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		&.is-completed {
+			.item-status {
+				color: white;
+				background: $primary;
+				padding: 2px 4px;
+				line-height: 1.4;
+				@media (min-width: $tablet) {
+					padding: 0 6px;
+				}
+			}
+		}
+	}
+}
+
+/* Meet your care advocate */
+.onboarding-meet-cc {
+	.onboarding-panel {
+		@include susy-breakpoint(0 $tablet-max) {
+			margin-top: 0;
+		}
+	}
+}
+
+.meet-care-coordinator {
+	max-width: 1080px;
+	margin: 1rem auto 0 auto;
+	@include susy-breakpoint($desktop) {
+		margin: 3rem auto 0 auto;
+	}
+
+	div {
+		max-width: 100%;
+	}
+	> div {
+		max-width: 400px;
+		margin: 0 auto;
+		@include susy-breakpoint($desktop) {
+			@include flexbox(row, stretch, space-between);
+			flex-wrap: wrap;
+			max-width: none;
+			margin: auto;
+		}
+	}
+	hr {
+		margin: 2rem auto;
+		background: $gray-xlt;
+		border: 0;
+		height: 1px;
+	}
+
+	.cc-intro {
+		margin-bottom: 0;
+		.cc-img {
+			max-width: 100%;
+		}
+	}
+
+	.cc-info {
+		padding-bottom: 80px;
+		h1 {
+			text-align: center;
+			@include susy-breakpoint(0 $tablet-max) {
+				font-size: 24px;
+			}
+			@include susy-breakpoint($desktop) {
+				margin-top: 0;
+				text-align: left;
+			}
+		}
+		.cc-list-info {
+			margin: 2rem 0;
+		}
+		ul {
+			margin: 1rem 0 2rem 0;
+		}
+		li,
+		p {
+			color: $gray;
+		}
+		li {
+			text-align: left;
+			list-style: none;
+			margin: 1.25rem 0;
+			padding-left: 30px;
+			position: relative;
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				background-image: url("/img/icons/check-single.svg");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+				top: 4px;
+				height: 15px;
+				width: 15px;
+			}
+		}
+		.gift-book-cta {
+			border-top: 1px solid $gray-xlt;
+			@include flexbox(row, center, flex-start);
+			padding-top: 1.5rem;
+			margin-top: 1.75rem;
+			padding-bottom: 1rem;
+
+			.p {
+				margin-top: 0;
+				position: relative;
+				top: 8px;
+				color: $gray;
+				font-size: 14px;
+			}
+		}
+		.cc-cta-img {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			margin-right: 1rem;
+			min-width: 40px;
+
+			span {
+				display: block;
+				background-repeat: no-repeat;
+				background-size: cover;
+				height: 100%;
+				background-position: center;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	@include susy-breakpoint($desktop) {
+		.cc-intro {
+			width: 40%;
+		}
+
+		.cc-info {
+			width: 55%;
+		}
+	}
+}
+
+/* Get the app */
+.onboarding-download-the-app {
+	img {
+		width: 684px;
+		max-width: 100%;
+	}
+}
+
+/* Partayyy */
+.ob-celebrate .onboarding-container {
+	margin-top: 0;
+}
+.ob-celebrate .ngdialog-content,
+.ob-celebrate .onboarding,
+.ob-celebrate .onboarding .onboarding-container {
+	background: $primary;
+	top: 0;
+	h1,
+	.h1,
+	p,
+	.p {
+		color: white;
+	}
+}
+
+/* ADS ONBOARDING SCREENS */
+
+.ads-onboarding {
+	.ad-ob-icon {
+		.onboarding-icon {
+			@include susy-breakpoint($desktop) {
+				margin: 20px auto 30px auto;
+			}
+		}
+	}
+	.ob-swag-img {
+		.onboarding-icon {
+			width: 200px;
+			height: 200px;
+			@include susy-breakpoint($desktop-hd) {
+				width: 300px;
+				height: 300px;
+			}
+		}
+	}
+	.reb-laptop-gif {
+		.onboarding-icon {
+			width: 50%;
+			height: 50%;
+			@include susy-breakpoint($desktop-hd) {
+				width: 50%;
+				height: 50%;
+			}
+		}
+	}
+}
+
+/* ONBOARDING COMPLETE */
+
+.onboarding-complete {
+	.onboarding-container {
+		div {
+			padding-top: 5%;
+		}
+	}
+}
+
+.onboarding-ent-complete {
+	@include susy-breakpoint($desktop) {
+		h2 {
+			margin-top: 10%;
+		}
+	}
+}
+
+/* Claim enterprise invite */
+.claim-enterprise-invite .page-inner {
+	background: $secondary-2-lt;
+	padding: 0 !important; // dont judge meeee... it's overwriting another !important.. sigh
+}
+
+.claim-enterprise-invite {
+	background: $secondary-2-lt;
+	.invite-body {
+		@include flexbox(row, flex-start, center);
+		height: 100vh;
+		@include susy-breakpoint($tablet) {
+			justify-content: center;
+		}
+		> div {
+			background: white;
+			padding: 3rem;
+			margin: auto;
+			width: 100%;
+			max-width: 970px;
+			margin: 15% auto;
+			@include susy-breakpoint($tablet) {
+				margin: auto;
+				width: 80%;
+			}
+		}
+	}
+}
+
+/* Animation-y things */
+// Checkmark on onboarding complete
+.confirm-animate-checkmark__circle {
+	stroke-dasharray: 166;
+	stroke-dashoffset: 166;
+	stroke-width: 2;
+	stroke-miterlimit: 10;
+	stroke: $emerald-40;
+	fill: none;
+	animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.confirm-animate-checkmark {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	display: block;
+	stroke-width: 2;
+	stroke: #fff;
+	stroke-miterlimit: 10;
+	margin: auto;
+	box-shadow: inset 0px 0px 0px $emerald-40;
+	animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+}
+
+.confirm-animate-checkmark__check {
+	transform-origin: 50% 50%;
+	stroke-dasharray: 48;
+	stroke-dashoffset: 48;
+	animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes scale {
+	0%,
+	100% {
+		transform: none;
+	}
+	50% {
+		transform: scale3d(1.1, 1.1, 1);
+	}
+}
+
+@keyframes fill {
+	100% {
+		box-shadow: inset 0px 0px 0px 30px $emerald-40;
+	}
+}
+
+/* Enter/exit screen*/
+// .exit-fade.ng-leave {
+// 	animation: 2s disappear;
+// }
+
+// .enter-fade.ng-enter {
+// 	animation: 2s appear;
+// }
+// @keyframes appear {
+// 	from {
+// 		opacity: 0;
+// 	}
+// 	to {
+// 		opacity: 1;
+// 	}
+// }
+// @keyframes disappear {
+// 	from {
+// 		opacity: 1;
+// 	}
+// 	to {
+// 		opacity: 0;
+// 	}
+// }

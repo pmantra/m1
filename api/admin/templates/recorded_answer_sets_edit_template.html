@@ -1,0 +1,71 @@
+{% extends 'admin/model/edit.html' %}
+{% block body %}
+
+    <style type="text/css">
+        .control-group:last-child .controls {
+            margin-left: 10px;
+        }
+    </style>
+
+    <div class="row">
+        <div class="span6">
+            {{ super() }}
+        </div>
+        <div class="span6"/>
+            <div style="font-size:16px;padding-top:1em;">
+            <hr>
+                Appointment Id: {{model.appointment_id}}<br>
+                Related Appointment Note: {% if model.appointment and model.appointment.latest_post_session_note() %}
+                <a href="/admin/appointmentmetadata/edit?id={{model.appointment.latest_post_session_note().id}}">
+                    View Note
+                </a>
+                {% else %}None{% endif %}
+            </div>
+            <hr>
+            <h4>Encounter Summary Answers:</h4>
+            <ul>
+                {% for recorded_answer in model.recorded_answers %}
+                    <li>
+                        <p><strong>{{ recorded_answer.question.label }}</strong><br>
+                        {% if recorded_answer.text is not none %}
+                        {{recorded_answer.text}}
+                        {% else %}
+                            {% if recorded_answer.answer.text is not none %}
+                                {{recorded_answer.answer.text}}
+                                <br>
+                                (Answer ID {{recorded_answer.answer.id}})
+                             {% else %}
+                                {{recorded_answer.payload}}
+                            {% endif %}
+                        {% endif %}<br>(Recorded Answer ID {{recorded_answer.id}})</p>
+                    </li>
+                {% endfor %}
+            </ul>
+            {% for provider_addendum in model.appointment.provider_addenda %}
+                <hr />
+                <h4>Addendum added <span data-field="provider_addendum.submitted_at">{{ provider_addendum.submitted_at }}</span> by {{ provider_addendum.user.first_name }} {{ provider_addendum.user.last_name }}:</h4>
+                    {% for provider_addendum_answer in provider_addendum.provider_addendum_answers %}
+                        <p><strong>{{ provider_addendum_answer.question.label }}:</strong>
+                        {% if provider_addendum_answer.text is not none %}
+                            {{provider_addendum_answer.text}}
+                        {% endif %}
+                        {% if provider_addendum_answer.answer is not none %}
+                            {{provider_addendum_answer.answer.text}}
+                        {% endif %}</p>
+                    {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+    <script type="text/javascript">
+        (function() {
+            const submitted_at_dates = document.querySelectorAll("[data-field='provider_addendum.submitted_at']");
+            for (const submitted_at_date of submitted_at_dates) {
+                const submitted_at_timestamp = Date.parse(submitted_at_date.innerText);
+                if(!isNaN(submitted_at_timestamp)) {
+                    submitted_at_date.innerText = new Date(submitted_at_timestamp).toLocaleString();
+                }
+            }
+        })();
+    </script>
+
+{% endblock %}

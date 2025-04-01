@@ -1,0 +1,6 @@
+class QueryNotFoundError(Exception):
+    ...
+
+
+class MissingQueryError(Exception):
+    ...

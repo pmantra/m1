@@ -1,0 +1,109 @@
+{% extends 'admin/base.html' %}
+{% import 'admin/lib.html' as lib with context %}
+
+{% block head %}
+{{ super() }}
+{{ lib.form_css() }}
+<style>
+.select2-container-multi {
+    width: 206px;
+    margin-bottom: 10px;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+
+<h1>Tool to Make a Member a Practitioner</h1>
+
+Converts a Member into a Practitioner and adds a Referral Code.  If the user does not exist, a Practitioner Invite is created.
+
+<form method="POST" action="/admin/auto_practitioner_invite/send" enctype="multipart/form-data">
+    <input id="email" name="email" type="text" placeholder="practitioner email address">
+    <input id="referral_code" name="referral_code" type="text" placeholder="free referral code">
+    <input type="submit" class="btn btn-primary btn-large" value="Send">
+</form>
+
+<h1>Set DoseSpot Info</h1>
+
+<form method="POST" action="/admin/actions/set_practitioner_prescription_info">
+    <input id="practitioner_id" name="practitioner_id" type="text" placeholder="practitioner_id">
+    <input id="clinic_id" name="clinic_id" type="text" placeholder="clinic_id">
+    <input id="clinic_key" name="clinic_key" type="text" placeholder="clinic_key">
+    <input id="prescriber_id" name="prescriber_id" type="text" placeholder="dosespot_prescriber_id">
+    <input type="submit" class="btn btn-primary btn-large" value="Save">
+</form>
+
+<h1>Add Fee</h1>
+
+<form method="POST" action="/admin/actions/add_fee">
+    <input id="practitioner_id" name="practitioner_id" type="number" min="1" placeholder="practitioner_id">
+    <input id="appointment_id" name="appointment_id" type="number" placeholder="appointment_id (Optional)">
+    <input id="fee_amount" name="fee_amount" type="number" min="0.01" max="100.00" step="0.01" placeholder="fee_amount">
+    <input type="submit" class="btn btn-primary btn-large" value="Save">
+</form>
+
+<h1>Therapist Speed Dating Time Range</h1>
+
+<h4>Current Time Ranges:</h4>
+{% for promo_range in promo_time_ranges %}
+    {{ promo_range }} <br />
+{% endfor %}
+<br />
+
+<form method="POST" action="/admin/actions/set_promo_time_range">
+    <input data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimerangepicker" id="promo_time_range" name="promo_time_range" type="text" placeholder="select a UTC date/time range...">
+    <input type="submit" class="btn btn-primary btn-large" value="Save">
+</form>
+
+<h1>Sign provider Stripe TOS</h1>
+<form method="POST" action="/admin/monthly_payments/sign_stripe_tos">
+    <input id="practitioner_id" name="practitioner_id" type="number" min="1" placeholder="practitioner_id">
+    <input type="submit" class="btn btn-primary btn-large" value="Save">
+</form>
+
+
+
+<h1>Create multiple availability blocks</h1>
+<div class="info-container" style="width: 400px">
+    Availability blocks created with this tool will not be linked in any way and will need to be edited or deleted individually.
+    <br /><br />
+    <div class="alert alert-warning">
+        Please check practitioners existing availability to ensure you are not scheduling duplicate availability blocks.
+    </div>
+</div>
+
+<form method="POST" action="/admin/actions/set_recurring_availability">
+    <label>Practitioner ID</label>
+    <input id="practitioner_id" name="practitioner_id" type="text" placeholder="practitioner_id" required="required"><br />
+    <label>UTC start date/time</label>
+    <input data-date-format="YYYY-MM-DD HH:mm:ss" data-role="datetimepicker" id="starts_at" name="starts_at" type="text" placeholder="UTC start date/time..." required="required"><br />
+    <label>Duration (minutes)</label>
+    <input id="duration" name="duration" type="text" placeholder="duration (in minutes)" required="required"><br />
+    <label>Until date...</label>
+    <input data-date-format="YYYY-MM-DD" data-role="datepicker" id="until" name="until" type="text" placeholder="until date..." required="required"><br />
+    <label>Days of week</label>
+    <select id="week_days_index" name="week_days_index" multiple="multiple" required="required">
+        <option value="0">Monday</option>
+        <option value="1">Tuesday</option>
+        <option value="2">Wednesday</option>
+        <option value="3">Thursday</option>
+        <option value="4">Friday</option>
+        <option value="5">Saturday</option>
+        <option value="6">Sunday</option>
+    </select><br />
+    <input type="submit" class="btn btn-primary btn-large" value="Save">
+</form>
+
+
+{% endblock %}
+
+{% block tail %}
+{{ super() }}
+{{ lib.form_js() }}
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#week_days_index').select2();
+});
+</script>
+{% endblock %}

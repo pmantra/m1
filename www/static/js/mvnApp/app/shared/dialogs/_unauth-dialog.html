@@ -1,0 +1,145 @@
+<div class="unauth-dialog center">
+	<div ng-if="formState === 'register'" class="unauth-reg" ng-controller="UserRegisterCtrl">
+		<h2 class="serif">{{ registerGreeting }}</h2>
+
+		<p>
+			Ask a question and get an answer from our community and women’s health practitioners.
+		</p>
+		<div ng-show="errorMsg" class="notify error">
+			<p>{{ err }}</p>
+			<br />
+		</div>
+
+		<form ng-submit="register(regForm, false, cb)" role="form" class="reg-form primary-app">
+			<div class="form-group col2">
+				<div class="form-item">
+					<input
+						type="text"
+						class="first-name"
+						name="text"
+						ng-model="regForm.first_name"
+						required="required"
+						placeholder="First name"
+					/>
+				</div>
+				<div class="form-item">
+					<input
+						type="text"
+						class="last-name"
+						name="text"
+						ng-model="regForm.last_name"
+						required="required"
+						placeholder="Last name"
+					/>
+				</div>
+			</div>
+			<div class="form-item email">
+				<input
+					type="email"
+					class="email"
+					name="email"
+					ng-model="regForm.email"
+					required="required"
+					ng-focus="createAcctStart()"
+					placeholder="Email address"
+				/>
+			</div>
+			<div class="form-group col2">
+				<div class="form-item">
+					<input
+						type="text"
+						class="username"
+						name="text"
+						ng-model="regForm.username"
+						required="required"
+						placeholder="Username"
+					/>
+				</div>
+
+				<div class="form-item">
+					<input
+						type="password"
+						class="password"
+						name="password"
+						ng-model="regForm.password"
+						required="required"
+						placeholder="Password"
+					/>
+				</div>
+			</div>
+			<input type="hidden" ng-model="regForm.source" name="source" ng-init="regForm.source='web'" value="web" />
+
+			<div class="mvn-checkbox-group">
+				<div class="checkbox-container reg-agree-to-terms">
+					<input
+						id="enabled-check"
+						name="enabled-check"
+						class="checkmark"
+						required="required"
+						aria-required="true"
+						type="checkbox"
+						ng-model="regForm.agreements_accepted"
+						ng-checked="regForm.agreements_accepted"
+						tabindex="0"
+					/>
+					<label class="label-text" for="enabled-check" id="enabled-check-mark"
+						><span class="label-copy"
+							>By checking this box, I confirm I have read and agree to the
+							<a target="_blank" rel="noopener noreferrer nofollow" href="/app/privacy">Privacy Policy</a> and
+							<a rel="noopener noreferrer nofollow" target="_blank" href="/app/terms-of-use">Terms of Use</a>.</span
+						></label
+					>
+				</div>
+			</div>
+
+			<button type="submit" class="btn btn-cta">Register</button>
+		</form>
+		<div>
+			<p ng-if="!hideToggle">Already have an account? <a href="" ng-click="toggleLoginReg('login')">Sign in</a></p>
+		</div>
+	</div>
+
+	<div ng-if="formState === 'login'" class="unauth-login" ng-controller="AuthCtrl">
+		<h2 class="serif">{{ loginGreeting }}</h2>
+
+		<div ng-show="errorMsg" class="notify error">
+			<p>
+				<span class="error-icon"
+					><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+						<path
+							fill="#FF7774"
+							d="M100.9 13c-47.5 0-86.3 38.8-86.3 86.3s38.9 86.3 86.3 86.3 86.3-38.9 86.3-86.3c.1-47.5-38.8-86.3-86.3-86.3zm2.2 139.4c-5.8 0-10.7-4.9-10.7-10.7 0-5.9 4.9-10.9 10.7-10.9 5.9 0 10.9 5 10.9 10.9-.1 5.8-5 10.7-10.9 10.7zm12.4-77.9l-6.8 39c-.1 1.1-1.4 2.2-2.6 2.2h-5.8c-1.2 0-2.5-1.1-2.6-2.2l-6.8-38.7V58.9v-.1c0-.1-.1-.2-.1-.3 0-6.8 5.5-12.3 12.3-12.3 6.8 0 12.3 5.5 12.3 12.3v.2c0 .1.1.1.1.2v15.6z"
+						/></svg
+				></span>
+				{{ err }}
+			</p>
+		</div>
+
+		<form ng-submit="login(loginForm, false, cb)" role="form" method="post" class="sign-in-form primary-app">
+			<input
+				type="email"
+				name="email"
+				ng-model="loginForm.email"
+				required="required"
+				class="form-control"
+				placeholder="Email address"
+			/>
+
+			<input
+				type="password"
+				name="password"
+				ng-model="loginForm.password"
+				required="required"
+				class="form-control"
+				placeholder="Password"
+			/>
+
+			<button type="submit" class="btn btn-cta">Sign in</button>
+		</form>
+
+		<p class="center"><a ui-sref="auth.forgot" target="_blank">Forgot your password?</a></p>
+		<p ng-if="!hideToggle" class="center">
+			New here? <a href="" ng-click="toggleLoginReg('register')">Register instantly</a>
+		</p>
+	</div>
+</div>

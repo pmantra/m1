@@ -1,0 +1,1320 @@
+{
+  "type": "object",
+  "properties": {
+    "interchange_control_header": {
+      "$ref": "#/$defs/segments/interchange_control_header"
+    },
+    "functional_group_header": {
+      "$ref": "#/$defs/segments/functional_group_header"
+    },
+    "transaction_set_header": {
+      "$ref": "#/$defs/segments/transaction_set_header"
+    },
+    "beginning_of_hierarchical_transaction": {
+      "$ref": "#/$defs/segments/beginning_of_hierarchical_transaction"
+    },
+    "loop_2000A": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/loops/loop_2000A"
+      }
+    },
+    "transaction_set_trailer": {
+      "$ref": "#/$defs/segments/transaction_set_trailer"
+    },
+    "functional_group_trailer": {
+      "$ref": "#/$defs/segments/functional_group_trailer"
+    },
+    "interchange_control_trailer": {
+      "$ref": "#/$defs/segments/interchange_control_trailer"
+    }
+  },
+  "required": [
+    "transaction_set_header",
+    "beginning_of_hierarchical_transaction",
+    "loop_2000A",
+    "transaction_set_trailer"
+  ],
+  "$defs": {
+    "segments": {
+      "interchange_control_header": {
+        "type": "object",
+        "abbreviation": "ISA",
+        "properties": {
+          "authorization_information_qualifier": {
+            "type": "string",
+            "enum": [
+              "00",
+              "01",
+              "02",
+              "03",
+              "04",
+              "05",
+              "06",
+              "07",
+              "08"
+            ],
+            "minLength": 2,
+            "maxLength": 2
+          },
+          "authorization_information": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 10
+          },
+          "security_information_qualifier": {
+            "type": "string",
+            "enum": [
+              "00",
+              "01"
+            ],
+            "minLength": 2,
+            "maxLength": 2
+          },
+          "security_information": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 10
+          },
+          "interchange_id_qualifier_sender": {
+            "type": "string",
+            "enum": [
+              "01",
+              "02",
+              "03",
+              "04",
+              "07",
+              "08",
+              "09",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "AM",
+              "NR",
+              "SA",
+              "SN",
+              "ZZ"
+            ],
+            "minLength": 2,
+            "maxLength": 2
+          },
+          "interchange_sender_id": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 15
+          },
+          "interchange_id_qualifier_receiver": {
+            "type": "string",
+            "enum": [
+              "01",
+              "02",
+              "03",
+              "04",
+              "07",
+              "08",
+              "09",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "AM",
+              "NR",
+              "SA",
+              "SN",
+              "ZZ"
+            ],
+            "minLength": 2,
+            "maxLength": 2
+          },
+          "interchange_receiver_id": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 15
+          },
+          "interchange_date": {
+            "type": "string",
+            "minLength": 6,
+            "maxLength": 6
+          },
+          "interchange_time": {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 4
+          },
+          "repetition_separator": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1
+          },
+          "interchange_control_version_number": {
+            "type": "string",
+            "enum": [
+              "00200",
+              "00201",
+              "00204",
+              "00300",
+              "00301",
+              "00302",
+              "00303",
+              "00304",
+              "00305",
+              "00306",
+              "00307",
+              "00400",
+              "00401",
+              "00402",
+              "00403",
+              "00404",
+              "00405",
+              "00406",
+              "00500",
+              "00501",
+              "00502",
+              "00503",
+              "00504",
+              "00505",
+              "00600",
+              "00601",
+              "00602",
+              "00603",
+              "00604",
+              "00605",
+              "00700",
+              "00701",
+              "00702",
+              "00703",
+              "00704",
+              "00705",
+              "00706",
+              "00801"
+            ],
+            "minLength": 5,
+            "maxLength": 5
+          },
+          "interchange_control_number": {
+            "type": "string",
+            "min_length": 9,
+            "max_length": 9
+          },
+          "acknowledgment_requested": {
+            "type": "string",
+            "enum": [
+              "0",
+              "1",
+              "2",
+              "3"
+            ],
+            "minLength": 1,
+            "maxLength": 1
+          },
+          "interchange_usage_indicator": {
+            "type": "string",
+            "enum": [
+              "I",
+              "P",
+              "T"
+            ],
+            "minLength": 1,
+            "maxLength": 1
+          },
+          "component_element_separator": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1
+          }
+        },
+        "required": [
+          "authorization_information_qualifier",
+          "authorization_information",
+          "security_information_qualifier",
+          "security_information",
+          "interchange_id_qualifier_sender",
+          "interchange_sender_id",
+          "interchange_id_qualifier_receiver",
+          "interchange_receiver_id",
+          "interchange_date",
+          "interchange_time",
+          "repetition_separator",
+          "interchange_control_version_number",
+          "interchange_control_number",
+          "acknowledgment_requested",
+          "interchange_usage_indicator",
+          "component_element_separator"
+        ]
+      },
+      "functional_group_header": {
+        "type": "object",
+        "abbreviation": "GS",
+        "properties": {
+          "functional_identifier_code": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2
+          },
+          "application_sender_code": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 15
+          },
+          "application_receiver_code": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 15
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "time": {
+            "type": "string"
+          },
+          "group_control_number": {
+            "type": "string",
+            "min_length": 1,
+            "max_length": 9
+          },
+          "responsible_agency_code": {
+            "type": "string",
+            "enum": [
+              "T",
+              "X"
+            ],
+            "minLength": 1,
+            "maxLength": 2
+          },
+          "version_release_industry_identifier_code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12
+          }
+        },
+        "required": [
+          "functional_identifier_code",
+          "application_sender_code",
+          "application_receiver_code",
+          "date",
+          "time",
+          "group_control_number",
+          "responsible_agency_code",
+          "version_release_industry_identifier_code"
+        ]
+      },
+      "transaction_set_header": {
+        "type": "object",
+        "abbreviation": "ST",
+        "properties": {
+          "transaction_set_identifier_code": {
+            "type": "string",
+            "enum": [
+              "276"
+            ],
+            "minLength": 3,
+            "maxLength": 3
+          },
+          "transaction_set_control_number": {
+            "type": "string",
+            "minLength": 4,
+            "maxLength": 9
+          },
+          "version_identifier": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 35
+          }
+        },
+        "required": [
+          "transaction_set_identifier_code",
+          "transaction_set_control_number",
+          "version_identifier"
+        ]
+      },
+      "beginning_of_hierarchical_transaction": {
+        "type": "object",
+        "abbreviation": "BHT",
+        "properties": {
+          "hierarchical_structure_code": {
+            "type": "string",
+            "enum": [
+              "0010"
+            ],
+            "minLength": 4,
+            "maxLength": 4
+          },
+          "transaction_set_purpose_code": {
+            "type": "string",
+            "enum": [
+              "13"
+            ],
+            "minLength": 2,
+            "maxLength": 2
+          },
+          "reference_identification": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "transaction_set_creation_date": {
+            "type": "string",
+            "pattern": "^[0-9]{4}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])$",
+            "description": "Date in CCYYMMDD format (e.g., 20230915)"
+          },
+          "transaction_set_creation_time": {
+            "type": "string",
+            "pattern": "^(?:[01][0-9]|2[0-3])[0-5][0-9](?:[0-5][0-9](?:[0-9](?:[0-9])?)?)?$",
+            "description": "Time expressed in 24-hour clock time as HHMM, HHMMSS, HHMMSSD, or HHMMSSDD. H = hours (00-23), M = minutes (00-59), S = seconds (00-59), D = tenths (0-9), DD = hundredths (00-99)."
+          }
+        },
+        "required": [
+          "hierarchical_structure_code",
+          "transaction_set_purpose_code",
+          "reference_identification",
+          "transaction_set_creation_date",
+          "transaction_set_creation_time"
+        ]
+      },
+      "loop_2000A_information_source_level": {
+        "type": "object",
+        "abbreviation": "HL",
+        "properties": {
+          "hierarchical_id_number": {
+            "type": "integer"
+          },
+          "hierarchical_level_code": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2,
+            "enum": [
+              "20"
+            ]
+          },
+          "hierarchical_child_code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1,
+            "enum": [
+              "1"
+            ]
+          }
+        },
+        "positions": [
+          1,
+          3,
+          4
+        ],
+        "required": [
+          "hierarchical_id_number",
+          "hierarchical_level_code",
+          "hierarchical_child_code"
+        ]
+      },
+      "loop_2100A_payer_name": {
+        "type": "object",
+        "abbreviation": "NM1",
+        "properties": {
+          "entity_identifier_code": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 3,
+            "enum": [
+              "PR"
+            ]
+          },
+          "entity_type_qualifier": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1,
+            "enum": [
+              "2"
+            ]
+          },
+          "payer_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "identification_code_qualifier": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2,
+            "enum": [
+              "PI",
+              "XV"
+            ]
+          },
+          "payer_identifier": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 80
+          }
+        },
+        "positions": [
+          1,
+          2,
+          3,
+          8,
+          9
+        ],
+        "required": [
+          "entity_identifier_code",
+          "entity_type_qualifier",
+          "payer_name",
+          "identification_code_qualifier",
+          "payer_identifier"
+        ]
+      },
+      "loop_2000B_information_receiver_level": {
+        "type": "object",
+        "abbreviation": "HL",
+        "properties": {
+          "hierarchical_id_number": {
+            "type": "integer"
+          },
+          "hierarchical_parent_id_number": {
+            "type": "integer"
+          },
+          "hierarchical_level_code": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2,
+            "enum": [
+              "21"
+            ]
+          },
+          "hierarchical_child_code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1,
+            "enum": [
+              "1"
+            ]
+          }
+        },
+        "required": [
+          "hierarchical_id_number",
+          "hierarchical_parent_id_number",
+          "hierarchical_level_code",
+          "hierarchical_child_code"
+        ]
+      },
+      "loop_2100B_information_receiver_name": {
+        "type": "object",
+        "abbreviation": "NM1",
+        "properties": {
+          "entity_identifier_code": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 3,
+            "enum": [
+              "41"
+            ]
+          },
+          "entity_type_qualifier": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1,
+            "enum": [
+              "2"
+            ]
+          },
+          "information_receiver_last_or_organization_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "information_receiver_first_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 35
+          },
+          "information_receiver_middle_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25
+          },
+          "identification_code_qualifier": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2,
+            "enum": [
+              "46"
+            ]
+          },
+          "information_receiver_identification_number": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 80
+          }
+        },
+        "positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          8,
+          9
+        ],
+        "required": [
+          "entity_identifier_code",
+          "entity_type_qualifier",
+          "identification_code_qualifier",
+          "information_receiver_identification_number"
+        ]
+      },
+      "loop_2000C_service_provider_level": {
+        "type": "object",
+        "abbreviation": "HL",
+        "properties": {
+          "hierarchical_id_number": {
+            "type": "integer"
+          },
+          "hierarchical_parent_id_number": {
+            "type": "integer"
+          },
+          "hierarchical_level_code": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2,
+            "enum": [
+              "19"
+            ]
+          },
+          "hierarchical_child_code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1,
+            "enum": [
+              "1"
+            ]
+          }
+        },
+        "required": [
+          "hierarchical_id_number",
+          "hierarchical_parent_id_number",
+          "hierarchical_level_code",
+          "hierarchical_child_code"
+        ]
+      },
+      "loop_2100C_provider_name": {
+        "type": "object",
+        "abbreviation": "NM1",
+        "properties": {
+          "entity_identifier_code": {
+            "type": "string",
+            "enum": [
+              "1P"
+            ],
+            "minLength": 2,
+            "maxLength": 3
+          },
+          "entity_type_qualifier": {
+            "type": "string",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "minLength": 1,
+            "maxLength": 1
+          },
+          "provider_last_or_organizational_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "provider_first_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 35
+          },
+          "provider_middle_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25
+          },
+          "provider_name_suffix": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10
+          },
+          "identification_code_qualifier": {
+            "type": "string",
+            "enum": [
+              "FI",
+              "SV",
+              "XX"
+            ],
+            "minLength": 1,
+            "maxLength": 2
+          },
+          "provider_identifier": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 80
+          }
+        },
+        "positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9
+        ],
+        "required": [
+          "entity_identifier_code",
+          "entity_type_qualifier",
+          "identification_code_qualifier",
+          "provider_identifier"
+        ]
+      },
+      "loop_2000D_subscriber_level": {
+        "type": "object",
+        "abbreviation": "HL",
+        "properties": {
+          "hierarchical_id_number": {
+            "type": "integer"
+          },
+          "hierarchical_parent_id_number": {
+            "type": "integer"
+          },
+          "hierarchical_level_code": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2,
+            "enum": [
+              "22"
+            ]
+          },
+          "hierarchical_child_code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1,
+            "enum": [
+              "0",
+              "1"
+            ]
+          }
+        },
+        "required": [
+          "hierarchical_id_number",
+          "hierarchical_parent_id_number",
+          "hierarchical_level_code",
+          "hierarchical_child_code"
+        ]
+      },
+      "loop_2100D_subscriber_name": {
+        "type": "object",
+        "abbreviation": "NM1",
+        "properties": {
+          "entity_identifier_code": {
+            "type": "string",
+            "enum": [
+              "IL"
+            ],
+            "minLength": 2,
+            "maxLength": 3
+          },
+          "entity_type_qualifier": {
+            "type": "string",
+            "enum": [
+              "1",
+              "2"
+            ],
+            "minLength": 1,
+            "maxLength": 1
+          },
+          "subscriber_last_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "subscriber_first_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 35
+          },
+          "subscriber_middle_name_or_initial": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25
+          },
+          "subscriber_name_suffix": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10
+          },
+          "identification_code_qualifier": {
+            "type": "string",
+            "enum": [
+              "24",
+              "II",
+              "MI"
+            ],
+            "minLength": 1,
+            "maxLength": 2
+          },
+          "subscriber_identifier": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 80
+          }
+        },
+        "positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9
+        ],
+        "required": [
+          "entity_identifier_code",
+          "entity_type_qualifier",
+          "subscriber_last_name",
+          "identification_code_qualifier",
+          "subscriber_identifier"
+        ]
+      },
+      "loop_2200D_claim_status_tracking_number": {
+        "type": "object",
+        "abbreviation": "TRN",
+        "properties": {
+          "trace_type_code": {
+            "type": "string",
+            "enum": [
+              "1"
+            ],
+            "minLength": 1,
+            "maxLength": 1
+          },
+          "current_transaction_trace_number": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          }
+        },
+        "required": [
+          "trace_type_code",
+          "current_transaction_trace_number"
+        ]
+      },
+      "loop_2000E_dependent_level": {
+        "type": "object",
+        "abbreviation": "HL",
+        "properties": {
+          "hierarchical_id_number": {
+            "type": "integer"
+          },
+          "hierarchical_parent_id_number": {
+            "type": "integer"
+          },
+          "hierarchical_level_code": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2,
+            "enum": [
+              "23"
+            ]
+          }
+        },
+        "required": [
+          "hierarchical_id_number",
+          "hierarchical_parent_id_number",
+          "hierarchical_level_code"
+        ]
+      },
+      "loop_2000E_dependent_demographic_information": {
+        "type": "object",
+        "abbreviation": "DMG",
+        "properties": {
+          "date_time_period_format_qualifier": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2,
+            "enum": [
+              "D8"
+            ]
+          },
+          "patient_birth_date": {
+            "type": "string",
+            "pattern": "^[0-9]{4}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])$",
+            "description": "Date in CCYYMMDD format (e.g., 20230915)"
+          },
+          "patient_gender_code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1,
+            "enum": [
+              "F",
+              "M"
+            ]
+          },
+          "required": [
+            "date_time_period_format_qualifier",
+            "patient_birth_date"
+          ]
+        }
+      },
+      "loop_2100E_dependent_name": {
+        "type": "object",
+        "abbreviation": "NM1",
+        "properties": {
+          "entity_identifier_code": {
+            "type": "string",
+            "enum": [
+              "QC"
+            ],
+            "minLength": 2,
+            "maxLength": 3
+          },
+          "entity_type_qualifier": {
+            "type": "string",
+            "enum": [
+              "1"
+            ],
+            "minLength": 1,
+            "maxLength": 1
+          },
+          "patient_last_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "patient_first_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 35
+          },
+          "patient_middle_name_or_initial": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 25
+          },
+          "patient_name_suffix": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10
+          }
+        },
+        "positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "required": [
+          "entity_identifier_code",
+          "entity_type_qualifier",
+          "patient_last_name"
+        ]
+      },
+      "loop_2200E_claim_status_tracking_number": {
+        "type": "object",
+        "abbreviation": "TRN",
+        "properties": {
+          "trace_type_code": {
+            "type": "string",
+            "enum": [
+              "1"
+            ],
+            "minLength": 1,
+            "maxLength": 1
+          },
+          "current_transaction_trace_number": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          }
+        },
+        "required": [
+          "trace_type_code",
+          "current_transaction_trace_number"
+        ]
+      },
+      "transaction_set_trailer": {
+        "type": "object",
+        "abbreviation": "SE",
+        "properties": {
+          "transaction_segment_count": {
+            "type": "integer",
+            "min_length": 1,
+            "max_length": 10
+          },
+          "transaction_set_control_number": {
+            "type": "string",
+            "min_length": 4,
+            "max_length": 9
+          }
+        },
+        "required": [
+          "transaction_segment_count",
+          "transaction_set_control_number"
+        ]
+      },
+      "functional_group_trailer": {
+        "type": "object",
+        "abbreviation": "GE",
+        "properties": {
+          "number_of_transaction_sets_included": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 999999
+          },
+          "group_control_number": {
+            "type": "string",
+            "min_length": 1,
+            "max_length": 9
+          }
+        },
+        "required": [
+          "number_of_transaction_sets_included",
+          "group_control_number"
+        ]
+      },
+      "interchange_control_trailer": {
+        "type": "object",
+        "abbreviation": "IEA",
+        "properties": {
+          "number_of_included_functional_groups": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 99999
+          },
+          "interchange_control_number": {
+            "type": "string",
+            "min_length": 9,
+            "max_length": 9
+          }
+        },
+        "required": [
+          "number_of_included_functional_groups",
+          "interchange_control_number"
+        ]
+      }
+    },
+    "loops": {
+      "loop_2000A": {
+        "type": "object",
+        "properties": {
+          "loop_2100A": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "$ref": "#/$defs/loops/loop_2100A"
+            }
+          },
+          "loop_2000B": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/loops/loop_2000B"
+            }
+          }
+        },
+        "required": [
+          "loop_2100A",
+          "loop_2000B"
+        ]
+      },
+      "loop_2100A": {
+        "type": "object",
+        "properties": {
+          "payer_name": {
+            "$ref": "#/$defs/segments/loop_2100A_payer_name"
+          }
+        },
+        "required": [
+          "payer_name"
+        ]
+      },
+      "loop_2000B": {
+        "type": "object",
+        "properties": {
+          "information_receiver_level": {
+            "$ref": "#/$defs/segments/loop_2000B_information_receiver_level"
+          },
+          "loop_2100B": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "$ref": "#/$defs/loops/loop_2100B"
+            }
+          },
+          "loop_2000C": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/loops/loop_2000C"
+            }
+          }
+        },
+        "required": [
+          "information_receiver_level",
+          "loop_2100B",
+          "loop_2000C"
+        ]
+      },
+      "loop_2100B": {
+        "type": "object",
+        "properties": {
+          "information_receiver_name": {
+            "$ref": "#/$defs/segments/loop_2100B_information_receiver_name"
+          }
+        },
+        "required": [
+          "information_receiver_name"
+        ]
+      },
+      "loop_2000C": {
+        "type": "object",
+        "properties": {
+          "service_provider_level": {
+            "$ref": "#/$defs/segments/loop_2000C_service_provider_level"
+          },
+          "loop_2100C": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "items": {
+              "$ref": "#/$defs/loops/loop_2100C"
+            }
+          },
+          "loop_2000D": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/loops/loop_2000D"
+            }
+          }
+        },
+        "required": [
+          "service_provider_level",
+          "loop_2100C",
+          "loop_2000D"
+        ]
+      },
+      "loop_2210E": {
+        "type": "object",
+        "properties": {
+          "service_line_information": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "$ref": "#/$defs/segments/loop_2210E_service_line_information"
+            }
+          },
+          "composite_medical_procedure_identifier": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "$ref": "#/$defs/segments/loop_2210E_composite_medical_procedure_identifier"
+            }
+          },
+          "service_line_date": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "$ref": "#/$defs/segments/loop_2210E_service_line_date"
+            }
+          },
+          "service_line_item_identification": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "$ref": "#/$defs/segments/loop_2210E_service_line_item_identification"
+            }
+          }
+        },
+        "required": [
+          "composite_medical_procedure_identifier",
+          "service_line_information",
+          "service_line_date"
+        ]
+      },
+      "loop_2100C": {
+        "type": "object",
+        "properties": {
+          "provider_name": {
+            "$ref": "#/$defs/segments/loop_2100C_provider_name"
+          }
+        },
+        "required": [
+          "provider_name"
+        ]
+      },
+      "loop_2000D": {
+        "type": "object",
+        "properties": {
+          "subscriber_level": {
+            "$ref": "#/$defs/segments/loop_2000D_subscriber_level"
+          },
+          "loop_2100D": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "$ref": "#/$defs/loops/loop_2100D"
+            }
+          },
+          "loop_2200D": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/loops/loop_2200D"
+            }
+          },
+          "loop_2000E": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/loops/loop_2000E"
+            }
+          }
+        },
+        "required": [
+          "subscriber_level",
+          "loop_2100D"
+        ]
+      },
+      "loop_2100D": {
+        "type": "object",
+        "properties": {
+          "subscriber_name": {
+            "$ref": "#/$defs/segments/loop_2100D_subscriber_name"
+          }
+        },
+        "required": [
+          "subscriber_name"
+        ]
+      },
+      "loop_2200D": {
+        "type": "object",
+        "properties": {
+          "claim_status_tracking_number": {
+            "$ref": "#/$defs/segments/loop_2200D_claim_status_tracking_number"
+          }
+        },
+        "required": [
+          "claim_status_tracking_number"
+        ]
+      },
+      "loop_2000E": {
+        "type": "object",
+        "properties": {
+          "dependent_level": {
+            "$ref": "#/$defs/segments/loop_2000E_dependent_level"
+          },
+          "dependent_demographic_information": {
+            "$ref": "#/$defs/segments/loop_2000E_dependent_demographic_information"
+          },
+          "loop_2100E": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/loops/loop_2100E"
+            }
+          },
+          "loop_2200E": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/loops/loop_2200E"
+            }
+          }
+        },
+        "required": [
+          "dependent_level",
+          "dependent_demographic_information",
+          "loop_2100E",
+          "loop_2200E"
+        ]
+      },
+      "loop_2100E": {
+        "type": "object",
+        "properties": {
+          "dependent_name": {
+            "$ref": "#/$defs/segments/loop_2100E_dependent_name"
+          }
+        },
+        "required": [
+          "dependent_name"
+        ]
+      },
+      "loop_2200E": {
+        "type": "object",
+        "properties": {
+          "claim_status_tracking_number": {
+            "$ref": "#/$defs/segments/loop_2200E_claim_status_tracking_number"
+          }
+        },
+        "required": [
+          "claim_status_tracking_number"
+        ]
+      }
+    }
+  }
+}

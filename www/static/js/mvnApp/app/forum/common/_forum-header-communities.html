@@ -1,0 +1,24 @@
+<div class="forum-header-communities">
+	<ul class="clear clearfix">
+		<li ng-repeat="cat in $ctrl.cats" ng-class="{'special': cat.special }" ng-if="!cat.archived">
+			
+			<div ng-if="!cat.special">
+				<div class="mobile-only header-communities">
+					<div class="community-icon">
+						<a ui-sref="app.forum.community({'community' : cat.name })" ng-click="$ctrl.showSearchMenu = false"><img ng-src="{{ cat.image_url }}" alt="{{ cat.name }}"/></a>
+					</div>
+				</div>
+
+				<div class="mobile-none">
+					<a ui-sref="app.forum.community({'community' : cat.name })">{{ cat.display_name }}</a>
+				</div>
+			</div>
+
+			<div ng-if="cat.special && !cat.archived">
+				<p class="lg center"><a ui-sref="app.forum.community({'community' : cat.name })" class="">{{ ::cat.display_name }}: Ask questions, share your story.</a></p>
+			</div>
+
+
+		</li>
+	</ul>
+</div>

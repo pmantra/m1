@@ -1,0 +1,119 @@
+.login-reg {
+	h3 {
+		margin: 2.125rem 0 0.5rem 0;
+	}
+	section {
+		@include flexbox(column, center, flex-start);
+		.login-reg-container {
+			@include flexbox;
+			width: 90%;
+			padding-top: 2rem;
+
+			.logo {
+				margin-bottom: 2rem;
+			}
+
+			ui-view {
+				width: 100%;
+			}
+
+			> * {
+				max-width: 470px;
+				width: 100%;
+			}
+
+			@include susy-breakpoint($tablet) {
+				padding: 50px;
+				max-width: 900px;
+				width: 80%;
+			}
+
+			.tooltip {
+				p {
+					margin-bottom: 0;
+				}
+				div {
+					margin-top: 20px;
+				}
+			}
+
+			a { 
+				text-decoration: None;
+				font-family: $font1-semibold;
+			}
+		}
+	}
+	.reg-agree-to-terms {
+		text-align: left;
+		width: 100%;
+		margin-top: 10px;
+		.label-text {
+			display: flex;
+		}
+		.label-copy {
+			position: relative;
+			top: -4px;
+			left: 3px;
+			font-size: 0.875rem;
+		}
+
+		.label-text::before {
+			width: 22px;
+			min-width: 16px;
+			top: 0;
+			border: 1px solid $gray-lt;
+		}
+	}
+	.sub {
+		color: #64726F;
+	}
+	.form-group {
+		padding: 32px 0 32px 0;
+	}
+} // end login-reg
+
+.pw-strength-meter {
+	@include susy-breakpoint(0 $mobile-landscape-max) {
+		margin-top: 0 !important;
+	}
+	.pw-strength-bar {
+		@include flexbox(row, stretch, space-between);
+		width: 100%;
+		height: 6px;
+		margin-top: 0;
+
+		.pw-block {
+			transition: background-color 0.5s ease;
+			background-color: $gray-xlt;
+			display: inline-block;
+			width: 24.5%;
+		}
+
+		&.weak {
+			.pw-block.active {
+				background-color: $ui-red;
+			}
+		}
+
+		&.medium {
+			.pw-block.active {
+				background-color: $ui-yellow-lt;
+			}
+		}
+
+		&.strong {
+			.pw-block.active {
+				background-color: $ui-green-lt;
+			}
+		}
+	}
+
+	.help-block {
+		color: $gray;
+	}
+}
+
+.help-block {
+	@include font-size(14);
+	text-align: left;
+}
